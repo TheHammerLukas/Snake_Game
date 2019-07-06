@@ -1,0 +1,191 @@
+﻿using System.Drawing;
+using System.Windows.Forms;
+
+namespace Snake_Game
+{
+    public enum gameDirection // Enum for the current direction of the snake
+    {
+        Up = 0,
+        Down= 1,
+        Left = 2,
+        Right = 3,
+        Stop = 4
+    };
+
+    public enum gameAction // Enum for key input actions
+    {
+        UpKey = 0,
+        DownKey = 1,
+        LeftKey = 2,
+        RightKey = 3,
+        ResetKey = 4,
+        PauseKey = 5,
+        SpeedKey = 6,
+        BotKey = 7,
+        None = 8
+    };
+
+    public enum gameColor // Enum for colors used in game
+    {
+        snakeHeadColor = 0,
+        snakeBodyColor = 1
+    }
+
+    public enum rainbowMode // Enum for different rainbow modes
+    {
+        rainbowModeTiles = 0,
+        rainbowModeStretched = 1
+    }
+
+    class gameSettings
+    {
+        public static int Width                 { get; set; } // Width of any game object
+        public static int Height                { get; set; } // Height of any game object
+        public static int Speed                 { get; set; } // Speed of the snake
+        public static int Score                 { get; set; } // Score of the current game
+        public static int HighScore             { get; set; } // Highscore of the player loaded from .xml file
+        public static int GrowMultiplicator     { get; set; } // Defines how much the snake grows when a food is eaten
+        public static int Points                { get; set; } // Amount of points that get added to the score when the player eats a food
+        public static bool GameOver             { get; set; } // If false -> game continues, if true -> game ends
+        public static bool BotEnabled           { get; set; } // To enable / disable the bot
+        public static bool IsModifierRound      { get; set; } // To determine if any cheats/modifiers were enabled in the current round
+        public static bool SpeedEnabled         { get; set; } // To check if the speed modifier is enabled or disabled
+        public static bool GamePaused           { get; set; } // If false -> game isn't paused, if true -> game is paused
+        public static bool RainbowEnabled       { get; set; } // To enable / disable the rainbow snake color
+        public static rainbowMode RainbowMode   { get; set; } // To determine which rainbow mode is selected
+        public static bool MenuIsOpen           { get; set; } // Determines if the gameMenu is open or not
+        public static gameDirection direction   { get; set; } // Direction the snake is heading in
+        public static Brush snakeHeadColor      { get; set; } // Color for the head of the snake
+        public static Brush snakeBodyColor      { get; set; } // Color for the body of the snake
+        public static Brush foodColor           { get; set; } // Color for the food
+
+        // Array for a rainbow colors of snake
+        public static Brush[] snakeRainbowColor = { Brushes.Firebrick, Brushes.OrangeRed, Brushes.Gold, Brushes.LimeGreen, Brushes.Blue, Brushes.Purple };
+        
+        public gameSettings(bool useStandard)
+        {
+            gameController gamecontroller = new gameController();
+            
+            Width               = 15;
+            Height              = 15;
+            Speed               = 12;
+            Score               = 0;  
+            GrowMultiplicator   = 5;
+            Points              = 100;
+            GameOver            = false;
+            BotEnabled          = false;
+            IsModifierRound     = false;
+            SpeedEnabled        = false;
+            GamePaused          = false;
+            MenuIsOpen          = false;
+            direction           = gameDirection.Stop;
+
+            // Only call readSettingsXML if the values of it should be used
+            if (!useStandard)
+            {
+                gamecontroller.readSettingsXML();
+            }
+            
+            gamecontroller.readScoreXML();
+        }
+
+        // Procedure to apply new settings values
+        public static void ApplySettings(int newWidth, int newHeight, int newSpeed, int newGrowMultiplicator, int newPoints)
+        {
+            gameController gamecontroller = new gameController();
+            
+            // Alter settings if needed
+            if (newWidth != Width)
+            {
+                Width = newWidth;
+            }
+            if (newHeight != Height)
+            {
+                Height = newHeight;
+            }
+            if (newSpeed != Speed)
+            {
+                Speed = newSpeed;
+            }
+            if (newGrowMultiplicator != GrowMultiplicator)
+            {
+                GrowMultiplicator = newGrowMultiplicator;
+            }
+            if (newPoints != Points)
+            {
+                Points = newPoints;
+            }
+
+            gamecontroller.writeSettingsXML();
+            gamecontroller.writeControlsXML();
+        }
+
+        #region Color functions
+
+        // Sets the passed colorToChange to the picked color
+        public static void PickColor(gameColor colorToChange)
+        {
+            ColorDialog _colorDialog = new ColorDialog();
+
+            _colorDialog.AllowFullOpen = true;
+            _colorDialog.ShowHelp = true;
+
+            // Set the initial color to the one currently in use by the setting
+            switch (colorToChange)
+            {
+                case gameColor.snakeHeadColor:
+                    _colorDialog.Color = (snakeHeadColor as SolidBrush).Color;
+                    break;
+                case gameColor.snakeBodyColor:
+                    _colorDialog.Color = (snakeBodyColor as SolidBrush).Color;
+                    break;
+                default:
+                    break;
+            }
+            
+            // Update the color of the setting
+            if (_colorDialog.ShowDialog() == DialogResult.OK)
+            {
+                switch (colorToChange)
+                {
+                    case gameColor.snakeHeadColor:
+                        snakeHeadColor = new SolidBrush(_colorDialog.Color);
+                        break;
+                    case gameColor.snakeBodyColor:
+                        snakeBodyColor = new SolidBrush(_colorDialog.Color);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
+        // Calls initialize functions for colors
+        public static void InitAllColors()
+        {
+            InitSnakeHeadColor();
+            InitSnakeBodyColor();
+            InitFoodColor();
+
+            RainbowEnabled = false;
+            RainbowMode = rainbowMode.rainbowModeTiles;
+        }
+
+        public static void InitSnakeHeadColor()
+        {
+            snakeHeadColor = Brushes.DarkGreen;
+        }
+
+        public static void InitSnakeBodyColor()
+        {
+            snakeBodyColor = Brushes.Green;
+        }
+
+        public static void InitFoodColor()
+        {
+            foodColor = Brushes.Red;
+        }
+
+        #endregion
+    }
+}

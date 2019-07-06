@@ -1,0 +1,17 @@
+﻿TIP: there is another method using XMLs in this project (Project -> Properties -> Settings).
+
+
+Add 'Multi Language Support'. // IDEA: Save the MLS texts and the selected language in a .xml
+
+
+Menu 'Reset' buttons for single controls
+
+
+Let the player decide where the savefiles are stored on the disk
+
+
+Spawn powerup food every 10 or so eaten foods:
+-> Point multiplier
+-> Point Tick ( Some amount of points get added for each game tick alive)
+-> Slowmotion
+-> Noclip
