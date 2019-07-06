@@ -182,6 +182,46 @@ namespace Snake_Game
             gameAction = gameAction.BotKey;
         }
 
+        private void ButtonResetUpKey_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonResetDownKey_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonResetLeftKey_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonResetRightKey_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonResetRestartKey_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonResetPauseKey_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonResetSpeedKey_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonResetBotKey_Click(object sender, EventArgs e)
+        {
+
+        }
+
         #endregion
 
         #region Color functions
