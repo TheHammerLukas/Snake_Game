@@ -62,7 +62,6 @@ namespace Snake_Game
             {
                 gameSettings.GamePaused = true;
             }
-            
 
             // Check for game over & if the configured restart key is pressed
             if (!gameSettings.GameOver) // Check for player input
