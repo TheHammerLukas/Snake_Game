@@ -18,14 +18,10 @@ namespace Snake_Game
         {
             gameController gamecontroller = new gameController();
 
-            dirUpKey = (Keys)Enum.Parse(typeof(Keys), "W", true);
-            dirDownKey = (Keys)Enum.Parse(typeof(Keys), "S", true);
-            dirLeftKey = (Keys)Enum.Parse(typeof(Keys), "A", true);
-            dirRightKey = (Keys)Enum.Parse(typeof(Keys), "D", true);
-            modRestartKey = (Keys)Enum.Parse(typeof(Keys), "R", true);
-            modBotKey = (Keys)Enum.Parse(typeof(Keys), "B", true);
-            modSpeedKey = (Keys)Enum.Parse(typeof(Keys), "N", true);
-            modPauseKey = (Keys)Enum.Parse(typeof(Keys), "P", true);
+            foreach (gameAction action in Enum.GetValues(typeof(gameAction)))
+            {
+                InitControls(action);
+            }
 
             // Only call readControlsXML if the values of it should be used
             if (!useStandard)
@@ -97,6 +93,44 @@ namespace Snake_Game
             }
 
             return _retCode;
+        }
+
+        // Initializes controls according to passed gameAction
+        public static void InitControls(gameAction action)
+        {
+            gameAction _action = action;
+            if (_action != gameAction.None)
+            {
+                switch (_action)
+                {
+                    case gameAction.UpKey:
+                        dirUpKey = (Keys)Enum.Parse(typeof(Keys), "W", true);
+                        break;
+                    case gameAction.DownKey:
+                        dirDownKey = (Keys)Enum.Parse(typeof(Keys), "S", true);
+                        break;
+                    case gameAction.LeftKey:
+                        dirLeftKey = (Keys)Enum.Parse(typeof(Keys), "A", true);
+                        break;
+                    case gameAction.RightKey:
+                        dirRightKey = (Keys)Enum.Parse(typeof(Keys), "D", true);
+                        break;
+                    case gameAction.ResetKey:
+                        modRestartKey = (Keys)Enum.Parse(typeof(Keys), "R", true);
+                        break;
+                    case gameAction.PauseKey:
+                        modPauseKey = (Keys)Enum.Parse(typeof(Keys), "P", true);
+                        break;
+                    case gameAction.SpeedKey:
+                        modSpeedKey = (Keys)Enum.Parse(typeof(Keys), "N", true);
+                        break;
+                    case gameAction.BotKey:
+                        modBotKey = (Keys)Enum.Parse(typeof(Keys), "B", true);
+                        break;
+                    default:
+                        break;
+                }
+            }
         }
     }
 }

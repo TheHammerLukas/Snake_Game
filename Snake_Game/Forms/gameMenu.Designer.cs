@@ -347,7 +347,7 @@ namespace Snake_Game
             this.buttonResetBotKey.TabIndex = 34;
             this.buttonResetBotKey.Text = "Reset";
             this.buttonResetBotKey.UseVisualStyleBackColor = true;
-            this.buttonResetBotKey.Click += new System.EventHandler(this.ButtonResetBotKey_Click);
+            this.buttonResetBotKey.Click += new System.EventHandler(this.buttonResetBotKey_Click);
             // 
             // buttonResetSpeedKey
             // 
@@ -358,7 +358,7 @@ namespace Snake_Game
             this.buttonResetSpeedKey.TabIndex = 33;
             this.buttonResetSpeedKey.Text = "Reset";
             this.buttonResetSpeedKey.UseVisualStyleBackColor = true;
-            this.buttonResetSpeedKey.Click += new System.EventHandler(this.ButtonResetSpeedKey_Click);
+            this.buttonResetSpeedKey.Click += new System.EventHandler(this.buttonResetSpeedKey_Click);
             // 
             // buttonSetBotKey
             // 
@@ -380,7 +380,7 @@ namespace Snake_Game
             this.buttonResetPauseKey.TabIndex = 31;
             this.buttonResetPauseKey.Text = "Reset";
             this.buttonResetPauseKey.UseVisualStyleBackColor = true;
-            this.buttonResetPauseKey.Click += new System.EventHandler(this.ButtonResetPauseKey_Click);
+            this.buttonResetPauseKey.Click += new System.EventHandler(this.buttonResetPauseKey_Click);
             // 
             // buttonSetSpeedKey
             // 
@@ -402,7 +402,7 @@ namespace Snake_Game
             this.buttonResetRestartKey.TabIndex = 29;
             this.buttonResetRestartKey.Text = "Reset";
             this.buttonResetRestartKey.UseVisualStyleBackColor = true;
-            this.buttonResetRestartKey.Click += new System.EventHandler(this.ButtonResetRestartKey_Click);
+            this.buttonResetRestartKey.Click += new System.EventHandler(this.buttonResetRestartKey_Click);
             // 
             // buttonSetPauseKey
             // 
@@ -424,7 +424,7 @@ namespace Snake_Game
             this.buttonResetRightKey.TabIndex = 27;
             this.buttonResetRightKey.Text = "Reset";
             this.buttonResetRightKey.UseVisualStyleBackColor = true;
-            this.buttonResetRightKey.Click += new System.EventHandler(this.ButtonResetRightKey_Click);
+            this.buttonResetRightKey.Click += new System.EventHandler(this.buttonResetRightKey_Click);
             // 
             // buttonSetRestartKey
             // 
@@ -446,7 +446,7 @@ namespace Snake_Game
             this.buttonResetLeftKey.TabIndex = 25;
             this.buttonResetLeftKey.Text = "Reset";
             this.buttonResetLeftKey.UseVisualStyleBackColor = true;
-            this.buttonResetLeftKey.Click += new System.EventHandler(this.ButtonResetLeftKey_Click);
+            this.buttonResetLeftKey.Click += new System.EventHandler(this.buttonResetLeftKey_Click);
             // 
             // buttonSetRightKey
             // 
@@ -468,7 +468,7 @@ namespace Snake_Game
             this.buttonResetDownKey.TabIndex = 23;
             this.buttonResetDownKey.Text = "Reset";
             this.buttonResetDownKey.UseVisualStyleBackColor = true;
-            this.buttonResetDownKey.Click += new System.EventHandler(this.ButtonResetDownKey_Click);
+            this.buttonResetDownKey.Click += new System.EventHandler(this.buttonResetDownKey_Click);
             // 
             // buttonSetLeftKey
             // 
@@ -501,7 +501,7 @@ namespace Snake_Game
             this.buttonResetUpKey.TabIndex = 19;
             this.buttonResetUpKey.Text = "Reset";
             this.buttonResetUpKey.UseVisualStyleBackColor = true;
-            this.buttonResetUpKey.Click += new System.EventHandler(this.ButtonResetUpKey_Click);
+            this.buttonResetUpKey.Click += new System.EventHandler(this.buttonResetUpKey_Click);
             // 
             // buttonSetUpKey
             // 

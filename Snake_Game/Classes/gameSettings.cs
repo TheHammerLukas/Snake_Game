@@ -28,7 +28,8 @@ namespace Snake_Game
     public enum gameColor // Enum for colors used in game
     {
         snakeHeadColor = 0,
-        snakeBodyColor = 1
+        snakeBodyColor = 1,
+        foodColor = 2
     }
 
     public enum rainbowMode // Enum for different rainbow modes

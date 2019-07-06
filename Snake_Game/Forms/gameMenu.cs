@@ -182,44 +182,76 @@ namespace Snake_Game
             gameAction = gameAction.BotKey;
         }
 
-        private void ButtonResetUpKey_Click(object sender, EventArgs e)
+        private void buttonResetUpKey_Click(object sender, EventArgs e)
         {
+            gameControls.InitControls(gameAction.UpKey);
 
+            setMenuValues();
+
+            new gameController().writeControlsXML();
         }
 
-        private void ButtonResetDownKey_Click(object sender, EventArgs e)
+        private void buttonResetDownKey_Click(object sender, EventArgs e)
         {
+            gameControls.InitControls(gameAction.DownKey);
 
+            setMenuValues();
+
+            new gameController().writeControlsXML();
         }
 
-        private void ButtonResetLeftKey_Click(object sender, EventArgs e)
+        private void buttonResetLeftKey_Click(object sender, EventArgs e)
         {
+            gameControls.InitControls(gameAction.LeftKey);
 
+            setMenuValues();
+
+            new gameController().writeControlsXML();
         }
 
-        private void ButtonResetRightKey_Click(object sender, EventArgs e)
+        private void buttonResetRightKey_Click(object sender, EventArgs e)
         {
+            gameControls.InitControls(gameAction.RightKey);
 
+            setMenuValues();
+
+            new gameController().writeControlsXML();
         }
 
-        private void ButtonResetRestartKey_Click(object sender, EventArgs e)
+        private void buttonResetRestartKey_Click(object sender, EventArgs e)
         {
+            gameControls.InitControls(gameAction.ResetKey);
 
+            setMenuValues();
+
+            new gameController().writeControlsXML();
         }
 
-        private void ButtonResetPauseKey_Click(object sender, EventArgs e)
+        private void buttonResetPauseKey_Click(object sender, EventArgs e)
         {
+            gameControls.InitControls(gameAction.PauseKey);
 
+            setMenuValues();
+
+            new gameController().writeControlsXML();
         }
 
-        private void ButtonResetSpeedKey_Click(object sender, EventArgs e)
+        private void buttonResetSpeedKey_Click(object sender, EventArgs e)
         {
+            gameControls.InitControls(gameAction.SpeedKey);
 
+            setMenuValues();
+
+            new gameController().writeControlsXML();
         }
 
-        private void ButtonResetBotKey_Click(object sender, EventArgs e)
+        private void buttonResetBotKey_Click(object sender, EventArgs e)
         {
+            gameControls.InitControls(gameAction.BotKey);
 
+            setMenuValues();
+
+            new gameController().writeControlsXML();
         }
 
         #endregion
