@@ -65,7 +65,7 @@ namespace Snake_Game
         // Array for a rainbow colors of snake
         public static Brush[] snakeRainbowColor = { Brushes.Firebrick, Brushes.OrangeRed, Brushes.Gold, Brushes.LimeGreen, Brushes.Blue, Brushes.Purple };
         
-        // Default constructor
+        // Default constructor; called only directly for first init of the application
         public gameSettings(bool useStandard, bool firstInit)
         {
             gameController gamecontroller = new gameController();
@@ -99,7 +99,7 @@ namespace Snake_Game
             gamecontroller.readScoreXML();
         }
 
-        // Overload of constructor
+        // Overload of constructor; called by any except the first init
         public gameSettings(bool useStandard) : this(useStandard, false)
         {
             return;
