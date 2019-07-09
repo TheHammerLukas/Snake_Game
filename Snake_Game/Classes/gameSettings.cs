@@ -14,15 +14,16 @@ namespace Snake_Game
 
     public enum gameAction // Enum for key input actions
     {
-        UpKey = 0,
-        DownKey = 1,
-        LeftKey = 2,
-        RightKey = 3,
-        ResetKey = 4,
-        PauseKey = 5,
-        SpeedKey = 6,
-        BotKey = 7,
-        None = 8
+        None = 0,
+        UpKey = 1,
+        DownKey = 2,
+        LeftKey = 3,
+        RightKey = 4,
+        ResetKey = 5,
+        PauseKey = 6,
+        SpeedKey = 7,
+        BotKey = 8,
+        DevModeKey = 9
     };
 
     public enum gameColor // Enum for colors used in game
@@ -52,6 +53,7 @@ namespace Snake_Game
         public static bool IsModifierRound      { get; set; } // To determine if any cheats/modifiers were enabled in the current round
         public static bool SpeedEnabled         { get; set; } // To check if the speed modifier is enabled or disabled
         public static bool GamePaused           { get; set; } // If false -> game isn't paused, if true -> game is paused
+        public static bool DevModeEnabled       { get; set; } // When enabled no checks are made for key input, hence why it's called 'DevMode'
         public static bool RainbowEnabled       { get; set; } // To enable / disable the rainbow snake color
         public static rainbowMode RainbowMode   { get; set; } // To determine which rainbow mode is selected
         public static bool MenuIsOpen           { get; set; } // Determines if the gameMenu is open or not
@@ -63,7 +65,8 @@ namespace Snake_Game
         // Array for a rainbow colors of snake
         public static Brush[] snakeRainbowColor = { Brushes.Firebrick, Brushes.OrangeRed, Brushes.Gold, Brushes.LimeGreen, Brushes.Blue, Brushes.Purple };
         
-        public gameSettings(bool useStandard)
+        // Default constructor
+        public gameSettings(bool useStandard, bool firstInit)
         {
             gameController gamecontroller = new gameController();
             
@@ -81,6 +84,12 @@ namespace Snake_Game
             MenuIsOpen          = false;
             direction           = gameDirection.Stop;
 
+            // Only on first init set the DevMode
+            if (firstInit)
+            {
+                DevModeEnabled = false;
+            }
+
             // Only call readSettingsXML if the values of it should be used
             if (!useStandard)
             {
@@ -88,6 +97,12 @@ namespace Snake_Game
             }
             
             gamecontroller.readScoreXML();
+        }
+
+        // Overload of constructor
+        public gameSettings(bool useStandard) : this(useStandard, false)
+        {
+            return;
         }
 
         // Procedure to apply new settings values

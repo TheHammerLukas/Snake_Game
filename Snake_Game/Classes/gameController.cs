@@ -277,12 +277,10 @@ namespace Snake_Game
                 _xmlDoc.WriteStartAttribute("RainbowEnabled");
                 _xmlDoc.WriteString(gameSettings.RainbowEnabled.ToString());
                 _xmlDoc.WriteEndAttribute();
-            // RainbowMode
-            _xmlDoc.WriteStartAttribute("RainbowMode");
-            _xmlDoc.WriteString(Convert.ToString(Convert.ToInt32(gameSettings.RainbowMode)));
-            _xmlDoc.WriteEndAttribute();
-            _xmlDoc.WriteEndElement();
-
+                // RainbowMode
+                _xmlDoc.WriteStartAttribute("RainbowMode");
+                _xmlDoc.WriteString(Convert.ToString(Convert.ToInt32(gameSettings.RainbowMode)));
+                _xmlDoc.WriteEndAttribute();
             // End .xml
             _xmlDoc.WriteEndDocument();
             _xmlDoc.Flush();

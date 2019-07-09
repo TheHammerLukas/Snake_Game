@@ -4,9 +4,6 @@
 Add 'Multi Language Support'. // IDEA: Save the MLS texts and the selected language in a .xml
 
 
-Menu 'Reset' buttons for single controls
-
-
 Let the player decide where the savefiles are stored on the disk
 
 

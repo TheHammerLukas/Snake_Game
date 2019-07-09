@@ -12,6 +12,7 @@ namespace Snake_Game
         private long lastBotChangeTime = 0; // To prevent buggy behaviour when enabling or disabling the bot
         private long lastSpeedChangeTime = 0; // To prevent buggy behaviour when enabling or disabling the speed up
         private long lastPauseChangeTime = 0; // To prevent buggy behaviour when pausing or unpausing the game
+        private long lastDevModeChangeTime = 0; // To prevent buggy behaviour when enabling or disbabling the devmode
         private long currentTime = 0;
         private int keyInputDelay = 1000; // 1000 = 1 second
         private gameDirection currentTickDir; // The direction the snake is heading at in the current game tick
@@ -22,7 +23,7 @@ namespace Snake_Game
 
             // Set settings to default
             gameSettings.InitAllColors();
-            gameSettings gamesettings = new gameSettings(false);
+            gameSettings gamesettings = new gameSettings(false, true);
             gameControls gamecontrols = new gameControls(false);
             gamecontroller = new gameController();
             gamecontroller.writeSettingsXML(); // Rewrite the settings .xml
@@ -225,26 +226,26 @@ namespace Snake_Game
             {
                 // Check if key input is a direction key
                 if ((e.KeyCode == gameControls.dirRightKey || e.KeyCode == Keys.Right)
-                    && currentTickDir != gameDirection.Left && currentTickDir != gameDirection.Right
-                    && !gameSettings.GamePaused)
+                    && ((currentTickDir != gameDirection.Left && currentTickDir != gameDirection.Right
+                    && !gameSettings.GamePaused) || gameSettings.DevModeEnabled))
                 {
                     gameSettings.direction = gameDirection.Right;
                 }
                 else if ((e.KeyCode == gameControls.dirLeftKey || e.KeyCode == Keys.Left)
-                          && currentTickDir != gameDirection.Right && currentTickDir != gameDirection.Left
-                          && !gameSettings.GamePaused)
+                          && ((currentTickDir != gameDirection.Right && currentTickDir != gameDirection.Left
+                          && !gameSettings.GamePaused) || gameSettings.DevModeEnabled))
                 {
                     gameSettings.direction = gameDirection.Left;
                 }
                 else if ((e.KeyCode == gameControls.dirUpKey || e.KeyCode == Keys.Up)
-                          && currentTickDir != gameDirection.Down && currentTickDir != gameDirection.Up
-                          && !gameSettings.GamePaused)
+                          && ((currentTickDir != gameDirection.Down && currentTickDir != gameDirection.Up
+                          && !gameSettings.GamePaused) || gameSettings.DevModeEnabled))
                 {
                     gameSettings.direction = gameDirection.Up;
                 }
                 else if ((e.KeyCode == gameControls.dirDownKey || e.KeyCode == Keys.Down)
-                          && currentTickDir != gameDirection.Up && currentTickDir != gameDirection.Down
-                          && !gameSettings.GamePaused)
+                          && ((currentTickDir != gameDirection.Up && currentTickDir != gameDirection.Down
+                          && !gameSettings.GamePaused) || gameSettings.DevModeEnabled))
                 {
                     gameSettings.direction = gameDirection.Down;
                 }
@@ -301,8 +302,23 @@ namespace Snake_Game
                         gameSettings.GamePaused = false;
                     }
                 }
+                else if (e.KeyCode == gameControls.modDevModeKey && !gameSettings.MenuIsOpen)
+                {
+                    currentTime = gamecontroller.GetCurrentTime();
+
+                    if (!gameSettings.DevModeEnabled && lastDevModeChangeTime <= currentTime - keyInputDelay)
+                    {
+                        lastDevModeChangeTime = currentTime;
+                        gameSettings.DevModeEnabled = true;
+                    }
+                    else if (lastDevModeChangeTime <= currentTime - keyInputDelay)
+                    {
+                        lastDevModeChangeTime = currentTime;
+                        gameSettings.DevModeEnabled = false;
+                    }
+                }
             }
-            else
+            if (gameSettings.GameOver || gameSettings.DevModeEnabled)
             {
                 if (e.KeyCode == gameControls.modRestartKey)
                 {
