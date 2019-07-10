@@ -1,4 +1,7 @@
-﻿TIP: there is another method using XMLs in this project (Project -> Properties -> Settings).
+﻿Idea: Set a screenshot as the background of the labelGameStatus in order for the background to be pseudo transparent.
+
+
+TIP: there is another method using XMLs in this project (Project -> Properties -> Settings).
 
 
 Add 'Multi Language Support'. // IDEA: Save the MLS texts and the selected language in a .xml
@@ -12,3 +15,12 @@ Spawn powerup food every 10 or so eaten foods:
 -> Point Tick ( Some amount of points get added for each game tick alive)
 -> Slowmotion
 -> Noclip
+
+
+Add a replay functionality
+
+
+Make it possible to restore the last settings
+
+
+Let the user save his settings to different 'profiles'
