@@ -23,7 +23,8 @@ namespace Snake_Game
         PauseKey = 6,
         SpeedKey = 7,
         BotKey = 8,
-        DevModeKey = 9
+        DevModeKey = 9,
+        PowerupKey = 10
     };
 
     public enum gameColor // Enum for colors used in game
@@ -37,6 +38,15 @@ namespace Snake_Game
     {
         rainbowModeTiles = 0,
         rainbowModeStretched = 1
+    }
+
+    public enum gamePowerup // Enum for different powerups
+    {
+        None = 0,
+        X2 = 1,
+        PointOnTick = 2,
+        Slowmotion = 3,
+        Noclip = 4
     }
 
     class gameSettings
@@ -54,6 +64,8 @@ namespace Snake_Game
         public static bool SpeedEnabled         { get; set; } // To check if the speed modifier is enabled or disabled
         public static bool GamePaused           { get; set; } // If false -> game isn't paused, if true -> game is paused
         public static bool DevModeEnabled       { get; set; } // When enabled no checks are made for key input, hence why it's called 'DevMode'
+        public static gamePowerup GamePowerup   { get; set; } // To determine the currently enabled powerup
+        public static gamePowerup GenPowerup    { get; set; } // Only used for generating powerup food
         public static bool RainbowEnabled       { get; set; } // To enable / disable the rainbow snake color
         public static rainbowMode RainbowMode   { get; set; } // To determine which rainbow mode is selected
         public static bool MenuIsOpen           { get; set; } // Determines if the gameMenu is open or not
@@ -82,6 +94,7 @@ namespace Snake_Game
             SpeedEnabled        = false;
             GamePaused          = false;
             MenuIsOpen          = false;
+            GamePowerup         = gamePowerup.None;
             direction           = gameDirection.Stop;
 
             // Only on first init set the DevMode

@@ -14,6 +14,7 @@ namespace Snake_Game
         public static Keys modSpeedKey      { get; set; } // User configured Speed key
         public static Keys modPauseKey      { get; set; } // User configured Pause key
         public static Keys modDevModeKey    { get; private set; } // Hardcoded DevMode key
+        public static Keys modPowerupKey    { get; private set; } // Hardcoded Powerup key
 
         public gameControls(bool useStandard)
         {
@@ -131,7 +132,10 @@ namespace Snake_Game
                     case gameAction.DevModeKey:
                         modDevModeKey = (Keys)Enum.Parse(typeof(Keys), "Oem5", true); // Oem5 => '^'
                         break;
-                default:
+                    case gameAction.PowerupKey:
+                        modPowerupKey = (Keys)Enum.Parse(typeof(Keys), "E", true);
+                        break;
+                    default:
                         break;
                 }
             }

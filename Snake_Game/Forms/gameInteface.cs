@@ -13,6 +13,10 @@ namespace Snake_Game
         private long lastSpeedChangeTime = 0; // To prevent buggy behaviour when enabling or disabling the speed up
         private long lastPauseChangeTime = 0; // To prevent buggy behaviour when pausing or unpausing the game
         private long lastDevModeChangeTime = 0; // To prevent buggy behaviour when enabling or disbabling the devmode
+        private long lastPUpX2ChangeTime = 0; // Powerup: To keep track of Multiplier duration
+        private long lastPUpPointTickChangeTime = 0; // Powerup: To keep track of Point Tick duration
+        private long lastPUpSlowmoChangeTime = 0; // Powerup: To keep track of Slowmo duration
+        private long lastPUpNoclipChangeTime = 0; // Powerup: To keep track of Noclip duration
         private long currentTime = 0;
         private int keyInputDelay = 1000; // 1000 = 1 second
         private gameDirection currentTickDir; // The direction the snake is heading at in the current game tick
@@ -186,6 +190,28 @@ namespace Snake_Game
                         )
                     );
 
+                    switch (gameSettings.GenPowerup)
+                    {
+                        case gamePowerup.X2:
+                            gameSettings.foodColor = Brushes.Lime;
+                            break;
+                        case gamePowerup.PointOnTick:
+                            gameSettings.foodColor = Brushes.LightSlateGray;
+                            break;
+                        case gamePowerup.Slowmotion:
+                            gameSettings.foodColor = Brushes.BlueViolet;
+                            break;
+                        case gamePowerup.Noclip:
+                            gameSettings.foodColor = Brushes.Gold;
+                            break;
+                        case gamePowerup.None:
+                            gameSettings.foodColor = Brushes.Red;
+                            break;
+                        default:
+                            gameSettings.foodColor = Brushes.Maroon;
+                            break;
+                    }
+
                     // Draw food
                     Canvas.FillRectangle
                     (
@@ -315,6 +341,44 @@ namespace Snake_Game
                     {
                         lastDevModeChangeTime = currentTime;
                         gameSettings.DevModeEnabled = false;
+                    }
+                }
+                else if (gameSettings.DevModeEnabled)
+                {
+                    if (e.KeyCode == gameControls.modPowerupKey && !gameSettings.MenuIsOpen)
+                    {
+                        gameSettings.GamePowerup = gameSettings.GenPowerup;
+
+                        switch (gameSettings.GamePowerup)
+                        {
+                            case gamePowerup.X2:
+                                lastPUpX2ChangeTime         = currentTime;
+                                lastPUpPointTickChangeTime  = 0;
+                                lastPUpSlowmoChangeTime     = 0;
+                                lastPUpNoclipChangeTime     = 0;
+                                break;
+                            case gamePowerup.PointOnTick:
+                                lastPUpX2ChangeTime         = 0;
+                                lastPUpPointTickChangeTime  = currentTime;
+                                lastPUpSlowmoChangeTime     = 0;
+                                lastPUpNoclipChangeTime     = 0;
+                                break;
+                            case gamePowerup.Slowmotion:
+                                lastPUpX2ChangeTime         = 0;
+                                lastPUpPointTickChangeTime  = 0;
+                                lastPUpSlowmoChangeTime     = currentTime;
+                                lastPUpNoclipChangeTime     = 0;
+                                break;
+                            case gamePowerup.Noclip:
+                                lastPUpX2ChangeTime         = 0;
+                                lastPUpPointTickChangeTime  = 0;
+                                lastPUpSlowmoChangeTime     = 0;
+                                lastPUpNoclipChangeTime     = currentTime;
+                                break;
+                            default:
+                                break;
+
+                        }
                     }
                 }
             }

@@ -14,6 +14,7 @@ namespace Snake_Game
         {
             X = 0;
             Y = 0;
+            gameSettings.GenPowerup = gamePowerup.None;
         }
     }
 }

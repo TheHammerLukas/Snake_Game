@@ -16,6 +16,16 @@ Spawn powerup food every 10 or so eaten foods:
 -> Slowmotion
 -> Noclip
 
+=> Expansion:
+Make the powerup food configurable
+- required amount of food for powerup to spawn
+- powerup duration
+- key configuration
+-> remove from devmod to finish
+
+
+Make food colors configurable
+
 
 Add a replay functionality
 

@@ -8,6 +8,7 @@ namespace Snake_Game
 {
     class gameController
     {
+        private static int cntFoodSpawned = 0;
         public static int maxPosX = 0;
         public static int maxPosY = 0;
         public string scoreXmlPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Snake_Game\\Snake_Game_Score.xml";
@@ -59,6 +60,24 @@ namespace Snake_Game
             // Generate new gameObject for food
             gameObject.Food.X = _RandX;
             gameObject.Food.Y = _RandY;
+            if (cntFoodSpawned >= 2)
+            {
+                gameSettings.GenPowerup = (gamePowerup)random.Next(1, 4);
+
+                if (gameSettings.GenPowerup != gamePowerup.None)
+                {
+                    cntFoodSpawned = 0;
+                }
+                else
+                {
+                    cntFoodSpawned++;
+                }
+            }
+            else
+            {
+                gameSettings.GenPowerup = gamePowerup.None;
+                cntFoodSpawned++;
+            }
         }
 
         // Move the player
