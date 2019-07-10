@@ -13,7 +13,7 @@ namespace Snake_Game
         public static Keys modBotKey        { get; set; } // User configured Bot key
         public static Keys modSpeedKey      { get; set; } // User configured Speed key
         public static Keys modPauseKey      { get; set; } // User configured Pause key
-        public static Keys modDevModeKey    { get; private set; } // ´Hardcoded DevMode key
+        public static Keys modDevModeKey    { get; private set; } // Hardcoded DevMode key
 
         public gameControls(bool useStandard)
         {
@@ -129,7 +129,7 @@ namespace Snake_Game
                         modBotKey = (Keys)Enum.Parse(typeof(Keys), "B", true);
                         break;
                     case gameAction.DevModeKey:
-                        modDevModeKey = (Keys)Enum.Parse(typeof(Keys), "J", true);
+                        modDevModeKey = (Keys)Enum.Parse(typeof(Keys), "Oem5", true); // Oem5 => '^'
                         break;
                 default:
                         break;
