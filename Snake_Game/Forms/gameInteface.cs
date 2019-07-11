@@ -190,7 +190,7 @@ namespace Snake_Game
                         )
                     );
 
-                    switch (gameSettings.GenPowerup)
+                    switch (gameSettings.FoodPowerup)
                     {
                         case gamePowerup.X2:
                             gameSettings.foodColor = Brushes.Lime;
@@ -347,7 +347,7 @@ namespace Snake_Game
                 {
                     if (e.KeyCode == gameControls.modPowerupKey && !gameSettings.MenuIsOpen)
                     {
-                        gameSettings.GamePowerup = gameSettings.GenPowerup;
+                        gameSettings.GamePowerup = gameSettings.FoodPowerup;
 
                         switch (gameSettings.GamePowerup)
                         {

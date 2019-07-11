@@ -65,7 +65,8 @@ namespace Snake_Game
         public static bool GamePaused           { get; set; } // If false -> game isn't paused, if true -> game is paused
         public static bool DevModeEnabled       { get; set; } // When enabled no checks are made for key input, hence why it's called 'DevMode'
         public static gamePowerup GamePowerup   { get; set; } // To determine the currently enabled powerup
-        public static gamePowerup GenPowerup    { get; set; } // Only used for generating powerup food
+        public static gamePowerup FoodPowerup   { get; set; } // Only used for generating powerup food
+        public static int PowerupSpawnGap       { get; set; } // To set the amount of food that has to be eaten in order for a powerup to spawn
         public static bool RainbowEnabled       { get; set; } // To enable / disable the rainbow snake color
         public static rainbowMode RainbowMode   { get; set; } // To determine which rainbow mode is selected
         public static bool MenuIsOpen           { get; set; } // Determines if the gameMenu is open or not
@@ -97,6 +98,8 @@ namespace Snake_Game
             GamePowerup         = gamePowerup.None;
             direction           = gameDirection.Stop;
 
+            initPowerupSpawnGap(useStandard);
+
             // Only on first init set the DevMode
             if (firstInit)
             {
@@ -116,6 +119,18 @@ namespace Snake_Game
         public gameSettings(bool useStandard) : this(useStandard, false)
         {
             return;
+        }
+
+        // Initializes the PowerupSpawnGap
+        public static void initPowerupSpawnGap(bool useStandard)
+        {
+            PowerupSpawnGap     = 5;
+
+            // Only call readSettingsXML if the values of it should be used
+            if (!useStandard)
+            {
+                new gameController().readSettingsXML();
+            }
         }
 
         // Procedure to apply new settings values

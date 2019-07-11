@@ -21,7 +21,8 @@ Make the powerup food configurable
 - required amount of food for powerup to spawn
 - powerup duration
 - key configuration
--> remove from devmod to finish
+- powerup colors
+-> remove from devmode to finish
 
 
 Make food colors configurable

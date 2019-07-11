@@ -26,6 +26,9 @@ namespace Snake_Game
             Head.X = maxPosX / 2;
             Head.Y = maxPosY / 2;
             gameObject.Snake.Add(Head);
+            
+            // Reset food counter so powerups keep spawning with the same interval
+            cntFoodSpawned = 0;
         }
 
         // Generate a new food object
@@ -60,11 +63,22 @@ namespace Snake_Game
             // Generate new gameObject for food
             gameObject.Food.X = _RandX;
             gameObject.Food.Y = _RandY;
-            if (cntFoodSpawned >= 2)
+            if (gameSettings.DevModeEnabled)
             {
-                gameSettings.GenPowerup = (gamePowerup)random.Next(1, 4);
+                gameSettings.FoodPowerup = (gamePowerup)random.Next(1, 4);
+                gameSettings.PowerupSpawnGap = 2;
+            }
+            else
+            {
+                gameSettings.FoodPowerup = (gamePowerup)random.Next(0, 4);
+                gameSettings.initPowerupSpawnGap(false);
+            }
 
-                if (gameSettings.GenPowerup != gamePowerup.None)
+            if (cntFoodSpawned >= gameSettings.PowerupSpawnGap)
+            {
+                gameSettings.FoodPowerup = (gamePowerup)random.Next(1, 4);
+
+                if (gameSettings.FoodPowerup != gamePowerup.None)
                 {
                     cntFoodSpawned = 0;
                 }
@@ -75,7 +89,7 @@ namespace Snake_Game
             }
             else
             {
-                gameSettings.GenPowerup = gamePowerup.None;
+                gameSettings.FoodPowerup = gamePowerup.None;
                 cntFoodSpawned++;
             }
         }
