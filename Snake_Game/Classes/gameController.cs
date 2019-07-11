@@ -22,7 +22,7 @@ namespace Snake_Game
         {
             // Create new player object
             gameObject.Snake.Clear();
-            gameObject Head = new gameObject();
+            gameObject Head = new gameObject(false);
             Head.X = maxPosX / 2;
             Head.Y = maxPosY / 2;
             gameObject.Snake.Add(Head);
@@ -37,9 +37,10 @@ namespace Snake_Game
             int _RandX;
             int _RandY;
             bool _IsClipping; // To check if the food would be spawned in the snake
+            gamePowerup _foodPowerup;
 
             Random random = new Random();
-            gameObject.Food = new gameObject();
+            gameObject.Food = new gameObject(true);
 
             do
             {
@@ -65,21 +66,20 @@ namespace Snake_Game
             gameObject.Food.Y = _RandY;
             if (gameSettings.DevModeEnabled)
             {
-                gameSettings.FoodPowerup = (gamePowerup)random.Next(1, 4);
+                _foodPowerup = (gamePowerup)random.Next(1, 4);
                 gameSettings.PowerupSpawnGap = 2;
             }
             else
             {
-                gameSettings.FoodPowerup = (gamePowerup)random.Next(0, 4);
+                _foodPowerup = (gamePowerup)random.Next(0, 4);
                 gameSettings.initPowerupSpawnGap(false);
             }
 
             if (cntFoodSpawned >= gameSettings.PowerupSpawnGap)
             {
-                gameSettings.FoodPowerup = (gamePowerup)random.Next(1, 4);
-
-                if (gameSettings.FoodPowerup != gamePowerup.None)
+                if (_foodPowerup != gamePowerup.None)
                 {
+                    gameSettings.FoodPowerup = _foodPowerup;
                     cntFoodSpawned = 0;
                 }
                 else
@@ -158,12 +158,17 @@ namespace Snake_Game
         // Elongate the snake
         private void Eat()
         {
+            if (gameSettings.FoodPowerup != gamePowerup.None)
+            {
+                gameSettings.SavedPowerup = gameSettings.FoodPowerup;
+            }
+
             if (gameObject.Snake.Count + gameSettings.GrowMultiplicator < maxPosX * maxPosY) // If snake has enough room to grow add new gameObjects to it
             {
                 for (int i = 1; i <= gameSettings.GrowMultiplicator; i++) // Adds as much gameObjects as defined in GrowMultiplicator to Snake
                 {
                     // Add gameObject to body of snake
-                    gameObject Food = new gameObject();
+                    gameObject Food = new gameObject(false);
                     Food.X = gameObject.Snake[gameObject.Snake.Count - 1].X;
                     Food.Y = gameObject.Snake[gameObject.Snake.Count - 1].Y;
                     gameObject.Snake.Add(Food);
@@ -172,7 +177,7 @@ namespace Snake_Game
 
             // Update score
             gameSettings.Score += gameSettings.Points;
-
+            
             GenerateFood();
         }
 

@@ -8,13 +8,17 @@ namespace Snake_Game
         public int Y { get; set; }
 
         public static List<gameObject> Snake = new List<gameObject>();
-        public static gameObject Food = new gameObject();
+        public static gameObject Food = new gameObject(true);
 
-        public gameObject()
+        public gameObject(bool newFood)
         {
             X = 0;
             Y = 0;
-            gameSettings.FoodPowerup = gamePowerup.None;
+
+            if (newFood)
+            {
+                gameSettings.FoodPowerup = gamePowerup.None;
+            }
         }
     }
 }
