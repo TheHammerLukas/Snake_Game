@@ -126,8 +126,9 @@ namespace Snake_Game
         // Initializes the PowerupSpawnGap
         public static void initPowerupSpawnGap(bool useStandard)
         {
-            PowerupSpawnGap     = 5;
+            PowerupSpawnGap = 5;
             GamePowerup = gamePowerup.None;
+            GamePowerupActive = false;
 
             // Only call readSettingsXML if the values of it should be used
             if (!useStandard)

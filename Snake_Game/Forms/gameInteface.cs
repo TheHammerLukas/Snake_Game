@@ -17,9 +17,7 @@ namespace Snake_Game
         private long lastPUpPointTickChangeTime = 0; // Powerup: To keep track of Point Tick duration
         private long lastPUpSlowmoChangeTime = 0; // Powerup: To keep track of Slowmo duration
         private long lastPUpNoclipChangeTime = 0; // Powerup: To keep track of Noclip duration
-        private long lastPowerupCheckTime = 0; // In order to check the active powerup only every second
-        private bool firstTimePowerupCheck = false; 
-        private long currentTime = 0;
+        private long currentTime = 0; // Current time; 1000 = 1 second 
         private int keyInputDelay = 1000; // 1000 = 1 second
         private gameDirection currentTickDir; // The direction the snake is heading at in the current game tick
         
@@ -39,6 +37,10 @@ namespace Snake_Game
             gamecontroller.SetTimerInterval(gameTimer);
             gameTimer.Tick += UpdateScreen;
             gameTimer.Start();
+
+            // Start the timer for each second
+            currentTime = 0;
+            milliSecondTimer.Start();
 
             gameController.maxPosX = gamecontroller.GetMaxPosX(pictureBox);
             gameController.maxPosY = gamecontroller.GetMaxPosY(pictureBox);
@@ -76,7 +78,6 @@ namespace Snake_Game
                 // To allow the player to pause the game
                 if (!gameSettings.GamePaused)
                 {
-                    ActivePowerup(gameSettings.GamePowerup);
                     gamecontroller.MovePlayer();
                     gamecontroller.SetScore(labelScoreValue);
                 }
@@ -85,49 +86,44 @@ namespace Snake_Game
             pictureBox.Invalidate();
         }
 
-        private void ActivePowerup(gamePowerup Powerup)
+        private void CheckActivePowerup(gamePowerup Powerup)
         {
-            currentTime = gamecontroller.GetCurrentTime();
-
-            if (lastPowerupCheckTime <= currentTime - 1000)
+            switch (Powerup)
             {
-                switch (Powerup)
-                {
-                    case gamePowerup.X2:
-                        if (lastPUpX2ChangeTime >= currentTime - 30000)
-                        {
-                            if (firstTimePowerupCheck && !gameSettings.GamePowerupActive)
-                            {
-                                gameSettings.Points = gameSettings.Points * 2;
-                                gameSettings.GamePowerupActive = true;
-                                firstTimePowerupCheck = false;
-                            }
-                        }
-                        else
-                        {
-                            gameSettings.Points = gameSettings.Points / 2;
-                            gameSettings.GamePowerup = gamePowerup.None;
-                            lastPUpX2ChangeTime = 0;
-                            gameSettings.GamePowerupActive = false;
-                            firstTimePowerupCheck = false;
-                        }
-                        break;
-                    case gamePowerup.PointOnTick:
-                        if (lastPUpPointTickChangeTime >= currentTime - 20000)
-                        {
-                            gameSettings.Score = gameSettings.Score + 50;
-                            gameSettings.GamePowerupActive = true;
-                        }
-                        else
-                        {
-                            gameSettings.GamePowerup = gamePowerup.None;
-                            gameSettings.GamePowerupActive = false;
-                            lastPUpPointTickChangeTime = 0;
-                        }
-                        break;
-                }
-
-                lastPowerupCheckTime = currentTime;
+                case gamePowerup.X2:
+                    if (lastPUpX2ChangeTime >= currentTime - 30000)
+                    {
+                        gameSettings.GamePowerupActive = true;
+                    }
+                    else
+                    {
+                        gameSettings.GamePowerup = gamePowerup.None;
+                        gameSettings.GamePowerupActive = false;
+                    }
+                    break;
+                case gamePowerup.PointOnTick:
+                    if (lastPUpPointTickChangeTime >= currentTime - 20000)
+                    {
+                        gameSettings.Score = gameSettings.Score + 50;
+                        gameSettings.GamePowerupActive = true;
+                    }
+                    else
+                    {
+                        gameSettings.GamePowerup = gamePowerup.None;
+                        gameSettings.GamePowerupActive = false;
+                    }
+                    break;
+                case gamePowerup.Noclip:
+                    if (lastPUpNoclipChangeTime >= currentTime - 10000)
+                    {
+                        gameSettings.GamePowerupActive = true;
+                    }
+                    else
+                    {
+                        gameSettings.GamePowerup = gamePowerup.None;
+                        gameSettings.GamePowerupActive = false;
+                    }
+                    break;
             }
         }
 
@@ -245,13 +241,13 @@ namespace Snake_Game
                             gameSettings.foodColor = Brushes.Lime;
                             break;
                         case gamePowerup.PointOnTick:
-                            gameSettings.foodColor = Brushes.LightSlateGray;
+                            gameSettings.foodColor = Brushes.Gold;
                             break;
                         case gamePowerup.Slowmotion:
-                            gameSettings.foodColor = Brushes.BlueViolet;
+                            gameSettings.foodColor = Brushes.Turquoise;
                             break;
                         case gamePowerup.Noclip:
-                            gameSettings.foodColor = Brushes.Gold;
+                            gameSettings.foodColor = Brushes.BlueViolet;
                             break;
                         case gamePowerup.None:
                             gameSettings.foodColor = Brushes.Red;
@@ -327,8 +323,6 @@ namespace Snake_Game
                 // Check if player wants to activate / deactivate any modifiers
                 if (e.KeyCode == gameControls.modBotKey)
                 {
-                    currentTime = gamecontroller.GetCurrentTime();
-
                     if (!gameSettings.BotEnabled && lastBotChangeTime <= currentTime - keyInputDelay)
                     {
                         lastBotChangeTime = currentTime;
@@ -345,8 +339,6 @@ namespace Snake_Game
                 }
                 else if (e.KeyCode == gameControls.modSpeedKey)
                 {
-                    currentTime = gamecontroller.GetCurrentTime();
-
                     if (!gameSettings.SpeedEnabled && lastSpeedChangeTime <= currentTime - keyInputDelay)
                     {
                         lastSpeedChangeTime = currentTime;
@@ -364,8 +356,6 @@ namespace Snake_Game
                 }
                 else if (e.KeyCode == gameControls.modPauseKey && !gameSettings.MenuIsOpen)
                 {
-                    currentTime = gamecontroller.GetCurrentTime();
-
                     if (!gameSettings.GamePaused && lastPauseChangeTime <= currentTime - keyInputDelay)
                     {
                         lastPauseChangeTime = currentTime;
@@ -379,8 +369,6 @@ namespace Snake_Game
                 }
                 else if (e.KeyCode == gameControls.modDevModeKey && !gameSettings.MenuIsOpen)
                 {
-                    currentTime = gamecontroller.GetCurrentTime();
-
                     if (!gameSettings.DevModeEnabled && lastDevModeChangeTime <= currentTime - keyInputDelay)
                     {
                         lastDevModeChangeTime = currentTime;
@@ -402,8 +390,6 @@ namespace Snake_Game
                             gameSettings.SavedPowerup = gamePowerup.None;
                         }
 
-                        currentTime = gamecontroller.GetCurrentTime();
-
                         switch (gameSettings.GamePowerup)
                         {
                             case gamePowerup.X2:
@@ -411,32 +397,24 @@ namespace Snake_Game
                                 lastPUpPointTickChangeTime  = 0;
                                 lastPUpSlowmoChangeTime     = 0;
                                 lastPUpNoclipChangeTime     = 0;
-
-                                firstTimePowerupCheck = true;
                                 break;
                             case gamePowerup.PointOnTick:
                                 lastPUpX2ChangeTime         = 0;
                                 lastPUpPointTickChangeTime  = currentTime;
                                 lastPUpSlowmoChangeTime     = 0;
                                 lastPUpNoclipChangeTime     = 0;
-
-                                firstTimePowerupCheck = true;
                                 break;
                             case gamePowerup.Slowmotion:
                                 lastPUpX2ChangeTime         = 0;
                                 lastPUpPointTickChangeTime  = 0;
                                 lastPUpSlowmoChangeTime     = currentTime;
                                 lastPUpNoclipChangeTime     = 0;
-
-                                firstTimePowerupCheck = true;
                                 break;
                             case gamePowerup.Noclip:
                                 lastPUpX2ChangeTime         = 0;
                                 lastPUpPointTickChangeTime  = 0;
                                 lastPUpSlowmoChangeTime     = 0;
                                 lastPUpNoclipChangeTime     = currentTime;
-
-                                firstTimePowerupCheck = true;
                                 break;
                             default:
                                 break;
@@ -478,6 +456,16 @@ namespace Snake_Game
             {
                 gamemenu = new gameMenu();
                 gamemenu.Show();
+            }
+        }
+
+        private void MilliSecondTimer_Tick(object sender, EventArgs e)
+        {
+            currentTime += 500;
+
+            if (currentTime % 1000 == 0)
+            {
+                CheckActivePowerup(gameSettings.GamePowerup);
             }
         }
     }

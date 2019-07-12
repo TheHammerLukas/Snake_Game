@@ -66,16 +66,16 @@ namespace Snake_Game
             gameObject.Food.Y = _RandY;
             if (gameSettings.DevModeEnabled)
             {
-                _foodPowerup = (gamePowerup)random.Next(2, 2);
-                gameSettings.PowerupSpawnGap = 2;
+                _foodPowerup = (gamePowerup)random.Next(1, 5);
+                gameSettings.PowerupSpawnGap = 0;
             }
             else
             {
-                _foodPowerup = (gamePowerup)random.Next(0, 4);
+                _foodPowerup = (gamePowerup)random.Next(0, 5);
                 gameSettings.initPowerupSpawnGap(false);
             }
 
-            if (cntFoodSpawned >= gameSettings.PowerupSpawnGap)
+            if (cntFoodSpawned >= gameSettings.PowerupSpawnGap && !gameSettings.GamePowerupActive)
             {
                 if (_foodPowerup != gamePowerup.None)
                 {
@@ -176,19 +176,28 @@ namespace Snake_Game
             }
 
             // Update score
-            gameSettings.Score += gameSettings.Points;
-            
+            if (gameSettings.GamePowerup == gamePowerup.X2 && !gameSettings.GamePowerupActive || gameSettings.GamePowerup != gamePowerup.X2)
+            {
+                gameSettings.Score += gameSettings.Points;
+            }
+            else if (gameSettings.GamePowerup == gamePowerup.X2 && gameSettings.GamePowerupActive)
+            {
+                gameSettings.Score += gameSettings.Points * 2;
+            }
             GenerateFood();
         }
 
         // Kill the player
         private void Die()
         {
-            gameSettings.GameOver = true;
-
-            if (gameSettings.Score > gameSettings.HighScore && !gameSettings.IsModifierRound)
+            if (gameSettings.GamePowerup == gamePowerup.Noclip && !gameSettings.GamePowerupActive || gameSettings.GamePowerup != gamePowerup.Noclip)
             {
-                writeScoreXML();
+                gameSettings.GameOver = true;
+
+                if (gameSettings.Score > gameSettings.HighScore && !gameSettings.IsModifierRound)
+                {
+                    writeScoreXML();
+                }
             }
         }
 
@@ -545,11 +554,6 @@ namespace Snake_Game
         public int GetMaxPosY(PictureBox pictureBox)
         {
             return pictureBox.Size.Height / gameSettings.Height;
-        }
-
-        public long GetCurrentTime()
-        {
-            return (long) DateTime.Now.Hour * 10000000 + DateTime.Now.Minute * 100000 + DateTime.Now.Second * 1000 + DateTime.Now.Millisecond;
         }
 
         public void SetTimerInterval(Timer gameTimer)

@@ -57,6 +57,7 @@
             this.labelBotModifier = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItemMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.milliSecondTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.groupBoxModifiers.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -258,6 +259,11 @@
             this.toolStripMenuItemMenu.Text = "Menu";
             this.toolStripMenuItemMenu.Click += new System.EventHandler(this.toolStripMenuItemMenu_Click);
             // 
+            // milliSecondTimer
+            // 
+            this.milliSecondTimer.Interval = 500;
+            this.milliSecondTimer.Tick += new System.EventHandler(this.MilliSecondTimer_Tick);
+            // 
             // gameInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -319,6 +325,7 @@
         private System.Windows.Forms.ToolStripMenuItem resetToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemMenu;
+        private System.Windows.Forms.Timer milliSecondTimer;
     }
 }
 
