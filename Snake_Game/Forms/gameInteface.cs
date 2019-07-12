@@ -17,6 +17,7 @@ namespace Snake_Game
         private long lastPUpPointTickChangeTime = 0; // Powerup: To keep track of Point Tick duration
         private long lastPUpSlowmoChangeTime = 0; // Powerup: To keep track of Slowmo duration
         private long lastPUpNoclipChangeTime = 0; // Powerup: To keep track of Noclip duration
+        private long lastPowerupCheckTime = 0; // In order to check the active powerup only every second
         private bool firstTimePowerupCheck = false; 
         private long currentTime = 0;
         private int keyInputDelay = 1000; // 1000 = 1 second
@@ -86,39 +87,47 @@ namespace Snake_Game
 
         private void ActivePowerup(gamePowerup Powerup)
         {
-            switch (Powerup)
+            currentTime = gamecontroller.GetCurrentTime();
+
+            if (lastPowerupCheckTime <= currentTime - 1000)
             {
-                case gamePowerup.X2:
-                    if (lastPUpX2ChangeTime >= (currentTime - 300000))
-                    {
-                        if (firstTimePowerupCheck)
+                switch (Powerup)
+                {
+                    case gamePowerup.X2:
+                        if (lastPUpX2ChangeTime >= currentTime - 30000)
                         {
-                            gameSettings.Points = gameSettings.Points * 2;
-                            gameSettings.SavedPowerup = gamePowerup.None;
+                            if (firstTimePowerupCheck && !gameSettings.GamePowerupActive)
+                            {
+                                gameSettings.Points = gameSettings.Points * 2;
+                                gameSettings.GamePowerupActive = true;
+                                firstTimePowerupCheck = false;
+                            }
+                        }
+                        else
+                        {
+                            gameSettings.Points = gameSettings.Points / 2;
+                            gameSettings.GamePowerup = gamePowerup.None;
+                            lastPUpX2ChangeTime = 0;
+                            gameSettings.GamePowerupActive = false;
                             firstTimePowerupCheck = false;
                         }
-                    }
-                    else
-                    {
-                        gameSettings.Points = gameSettings.Points / 2;
-                        gameSettings.GamePowerup = gamePowerup.None;
-                        gameSettings.SavedPowerup = gamePowerup.None;
-                        lastPUpX2ChangeTime = 0;
-                        firstTimePowerupCheck = false;
-                    }
-                    break;
-                case gamePowerup.PointOnTick:
-                    if (lastPUpPointTickChangeTime <= currentTime - 20)
-                    {
-                        gameSettings.Score = gameSettings.Score + 50;
-                    }
-                    else
-                    {
-                        gameSettings.GamePowerup = gamePowerup.None;
-                        gameSettings.SavedPowerup = gamePowerup.None;
-                        lastPUpPointTickChangeTime = 0;
-                    }
-                    break;
+                        break;
+                    case gamePowerup.PointOnTick:
+                        if (lastPUpPointTickChangeTime >= currentTime - 20000)
+                        {
+                            gameSettings.Score = gameSettings.Score + 50;
+                            gameSettings.GamePowerupActive = true;
+                        }
+                        else
+                        {
+                            gameSettings.GamePowerup = gamePowerup.None;
+                            gameSettings.GamePowerupActive = false;
+                            lastPUpPointTickChangeTime = 0;
+                        }
+                        break;
+                }
+
+                lastPowerupCheckTime = currentTime;
             }
         }
 
@@ -387,7 +396,13 @@ namespace Snake_Game
                 {
                     if (e.KeyCode == gameControls.modPowerupKey && !gameSettings.MenuIsOpen)
                     {
-                        gameSettings.GamePowerup = gameSettings.SavedPowerup;
+                        if (gameSettings.SavedPowerup != gamePowerup.None)
+                        {
+                            gameSettings.GamePowerup = gameSettings.SavedPowerup;
+                            gameSettings.SavedPowerup = gamePowerup.None;
+                        }
+
+                        currentTime = gamecontroller.GetCurrentTime();
 
                         switch (gameSettings.GamePowerup)
                         {

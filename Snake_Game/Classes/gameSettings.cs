@@ -67,6 +67,7 @@ namespace Snake_Game
         public static gamePowerup GamePowerup   { get; set; } // To determine the currently enabled powerup
         public static gamePowerup SavedPowerup  { get; set; } // To save the Powerup after the foodPowerup has been eaten
         public static gamePowerup FoodPowerup   { get; set; } // Only used for generating powerup food
+        public static bool GamePowerupActive    { get; set; } // Used to determine if the GamePowerup has been activated or is already active
         public static int PowerupSpawnGap       { get; set; } // To set the amount of food that has to be eaten in order for a powerup to spawn
         public static bool RainbowEnabled       { get; set; } // To enable / disable the rainbow snake color
         public static rainbowMode RainbowMode   { get; set; } // To determine which rainbow mode is selected

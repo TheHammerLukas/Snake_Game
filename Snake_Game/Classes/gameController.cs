@@ -66,7 +66,7 @@ namespace Snake_Game
             gameObject.Food.Y = _RandY;
             if (gameSettings.DevModeEnabled)
             {
-                _foodPowerup = (gamePowerup)random.Next(1, 4);
+                _foodPowerup = (gamePowerup)random.Next(2, 2);
                 gameSettings.PowerupSpawnGap = 2;
             }
             else
@@ -549,7 +549,7 @@ namespace Snake_Game
 
         public long GetCurrentTime()
         {
-            return (long) DateTime.Now.Hour * 1000000000 + DateTime.Now.Minute * 10000000 + DateTime.Now.Second * 100000 + DateTime.Now.Millisecond;
+            return (long) DateTime.Now.Hour * 10000000 + DateTime.Now.Minute * 100000 + DateTime.Now.Second * 1000 + DateTime.Now.Millisecond;
         }
 
         public void SetTimerInterval(Timer gameTimer)
