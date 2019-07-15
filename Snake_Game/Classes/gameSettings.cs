@@ -24,7 +24,8 @@ namespace Snake_Game
         SpeedKey = 7,
         BotKey = 8,
         DevModeKey = 9,
-        PowerupKey = 10
+        PowerupKey = 10,
+        NoClipKey = 11
     };
 
     public enum gameColor // Enum for colors used in game
@@ -69,6 +70,7 @@ namespace Snake_Game
         public static gamePowerup FoodPowerup   { get; set; } // Only used for generating powerup food
         public static bool GamePowerupActive    { get; set; } // Used to determine if the GamePowerup has been activated or is already active
         public static int PowerupSpawnGap       { get; set; } // To set the amount of food that has to be eaten in order for a powerup to spawn
+        public static bool NoClipEnabled        { get; set; } // To detemrine if the NoClip feature is enabled or disabled
         public static bool RainbowEnabled       { get; set; } // To enable / disable the rainbow snake color
         public static rainbowMode RainbowMode   { get; set; } // To determine which rainbow mode is selected
         public static bool MenuIsOpen           { get; set; } // Determines if the gameMenu is open or not
@@ -106,6 +108,7 @@ namespace Snake_Game
             if (firstInit)
             {
                 DevModeEnabled = false;
+                NoClipEnabled = false;
             }
 
             // Only call readSettingsXML if the values of it should be used

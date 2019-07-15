@@ -34,7 +34,7 @@ namespace Snake_Game
             gamecontroller.writeControlsXML(); // Rewrite the controls .xml
 
             // Set game speed and start timer
-            gamecontroller.SetTimerInterval(gameTimer, gameSettings.Speed);
+            gamecontroller.SetTimerInterval(gameTimer, gameSettings.Speed, true);
             gameTimer.Tick += UpdateScreen;
             gameTimer.Start();
 
@@ -119,14 +119,14 @@ namespace Snake_Game
                         if (!gameSettings.GamePowerupActive)
                         {
                             // Slow down the gameTimer
-                            new gameController().SetTimerInterval(gameTimer, gameSettings.Speed / 3);
+                            new gameController().SetTimerInterval(gameTimer, gameSettings.Speed / 3, true);
                             gameSettings.GamePowerupActive = true;
                         }
                     }
                     else
                     {
                         // Reset the gameTimer interval to the originally determined speed 
-                        new gameController().SetTimerInterval(gameTimer, gameSettings.Speed);
+                        new gameController().SetTimerInterval(gameTimer, gameSettings.Speed, true);
                         gameSettings.GamePowerup = gamePowerup.None;
                         gameSettings.GamePowerupActive = false;
                     }
@@ -367,7 +367,7 @@ namespace Snake_Game
                     else if (gameSettings.SpeedEnabled && lastSpeedChangeTime <= currentTime - keyInputDelay)
                     { 
                         lastSpeedChangeTime = currentTime;
-                        gamecontroller.SetTimerInterval(gameTimer, gameSettings.Speed);
+                        gamecontroller.SetTimerInterval(gameTimer, gameSettings.Speed, true);
                         gameSettings.SpeedEnabled = false;
                         labelSpeedStatus.Text = "Disabled";
                     }
@@ -440,6 +440,10 @@ namespace Snake_Game
                         }
                     }
                 }
+                if (e.KeyCode == gameControls.modNoClipKey && !gameSettings.MenuIsOpen)
+                {
+                    gameSettings.NoClipEnabled = gameSettings.NoClipEnabled ? false : true;
+                }
             }
             if (gameSettings.GameOver || gameSettings.DevModeEnabled)
             {
@@ -447,7 +451,7 @@ namespace Snake_Game
                 {
                     new gameSettings(false);
                     new gameControls(false);
-                    gamecontroller.SetTimerInterval(gameTimer, gameSettings.Speed);
+                    gamecontroller.SetTimerInterval(gameTimer, gameSettings.Speed, true);
                     gameController.maxPosX = gamecontroller.GetMaxPosX(pictureBox);
                     gameController.maxPosY = gamecontroller.GetMaxPosY(pictureBox);
                     gamecontroller.SetGameOverFalse(labelGameStatus);

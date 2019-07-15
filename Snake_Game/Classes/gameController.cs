@@ -190,7 +190,7 @@ namespace Snake_Game
         // Kill the player
         private void Die()
         {
-            if (gameSettings.GamePowerup == gamePowerup.Noclip && !gameSettings.GamePowerupActive || gameSettings.GamePowerup != gamePowerup.Noclip)
+            if ((gameSettings.GamePowerup == gamePowerup.Noclip && !gameSettings.GamePowerupActive || gameSettings.GamePowerup != gamePowerup.Noclip) || gameSettings.NoClipEnabled)
             {
                 gameSettings.GameOver = true;
 
@@ -556,9 +556,15 @@ namespace Snake_Game
             return pictureBox.Size.Height / gameSettings.Height;
         }
 
-        public void SetTimerInterval(Timer timer, int speed)
+        public int ConvToGameTime(int normalSpeed)
         {
-            timer.Interval = 1000 / speed;
+            return 1000 / normalSpeed;
+        }
+
+        public void SetTimerInterval(Timer timer, int speed, bool isGameTime)
+        {
+            // Determine whether speed has to be converted to gametime or not
+            timer.Interval = isGameTime ? ConvToGameTime(speed) : speed;
         }
 
         #endregion

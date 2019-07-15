@@ -1,4 +1,7 @@
-﻿Idea: Set a screenshot as the background of the labelGameStatus in order for the background to be pseudo transparent.
+﻿Idea: Also map a key.
+
+
+Idea: Set a screenshot as the background of the labelGameStatus in order for the background to be pseudo transparent.
 
 
 TIP: there is another method using XMLs in this project (Project -> Properties -> Settings).
