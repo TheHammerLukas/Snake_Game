@@ -77,7 +77,7 @@ namespace Snake_Game
         public static Brush snakeBodyColor      { get; set; } // Color for the body of the snake
         public static Brush foodColor           { get; set; } // Color for the food
 
-        // Array for a rainbow colors of snake
+        // Array for the rainbow colors of the snake
         public static Brush[] snakeRainbowColor = { Brushes.Firebrick, Brushes.OrangeRed, Brushes.Gold, Brushes.LimeGreen, Brushes.Blue, Brushes.Purple };
         
         // Default constructor; called only directly for first init of the application

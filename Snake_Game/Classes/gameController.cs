@@ -556,9 +556,9 @@ namespace Snake_Game
             return pictureBox.Size.Height / gameSettings.Height;
         }
 
-        public void SetTimerInterval(Timer gameTimer)
+        public void SetTimerInterval(Timer timer, int speed)
         {
-            gameTimer.Interval = 1000 / gameSettings.Speed;
+            timer.Interval = 1000 / speed;
         }
 
         #endregion
