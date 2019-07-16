@@ -26,9 +26,6 @@ Make the powerup food configurable
 -> remove from devmode to finish
 
 
-Make the NoClip + Powerup keys configurable // Only UI adjustments missing
-
-
 Make food colors configurable
 
 

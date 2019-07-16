@@ -78,6 +78,8 @@ namespace Snake_Game
             textBoxBotKey.Text = Convert.ToString(gameControls.modBotKey);
             textBoxSpeedKey.Text = Convert.ToString(gameControls.modSpeedKey);
             textBoxPauseKey.Text = Convert.ToString(gameControls.modPauseKey);
+            textBoxPowerupKey.Text = Convert.ToString(gameControls.modPowerupKey);
+            textBoxNoClipKey.Text = Convert.ToString(gameControls.modNoClipKey);
             labelSnakeHeadPrev.BackColor = (gameSettings.snakeHeadColor as SolidBrush).Color;
             labelSnakeBodyPrev.BackColor = (gameSettings.snakeBodyColor as SolidBrush).Color;
             if (gameSettings.RainbowMode == rainbowMode.rainbowModeTiles)
