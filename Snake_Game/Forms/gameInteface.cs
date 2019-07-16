@@ -398,47 +398,47 @@ namespace Snake_Game
                     gameSettings.DevModeEnabled = gameSettings.DevModeEnabled ? false : true;
                     lastDevModeChangeTime = currentTime;
                 }
+                else if (e.KeyCode == gameControls.modPowerupKey && !gameSettings.MenuIsOpen)
+                {
+                    if (gameSettings.SavedPowerup != gamePowerup.None && !gameSettings.GamePowerupActive)
+                    {
+                        gameSettings.GamePowerup = gameSettings.SavedPowerup;
+                        gameSettings.SavedPowerup = gamePowerup.None;
+                    }
+
+                    switch (gameSettings.GamePowerup)
+                    {
+                        case gamePowerup.X2:
+                            lastPUpX2ChangeTime = currentTime;
+                            lastPUpPointTickChangeTime = 0;
+                            lastPUpSlowmoChangeTime = 0;
+                            lastPUpNoclipChangeTime = 0;
+                            break;
+                        case gamePowerup.PointOnTick:
+                            lastPUpX2ChangeTime = 0;
+                            lastPUpPointTickChangeTime = currentTime;
+                            lastPUpSlowmoChangeTime = 0;
+                            lastPUpNoclipChangeTime = 0;
+                            break;
+                        case gamePowerup.Slowmotion:
+                            lastPUpX2ChangeTime = 0;
+                            lastPUpPointTickChangeTime = 0;
+                            lastPUpSlowmoChangeTime = currentTime;
+                            lastPUpNoclipChangeTime = 0;
+                            break;
+                        case gamePowerup.Noclip:
+                            lastPUpX2ChangeTime = 0;
+                            lastPUpPointTickChangeTime = 0;
+                            lastPUpSlowmoChangeTime = 0;
+                            lastPUpNoclipChangeTime = currentTime;
+                            break;
+                        default:
+                            break;
+                    }
+                }
                 if (gameSettings.DevModeEnabled)
                 {
-                    if (e.KeyCode == gameControls.modPowerupKey && !gameSettings.MenuIsOpen)
-                    {
-                        if (gameSettings.SavedPowerup != gamePowerup.None && !gameSettings.GamePowerupActive)
-                        {
-                            gameSettings.GamePowerup = gameSettings.SavedPowerup;
-                            gameSettings.SavedPowerup = gamePowerup.None;
-                        }
-
-                        switch (gameSettings.GamePowerup)
-                        {
-                            case gamePowerup.X2:
-                                lastPUpX2ChangeTime         = currentTime;
-                                lastPUpPointTickChangeTime  = 0;
-                                lastPUpSlowmoChangeTime     = 0;
-                                lastPUpNoclipChangeTime     = 0;
-                                break;
-                            case gamePowerup.PointOnTick:
-                                lastPUpX2ChangeTime         = 0;
-                                lastPUpPointTickChangeTime  = currentTime;
-                                lastPUpSlowmoChangeTime     = 0;
-                                lastPUpNoclipChangeTime     = 0;
-                                break;
-                            case gamePowerup.Slowmotion:
-                                lastPUpX2ChangeTime         = 0;
-                                lastPUpPointTickChangeTime  = 0;
-                                lastPUpSlowmoChangeTime     = currentTime;
-                                lastPUpNoclipChangeTime     = 0;
-                                break;
-                            case gamePowerup.Noclip:
-                                lastPUpX2ChangeTime         = 0;
-                                lastPUpPointTickChangeTime  = 0;
-                                lastPUpSlowmoChangeTime     = 0;
-                                lastPUpNoclipChangeTime     = currentTime;
-                                break;
-                            default:
-                                break;
-
-                        }
-                    }
+                    
                 }
                 if (e.KeyCode == gameControls.modNoClipKey && !gameSettings.MenuIsOpen)
                 {
