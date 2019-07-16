@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemModifiersLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(gameInterface));
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.labelScore = new System.Windows.Forms.Label();
@@ -56,6 +57,7 @@
             this.toolStripMenuItemBot = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemSpeed = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemNoClip = new System.Windows.Forms.ToolStripMenuItem();
+            ToolStripMenuItemModifiersLabel = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -195,7 +197,8 @@
             this.toolStripMenuItemMenu,
             this.toolStripMenuItemNoClip,
             this.toolStripMenuItemSpeed,
-            this.toolStripMenuItemBot});
+            this.toolStripMenuItemBot,
+            ToolStripMenuItemModifiersLabel});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(624, 24);
@@ -241,6 +244,13 @@
             this.toolStripMenuItemNoClip.Size = new System.Drawing.Size(56, 20);
             this.toolStripMenuItemNoClip.Text = "NoClip";
             this.toolStripMenuItemNoClip.Click += new System.EventHandler(this.toolStripMenuItemNoClip_Click);
+            // 
+            // ToolStripMenuItemModifiersLabel
+            // 
+            ToolStripMenuItemModifiersLabel.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            ToolStripMenuItemModifiersLabel.Name = "ToolStripMenuItemModifiersLabel";
+            ToolStripMenuItemModifiersLabel.Size = new System.Drawing.Size(72, 20);
+            ToolStripMenuItemModifiersLabel.Text = "Modifiers:";
             // 
             // gameInterface
             // 
