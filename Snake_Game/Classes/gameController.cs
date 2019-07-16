@@ -158,10 +158,17 @@ namespace Snake_Game
         // Elongate the snake
         private void Eat()
         {
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer();
             if (gameSettings.FoodPowerup != gamePowerup.None)
             {
                 gameSettings.SavedPowerup = gameSettings.FoodPowerup;
+                player.SoundLocation = Properties.Resources.gameSoundPowerupEat;
             }
+            else
+            {
+                player.SoundLocation = Properties.Resources.gameSoundSnakeEat;
+            }
+            player.Play();
 
             if (gameObject.Snake.Count + gameSettings.GrowMultiplicator < maxPosX * maxPosY) // If snake has enough room to grow add new gameObjects to it
             {

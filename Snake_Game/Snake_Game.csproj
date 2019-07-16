@@ -99,6 +99,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -114,6 +115,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\gameSoundPowerupEat.wav" />
+    <Content Include="Resources\gameSoundSnakeEat.wav" />
     <Content Include="Resources\Snake_Menu_Thumbnail.ico" />
     <Content Include="Resources\Snake_Thumbnail.ico" />
     <Content Include="Snake_Thumbnail.ico" />

@@ -53,14 +53,21 @@
             this.resetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItemMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.milliSecondTimer = new System.Windows.Forms.Timer(this.components);
-            this.toolStripMenuItemBot = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemSpeed = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemNoClip = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemSpeed = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemBot = new System.Windows.Forms.ToolStripMenuItem();
+            this.milliSecondTimer = new System.Windows.Forms.Timer(this.components);
             ToolStripMenuItemModifiersLabel = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // ToolStripMenuItemModifiersLabel
+            // 
+            ToolStripMenuItemModifiersLabel.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            ToolStripMenuItemModifiersLabel.Name = "ToolStripMenuItemModifiersLabel";
+            ToolStripMenuItemModifiersLabel.Size = new System.Drawing.Size(72, 20);
+            ToolStripMenuItemModifiersLabel.Text = "Modifiers:";
             // 
             // pictureBox
             // 
@@ -212,29 +219,6 @@
             this.toolStripMenuItemMenu.Text = "Menu";
             this.toolStripMenuItemMenu.Click += new System.EventHandler(this.toolStripMenuItemMenu_Click);
             // 
-            // milliSecondTimer
-            // 
-            this.milliSecondTimer.Interval = 500;
-            this.milliSecondTimer.Tick += new System.EventHandler(this.MilliSecondTimer_Tick);
-            // 
-            // toolStripMenuItemBot
-            // 
-            this.toolStripMenuItemBot.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripMenuItemBot.BackColor = System.Drawing.Color.Red;
-            this.toolStripMenuItemBot.Name = "toolStripMenuItemBot";
-            this.toolStripMenuItemBot.Size = new System.Drawing.Size(37, 20);
-            this.toolStripMenuItemBot.Text = "Bot";
-            this.toolStripMenuItemBot.Click += new System.EventHandler(this.toolStripMenuItemBot_Click);
-            // 
-            // toolStripMenuItemSpeed
-            // 
-            this.toolStripMenuItemSpeed.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripMenuItemSpeed.BackColor = System.Drawing.Color.Red;
-            this.toolStripMenuItemSpeed.Name = "toolStripMenuItemSpeed";
-            this.toolStripMenuItemSpeed.Size = new System.Drawing.Size(51, 20);
-            this.toolStripMenuItemSpeed.Text = "Speed";
-            this.toolStripMenuItemSpeed.Click += new System.EventHandler(this.toolStripMenuItemSpeed_Click);
-            // 
             // toolStripMenuItemNoClip
             // 
             this.toolStripMenuItemNoClip.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -245,12 +229,28 @@
             this.toolStripMenuItemNoClip.Text = "NoClip";
             this.toolStripMenuItemNoClip.Click += new System.EventHandler(this.toolStripMenuItemNoClip_Click);
             // 
-            // ToolStripMenuItemModifiersLabel
+            // toolStripMenuItemSpeed
             // 
-            ToolStripMenuItemModifiersLabel.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            ToolStripMenuItemModifiersLabel.Name = "ToolStripMenuItemModifiersLabel";
-            ToolStripMenuItemModifiersLabel.Size = new System.Drawing.Size(72, 20);
-            ToolStripMenuItemModifiersLabel.Text = "Modifiers:";
+            this.toolStripMenuItemSpeed.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripMenuItemSpeed.BackColor = System.Drawing.Color.Red;
+            this.toolStripMenuItemSpeed.Name = "toolStripMenuItemSpeed";
+            this.toolStripMenuItemSpeed.Size = new System.Drawing.Size(51, 20);
+            this.toolStripMenuItemSpeed.Text = "Speed";
+            this.toolStripMenuItemSpeed.Click += new System.EventHandler(this.toolStripMenuItemSpeed_Click);
+            // 
+            // toolStripMenuItemBot
+            // 
+            this.toolStripMenuItemBot.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripMenuItemBot.BackColor = System.Drawing.Color.Red;
+            this.toolStripMenuItemBot.Name = "toolStripMenuItemBot";
+            this.toolStripMenuItemBot.Size = new System.Drawing.Size(37, 20);
+            this.toolStripMenuItemBot.Text = "Bot";
+            this.toolStripMenuItemBot.Click += new System.EventHandler(this.toolStripMenuItemBot_Click);
+            // 
+            // milliSecondTimer
+            // 
+            this.milliSecondTimer.Interval = 500;
+            this.milliSecondTimer.Tick += new System.EventHandler(this.MilliSecondTimer_Tick);
             // 
             // gameInterface
             // 
@@ -271,7 +271,7 @@
             this.MaximumSize = new System.Drawing.Size(640, 730);
             this.MinimumSize = new System.Drawing.Size(640, 730);
             this.Name = "gameInterface";
-            this.Text = "Snake Game";
+            this.Text = "u";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gameInterface_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.menuStrip1.ResumeLayout(false);
