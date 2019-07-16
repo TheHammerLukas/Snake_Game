@@ -12,7 +12,8 @@ namespace Snake_Game
         private long lastBotChangeTime = 0; // To prevent buggy behaviour when enabling or disabling the bot
         private long lastSpeedChangeTime = 0; // To prevent buggy behaviour when enabling or disabling the speed up
         private long lastPauseChangeTime = 0; // To prevent buggy behaviour when pausing or unpausing the game
-        private long lastDevModeChangeTime = 0; // To prevent buggy behaviour when enabling or disbabling the devmode
+        private long lastDevModeChangeTime = 0; // To prevent buggy behaviour when enabling or disabling the devmode
+        private long lastNoClipChangeTime = 0; // To prevent buggy behaviour when enabling or disabling the noclip
         private long lastPUpX2ChangeTime = 0; // Powerup: To keep track of Multiplier duration
         private long lastPUpPointTickChangeTime = 0; // Powerup: To keep track of Point Tick duration
         private long lastPUpSlowmoChangeTime = 0; // Powerup: To keep track of Slowmo duration
@@ -440,9 +441,10 @@ namespace Snake_Game
                         }
                     }
                 }
-                if (e.KeyCode == gameControls.modNoClipKey && !gameSettings.MenuIsOpen)
+                if (e.KeyCode == gameControls.modNoClipKey && !gameSettings.MenuIsOpen && lastNoClipChangeTime <= currentTime - keyInputDelay)
                 {
                     gameSettings.NoClipEnabled = gameSettings.NoClipEnabled ? false : true;
+                    lastNoClipChangeTime = currentTime;
                 }
             }
             if (gameSettings.GameOver || gameSettings.DevModeEnabled)

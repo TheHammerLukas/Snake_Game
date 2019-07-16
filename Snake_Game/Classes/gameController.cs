@@ -190,7 +190,7 @@ namespace Snake_Game
         // Kill the player
         private void Die()
         {
-            if ((gameSettings.GamePowerup == gamePowerup.Noclip && !gameSettings.GamePowerupActive || gameSettings.GamePowerup != gamePowerup.Noclip) || gameSettings.NoClipEnabled)
+            if ((gameSettings.GamePowerup == gamePowerup.Noclip && !gameSettings.GamePowerupActive || gameSettings.GamePowerup != gamePowerup.Noclip) && !gameSettings.NoClipEnabled)
             {
                 gameSettings.GameOver = true;
 

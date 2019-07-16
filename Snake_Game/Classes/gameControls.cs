@@ -137,7 +137,7 @@ namespace Snake_Game
                         modPowerupKey = (Keys)Enum.Parse(typeof(Keys), "E", true);
                         break;
                     case gameAction.NoClipKey:
-                        modPowerupKey = (Keys)Enum.Parse(typeof(Keys), "K", true);
+                        modNoClipKey = (Keys)Enum.Parse(typeof(Keys), "K", true);
                         break;
                     default:
                         break;
