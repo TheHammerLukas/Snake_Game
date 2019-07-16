@@ -108,7 +108,7 @@ namespace Snake_Game
             if (firstInit)
             {
                 DevModeEnabled = false;
-                NoClipEnabled = false;
+                NoClipEnabled  = false;
             }
 
             // Only call readSettingsXML if the values of it should be used

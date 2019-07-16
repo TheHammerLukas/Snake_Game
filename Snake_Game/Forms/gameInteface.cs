@@ -310,6 +310,46 @@ namespace Snake_Game
             }
         }
 
+        // To toggle the bot modifier
+        private void ToggleBotModifier()
+        {
+            if (lastBotChangeTime <= currentTime - keyInputDelay)
+            {
+                gameSettings.IsModifierRound = true;
+                gameSettings.BotEnabled = gameSettings.BotEnabled ? false : true;
+                toolStripMenuItemBot.BackColor = gameSettings.BotEnabled ? Color.Green : Color.Red;
+
+                lastBotChangeTime = currentTime;
+            }
+        }
+
+        // To toggle the speed modifier
+        private void ToggleSpeedModifier()
+        {
+            if (lastSpeedChangeTime <= currentTime - keyInputDelay)
+            {
+                gameSettings.IsModifierRound = true;
+                gameSettings.SpeedEnabled = gameSettings.SpeedEnabled ? false : true;
+                gamecontroller.SetTimerInterval(gameTimer, gameSettings.SpeedEnabled ? 1000 : gameSettings.Speed, true);
+                toolStripMenuItemSpeed.BackColor = gameSettings.SpeedEnabled ? Color.Green : Color.Red;
+
+                lastSpeedChangeTime = currentTime;
+            }
+        }
+
+        // To toggle the noclip modifier
+        private void ToggleNoClipModifier()
+        {
+            if (lastNoClipChangeTime <= currentTime - keyInputDelay)
+            {
+                gameSettings.IsModifierRound = true;
+                gameSettings.NoClipEnabled = gameSettings.NoClipEnabled ? false : true;
+                toolStripMenuItemNoClip.BackColor = gameSettings.NoClipEnabled ? Color.Green : Color.Red;
+
+                lastNoClipChangeTime = currentTime;
+            }
+        }
+
         private void gameInterface_KeyDown(object sender, KeyEventArgs e)
         {
             if (!gameSettings.GameOver)
@@ -342,62 +382,21 @@ namespace Snake_Game
                 // Check if player wants to activate / deactivate any modifiers
                 if (e.KeyCode == gameControls.modBotKey)
                 {
-                    if (!gameSettings.BotEnabled && lastBotChangeTime <= currentTime - keyInputDelay)
-                    {
-                        lastBotChangeTime = currentTime;
-                        gameSettings.BotEnabled = true;
-                        gameSettings.IsModifierRound = true;
-                        labelBotStatus.Text = "Enabled";
-                    }
-                    else if (gameSettings.BotEnabled && lastBotChangeTime <= currentTime - keyInputDelay)
-                    {
-                        lastBotChangeTime = currentTime;
-                        gameSettings.BotEnabled = false;
-                        labelBotStatus.Text = "Disabled";
-                    }
+                    ToggleBotModifier();
                 }
                 else if (e.KeyCode == gameControls.modSpeedKey)
                 {
-                    if (!gameSettings.SpeedEnabled && lastSpeedChangeTime <= currentTime - keyInputDelay)
-                    {
-                        lastSpeedChangeTime = currentTime;
-                        gameTimer.Interval = 1000 / 1000;
-                        gameSettings.SpeedEnabled = true;
-                        labelSpeedStatus.Text = "Enabled";
-                    }
-                    else if (gameSettings.SpeedEnabled && lastSpeedChangeTime <= currentTime - keyInputDelay)
-                    { 
-                        lastSpeedChangeTime = currentTime;
-                        gamecontroller.SetTimerInterval(gameTimer, gameSettings.Speed, true);
-                        gameSettings.SpeedEnabled = false;
-                        labelSpeedStatus.Text = "Disabled";
-                    }
+                    ToggleSpeedModifier();
                 }
-                else if (e.KeyCode == gameControls.modPauseKey && !gameSettings.MenuIsOpen)
+                else if (e.KeyCode == gameControls.modPauseKey && !gameSettings.MenuIsOpen && lastPauseChangeTime <= currentTime - keyInputDelay)
                 {
-                    if (!gameSettings.GamePaused && lastPauseChangeTime <= currentTime - keyInputDelay)
-                    {
-                        lastPauseChangeTime = currentTime;
-                        gameSettings.GamePaused = true;
-                    }
-                    else if (lastPauseChangeTime <= currentTime - keyInputDelay)
-                    {
-                        lastPauseChangeTime = currentTime;
-                        gameSettings.GamePaused = false;
-                    }
+                    gameSettings.GamePaused = gameSettings.GamePaused ? false : true;
+                    lastPauseChangeTime = currentTime;
                 }
-                else if (e.KeyCode == gameControls.modDevModeKey && !gameSettings.MenuIsOpen)
+                else if (e.KeyCode == gameControls.modDevModeKey && !gameSettings.MenuIsOpen && lastDevModeChangeTime <= currentTime - keyInputDelay)
                 {
-                    if (!gameSettings.DevModeEnabled && lastDevModeChangeTime <= currentTime - keyInputDelay)
-                    {
-                        lastDevModeChangeTime = currentTime;
-                        gameSettings.DevModeEnabled = true;
-                    }
-                    else if (lastDevModeChangeTime <= currentTime - keyInputDelay)
-                    {
-                        lastDevModeChangeTime = currentTime;
-                        gameSettings.DevModeEnabled = false;
-                    }
+                    gameSettings.DevModeEnabled = gameSettings.DevModeEnabled ? false : true;
+                    lastDevModeChangeTime = currentTime;
                 }
                 if (gameSettings.DevModeEnabled)
                 {
@@ -441,10 +440,9 @@ namespace Snake_Game
                         }
                     }
                 }
-                if (e.KeyCode == gameControls.modNoClipKey && !gameSettings.MenuIsOpen && lastNoClipChangeTime <= currentTime - keyInputDelay)
+                if (e.KeyCode == gameControls.modNoClipKey && !gameSettings.MenuIsOpen)
                 {
-                    gameSettings.NoClipEnabled = gameSettings.NoClipEnabled ? false : true;
-                    lastNoClipChangeTime = currentTime;
+                    ToggleNoClipModifier();
                 }
             }
             if (gameSettings.GameOver || gameSettings.DevModeEnabled)
@@ -460,8 +458,10 @@ namespace Snake_Game
                     gamecontroller.StartGame();
                     gamecontroller.SetHighScore(labelHighscoreValue);
                     gamecontroller.GenerateFood();
-                    labelBotStatus.Text = "Disabled";
-                    labelSpeedStatus.Text = "Disabled";
+                    toolStripMenuItemBot.BackColor = gameSettings.BotEnabled ? Color.Green : Color.Red;
+                    toolStripMenuItemSpeed.BackColor = gameSettings.SpeedEnabled ? Color.Green : Color.Red;
+                    toolStripMenuItemNoClip.BackColor = gameSettings.NoClipEnabled ? Color.Green : Color.Red;
+                    gameSettings.IsModifierRound = gameSettings.BotEnabled ? true : gameSettings.SpeedEnabled ? true : gameSettings.NoClipEnabled ? true : false;
                     lastPauseChangeTime = 0;
                 }
             }
@@ -491,6 +491,21 @@ namespace Snake_Game
             {
                 CheckActivePowerup(gameSettings.GamePowerup);
             }
+        }
+
+        private void toolStripMenuItemBot_Click(object sender, EventArgs e) 
+        {
+            ToggleBotModifier();
+        }
+
+        private void toolStripMenuItemSpeed_Click(object sender, EventArgs e) 
+        {
+            ToggleSpeedModifier();
+        }
+
+        private void toolStripMenuItemNoClip_Click(object sender, EventArgs e) 
+        {
+            ToggleNoClipModifier();
         }
     }
 }

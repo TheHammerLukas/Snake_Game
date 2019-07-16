@@ -379,18 +379,22 @@ namespace Snake_Game
                     {
                         gameControls.modPauseKey = getKey(_xmlAttrib.Value);
                     }
+                    if (_xmlAttrib.Name == "NoClipKey")
+                    {
+                        gameControls.modNoClipKey = getKey(_xmlAttrib.Value);
+                    }
+                    if (_xmlAttrib.Name == "PowerupKey")
+                    {
+                        gameControls.modPowerupKey = getKey(_xmlAttrib.Value);
+                    }
                 }
             }
             catch(Exception) // If no .XML found or no Keys found then use standard keys
             {
-                gameControls.dirUpKey = (Keys)Enum.Parse(typeof(Keys), "W", true);
-                gameControls.dirDownKey = (Keys)Enum.Parse(typeof(Keys), "S", true);
-                gameControls.dirLeftKey = (Keys)Enum.Parse(typeof(Keys), "A", true);
-                gameControls.dirRightKey = (Keys)Enum.Parse(typeof(Keys), "D", true);
-                gameControls.modRestartKey = (Keys)Enum.Parse(typeof(Keys), "R", true);
-                gameControls.modBotKey = (Keys)Enum.Parse(typeof(Keys), "B", true);
-                gameControls.modSpeedKey = (Keys)Enum.Parse(typeof(Keys), "N", true);
-                gameControls.modPauseKey = (Keys)Enum.Parse(typeof(Keys), "P", true);
+                foreach (gameAction action in Enum.GetValues(typeof(gameAction)))
+                {
+                    gameControls.InitControls(action);
+                }
             }
         }
 
@@ -435,6 +439,14 @@ namespace Snake_Game
                 // Pause Key
                 _xmlDoc.WriteStartAttribute("PauseKey");
                 _xmlDoc.WriteString(Convert.ToString(gameControls.modPauseKey));
+                _xmlDoc.WriteEndAttribute();
+                // NoClip Key
+                _xmlDoc.WriteStartAttribute("NoClipKey");
+                _xmlDoc.WriteString(Convert.ToString(gameControls.modNoClipKey));
+                _xmlDoc.WriteEndAttribute();
+                // Powerup Key
+                _xmlDoc.WriteStartAttribute("PowerupKey");
+                _xmlDoc.WriteString(Convert.ToString(gameControls.modPowerupKey));
                 _xmlDoc.WriteEndAttribute();
             _xmlDoc.WriteEndElement();
 

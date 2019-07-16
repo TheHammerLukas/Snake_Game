@@ -13,9 +13,9 @@ namespace Snake_Game
         public static Keys modBotKey        { get; set; } // User configured Bot key
         public static Keys modSpeedKey      { get; set; } // User configured Speed key
         public static Keys modPauseKey      { get; set; } // User configured Pause key
+        public static Keys modPowerupKey    { get; set; } // User configured Powerup key
+        public static Keys modNoClipKey     { get; set; } // User configured NoClip key
         public static Keys modDevModeKey    { get; private set; } // Hardcoded DevMode key
-        public static Keys modPowerupKey    { get; private set; } // Hardcoded Powerup key
-        public static Keys modNoClipKey     { get; private set; } // Hardcoded NoClip key
 
         public gameControls(bool useStandard)
         {
@@ -78,6 +78,14 @@ namespace Snake_Game
                             _retCode = true;
                             modBotKey = _key;
                             break;
+                        case gameAction.NoClipKey:
+                            _retCode = true;
+                            modNoClipKey = _key;
+                            break;
+                        case gameAction.PowerupKey:
+                            _retCode = true;
+                            modPowerupKey = _key;
+                            break;
                     default:
                             _retCode = true;
                             break;
@@ -101,43 +109,45 @@ namespace Snake_Game
         // Initializes controls according to passed gameAction
         public static void InitControls(gameAction action)
         {
+            gameController gamecontroller = new gameController();
             gameAction _action = action;
+
             if (_action != gameAction.None)
             {
                 switch (_action)
                 {
                     case gameAction.UpKey:
-                        dirUpKey = (Keys)Enum.Parse(typeof(Keys), "W", true);
+                        dirUpKey = gamecontroller.getKey("W");
                         break;
                     case gameAction.DownKey:
-                        dirDownKey = (Keys)Enum.Parse(typeof(Keys), "S", true);
+                        dirDownKey = gamecontroller.getKey("S");
                         break;
                     case gameAction.LeftKey:
-                        dirLeftKey = (Keys)Enum.Parse(typeof(Keys), "A", true);
+                        dirLeftKey = gamecontroller.getKey("A");
                         break;
                     case gameAction.RightKey:
-                        dirRightKey = (Keys)Enum.Parse(typeof(Keys), "D", true);
+                        dirRightKey = gamecontroller.getKey("D");
                         break;
                     case gameAction.ResetKey:
-                        modRestartKey = (Keys)Enum.Parse(typeof(Keys), "R", true);
+                        modRestartKey = gamecontroller.getKey("R");
                         break;
                     case gameAction.PauseKey:
-                        modPauseKey = (Keys)Enum.Parse(typeof(Keys), "P", true);
+                        modPauseKey = gamecontroller.getKey("P");
                         break;
                     case gameAction.SpeedKey:
-                        modSpeedKey = (Keys)Enum.Parse(typeof(Keys), "N", true);
+                        modSpeedKey = gamecontroller.getKey("N");
                         break;
                     case gameAction.BotKey:
-                        modBotKey = (Keys)Enum.Parse(typeof(Keys), "B", true);
+                        modBotKey = gamecontroller.getKey("B");
                         break;
                     case gameAction.DevModeKey:
-                        modDevModeKey = (Keys)Enum.Parse(typeof(Keys), "Oem5", true); // Oem5 => '^'
+                        modDevModeKey = gamecontroller.getKey("Oem5"); // Oem5 => '^'
                         break;
                     case gameAction.PowerupKey:
-                        modPowerupKey = (Keys)Enum.Parse(typeof(Keys), "E", true);
+                        modPowerupKey = gamecontroller.getKey("E");
                         break;
                     case gameAction.NoClipKey:
-                        modNoClipKey = (Keys)Enum.Parse(typeof(Keys), "K", true);
+                        modNoClipKey = gamecontroller.getKey("K");
                         break;
                     default:
                         break;

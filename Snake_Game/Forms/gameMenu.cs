@@ -182,6 +182,16 @@ namespace Snake_Game
             gameAction = gameAction.BotKey;
         }
 
+        private void buttonSetPowerupKey_Click(object sender, EventArgs e)
+        {
+            gameAction = gameAction.PowerupKey;
+        }
+
+        private void buttonSetNoClipKey_Click(object sender, EventArgs e)
+        {
+            gameAction = gameAction.NoClipKey;
+        }
+
         private void buttonResetUpKey_Click(object sender, EventArgs e)
         {
             gameControls.InitControls(gameAction.UpKey);
@@ -248,6 +258,24 @@ namespace Snake_Game
         private void buttonResetBotKey_Click(object sender, EventArgs e)
         {
             gameControls.InitControls(gameAction.BotKey);
+
+            setMenuValues();
+
+            new gameController().writeControlsXML();
+        }
+
+        private void buttonResetPowerupKey_Click(object sender, EventArgs e)
+        {
+            gameControls.InitControls(gameAction.PowerupKey);
+
+            setMenuValues();
+
+            new gameController().writeControlsXML();
+        }
+
+        private void buttonResetNoClipKey_Click(object sender, EventArgs e)
+        {
+            gameControls.InitControls(gameAction.NoClipKey);
 
             setMenuValues();
 

@@ -50,16 +50,13 @@
             this.pointsToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.applyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBoxModifiers = new System.Windows.Forms.GroupBox();
-            this.labelBotStatus = new System.Windows.Forms.Label();
-            this.labelSpeedStatus = new System.Windows.Forms.Label();
-            this.labelSpeedModifier = new System.Windows.Forms.Label();
-            this.labelBotModifier = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItemMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.milliSecondTimer = new System.Windows.Forms.Timer(this.components);
+            this.toolStripMenuItemBot = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemSpeed = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemNoClip = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
-            this.groupBoxModifiers.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -192,60 +189,13 @@
             this.resetToolStripMenuItem.Name = "resetToolStripMenuItem";
             this.resetToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
             // 
-            // groupBoxModifiers
-            // 
-            this.groupBoxModifiers.Controls.Add(this.labelBotStatus);
-            this.groupBoxModifiers.Controls.Add(this.labelSpeedStatus);
-            this.groupBoxModifiers.Controls.Add(this.labelSpeedModifier);
-            this.groupBoxModifiers.Controls.Add(this.labelBotModifier);
-            this.groupBoxModifiers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxModifiers.Location = new System.Drawing.Point(454, 20);
-            this.groupBoxModifiers.Name = "groupBoxModifiers";
-            this.groupBoxModifiers.Size = new System.Drawing.Size(158, 54);
-            this.groupBoxModifiers.TabIndex = 9;
-            this.groupBoxModifiers.TabStop = false;
-            this.groupBoxModifiers.Text = "Modifiers";
-            // 
-            // labelBotStatus
-            // 
-            this.labelBotStatus.AutoSize = true;
-            this.labelBotStatus.Location = new System.Drawing.Point(58, 15);
-            this.labelBotStatus.Name = "labelBotStatus";
-            this.labelBotStatus.Size = new System.Drawing.Size(63, 17);
-            this.labelBotStatus.TabIndex = 3;
-            this.labelBotStatus.Text = "Disabled";
-            // 
-            // labelSpeedStatus
-            // 
-            this.labelSpeedStatus.AutoSize = true;
-            this.labelSpeedStatus.Location = new System.Drawing.Point(58, 32);
-            this.labelSpeedStatus.Name = "labelSpeedStatus";
-            this.labelSpeedStatus.Size = new System.Drawing.Size(63, 17);
-            this.labelSpeedStatus.TabIndex = 2;
-            this.labelSpeedStatus.Text = "Disabled";
-            // 
-            // labelSpeedModifier
-            // 
-            this.labelSpeedModifier.AutoSize = true;
-            this.labelSpeedModifier.Location = new System.Drawing.Point(7, 32);
-            this.labelSpeedModifier.Name = "labelSpeedModifier";
-            this.labelSpeedModifier.Size = new System.Drawing.Size(57, 17);
-            this.labelSpeedModifier.TabIndex = 1;
-            this.labelSpeedModifier.Text = "Speed :";
-            // 
-            // labelBotModifier
-            // 
-            this.labelBotModifier.AutoSize = true;
-            this.labelBotModifier.Location = new System.Drawing.Point(27, 15);
-            this.labelBotModifier.Name = "labelBotModifier";
-            this.labelBotModifier.Size = new System.Drawing.Size(37, 17);
-            this.labelBotModifier.TabIndex = 0;
-            this.labelBotModifier.Text = "Bot :";
-            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItemMenu});
+            this.toolStripMenuItemMenu,
+            this.toolStripMenuItemNoClip,
+            this.toolStripMenuItemSpeed,
+            this.toolStripMenuItemBot});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(624, 24);
@@ -264,12 +214,39 @@
             this.milliSecondTimer.Interval = 500;
             this.milliSecondTimer.Tick += new System.EventHandler(this.MilliSecondTimer_Tick);
             // 
+            // toolStripMenuItemBot
+            // 
+            this.toolStripMenuItemBot.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripMenuItemBot.BackColor = System.Drawing.Color.Red;
+            this.toolStripMenuItemBot.Name = "toolStripMenuItemBot";
+            this.toolStripMenuItemBot.Size = new System.Drawing.Size(37, 20);
+            this.toolStripMenuItemBot.Text = "Bot";
+            this.toolStripMenuItemBot.Click += new System.EventHandler(this.toolStripMenuItemBot_Click);
+            // 
+            // toolStripMenuItemSpeed
+            // 
+            this.toolStripMenuItemSpeed.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripMenuItemSpeed.BackColor = System.Drawing.Color.Red;
+            this.toolStripMenuItemSpeed.Name = "toolStripMenuItemSpeed";
+            this.toolStripMenuItemSpeed.Size = new System.Drawing.Size(51, 20);
+            this.toolStripMenuItemSpeed.Text = "Speed";
+            this.toolStripMenuItemSpeed.Click += new System.EventHandler(this.toolStripMenuItemSpeed_Click);
+            // 
+            // toolStripMenuItemNoClip
+            // 
+            this.toolStripMenuItemNoClip.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripMenuItemNoClip.BackColor = System.Drawing.Color.Red;
+            this.toolStripMenuItemNoClip.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.toolStripMenuItemNoClip.Name = "toolStripMenuItemNoClip";
+            this.toolStripMenuItemNoClip.Size = new System.Drawing.Size(56, 20);
+            this.toolStripMenuItemNoClip.Text = "NoClip";
+            this.toolStripMenuItemNoClip.Click += new System.EventHandler(this.toolStripMenuItemNoClip_Click);
+            // 
             // gameInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(624, 691);
-            this.Controls.Add(this.groupBoxModifiers);
             this.Controls.Add(this.labelGameStatus);
             this.Controls.Add(this.labelHighscoreValue);
             this.Controls.Add(this.labelScoreValue);
@@ -287,8 +264,6 @@
             this.Text = "Snake Game";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gameInterface_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
-            this.groupBoxModifiers.ResumeLayout(false);
-            this.groupBoxModifiers.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -317,15 +292,13 @@
         private System.Windows.Forms.ToolStripMenuItem pointsToolStripMenuItem;
         private System.Windows.Forms.ToolStripTextBox pointsToolStripTextBox;
         private System.Windows.Forms.ToolStripMenuItem applyToolStripMenuItem;
-        private System.Windows.Forms.GroupBox groupBoxModifiers;
-        private System.Windows.Forms.Label labelBotStatus;
-        private System.Windows.Forms.Label labelSpeedStatus;
-        private System.Windows.Forms.Label labelSpeedModifier;
-        private System.Windows.Forms.Label labelBotModifier;
         private System.Windows.Forms.ToolStripMenuItem resetToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemMenu;
         private System.Windows.Forms.Timer milliSecondTimer;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemBot;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemSpeed;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemNoClip;
     }
 }
 

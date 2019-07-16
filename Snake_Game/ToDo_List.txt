@@ -1,7 +1,4 @@
-﻿Idea: Also map a key.
-
-
-Idea: Set a screenshot as the background of the labelGameStatus in order for the background to be pseudo transparent.
+﻿Idea: Set a screenshot as the background of the labelGameStatus in order for the background to be pseudo transparent.
 
 
 TIP: there is another method using XMLs in this project (Project -> Properties -> Settings).
@@ -18,6 +15,7 @@ Spawn powerup food every 10 or so eaten foods:
 -> Point Tick ( Some amount of points get added for each game tick alive)
 -> Slowmotion
 -> Noclip
+=> adjust the UI so the active powerup + the duration + the saved powerup is displayed.
 
 => Expansion:
 Make the powerup food configurable
@@ -26,6 +24,9 @@ Make the powerup food configurable
 - key configuration
 - powerup colors
 -> remove from devmode to finish
+
+
+Make the NoClip key configurable
 
 
 Make food colors configurable
