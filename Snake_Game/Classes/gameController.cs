@@ -206,6 +206,7 @@ namespace Snake_Game
             else // Die because noclip is not enabled
             {
                 gameSettings.GameOver = true;
+                gameSettings.GamePowerup = gamePowerup.None;
 
                 if (gameSettings.Score > gameSettings.HighScore && !gameSettings.IsModifierRound)
                 {
