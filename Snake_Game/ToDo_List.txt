@@ -21,11 +21,13 @@ Make the powerup food configurable
 
 Make the snakes color similar to the active powerup
 
+Make the snake flash when powerup is about to be depleted
+
 
 Make food colors configurable
 
 
-Add a replay functionality
+Add a replay functionality // Overthink this point since the is no real use compared to the complexity. Maybe write a .dll for this function so it can be used in other projects too.
 
 
 Make it possible to restore the last settings

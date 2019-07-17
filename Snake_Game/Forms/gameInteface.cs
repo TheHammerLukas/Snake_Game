@@ -97,7 +97,6 @@ namespace Snake_Game
                 case gamePowerup.X2:
                     if (lastPUpX2ChangeTime >= currentTime - 30000)
                     {
-                        gameSettings.GamePowerupActive = true;
                         _lastChangeTime = lastPUpX2ChangeTime;
                     }
                     else
@@ -110,7 +109,6 @@ namespace Snake_Game
                     if (lastPUpPointTickChangeTime >= currentTime - 20000)
                     {
                         gameSettings.Score = gameSettings.Score + 50;
-                        gameSettings.GamePowerupActive = true;
                         _lastChangeTime = lastPUpPointTickChangeTime;
                     }
                     else
@@ -120,13 +118,12 @@ namespace Snake_Game
                     }
                     break;
                 case gamePowerup.Slowmotion:
-                    if (lastPUpSlowmoChangeTime >= currentTime - 15000)
+                    if (lastPUpSlowmoChangeTime >= currentTime - 10000)
                     {
                         if (!gameSettings.GamePowerupActive)
                         {
                             // Slow down the gameTimer
                             new gameController().SetTimerInterval(gameTimer, gameSettings.Speed / 3, true);
-                            gameSettings.GamePowerupActive = true;
                             _lastChangeTime = lastPUpSlowmoChangeTime;
                         }
                     }
@@ -139,9 +136,8 @@ namespace Snake_Game
                     }
                     break;
                 case gamePowerup.Noclip:
-                    if (lastPUpNoclipChangeTime >= currentTime - 10000)
+                    if (lastPUpNoclipChangeTime >= currentTime - 15000)
                     {
-                        gameSettings.GamePowerupActive = true;
                         _lastChangeTime = lastPUpNoclipChangeTime;
                     }
                     else
@@ -443,6 +439,8 @@ namespace Snake_Game
                             default:
                                 break;
                         }
+
+                        gameSettings.GamePowerupActive = true;
                     }
                 }
                 if (gameSettings.DevModeEnabled)
