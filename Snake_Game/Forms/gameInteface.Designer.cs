@@ -271,7 +271,7 @@
             this.MaximumSize = new System.Drawing.Size(640, 730);
             this.MinimumSize = new System.Drawing.Size(640, 730);
             this.Name = "gameInterface";
-            this.Text = "u";
+            this.Text = "Snake Game";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gameInterface_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.menuStrip1.ResumeLayout(false);
