@@ -13,20 +13,13 @@ Let the player decide where the savefiles are stored on the disk
 Add sounds to the game
 
 
-Spawn powerup food every 10 or so eaten foods:
--> Point multiplier
--> Point Tick ( Some amount of points get added for each game tick alive)
--> Slowmotion
--> Noclip
-=> adjust the UI so the active powerup + the duration + the saved powerup is displayed.
-
-=> Expansion:
+=> Powerup expansion:
 Make the powerup food configurable
 - required amount of food for powerup to spawn
 - powerup duration
-- key configuration
 - powerup colors
--> remove from devmode to finish
+
+Make the snakes color similar to the active powerup
 
 
 Make food colors configurable

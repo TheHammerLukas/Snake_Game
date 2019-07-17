@@ -47,6 +47,7 @@ namespace Snake_Game
             gameController.maxPosY = gamecontroller.GetMaxPosY(pictureBox);
             gamecontroller.SetScore(labelScoreValue);
             gamecontroller.SetGameOverFalse(labelGameStatus);
+            gamecontroller.SetPowerup(labelCurrentPowerupValue, labelSavedPowerupValue, labelPowerupTimerValue, currentTime, 0);
             gamecontroller.StartGame();
             gamecontroller.SetHighScore(labelHighscoreValue);
             gamecontroller.GenerateFood();
@@ -89,12 +90,15 @@ namespace Snake_Game
 
         private void CheckActivePowerup(gamePowerup Powerup)
         {
+            long _lastChangeTime = 0;
+
             switch (Powerup)
             {
                 case gamePowerup.X2:
                     if (lastPUpX2ChangeTime >= currentTime - 30000)
                     {
                         gameSettings.GamePowerupActive = true;
+                        _lastChangeTime = lastPUpX2ChangeTime;
                     }
                     else
                     {
@@ -107,6 +111,7 @@ namespace Snake_Game
                     {
                         gameSettings.Score = gameSettings.Score + 50;
                         gameSettings.GamePowerupActive = true;
+                        _lastChangeTime = lastPUpPointTickChangeTime;
                     }
                     else
                     {
@@ -122,6 +127,7 @@ namespace Snake_Game
                             // Slow down the gameTimer
                             new gameController().SetTimerInterval(gameTimer, gameSettings.Speed / 3, true);
                             gameSettings.GamePowerupActive = true;
+                            _lastChangeTime = lastPUpSlowmoChangeTime;
                         }
                     }
                     else
@@ -136,6 +142,7 @@ namespace Snake_Game
                     if (lastPUpNoclipChangeTime >= currentTime - 10000)
                     {
                         gameSettings.GamePowerupActive = true;
+                        _lastChangeTime = lastPUpNoclipChangeTime;
                     }
                     else
                     {
@@ -144,6 +151,8 @@ namespace Snake_Game
                     }
                     break;
             }
+
+            new gameController().SetPowerup(labelCurrentPowerupValue, labelSavedPowerupValue, labelPowerupTimerValue, currentTime, _lastChangeTime);
         }
 
         private void pictureBox_Paint(object sender, PaintEventArgs e)
@@ -404,36 +413,36 @@ namespace Snake_Game
                     {
                         gameSettings.GamePowerup = gameSettings.SavedPowerup;
                         gameSettings.SavedPowerup = gamePowerup.None;
-                    }
 
-                    switch (gameSettings.GamePowerup)
-                    {
-                        case gamePowerup.X2:
-                            lastPUpX2ChangeTime = currentTime;
-                            lastPUpPointTickChangeTime = 0;
-                            lastPUpSlowmoChangeTime = 0;
-                            lastPUpNoclipChangeTime = 0;
-                            break;
-                        case gamePowerup.PointOnTick:
-                            lastPUpX2ChangeTime = 0;
-                            lastPUpPointTickChangeTime = currentTime;
-                            lastPUpSlowmoChangeTime = 0;
-                            lastPUpNoclipChangeTime = 0;
-                            break;
-                        case gamePowerup.Slowmotion:
-                            lastPUpX2ChangeTime = 0;
-                            lastPUpPointTickChangeTime = 0;
-                            lastPUpSlowmoChangeTime = currentTime;
-                            lastPUpNoclipChangeTime = 0;
-                            break;
-                        case gamePowerup.Noclip:
-                            lastPUpX2ChangeTime = 0;
-                            lastPUpPointTickChangeTime = 0;
-                            lastPUpSlowmoChangeTime = 0;
-                            lastPUpNoclipChangeTime = currentTime;
-                            break;
-                        default:
-                            break;
+                        switch (gameSettings.GamePowerup)
+                        {
+                            case gamePowerup.X2:
+                                lastPUpX2ChangeTime = currentTime;
+                                lastPUpPointTickChangeTime = 0;
+                                lastPUpSlowmoChangeTime = 0;
+                                lastPUpNoclipChangeTime = 0;
+                                break;
+                            case gamePowerup.PointOnTick:
+                                lastPUpX2ChangeTime = 0;
+                                lastPUpPointTickChangeTime = currentTime;
+                                lastPUpSlowmoChangeTime = 0;
+                                lastPUpNoclipChangeTime = 0;
+                                break;
+                            case gamePowerup.Slowmotion:
+                                lastPUpX2ChangeTime = 0;
+                                lastPUpPointTickChangeTime = 0;
+                                lastPUpSlowmoChangeTime = currentTime;
+                                lastPUpNoclipChangeTime = 0;
+                                break;
+                            case gamePowerup.Noclip:
+                                lastPUpX2ChangeTime = 0;
+                                lastPUpPointTickChangeTime = 0;
+                                lastPUpSlowmoChangeTime = 0;
+                                lastPUpNoclipChangeTime = currentTime;
+                                break;
+                            default:
+                                break;
+                        }
                     }
                 }
                 if (gameSettings.DevModeEnabled)
