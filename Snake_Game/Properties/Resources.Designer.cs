@@ -19,7 +19,7 @@ namespace Snake_Game.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -61,20 +61,40 @@ namespace Snake_Game.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to C:\Users\Lukas Kolbe\source\repos\Snake-Game\Snake_Game\Resources\gameSoundPowerupEat.wav.
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static string gameSoundPowerupEat {
+        internal static System.IO.UnmanagedMemoryStream gameSoundPowerupEat {
             get {
-                return ResourceManager.GetString("gameSoundPowerupEat", resourceCulture);
+                return ResourceManager.GetStream("gameSoundPowerupEat", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to C:\Users\Lukas Kolbe\source\repos\Snake-Game\Snake_Game\Resources\gameSoundSnakeEat.wav.
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static string gameSoundSnakeEat {
+        internal static System.IO.UnmanagedMemoryStream gameSoundSnakeEat {
             get {
-                return ResourceManager.GetString("gameSoundSnakeEat", resourceCulture);
+                return ResourceManager.GetStream("gameSoundSnakeEat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon Snake_Menu_Thumbnail {
+            get {
+                object obj = ResourceManager.GetObject("Snake_Menu_Thumbnail", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon Snake_Thumbnail {
+            get {
+                object obj = ResourceManager.GetObject("Snake_Thumbnail", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
     }

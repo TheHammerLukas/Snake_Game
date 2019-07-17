@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.IO;
+using System.Media;
 using System.Windows.Forms;
 using System.Xml;
 
@@ -158,17 +159,17 @@ namespace Snake_Game
         // Elongate the snake
         private void Eat()
         {
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer();
             if (gameSettings.FoodPowerup != gamePowerup.None)
             {
                 gameSettings.SavedPowerup = gameSettings.FoodPowerup;
-                player.SoundLocation = Properties.Resources.gameSoundPowerupEat;
+                gameSettings.FoodPowerup = gamePowerup.None;
+
+                PlayGameSound(gameSound.PowerupEat);
             }
             else
             {
-                player.SoundLocation = Properties.Resources.gameSoundSnakeEat;
+                PlayGameSound(gameSound.SnakeEat);
             }
-            player.Play();
 
             if (gameObject.Snake.Count + gameSettings.GrowMultiplicator < maxPosX * maxPosY) // If snake has enough room to grow add new gameObjects to it
             {
@@ -197,7 +198,12 @@ namespace Snake_Game
         // Kill the player
         private void Die()
         {
-            if ((gameSettings.GamePowerup == gamePowerup.Noclip && !gameSettings.GamePowerupActive || gameSettings.GamePowerup != gamePowerup.Noclip) && !gameSettings.NoClipEnabled)
+            if (gameSettings.GamePowerup == gamePowerup.Noclip && gameSettings.GamePowerupActive || gameSettings.NoClipEnabled)
+            {
+                // Don't die because of noclip
+                return;
+            }
+            else // Die because noclip is not enabled
             {
                 gameSettings.GameOver = true;
 
@@ -206,6 +212,35 @@ namespace Snake_Game
                     writeScoreXML();
                 }
             }
+        }
+
+        // Gets passed in the gameSound that should be played and plays the corresponding sound resource
+        public void PlayGameSound(gameSound sound)
+        {
+            SoundPlayer audio = new SoundPlayer();
+            gameSound _sound = sound;
+
+            switch (_sound)
+            {
+                case gameSound.SnakeEat:
+                    audio = new SoundPlayer(Properties.Resources.gameSoundSnakeEat);
+                    break;
+                case gameSound.PowerupEat:
+                    audio = new SoundPlayer(Properties.Resources.gameSoundPowerupEat);
+                    break;
+                case gameSound.None:
+                    audio = new SoundPlayer();
+                    break;
+                default:
+                    MessageBox.Show(
+                                "Invalid sound tried to be played in \ngameController.PlayGameSound procedure!\nsound=" + _sound,
+                                "Error!",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error
+                                );
+                    break;
+            }
+            audio.Play();
         }
 
         #endregion

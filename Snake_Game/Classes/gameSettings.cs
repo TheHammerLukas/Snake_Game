@@ -50,6 +50,24 @@ namespace Snake_Game
         Noclip = 4
     }
 
+    public enum gameSound // Enum for different sounds
+    {
+        None = 0,
+        SnakeEat = 1,
+        PowerupEat = 2,
+        SnakeDie = 3,
+        SnakeChangeDir = 4,
+        FoodSpawn = 5,
+        PUX2Activate = 6,
+        PUpX2Deactivate = 7,
+        PUpPointTickActivate = 8,
+        PUpPointTickDeactivate = 9,
+        PUpSlowmoActivate = 10,
+        PUpSlowmoDeactivate = 11,
+        PUpNoclipActivate = 12,
+        PUpNoclipDeactivate = 13
+    }
+
     class gameSettings
     {
         public static int Width                 { get; set; } // Width of any game object
