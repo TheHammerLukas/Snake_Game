@@ -13,6 +13,9 @@ Let the player decide where the savefiles are stored on the disk
 Add sounds to the game
 
 
+Use textures for the snake
+
+
 => Powerup expansion:
 Make the powerup food configurable
 - required amount of food for powerup to spawn
