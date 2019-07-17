@@ -492,7 +492,7 @@ namespace Snake_Game
 
         private void MilliSecondTimer_Tick(object sender, EventArgs e)
         {
-            currentTime = currentTime + 500 >= 0 ? currentTime + 500 : 0;
+            currentTime = currentTime + 500 <= long.MaxValue ? currentTime + 500 : 0;
 
             if (currentTime % 1000 == 0)
             {
