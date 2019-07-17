@@ -56,16 +56,17 @@ namespace Snake_Game
         SnakeEat = 1,
         PowerupEat = 2,
         SnakeDie = 3,
-        SnakeChangeDir = 4,
-        FoodSpawn = 5,
-        PUX2Activate = 6,
-        PUpX2Deactivate = 7,
-        PUpPointTickActivate = 8,
-        PUpPointTickDeactivate = 9,
-        PUpSlowmoActivate = 10,
-        PUpSlowmoDeactivate = 11,
-        PUpNoclipActivate = 12,
-        PUpNoclipDeactivate = 13
+        SnakeNoClip = 4,
+        SnakeChangeDir = 5, // Not used because cutting out playing sounds too regularly
+        FoodSpawn = 6,
+        PUX2Activate = 7,
+        PUpX2Deactivate = 8,
+        PUpPointTickActivate = 9,
+        PUpPointTickDeactivate = 10,
+        PUpSlowmoActivate = 11,
+        PUpSlowmoDeactivate = 12,
+        PUpNoclipActivate = 13,
+        PUpNoclipDeactivate = 14
     }
 
     class gameSettings

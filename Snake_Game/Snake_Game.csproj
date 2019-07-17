@@ -115,6 +115,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\gameSoundFoodSpawn.wav" />
+    <Content Include="Resources\gameSoundSnakeChangeDir.wav" />
+    <Content Include="Resources\gameSoundHelloMan.wav" />
+    <Content Include="Resources\gameSoundSnakeNoClip.wav" />
+    <Content Include="Resources\gameSoundDie.wav" />
     <Content Include="Resources\gameSoundPowerupEat.wav" />
     <Content Include="Resources\gameSoundSnakeEat.wav" />
     <Content Include="Resources\Snake_Menu_Thumbnail.ico" />

@@ -9,7 +9,10 @@ namespace Snake_Game
 {
     class gameController
     {
+        private Timer checkSoundTimer = new Timer();
         private static int cntFoodSpawned = 0;
+        private static long soundCheckTime = 0;
+        private static long lastSoundPlayTime = 0;
         public static int maxPosX = 0;
         public static int maxPosY = 0;
         public string scoreXmlPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Snake_Game\\Snake_Game_Score.xml";
@@ -30,6 +33,11 @@ namespace Snake_Game
             
             // Reset food counter so powerups keep spawning with the same interval
             cntFoodSpawned = 0;
+
+            // Run checkSoundTimer
+            checkSoundTimer.Interval = 500; // 0.5 seconds
+            checkSoundTimer.Tick += new EventHandler(checkSoundTimer_Tick);
+            checkSoundTimer.Start();
         }
 
         // Generate a new food object
@@ -93,6 +101,8 @@ namespace Snake_Game
                 gameSettings.FoodPowerup = gamePowerup.None;
                 cntFoodSpawned++;
             }
+
+            PlayGameSound(gameSound.FoodSpawn);
         }
 
         // Move the player
@@ -200,13 +210,14 @@ namespace Snake_Game
         {
             if (gameSettings.GamePowerup == gamePowerup.Noclip && gameSettings.GamePowerupActive || gameSettings.NoClipEnabled)
             {
-                // Don't die because of noclip
-                return;
+                // Don't die because of noclip but play noclip sound
+                PlayGameSound(gameSound.SnakeNoClip);
             }
             else // Die because noclip is not enabled
             {
                 gameSettings.GameOver = true;
                 gameSettings.GamePowerup = gamePowerup.None;
+                PlayGameSound(gameSound.SnakeDie);
 
                 if (gameSettings.Score > gameSettings.HighScore && !gameSettings.IsModifierRound)
                 {
@@ -229,6 +240,18 @@ namespace Snake_Game
                 case gameSound.PowerupEat:
                     audio = new SoundPlayer(Properties.Resources.gameSoundPowerupEat);
                     break;
+                case gameSound.SnakeDie:
+                    audio = new SoundPlayer(Properties.Resources.gameSoundSnakeDie);
+                    break;
+                case gameSound.SnakeNoClip:
+                    audio = new SoundPlayer(Properties.Resources.gameSoundSnakeNoClip);
+                    break;
+                case gameSound.SnakeChangeDir:
+                    audio = new SoundPlayer(Properties.Resources.gameSoundSnakeChangeDir);
+                    break;
+                case gameSound.FoodSpawn:
+                    audio = new SoundPlayer(Properties.Resources.gameSoundFoodSpawn);
+                    break;
                 case gameSound.None:
                     audio = new SoundPlayer();
                     break;
@@ -241,7 +264,20 @@ namespace Snake_Game
                                 );
                     break;
             }
-            audio.Play();
+            // Outer if is used to disable sounds that should not be played
+            if (_sound != gameSound.SnakeChangeDir && _sound != gameSound.FoodSpawn)
+            {
+                if (_sound != gameSound.SnakeNoClip || (soundCheckTime > lastSoundPlayTime && (_sound == gameSound.SnakeNoClip)))
+                {
+                    audio.Play();
+                    lastSoundPlayTime = soundCheckTime;
+                }
+            }
+        }
+
+        private void checkSoundTimer_Tick(object sender, EventArgs e)
+        {
+            soundCheckTime = soundCheckTime + 1 <= long.MaxValue ? soundCheckTime + 1 : 0;
         }
 
         #endregion

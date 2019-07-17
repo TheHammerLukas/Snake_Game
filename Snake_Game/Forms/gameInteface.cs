@@ -365,24 +365,28 @@ namespace Snake_Game
                     && !gameSettings.GamePaused) || gameSettings.DevModeEnabled))
                 {
                     gameSettings.direction = gameDirection.Right;
+                    gamecontroller.PlayGameSound(gameSound.SnakeChangeDir);
                 }
                 else if ((e.KeyCode == gameControls.dirLeftKey || e.KeyCode == Keys.Left)
                           && ((currentTickDir != gameDirection.Right && currentTickDir != gameDirection.Left
                           && !gameSettings.GamePaused) || gameSettings.DevModeEnabled))
                 {
                     gameSettings.direction = gameDirection.Left;
+                    gamecontroller.PlayGameSound(gameSound.SnakeChangeDir);
                 }
                 else if ((e.KeyCode == gameControls.dirUpKey || e.KeyCode == Keys.Up)
                           && ((currentTickDir != gameDirection.Down && currentTickDir != gameDirection.Up
                           && !gameSettings.GamePaused) || gameSettings.DevModeEnabled))
                 {
                     gameSettings.direction = gameDirection.Up;
+                    gamecontroller.PlayGameSound(gameSound.SnakeChangeDir);
                 }
                 else if ((e.KeyCode == gameControls.dirDownKey || e.KeyCode == Keys.Down)
                           && ((currentTickDir != gameDirection.Up && currentTickDir != gameDirection.Down
                           && !gameSettings.GamePaused) || gameSettings.DevModeEnabled))
                 {
                     gameSettings.direction = gameDirection.Down;
+                    gamecontroller.PlayGameSound(gameSound.SnakeChangeDir);
                 }
                 // Check if player wants to activate / deactivate any modifiers
                 if (e.KeyCode == gameControls.modBotKey)
