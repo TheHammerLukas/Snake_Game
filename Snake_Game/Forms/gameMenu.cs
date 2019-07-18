@@ -316,7 +316,7 @@ namespace Snake_Game
 
         private void buttonSetHeadColor_Click(object sender, EventArgs e)
         {
-            gameSettings.PickColor(gameColor.snakeHeadColor);
+            gameSettings.PickColor(gameColor.snakeHeadNormalColor);
 
             setMenuValues();
 
@@ -325,7 +325,7 @@ namespace Snake_Game
 
         private void buttonSetBodyColor_Click(object sender, EventArgs e)
         {
-            gameSettings.PickColor(gameColor.snakeBodyColor);
+            gameSettings.PickColor(gameColor.snakeBodyNormalColor);
 
             setMenuValues();
 
@@ -334,7 +334,7 @@ namespace Snake_Game
 
         private void ButtonResetHeadColor_Click(object sender, EventArgs e)
         {
-            gameSettings.InitSnakeHeadColor();
+            gameSettings.InitSnakeHeadColor(gameColor.snakeHeadNormalColor);
 
             setMenuValues();
 
@@ -343,7 +343,7 @@ namespace Snake_Game
 
         private void ButtonResetBodyColor_Click(object sender, EventArgs e)
         {
-            gameSettings.InitSnakeBodyColor();
+            gameSettings.InitSnakeBodyColor(gameColor.snakeBodyNormalColor);
 
             setMenuValues();
 

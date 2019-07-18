@@ -236,6 +236,33 @@ namespace Snake_Game
                     }
                     else
                     {
+                        switch (gameSettings.GamePowerup)
+                        {
+                            case gamePowerup.X2:
+                                gameSettings.snakeHeadColor = gameSettings.snakeHeadPUpX2Color;
+                                gameSettings.snakeBodyColor = gameSettings.snakeBodyPUpX2Color;
+                                break;
+                            case gamePowerup.PointOnTick:
+                                gameSettings.snakeHeadColor = gameSettings.snakeHeadPUpPointTickColor;
+                                gameSettings.snakeBodyColor = gameSettings.snakeBodyPUpPointTickColor;
+                                break;
+                            case gamePowerup.Slowmotion:
+                                gameSettings.snakeHeadColor = gameSettings.snakeHeadPUpSlowmoColor;
+                                gameSettings.snakeBodyColor = gameSettings.snakeBodyPUpSlowmoColor;
+                                break;
+                            case gamePowerup.Noclip:
+                                gameSettings.snakeHeadColor = gameSettings.snakeHeadPUpNoclipColor;
+                                gameSettings.snakeBodyColor = gameSettings.snakeBodyPUpNoclipColor;
+                                break;
+                            case gamePowerup.None:
+                                gameSettings.snakeHeadColor = gameSettings.snakeHeadNormalColor;
+                                gameSettings.snakeBodyColor = gameSettings.snakeBodyNormalColor;
+                                break;
+                            default:
+                                gameSettings.snakeHeadColor = Brushes.Maroon;
+                                gameSettings.snakeBodyColor = Brushes.Maroon;
+                                break;
+                        }
                         if (i == 0)
                         {
                             _snakeColor = gameSettings.snakeHeadColor; // Head color

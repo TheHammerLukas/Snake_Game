@@ -32,13 +32,21 @@ namespace Snake_Game
     public enum gameColor // Enum for colors used in game
     {
         none = 0,
-        snakeHeadColor = 1,
-        snakeBodyColor = 2,
-        foodNormalColor = 3,
-        foodPUpX2Color = 4, 
-        foodPUpPointTickColor = 5,
-        foodPUpSlowmoColor = 6,
-        foodPUpNoclipColor = 7
+        snakeHeadNormalColor = 1,
+        snakeHeadPUpX2Color = 2,
+        snakeHeadPUpPointTickColor = 3,
+        snakeHeadPUpSlowmoColor = 4,
+        snakeHeadPUpNoclipColor = 5,
+        snakeBodyNormalColor = 6,
+        snakeBodyPUpX2Color = 7,
+        snakeBodyPUpPointTickColor = 8,
+        snakeBodyPUpSlowmoColor = 9,
+        snakeBodyPUpNoclipColor = 10,
+        foodNormalColor = 11,
+        foodPUpX2Color = 12, 
+        foodPUpPointTickColor = 13,
+        foodPUpSlowmoColor = 14,
+        foodPUpNoclipColor = 15
     }
 
     public enum rainbowMode // Enum for different rainbow modes
@@ -77,37 +85,47 @@ namespace Snake_Game
 
     class gameSettings
     {
-        public static int Width                     { get; set; } // Width of any game object
-        public static int Height                    { get; set; } // Height of any game object
-        public static int Speed                     { get; set; } // Speed of the snake
-        public static int Score                     { get; set; } // Score of the current game
-        public static int HighScore                 { get; set; } // Highscore of the player loaded from .xml file
-        public static int GrowMultiplicator         { get; set; } // Defines how much the snake grows when a food is eaten
-        public static int Points                    { get; set; } // Amount of points that get added to the score when the player eats a food
-        public static bool GameOver                 { get; set; } // If false -> game continues, if true -> game ends
-        public static bool BotEnabled               { get; set; } // To enable / disable the bot
-        public static bool IsModifierRound          { get; set; } // To determine if any cheats/modifiers were enabled in the current round
-        public static bool SpeedEnabled             { get; set; } // To check if the speed modifier is enabled or disabled
-        public static bool GamePaused               { get; set; } // If false -> game isn't paused, if true -> game is paused
-        public static bool DevModeEnabled           { get; set; } // When enabled no checks are made for key input, hence why it's called 'DevMode'
-        public static gamePowerup GamePowerup       { get; set; } // To determine the currently enabled powerup
-        public static gamePowerup SavedPowerup      { get; set; } // To save the Powerup after the foodPowerup has been eaten
-        public static gamePowerup FoodPowerup       { get; set; } // Only used for generating powerup food
-        public static bool GamePowerupActive        { get; set; } // Used to determine if the GamePowerup has been activated or is already active
-        public static int PowerupSpawnGap           { get; set; } // To set the amount of food that has to be eaten in order for a powerup to spawn
-        public static bool NoClipEnabled            { get; set; } // To detemrine if the NoClip feature is enabled or disabled
-        public static bool RainbowEnabled           { get; set; } // To enable / disable the rainbow snake color
-        public static rainbowMode RainbowMode       { get; set; } // To determine which rainbow mode is selected
-        public static bool MenuIsOpen               { get; set; } // Determines if the gameMenu is open or not
-        public static gameDirection direction       { get; set; } // Direction the snake is heading in
-        public static Brush snakeHeadColor          { get; set; } // Color used for drawing the head of the snake
-        public static Brush snakeBodyColor          { get; set; } // Color used for drawing the body of the snake
-        public static Brush foodColor               { get; set; } // Color used for drawing the food; gets set in gameInterface.pictureBox_Paint according to which kind of food is spawned
-        public static Brush foodNormalColor         { get; set; } // Color used for normal food
-        public static Brush foodPUpX2Color          { get; set; } // Color used for X2 Powerup food
-        public static Brush foodPUpPointTickColor   { get; set; } // Color used for Point on Tick Powerup food
-        public static Brush foodPUpSlowmoColor      { get; set; } // Color used for Slowmotion Powerup food
-        public static Brush foodPUpNoclipColor      { get; set; } // Color used for Noclip Powerup food
+        public static int Width                         { get; set; } // Width of any game object
+        public static int Height                        { get; set; } // Height of any game object
+        public static int Speed                         { get; set; } // Speed of the snake
+        public static int Score                         { get; set; } // Score of the current game
+        public static int HighScore                     { get; set; } // Highscore of the player loaded from .xml file
+        public static int GrowMultiplicator             { get; set; } // Defines how much the snake grows when a food is eaten
+        public static int Points                        { get; set; } // Amount of points that get added to the score when the player eats a food
+        public static bool GameOver                     { get; set; } // If false -> game continues, if true -> game ends
+        public static bool BotEnabled                   { get; set; } // To enable / disable the bot
+        public static bool IsModifierRound              { get; set; } // To determine if any cheats/modifiers were enabled in the current round
+        public static bool SpeedEnabled                 { get; set; } // To check if the speed modifier is enabled or disabled
+        public static bool GamePaused                   { get; set; } // If false -> game isn't paused, if true -> game is paused
+        public static bool DevModeEnabled               { get; set; } // When enabled no checks are made for key input, hence why it's called 'DevMode'
+        public static gamePowerup GamePowerup           { get; set; } // To determine the currently enabled powerup
+        public static gamePowerup SavedPowerup          { get; set; } // To save the Powerup after the foodPowerup has been eaten
+        public static gamePowerup FoodPowerup           { get; set; } // Only used for generating powerup food
+        public static bool GamePowerupActive            { get; set; } // Used to determine if the GamePowerup has been activated or is already active
+        public static int PowerupSpawnGap               { get; set; } // To set the amount of food that has to be eaten in order for a powerup to spawn
+        public static bool NoClipEnabled                { get; set; } // To detemrine if the NoClip feature is enabled or disabled
+        public static bool RainbowEnabled               { get; set; } // To enable / disable the rainbow snake color
+        public static rainbowMode RainbowMode           { get; set; } // To determine which rainbow mode is selected
+        public static bool MenuIsOpen                   { get; set; } // Determines if the gameMenu is open or not
+        public static gameDirection direction           { get; set; } // Direction the snake is heading in
+        public static Brush snakeHeadColor              { get; set; } // Color for the head of the snake; set in gameInterface.pictureBox_Paint according to which powerup is active
+        public static Brush snakeHeadNormalColor        { get; set; } // Color used for normal snake head
+        public static Brush snakeHeadPUpX2Color         { get; set; } // Color used for X2 Powerup snake head
+        public static Brush snakeHeadPUpPointTickColor  { get; set; } // Color used for Point on Tick Powerup snake head
+        public static Brush snakeHeadPUpSlowmoColor     { get; set; } // Color used for Slowmotion Powerup snake head
+        public static Brush snakeHeadPUpNoclipColor     { get; set; } // Color used for Noclip Powerup snake head
+        public static Brush snakeBodyColor              { get; set; } // Color for the body of the snake; set in gameInterface.pictureBox_Paint according to which powerup is active
+        public static Brush snakeBodyNormalColor        { get; set; } // Color used for normal snake body
+        public static Brush snakeBodyPUpX2Color         { get; set; } // Color used for X2 Powerup snake body
+        public static Brush snakeBodyPUpPointTickColor  { get; set; } // Color used for Point on Tick Powerup snake body
+        public static Brush snakeBodyPUpSlowmoColor     { get; set; } // Color used for Slowmotion Powerup snake body
+        public static Brush snakeBodyPUpNoclipColor     { get; set; } // Color used for Noclip Powerup snake body
+        public static Brush foodColor                   { get; set; } // Color for the food; gets set in gameInterface.pictureBox_Paint according to which kind of food is spawned
+        public static Brush foodNormalColor             { get; set; } // Color used for normal food
+        public static Brush foodPUpX2Color              { get; set; } // Color used for X2 Powerup food
+        public static Brush foodPUpPointTickColor       { get; set; } // Color used for Point on Tick Powerup food
+        public static Brush foodPUpSlowmoColor          { get; set; } // Color used for Slowmotion Powerup food
+        public static Brush foodPUpNoclipColor          { get; set; } // Color used for Noclip Powerup food
 
         // Array for the rainbow colors of the snake
         public static Brush[] snakeRainbowColor = { Brushes.Firebrick, Brushes.OrangeRed, Brushes.Gold, Brushes.LimeGreen, Brushes.Blue, Brushes.Purple };
@@ -214,11 +232,11 @@ namespace Snake_Game
             // Set the initial color to the one currently in use by the setting
             switch (colorToChange)
             {
-                case gameColor.snakeHeadColor:
-                    _colorDialog.Color = (snakeHeadColor as SolidBrush).Color;
+                case gameColor.snakeHeadNormalColor:
+                    _colorDialog.Color = (snakeHeadNormalColor as SolidBrush).Color;
                     break;
-                case gameColor.snakeBodyColor:
-                    _colorDialog.Color = (snakeBodyColor as SolidBrush).Color;
+                case gameColor.snakeBodyNormalColor:
+                    _colorDialog.Color = (snakeBodyNormalColor as SolidBrush).Color;
                     break;
                 default:
                     break;
@@ -229,10 +247,10 @@ namespace Snake_Game
             {
                 switch (colorToChange)
                 {
-                    case gameColor.snakeHeadColor:
+                    case gameColor.snakeHeadNormalColor:
                         snakeHeadColor = new SolidBrush(_colorDialog.Color);
                         break;
-                    case gameColor.snakeBodyColor:
+                    case gameColor.snakeBodyNormalColor:
                         snakeBodyColor = new SolidBrush(_colorDialog.Color);
                         break;
                     default:
@@ -244,10 +262,11 @@ namespace Snake_Game
         // Calls initialize functions for colors
         public static void InitAllColors()
         {
-            InitSnakeHeadColor();
-            InitSnakeBodyColor();
+            
             foreach (gameColor color in Enum.GetValues(typeof(gameColor)))
             {
+                InitSnakeHeadColor(color);
+                InitSnakeBodyColor(color);
                 InitFoodColor(color);
             }
             
@@ -255,21 +274,87 @@ namespace Snake_Game
             RainbowMode = rainbowMode.rainbowModeTiles;
         }
 
-        public static void InitSnakeHeadColor()
+        public static void InitSnakeHeadColor(gameColor color)
         {
-            snakeHeadColor = Brushes.DarkGreen;
+            gameColor _color = color;
+
+            if (_color < gameColor.snakeHeadNormalColor || _color > gameColor.snakeHeadPUpNoclipColor)
+            {
+                _color = gameColor.none;
+            }
+            switch (_color)
+            {
+                case gameColor.snakeHeadNormalColor:
+                    snakeHeadNormalColor       = Brushes.DarkGreen;
+                    break;
+                case gameColor.snakeHeadPUpX2Color:
+                    snakeHeadPUpX2Color        = Brushes.Lime;
+                    break;
+                case gameColor.snakeHeadPUpPointTickColor:
+                    snakeHeadPUpPointTickColor = Brushes.Gold;
+                    break;
+                case gameColor.snakeHeadPUpSlowmoColor:
+                    snakeHeadPUpSlowmoColor    = Brushes.Turquoise;
+                    break;
+                case gameColor.snakeHeadPUpNoclipColor:
+                    snakeHeadPUpNoclipColor    = Brushes.BlueViolet;
+                    break;
+                case gameColor.none:
+                    break;
+                default:
+                    MessageBox.Show(
+                                "Invalid snakeHead color tried to be initialized in \ngameSettings.InitSnakeHeadColor procedure!\ncolor=" + _color,
+                                "Error!",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error
+                                );
+                    break;
+            }
         }
 
-        public static void InitSnakeBodyColor()
+        public static void InitSnakeBodyColor(gameColor color)
         {
-            snakeBodyColor = Brushes.Green;
+            gameColor _color = color;
+
+            if (_color < gameColor.snakeBodyNormalColor || _color > gameColor.snakeBodyPUpNoclipColor)
+            {
+                _color = gameColor.none;
+            }
+            switch (_color)
+            {
+                case gameColor.snakeBodyNormalColor:
+                    snakeBodyNormalColor       = Brushes.Green;
+                    break;
+                case gameColor.snakeBodyPUpX2Color:
+                    snakeBodyPUpX2Color        = Brushes.Lime;
+                    break;
+                case gameColor.snakeBodyPUpPointTickColor:
+                    snakeBodyPUpPointTickColor = Brushes.Gold;
+                    break;
+                case gameColor.snakeBodyPUpSlowmoColor:
+                    snakeBodyPUpSlowmoColor    = Brushes.Turquoise;
+                    break;
+                case gameColor.snakeBodyPUpNoclipColor:
+                    snakeBodyPUpNoclipColor    = Brushes.BlueViolet;
+                    break;
+                case gameColor.none:
+                    break;
+                default:
+                    MessageBox.Show(
+                                "Invalid snakeBody color tried to be initialized in \ngameSettings.InitSnakeHeadColor procedure!\ncolor=" + _color,
+                                "Error!",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error
+                                );
+                    break;
+            }
         }
 
         public static void InitFoodColor(gameColor color)
         { 
             gameColor _color = color;
 
-            if (_color == gameColor.snakeHeadColor || _color == gameColor.snakeBodyColor)
+            if (_color < gameColor.foodNormalColor || _color > gameColor.foodPUpNoclipColor)
             {
                 _color = gameColor.none;
             }
