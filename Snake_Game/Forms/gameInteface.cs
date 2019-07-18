@@ -125,6 +125,7 @@ namespace Snake_Game
                             // Slow down the gameTimer
                             new gameController().SetTimerInterval(gameTimer, gameSettings.Speed / 3, true);
                             _lastChangeTime = lastPUpSlowmoChangeTime;
+                            gameSettings.GamePowerupActive = true;
                         }
                     }
                     else
@@ -448,12 +449,14 @@ namespace Snake_Game
                                 lastPUpPointTickChangeTime = 0;
                                 lastPUpSlowmoChangeTime = 0;
                                 lastPUpNoclipChangeTime = 0;
+                                gameSettings.GamePowerupActive = true;
                                 break;
                             case gamePowerup.PointOnTick:
                                 lastPUpX2ChangeTime = 0;
                                 lastPUpPointTickChangeTime = currentTime;
                                 lastPUpSlowmoChangeTime = 0;
                                 lastPUpNoclipChangeTime = 0;
+                                gameSettings.GamePowerupActive = true;
                                 break;
                             case gamePowerup.Slowmotion:
                                 lastPUpX2ChangeTime = 0;
@@ -466,12 +469,11 @@ namespace Snake_Game
                                 lastPUpPointTickChangeTime = 0;
                                 lastPUpSlowmoChangeTime = 0;
                                 lastPUpNoclipChangeTime = currentTime;
+                                gameSettings.GamePowerupActive = true;
                                 break;
                             default:
                                 break;
                         }
-
-                        gameSettings.GamePowerupActive = true;
                     }
                 }
                 if (gameSettings.DevModeEnabled)

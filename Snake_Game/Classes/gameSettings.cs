@@ -72,7 +72,7 @@ namespace Snake_Game
         SnakeDie = 3,
         SnakeNoClip = 4,
         SnakeChangeDir = 5, // Not used because cutting out playing sounds too regularly
-        FoodSpawn = 6,
+        FoodSpawn = 6, // Not used because cutting out eating sounds too completely
         PUX2Activate = 7,
         PUpX2Deactivate = 8,
         PUpPointTickActivate = 9,
@@ -288,16 +288,16 @@ namespace Snake_Game
                     snakeHeadNormalColor       = Brushes.DarkGreen;
                     break;
                 case gameColor.snakeHeadPUpX2Color:
-                    snakeHeadPUpX2Color        = Brushes.Lime;
+                    snakeHeadPUpX2Color        = Brushes.LawnGreen;
                     break;
                 case gameColor.snakeHeadPUpPointTickColor:
-                    snakeHeadPUpPointTickColor = Brushes.Gold;
+                    snakeHeadPUpPointTickColor = Brushes.Goldenrod;
                     break;
                 case gameColor.snakeHeadPUpSlowmoColor:
-                    snakeHeadPUpSlowmoColor    = Brushes.Turquoise;
+                    snakeHeadPUpSlowmoColor    = Brushes.MediumTurquoise;
                     break;
                 case gameColor.snakeHeadPUpNoclipColor:
-                    snakeHeadPUpNoclipColor    = Brushes.BlueViolet;
+                    snakeHeadPUpNoclipColor    = Brushes.DarkMagenta;
                     break;
                 case gameColor.none:
                     break;
@@ -326,16 +326,16 @@ namespace Snake_Game
                     snakeBodyNormalColor       = Brushes.Green;
                     break;
                 case gameColor.snakeBodyPUpX2Color:
-                    snakeBodyPUpX2Color        = Brushes.Lime;
+                    snakeBodyPUpX2Color        = Brushes.GreenYellow;
                     break;
                 case gameColor.snakeBodyPUpPointTickColor:
-                    snakeBodyPUpPointTickColor = Brushes.Gold;
+                    snakeBodyPUpPointTickColor = Brushes.Yellow;
                     break;
                 case gameColor.snakeBodyPUpSlowmoColor:
-                    snakeBodyPUpSlowmoColor    = Brushes.Turquoise;
+                    snakeBodyPUpSlowmoColor    = Brushes.Aqua;
                     break;
                 case gameColor.snakeBodyPUpNoclipColor:
-                    snakeBodyPUpNoclipColor    = Brushes.BlueViolet;
+                    snakeBodyPUpNoclipColor    = Brushes.DarkOrchid;
                     break;
                 case gameColor.none:
                     break;
