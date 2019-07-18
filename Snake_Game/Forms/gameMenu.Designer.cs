@@ -972,6 +972,7 @@ namespace Snake_Game
             // labelSnakeHeadPrev
             // 
             this.labelSnakeHeadPrev.AutoSize = true;
+            this.labelSnakeHeadPrev.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.labelSnakeHeadPrev.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelSnakeHeadPrev.Location = new System.Drawing.Point(137, 0);
             this.labelSnakeHeadPrev.Name = "labelSnakeHeadPrev";
@@ -981,6 +982,7 @@ namespace Snake_Game
             // labelSnakeBodyPrev
             // 
             this.labelSnakeBodyPrev.AutoSize = true;
+            this.labelSnakeBodyPrev.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.labelSnakeBodyPrev.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelSnakeBodyPrev.Location = new System.Drawing.Point(137, 72);
             this.labelSnakeBodyPrev.Name = "labelSnakeBodyPrev";

@@ -262,19 +262,19 @@ namespace Snake_Game
                     switch (gameSettings.FoodPowerup)
                     {
                         case gamePowerup.X2:
-                            gameSettings.foodColor = Brushes.Lime;
+                            gameSettings.foodColor = gameSettings.foodPUpX2Color; 
                             break;
                         case gamePowerup.PointOnTick:
-                            gameSettings.foodColor = Brushes.Gold;
+                            gameSettings.foodColor = gameSettings.foodPUpPointTickColor;
                             break;
                         case gamePowerup.Slowmotion:
-                            gameSettings.foodColor = Brushes.Turquoise;
+                            gameSettings.foodColor = gameSettings.foodPUpSlowmoColor; 
                             break;
                         case gamePowerup.Noclip:
-                            gameSettings.foodColor = Brushes.BlueViolet;
+                            gameSettings.foodColor = gameSettings.foodPUpNoclipColor;
                             break;
                         case gamePowerup.None:
-                            gameSettings.foodColor = Brushes.Red;
+                            gameSettings.foodColor = gameSettings.foodNormalColor;
                             break;
                         default:
                             gameSettings.foodColor = Brushes.Maroon;
