@@ -244,8 +244,10 @@ namespace Snake_Game
                         int _blinkCheckSlowmo = Convert.ToInt32((gameSettings.PowerupDurationSlowmo - (currentTime - lastPUpSlowmoChangeTime)) / 1000);
                         int _blinkCheckNoclip = Convert.ToInt32((gameSettings.PowerupDurationNoclip - (currentTime - lastPUpNoclipChangeTime)) / 1000);
 
-                        if (_blinkCheckX2 == 1 || _blinkCheckX2 == 3 || _blinkCheckX2 == 5 || _blinkCheckPointTick == 1 || _blinkCheckPointTick == 3 || _blinkCheckPointTick == 5 ||
-                            _blinkCheckSlowmo == 1 || _blinkCheckSlowmo == 3 || _blinkCheckSlowmo == 5 || _blinkCheckNoclip == 1 || _blinkCheckNoclip == 3 || _blinkCheckNoclip == 5 )
+                        if ((gameSettings.GamePowerup == gamePowerup.X2 && (_blinkCheckX2 == 1 || _blinkCheckX2 == 3 || _blinkCheckX2 == 5)) ||
+                            (gameSettings.GamePowerup == gamePowerup.PointOnTick && (_blinkCheckPointTick == 1 || _blinkCheckPointTick == 3 || _blinkCheckPointTick == 5)) ||
+                            (gameSettings.GamePowerup == gamePowerup.Slowmotion && (_blinkCheckSlowmo == 1 || _blinkCheckSlowmo == 3 || _blinkCheckSlowmo == 5)) ||
+                            (gameSettings.GamePowerup == gamePowerup.Noclip && (_blinkCheckNoclip == 1 || _blinkCheckNoclip == 3 || _blinkCheckNoclip == 5)))
                         {
                             _gamePowerup = gamePowerup.None;
                         }

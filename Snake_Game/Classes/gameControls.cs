@@ -15,7 +15,7 @@ namespace Snake_Game
         public static Keys modPauseKey      { get; set; } // User configured Pause key
         public static Keys modPowerupKey    { get; set; } // User configured Powerup key
         public static Keys modNoClipKey     { get; set; } // User configured NoClip key
-        public static Keys modDevModeKey    { get; private set; } // Hardcoded DevMode key
+        public static Keys modDevModeKey    { get; private set; } // Hardcoded DevMode key; Keycode 'Oem5' => '^'
 
         public gameControls(bool useStandard)
         {
