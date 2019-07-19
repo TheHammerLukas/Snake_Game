@@ -297,14 +297,7 @@ namespace Snake_Game
 
         private void switchRainbowMode()
         {
-            if (gameSettings.RainbowMode == rainbowMode.rainbowModeTiles)
-            {
-                gameSettings.RainbowMode = rainbowMode.rainbowModeStretched;
-            }
-            else if (gameSettings.RainbowMode == rainbowMode.rainbowModeStretched)
-            {
-                gameSettings.RainbowMode = rainbowMode.rainbowModeTiles;
-            }
+            gameSettings.RainbowMode = gameSettings.RainbowMode == rainbowMode.rainbowModeTiles ? rainbowMode.rainbowModeStretched : rainbowMode.rainbowModeTiles;
         }
 
         private void buttonSwitchRainbowMode_Click(object sender, EventArgs e)

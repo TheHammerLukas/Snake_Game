@@ -335,6 +335,42 @@ namespace Snake_Game
                     case gameColor.foodNormalColor:
                         foodNormalColor = new SolidBrush(_colorDialog.Color);
                         break;
+                    case gameColor.snakeHeadPUpX2Color:
+                        snakeHeadPUpX2Color = new SolidBrush(_colorDialog.Color);
+                        break;
+                    case gameColor.snakeHeadPUpPointTickColor:
+                        snakeHeadPUpPointTickColor = new SolidBrush(_colorDialog.Color);;
+                        break;
+                    case gameColor.snakeHeadPUpSlowmoColor:
+                        snakeHeadPUpSlowmoColor = new SolidBrush(_colorDialog.Color);
+                        break;
+                    case gameColor.snakeHeadPUpNoclipColor:
+                        snakeHeadPUpNoclipColor = new SolidBrush(_colorDialog.Color);
+                        break;
+                    case gameColor.snakeBodyPUpX2Color:
+                        snakeBodyPUpX2Color = new SolidBrush(_colorDialog.Color);
+                        break;
+                    case gameColor.snakeBodyPUpPointTickColor:
+                        snakeBodyPUpPointTickColor = new SolidBrush(_colorDialog.Color);
+                        break;
+                    case gameColor.snakeBodyPUpSlowmoColor:
+                        snakeBodyPUpSlowmoColor = new SolidBrush(_colorDialog.Color);
+                        break;
+                    case gameColor.snakeBodyPUpNoclipColor:
+                        snakeBodyPUpNoclipColor = new SolidBrush(_colorDialog.Color);
+                        break;
+                    case gameColor.foodPUpX2Color:
+                        foodPUpX2Color = new SolidBrush(_colorDialog.Color);
+                        break;
+                    case gameColor.foodPUpPointTickColor:
+                        foodPUpPointTickColor = new SolidBrush(_colorDialog.Color);
+                        break;
+                    case gameColor.foodPUpSlowmoColor:
+                        foodPUpSlowmoColor = new SolidBrush(_colorDialog.Color);
+                        break;
+                    case gameColor.foodPUpNoclipColor:
+                        foodPUpNoclipColor = new SolidBrush(_colorDialog.Color);
+                        break;
                     default:
                         break;
                 }
