@@ -22,8 +22,6 @@ Make the powerup food configurable
 - powerup duration
 - powerup colors
 
-Make the snakes color similar to the active powerup
-
 
 Make food colors configurable
 
