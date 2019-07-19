@@ -95,7 +95,7 @@ namespace Snake_Game
             switch (Powerup)
             {
                 case gamePowerup.X2:
-                    if (lastPUpX2ChangeTime >= currentTime - 30000)
+                    if (lastPUpX2ChangeTime >= currentTime - gameSettings.PowerupDurationX2)
                     {
                         _lastChangeTime = lastPUpX2ChangeTime;
                     }
@@ -106,7 +106,7 @@ namespace Snake_Game
                     }
                     break;
                 case gamePowerup.PointOnTick:
-                    if (lastPUpPointTickChangeTime >= currentTime - 20000)
+                    if (lastPUpPointTickChangeTime >= currentTime - gameSettings.PowerupDurationPointTick)
                     {
                         gameSettings.Score = gameSettings.Score + 50;
                         _lastChangeTime = lastPUpPointTickChangeTime;
@@ -118,7 +118,7 @@ namespace Snake_Game
                     }
                     break;
                 case gamePowerup.Slowmotion:
-                    if (lastPUpSlowmoChangeTime >= currentTime - 10000)
+                    if (lastPUpSlowmoChangeTime >= currentTime - gameSettings.PowerupDurationSlowmo)
                     {
                         if (!gameSettings.GamePowerupActive)
                         {
@@ -137,7 +137,7 @@ namespace Snake_Game
                     }
                     break;
                 case gamePowerup.Noclip:
-                    if (lastPUpNoclipChangeTime >= currentTime - 15000)
+                    if (lastPUpNoclipChangeTime >= currentTime - gameSettings.PowerupDurationNoclip)
                     {
                         _lastChangeTime = lastPUpNoclipChangeTime;
                     }
@@ -161,6 +161,7 @@ namespace Snake_Game
                 // Color of snake
                 Brush _snakeColor;
                 int _rainbowColorIndex = 0;
+                gamePowerup _gamePowerup;
 
                 // Draw snake head & body
                 for (int i = 0; i < gameObject.Snake.Count; i++)
@@ -237,7 +238,23 @@ namespace Snake_Game
                     }
                     else
                     {
-                        switch (gameSettings.GamePowerup)
+                        // To make the snake blink when powerup is about to run out
+                        int _blinkCheckX2 = Convert.ToInt32((gameSettings.PowerupDurationX2 - (currentTime - lastPUpX2ChangeTime)) / 1000);
+                        int _blinkCheckPointTick = Convert.ToInt32((gameSettings.PowerupDurationPointTick - (currentTime - lastPUpPointTickChangeTime)) / 1000);
+                        int _blinkCheckSlowmo = Convert.ToInt32((gameSettings.PowerupDurationSlowmo - (currentTime - lastPUpSlowmoChangeTime)) / 1000);
+                        int _blinkCheckNoclip = Convert.ToInt32((gameSettings.PowerupDurationNoclip - (currentTime - lastPUpNoclipChangeTime)) / 1000);
+
+                        if (_blinkCheckX2 == 1 || _blinkCheckX2 == 3 || _blinkCheckX2 == 5 || _blinkCheckPointTick == 1 || _blinkCheckPointTick == 3 || _blinkCheckPointTick == 5 ||
+                            _blinkCheckSlowmo == 1 || _blinkCheckSlowmo == 3 || _blinkCheckSlowmo == 5 || _blinkCheckNoclip == 1 || _blinkCheckNoclip == 3 || _blinkCheckNoclip == 5 )
+                        {
+                            _gamePowerup = gamePowerup.None;
+                        }
+                        else
+                        {
+                            _gamePowerup = gameSettings.GamePowerup;
+                        }
+
+                        switch (_gamePowerup)
                         {
                             case gamePowerup.X2:
                                 gameSettings.snakeHeadColor = gameSettings.snakeHeadPUpX2Color;
@@ -264,6 +281,7 @@ namespace Snake_Game
                                 gameSettings.snakeBodyColor = Brushes.Maroon;
                                 break;
                         }
+
                         if (i == 0)
                         {
                             _snakeColor = gameSettings.snakeHeadColor; // Head color

@@ -103,6 +103,10 @@ namespace Snake_Game
         public static gamePowerup FoodPowerup           { get; set; } // Only used for generating powerup food
         public static bool GamePowerupActive            { get; set; } // Used to determine if the GamePowerup has been activated or is already active
         public static int PowerupSpawnGap               { get; set; } // To set the amount of food that has to be eaten in order for a powerup to spawn
+        public static int PowerupDurationX2             { get; set; } // To determine the duration of the X2 powerup
+        public static int PowerupDurationPointTick      { get; set; } // To determine the duration of the Point on Tick powerup
+        public static int PowerupDurationSlowmo         { get; set; } // To determine the duration of the Slowmotion powerup
+        public static int PowerupDurationNoclip         { get; set; } // To determine the duration of the Noclip powerup
         public static bool NoClipEnabled                { get; set; } // To detemrine if the NoClip feature is enabled or disabled
         public static bool RainbowEnabled               { get; set; } // To enable / disable the rainbow snake color
         public static rainbowMode RainbowMode           { get; set; } // To determine which rainbow mode is selected
@@ -151,6 +155,10 @@ namespace Snake_Game
             direction           = gameDirection.Stop;
 
             initPowerupSpawnGap(useStandard);
+            foreach (gamePowerup powerup in Enum.GetValues(typeof(gamePowerup)))
+            {
+                initPowerupDuration(powerup);
+            }
 
             // Only on first init set the DevMode
             if (firstInit)
@@ -185,6 +193,38 @@ namespace Snake_Game
             if (!useStandard)
             {
                 new gameController().readSettingsXML();
+            }
+        }
+
+        public static void initPowerupDuration(gamePowerup powerup)
+        {
+            gamePowerup _powerup = powerup;
+
+            switch (_powerup)
+            {
+                case gamePowerup.X2:
+                    PowerupDurationX2 = 1000 * 30; // 1000 * duration in seconds
+                    break;
+                case gamePowerup.PointOnTick:
+                    PowerupDurationPointTick = 1000 * 20; // 1000 * duration in seconds
+                    break;
+                case gamePowerup.Slowmotion:
+                    PowerupDurationSlowmo = 1000 * 10; // 1000 * duration in seconds
+                    break;
+                case gamePowerup.Noclip:
+                    PowerupDurationNoclip = 1000 * 15; // 1000 * duration in seconds
+                    break;
+                case gamePowerup.None:
+                    break;
+                default:
+                    MessageBox.Show(
+                                "Invalid gamePowerup duration tried to be initialized in \ngameSettings.initPowerupDuration procedure!\npowerup=" + _powerup,
+                                "Error!",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error
+                                );
+                    break;
+
             }
         }
 

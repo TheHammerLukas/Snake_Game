@@ -648,19 +648,19 @@ namespace Snake_Game
             {
                 case gamePowerup.X2:
                     _CurrentPowerup = "x2 Points";
-                    _PowerupDuration = Convert.ToInt32((30000 - (currentTime - lastChangeTime)) / 1000);
+                    _PowerupDuration = Convert.ToInt32((gameSettings.PowerupDurationX2 - (currentTime - lastChangeTime)) / 1000);
                     break;
                 case gamePowerup.PointOnTick:
                     _CurrentPowerup = "Point on Tick";
-                    _PowerupDuration = Convert.ToInt32((20000 - (currentTime - lastChangeTime)) / 1000);
+                    _PowerupDuration = Convert.ToInt32((gameSettings.PowerupDurationPointTick - (currentTime - lastChangeTime)) / 1000);
                     break;
                 case gamePowerup.Slowmotion:
                     _CurrentPowerup = "Slowmotion";
-                    _PowerupDuration = Convert.ToInt32((10000 - (currentTime - lastChangeTime)) / 1000);
+                    _PowerupDuration = Convert.ToInt32((gameSettings.PowerupDurationSlowmo - (currentTime - lastChangeTime)) / 1000);
                     break;
                 case gamePowerup.Noclip:
                     _CurrentPowerup = "NoClip";
-                    _PowerupDuration = Convert.ToInt32((15000 - (currentTime - lastChangeTime)) / 1000);
+                    _PowerupDuration = Convert.ToInt32((gameSettings.PowerupDurationNoclip - (currentTime - lastChangeTime)) / 1000);
                     break;
             }
 

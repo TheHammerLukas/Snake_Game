@@ -24,8 +24,6 @@ Make the powerup food configurable
 
 Make the snakes color similar to the active powerup
 
-Make the snake flash when powerup is about to be depleted
-
 
 Make food colors configurable
 
