@@ -80,8 +80,8 @@ namespace Snake_Game
             textBoxPauseKey.Text = Convert.ToString(gameControls.modPauseKey);
             textBoxPowerupKey.Text = Convert.ToString(gameControls.modPowerupKey);
             textBoxNoClipKey.Text = Convert.ToString(gameControls.modNoClipKey);
-            labelSnakeHeadPrev.BackColor = (gameSettings.snakeHeadColor as SolidBrush).Color;
-            labelSnakeBodyPrev.BackColor = (gameSettings.snakeBodyColor as SolidBrush).Color;
+            labelSnakeHeadPrev.BackColor = (gameSettings.snakeHeadNormalColor as SolidBrush).Color;
+            labelSnakeBodyPrev.BackColor = (gameSettings.snakeBodyNormalColor as SolidBrush).Color;
             if (gameSettings.RainbowMode == rainbowMode.rainbowModeTiles)
             {
                 buttonSwitchRainbowMode.Text = "Switch rainbow mode to 'Stretched'";

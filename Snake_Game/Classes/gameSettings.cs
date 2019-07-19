@@ -238,6 +238,45 @@ namespace Snake_Game
                 case gameColor.snakeBodyNormalColor:
                     _colorDialog.Color = (snakeBodyNormalColor as SolidBrush).Color;
                     break;
+                case gameColor.foodNormalColor:
+                    _colorDialog.Color = (foodNormalColor as SolidBrush).Color;
+                    break;
+                case gameColor.snakeHeadPUpX2Color:
+                    _colorDialog.Color = (snakeHeadPUpX2Color as SolidBrush).Color;
+                    break;
+                case gameColor.snakeHeadPUpPointTickColor:
+                    _colorDialog.Color = (snakeHeadPUpPointTickColor as SolidBrush).Color;
+                    break;
+                case gameColor.snakeHeadPUpSlowmoColor:
+                    _colorDialog.Color = (snakeHeadPUpSlowmoColor as SolidBrush).Color;
+                    break;
+                case gameColor.snakeHeadPUpNoclipColor:
+                    _colorDialog.Color = (snakeHeadPUpNoclipColor as SolidBrush).Color;
+                    break;
+                case gameColor.snakeBodyPUpX2Color:
+                    _colorDialog.Color = (snakeBodyPUpX2Color as SolidBrush).Color;
+                    break;
+                case gameColor.snakeBodyPUpPointTickColor:
+                    _colorDialog.Color = (snakeBodyPUpPointTickColor as SolidBrush).Color;
+                    break;
+                case gameColor.snakeBodyPUpSlowmoColor:
+                    _colorDialog.Color = (snakeBodyPUpSlowmoColor as SolidBrush).Color;
+                    break;
+                case gameColor.snakeBodyPUpNoclipColor:
+                    _colorDialog.Color = (snakeBodyPUpNoclipColor as SolidBrush).Color;
+                    break;
+                case gameColor.foodPUpX2Color:
+                    _colorDialog.Color = (foodPUpX2Color as SolidBrush).Color;
+                    break;
+                case gameColor.foodPUpPointTickColor:
+                    _colorDialog.Color = (foodPUpPointTickColor as SolidBrush).Color;
+                    break;
+                case gameColor.foodPUpSlowmoColor:
+                    _colorDialog.Color = (foodPUpSlowmoColor as SolidBrush).Color;
+                    break;
+                case gameColor.foodPUpNoclipColor:
+                    _colorDialog.Color = (foodPUpNoclipColor as SolidBrush).Color;
+                    break;
                 default:
                     break;
             }
@@ -248,10 +287,13 @@ namespace Snake_Game
                 switch (colorToChange)
                 {
                     case gameColor.snakeHeadNormalColor:
-                        snakeHeadColor = new SolidBrush(_colorDialog.Color);
+                        snakeHeadNormalColor = new SolidBrush(_colorDialog.Color);
                         break;
                     case gameColor.snakeBodyNormalColor:
-                        snakeBodyColor = new SolidBrush(_colorDialog.Color);
+                        snakeBodyNormalColor = new SolidBrush(_colorDialog.Color);
+                        break;
+                    case gameColor.foodNormalColor:
+                        foodNormalColor = new SolidBrush(_colorDialog.Color);
                         break;
                     default:
                         break;
