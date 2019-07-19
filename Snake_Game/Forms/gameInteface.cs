@@ -124,9 +124,9 @@ namespace Snake_Game
                         {
                             // Slow down the gameTimer
                             new gameController().SetTimerInterval(gameTimer, gameSettings.Speed / 3, true);
-                            _lastChangeTime = lastPUpSlowmoChangeTime;
                             gameSettings.GamePowerupActive = true;
                         }
+                        _lastChangeTime = lastPUpSlowmoChangeTime;
                     }
                     else
                     {
