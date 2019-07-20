@@ -115,6 +115,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\gameSoundPUpDeactivate02.wav" />
+    <Content Include="Resources\gameSoundPUpX2.wav" />
+    <Content Include="Resources\gameSoundPUpSlowmotion.wav" />
+    <Content Include="Resources\gameSoundPUpPointTick.wav" />
+    <Content Include="Resources\gameSoundPUpDeactivate01.wav" />
+    <Content Include="Resources\gameSoundPUpNoclip.wav" />
     <Content Include="Resources\gameSoundFoodSpawn.wav" />
     <Content Include="Resources\gameSoundSnakeChangeDir.wav" />
     <Content Include="Resources\gameSoundHelloMan.wav" />

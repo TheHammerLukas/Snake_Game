@@ -73,14 +73,15 @@ namespace Snake_Game
         SnakeNoClip = 4,
         SnakeChangeDir = 5, // Not used because cutting out playing sounds too regularly
         FoodSpawn = 6, // Not used because cutting out eating sounds too completely
-        PUX2Activate = 7,
+        PUpX2Activate = 7,
         PUpX2Deactivate = 8,
         PUpPointTickActivate = 9,
         PUpPointTickDeactivate = 10,
         PUpSlowmoActivate = 11,
         PUpSlowmoDeactivate = 12,
         PUpNoclipActivate = 13,
-        PUpNoclipDeactivate = 14
+        PUpNoclipDeactivate = 14,
+        ApplicationStartup = 15
     }
 
     class gameSettings
@@ -152,6 +153,8 @@ namespace Snake_Game
             GamePaused          = false;
             MenuIsOpen          = false;
             SavedPowerup        = gamePowerup.None;
+            GamePowerup         = gamePowerup.None;
+            GamePowerupActive   = false;
             direction           = gameDirection.Stop;
 
             initPowerupSpawnGap(useStandard);
@@ -186,8 +189,6 @@ namespace Snake_Game
         public static void initPowerupSpawnGap(bool useStandard)
         {
             PowerupSpawnGap = 5;
-            GamePowerup = gamePowerup.None;
-            GamePowerupActive = false;
 
             // Only call readSettingsXML if the values of it should be used
             if (!useStandard)

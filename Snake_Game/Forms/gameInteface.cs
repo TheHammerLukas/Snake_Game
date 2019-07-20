@@ -103,6 +103,7 @@ namespace Snake_Game
                     {
                         gameSettings.GamePowerup = gamePowerup.None;
                         gameSettings.GamePowerupActive = false;
+                        gamecontroller.PlayGameSound(gameSound.PUpX2Deactivate);
                     }
                     break;
                 case gamePowerup.PointOnTick:
@@ -115,6 +116,7 @@ namespace Snake_Game
                     {
                         gameSettings.GamePowerup = gamePowerup.None;
                         gameSettings.GamePowerupActive = false;
+                        gamecontroller.PlayGameSound(gameSound.PUpPointTickDeactivate);
                     }
                     break;
                 case gamePowerup.Slowmotion:
@@ -134,6 +136,7 @@ namespace Snake_Game
                         new gameController().SetTimerInterval(gameTimer, gameSettings.Speed, true);
                         gameSettings.GamePowerup = gamePowerup.None;
                         gameSettings.GamePowerupActive = false;
+                        gamecontroller.PlayGameSound(gameSound.PUpSlowmoDeactivate);
                     }
                     break;
                 case gamePowerup.Noclip:
@@ -145,6 +148,7 @@ namespace Snake_Game
                     {
                         gameSettings.GamePowerup = gamePowerup.None;
                         gameSettings.GamePowerupActive = false;
+                        gamecontroller.PlayGameSound(gameSound.PUpNoclipDeactivate);
                     }
                     break;
             }
@@ -470,6 +474,7 @@ namespace Snake_Game
                                 lastPUpSlowmoChangeTime = 0;
                                 lastPUpNoclipChangeTime = 0;
                                 gameSettings.GamePowerupActive = true;
+                                gamecontroller.PlayGameSound(gameSound.PUpX2Activate);
                                 break;
                             case gamePowerup.PointOnTick:
                                 lastPUpX2ChangeTime = 0;
@@ -477,12 +482,14 @@ namespace Snake_Game
                                 lastPUpSlowmoChangeTime = 0;
                                 lastPUpNoclipChangeTime = 0;
                                 gameSettings.GamePowerupActive = true;
+                                gamecontroller.PlayGameSound(gameSound.PUpPointTickActivate);
                                 break;
                             case gamePowerup.Slowmotion:
                                 lastPUpX2ChangeTime = 0;
                                 lastPUpPointTickChangeTime = 0;
                                 lastPUpSlowmoChangeTime = currentTime;
                                 lastPUpNoclipChangeTime = 0;
+                                gamecontroller.PlayGameSound(gameSound.PUpSlowmoActivate);
                                 break;
                             case gamePowerup.Noclip:
                                 lastPUpX2ChangeTime = 0;
@@ -490,6 +497,7 @@ namespace Snake_Game
                                 lastPUpSlowmoChangeTime = 0;
                                 lastPUpNoclipChangeTime = currentTime;
                                 gameSettings.GamePowerupActive = true;
+                                gamecontroller.PlayGameSound(gameSound.PUpNoclipActivate);
                                 break;
                             default:
                                 break;

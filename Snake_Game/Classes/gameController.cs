@@ -232,6 +232,15 @@ namespace Snake_Game
             SoundPlayer audio = new SoundPlayer();
             gameSound _sound = sound;
 
+            int _PUpDeactivateSound = 0;
+
+            if (_sound == gameSound.PUpX2Deactivate || _sound == gameSound.PUpPointTickDeactivate ||
+                _sound == gameSound.PUpSlowmoDeactivate || _sound == gameSound.PUpNoclipDeactivate)
+            {
+                Random random = new Random();
+                _PUpDeactivateSound = random.Next(0, 2);
+            }
+
             switch (_sound)
             {
                 case gameSound.SnakeEat:
@@ -251,6 +260,37 @@ namespace Snake_Game
                     break;
                 case gameSound.FoodSpawn:
                     audio = new SoundPlayer(Properties.Resources.gameSoundFoodSpawn);
+                    break;
+                case gameSound.PUpX2Activate:
+                    audio = new SoundPlayer(Properties.Resources.gameSoundPUpX2);
+                    break;
+                case gameSound.PUpX2Deactivate:
+                    audio = new SoundPlayer(_PUpDeactivateSound == 0 ? Properties.Resources.gameSoundPUpDeactivate01 
+                                                                     : Properties.Resources.gameSoundPUpDeactivate02);
+                    break;
+                case gameSound.PUpPointTickActivate:
+                    audio = new SoundPlayer(Properties.Resources.gameSoundPUpPointTick);
+                    break;
+                case gameSound.PUpPointTickDeactivate:
+                    audio = new SoundPlayer(_PUpDeactivateSound == 0 ? Properties.Resources.gameSoundPUpDeactivate01
+                                                                     : Properties.Resources.gameSoundPUpDeactivate02);
+                    break;
+                case gameSound.PUpSlowmoActivate:
+                    audio = new SoundPlayer(Properties.Resources.gameSoundPUpSlowmotion);
+                    break;
+                case gameSound.PUpSlowmoDeactivate:
+                    audio = new SoundPlayer(_PUpDeactivateSound == 0 ? Properties.Resources.gameSoundPUpDeactivate01
+                                                                     : Properties.Resources.gameSoundPUpDeactivate02);
+                    break;
+                case gameSound.PUpNoclipActivate:
+                    audio = new SoundPlayer(Properties.Resources.gameSoundPUpNoclip);
+                    break;
+                case gameSound.PUpNoclipDeactivate:
+                    audio = new SoundPlayer(_PUpDeactivateSound == 0 ? Properties.Resources.gameSoundPUpDeactivate01
+                                                                     : Properties.Resources.gameSoundPUpDeactivate02);
+                    break;
+                case gameSound.ApplicationStartup:
+                    audio = new SoundPlayer(Properties.Resources.gameSoundHelloMan);
                     break;
                 case gameSound.None:
                     audio = new SoundPlayer();

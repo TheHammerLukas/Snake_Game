@@ -2571,4 +2571,25 @@
   <data name="gameSoundSnakeNoClip" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gameSoundSnakeNoClip.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="gameSoundHelloMan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gameSoundHelloMan.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="gameSoundPUpDeactivate01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gameSoundPUpDeactivate01.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="gameSoundPUpDeactivate02" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gameSoundPUpDeactivate02.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="gameSoundPUpNoclip" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gameSoundPUpNoclip.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="gameSoundPUpPointTick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gameSoundPUpPointTick.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="gameSoundPUpSlowmotion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gameSoundPUpSlowmotion.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="gameSoundPUpX2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gameSoundPUpX2.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

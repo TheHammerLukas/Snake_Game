@@ -16,6 +16,7 @@ namespace Snake_Game
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            new gameController().PlayGameSound(gameSound.ApplicationStartup);
             Application.Run(new gameInterface());
         }
     }
