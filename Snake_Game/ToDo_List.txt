@@ -23,9 +23,6 @@ Make the powerup food configurable
 Make food colors configurable
 
 
-Adjust XML functions to save all needed setting values
-
-
 Add a replay functionality // Overthink this point since the is no real use compared to the complexity. Maybe write a .dll for this function so it can be used in other projects too.
 
 

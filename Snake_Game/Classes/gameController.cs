@@ -373,14 +373,6 @@ namespace Snake_Game
                     {
                         gameSettings.Points = Convert.ToInt32(_xmlAttrib.Value);
                     }
-                    if (_xmlAttrib.Name == "SnakeHeadColor")
-                    {
-                        gameSettings.snakeHeadColor = getBrush(_xmlAttrib.Value);
-                    }
-                    if (_xmlAttrib.Name == "SnakeBodyColor")
-                    {
-                        gameSettings.snakeBodyColor = getBrush(_xmlAttrib.Value);
-                    }
                     if (_xmlAttrib.Name == "RainbowEnabled")
                     {
                         gameSettings.RainbowEnabled = Convert.ToBoolean(_xmlAttrib.Value);
@@ -388,6 +380,86 @@ namespace Snake_Game
                     if (_xmlAttrib.Name == "RainbowMode")
                     {
                         gameSettings.RainbowMode = (rainbowMode)Convert.ToInt32(_xmlAttrib.Value);
+                    }
+                    if (_xmlAttrib.Name == "PowerupSpawnGap")
+                    {
+                        gameSettings.PowerupSpawnGap = Convert.ToInt32(_xmlAttrib.Value);
+                    }
+                    if (_xmlAttrib.Name == "PowerupDurationX2")
+                    {
+                        gameSettings.PowerupDurationX2 = Convert.ToInt32(_xmlAttrib.Value);
+                    }
+                    if (_xmlAttrib.Name == "PowerupDurationPointTick")
+                    {
+                        gameSettings.PowerupDurationPointTick = Convert.ToInt32(_xmlAttrib.Value);
+                    }
+                    if (_xmlAttrib.Name == "PowerupDurationSlowmo")
+                    {
+                        gameSettings.PowerupDurationSlowmo = Convert.ToInt32(_xmlAttrib.Value);
+                    }
+                    if (_xmlAttrib.Name == "PowerupDurationNoclip")
+                    {
+                        gameSettings.PowerupDurationNoclip = Convert.ToInt32(_xmlAttrib.Value);
+                    }
+                    if (_xmlAttrib.Name == "snakeHeadNormalColor")
+                    {
+                        gameSettings.snakeHeadNormalColor = getBrush(_xmlAttrib.Value);
+                    }
+                    if (_xmlAttrib.Name == "snakeHeadPUpX2Color")
+                    {
+                        gameSettings.snakeHeadPUpX2Color = getBrush(_xmlAttrib.Value);
+                    }
+                    if (_xmlAttrib.Name == "snakeHeadPUpPointTickColor")
+                    {
+                        gameSettings.snakeHeadPUpPointTickColor = getBrush(_xmlAttrib.Value);
+                    }
+                    if (_xmlAttrib.Name == "snakeHeadPUpSlowmoColor")
+                    {
+                        gameSettings.snakeHeadPUpSlowmoColor = getBrush(_xmlAttrib.Value);
+                    }
+                    if (_xmlAttrib.Name == "snakeHeadPUpNoclipColor")
+                    {
+                        gameSettings.snakeHeadPUpNoclipColor = getBrush(_xmlAttrib.Value);
+                    }
+                    if (_xmlAttrib.Name == "snakeBodyNormalColor")
+                    {
+                        gameSettings.snakeBodyNormalColor = getBrush(_xmlAttrib.Value);
+                    }
+                    if (_xmlAttrib.Name == "snakeBodyPUpX2Color")
+                    {
+                        gameSettings.snakeBodyPUpX2Color = getBrush(_xmlAttrib.Value);
+                    }
+                    if (_xmlAttrib.Name == "snakeBodyPUpPointTickColor")
+                    {
+                        gameSettings.snakeBodyPUpPointTickColor = getBrush(_xmlAttrib.Value);
+                    }
+                    if (_xmlAttrib.Name == "snakeBodyPUpSlowmoColor")
+                    {
+                        gameSettings.snakeBodyPUpSlowmoColor = getBrush(_xmlAttrib.Value);
+                    }
+                    if (_xmlAttrib.Name == "snakeBodyPUpNoclipColor")
+                    {
+                        gameSettings.snakeBodyPUpNoclipColor = getBrush(_xmlAttrib.Value);
+                    }
+                    if (_xmlAttrib.Name == "foodNormalColor")
+                    {
+                        gameSettings.foodNormalColor = getBrush(_xmlAttrib.Value);
+                    }
+                    if (_xmlAttrib.Name == "foodPUpX2Color")
+                    {
+                        gameSettings.foodPUpX2Color = getBrush(_xmlAttrib.Value);
+                    }
+                    if (_xmlAttrib.Name == "foodPUpPointTickColor")
+                    {
+                        gameSettings.foodPUpPointTickColor = getBrush(_xmlAttrib.Value);
+                    }
+                    if (_xmlAttrib.Name == "foodPUpSlowmoColor")
+                    {
+                        gameSettings.foodPUpSlowmoColor = getBrush(_xmlAttrib.Value);
+                    }
+                    if (_xmlAttrib.Name == "foodPUpNoclipColor")
+                    {
+                        gameSettings.foodPUpNoclipColor = getBrush(_xmlAttrib.Value);
                     }
                 }
             }
@@ -431,14 +503,6 @@ namespace Snake_Game
                 _xmlDoc.WriteStartAttribute("Points"); 
                 _xmlDoc.WriteString(gameSettings.Points.ToString());
                 _xmlDoc.WriteEndAttribute();
-                // SnakeHeadColor
-                _xmlDoc.WriteStartAttribute("SnakeHeadColor");
-                _xmlDoc.WriteString(((gameSettings.snakeHeadColor as SolidBrush).Color).ToString());
-                _xmlDoc.WriteEndAttribute();
-                // SnakeBodyColor
-                _xmlDoc.WriteStartAttribute("SnakeBodyColor");
-                _xmlDoc.WriteString(((gameSettings.snakeBodyColor as SolidBrush).Color).ToString());
-                _xmlDoc.WriteEndAttribute();
                 // RainbowEnabled
                 _xmlDoc.WriteStartAttribute("RainbowEnabled");
                 _xmlDoc.WriteString(gameSettings.RainbowEnabled.ToString());
@@ -446,6 +510,86 @@ namespace Snake_Game
                 // RainbowMode
                 _xmlDoc.WriteStartAttribute("RainbowMode");
                 _xmlDoc.WriteString(Convert.ToString(Convert.ToInt32(gameSettings.RainbowMode)));
+                _xmlDoc.WriteEndAttribute();
+                // PowerupSpawnGap         
+                _xmlDoc.WriteStartAttribute("PowerupSpawnGap");
+                _xmlDoc.WriteString(Convert.ToString(Convert.ToInt32(gameSettings.PowerupSpawnGap)));
+                _xmlDoc.WriteEndAttribute();
+                // PowerupDurationX2       
+                _xmlDoc.WriteStartAttribute("PowerupDurationX2");
+                _xmlDoc.WriteString(Convert.ToString(Convert.ToInt32(gameSettings.PowerupDurationX2)));
+                _xmlDoc.WriteEndAttribute();
+                // PowerupDurationPointTick
+                _xmlDoc.WriteStartAttribute("PowerupDurationPointTick");
+                _xmlDoc.WriteString(Convert.ToString(Convert.ToInt32(gameSettings.PowerupDurationPointTick)));
+                _xmlDoc.WriteEndAttribute();
+                // PowerupDurationSlowmo   
+                _xmlDoc.WriteStartAttribute("PowerupDurationSlowmo");
+                _xmlDoc.WriteString(Convert.ToString(Convert.ToInt32(gameSettings.PowerupDurationSlowmo)));
+                _xmlDoc.WriteEndAttribute();
+                // PowerupDurationNoclip         
+                _xmlDoc.WriteStartAttribute("PowerupDurationNoclip");
+                _xmlDoc.WriteString(Convert.ToString(Convert.ToInt32(gameSettings.PowerupDurationNoclip)));
+                _xmlDoc.WriteEndAttribute();
+                // snakeHeadNormalColor      
+                _xmlDoc.WriteStartAttribute("snakeHeadNormalColor");
+                _xmlDoc.WriteString(((gameSettings.snakeHeadNormalColor as SolidBrush).Color).ToString());
+                _xmlDoc.WriteEndAttribute();
+                // snakeHeadPUpX2Color       
+                _xmlDoc.WriteStartAttribute("snakeHeadPUpX2Color");
+                _xmlDoc.WriteString(((gameSettings.snakeHeadPUpX2Color as SolidBrush).Color).ToString());
+                _xmlDoc.WriteEndAttribute();
+                // snakeHeadPUpPointTickColor
+                _xmlDoc.WriteStartAttribute("snakeHeadPUpPointTickColor");
+                _xmlDoc.WriteString(((gameSettings.snakeHeadPUpPointTickColor as SolidBrush).Color).ToString());
+                _xmlDoc.WriteEndAttribute();
+                // snakeHeadPUpSlowmoColor   
+                _xmlDoc.WriteStartAttribute("snakeHeadPUpSlowmoColor");
+                _xmlDoc.WriteString(((gameSettings.snakeHeadPUpSlowmoColor as SolidBrush).Color).ToString());
+                _xmlDoc.WriteEndAttribute();
+                // snakeHeadPUpNoclipColor   
+                _xmlDoc.WriteStartAttribute("snakeHeadPUpNoclipColor");
+                _xmlDoc.WriteString(((gameSettings.snakeHeadPUpNoclipColor as SolidBrush).Color).ToString());
+                _xmlDoc.WriteEndAttribute();
+                // snakeBodyNormalColor      
+                _xmlDoc.WriteStartAttribute("snakeBodyNormalColor");
+                _xmlDoc.WriteString(((gameSettings.snakeBodyNormalColor as SolidBrush).Color).ToString());
+                _xmlDoc.WriteEndAttribute();
+                // snakeBodyPUpX2Color       
+                _xmlDoc.WriteStartAttribute("snakeBodyPUpX2Color");
+                _xmlDoc.WriteString(((gameSettings.snakeBodyPUpX2Color as SolidBrush).Color).ToString());
+                _xmlDoc.WriteEndAttribute();
+                // snakeBodyPUpPointTickColor
+                _xmlDoc.WriteStartAttribute("snakeBodyPUpPointTickColor");
+                _xmlDoc.WriteString(((gameSettings.snakeBodyPUpPointTickColor as SolidBrush).Color).ToString());
+                _xmlDoc.WriteEndAttribute();
+                // snakeBodyPUpSlowmoColor   
+                _xmlDoc.WriteStartAttribute("snakeBodyPUpSlowmoColor");
+                _xmlDoc.WriteString(((gameSettings.snakeBodyPUpSlowmoColor as SolidBrush).Color).ToString());
+                _xmlDoc.WriteEndAttribute();
+                // snakeBodyPUpNoclipColor   
+                _xmlDoc.WriteStartAttribute("snakeBodyPUpNoclipColor");
+                _xmlDoc.WriteString(((gameSettings.snakeBodyPUpNoclipColor as SolidBrush).Color).ToString());
+                _xmlDoc.WriteEndAttribute();
+                // foodNormalColor           
+                _xmlDoc.WriteStartAttribute("foodNormalColor");
+                _xmlDoc.WriteString(((gameSettings.foodNormalColor as SolidBrush).Color).ToString());
+                _xmlDoc.WriteEndAttribute();
+                // foodPUpX2Color            
+                _xmlDoc.WriteStartAttribute("foodPUpX2Color");
+                _xmlDoc.WriteString(((gameSettings.foodPUpX2Color as SolidBrush).Color).ToString());
+                _xmlDoc.WriteEndAttribute();
+                // foodPUpPointTickColor     
+                _xmlDoc.WriteStartAttribute("foodPUpPointTickColor");
+                _xmlDoc.WriteString(((gameSettings.foodPUpPointTickColor as SolidBrush).Color).ToString());
+                _xmlDoc.WriteEndAttribute();
+                // foodPUpSlowmoColor        
+                _xmlDoc.WriteStartAttribute("foodPUpSlowmoColor");
+                _xmlDoc.WriteString(((gameSettings.foodPUpSlowmoColor as SolidBrush).Color).ToString());
+                _xmlDoc.WriteEndAttribute();
+                // foodPUpNoclipColor        
+                _xmlDoc.WriteStartAttribute("foodPUpNoclipColor");
+                _xmlDoc.WriteString(((gameSettings.foodPUpNoclipColor as SolidBrush).Color).ToString());
                 _xmlDoc.WriteEndAttribute();
             // End .xml
             _xmlDoc.WriteEndDocument();
