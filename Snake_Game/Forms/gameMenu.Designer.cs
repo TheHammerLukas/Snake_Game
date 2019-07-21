@@ -874,6 +874,8 @@ namespace Snake_Game
             // 
             // tableLayoutPanelColors
             // 
+            this.tableLayoutPanelColors.AutoScroll = true;
+            this.tableLayoutPanelColors.AutoScrollMinSize = new System.Drawing.Size(0, 1440);
             this.tableLayoutPanelColors.ColumnCount = 4;
             this.tableLayoutPanelColors.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.tableLayoutPanelColors.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
@@ -892,10 +894,30 @@ namespace Snake_Game
             this.tableLayoutPanelColors.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelColors.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanelColors.Name = "tableLayoutPanelColors";
-            this.tableLayoutPanelColors.RowCount = 3;
-            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanelColors.RowCount = 23;
+            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
+            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
+            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
+            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
+            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
+            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
+            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
+            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
+            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
+            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
+            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
+            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
+            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
+            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
+            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
+            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
+            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
+            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
+            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
+            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
+            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
+            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
+            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
             this.tableLayoutPanelColors.Size = new System.Drawing.Size(384, 217);
             this.tableLayoutPanelColors.TabIndex = 0;
             // 
@@ -904,7 +926,7 @@ namespace Snake_Game
             this.buttonResetHeadColor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonResetHeadColor.Location = new System.Drawing.Point(290, 3);
             this.buttonResetHeadColor.Name = "buttonResetHeadColor";
-            this.buttonResetHeadColor.Size = new System.Drawing.Size(91, 66);
+            this.buttonResetHeadColor.Size = new System.Drawing.Size(91, 56);
             this.buttonResetHeadColor.TabIndex = 1;
             this.buttonResetHeadColor.Text = "Reset";
             this.buttonResetHeadColor.UseVisualStyleBackColor = true;
@@ -915,7 +937,7 @@ namespace Snake_Game
             this.buttonSetHeadColor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonSetHeadColor.Location = new System.Drawing.Point(194, 3);
             this.buttonSetHeadColor.Name = "buttonSetHeadColor";
-            this.buttonSetHeadColor.Size = new System.Drawing.Size(90, 66);
+            this.buttonSetHeadColor.Size = new System.Drawing.Size(90, 56);
             this.buttonSetHeadColor.TabIndex = 0;
             this.buttonSetHeadColor.Text = "Set";
             this.buttonSetHeadColor.UseVisualStyleBackColor = true;
@@ -924,9 +946,9 @@ namespace Snake_Game
             // buttonSetBodyColor
             // 
             this.buttonSetBodyColor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSetBodyColor.Location = new System.Drawing.Point(194, 75);
+            this.buttonSetBodyColor.Location = new System.Drawing.Point(194, 65);
             this.buttonSetBodyColor.Name = "buttonSetBodyColor";
-            this.buttonSetBodyColor.Size = new System.Drawing.Size(90, 66);
+            this.buttonSetBodyColor.Size = new System.Drawing.Size(90, 56);
             this.buttonSetBodyColor.TabIndex = 1;
             this.buttonSetBodyColor.Text = "Set";
             this.buttonSetBodyColor.UseVisualStyleBackColor = true;
@@ -937,9 +959,9 @@ namespace Snake_Game
             this.checkBoxRainbowColor.AutoSize = true;
             this.tableLayoutPanelColors.SetColumnSpan(this.checkBoxRainbowColor, 2);
             this.checkBoxRainbowColor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxRainbowColor.Location = new System.Drawing.Point(194, 147);
+            this.checkBoxRainbowColor.Location = new System.Drawing.Point(194, 127);
             this.checkBoxRainbowColor.Name = "checkBoxRainbowColor";
-            this.checkBoxRainbowColor.Size = new System.Drawing.Size(187, 67);
+            this.checkBoxRainbowColor.Size = new System.Drawing.Size(187, 56);
             this.checkBoxRainbowColor.TabIndex = 2;
             this.checkBoxRainbowColor.Text = "Rainbow Snake";
             this.checkBoxRainbowColor.UseVisualStyleBackColor = true;
@@ -952,7 +974,7 @@ namespace Snake_Game
             this.labelSnakeHeadColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSnakeHeadColor.Location = new System.Drawing.Point(3, 0);
             this.labelSnakeHeadColor.Name = "labelSnakeHeadColor";
-            this.labelSnakeHeadColor.Size = new System.Drawing.Size(128, 72);
+            this.labelSnakeHeadColor.Size = new System.Drawing.Size(128, 62);
             this.labelSnakeHeadColor.TabIndex = 3;
             this.labelSnakeHeadColor.Text = "Snake Head";
             this.labelSnakeHeadColor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -962,9 +984,9 @@ namespace Snake_Game
             this.labelSnakeBodyColor.AutoSize = true;
             this.labelSnakeBodyColor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelSnakeBodyColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSnakeBodyColor.Location = new System.Drawing.Point(3, 72);
+            this.labelSnakeBodyColor.Location = new System.Drawing.Point(3, 62);
             this.labelSnakeBodyColor.Name = "labelSnakeBodyColor";
-            this.labelSnakeBodyColor.Size = new System.Drawing.Size(128, 72);
+            this.labelSnakeBodyColor.Size = new System.Drawing.Size(128, 62);
             this.labelSnakeBodyColor.TabIndex = 4;
             this.labelSnakeBodyColor.Text = "Snake Body";
             this.labelSnakeBodyColor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -976,7 +998,7 @@ namespace Snake_Game
             this.labelSnakeHeadPrev.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelSnakeHeadPrev.Location = new System.Drawing.Point(137, 0);
             this.labelSnakeHeadPrev.Name = "labelSnakeHeadPrev";
-            this.labelSnakeHeadPrev.Size = new System.Drawing.Size(51, 72);
+            this.labelSnakeHeadPrev.Size = new System.Drawing.Size(51, 62);
             this.labelSnakeHeadPrev.TabIndex = 5;
             // 
             // labelSnakeBodyPrev
@@ -984,17 +1006,17 @@ namespace Snake_Game
             this.labelSnakeBodyPrev.AutoSize = true;
             this.labelSnakeBodyPrev.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.labelSnakeBodyPrev.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelSnakeBodyPrev.Location = new System.Drawing.Point(137, 72);
+            this.labelSnakeBodyPrev.Location = new System.Drawing.Point(137, 62);
             this.labelSnakeBodyPrev.Name = "labelSnakeBodyPrev";
-            this.labelSnakeBodyPrev.Size = new System.Drawing.Size(51, 72);
+            this.labelSnakeBodyPrev.Size = new System.Drawing.Size(51, 62);
             this.labelSnakeBodyPrev.TabIndex = 6;
             // 
             // buttonSwitchRainbowMode
             // 
             this.buttonSwitchRainbowMode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSwitchRainbowMode.Location = new System.Drawing.Point(3, 147);
+            this.buttonSwitchRainbowMode.Location = new System.Drawing.Point(3, 127);
             this.buttonSwitchRainbowMode.Name = "buttonSwitchRainbowMode";
-            this.buttonSwitchRainbowMode.Size = new System.Drawing.Size(128, 67);
+            this.buttonSwitchRainbowMode.Size = new System.Drawing.Size(128, 56);
             this.buttonSwitchRainbowMode.TabIndex = 7;
             this.buttonSwitchRainbowMode.Text = "buttonSwitchRainbowMode";
             this.buttonSwitchRainbowMode.UseVisualStyleBackColor = true;
@@ -1003,9 +1025,9 @@ namespace Snake_Game
             // buttonResetBodyColor
             // 
             this.buttonResetBodyColor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonResetBodyColor.Location = new System.Drawing.Point(290, 75);
+            this.buttonResetBodyColor.Location = new System.Drawing.Point(290, 65);
             this.buttonResetBodyColor.Name = "buttonResetBodyColor";
-            this.buttonResetBodyColor.Size = new System.Drawing.Size(91, 66);
+            this.buttonResetBodyColor.Size = new System.Drawing.Size(91, 56);
             this.buttonResetBodyColor.TabIndex = 8;
             this.buttonResetBodyColor.Text = "Reset";
             this.buttonResetBodyColor.UseVisualStyleBackColor = true;
