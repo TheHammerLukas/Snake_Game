@@ -833,19 +833,19 @@ namespace Snake_Game
             {
                 case gamePowerup.X2:
                     _CurrentPowerup = "x2 Points";
-                    _PowerupDuration = Convert.ToInt32((gameSettings.PowerupDurationX2 - (currentTime - lastChangeTime)) / 1000);
+                    _PowerupDuration = ConvTime(Convert.ToInt32(gameSettings.PowerupDurationX2 - (currentTime - lastChangeTime)), gameConstants.milliseconds, gameConstants.seconds);
                     break;
                 case gamePowerup.PointOnTick:
                     _CurrentPowerup = "Point on Tick";
-                    _PowerupDuration = Convert.ToInt32((gameSettings.PowerupDurationPointTick - (currentTime - lastChangeTime)) / 1000);
+                    _PowerupDuration = ConvTime(Convert.ToInt32(gameSettings.PowerupDurationPointTick - (currentTime - lastChangeTime)), gameConstants.milliseconds, gameConstants.seconds);
                     break;
                 case gamePowerup.Slowmotion:
                     _CurrentPowerup = "Slowmotion";
-                    _PowerupDuration = Convert.ToInt32((gameSettings.PowerupDurationSlowmo - (currentTime - lastChangeTime)) / 1000);
+                    _PowerupDuration = ConvTime(Convert.ToInt32(gameSettings.PowerupDurationSlowmo - (currentTime - lastChangeTime)), gameConstants.milliseconds, gameConstants.seconds);
                     break;
                 case gamePowerup.Noclip:
                     _CurrentPowerup = "NoClip";
-                    _PowerupDuration = Convert.ToInt32((gameSettings.PowerupDurationNoclip - (currentTime - lastChangeTime)) / 1000);
+                    _PowerupDuration = ConvTime(Convert.ToInt32(gameSettings.PowerupDurationNoclip - (currentTime - lastChangeTime)), gameConstants.milliseconds, gameConstants.seconds);
                     break;
             }
 
@@ -890,7 +890,7 @@ namespace Snake_Game
             {
                 if (fromTime == gameConstants.gameSpeed)
                 {
-                    _convertedTime = 1000 / time; // 1000 / speed; amount of ticks in 1 second
+                    _convertedTime = 1000 / time; // 1000 / speed; time = amount of ticks in 1 second
                     _showError = false;
                 }
             }
@@ -898,7 +898,7 @@ namespace Snake_Game
             {
                 if (fromTime == gameConstants.gameTime)
                 {
-                    _convertedTime = 1000 * time; // speed * 1000
+                    _convertedTime = 1000 / time; // 1000 / interval; time = interval in ms
                     _showError = false;
                 }
             }

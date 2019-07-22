@@ -202,21 +202,22 @@ namespace Snake_Game
 
         public static void initPowerupDuration(gamePowerup powerup)
         {
+            gameController gamecontroller = new gameController();
             gamePowerup _powerup = powerup;
 
             switch (_powerup)
             {
                 case gamePowerup.X2:
-                    PowerupDurationX2 = 1000 * 30; // 1000 * duration in seconds
+                    PowerupDurationX2 = gamecontroller.ConvTime(30, gameConstants.seconds, gameConstants.milliseconds);
                     break;
                 case gamePowerup.PointOnTick:
-                    PowerupDurationPointTick = 1000 * 20; // 1000 * duration in seconds
+                    PowerupDurationPointTick = gamecontroller.ConvTime(20, gameConstants.seconds, gameConstants.milliseconds);
                     break;
                 case gamePowerup.Slowmotion:
-                    PowerupDurationSlowmo = 1000 * 10; // 1000 * duration in seconds
+                    PowerupDurationSlowmo = gamecontroller.ConvTime(10, gameConstants.seconds, gameConstants.milliseconds);
                     break;
                 case gamePowerup.Noclip:
-                    PowerupDurationNoclip = 1000 * 15; // 1000 * duration in seconds
+                    PowerupDurationNoclip = gamecontroller.ConvTime(15, gameConstants.seconds, gameConstants.milliseconds);
                     break;
                 case gamePowerup.None:
                     break;

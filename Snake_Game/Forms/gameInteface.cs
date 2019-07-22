@@ -19,7 +19,6 @@ namespace Snake_Game
         private long lastPUpSlowmoChangeTime = 0; // Powerup: To keep track of Slowmo duration
         private long lastPUpNoclipChangeTime = 0; // Powerup: To keep track of Noclip duration
         private long currentTime = 0; // Current time; 1000 = 1 second 
-        private int keyInputDelay = 1000; // 1000 = 1 second
         private gameDirection currentTickDir; // The direction the snake is heading at in the current game tick
         
         public gameInterface()
@@ -243,10 +242,14 @@ namespace Snake_Game
                     else
                     {
                         // To make the snake blink when powerup is about to run out
-                        int _blinkCheckX2 = Convert.ToInt32((gameSettings.PowerupDurationX2 - (currentTime - lastPUpX2ChangeTime)) / 1000);
-                        int _blinkCheckPointTick = Convert.ToInt32((gameSettings.PowerupDurationPointTick - (currentTime - lastPUpPointTickChangeTime)) / 1000);
-                        int _blinkCheckSlowmo = Convert.ToInt32((gameSettings.PowerupDurationSlowmo - (currentTime - lastPUpSlowmoChangeTime)) / 1000);
-                        int _blinkCheckNoclip = Convert.ToInt32((gameSettings.PowerupDurationNoclip - (currentTime - lastPUpNoclipChangeTime)) / 1000);
+                        int _blinkCheckX2 = gamecontroller.ConvTime(Convert.ToInt32(gameSettings.PowerupDurationX2 - (currentTime - lastPUpX2ChangeTime)), 
+                                                                    gameConstants.milliseconds, gameConstants.seconds);
+                        int _blinkCheckPointTick = gamecontroller.ConvTime(Convert.ToInt32(gameSettings.PowerupDurationPointTick - (currentTime - lastPUpPointTickChangeTime)), 
+                                                                    gameConstants.milliseconds, gameConstants.seconds);
+                        int _blinkCheckSlowmo = gamecontroller.ConvTime(Convert.ToInt32(gameSettings.PowerupDurationSlowmo - (currentTime - lastPUpSlowmoChangeTime)), 
+                                                                    gameConstants.milliseconds, gameConstants.seconds);
+                        int _blinkCheckNoclip = gamecontroller.ConvTime(Convert.ToInt32(gameSettings.PowerupDurationNoclip - (currentTime - lastPUpNoclipChangeTime)), 
+                                                                    gameConstants.milliseconds, gameConstants.seconds);
 
                         if ((gameSettings.GamePowerup == gamePowerup.X2 && (_blinkCheckX2 == 1 || _blinkCheckX2 == 3 || _blinkCheckX2 == 5)) ||
                             (gameSettings.GamePowerup == gamePowerup.PointOnTick && (_blinkCheckPointTick == 1 || _blinkCheckPointTick == 3 || _blinkCheckPointTick == 5)) ||
@@ -370,7 +373,7 @@ namespace Snake_Game
         // To toggle the bot modifier
         private void ToggleBotModifier()
         {
-            if (lastBotChangeTime <= currentTime - keyInputDelay)
+            if (lastBotChangeTime <= currentTime - gameConstants.keyInputDelay)
             {
                 gameSettings.IsModifierRound = true;
                 gameSettings.BotEnabled = gameSettings.BotEnabled ? false : true;
@@ -383,7 +386,7 @@ namespace Snake_Game
         // To toggle the speed modifier
         private void ToggleSpeedModifier()
         {
-            if (lastSpeedChangeTime <= currentTime - keyInputDelay)
+            if (lastSpeedChangeTime <= currentTime - gameConstants.keyInputDelay)
             {
                 gameSettings.IsModifierRound = true;
                 gameSettings.SpeedEnabled = gameSettings.SpeedEnabled ? false : true;
@@ -397,7 +400,7 @@ namespace Snake_Game
         // To toggle the noclip modifier
         private void ToggleNoClipModifier()
         {
-            if (lastNoClipChangeTime <= currentTime - keyInputDelay)
+            if (lastNoClipChangeTime <= currentTime - gameConstants.keyInputDelay)
             {
                 gameSettings.IsModifierRound = true;
                 gameSettings.NoClipEnabled = gameSettings.NoClipEnabled ? false : true;
@@ -449,12 +452,12 @@ namespace Snake_Game
                 {
                     ToggleSpeedModifier();
                 }
-                else if (e.KeyCode == gameControls.modPauseKey && !gameSettings.MenuIsOpen && lastPauseChangeTime <= currentTime - keyInputDelay)
+                else if (e.KeyCode == gameControls.modPauseKey && !gameSettings.MenuIsOpen && lastPauseChangeTime <= currentTime - gameConstants.keyInputDelay)
                 {
                     gameSettings.GamePaused = gameSettings.GamePaused ? false : true;
                     lastPauseChangeTime = currentTime;
                 }
-                else if (e.KeyCode == gameControls.modDevModeKey && !gameSettings.MenuIsOpen && lastDevModeChangeTime <= currentTime - keyInputDelay)
+                else if (e.KeyCode == gameControls.modDevModeKey && !gameSettings.MenuIsOpen && lastDevModeChangeTime <= currentTime - gameConstants.keyInputDelay)
                 {
                     gameSettings.DevModeEnabled = gameSettings.DevModeEnabled ? false : true;
                     lastDevModeChangeTime = currentTime;
