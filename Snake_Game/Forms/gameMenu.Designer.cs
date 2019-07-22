@@ -88,6 +88,10 @@ namespace Snake_Game
             this.labelPowerupKey = new System.Windows.Forms.Label();
             this.tabPageColors = new System.Windows.Forms.TabPage();
             this.tableLayoutPanelColors = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonResetFoodColor = new System.Windows.Forms.Button();
+            this.buttonSetFoodColor = new System.Windows.Forms.Button();
+            this.labelFoodPrev = new System.Windows.Forms.Label();
+            this.labelFoodColor = new System.Windows.Forms.Label();
             this.buttonResetHeadColor = new System.Windows.Forms.Button();
             this.buttonSetHeadColor = new System.Windows.Forms.Button();
             this.buttonSetBodyColor = new System.Windows.Forms.Button();
@@ -98,9 +102,13 @@ namespace Snake_Game
             this.labelSnakeBodyPrev = new System.Windows.Forms.Label();
             this.buttonSwitchRainbowMode = new System.Windows.Forms.Button();
             this.buttonResetBodyColor = new System.Windows.Forms.Button();
+            this.tabPagePowerups = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.labelPUpSpawnGap = new System.Windows.Forms.Label();
             this.buttonApply = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
             this.buttonReset = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabControlMenu.SuspendLayout();
             this.tabPageSettings.SuspendLayout();
             this.tableLayoutPanelSettings.SuspendLayout();
@@ -108,6 +116,8 @@ namespace Snake_Game
             this.tableLayoutPanelControls.SuspendLayout();
             this.tabPageColors.SuspendLayout();
             this.tableLayoutPanelColors.SuspendLayout();
+            this.tabPagePowerups.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlMenu
@@ -115,7 +125,9 @@ namespace Snake_Game
             this.tabControlMenu.Controls.Add(this.tabPageSettings);
             this.tabControlMenu.Controls.Add(this.tabPageControls);
             this.tabControlMenu.Controls.Add(this.tabPageColors);
+            this.tabControlMenu.Controls.Add(this.tabPagePowerups);
             this.tabControlMenu.Location = new System.Drawing.Point(13, 12);
+            this.tabControlMenu.Multiline = true;
             this.tabControlMenu.Name = "tabControlMenu";
             this.tabControlMenu.SelectedIndex = 0;
             this.tabControlMenu.Size = new System.Drawing.Size(398, 249);
@@ -875,58 +887,86 @@ namespace Snake_Game
             // tableLayoutPanelColors
             // 
             this.tableLayoutPanelColors.AutoScroll = true;
-            this.tableLayoutPanelColors.AutoScrollMinSize = new System.Drawing.Size(0, 1440);
             this.tableLayoutPanelColors.ColumnCount = 4;
             this.tableLayoutPanelColors.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.tableLayoutPanelColors.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanelColors.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanelColors.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanelColors.Controls.Add(this.buttonResetFoodColor, 3, 2);
+            this.tableLayoutPanelColors.Controls.Add(this.buttonSetFoodColor, 2, 2);
+            this.tableLayoutPanelColors.Controls.Add(this.labelFoodPrev, 1, 2);
+            this.tableLayoutPanelColors.Controls.Add(this.labelFoodColor, 0, 2);
             this.tableLayoutPanelColors.Controls.Add(this.buttonResetHeadColor, 3, 0);
             this.tableLayoutPanelColors.Controls.Add(this.buttonSetHeadColor, 2, 0);
             this.tableLayoutPanelColors.Controls.Add(this.buttonSetBodyColor, 2, 1);
-            this.tableLayoutPanelColors.Controls.Add(this.checkBoxRainbowColor, 2, 2);
+            this.tableLayoutPanelColors.Controls.Add(this.checkBoxRainbowColor, 2, 3);
             this.tableLayoutPanelColors.Controls.Add(this.labelSnakeHeadColor, 0, 0);
             this.tableLayoutPanelColors.Controls.Add(this.labelSnakeBodyColor, 0, 1);
             this.tableLayoutPanelColors.Controls.Add(this.labelSnakeHeadPrev, 1, 0);
             this.tableLayoutPanelColors.Controls.Add(this.labelSnakeBodyPrev, 1, 1);
-            this.tableLayoutPanelColors.Controls.Add(this.buttonSwitchRainbowMode, 0, 2);
+            this.tableLayoutPanelColors.Controls.Add(this.buttonSwitchRainbowMode, 0, 3);
             this.tableLayoutPanelColors.Controls.Add(this.buttonResetBodyColor, 3, 1);
             this.tableLayoutPanelColors.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelColors.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanelColors.Name = "tableLayoutPanelColors";
-            this.tableLayoutPanelColors.RowCount = 23;
-            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
-            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
-            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
-            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
-            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
-            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
-            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
-            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
-            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
-            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
-            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
-            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
-            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
-            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
-            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
-            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
-            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
-            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
-            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
-            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
-            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
-            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
-            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
+            this.tableLayoutPanelColors.RowCount = 4;
+            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanelColors.Size = new System.Drawing.Size(384, 217);
             this.tableLayoutPanelColors.TabIndex = 0;
+            // 
+            // buttonResetFoodColor
+            // 
+            this.buttonResetFoodColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonResetFoodColor.Location = new System.Drawing.Point(290, 111);
+            this.buttonResetFoodColor.Name = "buttonResetFoodColor";
+            this.buttonResetFoodColor.Size = new System.Drawing.Size(91, 48);
+            this.buttonResetFoodColor.TabIndex = 12;
+            this.buttonResetFoodColor.Text = "Reset";
+            this.buttonResetFoodColor.UseVisualStyleBackColor = true;
+            this.buttonResetFoodColor.Click += new System.EventHandler(this.ButtonResetFoodColor_Click);
+            // 
+            // buttonSetFoodColor
+            // 
+            this.buttonSetFoodColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSetFoodColor.Location = new System.Drawing.Point(194, 111);
+            this.buttonSetFoodColor.Name = "buttonSetFoodColor";
+            this.buttonSetFoodColor.Size = new System.Drawing.Size(90, 48);
+            this.buttonSetFoodColor.TabIndex = 11;
+            this.buttonSetFoodColor.Text = "Set";
+            this.buttonSetFoodColor.UseVisualStyleBackColor = true;
+            this.buttonSetFoodColor.Click += new System.EventHandler(this.buttonSetFoodColor_Click);
+            // 
+            // labelFoodPrev
+            // 
+            this.labelFoodPrev.AutoSize = true;
+            this.labelFoodPrev.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelFoodPrev.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelFoodPrev.Location = new System.Drawing.Point(137, 108);
+            this.labelFoodPrev.Name = "labelFoodPrev";
+            this.labelFoodPrev.Size = new System.Drawing.Size(51, 54);
+            this.labelFoodPrev.TabIndex = 10;
+            // 
+            // labelFoodColor
+            // 
+            this.labelFoodColor.AutoSize = true;
+            this.labelFoodColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelFoodColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFoodColor.Location = new System.Drawing.Point(3, 108);
+            this.labelFoodColor.Name = "labelFoodColor";
+            this.labelFoodColor.Size = new System.Drawing.Size(128, 54);
+            this.labelFoodColor.TabIndex = 9;
+            this.labelFoodColor.Text = "Food";
+            this.labelFoodColor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // buttonResetHeadColor
             // 
             this.buttonResetHeadColor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonResetHeadColor.Location = new System.Drawing.Point(290, 3);
             this.buttonResetHeadColor.Name = "buttonResetHeadColor";
-            this.buttonResetHeadColor.Size = new System.Drawing.Size(91, 56);
+            this.buttonResetHeadColor.Size = new System.Drawing.Size(91, 48);
             this.buttonResetHeadColor.TabIndex = 1;
             this.buttonResetHeadColor.Text = "Reset";
             this.buttonResetHeadColor.UseVisualStyleBackColor = true;
@@ -937,7 +977,7 @@ namespace Snake_Game
             this.buttonSetHeadColor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonSetHeadColor.Location = new System.Drawing.Point(194, 3);
             this.buttonSetHeadColor.Name = "buttonSetHeadColor";
-            this.buttonSetHeadColor.Size = new System.Drawing.Size(90, 56);
+            this.buttonSetHeadColor.Size = new System.Drawing.Size(90, 48);
             this.buttonSetHeadColor.TabIndex = 0;
             this.buttonSetHeadColor.Text = "Set";
             this.buttonSetHeadColor.UseVisualStyleBackColor = true;
@@ -946,9 +986,9 @@ namespace Snake_Game
             // buttonSetBodyColor
             // 
             this.buttonSetBodyColor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSetBodyColor.Location = new System.Drawing.Point(194, 65);
+            this.buttonSetBodyColor.Location = new System.Drawing.Point(194, 57);
             this.buttonSetBodyColor.Name = "buttonSetBodyColor";
-            this.buttonSetBodyColor.Size = new System.Drawing.Size(90, 56);
+            this.buttonSetBodyColor.Size = new System.Drawing.Size(90, 48);
             this.buttonSetBodyColor.TabIndex = 1;
             this.buttonSetBodyColor.Text = "Set";
             this.buttonSetBodyColor.UseVisualStyleBackColor = true;
@@ -959,9 +999,9 @@ namespace Snake_Game
             this.checkBoxRainbowColor.AutoSize = true;
             this.tableLayoutPanelColors.SetColumnSpan(this.checkBoxRainbowColor, 2);
             this.checkBoxRainbowColor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxRainbowColor.Location = new System.Drawing.Point(194, 127);
+            this.checkBoxRainbowColor.Location = new System.Drawing.Point(194, 165);
             this.checkBoxRainbowColor.Name = "checkBoxRainbowColor";
-            this.checkBoxRainbowColor.Size = new System.Drawing.Size(187, 56);
+            this.checkBoxRainbowColor.Size = new System.Drawing.Size(187, 49);
             this.checkBoxRainbowColor.TabIndex = 2;
             this.checkBoxRainbowColor.Text = "Rainbow Snake";
             this.checkBoxRainbowColor.UseVisualStyleBackColor = true;
@@ -974,7 +1014,7 @@ namespace Snake_Game
             this.labelSnakeHeadColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSnakeHeadColor.Location = new System.Drawing.Point(3, 0);
             this.labelSnakeHeadColor.Name = "labelSnakeHeadColor";
-            this.labelSnakeHeadColor.Size = new System.Drawing.Size(128, 62);
+            this.labelSnakeHeadColor.Size = new System.Drawing.Size(128, 54);
             this.labelSnakeHeadColor.TabIndex = 3;
             this.labelSnakeHeadColor.Text = "Snake Head";
             this.labelSnakeHeadColor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -984,9 +1024,9 @@ namespace Snake_Game
             this.labelSnakeBodyColor.AutoSize = true;
             this.labelSnakeBodyColor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelSnakeBodyColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSnakeBodyColor.Location = new System.Drawing.Point(3, 62);
+            this.labelSnakeBodyColor.Location = new System.Drawing.Point(3, 54);
             this.labelSnakeBodyColor.Name = "labelSnakeBodyColor";
-            this.labelSnakeBodyColor.Size = new System.Drawing.Size(128, 62);
+            this.labelSnakeBodyColor.Size = new System.Drawing.Size(128, 54);
             this.labelSnakeBodyColor.TabIndex = 4;
             this.labelSnakeBodyColor.Text = "Snake Body";
             this.labelSnakeBodyColor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -998,7 +1038,7 @@ namespace Snake_Game
             this.labelSnakeHeadPrev.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelSnakeHeadPrev.Location = new System.Drawing.Point(137, 0);
             this.labelSnakeHeadPrev.Name = "labelSnakeHeadPrev";
-            this.labelSnakeHeadPrev.Size = new System.Drawing.Size(51, 62);
+            this.labelSnakeHeadPrev.Size = new System.Drawing.Size(51, 54);
             this.labelSnakeHeadPrev.TabIndex = 5;
             // 
             // labelSnakeBodyPrev
@@ -1006,17 +1046,17 @@ namespace Snake_Game
             this.labelSnakeBodyPrev.AutoSize = true;
             this.labelSnakeBodyPrev.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.labelSnakeBodyPrev.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelSnakeBodyPrev.Location = new System.Drawing.Point(137, 62);
+            this.labelSnakeBodyPrev.Location = new System.Drawing.Point(137, 54);
             this.labelSnakeBodyPrev.Name = "labelSnakeBodyPrev";
-            this.labelSnakeBodyPrev.Size = new System.Drawing.Size(51, 62);
+            this.labelSnakeBodyPrev.Size = new System.Drawing.Size(51, 54);
             this.labelSnakeBodyPrev.TabIndex = 6;
             // 
             // buttonSwitchRainbowMode
             // 
             this.buttonSwitchRainbowMode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSwitchRainbowMode.Location = new System.Drawing.Point(3, 127);
+            this.buttonSwitchRainbowMode.Location = new System.Drawing.Point(3, 165);
             this.buttonSwitchRainbowMode.Name = "buttonSwitchRainbowMode";
-            this.buttonSwitchRainbowMode.Size = new System.Drawing.Size(128, 56);
+            this.buttonSwitchRainbowMode.Size = new System.Drawing.Size(128, 49);
             this.buttonSwitchRainbowMode.TabIndex = 7;
             this.buttonSwitchRainbowMode.Text = "buttonSwitchRainbowMode";
             this.buttonSwitchRainbowMode.UseVisualStyleBackColor = true;
@@ -1025,13 +1065,77 @@ namespace Snake_Game
             // buttonResetBodyColor
             // 
             this.buttonResetBodyColor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonResetBodyColor.Location = new System.Drawing.Point(290, 65);
+            this.buttonResetBodyColor.Location = new System.Drawing.Point(290, 57);
             this.buttonResetBodyColor.Name = "buttonResetBodyColor";
-            this.buttonResetBodyColor.Size = new System.Drawing.Size(91, 56);
+            this.buttonResetBodyColor.Size = new System.Drawing.Size(91, 48);
             this.buttonResetBodyColor.TabIndex = 8;
             this.buttonResetBodyColor.Text = "Reset";
             this.buttonResetBodyColor.UseVisualStyleBackColor = true;
             this.buttonResetBodyColor.Click += new System.EventHandler(this.ButtonResetBodyColor_Click);
+            // 
+            // tabPagePowerups
+            // 
+            this.tabPagePowerups.Controls.Add(this.tableLayoutPanel1);
+            this.tabPagePowerups.Location = new System.Drawing.Point(4, 22);
+            this.tabPagePowerups.Name = "tabPagePowerups";
+            this.tabPagePowerups.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPagePowerups.Size = new System.Drawing.Size(390, 223);
+            this.tabPagePowerups.TabIndex = 3;
+            this.tabPagePowerups.Text = "Powerups";
+            this.tabPagePowerups.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.AutoScroll = true;
+            this.tableLayoutPanel1.AutoScrollMinSize = new System.Drawing.Size(0, 1050);
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.Controls.Add(this.labelPUpSpawnGap, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.textBox1, 2, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 0, 17, 0);
+            this.tableLayoutPanel1.RowCount = 21;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(384, 217);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // labelPUpSpawnGap
+            // 
+            this.labelPUpSpawnGap.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.labelPUpSpawnGap, 2);
+            this.labelPUpSpawnGap.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelPUpSpawnGap.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPUpSpawnGap.Location = new System.Drawing.Point(3, 0);
+            this.labelPUpSpawnGap.Name = "labelPUpSpawnGap";
+            this.labelPUpSpawnGap.Size = new System.Drawing.Size(168, 50);
+            this.labelPUpSpawnGap.TabIndex = 0;
+            this.labelPUpSpawnGap.Text = "Spawn Gap";
+            this.labelPUpSpawnGap.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // buttonApply
             // 
@@ -1063,6 +1167,16 @@ namespace Snake_Game
             this.buttonReset.UseVisualStyleBackColor = true;
             this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
             // 
+            // textBox1
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.textBox1, 2);
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(177, 3);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(170, 45);
+            this.textBox1.TabIndex = 1;
+            // 
             // gameMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1090,6 +1204,9 @@ namespace Snake_Game
             this.tabPageColors.ResumeLayout(false);
             this.tableLayoutPanelColors.ResumeLayout(false);
             this.tableLayoutPanelColors.PerformLayout();
+            this.tabPagePowerups.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1166,5 +1283,13 @@ namespace Snake_Game
         private Button buttonSetPowerupKey;
         private TextBox textBoxPowerupKey;
         private Label labelPowerupKey;
+        private Button buttonResetFoodColor;
+        private Button buttonSetFoodColor;
+        private Label labelFoodPrev;
+        private Label labelFoodColor;
+        private TabPage tabPagePowerups;
+        private TableLayoutPanel tableLayoutPanel1;
+        private Label labelPUpSpawnGap;
+        private TextBox textBox1;
     }
 }

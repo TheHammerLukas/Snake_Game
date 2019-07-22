@@ -10,6 +10,7 @@ namespace Snake_Game
     class gameController
     {
         private Timer checkSoundTimer = new Timer();
+
         private static int cntFoodSpawned = 0;
         private static long soundCheckTime = 0;
         private static long lastSoundPlayTime = 0;
@@ -387,19 +388,19 @@ namespace Snake_Game
                     }
                     if (_xmlAttrib.Name == "PowerupDurationX2")
                     {
-                        gameSettings.PowerupDurationX2 = Convert.ToInt32(_xmlAttrib.Value);
+                        gameSettings.PowerupDurationX2 = ConvTime(Convert.ToInt32(_xmlAttrib.Value), gameConstants.seconds, gameConstants.milliseconds);
                     }
                     if (_xmlAttrib.Name == "PowerupDurationPointTick")
                     {
-                        gameSettings.PowerupDurationPointTick = Convert.ToInt32(_xmlAttrib.Value);
+                        gameSettings.PowerupDurationPointTick = ConvTime(Convert.ToInt32(_xmlAttrib.Value), gameConstants.seconds, gameConstants.milliseconds);
                     }
                     if (_xmlAttrib.Name == "PowerupDurationSlowmo")
                     {
-                        gameSettings.PowerupDurationSlowmo = Convert.ToInt32(_xmlAttrib.Value);
+                        gameSettings.PowerupDurationSlowmo = ConvTime(Convert.ToInt32(_xmlAttrib.Value), gameConstants.seconds, gameConstants.milliseconds);
                     }
                     if (_xmlAttrib.Name == "PowerupDurationNoclip")
                     {
-                        gameSettings.PowerupDurationNoclip = Convert.ToInt32(_xmlAttrib.Value);
+                        gameSettings.PowerupDurationNoclip = ConvTime(Convert.ToInt32(_xmlAttrib.Value), gameConstants.seconds, gameConstants.milliseconds);
                     }
                     if (_xmlAttrib.Name == "snakeHeadNormalColor")
                     {
@@ -517,19 +518,19 @@ namespace Snake_Game
                 _xmlDoc.WriteEndAttribute();
                 // PowerupDurationX2       
                 _xmlDoc.WriteStartAttribute("PowerupDurationX2");
-                _xmlDoc.WriteString(Convert.ToString(Convert.ToInt32(gameSettings.PowerupDurationX2)));
+                _xmlDoc.WriteString(Convert.ToString(ConvTime(Convert.ToInt32(gameSettings.PowerupDurationX2), gameConstants.milliseconds, gameConstants.seconds)));
                 _xmlDoc.WriteEndAttribute();
                 // PowerupDurationPointTick
                 _xmlDoc.WriteStartAttribute("PowerupDurationPointTick");
-                _xmlDoc.WriteString(Convert.ToString(Convert.ToInt32(gameSettings.PowerupDurationPointTick)));
+                _xmlDoc.WriteString(Convert.ToString(ConvTime(Convert.ToInt32(gameSettings.PowerupDurationPointTick), gameConstants.milliseconds, gameConstants.seconds)));
                 _xmlDoc.WriteEndAttribute();
                 // PowerupDurationSlowmo   
                 _xmlDoc.WriteStartAttribute("PowerupDurationSlowmo");
-                _xmlDoc.WriteString(Convert.ToString(Convert.ToInt32(gameSettings.PowerupDurationSlowmo)));
+                _xmlDoc.WriteString(Convert.ToString(ConvTime(Convert.ToInt32(gameSettings.PowerupDurationSlowmo), gameConstants.milliseconds, gameConstants.seconds)));
                 _xmlDoc.WriteEndAttribute();
                 // PowerupDurationNoclip         
                 _xmlDoc.WriteStartAttribute("PowerupDurationNoclip");
-                _xmlDoc.WriteString(Convert.ToString(Convert.ToInt32(gameSettings.PowerupDurationNoclip)));
+                _xmlDoc.WriteString(Convert.ToString(ConvTime(Convert.ToInt32(gameSettings.PowerupDurationNoclip), gameConstants.milliseconds, gameConstants.seconds)));
                 _xmlDoc.WriteEndAttribute();
                 // snakeHeadNormalColor      
                 _xmlDoc.WriteStartAttribute("snakeHeadNormalColor");
@@ -879,15 +880,86 @@ namespace Snake_Game
             return pictureBox.Size.Height / gameSettings.Height;
         }
 
-        public int ConvToGameTime(int normalSpeed)
+        // Converts milliseconds to seconds when toSeconds = true; Converts seconds to milliseconds when toSeconds = false
+        public int ConvTime(int time, string fromTime, string toTime)
         {
-            return 1000 / normalSpeed;
+            int _convertedTime = 0;
+            bool _showError = true;
+
+            if (toTime == gameConstants.gameTime)
+            {
+                if (fromTime == gameConstants.gameSpeed)
+                {
+                    _convertedTime = 1000 / time; // 1000 / speed; amount of ticks in 1 second
+                    _showError = false;
+                }
+            }
+            else if (toTime == gameConstants.gameSpeed)
+            {
+                if (fromTime == gameConstants.gameTime)
+                {
+                    _convertedTime = 1000 * time; // speed * 1000
+                    _showError = false;
+                }
+            }
+            else if (toTime == gameConstants.milliseconds)
+            {
+                if (fromTime == gameConstants.seconds)
+                {
+                    _convertedTime = time * 1000; // seconds * 1000
+                    _showError = false;
+                }
+                else if (fromTime == gameConstants.minutes)
+                {
+                    _convertedTime = ConvTime(ConvTime(time, gameConstants.minutes, gameConstants.seconds), gameConstants.seconds, gameConstants.milliseconds); // recursively convert time
+                    _showError = false;
+                }
+            }
+            else if (toTime == gameConstants.seconds)
+            {
+                if (fromTime == gameConstants.milliseconds)
+                {
+                    _convertedTime = time / 1000; // milliseconds / 1000
+                    _showError = false;
+                }
+                else if (fromTime == gameConstants.minutes)
+                {
+                    _convertedTime = time * 60; // minutes * 60
+                    _showError = false;
+                }
+            }
+            else if (toTime == gameConstants.minutes)
+            {
+                if (fromTime == gameConstants.milliseconds)
+                {
+                    _convertedTime = ConvTime(ConvTime(time, gameConstants.milliseconds, gameConstants.seconds), gameConstants.seconds, gameConstants.minutes); // recursively convert time
+                    _showError = false;
+                }
+                else if (fromTime == gameConstants.seconds)
+                {
+                    _convertedTime = time / 60; // seconds / 60
+                    _showError = false;
+                }
+            }
+
+            // if time wasn't converted show an error message
+            if (_showError)
+            {
+                MessageBox.Show(
+                            "Invalid time conversion in \ngameController.ConvTime procedure!\ntime=" + time + ";fromTime=" + fromTime + ";toTime=" + toTime,
+                            "Error!",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                            );
+            }
+
+            return _convertedTime;
         }
 
         public void SetTimerInterval(Timer timer, int speed, bool isGameTime)
         {
             // Determine whether speed has to be converted to gametime or not
-            timer.Interval = isGameTime ? ConvToGameTime(speed) : speed;
+            timer.Interval = isGameTime ? ConvTime(speed, gameConstants.gameSpeed, gameConstants.gameTime) : speed;
         }
 
         #endregion

@@ -64,12 +64,13 @@ namespace Snake_Game
         // Set values of the 'Settings' textboxes
         private void setMenuValues()
         {
+            // Settings tab
             textBoxWidth.Text = Convert.ToString(gameSettings.Width);
             textBoxHeight.Text = Convert.ToString(gameSettings.Height);
             textBoxSpeed.Text = Convert.ToString(gameSettings.Speed);
             textBoxGrowMultiplicator.Text = Convert.ToString(gameSettings.GrowMultiplicator);
             textBoxPoints.Text = Convert.ToString(gameSettings.Points);
-            checkBoxRainbowColor.Checked = gameSettings.RainbowEnabled;
+            // Controls tab
             textBoxUpKey.Text = Convert.ToString(gameControls.dirUpKey);
             textBoxDownKey.Text = Convert.ToString(gameControls.dirDownKey);
             textBoxLeftKey.Text = Convert.ToString(gameControls.dirLeftKey);
@@ -80,8 +81,11 @@ namespace Snake_Game
             textBoxPauseKey.Text = Convert.ToString(gameControls.modPauseKey);
             textBoxPowerupKey.Text = Convert.ToString(gameControls.modPowerupKey);
             textBoxNoClipKey.Text = Convert.ToString(gameControls.modNoClipKey);
+            // Colors tab
             labelSnakeHeadPrev.BackColor = (gameSettings.snakeHeadNormalColor as SolidBrush).Color;
             labelSnakeBodyPrev.BackColor = (gameSettings.snakeBodyNormalColor as SolidBrush).Color;
+            labelFoodPrev.BackColor = (gameSettings.foodNormalColor as SolidBrush).Color;
+            checkBoxRainbowColor.Checked = gameSettings.RainbowEnabled;
             if (gameSettings.RainbowMode == rainbowMode.rainbowModeTiles)
             {
                 buttonSwitchRainbowMode.Text = "Switch rainbow mode to 'Stretched'";
@@ -90,6 +94,8 @@ namespace Snake_Game
             {
                 buttonSwitchRainbowMode.Text = "Switch rainbow mode to 'Tiles'";
             }
+            // Powerups tab
+
         }
 
         // Reset the 'Settings' to their standard values
@@ -325,6 +331,15 @@ namespace Snake_Game
             new gameController().writeSettingsXML();
         }
 
+        private void buttonSetFoodColor_Click(object sender, EventArgs e)
+        {
+            gameSettings.PickColor(gameColor.foodNormalColor);
+
+            setMenuValues();
+
+            new gameController().writeSettingsXML();
+        }
+
         private void ButtonResetHeadColor_Click(object sender, EventArgs e)
         {
             gameSettings.InitSnakeHeadColor(gameColor.snakeHeadNormalColor);
@@ -337,6 +352,15 @@ namespace Snake_Game
         private void ButtonResetBodyColor_Click(object sender, EventArgs e)
         {
             gameSettings.InitSnakeBodyColor(gameColor.snakeBodyNormalColor);
+
+            setMenuValues();
+
+            new gameController().writeSettingsXML();
+        }
+
+        private void ButtonResetFoodColor_Click(object sender, EventArgs e)
+        {
+            gameSettings.InitFoodColor(gameColor.foodNormalColor);
 
             setMenuValues();
 

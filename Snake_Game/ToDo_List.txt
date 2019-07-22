@@ -30,3 +30,6 @@ Make it possible to restore the last settings
 
 
 Let the user save his settings to different 'profiles'
+
+
+Code review: Add constants for already existing variables used as constants

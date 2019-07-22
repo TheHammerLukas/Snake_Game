@@ -66,6 +66,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\gameConstants.cs" />
     <Compile Include="Classes\gameControls.cs" />
     <Compile Include="Forms\gameInteface.cs">
       <SubType>Form</SubType>
