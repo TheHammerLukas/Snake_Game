@@ -104,11 +104,19 @@ namespace Snake_Game
             this.buttonResetBodyColor = new System.Windows.Forms.Button();
             this.tabPagePowerups = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBoxPUpPointTickDuration = new System.Windows.Forms.TextBox();
+            this.labelPUpPointTickDuration = new System.Windows.Forms.Label();
+            this.textBoxPUpX2Duration = new System.Windows.Forms.TextBox();
+            this.labelPUpX2Duration = new System.Windows.Forms.Label();
             this.labelPUpSpawnGap = new System.Windows.Forms.Label();
+            this.textBoxPUpSpawnGap = new System.Windows.Forms.TextBox();
             this.buttonApply = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
             this.buttonReset = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.labelPUpSlowmoDuration = new System.Windows.Forms.Label();
+            this.textBoxPUpSlowmoDuration = new System.Windows.Forms.TextBox();
+            this.labelPUpNoclipDuration = new System.Windows.Forms.Label();
+            this.textBoxNoclipDuration = new System.Windows.Forms.TextBox();
             this.tabControlMenu.SuspendLayout();
             this.tabPageSettings.SuspendLayout();
             this.tableLayoutPanelSettings.SuspendLayout();
@@ -1093,8 +1101,16 @@ namespace Snake_Game
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.Controls.Add(this.textBoxNoclipDuration, 2, 4);
+            this.tableLayoutPanel1.Controls.Add(this.labelPUpNoclipDuration, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxPUpSlowmoDuration, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.labelPUpSlowmoDuration, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxPUpPointTickDuration, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.labelPUpPointTickDuration, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxPUpX2Duration, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.labelPUpX2Duration, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.labelPUpSpawnGap, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxPUpSpawnGap, 2, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -1124,18 +1140,74 @@ namespace Snake_Game
             this.tableLayoutPanel1.Size = new System.Drawing.Size(384, 217);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
+            // textBoxPUpPointTickDuration
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.textBoxPUpPointTickDuration, 2);
+            this.textBoxPUpPointTickDuration.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxPUpPointTickDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPUpPointTickDuration.Location = new System.Drawing.Point(177, 103);
+            this.textBoxPUpPointTickDuration.Name = "textBoxPUpPointTickDuration";
+            this.textBoxPUpPointTickDuration.Size = new System.Drawing.Size(170, 45);
+            this.textBoxPUpPointTickDuration.TabIndex = 5;
+            // 
+            // labelPUpPointTickDuration
+            // 
+            this.labelPUpPointTickDuration.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.labelPUpPointTickDuration, 2);
+            this.labelPUpPointTickDuration.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelPUpPointTickDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPUpPointTickDuration.Location = new System.Drawing.Point(3, 100);
+            this.labelPUpPointTickDuration.Name = "labelPUpPointTickDuration";
+            this.labelPUpPointTickDuration.Size = new System.Drawing.Size(168, 50);
+            this.labelPUpPointTickDuration.TabIndex = 4;
+            this.labelPUpPointTickDuration.Text = "Point on Tick Duration";
+            this.labelPUpPointTickDuration.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // textBoxPUpX2Duration
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.textBoxPUpX2Duration, 2);
+            this.textBoxPUpX2Duration.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxPUpX2Duration.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPUpX2Duration.Location = new System.Drawing.Point(177, 53);
+            this.textBoxPUpX2Duration.Name = "textBoxPUpX2Duration";
+            this.textBoxPUpX2Duration.Size = new System.Drawing.Size(170, 45);
+            this.textBoxPUpX2Duration.TabIndex = 3;
+            // 
+            // labelPUpX2Duration
+            // 
+            this.labelPUpX2Duration.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.labelPUpX2Duration, 2);
+            this.labelPUpX2Duration.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelPUpX2Duration.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPUpX2Duration.Location = new System.Drawing.Point(3, 50);
+            this.labelPUpX2Duration.Name = "labelPUpX2Duration";
+            this.labelPUpX2Duration.Size = new System.Drawing.Size(168, 50);
+            this.labelPUpX2Duration.TabIndex = 2;
+            this.labelPUpX2Duration.Text = "X2 Duration";
+            this.labelPUpX2Duration.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // labelPUpSpawnGap
             // 
             this.labelPUpSpawnGap.AutoSize = true;
             this.tableLayoutPanel1.SetColumnSpan(this.labelPUpSpawnGap, 2);
             this.labelPUpSpawnGap.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelPUpSpawnGap.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPUpSpawnGap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPUpSpawnGap.Location = new System.Drawing.Point(3, 0);
             this.labelPUpSpawnGap.Name = "labelPUpSpawnGap";
             this.labelPUpSpawnGap.Size = new System.Drawing.Size(168, 50);
             this.labelPUpSpawnGap.TabIndex = 0;
             this.labelPUpSpawnGap.Text = "Spawn Gap";
             this.labelPUpSpawnGap.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // textBoxPUpSpawnGap
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.textBoxPUpSpawnGap, 2);
+            this.textBoxPUpSpawnGap.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxPUpSpawnGap.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPUpSpawnGap.Location = new System.Drawing.Point(177, 3);
+            this.textBoxPUpSpawnGap.Name = "textBoxPUpSpawnGap";
+            this.textBoxPUpSpawnGap.Size = new System.Drawing.Size(170, 45);
+            this.textBoxPUpSpawnGap.TabIndex = 1;
             // 
             // buttonApply
             // 
@@ -1167,15 +1239,51 @@ namespace Snake_Game
             this.buttonReset.UseVisualStyleBackColor = true;
             this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
             // 
-            // textBox1
+            // labelPUpSlowmoDuration
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.textBox1, 2);
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(177, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(170, 45);
-            this.textBox1.TabIndex = 1;
+            this.labelPUpSlowmoDuration.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.labelPUpSlowmoDuration, 2);
+            this.labelPUpSlowmoDuration.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelPUpSlowmoDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPUpSlowmoDuration.Location = new System.Drawing.Point(3, 150);
+            this.labelPUpSlowmoDuration.Name = "labelPUpSlowmoDuration";
+            this.labelPUpSlowmoDuration.Size = new System.Drawing.Size(168, 50);
+            this.labelPUpSlowmoDuration.TabIndex = 6;
+            this.labelPUpSlowmoDuration.Text = "Slowmotion Duration";
+            this.labelPUpSlowmoDuration.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // textBoxPUpSlowmoDuration
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.textBoxPUpSlowmoDuration, 2);
+            this.textBoxPUpSlowmoDuration.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxPUpSlowmoDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPUpSlowmoDuration.Location = new System.Drawing.Point(177, 153);
+            this.textBoxPUpSlowmoDuration.Name = "textBoxPUpSlowmoDuration";
+            this.textBoxPUpSlowmoDuration.Size = new System.Drawing.Size(170, 45);
+            this.textBoxPUpSlowmoDuration.TabIndex = 7;
+            // 
+            // labelPUpNoclipDuration
+            // 
+            this.labelPUpNoclipDuration.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.labelPUpNoclipDuration, 2);
+            this.labelPUpNoclipDuration.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelPUpNoclipDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPUpNoclipDuration.Location = new System.Drawing.Point(3, 200);
+            this.labelPUpNoclipDuration.Name = "labelPUpNoclipDuration";
+            this.labelPUpNoclipDuration.Size = new System.Drawing.Size(168, 50);
+            this.labelPUpNoclipDuration.TabIndex = 8;
+            this.labelPUpNoclipDuration.Text = "Noclip Duration";
+            this.labelPUpNoclipDuration.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // textBoxNoclipDuration
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.textBoxNoclipDuration, 2);
+            this.textBoxNoclipDuration.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxNoclipDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNoclipDuration.Location = new System.Drawing.Point(177, 203);
+            this.textBoxNoclipDuration.Name = "textBoxNoclipDuration";
+            this.textBoxNoclipDuration.Size = new System.Drawing.Size(170, 45);
+            this.textBoxNoclipDuration.TabIndex = 9;
             // 
             // gameMenu
             // 
@@ -1290,6 +1398,14 @@ namespace Snake_Game
         private TabPage tabPagePowerups;
         private TableLayoutPanel tableLayoutPanel1;
         private Label labelPUpSpawnGap;
-        private TextBox textBox1;
+        private TextBox textBoxPUpSpawnGap;
+        private TextBox textBoxPUpPointTickDuration;
+        private Label labelPUpPointTickDuration;
+        private TextBox textBoxPUpX2Duration;
+        private Label labelPUpX2Duration;
+        private TextBox textBoxNoclipDuration;
+        private Label labelPUpNoclipDuration;
+        private TextBox textBoxPUpSlowmoDuration;
+        private Label labelPUpSlowmoDuration;
     }
 }

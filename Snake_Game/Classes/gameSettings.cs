@@ -188,13 +188,50 @@ namespace Snake_Game
             return;
         }
 
+        // Procedure to apply new settings values
+        public static void ApplySettings(int newWidth, int newHeight, int newSpeed, int newGrowMultiplicator, int newPoints, int newPUpSpawnGap)
+        {
+            gameController gamecontroller = new gameController();
+            
+            // Alter settings if needed
+            if (newWidth != Width)
+            {
+                Width = newWidth;
+            }
+            if (newHeight != Height)
+            {
+                Height = newHeight;
+            }
+            if (newSpeed != Speed)
+            {
+                Speed = newSpeed;
+            }
+            if (newGrowMultiplicator != GrowMultiplicator)
+            {
+                GrowMultiplicator = newGrowMultiplicator;
+            }
+            if (newPoints != Points)
+            {
+                Points = newPoints;
+            }
+            if (newPUpSpawnGap != PowerupSpawnGap)
+            {
+                PowerupSpawnGapConfigured = newPUpSpawnGap;
+                PowerupSpawnGap = newPUpSpawnGap;
+            }
+
+            gamecontroller.writeSettingsXML();
+        }
+
+        #region Powerup functions
+
         // Initializes the PowerupSpawnGap
         public static void initPowerupSpawnGap(bool useStandard)
         {
             PowerupSpawnGap = 5;
 
             // Only call readSettingsXML if the values of it should be used
-            if (useStandard)
+            if (!useStandard)
             {
                 PowerupSpawnGap = PowerupSpawnGapConfigured;
             }
@@ -233,36 +270,7 @@ namespace Snake_Game
             }
         }
 
-        // Procedure to apply new settings values
-        public static void ApplySettings(int newWidth, int newHeight, int newSpeed, int newGrowMultiplicator, int newPoints)
-        {
-            gameController gamecontroller = new gameController();
-            
-            // Alter settings if needed
-            if (newWidth != Width)
-            {
-                Width = newWidth;
-            }
-            if (newHeight != Height)
-            {
-                Height = newHeight;
-            }
-            if (newSpeed != Speed)
-            {
-                Speed = newSpeed;
-            }
-            if (newGrowMultiplicator != GrowMultiplicator)
-            {
-                GrowMultiplicator = newGrowMultiplicator;
-            }
-            if (newPoints != Points)
-            {
-                Points = newPoints;
-            }
-
-            gamecontroller.writeSettingsXML();
-            gamecontroller.writeControlsXML();
-        }
+        #endregion
 
         #region Color functions
 

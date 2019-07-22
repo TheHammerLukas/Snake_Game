@@ -24,6 +24,8 @@ namespace Snake_Game
             int _newSpeed = gameSettings.Speed;
             int _newGrowMultiplicator = gameSettings.GrowMultiplicator;
             int _newPoints = gameSettings.Points;
+            int _newPUpSpawnGap = gameSettings.PowerupSpawnGap;
+
             bool _showError = false;
 
             _showError = !int.TryParse(textBoxWidth.Text, out _newWidth);
@@ -43,8 +45,12 @@ namespace Snake_Game
             {
                 _showError = !int.TryParse(textBoxPoints.Text, out _newPoints);
             }
+            if (!_showError)
+            {
+                _showError = !int.TryParse(textBoxPUpSpawnGap.Text, out _newPUpSpawnGap);
+            }
 
-            gameSettings.ApplySettings(_newWidth, _newHeight, _newSpeed, _newGrowMultiplicator, _newPoints);
+            gameSettings.ApplySettings(_newWidth, _newHeight, _newSpeed, _newGrowMultiplicator, _newPoints, _newPUpSpawnGap);
 
             gameSettings.GameOver = true;
 
@@ -95,7 +101,7 @@ namespace Snake_Game
                 buttonSwitchRainbowMode.Text = "Switch rainbow mode to 'Tiles'";
             }
             // Powerups tab
-
+            textBoxPUpSpawnGap.Text = Convert.ToString(gameSettings.PowerupSpawnGap);
         }
 
         // Reset the 'Settings' to their standard values
@@ -117,10 +123,13 @@ namespace Snake_Game
             }
             else if (tabControlMenu.SelectedTab == tabPageColors)
             {
-                new gameSettings(false);
                 gameSettings.InitAllColors();
 
                 gamecontroller.writeSettingsXML();
+            }
+            else if(tabControlMenu.SelectedTab == tabPagePowerups)
+            {
+
             }
 
             setMenuValues();
