@@ -25,6 +25,10 @@ namespace Snake_Game
             int _newGrowMultiplicator = gameSettings.GrowMultiplicator;
             int _newPoints = gameSettings.Points;
             int _newPUpSpawnGap = gameSettings.PowerupSpawnGap;
+            int _newPUpX2Duration = gameSettings.PowerupDurationX2;
+            int _newPUpPointTickDuration = gameSettings.PowerupDurationPointTick;
+            int _newPUpSlowmotionDuration = gameSettings.PowerupDurationSlowmo;
+            int _newPUpNoclipDuration = gameSettings.PowerupDurationNoclip;
 
             bool _showError = false;
 
@@ -49,8 +53,25 @@ namespace Snake_Game
             {
                 _showError = !int.TryParse(textBoxPUpSpawnGap.Text, out _newPUpSpawnGap);
             }
+            if (!_showError)
+            {
+                _showError = !int.TryParse(textBoxPUpX2Duration.Text, out _newPUpX2Duration);
+            }
+            if (!_showError)
+            {
+                _showError = !int.TryParse(textBoxPUpPointTickDuration.Text, out _newPUpPointTickDuration);
+            }
+            if (!_showError)
+            {
+                _showError = !int.TryParse(textBoxPUpSlowmoDuration.Text, out _newPUpSlowmotionDuration);
+            }
+            if (!_showError)
+            {
+                _showError = !int.TryParse(textBoxPUpNoclipDuration.Text, out _newPUpNoclipDuration);
+            }
 
-            gameSettings.ApplySettings(_newWidth, _newHeight, _newSpeed, _newGrowMultiplicator, _newPoints, _newPUpSpawnGap);
+            gameSettings.ApplySettings(_newWidth, _newHeight, _newSpeed, _newGrowMultiplicator, _newPoints, 
+                                       _newPUpSpawnGap, _newPUpX2Duration, _newPUpPointTickDuration, _newPUpSlowmotionDuration, _newPUpNoclipDuration);
 
             gameSettings.GameOver = true;
 
@@ -70,6 +91,8 @@ namespace Snake_Game
         // Set values of the 'Settings' textboxes
         private void setMenuValues()
         {
+            gameController gamecontroller = new gameController();
+
             // Settings tab
             textBoxWidth.Text = Convert.ToString(gameSettings.Width);
             textBoxHeight.Text = Convert.ToString(gameSettings.Height);
@@ -102,6 +125,10 @@ namespace Snake_Game
             }
             // Powerups tab
             textBoxPUpSpawnGap.Text = Convert.ToString(gameSettings.PowerupSpawnGap);
+            textBoxPUpX2Duration.Text = Convert.ToString(gamecontroller.ConvTime(gameSettings.PowerupDurationX2, gameConstants.milliseconds, gameConstants.seconds));
+            textBoxPUpPointTickDuration.Text = Convert.ToString(gamecontroller.ConvTime(gameSettings.PowerupDurationPointTick, gameConstants.milliseconds, gameConstants.seconds));
+            textBoxPUpSlowmoDuration.Text = Convert.ToString(gamecontroller.ConvTime(gameSettings.PowerupDurationSlowmo, gameConstants.milliseconds, gameConstants.seconds));
+            textBoxPUpNoclipDuration.Text = Convert.ToString(gamecontroller.ConvTime(gameSettings.PowerupDurationNoclip, gameConstants.milliseconds, gameConstants.seconds));
         }
 
         // Reset the 'Settings' to their standard values
@@ -112,6 +139,7 @@ namespace Snake_Game
             if (tabControlMenu.SelectedTab == tabPageSettings)
             {
                 new gameSettings(true);
+                gameSettings.GameOver = true;
 
                 gamecontroller.writeSettingsXML();
             }
@@ -129,7 +157,11 @@ namespace Snake_Game
             }
             else if(tabControlMenu.SelectedTab == tabPagePowerups)
             {
+                gameSettings.initPowerupSpawnGap(true);
+                gameSettings.initAllPowerupDuration();
+                gameSettings.GameOver = true;
 
+                gamecontroller.writeSettingsXML();
             }
 
             setMenuValues();

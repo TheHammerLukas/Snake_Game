@@ -514,7 +514,7 @@ namespace Snake_Game
                 _xmlDoc.WriteEndAttribute();
                 // PowerupSpawnGap         
                 _xmlDoc.WriteStartAttribute("PowerupSpawnGap");
-                _xmlDoc.WriteString(Convert.ToString(Convert.ToInt32(gameSettings.PowerupSpawnGap)));
+                _xmlDoc.WriteString(Convert.ToString(Convert.ToInt32(gameSettings.PowerupSpawnGapConfigured)));
                 _xmlDoc.WriteEndAttribute();
                 // PowerupDurationX2       
                 _xmlDoc.WriteStartAttribute("PowerupDurationX2");

@@ -103,7 +103,7 @@ namespace Snake_Game
         public static gamePowerup SavedPowerup          { get; set; } // To save the Powerup after the foodPowerup has been eaten
         public static gamePowerup FoodPowerup           { get; set; } // Only used for generating powerup food
         public static bool GamePowerupActive            { get; set; } // Used to determine if the GamePowerup has been activated or is already active
-        private static int PowerupSpawnGapConfigured    { get; set; } // Used to reinitialize the user configured spawn gap; this value is read from the settings .xml
+        public static int PowerupSpawnGapConfigured     { get; private set; } // Used to reinitialize the user configured spawn gap; this value is read from the settings .xml
         public static int PowerupSpawnGap               { get; set; } // To set the amount of food that has to be eaten in order for a powerup to spawn
         public static int PowerupDurationX2             { get; set; } // To determine the duration of the X2 powerup
         public static int PowerupDurationPointTick      { get; set; } // To determine the duration of the Point on Tick powerup
@@ -141,9 +141,9 @@ namespace Snake_Game
         {
             gameController gamecontroller = new gameController();
             
-            Width               = 15;
-            Height              = 15;
-            Speed               = 12;
+            Width               = 20;
+            Height              = 20;
+            Speed               = 8;
             Score               = 0;  
             GrowMultiplicator   = 5;
             Points              = 100;
@@ -158,17 +158,16 @@ namespace Snake_Game
             GamePowerupActive   = false;
             direction           = gameDirection.Stop;
 
-            initPowerupSpawnGap(useStandard);
-            foreach (gamePowerup powerup in Enum.GetValues(typeof(gamePowerup)))
-            {
-                initPowerupDuration(powerup);
-            }
+            
 
             // Only on first init set the DevMode
             if (firstInit)
             {
                 DevModeEnabled = false;
                 NoClipEnabled  = false;
+
+                initPowerupSpawnGap(useStandard);
+                initAllPowerupDuration();
             }
 
             // Only call readSettingsXML if the values of it should be used
@@ -177,7 +176,10 @@ namespace Snake_Game
                 gamecontroller.readSettingsXML();
             }
 
-            PowerupSpawnGapConfigured = PowerupSpawnGap;
+            if (!DevModeEnabled)
+            {
+                PowerupSpawnGapConfigured = PowerupSpawnGap;
+            }
 
             gamecontroller.readScoreXML();
         }
@@ -189,38 +191,45 @@ namespace Snake_Game
         }
 
         // Procedure to apply new settings values
-        public static void ApplySettings(int newWidth, int newHeight, int newSpeed, int newGrowMultiplicator, int newPoints, int newPUpSpawnGap)
+        public static void ApplySettings(int newWidth, int newHeight, int newSpeed, int newGrowMultiplicator, int newPoints, 
+                                         int newPUpSpawnGap, int newPUpX2Duration, int newPUpPointTickDuration, int newPUpSlowmotionDuration, int newPUpNoclipDuration)
         {
             gameController gamecontroller = new gameController();
-            
-            // Alter settings if needed
-            if (newWidth != Width)
-            {
-                Width = newWidth;
-            }
-            if (newHeight != Height)
-            {
-                Height = newHeight;
-            }
-            if (newSpeed != Speed)
-            {
-                Speed = newSpeed;
-            }
-            if (newGrowMultiplicator != GrowMultiplicator)
-            {
-                GrowMultiplicator = newGrowMultiplicator;
-            }
-            if (newPoints != Points)
-            {
-                Points = newPoints;
-            }
-            if (newPUpSpawnGap != PowerupSpawnGap)
-            {
-                PowerupSpawnGapConfigured = newPUpSpawnGap;
-                PowerupSpawnGap = newPUpSpawnGap;
-            }
 
+            int _newPUpX2Duration           = gamecontroller.ConvTime(newPUpX2Duration        , gameConstants.seconds, gameConstants.milliseconds);
+            int _newPUpPointTickDuration    = gamecontroller.ConvTime(newPUpPointTickDuration , gameConstants.seconds, gameConstants.milliseconds);
+            int _newPUpSlowmotionDuration   = gamecontroller.ConvTime(newPUpSlowmotionDuration, gameConstants.seconds, gameConstants.milliseconds);
+            int _newPUpNoclipDuration       = gamecontroller.ConvTime(newPUpNoclipDuration    , gameConstants.seconds, gameConstants.milliseconds);
+
+
+            // Alter settings if needed
+            Width                       = newWidth              != Width 
+                                        ? newWidth              :  Width;
+            Height                      = newHeight             != Height
+                                        ? newHeight             :  Height;
+            Speed                       = newSpeed              != Speed
+                                        ? newSpeed              :  Speed;
+            GrowMultiplicator           = newGrowMultiplicator  != GrowMultiplicator
+                                        ? newGrowMultiplicator  :  GrowMultiplicator;
+            Points                      = newPoints             != Points
+                                        ? newPoints             :  Points;
+
+            // Alter powerup settings if needed
+            PowerupSpawnGapConfigured   = newPUpSpawnGap            != PowerupSpawnGap
+                                        ? newPUpSpawnGap            :  PowerupSpawnGap;
+            PowerupSpawnGap             = PowerupSpawnGapConfigured;
+
+            PowerupDurationX2           = _newPUpX2Duration         != PowerupDurationX2
+                                        ? _newPUpX2Duration         :  PowerupDurationX2;
+            PowerupDurationPointTick    = _newPUpPointTickDuration  != PowerupDurationPointTick
+                                        ? _newPUpPointTickDuration  :  PowerupDurationPointTick;
+            PowerupDurationSlowmo       = _newPUpSlowmotionDuration != PowerupDurationSlowmo
+                                        ? _newPUpSlowmotionDuration :  PowerupDurationSlowmo;
+            PowerupDurationNoclip       = _newPUpNoclipDuration     != PowerupDurationNoclip
+                                        ? _newPUpNoclipDuration     :  PowerupDurationNoclip;
+            
             gamecontroller.writeSettingsXML();
+            gamecontroller.writeControlsXML();
         }
 
         #region Powerup functions
@@ -234,6 +243,14 @@ namespace Snake_Game
             if (!useStandard)
             {
                 PowerupSpawnGap = PowerupSpawnGapConfigured;
+            }
+        }
+
+        public static void initAllPowerupDuration()
+        {
+            foreach (gamePowerup powerup in Enum.GetValues(typeof(gamePowerup)))
+            {
+                initPowerupDuration(powerup);
             }
         }
 
