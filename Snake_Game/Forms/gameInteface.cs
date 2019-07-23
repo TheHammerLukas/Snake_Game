@@ -26,7 +26,7 @@ namespace Snake_Game
             InitializeComponent();
 
             // Set settings to default
-            gameSettings.InitAllColors();
+            gameSettings.initAllColors();
             gameSettings gamesettings = new gameSettings(false, true);
             gameControls gamecontrols = new gameControls(false);
             gamecontroller = new gameController();

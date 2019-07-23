@@ -151,7 +151,7 @@ namespace Snake_Game
             }
             else if (tabControlMenu.SelectedTab == tabPageColors)
             {
-                gameSettings.InitAllColors();
+                gameSettings.initAllColors();
 
                 gamecontroller.writeSettingsXML();
             }
@@ -243,7 +243,7 @@ namespace Snake_Game
 
         private void buttonResetUpKey_Click(object sender, EventArgs e)
         {
-            gameControls.InitControls(gameAction.UpKey);
+            gameControls.initControls(gameAction.UpKey);
 
             setMenuValues();
 
@@ -252,7 +252,7 @@ namespace Snake_Game
 
         private void buttonResetDownKey_Click(object sender, EventArgs e)
         {
-            gameControls.InitControls(gameAction.DownKey);
+            gameControls.initControls(gameAction.DownKey);
 
             setMenuValues();
 
@@ -261,7 +261,7 @@ namespace Snake_Game
 
         private void buttonResetLeftKey_Click(object sender, EventArgs e)
         {
-            gameControls.InitControls(gameAction.LeftKey);
+            gameControls.initControls(gameAction.LeftKey);
 
             setMenuValues();
 
@@ -270,7 +270,7 @@ namespace Snake_Game
 
         private void buttonResetRightKey_Click(object sender, EventArgs e)
         {
-            gameControls.InitControls(gameAction.RightKey);
+            gameControls.initControls(gameAction.RightKey);
 
             setMenuValues();
 
@@ -279,7 +279,7 @@ namespace Snake_Game
 
         private void buttonResetRestartKey_Click(object sender, EventArgs e)
         {
-            gameControls.InitControls(gameAction.ResetKey);
+            gameControls.initControls(gameAction.ResetKey);
 
             setMenuValues();
 
@@ -288,7 +288,7 @@ namespace Snake_Game
 
         private void buttonResetPauseKey_Click(object sender, EventArgs e)
         {
-            gameControls.InitControls(gameAction.PauseKey);
+            gameControls.initControls(gameAction.PauseKey);
 
             setMenuValues();
 
@@ -297,7 +297,7 @@ namespace Snake_Game
 
         private void buttonResetSpeedKey_Click(object sender, EventArgs e)
         {
-            gameControls.InitControls(gameAction.SpeedKey);
+            gameControls.initControls(gameAction.SpeedKey);
 
             setMenuValues();
 
@@ -306,7 +306,7 @@ namespace Snake_Game
 
         private void buttonResetBotKey_Click(object sender, EventArgs e)
         {
-            gameControls.InitControls(gameAction.BotKey);
+            gameControls.initControls(gameAction.BotKey);
 
             setMenuValues();
 
@@ -315,7 +315,7 @@ namespace Snake_Game
 
         private void buttonResetPowerupKey_Click(object sender, EventArgs e)
         {
-            gameControls.InitControls(gameAction.PowerupKey);
+            gameControls.initControls(gameAction.PowerupKey);
 
             setMenuValues();
 
@@ -324,7 +324,7 @@ namespace Snake_Game
 
         private void buttonResetNoClipKey_Click(object sender, EventArgs e)
         {
-            gameControls.InitControls(gameAction.NoClipKey);
+            gameControls.initControls(gameAction.NoClipKey);
 
             setMenuValues();
 
@@ -383,7 +383,7 @@ namespace Snake_Game
 
         private void ButtonResetHeadColor_Click(object sender, EventArgs e)
         {
-            gameSettings.InitSnakeHeadColor(gameColor.snakeHeadNormalColor);
+            gameSettings.initSnakeHeadColor(gameColor.snakeHeadNormalColor);
 
             setMenuValues();
 
@@ -392,7 +392,7 @@ namespace Snake_Game
 
         private void ButtonResetBodyColor_Click(object sender, EventArgs e)
         {
-            gameSettings.InitSnakeBodyColor(gameColor.snakeBodyNormalColor);
+            gameSettings.initSnakeBodyColor(gameColor.snakeBodyNormalColor);
 
             setMenuValues();
 
@@ -401,7 +401,7 @@ namespace Snake_Game
 
         private void ButtonResetFoodColor_Click(object sender, EventArgs e)
         {
-            gameSettings.InitFoodColor(gameColor.foodNormalColor);
+            gameSettings.initFoodColor(gameColor.foodNormalColor);
 
             setMenuValues();
 

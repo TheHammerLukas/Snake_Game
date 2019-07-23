@@ -21,10 +21,7 @@ namespace Snake_Game
         {
             gameController gamecontroller = new gameController();
 
-            foreach (gameAction action in Enum.GetValues(typeof(gameAction)))
-            {
-                InitControls(action);
-            }
+            initAllControls();
 
             // Only call readControlsXML if the values of it should be used
             if (!useStandard)
@@ -106,8 +103,16 @@ namespace Snake_Game
             return _retCode;
         }
 
+        public static void initAllControls()
+        {
+            foreach (gameAction action in Enum.GetValues(typeof(gameAction)))
+            {
+                initControls(action);
+            }
+        }
+
         // Initializes controls according to passed gameAction
-        public static void InitControls(gameAction action)
+        public static void initControls(gameAction action)
         {
             gameController gamecontroller = new gameController();
             gameAction _action = action;

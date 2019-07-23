@@ -408,21 +408,21 @@ namespace Snake_Game
         }
 
         // Calls initialize functions for colors
-        public static void InitAllColors()
+        public static void initAllColors()
         {
             
             foreach (gameColor color in Enum.GetValues(typeof(gameColor)))
             {
-                InitSnakeHeadColor(color);
-                InitSnakeBodyColor(color);
-                InitFoodColor(color);
+                initSnakeHeadColor(color);
+                initSnakeBodyColor(color);
+                initFoodColor(color);
             }
             
             RainbowEnabled = false;
             RainbowMode = rainbowMode.rainbowModeTiles;
         }
 
-        public static void InitSnakeHeadColor(gameColor color)
+        public static void initSnakeHeadColor(gameColor color)
         {
             gameColor _color = color;
 
@@ -460,7 +460,7 @@ namespace Snake_Game
             }
         }
 
-        public static void InitSnakeBodyColor(gameColor color)
+        public static void initSnakeBodyColor(gameColor color)
         {
             gameColor _color = color;
 
@@ -498,7 +498,7 @@ namespace Snake_Game
             }
         }
 
-        public static void InitFoodColor(gameColor color)
+        public static void initFoodColor(gameColor color)
         { 
             gameColor _color = color;
 

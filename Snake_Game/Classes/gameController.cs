@@ -657,7 +657,7 @@ namespace Snake_Game
             {
                 foreach (gameAction action in Enum.GetValues(typeof(gameAction)))
                 {
-                    gameControls.InitControls(action);
+                    gameControls.initControls(action);
                 }
             }
         }
