@@ -104,6 +104,56 @@ namespace Snake_Game
             this.buttonResetBodyColor = new System.Windows.Forms.Button();
             this.tabPagePowerups = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonResetFoodNoclipColor = new System.Windows.Forms.Button();
+            this.buttonSetFoodNoclipColor = new System.Windows.Forms.Button();
+            this.labelFoodNoclipPrev = new System.Windows.Forms.Label();
+            this.buttonResetBodyNoclipColor = new System.Windows.Forms.Button();
+            this.buttonSetBodyNoclipColor = new System.Windows.Forms.Button();
+            this.labelSnakeBodyNoclipPrev = new System.Windows.Forms.Label();
+            this.buttonResetHeadNoclipColor = new System.Windows.Forms.Button();
+            this.buttonSetHeadNoclipColor = new System.Windows.Forms.Button();
+            this.labelSnakeHeadNoclipPrev = new System.Windows.Forms.Label();
+            this.buttonResetFoodSlowmoColor = new System.Windows.Forms.Button();
+            this.buttonSetFoodSlowmoColor = new System.Windows.Forms.Button();
+            this.labelFoodSlowmoPrev = new System.Windows.Forms.Label();
+            this.buttonResetBodySlowmoColor = new System.Windows.Forms.Button();
+            this.buttonSetBodySlowmoColor = new System.Windows.Forms.Button();
+            this.labelSnakeBodySlowmoPrev = new System.Windows.Forms.Label();
+            this.buttonResetHeadSlowmoColor = new System.Windows.Forms.Button();
+            this.buttonSetHeadSlowmoColor = new System.Windows.Forms.Button();
+            this.labelSnakeHeadSlowmoPrev = new System.Windows.Forms.Label();
+            this.buttonResetFoodPointTickColor = new System.Windows.Forms.Button();
+            this.buttonSetFoodPointTickColor = new System.Windows.Forms.Button();
+            this.labelFoodPointTickPrev = new System.Windows.Forms.Label();
+            this.buttonResetBodyPointTickColor = new System.Windows.Forms.Button();
+            this.buttonSetBodyPointTickColor = new System.Windows.Forms.Button();
+            this.labelSnakeBodyPointTickPrev = new System.Windows.Forms.Label();
+            this.buttonResetHeadPointTickColor = new System.Windows.Forms.Button();
+            this.buttonSetHeadPointTickColor = new System.Windows.Forms.Button();
+            this.labelSnakeHeadPointTickPrev = new System.Windows.Forms.Label();
+            this.buttonResetFoodX2Color = new System.Windows.Forms.Button();
+            this.buttonSetFoodX2Color = new System.Windows.Forms.Button();
+            this.buttonResetBodyX2Color = new System.Windows.Forms.Button();
+            this.buttonSetBodyX2Color = new System.Windows.Forms.Button();
+            this.buttonResetHeadX2Color = new System.Windows.Forms.Button();
+            this.buttonSetHeadX2Color = new System.Windows.Forms.Button();
+            this.labelFoodX2Prev = new System.Windows.Forms.Label();
+            this.labelSnakeBodyX2Prev = new System.Windows.Forms.Label();
+            this.labelSnakeHeadX2Prev = new System.Windows.Forms.Label();
+            this.labelFoodNoclipColor = new System.Windows.Forms.Label();
+            this.labelSnakeBodyNoclipColor = new System.Windows.Forms.Label();
+            this.labelSnakeHeadNoclipColor = new System.Windows.Forms.Label();
+            this.labelNoclipColors = new System.Windows.Forms.Label();
+            this.labelFoodSlowmoColor = new System.Windows.Forms.Label();
+            this.labelSnakeBodySlowmoColor = new System.Windows.Forms.Label();
+            this.labelSnakeHeadSlowmoColor = new System.Windows.Forms.Label();
+            this.labelSlowmoColors = new System.Windows.Forms.Label();
+            this.labelFoodPointTickColor = new System.Windows.Forms.Label();
+            this.labelSnakeBodyPointTickColor = new System.Windows.Forms.Label();
+            this.labelSnakeHeadPointTickColor = new System.Windows.Forms.Label();
+            this.labelPointTickColors = new System.Windows.Forms.Label();
+            this.labelFoodX2Color = new System.Windows.Forms.Label();
+            this.labelSnakeBodyX2Color = new System.Windows.Forms.Label();
             this.textBoxPUpNoclipDuration = new System.Windows.Forms.TextBox();
             this.labelPUpNoclipDuration = new System.Windows.Forms.Label();
             this.textBoxPUpSlowmoDuration = new System.Windows.Forms.TextBox();
@@ -114,6 +164,8 @@ namespace Snake_Game
             this.labelPUpX2Duration = new System.Windows.Forms.Label();
             this.labelPUpSpawnGap = new System.Windows.Forms.Label();
             this.textBoxPUpSpawnGap = new System.Windows.Forms.TextBox();
+            this.labelX2Colors = new System.Windows.Forms.Label();
+            this.labelSnakeHeadX2Color = new System.Windows.Forms.Label();
             this.buttonApply = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
             this.buttonReset = new System.Windows.Forms.Button();
@@ -934,7 +986,7 @@ namespace Snake_Game
             this.buttonResetFoodColor.TabIndex = 12;
             this.buttonResetFoodColor.Text = "Reset";
             this.buttonResetFoodColor.UseVisualStyleBackColor = true;
-            this.buttonResetFoodColor.Click += new System.EventHandler(this.ButtonResetFoodColor_Click);
+            this.buttonResetFoodColor.Click += new System.EventHandler(this.buttonResetFoodColor_Click);
             // 
             // buttonSetFoodColor
             // 
@@ -978,7 +1030,7 @@ namespace Snake_Game
             this.buttonResetHeadColor.TabIndex = 1;
             this.buttonResetHeadColor.Text = "Reset";
             this.buttonResetHeadColor.UseVisualStyleBackColor = true;
-            this.buttonResetHeadColor.Click += new System.EventHandler(this.ButtonResetHeadColor_Click);
+            this.buttonResetHeadColor.Click += new System.EventHandler(this.buttonResetHeadColor_Click);
             // 
             // buttonSetHeadColor
             // 
@@ -1079,7 +1131,7 @@ namespace Snake_Game
             this.buttonResetBodyColor.TabIndex = 8;
             this.buttonResetBodyColor.Text = "Reset";
             this.buttonResetBodyColor.UseVisualStyleBackColor = true;
-            this.buttonResetBodyColor.Click += new System.EventHandler(this.ButtonResetBodyColor_Click);
+            this.buttonResetBodyColor.Click += new System.EventHandler(this.buttonResetBodyColor_Click);
             // 
             // tabPagePowerups
             // 
@@ -1101,6 +1153,56 @@ namespace Snake_Game
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.Controls.Add(this.buttonResetFoodNoclipColor, 3, 20);
+            this.tableLayoutPanel1.Controls.Add(this.buttonSetFoodNoclipColor, 2, 20);
+            this.tableLayoutPanel1.Controls.Add(this.labelFoodNoclipPrev, 1, 20);
+            this.tableLayoutPanel1.Controls.Add(this.buttonResetBodyNoclipColor, 3, 19);
+            this.tableLayoutPanel1.Controls.Add(this.buttonSetBodyNoclipColor, 2, 19);
+            this.tableLayoutPanel1.Controls.Add(this.labelSnakeBodyNoclipPrev, 1, 19);
+            this.tableLayoutPanel1.Controls.Add(this.buttonResetHeadNoclipColor, 3, 18);
+            this.tableLayoutPanel1.Controls.Add(this.buttonSetHeadNoclipColor, 2, 18);
+            this.tableLayoutPanel1.Controls.Add(this.labelSnakeHeadNoclipPrev, 1, 18);
+            this.tableLayoutPanel1.Controls.Add(this.buttonResetFoodSlowmoColor, 3, 16);
+            this.tableLayoutPanel1.Controls.Add(this.buttonSetFoodSlowmoColor, 2, 16);
+            this.tableLayoutPanel1.Controls.Add(this.labelFoodSlowmoPrev, 1, 16);
+            this.tableLayoutPanel1.Controls.Add(this.buttonResetBodySlowmoColor, 3, 15);
+            this.tableLayoutPanel1.Controls.Add(this.buttonSetBodySlowmoColor, 2, 15);
+            this.tableLayoutPanel1.Controls.Add(this.labelSnakeBodySlowmoPrev, 1, 15);
+            this.tableLayoutPanel1.Controls.Add(this.buttonResetHeadSlowmoColor, 3, 14);
+            this.tableLayoutPanel1.Controls.Add(this.buttonSetHeadSlowmoColor, 2, 14);
+            this.tableLayoutPanel1.Controls.Add(this.labelSnakeHeadSlowmoPrev, 1, 14);
+            this.tableLayoutPanel1.Controls.Add(this.buttonResetFoodPointTickColor, 3, 12);
+            this.tableLayoutPanel1.Controls.Add(this.buttonSetFoodPointTickColor, 2, 12);
+            this.tableLayoutPanel1.Controls.Add(this.labelFoodPointTickPrev, 1, 12);
+            this.tableLayoutPanel1.Controls.Add(this.buttonResetBodyPointTickColor, 3, 11);
+            this.tableLayoutPanel1.Controls.Add(this.buttonSetBodyPointTickColor, 2, 11);
+            this.tableLayoutPanel1.Controls.Add(this.labelSnakeBodyPointTickPrev, 1, 11);
+            this.tableLayoutPanel1.Controls.Add(this.buttonResetHeadPointTickColor, 3, 10);
+            this.tableLayoutPanel1.Controls.Add(this.buttonSetHeadPointTickColor, 2, 10);
+            this.tableLayoutPanel1.Controls.Add(this.labelSnakeHeadPointTickPrev, 1, 10);
+            this.tableLayoutPanel1.Controls.Add(this.buttonResetFoodX2Color, 3, 8);
+            this.tableLayoutPanel1.Controls.Add(this.buttonSetFoodX2Color, 2, 8);
+            this.tableLayoutPanel1.Controls.Add(this.buttonResetBodyX2Color, 3, 7);
+            this.tableLayoutPanel1.Controls.Add(this.buttonSetBodyX2Color, 2, 7);
+            this.tableLayoutPanel1.Controls.Add(this.buttonResetHeadX2Color, 3, 6);
+            this.tableLayoutPanel1.Controls.Add(this.buttonSetHeadX2Color, 2, 6);
+            this.tableLayoutPanel1.Controls.Add(this.labelFoodX2Prev, 1, 8);
+            this.tableLayoutPanel1.Controls.Add(this.labelSnakeBodyX2Prev, 1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.labelSnakeHeadX2Prev, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.labelFoodNoclipColor, 0, 20);
+            this.tableLayoutPanel1.Controls.Add(this.labelSnakeBodyNoclipColor, 0, 19);
+            this.tableLayoutPanel1.Controls.Add(this.labelSnakeHeadNoclipColor, 0, 18);
+            this.tableLayoutPanel1.Controls.Add(this.labelNoclipColors, 0, 17);
+            this.tableLayoutPanel1.Controls.Add(this.labelFoodSlowmoColor, 0, 16);
+            this.tableLayoutPanel1.Controls.Add(this.labelSnakeBodySlowmoColor, 0, 15);
+            this.tableLayoutPanel1.Controls.Add(this.labelSnakeHeadSlowmoColor, 0, 14);
+            this.tableLayoutPanel1.Controls.Add(this.labelSlowmoColors, 0, 13);
+            this.tableLayoutPanel1.Controls.Add(this.labelFoodPointTickColor, 0, 12);
+            this.tableLayoutPanel1.Controls.Add(this.labelSnakeBodyPointTickColor, 0, 11);
+            this.tableLayoutPanel1.Controls.Add(this.labelSnakeHeadPointTickColor, 0, 10);
+            this.tableLayoutPanel1.Controls.Add(this.labelPointTickColors, 0, 9);
+            this.tableLayoutPanel1.Controls.Add(this.labelFoodX2Color, 0, 8);
+            this.tableLayoutPanel1.Controls.Add(this.labelSnakeBodyX2Color, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.textBoxPUpNoclipDuration, 2, 4);
             this.tableLayoutPanel1.Controls.Add(this.labelPUpNoclipDuration, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.textBoxPUpSlowmoDuration, 2, 3);
@@ -1111,6 +1213,8 @@ namespace Snake_Game
             this.tableLayoutPanel1.Controls.Add(this.labelPUpX2Duration, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.labelPUpSpawnGap, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.textBoxPUpSpawnGap, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.labelX2Colors, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.labelSnakeHeadX2Color, 0, 6);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -1139,6 +1243,561 @@ namespace Snake_Game
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(384, 217);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // buttonResetFoodNoclipColor
+            // 
+            this.buttonResetFoodNoclipColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonResetFoodNoclipColor.Location = new System.Drawing.Point(264, 1003);
+            this.buttonResetFoodNoclipColor.Name = "buttonResetFoodNoclipColor";
+            this.buttonResetFoodNoclipColor.Size = new System.Drawing.Size(83, 44);
+            this.buttonResetFoodNoclipColor.TabIndex = 61;
+            this.buttonResetFoodNoclipColor.Text = "Reset";
+            this.buttonResetFoodNoclipColor.UseVisualStyleBackColor = true;
+            this.buttonResetFoodNoclipColor.Click += new System.EventHandler(this.buttonResetFoodNoclipColor_Click);
+            // 
+            // buttonSetFoodNoclipColor
+            // 
+            this.buttonSetFoodNoclipColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSetFoodNoclipColor.Location = new System.Drawing.Point(177, 1003);
+            this.buttonSetFoodNoclipColor.Name = "buttonSetFoodNoclipColor";
+            this.buttonSetFoodNoclipColor.Size = new System.Drawing.Size(81, 44);
+            this.buttonSetFoodNoclipColor.TabIndex = 60;
+            this.buttonSetFoodNoclipColor.Text = "Set";
+            this.buttonSetFoodNoclipColor.UseVisualStyleBackColor = true;
+            this.buttonSetFoodNoclipColor.Click += new System.EventHandler(this.buttonSetFoodNoclipColor_Click);
+            // 
+            // labelFoodNoclipPrev
+            // 
+            this.labelFoodNoclipPrev.AutoSize = true;
+            this.labelFoodNoclipPrev.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelFoodNoclipPrev.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelFoodNoclipPrev.Location = new System.Drawing.Point(125, 1000);
+            this.labelFoodNoclipPrev.Name = "labelFoodNoclipPrev";
+            this.labelFoodNoclipPrev.Size = new System.Drawing.Size(46, 50);
+            this.labelFoodNoclipPrev.TabIndex = 59;
+            // 
+            // buttonResetBodyNoclipColor
+            // 
+            this.buttonResetBodyNoclipColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonResetBodyNoclipColor.Location = new System.Drawing.Point(264, 953);
+            this.buttonResetBodyNoclipColor.Name = "buttonResetBodyNoclipColor";
+            this.buttonResetBodyNoclipColor.Size = new System.Drawing.Size(83, 44);
+            this.buttonResetBodyNoclipColor.TabIndex = 58;
+            this.buttonResetBodyNoclipColor.Text = "Reset";
+            this.buttonResetBodyNoclipColor.UseVisualStyleBackColor = true;
+            this.buttonResetBodyNoclipColor.Click += new System.EventHandler(this.buttonResetBodyNoclipColor_Click);
+            // 
+            // buttonSetBodyNoclipColor
+            // 
+            this.buttonSetBodyNoclipColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSetBodyNoclipColor.Location = new System.Drawing.Point(177, 953);
+            this.buttonSetBodyNoclipColor.Name = "buttonSetBodyNoclipColor";
+            this.buttonSetBodyNoclipColor.Size = new System.Drawing.Size(81, 44);
+            this.buttonSetBodyNoclipColor.TabIndex = 57;
+            this.buttonSetBodyNoclipColor.Text = "Set";
+            this.buttonSetBodyNoclipColor.UseVisualStyleBackColor = true;
+            this.buttonSetBodyNoclipColor.Click += new System.EventHandler(this.buttonSetBodyNoclipColor_Click);
+            // 
+            // labelSnakeBodyNoclipPrev
+            // 
+            this.labelSnakeBodyNoclipPrev.AutoSize = true;
+            this.labelSnakeBodyNoclipPrev.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelSnakeBodyNoclipPrev.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelSnakeBodyNoclipPrev.Location = new System.Drawing.Point(125, 950);
+            this.labelSnakeBodyNoclipPrev.Name = "labelSnakeBodyNoclipPrev";
+            this.labelSnakeBodyNoclipPrev.Size = new System.Drawing.Size(46, 50);
+            this.labelSnakeBodyNoclipPrev.TabIndex = 56;
+            // 
+            // buttonResetHeadNoclipColor
+            // 
+            this.buttonResetHeadNoclipColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonResetHeadNoclipColor.Location = new System.Drawing.Point(264, 903);
+            this.buttonResetHeadNoclipColor.Name = "buttonResetHeadNoclipColor";
+            this.buttonResetHeadNoclipColor.Size = new System.Drawing.Size(83, 44);
+            this.buttonResetHeadNoclipColor.TabIndex = 55;
+            this.buttonResetHeadNoclipColor.Text = "Reset";
+            this.buttonResetHeadNoclipColor.UseVisualStyleBackColor = true;
+            this.buttonResetHeadNoclipColor.Click += new System.EventHandler(this.buttonResetHeadNoclipColor_Click);
+            // 
+            // buttonSetHeadNoclipColor
+            // 
+            this.buttonSetHeadNoclipColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSetHeadNoclipColor.Location = new System.Drawing.Point(177, 903);
+            this.buttonSetHeadNoclipColor.Name = "buttonSetHeadNoclipColor";
+            this.buttonSetHeadNoclipColor.Size = new System.Drawing.Size(81, 44);
+            this.buttonSetHeadNoclipColor.TabIndex = 54;
+            this.buttonSetHeadNoclipColor.Text = "Set";
+            this.buttonSetHeadNoclipColor.UseVisualStyleBackColor = true;
+            this.buttonSetHeadNoclipColor.Click += new System.EventHandler(this.buttonSetHeadNoclipColor_Click);
+            // 
+            // labelSnakeHeadNoclipPrev
+            // 
+            this.labelSnakeHeadNoclipPrev.AutoSize = true;
+            this.labelSnakeHeadNoclipPrev.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelSnakeHeadNoclipPrev.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelSnakeHeadNoclipPrev.Location = new System.Drawing.Point(125, 900);
+            this.labelSnakeHeadNoclipPrev.Name = "labelSnakeHeadNoclipPrev";
+            this.labelSnakeHeadNoclipPrev.Size = new System.Drawing.Size(46, 50);
+            this.labelSnakeHeadNoclipPrev.TabIndex = 53;
+            // 
+            // buttonResetFoodSlowmoColor
+            // 
+            this.buttonResetFoodSlowmoColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonResetFoodSlowmoColor.Location = new System.Drawing.Point(264, 803);
+            this.buttonResetFoodSlowmoColor.Name = "buttonResetFoodSlowmoColor";
+            this.buttonResetFoodSlowmoColor.Size = new System.Drawing.Size(83, 44);
+            this.buttonResetFoodSlowmoColor.TabIndex = 52;
+            this.buttonResetFoodSlowmoColor.Text = "Reset";
+            this.buttonResetFoodSlowmoColor.UseVisualStyleBackColor = true;
+            this.buttonResetFoodSlowmoColor.Click += new System.EventHandler(this.buttonResetFoodSlowmoColor_Click);
+            // 
+            // buttonSetFoodSlowmoColor
+            // 
+            this.buttonSetFoodSlowmoColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSetFoodSlowmoColor.Location = new System.Drawing.Point(177, 803);
+            this.buttonSetFoodSlowmoColor.Name = "buttonSetFoodSlowmoColor";
+            this.buttonSetFoodSlowmoColor.Size = new System.Drawing.Size(81, 44);
+            this.buttonSetFoodSlowmoColor.TabIndex = 51;
+            this.buttonSetFoodSlowmoColor.Text = "Set";
+            this.buttonSetFoodSlowmoColor.UseVisualStyleBackColor = true;
+            this.buttonSetFoodSlowmoColor.Click += new System.EventHandler(this.buttonSetFoodSlowmoColor_Click);
+            // 
+            // labelFoodSlowmoPrev
+            // 
+            this.labelFoodSlowmoPrev.AutoSize = true;
+            this.labelFoodSlowmoPrev.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelFoodSlowmoPrev.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelFoodSlowmoPrev.Location = new System.Drawing.Point(125, 800);
+            this.labelFoodSlowmoPrev.Name = "labelFoodSlowmoPrev";
+            this.labelFoodSlowmoPrev.Size = new System.Drawing.Size(46, 50);
+            this.labelFoodSlowmoPrev.TabIndex = 50;
+            // 
+            // buttonResetBodySlowmoColor
+            // 
+            this.buttonResetBodySlowmoColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonResetBodySlowmoColor.Location = new System.Drawing.Point(264, 753);
+            this.buttonResetBodySlowmoColor.Name = "buttonResetBodySlowmoColor";
+            this.buttonResetBodySlowmoColor.Size = new System.Drawing.Size(83, 44);
+            this.buttonResetBodySlowmoColor.TabIndex = 49;
+            this.buttonResetBodySlowmoColor.Text = "Reset";
+            this.buttonResetBodySlowmoColor.UseVisualStyleBackColor = true;
+            this.buttonResetBodySlowmoColor.Click += new System.EventHandler(this.buttonResetBodySlowmoColor_Click);
+            // 
+            // buttonSetBodySlowmoColor
+            // 
+            this.buttonSetBodySlowmoColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSetBodySlowmoColor.Location = new System.Drawing.Point(177, 753);
+            this.buttonSetBodySlowmoColor.Name = "buttonSetBodySlowmoColor";
+            this.buttonSetBodySlowmoColor.Size = new System.Drawing.Size(81, 44);
+            this.buttonSetBodySlowmoColor.TabIndex = 48;
+            this.buttonSetBodySlowmoColor.Text = "Set";
+            this.buttonSetBodySlowmoColor.UseVisualStyleBackColor = true;
+            this.buttonSetBodySlowmoColor.Click += new System.EventHandler(this.buttonSetBodySlowmoColor_Click);
+            // 
+            // labelSnakeBodySlowmoPrev
+            // 
+            this.labelSnakeBodySlowmoPrev.AutoSize = true;
+            this.labelSnakeBodySlowmoPrev.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelSnakeBodySlowmoPrev.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelSnakeBodySlowmoPrev.Location = new System.Drawing.Point(125, 750);
+            this.labelSnakeBodySlowmoPrev.Name = "labelSnakeBodySlowmoPrev";
+            this.labelSnakeBodySlowmoPrev.Size = new System.Drawing.Size(46, 50);
+            this.labelSnakeBodySlowmoPrev.TabIndex = 47;
+            // 
+            // buttonResetHeadSlowmoColor
+            // 
+            this.buttonResetHeadSlowmoColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonResetHeadSlowmoColor.Location = new System.Drawing.Point(264, 703);
+            this.buttonResetHeadSlowmoColor.Name = "buttonResetHeadSlowmoColor";
+            this.buttonResetHeadSlowmoColor.Size = new System.Drawing.Size(83, 44);
+            this.buttonResetHeadSlowmoColor.TabIndex = 46;
+            this.buttonResetHeadSlowmoColor.Text = "Reset";
+            this.buttonResetHeadSlowmoColor.UseVisualStyleBackColor = true;
+            this.buttonResetHeadSlowmoColor.Click += new System.EventHandler(this.buttonResetHeadSlowmoColor_Click);
+            // 
+            // buttonSetHeadSlowmoColor
+            // 
+            this.buttonSetHeadSlowmoColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSetHeadSlowmoColor.Location = new System.Drawing.Point(177, 703);
+            this.buttonSetHeadSlowmoColor.Name = "buttonSetHeadSlowmoColor";
+            this.buttonSetHeadSlowmoColor.Size = new System.Drawing.Size(81, 44);
+            this.buttonSetHeadSlowmoColor.TabIndex = 45;
+            this.buttonSetHeadSlowmoColor.Text = "Set";
+            this.buttonSetHeadSlowmoColor.UseVisualStyleBackColor = true;
+            this.buttonSetHeadSlowmoColor.Click += new System.EventHandler(this.buttonSetHeadSlowmoColor_Click);
+            // 
+            // labelSnakeHeadSlowmoPrev
+            // 
+            this.labelSnakeHeadSlowmoPrev.AutoSize = true;
+            this.labelSnakeHeadSlowmoPrev.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelSnakeHeadSlowmoPrev.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelSnakeHeadSlowmoPrev.Location = new System.Drawing.Point(125, 700);
+            this.labelSnakeHeadSlowmoPrev.Name = "labelSnakeHeadSlowmoPrev";
+            this.labelSnakeHeadSlowmoPrev.Size = new System.Drawing.Size(46, 50);
+            this.labelSnakeHeadSlowmoPrev.TabIndex = 44;
+            // 
+            // buttonResetFoodPointTickColor
+            // 
+            this.buttonResetFoodPointTickColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonResetFoodPointTickColor.Location = new System.Drawing.Point(264, 603);
+            this.buttonResetFoodPointTickColor.Name = "buttonResetFoodPointTickColor";
+            this.buttonResetFoodPointTickColor.Size = new System.Drawing.Size(83, 44);
+            this.buttonResetFoodPointTickColor.TabIndex = 43;
+            this.buttonResetFoodPointTickColor.Text = "Reset";
+            this.buttonResetFoodPointTickColor.UseVisualStyleBackColor = true;
+            this.buttonResetFoodPointTickColor.Click += new System.EventHandler(this.buttonResetFoodPointTickColor_Click);
+            // 
+            // buttonSetFoodPointTickColor
+            // 
+            this.buttonSetFoodPointTickColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSetFoodPointTickColor.Location = new System.Drawing.Point(177, 603);
+            this.buttonSetFoodPointTickColor.Name = "buttonSetFoodPointTickColor";
+            this.buttonSetFoodPointTickColor.Size = new System.Drawing.Size(81, 44);
+            this.buttonSetFoodPointTickColor.TabIndex = 42;
+            this.buttonSetFoodPointTickColor.Text = "Set";
+            this.buttonSetFoodPointTickColor.UseVisualStyleBackColor = true;
+            this.buttonSetFoodPointTickColor.Click += new System.EventHandler(this.buttonSetFoodPointTickColor_Click);
+            // 
+            // labelFoodPointTickPrev
+            // 
+            this.labelFoodPointTickPrev.AutoSize = true;
+            this.labelFoodPointTickPrev.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelFoodPointTickPrev.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelFoodPointTickPrev.Location = new System.Drawing.Point(125, 600);
+            this.labelFoodPointTickPrev.Name = "labelFoodPointTickPrev";
+            this.labelFoodPointTickPrev.Size = new System.Drawing.Size(46, 50);
+            this.labelFoodPointTickPrev.TabIndex = 41;
+            // 
+            // buttonResetBodyPointTickColor
+            // 
+            this.buttonResetBodyPointTickColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonResetBodyPointTickColor.Location = new System.Drawing.Point(264, 553);
+            this.buttonResetBodyPointTickColor.Name = "buttonResetBodyPointTickColor";
+            this.buttonResetBodyPointTickColor.Size = new System.Drawing.Size(83, 44);
+            this.buttonResetBodyPointTickColor.TabIndex = 40;
+            this.buttonResetBodyPointTickColor.Text = "Reset";
+            this.buttonResetBodyPointTickColor.UseVisualStyleBackColor = true;
+            this.buttonResetBodyPointTickColor.Click += new System.EventHandler(this.buttonResetBodyPointTickColor_Click);
+            // 
+            // buttonSetBodyPointTickColor
+            // 
+            this.buttonSetBodyPointTickColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSetBodyPointTickColor.Location = new System.Drawing.Point(177, 553);
+            this.buttonSetBodyPointTickColor.Name = "buttonSetBodyPointTickColor";
+            this.buttonSetBodyPointTickColor.Size = new System.Drawing.Size(81, 44);
+            this.buttonSetBodyPointTickColor.TabIndex = 39;
+            this.buttonSetBodyPointTickColor.Text = "Set";
+            this.buttonSetBodyPointTickColor.UseVisualStyleBackColor = true;
+            this.buttonSetBodyPointTickColor.Click += new System.EventHandler(this.buttonSetBodyPointTickColor_Click);
+            // 
+            // labelSnakeBodyPointTickPrev
+            // 
+            this.labelSnakeBodyPointTickPrev.AutoSize = true;
+            this.labelSnakeBodyPointTickPrev.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelSnakeBodyPointTickPrev.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelSnakeBodyPointTickPrev.Location = new System.Drawing.Point(125, 550);
+            this.labelSnakeBodyPointTickPrev.Name = "labelSnakeBodyPointTickPrev";
+            this.labelSnakeBodyPointTickPrev.Size = new System.Drawing.Size(46, 50);
+            this.labelSnakeBodyPointTickPrev.TabIndex = 38;
+            // 
+            // buttonResetHeadPointTickColor
+            // 
+            this.buttonResetHeadPointTickColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonResetHeadPointTickColor.Location = new System.Drawing.Point(264, 503);
+            this.buttonResetHeadPointTickColor.Name = "buttonResetHeadPointTickColor";
+            this.buttonResetHeadPointTickColor.Size = new System.Drawing.Size(83, 44);
+            this.buttonResetHeadPointTickColor.TabIndex = 37;
+            this.buttonResetHeadPointTickColor.Text = "Reset";
+            this.buttonResetHeadPointTickColor.UseVisualStyleBackColor = true;
+            this.buttonResetHeadPointTickColor.Click += new System.EventHandler(this.buttonResetHeadPointTickColor_Click);
+            // 
+            // buttonSetHeadPointTickColor
+            // 
+            this.buttonSetHeadPointTickColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSetHeadPointTickColor.Location = new System.Drawing.Point(177, 503);
+            this.buttonSetHeadPointTickColor.Name = "buttonSetHeadPointTickColor";
+            this.buttonSetHeadPointTickColor.Size = new System.Drawing.Size(81, 44);
+            this.buttonSetHeadPointTickColor.TabIndex = 36;
+            this.buttonSetHeadPointTickColor.Text = "Set";
+            this.buttonSetHeadPointTickColor.UseVisualStyleBackColor = true;
+            this.buttonSetHeadPointTickColor.Click += new System.EventHandler(this.buttonSetHeadPointTickColor_Click);
+            // 
+            // labelSnakeHeadPointTickPrev
+            // 
+            this.labelSnakeHeadPointTickPrev.AutoSize = true;
+            this.labelSnakeHeadPointTickPrev.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelSnakeHeadPointTickPrev.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelSnakeHeadPointTickPrev.Location = new System.Drawing.Point(125, 500);
+            this.labelSnakeHeadPointTickPrev.Name = "labelSnakeHeadPointTickPrev";
+            this.labelSnakeHeadPointTickPrev.Size = new System.Drawing.Size(46, 50);
+            this.labelSnakeHeadPointTickPrev.TabIndex = 35;
+            // 
+            // buttonResetFoodX2Color
+            // 
+            this.buttonResetFoodX2Color.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonResetFoodX2Color.Location = new System.Drawing.Point(264, 403);
+            this.buttonResetFoodX2Color.Name = "buttonResetFoodX2Color";
+            this.buttonResetFoodX2Color.Size = new System.Drawing.Size(83, 44);
+            this.buttonResetFoodX2Color.TabIndex = 34;
+            this.buttonResetFoodX2Color.Text = "Reset";
+            this.buttonResetFoodX2Color.UseVisualStyleBackColor = true;
+            this.buttonResetFoodX2Color.Click += new System.EventHandler(this.buttonResetFoodX2Color_Click);
+            // 
+            // buttonSetFoodX2Color
+            // 
+            this.buttonSetFoodX2Color.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSetFoodX2Color.Location = new System.Drawing.Point(177, 403);
+            this.buttonSetFoodX2Color.Name = "buttonSetFoodX2Color";
+            this.buttonSetFoodX2Color.Size = new System.Drawing.Size(81, 44);
+            this.buttonSetFoodX2Color.TabIndex = 33;
+            this.buttonSetFoodX2Color.Text = "Set";
+            this.buttonSetFoodX2Color.UseVisualStyleBackColor = true;
+            this.buttonSetFoodX2Color.Click += new System.EventHandler(this.buttonSetFoodX2Color_Click);
+            // 
+            // buttonResetBodyX2Color
+            // 
+            this.buttonResetBodyX2Color.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonResetBodyX2Color.Location = new System.Drawing.Point(264, 353);
+            this.buttonResetBodyX2Color.Name = "buttonResetBodyX2Color";
+            this.buttonResetBodyX2Color.Size = new System.Drawing.Size(83, 44);
+            this.buttonResetBodyX2Color.TabIndex = 32;
+            this.buttonResetBodyX2Color.Text = "Reset";
+            this.buttonResetBodyX2Color.UseVisualStyleBackColor = true;
+            this.buttonResetBodyX2Color.Click += new System.EventHandler(this.buttonResetBodyX2Color_Click);
+            // 
+            // buttonSetBodyX2Color
+            // 
+            this.buttonSetBodyX2Color.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSetBodyX2Color.Location = new System.Drawing.Point(177, 353);
+            this.buttonSetBodyX2Color.Name = "buttonSetBodyX2Color";
+            this.buttonSetBodyX2Color.Size = new System.Drawing.Size(81, 44);
+            this.buttonSetBodyX2Color.TabIndex = 31;
+            this.buttonSetBodyX2Color.Text = "Set";
+            this.buttonSetBodyX2Color.UseVisualStyleBackColor = true;
+            this.buttonSetBodyX2Color.Click += new System.EventHandler(this.buttonSetBodyX2Color_Click);
+            // 
+            // buttonResetHeadX2Color
+            // 
+            this.buttonResetHeadX2Color.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonResetHeadX2Color.Location = new System.Drawing.Point(264, 303);
+            this.buttonResetHeadX2Color.Name = "buttonResetHeadX2Color";
+            this.buttonResetHeadX2Color.Size = new System.Drawing.Size(83, 44);
+            this.buttonResetHeadX2Color.TabIndex = 30;
+            this.buttonResetHeadX2Color.Text = "Reset";
+            this.buttonResetHeadX2Color.UseVisualStyleBackColor = true;
+            this.buttonResetHeadX2Color.Click += new System.EventHandler(this.buttonResetHeadX2Color_Click);
+            // 
+            // buttonSetHeadX2Color
+            // 
+            this.buttonSetHeadX2Color.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSetHeadX2Color.Location = new System.Drawing.Point(177, 303);
+            this.buttonSetHeadX2Color.Name = "buttonSetHeadX2Color";
+            this.buttonSetHeadX2Color.Size = new System.Drawing.Size(81, 44);
+            this.buttonSetHeadX2Color.TabIndex = 29;
+            this.buttonSetHeadX2Color.Text = "Set";
+            this.buttonSetHeadX2Color.UseVisualStyleBackColor = true;
+            this.buttonSetHeadX2Color.Click += new System.EventHandler(this.buttonSetHeadX2Color_Click);
+            // 
+            // labelFoodX2Prev
+            // 
+            this.labelFoodX2Prev.AutoSize = true;
+            this.labelFoodX2Prev.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelFoodX2Prev.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelFoodX2Prev.Location = new System.Drawing.Point(125, 400);
+            this.labelFoodX2Prev.Name = "labelFoodX2Prev";
+            this.labelFoodX2Prev.Size = new System.Drawing.Size(46, 50);
+            this.labelFoodX2Prev.TabIndex = 28;
+            // 
+            // labelSnakeBodyX2Prev
+            // 
+            this.labelSnakeBodyX2Prev.AutoSize = true;
+            this.labelSnakeBodyX2Prev.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelSnakeBodyX2Prev.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelSnakeBodyX2Prev.Location = new System.Drawing.Point(125, 350);
+            this.labelSnakeBodyX2Prev.Name = "labelSnakeBodyX2Prev";
+            this.labelSnakeBodyX2Prev.Size = new System.Drawing.Size(46, 50);
+            this.labelSnakeBodyX2Prev.TabIndex = 27;
+            // 
+            // labelSnakeHeadX2Prev
+            // 
+            this.labelSnakeHeadX2Prev.AutoSize = true;
+            this.labelSnakeHeadX2Prev.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelSnakeHeadX2Prev.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelSnakeHeadX2Prev.Location = new System.Drawing.Point(125, 300);
+            this.labelSnakeHeadX2Prev.Name = "labelSnakeHeadX2Prev";
+            this.labelSnakeHeadX2Prev.Size = new System.Drawing.Size(46, 50);
+            this.labelSnakeHeadX2Prev.TabIndex = 26;
+            // 
+            // labelFoodNoclipColor
+            // 
+            this.labelFoodNoclipColor.AutoSize = true;
+            this.labelFoodNoclipColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelFoodNoclipColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFoodNoclipColor.Location = new System.Drawing.Point(3, 1000);
+            this.labelFoodNoclipColor.Name = "labelFoodNoclipColor";
+            this.labelFoodNoclipColor.Size = new System.Drawing.Size(116, 50);
+            this.labelFoodNoclipColor.TabIndex = 25;
+            this.labelFoodNoclipColor.Text = "Food";
+            this.labelFoodNoclipColor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelSnakeBodyNoclipColor
+            // 
+            this.labelSnakeBodyNoclipColor.AutoSize = true;
+            this.labelSnakeBodyNoclipColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelSnakeBodyNoclipColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSnakeBodyNoclipColor.Location = new System.Drawing.Point(3, 950);
+            this.labelSnakeBodyNoclipColor.Name = "labelSnakeBodyNoclipColor";
+            this.labelSnakeBodyNoclipColor.Size = new System.Drawing.Size(116, 50);
+            this.labelSnakeBodyNoclipColor.TabIndex = 24;
+            this.labelSnakeBodyNoclipColor.Text = "Snake Body";
+            this.labelSnakeBodyNoclipColor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelSnakeHeadNoclipColor
+            // 
+            this.labelSnakeHeadNoclipColor.AutoSize = true;
+            this.labelSnakeHeadNoclipColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelSnakeHeadNoclipColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSnakeHeadNoclipColor.Location = new System.Drawing.Point(3, 900);
+            this.labelSnakeHeadNoclipColor.Name = "labelSnakeHeadNoclipColor";
+            this.labelSnakeHeadNoclipColor.Size = new System.Drawing.Size(116, 50);
+            this.labelSnakeHeadNoclipColor.TabIndex = 23;
+            this.labelSnakeHeadNoclipColor.Text = "Snake Head";
+            this.labelSnakeHeadNoclipColor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelNoclipColors
+            // 
+            this.labelNoclipColors.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.labelNoclipColors, 4);
+            this.labelNoclipColors.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelNoclipColors.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNoclipColors.Location = new System.Drawing.Point(3, 850);
+            this.labelNoclipColors.Name = "labelNoclipColors";
+            this.labelNoclipColors.Size = new System.Drawing.Size(344, 50);
+            this.labelNoclipColors.TabIndex = 22;
+            this.labelNoclipColors.Text = "Noclip Colors";
+            this.labelNoclipColors.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelFoodSlowmoColor
+            // 
+            this.labelFoodSlowmoColor.AutoSize = true;
+            this.labelFoodSlowmoColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelFoodSlowmoColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFoodSlowmoColor.Location = new System.Drawing.Point(3, 800);
+            this.labelFoodSlowmoColor.Name = "labelFoodSlowmoColor";
+            this.labelFoodSlowmoColor.Size = new System.Drawing.Size(116, 50);
+            this.labelFoodSlowmoColor.TabIndex = 21;
+            this.labelFoodSlowmoColor.Text = "Food";
+            this.labelFoodSlowmoColor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelSnakeBodySlowmoColor
+            // 
+            this.labelSnakeBodySlowmoColor.AutoSize = true;
+            this.labelSnakeBodySlowmoColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelSnakeBodySlowmoColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSnakeBodySlowmoColor.Location = new System.Drawing.Point(3, 750);
+            this.labelSnakeBodySlowmoColor.Name = "labelSnakeBodySlowmoColor";
+            this.labelSnakeBodySlowmoColor.Size = new System.Drawing.Size(116, 50);
+            this.labelSnakeBodySlowmoColor.TabIndex = 20;
+            this.labelSnakeBodySlowmoColor.Text = "Snake Body";
+            this.labelSnakeBodySlowmoColor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelSnakeHeadSlowmoColor
+            // 
+            this.labelSnakeHeadSlowmoColor.AutoSize = true;
+            this.labelSnakeHeadSlowmoColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelSnakeHeadSlowmoColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSnakeHeadSlowmoColor.Location = new System.Drawing.Point(3, 700);
+            this.labelSnakeHeadSlowmoColor.Name = "labelSnakeHeadSlowmoColor";
+            this.labelSnakeHeadSlowmoColor.Size = new System.Drawing.Size(116, 50);
+            this.labelSnakeHeadSlowmoColor.TabIndex = 19;
+            this.labelSnakeHeadSlowmoColor.Text = "Snake Head";
+            this.labelSnakeHeadSlowmoColor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelSlowmoColors
+            // 
+            this.labelSlowmoColors.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.labelSlowmoColors, 4);
+            this.labelSlowmoColors.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelSlowmoColors.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSlowmoColors.Location = new System.Drawing.Point(3, 650);
+            this.labelSlowmoColors.Name = "labelSlowmoColors";
+            this.labelSlowmoColors.Size = new System.Drawing.Size(344, 50);
+            this.labelSlowmoColors.TabIndex = 18;
+            this.labelSlowmoColors.Text = "Slowmotion Colors";
+            this.labelSlowmoColors.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelFoodPointTickColor
+            // 
+            this.labelFoodPointTickColor.AutoSize = true;
+            this.labelFoodPointTickColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelFoodPointTickColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFoodPointTickColor.Location = new System.Drawing.Point(3, 600);
+            this.labelFoodPointTickColor.Name = "labelFoodPointTickColor";
+            this.labelFoodPointTickColor.Size = new System.Drawing.Size(116, 50);
+            this.labelFoodPointTickColor.TabIndex = 17;
+            this.labelFoodPointTickColor.Text = "Food";
+            this.labelFoodPointTickColor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelSnakeBodyPointTickColor
+            // 
+            this.labelSnakeBodyPointTickColor.AutoSize = true;
+            this.labelSnakeBodyPointTickColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelSnakeBodyPointTickColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSnakeBodyPointTickColor.Location = new System.Drawing.Point(3, 550);
+            this.labelSnakeBodyPointTickColor.Name = "labelSnakeBodyPointTickColor";
+            this.labelSnakeBodyPointTickColor.Size = new System.Drawing.Size(116, 50);
+            this.labelSnakeBodyPointTickColor.TabIndex = 16;
+            this.labelSnakeBodyPointTickColor.Text = "Snake Body";
+            this.labelSnakeBodyPointTickColor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelSnakeHeadPointTickColor
+            // 
+            this.labelSnakeHeadPointTickColor.AutoSize = true;
+            this.labelSnakeHeadPointTickColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelSnakeHeadPointTickColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSnakeHeadPointTickColor.Location = new System.Drawing.Point(3, 500);
+            this.labelSnakeHeadPointTickColor.Name = "labelSnakeHeadPointTickColor";
+            this.labelSnakeHeadPointTickColor.Size = new System.Drawing.Size(116, 50);
+            this.labelSnakeHeadPointTickColor.TabIndex = 15;
+            this.labelSnakeHeadPointTickColor.Text = "Snake Head";
+            this.labelSnakeHeadPointTickColor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelPointTickColors
+            // 
+            this.labelPointTickColors.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.labelPointTickColors, 4);
+            this.labelPointTickColors.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelPointTickColors.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPointTickColors.Location = new System.Drawing.Point(3, 450);
+            this.labelPointTickColors.Name = "labelPointTickColors";
+            this.labelPointTickColors.Size = new System.Drawing.Size(344, 50);
+            this.labelPointTickColors.TabIndex = 14;
+            this.labelPointTickColors.Text = "Point Tick Colors";
+            this.labelPointTickColors.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelFoodX2Color
+            // 
+            this.labelFoodX2Color.AutoSize = true;
+            this.labelFoodX2Color.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelFoodX2Color.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFoodX2Color.Location = new System.Drawing.Point(3, 400);
+            this.labelFoodX2Color.Name = "labelFoodX2Color";
+            this.labelFoodX2Color.Size = new System.Drawing.Size(116, 50);
+            this.labelFoodX2Color.TabIndex = 13;
+            this.labelFoodX2Color.Text = "Food";
+            this.labelFoodX2Color.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelSnakeBodyX2Color
+            // 
+            this.labelSnakeBodyX2Color.AutoSize = true;
+            this.labelSnakeBodyX2Color.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelSnakeBodyX2Color.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSnakeBodyX2Color.Location = new System.Drawing.Point(3, 350);
+            this.labelSnakeBodyX2Color.Name = "labelSnakeBodyX2Color";
+            this.labelSnakeBodyX2Color.Size = new System.Drawing.Size(116, 50);
+            this.labelSnakeBodyX2Color.TabIndex = 12;
+            this.labelSnakeBodyX2Color.Text = "Snake Body";
+            this.labelSnakeBodyX2Color.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBoxPUpNoclipDuration
             // 
@@ -1254,6 +1913,31 @@ namespace Snake_Game
             this.textBoxPUpSpawnGap.Name = "textBoxPUpSpawnGap";
             this.textBoxPUpSpawnGap.Size = new System.Drawing.Size(170, 45);
             this.textBoxPUpSpawnGap.TabIndex = 1;
+            // 
+            // labelX2Colors
+            // 
+            this.labelX2Colors.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.labelX2Colors, 4);
+            this.labelX2Colors.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelX2Colors.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX2Colors.Location = new System.Drawing.Point(3, 250);
+            this.labelX2Colors.Name = "labelX2Colors";
+            this.labelX2Colors.Size = new System.Drawing.Size(344, 50);
+            this.labelX2Colors.TabIndex = 10;
+            this.labelX2Colors.Text = "X2 Colors";
+            this.labelX2Colors.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelSnakeHeadX2Color
+            // 
+            this.labelSnakeHeadX2Color.AutoSize = true;
+            this.labelSnakeHeadX2Color.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelSnakeHeadX2Color.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSnakeHeadX2Color.Location = new System.Drawing.Point(3, 300);
+            this.labelSnakeHeadX2Color.Name = "labelSnakeHeadX2Color";
+            this.labelSnakeHeadX2Color.Size = new System.Drawing.Size(116, 50);
+            this.labelSnakeHeadX2Color.TabIndex = 11;
+            this.labelSnakeHeadX2Color.Text = "Snake Head";
+            this.labelSnakeHeadX2Color.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // buttonApply
             // 
@@ -1407,5 +2091,57 @@ namespace Snake_Game
         private Label labelPUpNoclipDuration;
         private TextBox textBoxPUpSlowmoDuration;
         private Label labelPUpSlowmoDuration;
+        private Label labelFoodNoclipColor;
+        private Label labelSnakeBodyNoclipColor;
+        private Label labelSnakeHeadNoclipColor;
+        private Label labelNoclipColors;
+        private Label labelFoodSlowmoColor;
+        private Label labelSnakeBodySlowmoColor;
+        private Label labelSnakeHeadSlowmoColor;
+        private Label labelSlowmoColors;
+        private Label labelFoodPointTickColor;
+        private Label labelSnakeBodyPointTickColor;
+        private Label labelSnakeHeadPointTickColor;
+        private Label labelPointTickColors;
+        private Label labelFoodX2Color;
+        private Label labelSnakeBodyX2Color;
+        private Label labelX2Colors;
+        private Label labelSnakeHeadX2Color;
+        private Button buttonResetFoodNoclipColor;
+        private Button buttonSetFoodNoclipColor;
+        private Label labelFoodNoclipPrev;
+        private Button buttonResetBodyNoclipColor;
+        private Button buttonSetBodyNoclipColor;
+        private Label labelSnakeBodyNoclipPrev;
+        private Button buttonResetHeadNoclipColor;
+        private Button buttonSetHeadNoclipColor;
+        private Label labelSnakeHeadNoclipPrev;
+        private Button buttonResetFoodSlowmoColor;
+        private Button buttonSetFoodSlowmoColor;
+        private Label labelFoodSlowmoPrev;
+        private Button buttonResetBodySlowmoColor;
+        private Button buttonSetBodySlowmoColor;
+        private Label labelSnakeBodySlowmoPrev;
+        private Button buttonResetHeadSlowmoColor;
+        private Button buttonSetHeadSlowmoColor;
+        private Label labelSnakeHeadSlowmoPrev;
+        private Button buttonResetFoodPointTickColor;
+        private Button buttonSetFoodPointTickColor;
+        private Label labelFoodPointTickPrev;
+        private Button buttonResetBodyPointTickColor;
+        private Button buttonSetBodyPointTickColor;
+        private Label labelSnakeBodyPointTickPrev;
+        private Button buttonResetHeadPointTickColor;
+        private Button buttonSetHeadPointTickColor;
+        private Label labelSnakeHeadPointTickPrev;
+        private Button buttonResetFoodX2Color;
+        private Button buttonSetFoodX2Color;
+        private Button buttonResetBodyX2Color;
+        private Button buttonSetBodyX2Color;
+        private Button buttonResetHeadX2Color;
+        private Button buttonSetHeadX2Color;
+        private Label labelFoodX2Prev;
+        private Label labelSnakeBodyX2Prev;
+        private Label labelSnakeHeadX2Prev;
     }
 }

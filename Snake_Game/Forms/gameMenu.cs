@@ -136,6 +136,18 @@ namespace Snake_Game
             textBoxPUpPointTickDuration.Text = Convert.ToString(gamecontroller.ConvTime(gameSettings.PowerupDurationPointTick, gameConstants.milliseconds, gameConstants.seconds));
             textBoxPUpSlowmoDuration.Text = Convert.ToString(gamecontroller.ConvTime(gameSettings.PowerupDurationSlowmo, gameConstants.milliseconds, gameConstants.seconds));
             textBoxPUpNoclipDuration.Text = Convert.ToString(gamecontroller.ConvTime(gameSettings.PowerupDurationNoclip, gameConstants.milliseconds, gameConstants.seconds));
+            labelSnakeHeadX2Prev.BackColor = (gameSettings.snakeHeadPUpX2Color as SolidBrush).Color;
+            labelSnakeBodyX2Prev.BackColor = (gameSettings.snakeBodyPUpX2Color as SolidBrush).Color;
+            labelFoodX2Prev.BackColor = (gameSettings.foodPUpX2Color as SolidBrush).Color;
+            labelSnakeHeadPointTickPrev.BackColor = (gameSettings.snakeHeadPUpPointTickColor as SolidBrush).Color;
+            labelSnakeBodyPointTickPrev.BackColor = (gameSettings.snakeBodyPUpPointTickColor as SolidBrush).Color;
+            labelFoodPointTickPrev.BackColor = (gameSettings.foodPUpPointTickColor as SolidBrush).Color;
+            labelSnakeHeadSlowmoPrev.BackColor = (gameSettings.snakeHeadPUpSlowmoColor as SolidBrush).Color;
+            labelSnakeBodySlowmoPrev.BackColor = (gameSettings.snakeBodyPUpSlowmoColor as SolidBrush).Color;
+            labelFoodSlowmoPrev.BackColor = (gameSettings.foodPUpSlowmoColor as SolidBrush).Color;
+            labelSnakeHeadNoclipPrev.BackColor = (gameSettings.snakeHeadPUpNoclipColor as SolidBrush).Color;
+            labelSnakeBodyNoclipPrev.BackColor = (gameSettings.snakeBodyPUpNoclipColor as SolidBrush).Color;
+            labelFoodNoclipPrev.BackColor = (gameSettings.foodPUpNoclipColor as SolidBrush).Color;
         }
 
         // Reset the 'Settings' to their standard values
@@ -386,7 +398,7 @@ namespace Snake_Game
             new gameController().writeSettingsXML();
         }
 
-        private void ButtonResetHeadColor_Click(object sender, EventArgs e)
+        private void buttonResetHeadColor_Click(object sender, EventArgs e)
         {
             gameSettings.initSnakeHeadColor(gameColor.snakeHeadNormalColor);
 
@@ -395,7 +407,7 @@ namespace Snake_Game
             new gameController().writeSettingsXML();
         }
 
-        private void ButtonResetBodyColor_Click(object sender, EventArgs e)
+        private void buttonResetBodyColor_Click(object sender, EventArgs e)
         {
             gameSettings.initSnakeBodyColor(gameColor.snakeBodyNormalColor);
 
@@ -404,9 +416,229 @@ namespace Snake_Game
             new gameController().writeSettingsXML();
         }
 
-        private void ButtonResetFoodColor_Click(object sender, EventArgs e)
+        private void buttonResetFoodColor_Click(object sender, EventArgs e)
         {
             gameSettings.initFoodColor(gameColor.foodNormalColor);
+
+            setMenuValues();
+
+            new gameController().writeSettingsXML();
+        }
+
+        #endregion
+
+        #region Powerup functions
+
+        private void buttonSetHeadX2Color_Click(object sender, EventArgs e)
+        {
+            gameSettings.PickColor(gameColor.snakeHeadPUpX2Color);
+
+            setMenuValues();
+
+            new gameController().writeSettingsXML();
+        }
+
+        private void buttonSetBodyX2Color_Click(object sender, EventArgs e)
+        {
+            gameSettings.PickColor(gameColor.snakeBodyPUpX2Color);
+
+            setMenuValues();
+
+            new gameController().writeSettingsXML();
+        }
+
+        private void buttonSetFoodX2Color_Click(object sender, EventArgs e)
+        {
+            gameSettings.PickColor(gameColor.foodPUpX2Color);
+
+            setMenuValues();
+
+            new gameController().writeSettingsXML();
+        }
+
+        private void buttonSetHeadPointTickColor_Click(object sender, EventArgs e)
+        {
+            gameSettings.PickColor(gameColor.snakeHeadPUpPointTickColor);
+
+            setMenuValues();
+
+            new gameController().writeSettingsXML();
+        }
+
+        private void buttonSetBodyPointTickColor_Click(object sender, EventArgs e)
+        {
+            gameSettings.PickColor(gameColor.snakeBodyPUpPointTickColor);
+
+            setMenuValues();
+
+            new gameController().writeSettingsXML();
+        }
+
+        private void buttonSetFoodPointTickColor_Click(object sender, EventArgs e)
+        {
+            gameSettings.PickColor(gameColor.foodPUpPointTickColor);
+
+            setMenuValues();
+
+            new gameController().writeSettingsXML();
+        }
+
+        private void buttonSetHeadSlowmoColor_Click(object sender, EventArgs e)
+        {
+            gameSettings.PickColor(gameColor.snakeHeadPUpSlowmoColor);
+
+            setMenuValues();
+
+            new gameController().writeSettingsXML();
+        }
+
+        private void buttonSetBodySlowmoColor_Click(object sender, EventArgs e)
+        {
+            gameSettings.PickColor(gameColor.snakeBodyPUpSlowmoColor);
+
+            setMenuValues();
+
+            new gameController().writeSettingsXML();
+        }
+
+        private void buttonSetFoodSlowmoColor_Click(object sender, EventArgs e)
+        {
+            gameSettings.PickColor(gameColor.foodPUpSlowmoColor);
+
+            setMenuValues();
+
+            new gameController().writeSettingsXML();
+        }
+
+        private void buttonSetHeadNoclipColor_Click(object sender, EventArgs e)
+        {
+            gameSettings.PickColor(gameColor.snakeHeadPUpNoclipColor);
+
+            setMenuValues();
+
+            new gameController().writeSettingsXML();
+        }
+
+        private void buttonSetBodyNoclipColor_Click(object sender, EventArgs e)
+        {
+            gameSettings.PickColor(gameColor.snakeBodyPUpNoclipColor);
+
+            setMenuValues();
+
+            new gameController().writeSettingsXML();
+        }
+
+        private void buttonSetFoodNoclipColor_Click(object sender, EventArgs e)
+        {
+            gameSettings.PickColor(gameColor.foodPUpNoclipColor);
+
+            setMenuValues();
+
+            new gameController().writeSettingsXML();
+        }
+
+        private void buttonResetHeadX2Color_Click(object sender, EventArgs e)
+        {
+            gameSettings.initSnakeHeadColor(gameColor.snakeHeadPUpX2Color);
+
+            setMenuValues();
+
+            new gameController().writeSettingsXML();
+        }
+
+        private void buttonResetBodyX2Color_Click(object sender, EventArgs e)
+        {
+            gameSettings.initSnakeBodyColor(gameColor.snakeBodyPUpX2Color);
+
+            setMenuValues();
+
+            new gameController().writeSettingsXML();
+        }
+
+        private void buttonResetFoodX2Color_Click(object sender, EventArgs e)
+        {
+            gameSettings.initFoodColor(gameColor.foodPUpX2Color);
+
+            setMenuValues();
+
+            new gameController().writeSettingsXML();
+        }
+
+        private void buttonResetHeadPointTickColor_Click(object sender, EventArgs e)
+        {
+            gameSettings.initSnakeHeadColor(gameColor.snakeHeadPUpPointTickColor);
+
+            setMenuValues();
+
+            new gameController().writeSettingsXML();
+        }
+
+        private void buttonResetBodyPointTickColor_Click(object sender, EventArgs e)
+        {
+            gameSettings.initSnakeBodyColor(gameColor.snakeBodyPUpPointTickColor);
+
+            setMenuValues();
+
+            new gameController().writeSettingsXML();
+        }
+
+        private void buttonResetFoodPointTickColor_Click(object sender, EventArgs e)
+        {
+            gameSettings.initFoodColor(gameColor.foodPUpPointTickColor);
+
+            setMenuValues();
+
+            new gameController().writeSettingsXML();
+        }
+
+        private void buttonResetHeadSlowmoColor_Click(object sender, EventArgs e)
+        {
+            gameSettings.initSnakeHeadColor(gameColor.snakeHeadPUpSlowmoColor);
+
+            setMenuValues();
+
+            new gameController().writeSettingsXML();
+        }
+
+        private void buttonResetBodySlowmoColor_Click(object sender, EventArgs e)
+        {
+            gameSettings.initSnakeBodyColor(gameColor.snakeBodyPUpSlowmoColor);
+
+            setMenuValues();
+
+            new gameController().writeSettingsXML();
+        }
+
+        private void buttonResetFoodSlowmoColor_Click(object sender, EventArgs e)
+        {
+            gameSettings.initFoodColor(gameColor.foodPUpSlowmoColor);
+
+            setMenuValues();
+
+            new gameController().writeSettingsXML();
+        }
+
+        private void buttonResetHeadNoclipColor_Click(object sender, EventArgs e)
+        {
+            gameSettings.initSnakeHeadColor(gameColor.snakeHeadPUpNoclipColor);
+
+            setMenuValues();
+
+            new gameController().writeSettingsXML();
+        }
+
+        private void buttonResetBodyNoclipColor_Click(object sender, EventArgs e)
+        {
+            gameSettings.initSnakeBodyColor(gameColor.snakeBodyPUpNoclipColor);
+
+            setMenuValues();
+
+            new gameController().writeSettingsXML();
+        }
+
+        private void buttonResetFoodNoclipColor_Click(object sender, EventArgs e)
+        {
+            gameSettings.initFoodColor(gameColor.foodPUpNoclipColor);
 
             setMenuValues();
 
