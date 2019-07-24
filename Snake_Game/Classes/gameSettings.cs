@@ -229,7 +229,6 @@ namespace Snake_Game
                                         ? _newPUpNoclipDuration     :  PowerupDurationNoclip;
             
             gamecontroller.writeSettingsXML();
-            gamecontroller.writeControlsXML();
         }
 
         #region Powerup functions

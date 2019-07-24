@@ -6,7 +6,7 @@ namespace Snake_Game
 {
     public partial class gameMenu : Form
     {
-        private static gameAction gameAction = gameAction.None;
+        private static gameAction gameaction = gameAction.None;
 
         public gameMenu()
         {
@@ -32,48 +32,55 @@ namespace Snake_Game
 
             bool _showError = false;
 
-            _showError = !int.TryParse(textBoxWidth.Text, out _newWidth);
-            if (!_showError)
-            {
-                _showError = !int.TryParse(textBoxHeight.Text, out _newHeight);
-            }
-            if (!_showError)
-            {
-                _showError = !int.TryParse(textBoxSpeed.Text, out _newSpeed);
-            }
-            if (!_showError)
-            {
-                _showError = !int.TryParse(textBoxGrowMultiplicator.Text, out _newGrowMultiplicator);
-            }
-            if (!_showError)
-            {
-                _showError = !int.TryParse(textBoxPoints.Text, out _newPoints);
-            }
-            if (!_showError)
-            {
-                _showError = !int.TryParse(textBoxPUpSpawnGap.Text, out _newPUpSpawnGap);
-            }
-            if (!_showError)
-            {
-                _showError = !int.TryParse(textBoxPUpX2Duration.Text, out _newPUpX2Duration);
-            }
-            if (!_showError)
-            {
-                _showError = !int.TryParse(textBoxPUpPointTickDuration.Text, out _newPUpPointTickDuration);
-            }
-            if (!_showError)
-            {
-                _showError = !int.TryParse(textBoxPUpSlowmoDuration.Text, out _newPUpSlowmotionDuration);
-            }
-            if (!_showError)
-            {
-                _showError = !int.TryParse(textBoxPUpNoclipDuration.Text, out _newPUpNoclipDuration);
-            }
+            if (tabControlMenu.SelectedTab == tabPageSettings || tabControlMenu.SelectedTab == tabPageColors || tabControlMenu.SelectedTab == tabPagePowerups)
+            { 
+                _showError = !int.TryParse(textBoxWidth.Text, out _newWidth);
+                if (!_showError)
+                {
+                    _showError = !int.TryParse(textBoxHeight.Text, out _newHeight);
+                }
+                if (!_showError)
+                {
+                    _showError = !int.TryParse(textBoxSpeed.Text, out _newSpeed);
+                }
+                if (!_showError)
+                {
+                    _showError = !int.TryParse(textBoxGrowMultiplicator.Text, out _newGrowMultiplicator);
+                }
+                if (!_showError)
+                {
+                    _showError = !int.TryParse(textBoxPoints.Text, out _newPoints);
+                }
+                if (!_showError)
+                {
+                    _showError = !int.TryParse(textBoxPUpSpawnGap.Text, out _newPUpSpawnGap);
+                }
+                if (!_showError)
+                {
+                    _showError = !int.TryParse(textBoxPUpX2Duration.Text, out _newPUpX2Duration);
+                }
+                if (!_showError)
+                {
+                    _showError = !int.TryParse(textBoxPUpPointTickDuration.Text, out _newPUpPointTickDuration);
+                }
+                if (!_showError)
+                {
+                    _showError = !int.TryParse(textBoxPUpSlowmoDuration.Text, out _newPUpSlowmotionDuration);
+                }
+                if (!_showError)
+                {
+                    _showError = !int.TryParse(textBoxPUpNoclipDuration.Text, out _newPUpNoclipDuration);
+                }
 
-            gameSettings.ApplySettings(_newWidth, _newHeight, _newSpeed, _newGrowMultiplicator, _newPoints, 
-                                       _newPUpSpawnGap, _newPUpX2Duration, _newPUpPointTickDuration, _newPUpSlowmotionDuration, _newPUpNoclipDuration);
+                gameSettings.ApplySettings(_newWidth, _newHeight, _newSpeed, _newGrowMultiplicator, _newPoints,
+                                           _newPUpSpawnGap, _newPUpX2Duration, _newPUpPointTickDuration, _newPUpSlowmotionDuration, _newPUpNoclipDuration);
 
-            gameSettings.GameOver = true;
+                gameSettings.GameOver = true;
+            }
+            else if (tabControlMenu.SelectedTab == tabPageControls)
+            {
+                new gameController().writeControlsXML();
+            }
 
             setMenuValues();
 
@@ -178,67 +185,65 @@ namespace Snake_Game
 
         private void gameMenu_KeyDown(object sender, KeyEventArgs e)
         {
-            if (tabControlMenu.SelectedTab == tabPageControls)
+            if (tabControlMenu.SelectedTab == tabPageControls && gameaction != gameAction.None)
             {
-                if (gameControls.ConvKeyPressToKeyConfig(e.KeyCode, gameAction))
+                if (gameControls.ConvKeyPressToKeyConfig(e.KeyCode, gameaction))
                 {
                     setMenuValues();
                 }
 
-                gameAction = gameAction.None;
-
-                gameSettings.GameOver = true;
+                gameaction = gameAction.None;
             }
         }
 
         private void buttonSetUpKey_Click(object sender, EventArgs e)
         {
-            gameAction = gameAction.UpKey;
+            gameaction = gameAction.UpKey;
         }
 
         private void buttonSetDownKey_Click(object sender, EventArgs e)
         {
-            gameAction = gameAction.DownKey;
+            gameaction = gameAction.DownKey;
         }
 
         private void buttonSetLeftKey_Click(object sender, EventArgs e)
         {
-            gameAction = gameAction.LeftKey;
+            gameaction = gameAction.LeftKey;
         }
 
         private void buttonSetRightKey_Click(object sender, EventArgs e)
         {
-            gameAction = gameAction.RightKey;
+            gameaction = gameAction.RightKey;
         }
 
         private void buttonSetRestartKey_Click(object sender, EventArgs e)
         {
-            gameAction = gameAction.ResetKey;
+            gameaction = gameAction.ResetKey;
         }
 
         private void buttonSetPauseKey_Click(object sender, EventArgs e)
         {
-            gameAction = gameAction.PauseKey;
+            gameaction = gameAction.PauseKey;
         }
 
         private void buttonSetSpeedKey_Click(object sender, EventArgs e)
         {
-            gameAction = gameAction.SpeedKey;
+            gameaction = gameAction.SpeedKey;
         }
 
         private void buttonSetBotKey_Click(object sender, EventArgs e)
         {
-            gameAction = gameAction.BotKey;
+            gameaction = gameAction.BotKey;
         }
 
         private void buttonSetPowerupKey_Click(object sender, EventArgs e)
         {
-            gameAction = gameAction.PowerupKey;
+            gameaction = gameAction.PowerupKey;
         }
 
         private void buttonSetNoClipKey_Click(object sender, EventArgs e)
         {
-            gameAction = gameAction.NoClipKey;
+            gameaction = gameAction.NoClipKey;
         }
 
         private void buttonResetUpKey_Click(object sender, EventArgs e)

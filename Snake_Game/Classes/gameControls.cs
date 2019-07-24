@@ -39,64 +39,57 @@ namespace Snake_Game
 
             if (_action != gameAction.None)
             {
-                try
+                switch (_action)
                 {
-                    switch (_action)
-                    {
-                        case gameAction.UpKey:
-                            _retCode = true;
-                            dirUpKey = _key;
-                            break;
-                        case gameAction.DownKey:
-                            _retCode = true;
-                            dirDownKey = _key;
-                            break;
-                        case gameAction.LeftKey:
-                            _retCode = true;
-                            dirLeftKey = _key;
-                            break;
-                        case gameAction.RightKey:
-                            _retCode = true;
-                            dirRightKey = _key;
-                            break;
-                        case gameAction.ResetKey:
-                            _retCode = true;
-                            modRestartKey = _key;
-                            break;
-                        case gameAction.PauseKey:
-                            _retCode = true;
-                            modPauseKey = _key;
-                            break;
-                        case gameAction.SpeedKey:
-                            _retCode = true;
-                            modSpeedKey = _key;
-                            break;
-                        case gameAction.BotKey:
-                            _retCode = true;
-                            modBotKey = _key;
-                            break;
-                        case gameAction.NoClipKey:
-                            _retCode = true;
-                            modNoClipKey = _key;
-                            break;
-                        case gameAction.PowerupKey:
-                            _retCode = true;
-                            modPowerupKey = _key;
-                            break;
+                    case gameAction.UpKey:
+                        _retCode = true;
+                        dirUpKey = _key;
+                        break;
+                    case gameAction.DownKey:
+                        _retCode = true;
+                        dirDownKey = _key;
+                        break;
+                    case gameAction.LeftKey:
+                        _retCode = true;
+                        dirLeftKey = _key;
+                        break;
+                    case gameAction.RightKey:
+                        _retCode = true;
+                        dirRightKey = _key;
+                        break;
+                    case gameAction.ResetKey:
+                        _retCode = true;
+                        modRestartKey = _key;
+                        break;
+                    case gameAction.PauseKey:
+                        _retCode = true;
+                        modPauseKey = _key;
+                        break;
+                    case gameAction.SpeedKey:
+                        _retCode = true;
+                        modSpeedKey = _key;
+                        break;
+                    case gameAction.BotKey:
+                        _retCode = true;
+                        modBotKey = _key;
+                        break;
+                    case gameAction.NoClipKey:
+                        _retCode = true;
+                        modNoClipKey = _key;
+                        break;
+                    case gameAction.PowerupKey:
+                        _retCode = true;
+                        modPowerupKey = _key;
+                        break;
                     default:
-                            _retCode = true;
-                            break;
-                    }
-                }
-                catch (Exception)
-                {
-                    _retCode = false;
-                    MessageBox.Show(
-                                "Invalid key tried to be configured in \nplayerInput.ConvKeyPressToKeyConfig procedure!\nkey=" + _key + ";action=" + _action,
-                                "Error!",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error
-                                );
+                        _retCode = false;
+                        MessageBox.Show(
+                                    "Invalid key tried to be configured in \nplayerInput.ConvKeyPressToKeyConfig procedure!\nkey=" + _key + ";action=" + _action,
+                                    "Error!",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error
+                                    );
+                        break;
                 }
             }
 
