@@ -10,7 +10,7 @@ Add 'Multi Language Support'. // IDEA: Save the MLS texts and the selected langu
 Let the player decide where the savefiles are stored on the disk
 
 
-Use textures for the snake // BUG: When growing the snake tail sprite isn't displayed; TODO: Check performance loss
+Add option to gameMenu to use gameSprite for graphics
 
 
 Add a replay functionality // Overthink this point since there is no real use compared to the complexity. Maybe write a .dll for this function so it can be used in other projects too.

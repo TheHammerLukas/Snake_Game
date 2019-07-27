@@ -20,7 +20,8 @@ namespace Snake_Game
         private long lastPUpNoclipChangeTime = 0; // Powerup: To keep track of Noclip duration
         private long currentTime = 0; // Current time; 1000 = 1 second 
         private gameDirection currentTickDir; // The direction the snake is heading at in the current game tick
-        
+        private Image gameSprite = Properties.Resources.gameSprite;
+
         public gameInterface()
         {
             InitializeComponent();
@@ -448,7 +449,7 @@ namespace Snake_Game
         {
             Canvas.DrawImage
             (
-                Properties.Resources.gameSprite,
+                gameSprite,
                 new Rectangle
                 (
                     gameObject.Snake[i].X * gameSettings.Width,
@@ -468,7 +469,7 @@ namespace Snake_Game
         {
             Canvas.DrawImage
             (
-                Properties.Resources.gameSprite,
+                gameSprite,
                 new Rectangle
                 (
                     gameObject.Food.X * gameSettings.Width,
@@ -495,7 +496,7 @@ namespace Snake_Game
                 // Draw snake head & body
                 for (int i = 0; i < gameObject.Snake.Count; i++)
                 {
-                    if (1 == 2)
+                    if (!gameSettings.DevModeEnabled)
                     {
                         DetermineSnakeColor(i, ref rainbowColorIndex, ref cnt);
                         DrawSnakeColor(i, ref Canvas);
@@ -513,6 +514,7 @@ namespace Snake_Game
                         DrawFoodSprite(ref Canvas, _spriteLocX, _spriteLocY);
                     }
                 }
+                gamecontroller.GrowSnake();
 
                 // Show game paused message
                 if (gameSettings.GamePaused)

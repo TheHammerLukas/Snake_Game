@@ -114,6 +114,7 @@ namespace Snake_Game
         public static rainbowMode RainbowMode           { get; set; } // To determine which rainbow mode is selected
         public static bool MenuIsOpen                   { get; set; } // Determines if the gameMenu is open or not
         public static gameDirection directionHead       { get; set; } // Direction the snake is heading in
+        public static gameDirection directionTail       { get; set; } // Direction the snake tail is heading
         public static Brush snakeHeadColor              { get; set; } // Color for the head of the snake; set in gameInterface.pictureBox_Paint according to which powerup is active
         public static Brush snakeHeadNormalColor        { get; set; } // Color used for normal snake head
         public static Brush snakeHeadPUpX2Color         { get; set; } // Color used for X2 Powerup snake head
@@ -156,9 +157,7 @@ namespace Snake_Game
             SavedPowerup        = gamePowerup.None;
             GamePowerup         = gamePowerup.None;
             GamePowerupActive   = false;
-            directionHead           = gameDirection.Stop;
-
-            
+            directionHead       = gameDirection.Stop;
 
             // Only on first init set the DevMode
             if (firstInit)

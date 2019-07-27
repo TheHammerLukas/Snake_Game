@@ -14,6 +14,7 @@ namespace Snake_Game
         private static int cntFoodSpawned = 0;
         private static long soundCheckTime = 0;
         private static long lastSoundPlayTime = 0;
+        public static int growCnt = 0;
         public static int maxPosX = 0;
         public static int maxPosY = 0;
         public string scoreXmlPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Snake_Game\\Snake_Game_Score.xml";
@@ -167,7 +168,7 @@ namespace Snake_Game
             }
         }
 
-        // Elongate the snake
+        // Prepare for the snake to grow
         private void Eat()
         {
             if (gameSettings.FoodPowerup != gamePowerup.None)
@@ -182,18 +183,8 @@ namespace Snake_Game
                 PlayGameSound(gameSound.SnakeEat);
             }
 
-            if (gameObject.Snake.Count + gameSettings.GrowMultiplicator < maxPosX * maxPosY) // If snake has enough room to grow add new gameObjects to it
-            {
-                for (int i = 1; i <= gameSettings.GrowMultiplicator; i++) // Adds as much gameObjects as defined in GrowMultiplicator to Snake
-                {
-                    // Add gameObject to body of snake
-                    gameObject Food = new gameObject(false);
-                    Food.X = gameObject.Snake[gameObject.Snake.Count - 1].X;
-                    Food.Y = gameObject.Snake[gameObject.Snake.Count - 1].Y;
-
-                    gameObject.Snake.Add(Food);
-                }
-            }
+            // Set growCnt to 0 so the snake will grow
+            growCnt = 0;
 
             // Update score
             if (gameSettings.GamePowerup == gamePowerup.X2 && !gameSettings.GamePowerupActive || gameSettings.GamePowerup != gamePowerup.X2)
@@ -205,6 +196,97 @@ namespace Snake_Game
                 gameSettings.Score += gameSettings.Points * 2;
             }
             GenerateFood();
+        }
+
+        public void GrowSnake()
+        {
+            if (gameObject.Snake.Count + gameSettings.GrowMultiplicator < maxPosX * maxPosY) // If snake has enough room to grow add new gameObjects to it
+            {
+                if (growCnt < gameSettings.GrowMultiplicator) // Adds as much gameObjects as defined in GrowMultiplicator to Snake
+                {
+                    // Add gameObject to body of snake
+                    gameObject Food = new gameObject(false);
+                    Food.X = gameObject.Snake[gameObject.Snake.Count - 1].X;
+                    Food.Y = gameObject.Snake[gameObject.Snake.Count - 1].Y;
+
+                    if (gameObject.Snake.Count == 1)
+                    {
+                        switch (gameSettings.directionHead)
+                        {
+                            case gameDirection.Up:
+                                gameSettings.directionTail = gameDirection.Down;
+                                break;
+                            case gameDirection.Down:
+                                gameSettings.directionTail = gameDirection.Up;
+                                break;
+                            case gameDirection.Left:
+                                gameSettings.directionTail = gameDirection.Right;
+                                break;
+                            case gameDirection.Right:
+                                gameSettings.directionTail = gameDirection.Left;
+                                break;
+                        }
+                    }
+                    else if (gameObject.Snake.Count == 2)
+                    {
+                        if (gameObject.Snake[gameObject.Snake.Count - 1].Y < gameObject.Snake[gameObject.Snake.Count - 2].Y)
+                        {
+                            gameSettings.directionTail = gameDirection.Up;
+                        }
+                        else if (gameObject.Snake[gameObject.Snake.Count - 1].Y > gameObject.Snake[gameObject.Snake.Count - 2].Y)
+                        {
+                            gameSettings.directionTail = gameDirection.Down;
+                        }
+                        else if (gameObject.Snake[gameObject.Snake.Count - 1].X < gameObject.Snake[gameObject.Snake.Count - 2].X)
+                        {
+                            gameSettings.directionTail = gameDirection.Left;
+                        }
+                        else if (gameObject.Snake[gameObject.Snake.Count - 1].X > gameObject.Snake[gameObject.Snake.Count - 2].X)
+                        {
+                            gameSettings.directionTail = gameDirection.Right;
+                        }
+                    }
+                    else
+                    {
+                        if (gameObject.Snake[gameObject.Snake.Count - 2].Y < gameObject.Snake[gameObject.Snake.Count - 3].Y)
+                        {
+                            gameSettings.directionTail = gameDirection.Up;
+                        }
+                        else if (gameObject.Snake[gameObject.Snake.Count - 2].Y > gameObject.Snake[gameObject.Snake.Count - 3].Y)
+                        {
+                            gameSettings.directionTail = gameDirection.Down;
+                        }
+                        else if (gameObject.Snake[gameObject.Snake.Count - 2].X < gameObject.Snake[gameObject.Snake.Count - 3].X)
+                        {
+                            gameSettings.directionTail = gameDirection.Left;
+                        }
+                        else if (gameObject.Snake[gameObject.Snake.Count - 2].X > gameObject.Snake[gameObject.Snake.Count - 3].X)
+                        {
+                            gameSettings.directionTail = gameDirection.Right;
+                        }
+                    }
+
+                    switch (gameSettings.directionTail)
+                    {
+                        case gameDirection.Up:
+                            Food.Y--;
+                            break;
+                        case gameDirection.Down:
+                            Food.Y++;
+                            break;
+                        case gameDirection.Left:
+                            Food.X--;
+                            break;
+                        case gameDirection.Right:
+                            Food.X++;
+                            break;
+                    }
+
+                    gameObject.Snake.Add(Food);
+
+                    growCnt++;
+                }
+            }
         }
 
         // Kill the player
@@ -369,6 +451,7 @@ namespace Snake_Game
                         if (Convert.ToInt32(_xmlAttrib.Value) >= 0)
                         {
                             gameSettings.GrowMultiplicator = Convert.ToInt32(_xmlAttrib.Value);
+                            growCnt = gameSettings.GrowMultiplicator;
                         }
                     }
                     if (_xmlAttrib.Name == "Points")
