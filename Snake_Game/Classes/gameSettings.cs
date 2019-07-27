@@ -49,6 +49,13 @@ namespace Snake_Game
         foodPUpNoclipColor = 15
     }
 
+    public enum gameDrawingMode // Enum for different modes to draw the game
+    {
+        drawingModeNormal = 0,
+        drawingModeRainbow = 1,
+        drawingModeSprite = 2
+    }
+
     public enum rainbowMode // Enum for different rainbow modes
     {
         rainbowModeTiles = 0,
@@ -110,7 +117,7 @@ namespace Snake_Game
         public static int PowerupDurationSlowmo         { get; set; } // To determine the duration of the Slowmotion powerup
         public static int PowerupDurationNoclip         { get; set; } // To determine the duration of the Noclip powerup
         public static bool NoClipEnabled                { get; set; } // To detemrine if the NoClip feature is enabled or disabled
-        public static bool RainbowEnabled               { get; set; } // To enable / disable the rainbow snake color
+        public static gameDrawingMode DrawingMode       { get; set; } // To determine how the game should be drawn
         public static rainbowMode RainbowMode           { get; set; } // To determine which rainbow mode is selected
         public static bool MenuIsOpen                   { get; set; } // Determines if the gameMenu is open or not
         public static gameDirection directionHead       { get; set; } // Direction the snake is heading in
@@ -157,6 +164,7 @@ namespace Snake_Game
             SavedPowerup        = gamePowerup.None;
             GamePowerup         = gamePowerup.None;
             GamePowerupActive   = false;
+            DrawingMode         = gameDrawingMode.drawingModeNormal;
             directionHead       = gameDirection.Stop;
 
             // Only on first init set the DevMode
@@ -416,7 +424,7 @@ namespace Snake_Game
                 initFoodColor(color);
             }
             
-            RainbowEnabled = false;
+            DrawingMode = gameDrawingMode.drawingModeNormal;
             RainbowMode = rainbowMode.rainbowModeTiles;
         }
 

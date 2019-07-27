@@ -161,7 +161,7 @@ namespace Snake_Game
             gamePowerup _gamePowerup;
 
             // Decide the color of the snake
-            if (gameSettings.RainbowEnabled)
+            if (gameSettings.DrawingMode == gameDrawingMode.drawingModeRainbow)
             {
                 if (i == 0)
                 {
@@ -496,14 +496,14 @@ namespace Snake_Game
                 // Draw snake head & body
                 for (int i = 0; i < gameObject.Snake.Count; i++)
                 {
-                    if (!gameSettings.DevModeEnabled)
+                    if (gameSettings.DrawingMode == gameDrawingMode.drawingModeNormal || gameSettings.DrawingMode == gameDrawingMode.drawingModeRainbow)
                     {
                         DetermineSnakeColor(i, ref rainbowColorIndex, ref cnt);
                         DrawSnakeColor(i, ref Canvas);
                         DetermineFoodColor();
                         DrawFoodColor(ref Canvas);
                     }
-                    else
+                    else if (gameSettings.DrawingMode == gameDrawingMode.drawingModeSprite)
                     {
                         int _spriteLocX;
                         int _spriteLocY;

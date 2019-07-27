@@ -121,7 +121,20 @@ namespace Snake_Game
             labelSnakeHeadPrev.BackColor = (gameSettings.snakeHeadNormalColor as SolidBrush).Color;
             labelSnakeBodyPrev.BackColor = (gameSettings.snakeBodyNormalColor as SolidBrush).Color;
             labelFoodPrev.BackColor = (gameSettings.foodNormalColor as SolidBrush).Color;
-            checkBoxRainbowColor.Checked = gameSettings.RainbowEnabled;
+            switch (gameSettings.DrawingMode)
+            {
+                case gameDrawingMode.drawingModeNormal:
+                    radioButtonGameDrawingModeNormal.Checked = true;
+                    break;
+                case gameDrawingMode.drawingModeRainbow:
+                    radioButtonGameDrawingModeRainbow.Checked = true;
+                    break;
+                case gameDrawingMode.drawingModeSprite:
+                    radioButtonGameDrawingModeSprite.Checked = true;
+                    break;
+                default:
+                    break;
+            }
             if (gameSettings.RainbowMode == rainbowMode.rainbowModeTiles)
             {
                 buttonSwitchRainbowMode.Text = "Switch rainbow mode to 'Stretched'";
@@ -352,9 +365,20 @@ namespace Snake_Game
 
         #region Color functions
 
-        private void checkBoxRainbowColor_Click(object sender, EventArgs e)
+        private void radioButtonGameDrawingMode_Click(object sender, EventArgs e)
         {
-            gameSettings.RainbowEnabled = checkBoxRainbowColor.Checked;
+            if (radioButtonGameDrawingModeNormal.Checked)
+            {
+                gameSettings.DrawingMode = gameDrawingMode.drawingModeNormal;
+            }
+            else if (radioButtonGameDrawingModeRainbow.Checked)
+            {
+                gameSettings.DrawingMode = gameDrawingMode.drawingModeRainbow;
+            }
+            else if (radioButtonGameDrawingModeSprite.Checked)
+            {
+                gameSettings.DrawingMode = gameDrawingMode.drawingModeSprite;
+            }
 
             new gameController().writeSettingsXML();
         }

@@ -228,40 +228,25 @@ namespace Snake_Game
                                 break;
                         }
                     }
-                    else if (gameObject.Snake.Count == 2)
-                    {
-                        if (gameObject.Snake[gameObject.Snake.Count - 1].Y < gameObject.Snake[gameObject.Snake.Count - 2].Y)
-                        {
-                            gameSettings.directionTail = gameDirection.Up;
-                        }
-                        else if (gameObject.Snake[gameObject.Snake.Count - 1].Y > gameObject.Snake[gameObject.Snake.Count - 2].Y)
-                        {
-                            gameSettings.directionTail = gameDirection.Down;
-                        }
-                        else if (gameObject.Snake[gameObject.Snake.Count - 1].X < gameObject.Snake[gameObject.Snake.Count - 2].X)
-                        {
-                            gameSettings.directionTail = gameDirection.Left;
-                        }
-                        else if (gameObject.Snake[gameObject.Snake.Count - 1].X > gameObject.Snake[gameObject.Snake.Count - 2].X)
-                        {
-                            gameSettings.directionTail = gameDirection.Right;
-                        }
-                    }
                     else
                     {
-                        if (gameObject.Snake[gameObject.Snake.Count - 2].Y < gameObject.Snake[gameObject.Snake.Count - 3].Y)
+                        if (gameObject.Snake[gameObject.Snake.Count - (gameObject.Snake.Count == 2 ? 1 : 2)].Y <
+                            gameObject.Snake[gameObject.Snake.Count - (gameObject.Snake.Count == 2 ? 2 : 3)].Y)
                         {
                             gameSettings.directionTail = gameDirection.Up;
                         }
-                        else if (gameObject.Snake[gameObject.Snake.Count - 2].Y > gameObject.Snake[gameObject.Snake.Count - 3].Y)
+                        else if (gameObject.Snake[gameObject.Snake.Count - (gameObject.Snake.Count == 2 ? 1 : 2)].Y > 
+                                 gameObject.Snake[gameObject.Snake.Count - (gameObject.Snake.Count == 2 ? 2 : 3)].Y)
                         {
                             gameSettings.directionTail = gameDirection.Down;
                         }
-                        else if (gameObject.Snake[gameObject.Snake.Count - 2].X < gameObject.Snake[gameObject.Snake.Count - 3].X)
+                        else if (gameObject.Snake[gameObject.Snake.Count - (gameObject.Snake.Count == 2 ? 1 : 2)].X <
+                                 gameObject.Snake[gameObject.Snake.Count - (gameObject.Snake.Count == 2 ? 2 : 3)].X)
                         {
                             gameSettings.directionTail = gameDirection.Left;
                         }
-                        else if (gameObject.Snake[gameObject.Snake.Count - 2].X > gameObject.Snake[gameObject.Snake.Count - 3].X)
+                        else if (gameObject.Snake[gameObject.Snake.Count - (gameObject.Snake.Count == 2 ? 1 : 2)].X >
+                                 gameObject.Snake[gameObject.Snake.Count - (gameObject.Snake.Count == 2 ? 2 : 3)].X)
                         {
                             gameSettings.directionTail = gameDirection.Right;
                         }
@@ -459,9 +444,9 @@ namespace Snake_Game
                     {
                         gameSettings.Points = Convert.ToInt32(_xmlAttrib.Value);
                     }
-                    if (_xmlAttrib.Name == "RainbowEnabled")
+                    if (_xmlAttrib.Name == "DrawingMode")
                     {
-                        gameSettings.RainbowEnabled = Convert.ToBoolean(_xmlAttrib.Value);
+                        gameSettings.DrawingMode = (gameDrawingMode)Convert.ToInt32(_xmlAttrib.Value);
                     }
                     if (_xmlAttrib.Name == "RainbowMode")
                     {
@@ -589,9 +574,9 @@ namespace Snake_Game
                 _xmlDoc.WriteStartAttribute("Points"); 
                 _xmlDoc.WriteString(gameSettings.Points.ToString());
                 _xmlDoc.WriteEndAttribute();
-                // RainbowEnabled
-                _xmlDoc.WriteStartAttribute("RainbowEnabled");
-                _xmlDoc.WriteString(gameSettings.RainbowEnabled.ToString());
+                // DrawingMode
+                _xmlDoc.WriteStartAttribute("DrawingMode");
+                _xmlDoc.WriteString(Convert.ToString(Convert.ToInt32(gameSettings.DrawingMode)));
                 _xmlDoc.WriteEndAttribute();
                 // RainbowMode
                 _xmlDoc.WriteStartAttribute("RainbowMode");
