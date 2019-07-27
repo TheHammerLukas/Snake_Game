@@ -198,6 +198,7 @@ namespace Snake_Game
             GenerateFood();
         }
 
+        // Grow the snake as long as growCnt < GrowMultiplicator
         public void GrowSnake()
         {
             if (gameObject.Snake.Count + gameSettings.GrowMultiplicator < maxPosX * maxPosY) // If snake has enough room to grow add new gameObjects to it

@@ -459,8 +459,8 @@ namespace Snake_Game
                 ),
                 spriteLocX * 64,
                 spriteLocY * 64,
-                64,
-                64,
+                63,
+                63,
                 GraphicsUnit.Pixel
             );
         }
@@ -479,8 +479,8 @@ namespace Snake_Game
                 ),
                 spriteLocX * 64,
                 spriteLocY * 64,
-                64,
-                64,
+                63,
+                63,
                 GraphicsUnit.Pixel
             );
         }
