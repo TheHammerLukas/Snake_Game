@@ -118,7 +118,7 @@ namespace Snake_Game
                     gameModifiers bot = new gameModifiers();
                     bot.BotLogic();
 
-                    switch (gameSettings.direction)
+                    switch (gameSettings.directionHead)
                     {
                         case gameDirection.Right:
                             gameObject.Snake[i].X++;
@@ -190,6 +190,7 @@ namespace Snake_Game
                     gameObject Food = new gameObject(false);
                     Food.X = gameObject.Snake[gameObject.Snake.Count - 1].X;
                     Food.Y = gameObject.Snake[gameObject.Snake.Count - 1].Y;
+
                     gameObject.Snake.Add(Food);
                 }
             }

@@ -131,7 +131,7 @@ namespace Snake_Game
                 buttonSwitchRainbowMode.Text = "Switch rainbow mode to 'Tiles'";
             }
             // Powerups tab
-            textBoxPUpSpawnGap.Text = Convert.ToString(gameSettings.PowerupSpawnGap);
+            textBoxPUpSpawnGap.Text = Convert.ToString(gameSettings.PowerupSpawnGapConfigured);
             textBoxPUpX2Duration.Text = Convert.ToString(gamecontroller.ConvTime(gameSettings.PowerupDurationX2, gameConstants.milliseconds, gameConstants.seconds));
             textBoxPUpPointTickDuration.Text = Convert.ToString(gamecontroller.ConvTime(gameSettings.PowerupDurationPointTick, gameConstants.milliseconds, gameConstants.seconds));
             textBoxPUpSlowmoDuration.Text = Convert.ToString(gamecontroller.ConvTime(gameSettings.PowerupDurationSlowmo, gameConstants.milliseconds, gameConstants.seconds));

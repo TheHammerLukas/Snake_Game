@@ -129,6 +129,7 @@
     <Content Include="Resources\gameSoundDie.wav" />
     <Content Include="Resources\gameSoundPowerupEat.wav" />
     <Content Include="Resources\gameSoundSnakeEat.wav" />
+    <Content Include="Resources\gameSprite.png" />
     <Content Include="Resources\Snake_Menu_Thumbnail.ico" />
     <Content Include="Resources\Snake_Thumbnail.ico" />
     <Content Include="Snake_Thumbnail.ico" />

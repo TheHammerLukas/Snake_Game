@@ -54,7 +54,7 @@ namespace Snake_Game
 
         private void UpdateScreen(object sender, EventArgs e)
         {
-            currentTickDir = gameSettings.direction;
+            currentTickDir = gameSettings.directionHead;
             FormCollection _openForms = Application.OpenForms;
 
             // Pause the game if the menu form is open
@@ -155,199 +155,363 @@ namespace Snake_Game
             new gameController().SetPowerup(labelCurrentPowerupValue, labelSavedPowerupValue, labelPowerupTimerValue, currentTime, _lastChangeTime);
         }
 
+        private void DetermineSnakeColor(int i, ref int rainbowColorIndex, ref int cnt)
+        {
+            gamePowerup _gamePowerup;
+
+            // Decide the color of the snake
+            if (gameSettings.RainbowEnabled)
+            {
+                if (i == 0)
+                {
+                    gameSettings.snakeHeadColor = Brushes.Black; // Head color
+                }
+                else
+                {
+                    gameSettings.snakeBodyColor = gameSettings.snakeRainbowColor[rainbowColorIndex]; // Body color
+
+                    cnt++;
+                    // Cycle through different color indexes
+                    switch (rainbowColorIndex)
+                    {
+                        case 0:
+                            if (cnt > (Convert.ToDouble(gameObject.Snake.Count) - 1) / 6 || gameSettings.RainbowMode == rainbowMode.rainbowModeTiles)
+                            {
+                                rainbowColorIndex = 1;
+                                cnt = 0;
+                            }
+                            break;
+                        case 1:
+                            if (cnt >= (Convert.ToDouble(gameObject.Snake.Count) - 1) / 6 || gameSettings.RainbowMode == rainbowMode.rainbowModeTiles)
+                            {
+                                rainbowColorIndex = 2;
+                                cnt = 0;
+                            }
+                            break;
+                        case 2:
+                            if (cnt >= (Convert.ToDouble(gameObject.Snake.Count) - 1) / 6 || gameSettings.RainbowMode == rainbowMode.rainbowModeTiles)
+                            {
+                                rainbowColorIndex = 3;
+                                cnt = 0;
+                            }
+                            break;
+                        case 3:
+                            if (cnt >= (Convert.ToDouble(gameObject.Snake.Count) - 1) / 6 || gameSettings.RainbowMode == rainbowMode.rainbowModeTiles)
+                            {
+                                rainbowColorIndex = 4;
+                                cnt = 0;
+                            }
+                            break;
+                        case 4:
+                            if (cnt >= (Convert.ToDouble(gameObject.Snake.Count) - 1) / 6 || gameSettings.RainbowMode == rainbowMode.rainbowModeTiles)
+                            {
+                                rainbowColorIndex = 5;
+                                cnt = 0;
+                            }
+                            break;
+                        case 5:
+                            if (cnt >= (Convert.ToDouble(gameObject.Snake.Count) - 1) / 6 || gameSettings.RainbowMode == rainbowMode.rainbowModeTiles)
+                            {
+                                rainbowColorIndex = 0;
+                                cnt = 0;
+                            }
+                            break;
+                        default:
+                            throw new ArgumentException(
+                                        "-E- Unspecified error in gameInterface.pictureBox_Paint procedure!",
+                                        "_rainbowColorIndex=" + rainbowColorIndex
+                                        );
+                    }
+
+                    if (gameSettings.RainbowMode == rainbowMode.rainbowModeStretched)
+                    {
+                        gameSettings.snakeBodyColor = gameSettings.snakeRainbowColor[rainbowColorIndex]; // Body color
+                    }
+                }
+            }
+            else
+            {
+                // To make the snake blink when powerup is about to run out
+                int _blinkCheckX2 = gamecontroller.ConvTime(Convert.ToInt32(gameSettings.PowerupDurationX2 - (currentTime - lastPUpX2ChangeTime)),
+                                                            gameConstants.milliseconds, gameConstants.seconds);
+                int _blinkCheckPointTick = gamecontroller.ConvTime(Convert.ToInt32(gameSettings.PowerupDurationPointTick - (currentTime - lastPUpPointTickChangeTime)),
+                                                            gameConstants.milliseconds, gameConstants.seconds);
+                int _blinkCheckSlowmo = gamecontroller.ConvTime(Convert.ToInt32(gameSettings.PowerupDurationSlowmo - (currentTime - lastPUpSlowmoChangeTime)),
+                                                            gameConstants.milliseconds, gameConstants.seconds);
+                int _blinkCheckNoclip = gamecontroller.ConvTime(Convert.ToInt32(gameSettings.PowerupDurationNoclip - (currentTime - lastPUpNoclipChangeTime)),
+                                                            gameConstants.milliseconds, gameConstants.seconds);
+
+                // Determine snake color
+                if ((gameSettings.GamePowerup == gamePowerup.X2 && (_blinkCheckX2 == 1 || _blinkCheckX2 == 3 || _blinkCheckX2 == 5)) ||
+                    (gameSettings.GamePowerup == gamePowerup.PointOnTick && (_blinkCheckPointTick == 1 || _blinkCheckPointTick == 3 || _blinkCheckPointTick == 5)) ||
+                    (gameSettings.GamePowerup == gamePowerup.Slowmotion && (_blinkCheckSlowmo == 1 || _blinkCheckSlowmo == 3 || _blinkCheckSlowmo == 5)) ||
+                    (gameSettings.GamePowerup == gamePowerup.Noclip && (_blinkCheckNoclip == 1 || _blinkCheckNoclip == 3 || _blinkCheckNoclip == 5)))
+                {
+                    _gamePowerup = gamePowerup.None;
+                }
+                else
+                {
+                    _gamePowerup = gameSettings.GamePowerup;
+                }
+
+                switch (_gamePowerup)
+                {
+                    case gamePowerup.X2:
+                        gameSettings.snakeHeadColor = gameSettings.snakeHeadPUpX2Color;
+                        gameSettings.snakeBodyColor = gameSettings.snakeBodyPUpX2Color;
+                        break;
+                    case gamePowerup.PointOnTick:
+                        gameSettings.snakeHeadColor = gameSettings.snakeHeadPUpPointTickColor;
+                        gameSettings.snakeBodyColor = gameSettings.snakeBodyPUpPointTickColor;
+                        break;
+                    case gamePowerup.Slowmotion:
+                        gameSettings.snakeHeadColor = gameSettings.snakeHeadPUpSlowmoColor;
+                        gameSettings.snakeBodyColor = gameSettings.snakeBodyPUpSlowmoColor;
+                        break;
+                    case gamePowerup.Noclip:
+                        gameSettings.snakeHeadColor = gameSettings.snakeHeadPUpNoclipColor;
+                        gameSettings.snakeBodyColor = gameSettings.snakeBodyPUpNoclipColor;
+                        break;
+                    case gamePowerup.None:
+                        gameSettings.snakeHeadColor = gameSettings.snakeHeadNormalColor;
+                        gameSettings.snakeBodyColor = gameSettings.snakeBodyNormalColor;
+                        break;
+                    default:
+                        gameSettings.snakeHeadColor = Brushes.Maroon;
+                        gameSettings.snakeBodyColor = Brushes.Maroon;
+                        break;
+                }
+            }
+        }
+
+        private void DetermineFoodColor()
+        {
+            // Determine food color
+            switch (gameSettings.FoodPowerup)
+            {
+                case gamePowerup.X2:
+                    gameSettings.foodColor = gameSettings.foodPUpX2Color;
+                    break;
+                case gamePowerup.PointOnTick:
+                    gameSettings.foodColor = gameSettings.foodPUpPointTickColor;
+                    break;
+                case gamePowerup.Slowmotion:
+                    gameSettings.foodColor = gameSettings.foodPUpSlowmoColor;
+                    break;
+                case gamePowerup.Noclip:
+                    gameSettings.foodColor = gameSettings.foodPUpNoclipColor;
+                    break;
+                case gamePowerup.None:
+                    gameSettings.foodColor = gameSettings.foodNormalColor;
+                    break;
+                default:
+                    gameSettings.foodColor = Brushes.Maroon;
+                    break;
+            }
+        }
+
+        private void DrawSnakeColor(int i, ref Graphics Canvas)
+        {
+            // Draw snake 
+            Canvas.FillRectangle
+            (
+                i == 0 ? gameSettings.snakeHeadColor : gameSettings.snakeBodyColor,
+                new Rectangle
+                (
+                    gameObject.Snake[i].X * gameSettings.Width,
+                    gameObject.Snake[i].Y * gameSettings.Height,
+                    gameSettings.Width,
+                    gameSettings.Height
+                )
+            );
+        }
+
+        private void DrawFoodColor(ref Graphics Canvas)
+        {
+            // Draw food
+            Canvas.FillRectangle
+            (
+                gameSettings.foodColor,
+                new Rectangle
+                (
+                    gameObject.Food.X * gameSettings.Width,
+                    gameObject.Food.Y * gameSettings.Height,
+                    gameSettings.Width,
+                    gameSettings.Height
+                )
+            );
+        }
+
+        private void DetermineSnakeSprite(int i, out int spriteLocX, out int spriteLocY)
+        {
+            spriteLocX = 1;
+            spriteLocY = 1;
+
+            if (i == 0) // Head
+            {
+                switch (gameSettings.directionHead)
+                {
+                    case gameDirection.Up:
+                        spriteLocX = 3;
+                        spriteLocY = 0;
+                        break;
+                    case gameDirection.Down:
+                        spriteLocX = 4;
+                        spriteLocY = 1;
+                        break;
+                    case gameDirection.Left:
+                        spriteLocX = 3;
+                        spriteLocY = 1;
+                        break;
+                    case gameDirection.Right:
+                        spriteLocX = 4;
+                        spriteLocY = 0;
+                        break;
+                    default:
+                        spriteLocX = 3;
+                        spriteLocY = 0;
+                        break;
+                }
+            }
+            else if (i > 0 && i < gameObject.Snake.Count - 1) // Body
+            {
+                gameObject currSnakeTile = gameObject.Snake[i];
+                gameObject prevSnakeTile = gameObject.Snake[i - 1];
+                gameObject nextSnakeTile = gameObject.Snake[i + 1];
+
+                if (prevSnakeTile.Y < currSnakeTile.Y && nextSnakeTile.Y > currSnakeTile.Y || nextSnakeTile.Y < currSnakeTile.Y && prevSnakeTile.Y > currSnakeTile.Y) // Up-Down
+                {
+                    spriteLocX = 2;
+                    spriteLocY = 1;
+                }
+                else if (prevSnakeTile.X < currSnakeTile.X && nextSnakeTile.X > currSnakeTile.X || nextSnakeTile.X < currSnakeTile.X && prevSnakeTile.X > currSnakeTile.X) // Left-Right
+                {
+                    spriteLocX = 1;
+                    spriteLocY = 0;
+                }
+                else if (prevSnakeTile.X < currSnakeTile.X && nextSnakeTile.Y > currSnakeTile.Y || nextSnakeTile.X < currSnakeTile.X && prevSnakeTile.Y > currSnakeTile.Y) // Up-Left
+                {
+                    spriteLocX = 2;
+                    spriteLocY = 0;
+                }
+                else if (prevSnakeTile.Y > currSnakeTile.Y && nextSnakeTile.X > currSnakeTile.X || nextSnakeTile.Y > currSnakeTile.Y && prevSnakeTile.X > currSnakeTile.X) // Up-Right
+                {
+                    spriteLocX = 0;
+                    spriteLocY = 0;
+                }
+                else if (prevSnakeTile.Y < currSnakeTile.Y && nextSnakeTile.X < currSnakeTile.X || nextSnakeTile.Y < currSnakeTile.Y && prevSnakeTile.X < currSnakeTile.X) // Down-Left
+                {
+                    spriteLocX = 2;
+                    spriteLocY = 2;
+                }
+                else if (prevSnakeTile.X > currSnakeTile.X && nextSnakeTile.Y < currSnakeTile.Y || nextSnakeTile.X > currSnakeTile.X && prevSnakeTile.Y < currSnakeTile.Y) // Down-Right
+                {
+                    spriteLocX = 0;
+                    spriteLocY = 1;
+                }
+            }
+            else // Tail
+            {
+                gameObject currSnakeTile = gameObject.Snake[i];
+                gameObject prevSnakeTile = gameObject.Snake[i - 1];
+
+                if (prevSnakeTile.Y < currSnakeTile.Y) // Up
+                {
+                    spriteLocX = 3;
+                    spriteLocY = 2;
+                }
+                else if (prevSnakeTile.Y > currSnakeTile.Y) // Down
+                {
+                    spriteLocX = 4;
+                    spriteLocY = 3;
+                }
+                else if (prevSnakeTile.X < currSnakeTile.X) // Left
+                {
+                    spriteLocX = 3;
+                    spriteLocY = 3;
+                }
+                else if (prevSnakeTile.X > currSnakeTile.X) // Right
+                {
+                    spriteLocX = 4;
+                    spriteLocY = 2;
+                }
+            }
+        }
+
+        private void DetermineFoodSprite(out int spriteLocX, out int spriteLocY)
+        {
+            spriteLocX = 0;
+            spriteLocY = 3;
+        }
+
+        private void DrawSnakeSprite(int i, ref Graphics Canvas, int spriteLocX, int spriteLocY)
+        {
+            Canvas.DrawImage
+            (
+                Properties.Resources.gameSprite,
+                new Rectangle
+                (
+                    gameObject.Snake[i].X * gameSettings.Width,
+                    gameObject.Snake[i].Y * gameSettings.Height,
+                    gameSettings.Width,
+                    gameSettings.Height
+                ),
+                spriteLocX * 64,
+                spriteLocY * 64,
+                64,
+                64,
+                GraphicsUnit.Pixel
+            );
+        }
+
+        private void DrawFoodSprite(ref Graphics Canvas, int spriteLocX, int spriteLocY)
+        {
+            Canvas.DrawImage
+            (
+                Properties.Resources.gameSprite,
+                new Rectangle
+                (
+                    gameObject.Food.X * gameSettings.Width,
+                    gameObject.Food.Y * gameSettings.Height,
+                    gameSettings.Width,
+                    gameSettings.Height
+                ),
+                spriteLocX * 64,
+                spriteLocY * 64,
+                64,
+                64,
+                GraphicsUnit.Pixel
+            );
+        }
+
         private void pictureBox_Paint(object sender, PaintEventArgs e)
         {
-            Graphics Canvas = e.Graphics;
             int cnt = 0;
+            int rainbowColorIndex = 0;
+            Graphics Canvas = e.Graphics;
+
             if (!gameSettings.GameOver)
             {
-                // Color of snake
-                Brush _snakeColor;
-                int _rainbowColorIndex = 0;
-                gamePowerup _gamePowerup;
-
                 // Draw snake head & body
                 for (int i = 0; i < gameObject.Snake.Count; i++)
                 {
-                    // Decide the color of the snake
-                    if (gameSettings.RainbowEnabled)
+                    if (1 == 2)
                     {
-                        if (i == 0)
-                        {
-                            _snakeColor = Brushes.Black; // Head color
-                        }
-                        else
-                        {
-                            _snakeColor = gameSettings.snakeRainbowColor[_rainbowColorIndex]; // Body color
-
-                            cnt ++;
-                            // Cycle through different color indexes
-                            switch (_rainbowColorIndex)
-                            {
-                                case 0:
-                                    if (cnt > (Convert.ToDouble(gameObject.Snake.Count) - 1) / 6 || gameSettings.RainbowMode == rainbowMode.rainbowModeTiles)
-                                    {
-                                        _rainbowColorIndex = 1;
-                                        cnt = 0;
-                                    }
-                                    break;
-                                case 1:
-                                    if (cnt >= (Convert.ToDouble(gameObject.Snake.Count) - 1) / 6 || gameSettings.RainbowMode == rainbowMode.rainbowModeTiles)
-                                    {
-                                        _rainbowColorIndex = 2;
-                                        cnt = 0;
-                                    }
-                                    break;
-                                case 2:
-                                    if (cnt >= (Convert.ToDouble(gameObject.Snake.Count) - 1) / 6 || gameSettings.RainbowMode == rainbowMode.rainbowModeTiles)
-                                    {
-                                        _rainbowColorIndex = 3;
-                                        cnt = 0;
-                                    }
-                                    break;
-                                case 3:
-                                    if (cnt >= (Convert.ToDouble(gameObject.Snake.Count) - 1) / 6 || gameSettings.RainbowMode == rainbowMode.rainbowModeTiles)
-                                    {
-                                        _rainbowColorIndex = 4;
-                                        cnt = 0;
-                                    }
-                                    break;
-                                case 4:
-                                    if (cnt >= (Convert.ToDouble(gameObject.Snake.Count) - 1) / 6 || gameSettings.RainbowMode == rainbowMode.rainbowModeTiles)
-                                    {
-                                        _rainbowColorIndex = 5;
-                                        cnt = 0;
-                                    }
-                                    break;
-                                case 5:
-                                    if (cnt >= (Convert.ToDouble(gameObject.Snake.Count) - 1) / 6 || gameSettings.RainbowMode == rainbowMode.rainbowModeTiles)
-                                    {
-                                        _rainbowColorIndex = 0;
-                                        cnt = 0;
-                                    }
-                                    break;
-                                default:
-                                    throw new ArgumentException(
-                                                "-E- Unspecified error in gameInterface.pictureBox_Paint procedure!",
-                                                "_rainbowColorIndex=" + _rainbowColorIndex
-                                                );
-                            }
-
-                            if (gameSettings.RainbowMode == rainbowMode.rainbowModeStretched)
-                            {
-                                _snakeColor = gameSettings.snakeRainbowColor[_rainbowColorIndex]; // Body color
-                            }
-                        }
+                        DetermineSnakeColor(i, ref rainbowColorIndex, ref cnt);
+                        DrawSnakeColor(i, ref Canvas);
+                        DetermineFoodColor();
+                        DrawFoodColor(ref Canvas);
                     }
                     else
                     {
-                        // To make the snake blink when powerup is about to run out
-                        int _blinkCheckX2 = gamecontroller.ConvTime(Convert.ToInt32(gameSettings.PowerupDurationX2 - (currentTime - lastPUpX2ChangeTime)), 
-                                                                    gameConstants.milliseconds, gameConstants.seconds);
-                        int _blinkCheckPointTick = gamecontroller.ConvTime(Convert.ToInt32(gameSettings.PowerupDurationPointTick - (currentTime - lastPUpPointTickChangeTime)), 
-                                                                    gameConstants.milliseconds, gameConstants.seconds);
-                        int _blinkCheckSlowmo = gamecontroller.ConvTime(Convert.ToInt32(gameSettings.PowerupDurationSlowmo - (currentTime - lastPUpSlowmoChangeTime)), 
-                                                                    gameConstants.milliseconds, gameConstants.seconds);
-                        int _blinkCheckNoclip = gamecontroller.ConvTime(Convert.ToInt32(gameSettings.PowerupDurationNoclip - (currentTime - lastPUpNoclipChangeTime)), 
-                                                                    gameConstants.milliseconds, gameConstants.seconds);
+                        int _spriteLocX;
+                        int _spriteLocY;
 
-                        if ((gameSettings.GamePowerup == gamePowerup.X2 && (_blinkCheckX2 == 1 || _blinkCheckX2 == 3 || _blinkCheckX2 == 5)) ||
-                            (gameSettings.GamePowerup == gamePowerup.PointOnTick && (_blinkCheckPointTick == 1 || _blinkCheckPointTick == 3 || _blinkCheckPointTick == 5)) ||
-                            (gameSettings.GamePowerup == gamePowerup.Slowmotion && (_blinkCheckSlowmo == 1 || _blinkCheckSlowmo == 3 || _blinkCheckSlowmo == 5)) ||
-                            (gameSettings.GamePowerup == gamePowerup.Noclip && (_blinkCheckNoclip == 1 || _blinkCheckNoclip == 3 || _blinkCheckNoclip == 5)))
-                        {
-                            _gamePowerup = gamePowerup.None;
-                        }
-                        else
-                        {
-                            _gamePowerup = gameSettings.GamePowerup;
-                        }
-
-                        switch (_gamePowerup)
-                        {
-                            case gamePowerup.X2:
-                                gameSettings.snakeHeadColor = gameSettings.snakeHeadPUpX2Color;
-                                gameSettings.snakeBodyColor = gameSettings.snakeBodyPUpX2Color;
-                                break;
-                            case gamePowerup.PointOnTick:
-                                gameSettings.snakeHeadColor = gameSettings.snakeHeadPUpPointTickColor;
-                                gameSettings.snakeBodyColor = gameSettings.snakeBodyPUpPointTickColor;
-                                break;
-                            case gamePowerup.Slowmotion:
-                                gameSettings.snakeHeadColor = gameSettings.snakeHeadPUpSlowmoColor;
-                                gameSettings.snakeBodyColor = gameSettings.snakeBodyPUpSlowmoColor;
-                                break;
-                            case gamePowerup.Noclip:
-                                gameSettings.snakeHeadColor = gameSettings.snakeHeadPUpNoclipColor;
-                                gameSettings.snakeBodyColor = gameSettings.snakeBodyPUpNoclipColor;
-                                break;
-                            case gamePowerup.None:
-                                gameSettings.snakeHeadColor = gameSettings.snakeHeadNormalColor;
-                                gameSettings.snakeBodyColor = gameSettings.snakeBodyNormalColor;
-                                break;
-                            default:
-                                gameSettings.snakeHeadColor = Brushes.Maroon;
-                                gameSettings.snakeBodyColor = Brushes.Maroon;
-                                break;
-                        }
-
-                        if (i == 0)
-                        {
-                            _snakeColor = gameSettings.snakeHeadColor; // Head color
-                        }
-                        else
-                        {
-                            _snakeColor = gameSettings.snakeBodyColor; // Body color
-                        }
+                        DetermineSnakeSprite(i, out _spriteLocX, out _spriteLocY);
+                        DrawSnakeSprite(i, ref Canvas, _spriteLocX, _spriteLocY);
+                        DetermineFoodSprite(out _spriteLocX, out _spriteLocY);
+                        DrawFoodSprite(ref Canvas, _spriteLocX, _spriteLocY);
                     }
-
-                    // Draw snake 
-                    Canvas.FillRectangle
-                    (
-                        _snakeColor,
-                        new Rectangle
-                        (
-                            gameObject.Snake[i].X * gameSettings.Width,
-                            gameObject.Snake[i].Y * gameSettings.Height,
-                            gameSettings.Width,
-                            gameSettings.Height
-                        )
-                    );
-
-                    switch (gameSettings.FoodPowerup)
-                    {
-                        case gamePowerup.X2:
-                            gameSettings.foodColor = gameSettings.foodPUpX2Color; 
-                            break;
-                        case gamePowerup.PointOnTick:
-                            gameSettings.foodColor = gameSettings.foodPUpPointTickColor;
-                            break;
-                        case gamePowerup.Slowmotion:
-                            gameSettings.foodColor = gameSettings.foodPUpSlowmoColor; 
-                            break;
-                        case gamePowerup.Noclip:
-                            gameSettings.foodColor = gameSettings.foodPUpNoclipColor;
-                            break;
-                        case gamePowerup.None:
-                            gameSettings.foodColor = gameSettings.foodNormalColor;
-                            break;
-                        default:
-                            gameSettings.foodColor = Brushes.Maroon;
-                            break;
-                    }
-
-                    // Draw food
-                    Canvas.FillRectangle
-                    (
-                        gameSettings.foodColor,
-                        new Rectangle
-                        (
-                            gameObject.Food.X * gameSettings.Width,
-                            gameObject.Food.Y * gameSettings.Height,
-                            gameSettings.Width,
-                            gameSettings.Height
-                        )
-                    );
                 }
 
                 // Show game paused message
@@ -419,28 +583,28 @@ namespace Snake_Game
                     && ((currentTickDir != gameDirection.Left && currentTickDir != gameDirection.Right
                     && !gameSettings.GamePaused) || gameSettings.DevModeEnabled))
                 {
-                    gameSettings.direction = gameDirection.Right;
+                    gameSettings.directionHead = gameDirection.Right;
                     gamecontroller.PlayGameSound(gameSound.SnakeChangeDir);
                 }
                 else if ((e.KeyCode == gameControls.dirLeftKey || e.KeyCode == Keys.Left)
                           && ((currentTickDir != gameDirection.Right && currentTickDir != gameDirection.Left
                           && !gameSettings.GamePaused) || gameSettings.DevModeEnabled))
                 {
-                    gameSettings.direction = gameDirection.Left;
+                    gameSettings.directionHead = gameDirection.Left;
                     gamecontroller.PlayGameSound(gameSound.SnakeChangeDir);
                 }
                 else if ((e.KeyCode == gameControls.dirUpKey || e.KeyCode == Keys.Up)
                           && ((currentTickDir != gameDirection.Down && currentTickDir != gameDirection.Up
                           && !gameSettings.GamePaused) || gameSettings.DevModeEnabled))
                 {
-                    gameSettings.direction = gameDirection.Up;
+                    gameSettings.directionHead = gameDirection.Up;
                     gamecontroller.PlayGameSound(gameSound.SnakeChangeDir);
                 }
                 else if ((e.KeyCode == gameControls.dirDownKey || e.KeyCode == Keys.Down)
                           && ((currentTickDir != gameDirection.Up && currentTickDir != gameDirection.Down
                           && !gameSettings.GamePaused) || gameSettings.DevModeEnabled))
                 {
-                    gameSettings.direction = gameDirection.Down;
+                    gameSettings.directionHead = gameDirection.Down;
                     gamecontroller.PlayGameSound(gameSound.SnakeChangeDir);
                 }
                 // Check if player wants to activate / deactivate any modifiers

@@ -15,11 +15,11 @@ namespace Snake_Game
                 {
                     if (gameObject.Snake[0].X == 0)
                     {
-                        gameSettings.direction = gameDirection.Down;
+                        gameSettings.directionHead = gameDirection.Down;
                     }
                     else
                     {
-                        gameSettings.direction = gameDirection.Left;
+                        gameSettings.directionHead = gameDirection.Left;
                     }
                 }
                 // If bot is at the bottom row
@@ -27,27 +27,27 @@ namespace Snake_Game
                 {
                     if (gameObject.Snake[0].X == gameController.maxPosX - 1)
                     {
-                        gameSettings.direction = gameDirection.Up;
+                        gameSettings.directionHead = gameDirection.Up;
                     }
                     else
                     {
-                        gameSettings.direction = gameDirection.Right;
+                        gameSettings.directionHead = gameDirection.Right;
                     }
                 }
                 // If bot is between top and bottom row -> leave one column space
                 else if (gameObject.Snake[0].X == 1 || gameObject.Snake[0].X == gameController.maxPosX - 1)
                 {
-                    if (gameSettings.direction == gameDirection.Left || gameSettings.direction == gameDirection.Right)
+                    if (gameSettings.directionHead == gameDirection.Left || gameSettings.directionHead == gameDirection.Right)
                     {
-                        gameSettings.direction = gameDirection.Up;
+                        gameSettings.directionHead = gameDirection.Up;
                     }
                     else if (gameObject.Snake[0].X == 1)
                     {
-                        gameSettings.direction = gameDirection.Right;
+                        gameSettings.directionHead = gameDirection.Right;
                     }
                     else if (gameObject.Snake[0].X == gameController.maxPosX - 1)
                     {
-                        gameSettings.direction = gameDirection.Left;
+                        gameSettings.directionHead = gameDirection.Left;
                     }
                 }
             }

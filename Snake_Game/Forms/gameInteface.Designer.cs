@@ -58,12 +58,12 @@
             this.toolStripMenuItemBot = new System.Windows.Forms.ToolStripMenuItem();
             this.milliSecondTimer = new System.Windows.Forms.Timer(this.components);
             this.groupBoxPowerup = new System.Windows.Forms.GroupBox();
+            this.labelPowerupTimerValue = new System.Windows.Forms.Label();
+            this.labelPowerupTimer = new System.Windows.Forms.Label();
+            this.labelSavedPowerupValue = new System.Windows.Forms.Label();
+            this.labelCurrentPowerupValue = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.labelCurrentPowerup = new System.Windows.Forms.Label();
-            this.labelCurrentPowerupValue = new System.Windows.Forms.Label();
-            this.labelSavedPowerupValue = new System.Windows.Forms.Label();
-            this.labelPowerupTimer = new System.Windows.Forms.Label();
-            this.labelPowerupTimerValue = new System.Windows.Forms.Label();
             ToolStripMenuItemModifiersLabel = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -76,6 +76,7 @@
             ToolStripMenuItemModifiersLabel.Name = "ToolStripMenuItemModifiersLabel";
             ToolStripMenuItemModifiersLabel.Size = new System.Drawing.Size(72, 20);
             ToolStripMenuItemModifiersLabel.Text = "Modifiers:";
+            ToolStripMenuItemModifiersLabel.ToolTipText = "If any modifier is enabled, no new Highscore can be set!";
             // 
             // pictureBox
             // 
@@ -216,6 +217,7 @@
             ToolStripMenuItemModifiersLabel});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.ShowItemToolTips = true;
             this.menuStrip1.Size = new System.Drawing.Size(624, 24);
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
@@ -235,6 +237,7 @@
             this.toolStripMenuItemNoClip.Name = "toolStripMenuItemNoClip";
             this.toolStripMenuItemNoClip.Size = new System.Drawing.Size(56, 20);
             this.toolStripMenuItemNoClip.Text = "NoClip";
+            this.toolStripMenuItemNoClip.ToolTipText = "If any modifier is enabled, no new Highscore can be set!";
             this.toolStripMenuItemNoClip.Click += new System.EventHandler(this.toolStripMenuItemNoClip_Click);
             // 
             // toolStripMenuItemSpeed
@@ -244,6 +247,7 @@
             this.toolStripMenuItemSpeed.Name = "toolStripMenuItemSpeed";
             this.toolStripMenuItemSpeed.Size = new System.Drawing.Size(51, 20);
             this.toolStripMenuItemSpeed.Text = "Speed";
+            this.toolStripMenuItemSpeed.ToolTipText = "If any modifier is enabled, no new Highscore can be set!";
             this.toolStripMenuItemSpeed.Click += new System.EventHandler(this.toolStripMenuItemSpeed_Click);
             // 
             // toolStripMenuItemBot
@@ -253,6 +257,7 @@
             this.toolStripMenuItemBot.Name = "toolStripMenuItemBot";
             this.toolStripMenuItemBot.Size = new System.Drawing.Size(37, 20);
             this.toolStripMenuItemBot.Text = "Bot";
+            this.toolStripMenuItemBot.ToolTipText = "If any modifier is enabled, no new Highscore can be set!";
             this.toolStripMenuItemBot.Click += new System.EventHandler(this.toolStripMenuItemBot_Click);
             // 
             // milliSecondTimer
@@ -275,6 +280,45 @@
             this.groupBoxPowerup.TabStop = false;
             this.groupBoxPowerup.Text = "Powerup";
             // 
+            // labelPowerupTimerValue
+            // 
+            this.labelPowerupTimerValue.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelPowerupTimerValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPowerupTimerValue.Location = new System.Drawing.Point(258, 22);
+            this.labelPowerupTimerValue.Name = "labelPowerupTimerValue";
+            this.labelPowerupTimerValue.Size = new System.Drawing.Size(36, 23);
+            this.labelPowerupTimerValue.TabIndex = 5;
+            this.labelPowerupTimerValue.Text = "00";
+            this.labelPowerupTimerValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelPowerupTimer
+            // 
+            this.labelPowerupTimer.AutoSize = true;
+            this.labelPowerupTimer.Location = new System.Drawing.Point(258, 9);
+            this.labelPowerupTimer.Name = "labelPowerupTimer";
+            this.labelPowerupTimer.Size = new System.Drawing.Size(36, 13);
+            this.labelPowerupTimer.TabIndex = 4;
+            this.labelPowerupTimer.Text = "Timer:";
+            // 
+            // labelSavedPowerupValue
+            // 
+            this.labelSavedPowerupValue.AutoSize = true;
+            this.labelSavedPowerupValue.Location = new System.Drawing.Point(130, 29);
+            this.labelSavedPowerupValue.Name = "labelSavedPowerupValue";
+            this.labelSavedPowerupValue.Size = new System.Drawing.Size(96, 13);
+            this.labelSavedPowerupValue.TabIndex = 3;
+            this.labelSavedPowerupValue.Text = "labelSavPUpValue";
+            // 
+            // labelCurrentPowerupValue
+            // 
+            this.labelCurrentPowerupValue.AutoSize = true;
+            this.labelCurrentPowerupValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCurrentPowerupValue.Location = new System.Drawing.Point(130, 12);
+            this.labelCurrentPowerupValue.Name = "labelCurrentPowerupValue";
+            this.labelCurrentPowerupValue.Size = new System.Drawing.Size(123, 17);
+            this.labelCurrentPowerupValue.TabIndex = 2;
+            this.labelCurrentPowerupValue.Text = "labelCurPUpValue";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -295,45 +339,6 @@
             this.labelCurrentPowerup.TabIndex = 0;
             this.labelCurrentPowerup.Text = "Current Powerup:";
             this.labelCurrentPowerup.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // labelCurrentPowerupValue
-            // 
-            this.labelCurrentPowerupValue.AutoSize = true;
-            this.labelCurrentPowerupValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCurrentPowerupValue.Location = new System.Drawing.Point(130, 12);
-            this.labelCurrentPowerupValue.Name = "labelCurrentPowerupValue";
-            this.labelCurrentPowerupValue.Size = new System.Drawing.Size(123, 17);
-            this.labelCurrentPowerupValue.TabIndex = 2;
-            this.labelCurrentPowerupValue.Text = "labelCurPUpValue";
-            // 
-            // labelSavedPowerupValue
-            // 
-            this.labelSavedPowerupValue.AutoSize = true;
-            this.labelSavedPowerupValue.Location = new System.Drawing.Point(130, 29);
-            this.labelSavedPowerupValue.Name = "labelSavedPowerupValue";
-            this.labelSavedPowerupValue.Size = new System.Drawing.Size(96, 13);
-            this.labelSavedPowerupValue.TabIndex = 3;
-            this.labelSavedPowerupValue.Text = "labelSavPUpValue";
-            // 
-            // labelPowerupTimer
-            // 
-            this.labelPowerupTimer.AutoSize = true;
-            this.labelPowerupTimer.Location = new System.Drawing.Point(258, 9);
-            this.labelPowerupTimer.Name = "labelPowerupTimer";
-            this.labelPowerupTimer.Size = new System.Drawing.Size(36, 13);
-            this.labelPowerupTimer.TabIndex = 4;
-            this.labelPowerupTimer.Text = "Timer:";
-            // 
-            // labelPowerupTimerValue
-            // 
-            this.labelPowerupTimerValue.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.labelPowerupTimerValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPowerupTimerValue.Location = new System.Drawing.Point(258, 22);
-            this.labelPowerupTimerValue.Name = "labelPowerupTimerValue";
-            this.labelPowerupTimerValue.Size = new System.Drawing.Size(36, 23);
-            this.labelPowerupTimerValue.TabIndex = 5;
-            this.labelPowerupTimerValue.Text = "00";
-            this.labelPowerupTimerValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // gameInterface
             // 
