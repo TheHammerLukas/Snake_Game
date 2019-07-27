@@ -149,23 +149,23 @@ namespace Snake_Game
         {
             gameController gamecontroller = new gameController();
             
-            Width               = 20;
-            Height              = 20;
-            Speed               = 8;
-            Score               = 0;  
-            GrowMultiplicator   = 5;
-            Points              = 100;
+            Width               = gameConstants.standardWidth;
+            Height              = gameConstants.standardHeight;
+            Speed               = gameConstants.standardSpeed;
+            Score               = gameConstants.standardScore;  
+            GrowMultiplicator   = gameConstants.standardGrowMultiplicator;
+            Points              = gameConstants.standardPoints;
             GameOver            = false;
             BotEnabled          = false;
             IsModifierRound     = false;
             SpeedEnabled        = false;
             GamePaused          = false;
             MenuIsOpen          = false;
-            SavedPowerup        = gamePowerup.None;
-            GamePowerup         = gamePowerup.None;
+            SavedPowerup        = gameConstants.standardSavedPowerup;
+            GamePowerup         = gameConstants.standardGamePowerup;
             GamePowerupActive   = false;
-            DrawingMode         = gameDrawingMode.drawingModeNormal;
-            directionHead       = gameDirection.Stop;
+            DrawingMode         = gameConstants.standardDrawingMode;
+            directionHead       = gameConstants.standarddirectionHead;
 
             // Only on first init set the DevMode
             if (firstInit)
@@ -243,7 +243,7 @@ namespace Snake_Game
         // Initializes the PowerupSpawnGap
         public static void initPowerupSpawnGap(bool useStandard)
         {
-            PowerupSpawnGap = 5;
+            PowerupSpawnGap = gameConstants.standardPowerupSpawnGap;
 
             // Only call readSettingsXML if the values of it should be used
             if (!useStandard)
@@ -268,16 +268,16 @@ namespace Snake_Game
             switch (_powerup)
             {
                 case gamePowerup.X2:
-                    PowerupDurationX2 = gamecontroller.ConvTime(30, gameConstants.seconds, gameConstants.milliseconds);
+                    PowerupDurationX2 = gamecontroller.ConvTime(gameConstants.standardPowerupDurationX2, gameConstants.seconds, gameConstants.milliseconds);
                     break;
                 case gamePowerup.PointOnTick:
-                    PowerupDurationPointTick = gamecontroller.ConvTime(20, gameConstants.seconds, gameConstants.milliseconds);
+                    PowerupDurationPointTick = gamecontroller.ConvTime(gameConstants.standardPowerupDurationPointTick, gameConstants.seconds, gameConstants.milliseconds);
                     break;
                 case gamePowerup.Slowmotion:
-                    PowerupDurationSlowmo = gamecontroller.ConvTime(10, gameConstants.seconds, gameConstants.milliseconds);
+                    PowerupDurationSlowmo = gamecontroller.ConvTime(gameConstants.standardPowerupDurationSlowmotion, gameConstants.seconds, gameConstants.milliseconds);
                     break;
                 case gamePowerup.Noclip:
-                    PowerupDurationNoclip = gamecontroller.ConvTime(15, gameConstants.seconds, gameConstants.milliseconds);
+                    PowerupDurationNoclip = gamecontroller.ConvTime(gameConstants.standardPowerupDurationNoclip, gameConstants.seconds, gameConstants.milliseconds);
                     break;
                 case gamePowerup.None:
                     break;
