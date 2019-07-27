@@ -101,6 +101,10 @@ namespace Snake_Game
             this.labelSnakeBodyPrev = new System.Windows.Forms.Label();
             this.buttonSwitchRainbowMode = new System.Windows.Forms.Button();
             this.buttonResetBodyColor = new System.Windows.Forms.Button();
+            this.groupBoxDrawingMode = new System.Windows.Forms.GroupBox();
+            this.radioButtonGameDrawingModeSprite = new System.Windows.Forms.RadioButton();
+            this.radioButtonGameDrawingModeRainbow = new System.Windows.Forms.RadioButton();
+            this.radioButtonGameDrawingModeNormal = new System.Windows.Forms.RadioButton();
             this.tabPagePowerups = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonResetFoodNoclipColor = new System.Windows.Forms.Button();
@@ -168,10 +172,6 @@ namespace Snake_Game
             this.buttonApply = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
             this.buttonReset = new System.Windows.Forms.Button();
-            this.radioButtonGameDrawingModeNormal = new System.Windows.Forms.RadioButton();
-            this.groupBoxDrawingMode = new System.Windows.Forms.GroupBox();
-            this.radioButtonGameDrawingModeRainbow = new System.Windows.Forms.RadioButton();
-            this.radioButtonGameDrawingModeSprite = new System.Windows.Forms.RadioButton();
             this.tabControlMenu.SuspendLayout();
             this.tabPageSettings.SuspendLayout();
             this.tableLayoutPanelSettings.SuspendLayout();
@@ -179,9 +179,9 @@ namespace Snake_Game
             this.tableLayoutPanelControls.SuspendLayout();
             this.tabPageColors.SuspendLayout();
             this.tableLayoutPanelColors.SuspendLayout();
+            this.groupBoxDrawingMode.SuspendLayout();
             this.tabPagePowerups.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.groupBoxDrawingMode.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlMenu
@@ -1124,6 +1124,59 @@ namespace Snake_Game
             this.buttonResetBodyColor.UseVisualStyleBackColor = true;
             this.buttonResetBodyColor.Click += new System.EventHandler(this.buttonResetBodyColor_Click);
             // 
+            // groupBoxDrawingMode
+            // 
+            this.tableLayoutPanelColors.SetColumnSpan(this.groupBoxDrawingMode, 3);
+            this.groupBoxDrawingMode.Controls.Add(this.radioButtonGameDrawingModeSprite);
+            this.groupBoxDrawingMode.Controls.Add(this.radioButtonGameDrawingModeRainbow);
+            this.groupBoxDrawingMode.Controls.Add(this.radioButtonGameDrawingModeNormal);
+            this.groupBoxDrawingMode.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxDrawingMode.Location = new System.Drawing.Point(137, 165);
+            this.groupBoxDrawingMode.Name = "groupBoxDrawingMode";
+            this.groupBoxDrawingMode.Size = new System.Drawing.Size(244, 49);
+            this.groupBoxDrawingMode.TabIndex = 15;
+            this.groupBoxDrawingMode.TabStop = false;
+            this.groupBoxDrawingMode.Text = "Drawing Mode";
+            // 
+            // radioButtonGameDrawingModeSprite
+            // 
+            this.radioButtonGameDrawingModeSprite.AutoSize = true;
+            this.radioButtonGameDrawingModeSprite.Location = new System.Drawing.Point(143, 19);
+            this.radioButtonGameDrawingModeSprite.Name = "radioButtonGameDrawingModeSprite";
+            this.radioButtonGameDrawingModeSprite.Size = new System.Drawing.Size(66, 17);
+            this.radioButtonGameDrawingModeSprite.TabIndex = 15;
+            this.radioButtonGameDrawingModeSprite.TabStop = true;
+            this.radioButtonGameDrawingModeSprite.Tag = "GameDrawingMode";
+            this.radioButtonGameDrawingModeSprite.Text = "Textures";
+            this.radioButtonGameDrawingModeSprite.UseVisualStyleBackColor = true;
+            this.radioButtonGameDrawingModeSprite.CheckedChanged += new System.EventHandler(this.radioButtonGameDrawingMode_Click);
+            // 
+            // radioButtonGameDrawingModeRainbow
+            // 
+            this.radioButtonGameDrawingModeRainbow.AutoSize = true;
+            this.radioButtonGameDrawingModeRainbow.Location = new System.Drawing.Point(70, 19);
+            this.radioButtonGameDrawingModeRainbow.Name = "radioButtonGameDrawingModeRainbow";
+            this.radioButtonGameDrawingModeRainbow.Size = new System.Drawing.Size(67, 17);
+            this.radioButtonGameDrawingModeRainbow.TabIndex = 14;
+            this.radioButtonGameDrawingModeRainbow.TabStop = true;
+            this.radioButtonGameDrawingModeRainbow.Tag = "GameDrawingMode";
+            this.radioButtonGameDrawingModeRainbow.Text = "Rainbow";
+            this.radioButtonGameDrawingModeRainbow.UseVisualStyleBackColor = true;
+            this.radioButtonGameDrawingModeRainbow.CheckedChanged += new System.EventHandler(this.radioButtonGameDrawingMode_Click);
+            // 
+            // radioButtonGameDrawingModeNormal
+            // 
+            this.radioButtonGameDrawingModeNormal.AutoSize = true;
+            this.radioButtonGameDrawingModeNormal.Location = new System.Drawing.Point(6, 19);
+            this.radioButtonGameDrawingModeNormal.Name = "radioButtonGameDrawingModeNormal";
+            this.radioButtonGameDrawingModeNormal.Size = new System.Drawing.Size(58, 17);
+            this.radioButtonGameDrawingModeNormal.TabIndex = 13;
+            this.radioButtonGameDrawingModeNormal.TabStop = true;
+            this.radioButtonGameDrawingModeNormal.Tag = "GameDrawingMode";
+            this.radioButtonGameDrawingModeNormal.Text = "Normal";
+            this.radioButtonGameDrawingModeNormal.UseVisualStyleBackColor = true;
+            this.radioButtonGameDrawingModeNormal.CheckedChanged += new System.EventHandler(this.radioButtonGameDrawingMode_Click);
+            // 
             // tabPagePowerups
             // 
             this.tabPagePowerups.Controls.Add(this.tableLayoutPanel1);
@@ -1960,59 +2013,6 @@ namespace Snake_Game
             this.buttonReset.UseVisualStyleBackColor = true;
             this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
             // 
-            // radioButtonGameDrawingModeNormal
-            // 
-            this.radioButtonGameDrawingModeNormal.AutoSize = true;
-            this.radioButtonGameDrawingModeNormal.Location = new System.Drawing.Point(6, 19);
-            this.radioButtonGameDrawingModeNormal.Name = "radioButtonGameDrawingModeNormal";
-            this.radioButtonGameDrawingModeNormal.Size = new System.Drawing.Size(58, 17);
-            this.radioButtonGameDrawingModeNormal.TabIndex = 13;
-            this.radioButtonGameDrawingModeNormal.TabStop = true;
-            this.radioButtonGameDrawingModeNormal.Tag = "GameDrawingMode";
-            this.radioButtonGameDrawingModeNormal.Text = "Normal";
-            this.radioButtonGameDrawingModeNormal.UseVisualStyleBackColor = true;
-            this.radioButtonGameDrawingModeNormal.CheckedChanged += new System.EventHandler(this.radioButtonGameDrawingMode_Click);
-            // 
-            // groupBoxDrawingMode
-            // 
-            this.tableLayoutPanelColors.SetColumnSpan(this.groupBoxDrawingMode, 3);
-            this.groupBoxDrawingMode.Controls.Add(this.radioButtonGameDrawingModeSprite);
-            this.groupBoxDrawingMode.Controls.Add(this.radioButtonGameDrawingModeRainbow);
-            this.groupBoxDrawingMode.Controls.Add(this.radioButtonGameDrawingModeNormal);
-            this.groupBoxDrawingMode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxDrawingMode.Location = new System.Drawing.Point(137, 165);
-            this.groupBoxDrawingMode.Name = "groupBoxDrawingMode";
-            this.groupBoxDrawingMode.Size = new System.Drawing.Size(244, 49);
-            this.groupBoxDrawingMode.TabIndex = 15;
-            this.groupBoxDrawingMode.TabStop = false;
-            this.groupBoxDrawingMode.Text = "Drawing Mode";
-            // 
-            // radioButtonGameDrawingModeRainbow
-            // 
-            this.radioButtonGameDrawingModeRainbow.AutoSize = true;
-            this.radioButtonGameDrawingModeRainbow.Location = new System.Drawing.Point(70, 19);
-            this.radioButtonGameDrawingModeRainbow.Name = "radioButtonGameDrawingModeRainbow";
-            this.radioButtonGameDrawingModeRainbow.Size = new System.Drawing.Size(67, 17);
-            this.radioButtonGameDrawingModeRainbow.TabIndex = 14;
-            this.radioButtonGameDrawingModeRainbow.TabStop = true;
-            this.radioButtonGameDrawingModeRainbow.Tag = "GameDrawingMode";
-            this.radioButtonGameDrawingModeRainbow.Text = "Rainbow";
-            this.radioButtonGameDrawingModeRainbow.UseVisualStyleBackColor = true;
-            this.radioButtonGameDrawingModeRainbow.CheckedChanged += new System.EventHandler(this.radioButtonGameDrawingMode_Click);
-            // 
-            // radioButtonGameDrawingModeSprite
-            // 
-            this.radioButtonGameDrawingModeSprite.AutoSize = true;
-            this.radioButtonGameDrawingModeSprite.Location = new System.Drawing.Point(143, 19);
-            this.radioButtonGameDrawingModeSprite.Name = "radioButtonGameDrawingModeSprite";
-            this.radioButtonGameDrawingModeSprite.Size = new System.Drawing.Size(66, 17);
-            this.radioButtonGameDrawingModeSprite.TabIndex = 15;
-            this.radioButtonGameDrawingModeSprite.TabStop = true;
-            this.radioButtonGameDrawingModeSprite.Tag = "GameDrawingMode";
-            this.radioButtonGameDrawingModeSprite.Text = "Textures";
-            this.radioButtonGameDrawingModeSprite.UseVisualStyleBackColor = true;
-            this.radioButtonGameDrawingModeSprite.CheckedChanged += new System.EventHandler(this.radioButtonGameDrawingMode_Click);
-            // 
             // gameMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2040,11 +2040,11 @@ namespace Snake_Game
             this.tabPageColors.ResumeLayout(false);
             this.tableLayoutPanelColors.ResumeLayout(false);
             this.tableLayoutPanelColors.PerformLayout();
+            this.groupBoxDrawingMode.ResumeLayout(false);
+            this.groupBoxDrawingMode.PerformLayout();
             this.tabPagePowerups.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.groupBoxDrawingMode.ResumeLayout(false);
-            this.groupBoxDrawingMode.PerformLayout();
             this.ResumeLayout(false);
 
         }

@@ -536,7 +536,7 @@ namespace Snake_Game
             }
             catch (Exception) // If no xml is found use standard values
             {
-                MessageBox.Show("Unexpected error ocurred reading the settings XML!\nUsing standart settings instead.", 
+                MessageBox.Show("Unexpected error ocurred reading the settings XML!\nUsing standard settings instead.", 
                                 "Unexpected error while reading settings XML",
                                 MessageBoxButtons.OK, 
                                 MessageBoxIcon.Error
