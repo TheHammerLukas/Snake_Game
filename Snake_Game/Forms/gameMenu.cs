@@ -670,5 +670,71 @@ namespace Snake_Game
         }
 
         #endregion
+
+        private void ButtonOpenFileControls_Click(object sender, EventArgs e)
+        {
+            string filePath = Properties.Settings.Default.controlsXmlPath;
+
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            openFileDialog.InitialDirectory = filePath;
+            openFileDialog.RestoreDirectory = true;
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                //Get the path of specified file
+                filePath = openFileDialog.FileName;
+            }
+
+            Properties.Settings.Default.controlsXmlPath = filePath;
+        }
+
+        private void ButtonOpenFileSettings_Click(object sender, EventArgs e)
+        {
+            string filePath = Properties.Settings.Default.settingsXmlPath;
+
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            openFileDialog.InitialDirectory = filePath;
+            openFileDialog.RestoreDirectory = true;
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                //Get the path of specified file
+                filePath = openFileDialog.FileName;
+            }
+
+            Properties.Settings.Default.settingsXmlPath = filePath;
+        }
+
+        private void ButtonOpenFileScore_Click(object sender, EventArgs e)
+        {
+            string filePath = Properties.Settings.Default.scoreXmlPath;
+
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            openFileDialog.InitialDirectory = filePath;
+            openFileDialog.RestoreDirectory = true;
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                //Get the path of specified file
+                filePath = openFileDialog.FileName;
+            }
+
+            Properties.Settings.Default.scoreXmlPath = filePath;
+        }
+
+        private void ButtonSaveFileControls_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonSaveFileSettings_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonSaveFileScore_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -17,9 +17,6 @@ namespace Snake_Game
         public static int growCnt = 0;
         public static int maxPosX = 0;
         public static int maxPosY = 0;
-        public string scoreXmlPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Snake_Game\\Snake_Game_Score.xml";
-        public string settingsXmlPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Snake_Game\\Snake_Game_Settings.xml";
-        public string controlsXmlPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Snake_Game\\Snake_Game_Controls.xml";
 
         #region Game logic
 
@@ -401,7 +398,7 @@ namespace Snake_Game
             {
                 // Open .xml
                 XmlDocument _xmlDoc = new XmlDocument();
-                _xmlDoc.Load(settingsXmlPath);
+                _xmlDoc.Load(Properties.Settings.Default.settingsXmlPath);
 
                 XmlElement _xmlRoot = _xmlDoc.DocumentElement;
                 
@@ -548,8 +545,8 @@ namespace Snake_Game
         public void writeSettingsXML()
         {
             // Create .xml
-            (new FileInfo(settingsXmlPath)).Directory.Create(); // Create the xml path in case it hasn't been created yet
-            XmlWriter _xmlDoc = XmlWriter.Create(settingsXmlPath);
+            (new FileInfo(Properties.Settings.Default.settingsXmlPath)).Directory.Create(); // Create the xml path in case it hasn't been created yet
+            XmlWriter _xmlDoc = XmlWriter.Create(Properties.Settings.Default.settingsXmlPath);
             _xmlDoc.WriteStartDocument();
 
             // Settings
@@ -675,7 +672,7 @@ namespace Snake_Game
             {
                 // Open .xml
                 XmlDocument _xmlDoc = new XmlDocument();
-                _xmlDoc.Load(controlsXmlPath);
+                _xmlDoc.Load(Properties.Settings.Default.controlsXmlPath);
 
                 XmlElement _xmlRoot = _xmlDoc.DocumentElement;
 
@@ -736,8 +733,8 @@ namespace Snake_Game
         public void writeControlsXML()
         {
             // Create .xml
-            (new FileInfo(controlsXmlPath)).Directory.Create(); // Create the xml path in case it hasn't been created yet
-            XmlWriter _xmlDoc = XmlWriter.Create(controlsXmlPath);
+            (new FileInfo(Properties.Settings.Default.controlsXmlPath)).Directory.Create(); // Create the xml path in case it hasn't been created yet
+            XmlWriter _xmlDoc = XmlWriter.Create(Properties.Settings.Default.controlsXmlPath);
             _xmlDoc.WriteStartDocument();
 
             // Controls
@@ -797,7 +794,7 @@ namespace Snake_Game
             {
                 // Open .xml
                 XmlDocument _xmlDoc = new XmlDocument();
-                _xmlDoc.Load(scoreXmlPath);
+                _xmlDoc.Load(Properties.Settings.Default.scoreXmlPath);
 
                 XmlElement _xmlRoot = _xmlDoc.DocumentElement;
 
@@ -819,8 +816,8 @@ namespace Snake_Game
         private void writeScoreXML()
         {
             // Create .xml
-            (new FileInfo(scoreXmlPath)).Directory.Create(); // Create the xml path in case it hasn't been created yet
-            XmlWriter _xmlDoc = XmlWriter.Create(scoreXmlPath);
+            (new FileInfo(Properties.Settings.Default.scoreXmlPath)).Directory.Create(); // Create the xml path in case it hasn't been created yet
+            XmlWriter _xmlDoc = XmlWriter.Create(Properties.Settings.Default.scoreXmlPath);
             _xmlDoc.WriteStartDocument();
 
             // Scores
