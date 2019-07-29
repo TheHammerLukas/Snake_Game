@@ -538,6 +538,8 @@ namespace Snake_Game
                                 MessageBoxButtons.OK, 
                                 MessageBoxIcon.Error
                                 );
+
+                new gameSettings(true, true);
             }
         }
 
@@ -545,7 +547,25 @@ namespace Snake_Game
         public void writeSettingsXML()
         {
             // Create .xml
-            (new FileInfo(Properties.Settings.Default.settingsXmlPath)).Directory.Create(); // Create the xml path in case it hasn't been created yet
+            try
+            {
+                (new FileInfo(Properties.Settings.Default.settingsXmlPath)).Directory.Create(); // Create the xml path in case it hasn't been created yet
+            }
+            catch (UnauthorizedAccessException) // If xml cannot be created due to missing permissions save to the desktop
+            {
+                MessageBox.Show("Insufficient permission to create the settings XML!\nCreate on desktop instead.\noriginal Path=" + Properties.Settings.Default.settingsXmlPath
+                                + ";new Path=" + Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Snake_Game\\Snake_Game_Settings.xml",
+                                "Unexpected error while creating settings XML",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error
+                                );
+
+                Properties.Settings.Default.settingsXmlPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Snake_Game\\Snake_Game_Settings.xml";
+                Properties.Settings.Default.Save(); // Save new xml path setting
+
+                (new FileInfo(Properties.Settings.Default.settingsXmlPath)).Directory.Create(); // Create the xml path in case it hasn't been created yet
+            }
+
             XmlWriter _xmlDoc = XmlWriter.Create(Properties.Settings.Default.settingsXmlPath);
             _xmlDoc.WriteStartDocument();
 
@@ -733,7 +753,25 @@ namespace Snake_Game
         public void writeControlsXML()
         {
             // Create .xml
-            (new FileInfo(Properties.Settings.Default.controlsXmlPath)).Directory.Create(); // Create the xml path in case it hasn't been created yet
+            try
+            {
+                (new FileInfo(Properties.Settings.Default.controlsXmlPath)).Directory.Create(); // Create the xml path in case it hasn't been created yet
+            }
+            catch (UnauthorizedAccessException) // If xml cannot be created due to missing permissions save to the desktop
+            {
+                MessageBox.Show("Insufficient permission to create the controls XML!\nCreate on desktop instead.\noriginal Path=" + Properties.Settings.Default.controlsXmlPath
+                                + ";new Path=" + Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Snake_Game\\Snake_Game_Controls.xml",
+                                "Unexpected error while creating controls XML",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error
+                                );
+
+                Properties.Settings.Default.controlsXmlPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Snake_Game\\Snake_Game_Controls.xml";
+                Properties.Settings.Default.Save(); // Save new xml path setting
+
+                (new FileInfo(Properties.Settings.Default.controlsXmlPath)).Directory.Create(); // Create the xml path in case it hasn't been created yet
+            }
+
             XmlWriter _xmlDoc = XmlWriter.Create(Properties.Settings.Default.controlsXmlPath);
             _xmlDoc.WriteStartDocument();
 
@@ -813,10 +851,28 @@ namespace Snake_Game
         }
 
         // Write the highscore to the .xml
-        private void writeScoreXML()
+        public void writeScoreXML()
         {
             // Create .xml
-            (new FileInfo(Properties.Settings.Default.scoreXmlPath)).Directory.Create(); // Create the xml path in case it hasn't been created yet
+            try
+            {
+                (new FileInfo(Properties.Settings.Default.scoreXmlPath)).Directory.Create(); // Create the xml path in case it hasn't been created yet
+            }
+            catch (UnauthorizedAccessException) // If xml cannot be created due to missing permissions save to the desktop
+            {
+                MessageBox.Show("Insufficient permission to create the score XML!\nCreate on desktop instead.\noriginal Path=" + Properties.Settings.Default.scoreXmlPath
+                                + ";new Path=" + Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Snake_Game\\Snake_Game_Score.xml",
+                                "Unexpected error while creating score XML",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error
+                                );
+
+                Properties.Settings.Default.scoreXmlPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Snake_Game\\Snake_Game_Score.xml";
+                Properties.Settings.Default.Save(); // Save new xml path setting
+
+                (new FileInfo(Properties.Settings.Default.scoreXmlPath)).Directory.Create(); // Create the xml path in case it hasn't been created yet
+            }
+
             XmlWriter _xmlDoc = XmlWriter.Create(Properties.Settings.Default.scoreXmlPath);
             _xmlDoc.WriteStartDocument();
 

@@ -169,17 +169,17 @@ namespace Snake_Game
             this.textBoxPUpSpawnGap = new System.Windows.Forms.TextBox();
             this.labelX2Colors = new System.Windows.Forms.Label();
             this.labelSnakeHeadX2Color = new System.Windows.Forms.Label();
+            this.tabPageSavefiles = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanelSavefiles = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonSaveFileScore = new System.Windows.Forms.Button();
+            this.buttonOpenFileScore = new System.Windows.Forms.Button();
+            this.buttonSaveFileSettings = new System.Windows.Forms.Button();
+            this.buttonOpenFileSettings = new System.Windows.Forms.Button();
+            this.buttonSaveFileControls = new System.Windows.Forms.Button();
+            this.buttonOpenFileControls = new System.Windows.Forms.Button();
             this.buttonApply = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
             this.buttonReset = new System.Windows.Forms.Button();
-            this.tabPageSavefiles = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanelSavefiles = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonOpenFileControls = new System.Windows.Forms.Button();
-            this.buttonSaveFileControls = new System.Windows.Forms.Button();
-            this.buttonOpenFileSettings = new System.Windows.Forms.Button();
-            this.buttonSaveFileSettings = new System.Windows.Forms.Button();
-            this.buttonOpenFileScore = new System.Windows.Forms.Button();
-            this.buttonSaveFileScore = new System.Windows.Forms.Button();
             this.tabControlMenu.SuspendLayout();
             this.tabPageSettings.SuspendLayout();
             this.tableLayoutPanelSettings.SuspendLayout();
@@ -1994,36 +1994,6 @@ namespace Snake_Game
             this.labelSnakeHeadX2Color.Text = "Snake Head";
             this.labelSnakeHeadX2Color.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // buttonApply
-            // 
-            this.buttonApply.Location = new System.Drawing.Point(13, 267);
-            this.buttonApply.Name = "buttonApply";
-            this.buttonApply.Size = new System.Drawing.Size(75, 23);
-            this.buttonApply.TabIndex = 1;
-            this.buttonApply.Text = "Apply";
-            this.buttonApply.UseVisualStyleBackColor = true;
-            this.buttonApply.Click += new System.EventHandler(this.buttonApply_Click);
-            // 
-            // buttonClose
-            // 
-            this.buttonClose.Location = new System.Drawing.Point(336, 267);
-            this.buttonClose.Name = "buttonClose";
-            this.buttonClose.Size = new System.Drawing.Size(75, 23);
-            this.buttonClose.TabIndex = 2;
-            this.buttonClose.Text = "Close";
-            this.buttonClose.UseVisualStyleBackColor = true;
-            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
-            // 
-            // buttonReset
-            // 
-            this.buttonReset.Location = new System.Drawing.Point(94, 267);
-            this.buttonReset.Name = "buttonReset";
-            this.buttonReset.Size = new System.Drawing.Size(75, 23);
-            this.buttonReset.TabIndex = 3;
-            this.buttonReset.Text = "Reset";
-            this.buttonReset.UseVisualStyleBackColor = true;
-            this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
-            // 
             // tabPageSavefiles
             // 
             this.tabPageSavefiles.Controls.Add(this.tableLayoutPanelSavefiles);
@@ -2056,49 +2026,16 @@ namespace Snake_Game
             this.tableLayoutPanelSavefiles.Size = new System.Drawing.Size(384, 217);
             this.tableLayoutPanelSavefiles.TabIndex = 0;
             // 
-            // buttonOpenFileControls
+            // buttonSaveFileScore
             // 
-            this.buttonOpenFileControls.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonOpenFileControls.Location = new System.Drawing.Point(3, 3);
-            this.buttonOpenFileControls.Name = "buttonOpenFileControls";
-            this.buttonOpenFileControls.Size = new System.Drawing.Size(186, 66);
-            this.buttonOpenFileControls.TabIndex = 0;
-            this.buttonOpenFileControls.Text = "Load Controls";
-            this.buttonOpenFileControls.UseVisualStyleBackColor = true;
-            this.buttonOpenFileControls.Click += new System.EventHandler(this.ButtonOpenFileControls_Click);
-            // 
-            // buttonSaveFileControls
-            // 
-            this.buttonSaveFileControls.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSaveFileControls.Location = new System.Drawing.Point(195, 3);
-            this.buttonSaveFileControls.Name = "buttonSaveFileControls";
-            this.buttonSaveFileControls.Size = new System.Drawing.Size(186, 66);
-            this.buttonSaveFileControls.TabIndex = 1;
-            this.buttonSaveFileControls.Text = "Save Controls";
-            this.buttonSaveFileControls.UseVisualStyleBackColor = true;
-            this.buttonSaveFileControls.Click += new System.EventHandler(this.ButtonSaveFileControls_Click);
-            // 
-            // buttonOpenFileSettings
-            // 
-            this.buttonOpenFileSettings.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonOpenFileSettings.Location = new System.Drawing.Point(3, 75);
-            this.buttonOpenFileSettings.Name = "buttonOpenFileSettings";
-            this.buttonOpenFileSettings.Size = new System.Drawing.Size(186, 66);
-            this.buttonOpenFileSettings.TabIndex = 2;
-            this.buttonOpenFileSettings.Text = "Load Settings";
-            this.buttonOpenFileSettings.UseVisualStyleBackColor = true;
-            this.buttonOpenFileSettings.Click += new System.EventHandler(this.ButtonOpenFileSettings_Click);
-            // 
-            // buttonSaveFileSettings
-            // 
-            this.buttonSaveFileSettings.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSaveFileSettings.Location = new System.Drawing.Point(195, 75);
-            this.buttonSaveFileSettings.Name = "buttonSaveFileSettings";
-            this.buttonSaveFileSettings.Size = new System.Drawing.Size(186, 66);
-            this.buttonSaveFileSettings.TabIndex = 3;
-            this.buttonSaveFileSettings.Text = "Save Settings";
-            this.buttonSaveFileSettings.UseVisualStyleBackColor = true;
-            this.buttonSaveFileSettings.Click += new System.EventHandler(this.ButtonSaveFileSettings_Click);
+            this.buttonSaveFileScore.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSaveFileScore.Location = new System.Drawing.Point(195, 147);
+            this.buttonSaveFileScore.Name = "buttonSaveFileScore";
+            this.buttonSaveFileScore.Size = new System.Drawing.Size(186, 67);
+            this.buttonSaveFileScore.TabIndex = 5;
+            this.buttonSaveFileScore.Text = "Save Score";
+            this.buttonSaveFileScore.UseVisualStyleBackColor = true;
+            this.buttonSaveFileScore.Click += new System.EventHandler(this.ButtonSaveFileScore_Click);
             // 
             // buttonOpenFileScore
             // 
@@ -2111,16 +2048,79 @@ namespace Snake_Game
             this.buttonOpenFileScore.UseVisualStyleBackColor = true;
             this.buttonOpenFileScore.Click += new System.EventHandler(this.ButtonOpenFileScore_Click);
             // 
-            // buttonSaveFileScore
+            // buttonSaveFileSettings
             // 
-            this.buttonSaveFileScore.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSaveFileScore.Location = new System.Drawing.Point(195, 147);
-            this.buttonSaveFileScore.Name = "buttonSaveFileScore";
-            this.buttonSaveFileScore.Size = new System.Drawing.Size(186, 67);
-            this.buttonSaveFileScore.TabIndex = 5;
-            this.buttonSaveFileScore.Text = "Save Score";
-            this.buttonSaveFileScore.UseVisualStyleBackColor = true;
-            this.buttonSaveFileScore.Click += new System.EventHandler(this.ButtonSaveFileScore_Click);
+            this.buttonSaveFileSettings.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSaveFileSettings.Location = new System.Drawing.Point(195, 75);
+            this.buttonSaveFileSettings.Name = "buttonSaveFileSettings";
+            this.buttonSaveFileSettings.Size = new System.Drawing.Size(186, 66);
+            this.buttonSaveFileSettings.TabIndex = 3;
+            this.buttonSaveFileSettings.Text = "Save Settings";
+            this.buttonSaveFileSettings.UseVisualStyleBackColor = true;
+            this.buttonSaveFileSettings.Click += new System.EventHandler(this.ButtonSaveFileSettings_Click);
+            // 
+            // buttonOpenFileSettings
+            // 
+            this.buttonOpenFileSettings.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonOpenFileSettings.Location = new System.Drawing.Point(3, 75);
+            this.buttonOpenFileSettings.Name = "buttonOpenFileSettings";
+            this.buttonOpenFileSettings.Size = new System.Drawing.Size(186, 66);
+            this.buttonOpenFileSettings.TabIndex = 2;
+            this.buttonOpenFileSettings.Text = "Load Settings";
+            this.buttonOpenFileSettings.UseVisualStyleBackColor = true;
+            this.buttonOpenFileSettings.Click += new System.EventHandler(this.ButtonOpenFileSettings_Click);
+            // 
+            // buttonSaveFileControls
+            // 
+            this.buttonSaveFileControls.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSaveFileControls.Location = new System.Drawing.Point(195, 3);
+            this.buttonSaveFileControls.Name = "buttonSaveFileControls";
+            this.buttonSaveFileControls.Size = new System.Drawing.Size(186, 66);
+            this.buttonSaveFileControls.TabIndex = 1;
+            this.buttonSaveFileControls.Text = "Save Controls";
+            this.buttonSaveFileControls.UseVisualStyleBackColor = true;
+            this.buttonSaveFileControls.Click += new System.EventHandler(this.ButtonSaveFileControls_Click);
+            // 
+            // buttonOpenFileControls
+            // 
+            this.buttonOpenFileControls.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonOpenFileControls.Location = new System.Drawing.Point(3, 3);
+            this.buttonOpenFileControls.Name = "buttonOpenFileControls";
+            this.buttonOpenFileControls.Size = new System.Drawing.Size(186, 66);
+            this.buttonOpenFileControls.TabIndex = 0;
+            this.buttonOpenFileControls.Text = "Load Controls";
+            this.buttonOpenFileControls.UseVisualStyleBackColor = true;
+            this.buttonOpenFileControls.Click += new System.EventHandler(this.ButtonOpenFileControls_Click);
+            // 
+            // buttonApply
+            // 
+            this.buttonApply.Location = new System.Drawing.Point(13, 267);
+            this.buttonApply.Name = "buttonApply";
+            this.buttonApply.Size = new System.Drawing.Size(75, 23);
+            this.buttonApply.TabIndex = 1;
+            this.buttonApply.Text = "Apply";
+            this.buttonApply.UseVisualStyleBackColor = true;
+            this.buttonApply.Click += new System.EventHandler(this.buttonApply_Click);
+            // 
+            // buttonClose
+            // 
+            this.buttonClose.Location = new System.Drawing.Point(336, 267);
+            this.buttonClose.Name = "buttonClose";
+            this.buttonClose.Size = new System.Drawing.Size(75, 23);
+            this.buttonClose.TabIndex = 2;
+            this.buttonClose.Text = "Close";
+            this.buttonClose.UseVisualStyleBackColor = true;
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
+            // 
+            // buttonReset
+            // 
+            this.buttonReset.Location = new System.Drawing.Point(94, 267);
+            this.buttonReset.Name = "buttonReset";
+            this.buttonReset.Size = new System.Drawing.Size(75, 23);
+            this.buttonReset.TabIndex = 3;
+            this.buttonReset.Text = "Reset";
+            this.buttonReset.UseVisualStyleBackColor = true;
+            this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
             // 
             // gameMenu
             // 

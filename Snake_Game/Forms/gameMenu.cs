@@ -671,70 +671,150 @@ namespace Snake_Game
 
         #endregion
 
+        #region Save File functions
+
         private void ButtonOpenFileControls_Click(object sender, EventArgs e)
         {
-            string filePath = Properties.Settings.Default.controlsXmlPath;
+            string filePath = Properties.Settings.Default.controlsXmlPath.Substring(0, Properties.Settings.Default.controlsXmlPath.LastIndexOf("\\") + 1);
 
             OpenFileDialog openFileDialog = new OpenFileDialog();
 
             openFileDialog.InitialDirectory = filePath;
+            openFileDialog.Filter = "XML files (*.xml)|*.xml|All files(*.*)|*.*";
+            openFileDialog.FilterIndex = 1;
             openFileDialog.RestoreDirectory = true;
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 //Get the path of specified file
                 filePath = openFileDialog.FileName;
+
+                Properties.Settings.Default.controlsXmlPath = filePath;
+                Properties.Settings.Default.Save();
+
+                new gameController().readControlsXML();
+                setMenuValues();
             }
 
-            Properties.Settings.Default.controlsXmlPath = filePath;
+            
         }
 
         private void ButtonOpenFileSettings_Click(object sender, EventArgs e)
         {
-            string filePath = Properties.Settings.Default.settingsXmlPath;
+            string filePath = Properties.Settings.Default.settingsXmlPath.Substring(0, Properties.Settings.Default.settingsXmlPath.LastIndexOf("\\") + 1);
 
             OpenFileDialog openFileDialog = new OpenFileDialog();
 
             openFileDialog.InitialDirectory = filePath;
+            openFileDialog.Filter = "XML files (*.xml)|*.xml|All files(*.*)|*.*";
+            openFileDialog.FilterIndex = 1;
             openFileDialog.RestoreDirectory = true;
+
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 //Get the path of specified file
                 filePath = openFileDialog.FileName;
-            }
 
-            Properties.Settings.Default.settingsXmlPath = filePath;
+                Properties.Settings.Default.settingsXmlPath = filePath;
+                Properties.Settings.Default.Save();
+
+                new gameSettings(false, true);
+                setMenuValues();
+                gameSettings.GameOver = true;
+            }
         }
 
         private void ButtonOpenFileScore_Click(object sender, EventArgs e)
         {
-            string filePath = Properties.Settings.Default.scoreXmlPath;
+            string _filePath = Properties.Settings.Default.scoreXmlPath.Substring(0, Properties.Settings.Default.scoreXmlPath.LastIndexOf("\\") + 1);
 
             OpenFileDialog openFileDialog = new OpenFileDialog();
 
-            openFileDialog.InitialDirectory = filePath;
+            openFileDialog.InitialDirectory = _filePath;
+            openFileDialog.Filter = "XML files (*.xml)|*.xml|All files(*.*)|*.*";
+            openFileDialog.FilterIndex = 1;
             openFileDialog.RestoreDirectory = true;
+
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 //Get the path of specified file
-                filePath = openFileDialog.FileName;
-            }
+                _filePath = openFileDialog.FileName;
 
-            Properties.Settings.Default.scoreXmlPath = filePath;
+                Properties.Settings.Default.scoreXmlPath = _filePath;
+                Properties.Settings.Default.Save();
+
+                new gameController().readScoreXML();
+            }
         }
 
         private void ButtonSaveFileControls_Click(object sender, EventArgs e)
         {
+            string _filePath = Properties.Settings.Default.controlsXmlPath;
 
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+            saveFileDialog.InitialDirectory = _filePath;
+            saveFileDialog.Filter = "XML files (*.xml)|*.xml|All files(*.*)|*.*";
+            saveFileDialog.FilterIndex = 1;
+            saveFileDialog.RestoreDirectory = true;
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                //Get the path of specified file
+                _filePath = saveFileDialog.FileName;
+
+                Properties.Settings.Default.controlsXmlPath = _filePath;
+                Properties.Settings.Default.Save();
+
+                new gameController().writeControlsXML();
+            }
         }
 
         private void ButtonSaveFileSettings_Click(object sender, EventArgs e)
         {
+            string _filePath = Properties.Settings.Default.settingsXmlPath;
 
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+            saveFileDialog.InitialDirectory = _filePath;
+            saveFileDialog.Filter = "XML files (*.xml)|*.xml|All files(*.*)|*.*";
+            saveFileDialog.FilterIndex = 1;
+            saveFileDialog.RestoreDirectory = true;
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                //Get the path of specified file
+                _filePath = saveFileDialog.FileName;
+
+                Properties.Settings.Default.settingsXmlPath = _filePath;
+                Properties.Settings.Default.Save();
+
+                new gameController().writeSettingsXML();
+            }
         }
 
         private void ButtonSaveFileScore_Click(object sender, EventArgs e)
         {
+            string _filePath = Properties.Settings.Default.scoreXmlPath;
 
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+            saveFileDialog.InitialDirectory = _filePath;
+            saveFileDialog.Filter = "XML files (*.xml)|*.xml|All files(*.*)|*.*";
+            saveFileDialog.FilterIndex = 1;
+            saveFileDialog.RestoreDirectory = true;
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                //Get the path of specified file
+                _filePath = saveFileDialog.FileName;
+
+                Properties.Settings.Default.scoreXmlPath = _filePath;
+                Properties.Settings.Default.Save();
+
+                new gameController().writeScoreXML();
+            }
         }
+
+        #endregion
     }
 }

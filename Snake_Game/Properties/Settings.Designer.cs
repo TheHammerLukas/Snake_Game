@@ -12,7 +12,7 @@ namespace Snake_Game.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.2.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "14.0.0.0")]
     public sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -23,7 +23,7 @@ namespace Snake_Game.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files\\Snake_Game\\Snake_Game_Controls.xml")]
         public string controlsXmlPath {
@@ -31,11 +31,11 @@ namespace Snake_Game.Properties {
                 return ((string)(this["controlsXmlPath"]));
             }
             set {
-                controlsXmlPath = value;
+                this["controlsXmlPath"] = value;
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files\\Snake_Game\\Snake_Game_Score.xml")]
         public string scoreXmlPath {
@@ -43,11 +43,11 @@ namespace Snake_Game.Properties {
                 return ((string)(this["scoreXmlPath"]));
             }
             set {
-                scoreXmlPath = value;
+                this["scoreXmlPath"] = value;
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files\\Snake_Game\\Snake_Game_Settings.xml")]
         public string settingsXmlPath {
@@ -55,7 +55,7 @@ namespace Snake_Game.Properties {
                 return ((string)(this["settingsXmlPath"]));
             }
             set {
-                settingsXmlPath = value;
+                this["settingsXmlPath"] = value;
             }
         }
     }

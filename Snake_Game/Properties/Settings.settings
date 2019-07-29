@@ -2,13 +2,13 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Snake_Game.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="controlsXmlPath" Type="System.String" Scope="Application">
+    <Setting Name="controlsXmlPath" Type="System.String" Scope="User">
       <Value Profile="(Default)">C:\Program Files\Snake_Game\Snake_Game_Controls.xml</Value>
     </Setting>
-    <Setting Name="scoreXmlPath" Type="System.String" Scope="Application">
+    <Setting Name="scoreXmlPath" Type="System.String" Scope="User">
       <Value Profile="(Default)">C:\Program Files\Snake_Game\Snake_Game_Score.xml</Value>
     </Setting>
-    <Setting Name="settingsXmlPath" Type="System.String" Scope="Application">
+    <Setting Name="settingsXmlPath" Type="System.String" Scope="User">
       <Value Profile="(Default)">C:\Program Files\Snake_Game\Snake_Game_Settings.xml</Value>
     </Setting>
   </Settings>

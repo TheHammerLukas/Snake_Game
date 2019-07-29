@@ -250,6 +250,10 @@ namespace Snake_Game
             {
                 PowerupSpawnGap = PowerupSpawnGapConfigured;
             }
+            else
+            {
+                PowerupSpawnGapConfigured = PowerupSpawnGap;
+            }
         }
 
         public static void initAllPowerupDuration()
