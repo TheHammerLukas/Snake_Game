@@ -88,71 +88,72 @@ namespace Snake_Game
             pictureBox.Invalidate();
         }
 
+        // Lukas Open: Implement combined Powerups (more ifs required)
         private void CheckActivePowerup(gamePowerup Powerup)
         {
             long _lastChangeTime = 0;
 
-            switch (Powerup)
+            if (Powerup == gamePowerup.X2)
             {
-                case gamePowerup.X2:
-                    if (lastPUpX2ChangeTime >= currentTime - gameSettings.PowerupDurationX2)
-                    {
-                        _lastChangeTime = lastPUpX2ChangeTime;
-                    }
-                    else
-                    {
-                        gameSettings.GamePowerup = gamePowerup.None;
-                        gameSettings.GamePowerupActive = false;
-                        gamecontroller.PlayGameSound(gameSound.PUpX2Deactivate);
-                    }
-                    break;
-                case gamePowerup.PointOnTick:
-                    if (lastPUpPointTickChangeTime >= currentTime - gameSettings.PowerupDurationPointTick)
-                    {
-                        gameSettings.Score = gameSettings.Score + 50;
-                        _lastChangeTime = lastPUpPointTickChangeTime;
-                    }
-                    else
-                    {
-                        gameSettings.GamePowerup = gamePowerup.None;
-                        gameSettings.GamePowerupActive = false;
-                        gamecontroller.PlayGameSound(gameSound.PUpPointTickDeactivate);
-                    }
-                    break;
-                case gamePowerup.Slowmotion:
-                    if (lastPUpSlowmoChangeTime >= currentTime - gameSettings.PowerupDurationSlowmo)
-                    {
-                        if (!gameSettings.GamePowerupActive)
-                        {
-                            // Slow down the gameTimer
-                            new gameController().SetTimerInterval(gameTimer, gameSettings.Speed / 3, true);
-                            gameSettings.GamePowerupActive = true;
-                        }
-                        _lastChangeTime = lastPUpSlowmoChangeTime;
-                    }
-                    else
-                    {
-                        // Reset the gameTimer interval to the originally determined speed 
-                        new gameController().SetTimerInterval(gameTimer, gameSettings.Speed, true);
-                        gameSettings.GamePowerup = gamePowerup.None;
-                        gameSettings.GamePowerupActive = false;
-                        gamecontroller.PlayGameSound(gameSound.PUpSlowmoDeactivate);
-                    }
-                    break;
-                case gamePowerup.Noclip:
-                    if (lastPUpNoclipChangeTime >= currentTime - gameSettings.PowerupDurationNoclip)
-                    {
-                        _lastChangeTime = lastPUpNoclipChangeTime;
-                    }
-                    else
-                    {
-                        gameSettings.GamePowerup = gamePowerup.None;
-                        gameSettings.GamePowerupActive = false;
-                        gamecontroller.PlayGameSound(gameSound.PUpNoclipDeactivate);
-                    }
-                    break;
+                if (lastPUpX2ChangeTime >= currentTime - gameSettings.PowerupDurationX2)
+                {
+                    _lastChangeTime = lastPUpX2ChangeTime;
+                }
+                else
+                {
+                    gameSettings.GamePowerup = gamePowerup.None;
+                    gameSettings.GamePowerupActive = false;
+                    gamecontroller.PlayGameSound(gameSound.PUpX2Deactivate);
+                }
             }
-
+            if (Powerup == gamePowerup.PointOnTick)
+            {
+                if (lastPUpPointTickChangeTime >= currentTime - gameSettings.PowerupDurationPointTick)
+                {
+                    gameSettings.Score = gameSettings.Score + 50;
+                    _lastChangeTime = lastPUpPointTickChangeTime;
+                }
+                else
+                {
+                    gameSettings.GamePowerup = gamePowerup.None;
+                    gameSettings.GamePowerupActive = false;
+                    gamecontroller.PlayGameSound(gameSound.PUpPointTickDeactivate);
+                }
+            }
+            if (Powerup == gamePowerup.Slowmotion)
+            {
+                if (lastPUpSlowmoChangeTime >= currentTime - gameSettings.PowerupDurationSlowmo)
+                {
+                    if (!gameSettings.GamePowerupActive)
+                    {
+                        // Slow down the gameTimer
+                        new gameController().SetTimerInterval(gameTimer, gameSettings.Speed / 3, true);
+                        gameSettings.GamePowerupActive = true;
+                    }
+                    _lastChangeTime = lastPUpSlowmoChangeTime;
+                }
+                else
+                {
+                    // Reset the gameTimer interval to the originally determined speed 
+                    new gameController().SetTimerInterval(gameTimer, gameSettings.Speed, true);
+                    gameSettings.GamePowerup = gamePowerup.None;
+                    gameSettings.GamePowerupActive = false;
+                    gamecontroller.PlayGameSound(gameSound.PUpSlowmoDeactivate);
+                }
+            }
+            if (Powerup == gamePowerup.Noclip)
+            {
+                if (lastPUpNoclipChangeTime >= currentTime - gameSettings.PowerupDurationNoclip)
+                {
+                    _lastChangeTime = lastPUpNoclipChangeTime;
+                }
+                else
+                {
+                    gameSettings.GamePowerup = gamePowerup.None;
+                    gameSettings.GamePowerupActive = false;
+                    gamecontroller.PlayGameSound(gameSound.PUpNoclipDeactivate);
+                }
+            }
             new gameController().SetPowerup(labelCurrentPowerupValue, labelSavedPowerupValue, labelPowerupTimerValue, currentTime, _lastChangeTime);
         }
 
@@ -576,6 +577,70 @@ namespace Snake_Game
             }
         }
 
+        // Combines gamePowerups for 'Synergy'
+        private gamePowerup CombineGamePowerup()
+        {
+            gamePowerup _gamePowerup = gameSettings.SavedPowerup;
+
+            switch (_gamePowerup)
+            {
+                case gamePowerup.X2:
+                    switch (gameSettings.GamePowerup)
+                    {
+                        case gamePowerup.PointOnTick:
+                            _gamePowerup = gamePowerup.X2PointOnTick;
+                            break;
+                    }
+                    break;
+                case gamePowerup.PointOnTick:
+                    switch (gameSettings.GamePowerup)
+                    {
+                        case gamePowerup.X2:
+                            _gamePowerup = gamePowerup.X2PointOnTick;
+                            break;
+                        case gamePowerup.Slowmotion:
+                            _gamePowerup = gamePowerup.PointOnTickSlowmotion;
+                            break;
+                        case gamePowerup.Noclip:
+                            _gamePowerup = gamePowerup.PointOnTickNoclip;
+                            break;
+                    }
+                    break;
+                case gamePowerup.Slowmotion:
+                    switch (gameSettings.GamePowerup)
+                    {
+                        case gamePowerup.X2:
+                            _gamePowerup = gamePowerup.X2Slowmotion;
+                            break;
+                        case gamePowerup.PointOnTick:
+                            _gamePowerup = gamePowerup.PointOnTickSlowmotion;
+                            break;
+                        case gamePowerup.Noclip:
+                            _gamePowerup = gamePowerup.SlowmotionNoclip;
+                            break;
+                    }
+                    break;
+                case gamePowerup.Noclip:
+                    switch (gameSettings.GamePowerup)
+                    {
+                        case gamePowerup.X2:
+                            _gamePowerup = gamePowerup.X2Noclip;
+                            break;
+                        case gamePowerup.PointOnTick:
+                            _gamePowerup = gamePowerup.PointOnTickNoclip;
+                            break;
+                        case gamePowerup.Slowmotion:
+                            _gamePowerup = gamePowerup.SlowmotionNoclip;
+                            break;
+                    }
+                    break;
+                default:
+                    _gamePowerup = gameSettings.GamePowerup;
+                    break;
+            }
+            return _gamePowerup;
+        }
+
         private void gameInterface_KeyDown(object sender, KeyEventArgs e)
         {
             if (!gameSettings.GameOver)
@@ -630,9 +695,9 @@ namespace Snake_Game
                 }
                 else if (e.KeyCode == gameControls.modPowerupKey && !gameSettings.MenuIsOpen)
                 {
-                    if (gameSettings.SavedPowerup != gamePowerup.None && !gameSettings.GamePowerupActive)
+                    if (gameSettings.SavedPowerup != gamePowerup.None)
                     {
-                        gameSettings.GamePowerup = gameSettings.SavedPowerup;
+                        gameSettings.GamePowerup = CombineGamePowerup();
                         gameSettings.SavedPowerup = gamePowerup.None;
 
                         switch (gameSettings.GamePowerup)
