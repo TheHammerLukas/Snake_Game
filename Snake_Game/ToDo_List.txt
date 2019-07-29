@@ -7,7 +7,7 @@ TIP: there is another method using XMLs in this project (Project -> Properties -
 Add 'Multi Language Support'. // IDEA: Save the MLS texts and the selected language in a .xml
 
 
-Let the player decide where the savefiles are stored on the disk
+BUG: Exception handling for save files
 
 
 Add a replay functionality // Overthink this point since there is no real use compared to the complexity. Maybe write a .dll for this function so it can be used in other projects too.
