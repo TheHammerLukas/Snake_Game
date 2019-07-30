@@ -16,4 +16,4 @@ Add a replay functionality // Overthink this point since there is no real use co
 Make it possible to restore the last settings
 
 
-Let the user save his settings to different 'profiles'
+BUG: When leaving the scrren and entering it from the other side the snake doesn't get drawn correctly
