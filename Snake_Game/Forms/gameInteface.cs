@@ -380,32 +380,40 @@ namespace Snake_Game
                 gameObject prevSnakeTile = gameObject.Snake[i - 1];
                 gameObject nextSnakeTile = gameObject.Snake[i + 1];
 
-                if (prevSnakeTile.Y < currSnakeTile.Y && nextSnakeTile.Y > currSnakeTile.Y || nextSnakeTile.Y < currSnakeTile.Y && prevSnakeTile.Y > currSnakeTile.Y) // Up-Down
+                if (prevSnakeTile.Y < currSnakeTile.Y && nextSnakeTile.Y > currSnakeTile.Y || nextSnakeTile.Y < currSnakeTile.Y && prevSnakeTile.Y > currSnakeTile.Y ||
+                    ((prevSnakeTile.Y == 0 || prevSnakeTile.Y == gameController.maxPosY - 1 || nextSnakeTile.Y == 0 || nextSnakeTile.Y == gameController.maxPosY - 1) &&
+                    prevSnakeTile.X == nextSnakeTile.X)) // Up-Down
                 {
                     spriteLocX = 2;
                     spriteLocY = 1;
                 }
-                else if (prevSnakeTile.X < currSnakeTile.X && nextSnakeTile.X > currSnakeTile.X || nextSnakeTile.X < currSnakeTile.X && prevSnakeTile.X > currSnakeTile.X) // Left-Right
+                else if (prevSnakeTile.X < currSnakeTile.X && nextSnakeTile.X > currSnakeTile.X || nextSnakeTile.X < currSnakeTile.X && prevSnakeTile.X > currSnakeTile.X ||
+                         ((prevSnakeTile.X == 0 || prevSnakeTile.X == gameController.maxPosX - 1 || nextSnakeTile.X == 0 || nextSnakeTile.X == gameController.maxPosX - 1) && 
+                         prevSnakeTile.Y == nextSnakeTile.Y))// Left-Right
                 {
                     spriteLocX = 1;
                     spriteLocY = 0;
                 }
-                else if (prevSnakeTile.X < currSnakeTile.X && nextSnakeTile.Y > currSnakeTile.Y || nextSnakeTile.X < currSnakeTile.X && prevSnakeTile.Y > currSnakeTile.Y) // Up-Left
+                else if (prevSnakeTile.X < currSnakeTile.X && nextSnakeTile.Y > currSnakeTile.Y || nextSnakeTile.X < currSnakeTile.X && prevSnakeTile.Y > currSnakeTile.Y ||
+                         prevSnakeTile.X == gameController.maxPosX - 1 && nextSnakeTile.Y < currSnakeTile.Y) // Up-Left
                 {
                     spriteLocX = 2;
                     spriteLocY = 0;
                 }
-                else if (prevSnakeTile.Y > currSnakeTile.Y && nextSnakeTile.X > currSnakeTile.X || nextSnakeTile.Y > currSnakeTile.Y && prevSnakeTile.X > currSnakeTile.X) // Up-Right
+                else if (prevSnakeTile.Y > currSnakeTile.Y && nextSnakeTile.X > currSnakeTile.X || nextSnakeTile.Y > currSnakeTile.Y && prevSnakeTile.X > currSnakeTile.X ||
+                         prevSnakeTile.X == 0 && nextSnakeTile.Y < currSnakeTile.Y) // Up-Right
                 {
                     spriteLocX = 0;
                     spriteLocY = 0;
                 }
-                else if (prevSnakeTile.Y < currSnakeTile.Y && nextSnakeTile.X < currSnakeTile.X || nextSnakeTile.Y < currSnakeTile.Y && prevSnakeTile.X < currSnakeTile.X) // Down-Left
+                else if (prevSnakeTile.Y < currSnakeTile.Y && nextSnakeTile.X < currSnakeTile.X || nextSnakeTile.Y < currSnakeTile.Y && prevSnakeTile.X < currSnakeTile.X ||
+                         prevSnakeTile.Y == gameController.maxPosY - 1&& nextSnakeTile.X > currSnakeTile.X) // Down-Left
                 {
                     spriteLocX = 2;
                     spriteLocY = 2;
                 }
-                else if (prevSnakeTile.X > currSnakeTile.X && nextSnakeTile.Y < currSnakeTile.Y || nextSnakeTile.X > currSnakeTile.X && prevSnakeTile.Y < currSnakeTile.Y) // Down-Right
+                else if (prevSnakeTile.X > currSnakeTile.X && nextSnakeTile.Y < currSnakeTile.Y || nextSnakeTile.X > currSnakeTile.X && prevSnakeTile.Y < currSnakeTile.Y ||
+                         prevSnakeTile.Y == 0 && nextSnakeTile.Y > currSnakeTile.X) // Down-Right
                 {
                     spriteLocX = 0;
                     spriteLocY = 1;
