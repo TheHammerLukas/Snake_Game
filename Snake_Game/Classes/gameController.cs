@@ -162,25 +162,25 @@ namespace Snake_Game
                     gameObject.Snake[i].X = gameObject.Snake[i - 1].X;
                     gameObject.Snake[i].Y = gameObject.Snake[i - 1].Y;
 
-                    //if (i == 0)
-                    //{
-                    //    if (gameObject.Snake[0].X < 0)
-                    //    {
-                    //        gameObject.Snake[0].X = maxPosX - 1;
-                    //    }
-                    //    else if (gameObject.Snake[0].X >= maxPosX)
-                    //    {
-                    //        gameObject.Snake[0].X = 0;
-                    //    }
-                    //    else if (gameObject.Snake[0].Y < 0)
-                    //    {
-                    //        gameObject.Snake[0].Y = maxPosY - 1;
-                    //    }
-                    //    else if (gameObject.Snake[0].Y >= maxPosY)
-                    //    {
-                    //        gameObject.Snake[0].Y = 0;
-                    //    }
-                    //}
+                    if (i == 0)
+                    {
+                        if (gameObject.Snake[0].X < 0)
+                        {
+                            gameObject.Snake[0].X = maxPosX - 1;
+                        }
+                        else if (gameObject.Snake[0].X >= maxPosX)
+                        {
+                            gameObject.Snake[0].X = 0;
+                        }
+                        else if (gameObject.Snake[0].Y < 0)
+                        {
+                            gameObject.Snake[0].Y = maxPosY - 1;
+                        }
+                        else if (gameObject.Snake[0].Y >= maxPosY)
+                        {
+                            gameObject.Snake[0].Y = 0;
+                        }
+                    }
                 }
             }
         }

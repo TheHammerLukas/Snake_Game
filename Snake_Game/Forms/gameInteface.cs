@@ -88,7 +88,6 @@ namespace Snake_Game
             pictureBox.Invalidate();
         }
 
-        // Lukas Open: Implement combined Powerups (more ifs required)
         private void CheckActivePowerup(gamePowerup Powerup)
         {
             long _lastChangeTime = 0;
@@ -577,70 +576,6 @@ namespace Snake_Game
             }
         }
 
-        // Combines gamePowerups for 'Synergy'
-        private gamePowerup CombineGamePowerup()
-        {
-            gamePowerup _gamePowerup = gameSettings.SavedPowerup;
-
-            switch (_gamePowerup)
-            {
-                case gamePowerup.X2:
-                    switch (gameSettings.GamePowerup)
-                    {
-                        case gamePowerup.PointOnTick:
-                            _gamePowerup = gamePowerup.X2PointOnTick;
-                            break;
-                    }
-                    break;
-                case gamePowerup.PointOnTick:
-                    switch (gameSettings.GamePowerup)
-                    {
-                        case gamePowerup.X2:
-                            _gamePowerup = gamePowerup.X2PointOnTick;
-                            break;
-                        case gamePowerup.Slowmotion:
-                            _gamePowerup = gamePowerup.PointOnTickSlowmotion;
-                            break;
-                        case gamePowerup.Noclip:
-                            _gamePowerup = gamePowerup.PointOnTickNoclip;
-                            break;
-                    }
-                    break;
-                case gamePowerup.Slowmotion:
-                    switch (gameSettings.GamePowerup)
-                    {
-                        case gamePowerup.X2:
-                            _gamePowerup = gamePowerup.X2Slowmotion;
-                            break;
-                        case gamePowerup.PointOnTick:
-                            _gamePowerup = gamePowerup.PointOnTickSlowmotion;
-                            break;
-                        case gamePowerup.Noclip:
-                            _gamePowerup = gamePowerup.SlowmotionNoclip;
-                            break;
-                    }
-                    break;
-                case gamePowerup.Noclip:
-                    switch (gameSettings.GamePowerup)
-                    {
-                        case gamePowerup.X2:
-                            _gamePowerup = gamePowerup.X2Noclip;
-                            break;
-                        case gamePowerup.PointOnTick:
-                            _gamePowerup = gamePowerup.PointOnTickNoclip;
-                            break;
-                        case gamePowerup.Slowmotion:
-                            _gamePowerup = gamePowerup.SlowmotionNoclip;
-                            break;
-                    }
-                    break;
-                default:
-                    _gamePowerup = gameSettings.GamePowerup;
-                    break;
-            }
-            return _gamePowerup;
-        }
-
         private void gameInterface_KeyDown(object sender, KeyEventArgs e)
         {
             if (!gameSettings.GameOver)
@@ -697,7 +632,6 @@ namespace Snake_Game
                 {
                     if (gameSettings.SavedPowerup != gamePowerup.None)
                     {
-                        gameSettings.GamePowerup = CombineGamePowerup();
                         gameSettings.SavedPowerup = gamePowerup.None;
 
                         switch (gameSettings.GamePowerup)

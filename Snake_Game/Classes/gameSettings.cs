@@ -68,14 +68,7 @@ namespace Snake_Game
         X2 = 1,
         PointOnTick = 2,
         Slowmotion = 3,
-        Noclip = 4,
-        X2PointOnTick = 5,
-        X2Slowmotion = 6,
-        X2Noclip = 7,
-        PointOnTickSlowmotion = 8,
-        PointOnTickNoclip = 9,
-        SlowmotionNoclip = 10
-
+        Noclip = 4
     }
 
     public enum gameSound // Enum for different sounds
