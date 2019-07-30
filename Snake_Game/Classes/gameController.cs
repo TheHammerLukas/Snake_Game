@@ -161,26 +161,6 @@ namespace Snake_Game
                     // Move body
                     gameObject.Snake[i].X = gameObject.Snake[i - 1].X;
                     gameObject.Snake[i].Y = gameObject.Snake[i - 1].Y;
-
-                    //if (i == 0)
-                    //{
-                    //    if (gameObject.Snake[0].X < 0)
-                    //    {
-                    //        gameObject.Snake[0].X = maxPosX - 1;
-                    //    }
-                    //    else if (gameObject.Snake[0].X >= maxPosX)
-                    //    {
-                    //        gameObject.Snake[0].X = 0;
-                    //    }
-                    //    else if (gameObject.Snake[0].Y < 0)
-                    //    {
-                    //        gameObject.Snake[0].Y = maxPosY - 1;
-                    //    }
-                    //    else if (gameObject.Snake[0].Y >= maxPosY)
-                    //    {
-                    //        gameObject.Snake[0].Y = 0;
-                    //    }
-                    //}
                 }
             }
         }
@@ -299,6 +279,23 @@ namespace Snake_Game
             {
                 // Don't die because of noclip but play noclip sound
                 PlayGameSound(gameSound.SnakeNoClip);
+
+                if (gameObject.Snake[0].X < 0)
+                {
+                    gameObject.Snake[0].X = gameController.maxPosX - 1;
+                }
+                else if (gameObject.Snake[0].X >= gameController.maxPosX)
+                {
+                    gameObject.Snake[0].X = 0;
+                }
+                else if (gameObject.Snake[0].Y < 0)
+                {
+                    gameObject.Snake[0].Y = gameController.maxPosY - 1;
+                }
+                else if (gameObject.Snake[0].Y >= gameController.maxPosY)
+                {
+                    gameObject.Snake[0].Y = 0;
+                }
             }
             else // Die because noclip is not enabled
             {

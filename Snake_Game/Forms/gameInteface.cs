@@ -88,7 +88,6 @@ namespace Snake_Game
             pictureBox.Invalidate();
         }
 
-        // Lukas Open: Implement combined Powerups (more ifs required)
         private void CheckActivePowerup(gamePowerup Powerup)
         {
             long _lastChangeTime = 0;
@@ -347,7 +346,7 @@ namespace Snake_Game
         private void DetermineSnakeSprite(int i, out int spriteLocX, out int spriteLocY)
         {
             spriteLocX = 1;
-            spriteLocY = 1;
+            spriteLocY = 3;
 
             if (i == 0) // Head
             {
@@ -381,7 +380,44 @@ namespace Snake_Game
                 gameObject prevSnakeTile = gameObject.Snake[i - 1];
                 gameObject nextSnakeTile = gameObject.Snake[i + 1];
 
-                if (prevSnakeTile.Y < currSnakeTile.Y && nextSnakeTile.Y > currSnakeTile.Y || nextSnakeTile.Y < currSnakeTile.Y && prevSnakeTile.Y > currSnakeTile.Y) // Up-Down
+                // Lukas Open: Implement Horizontal curve Sprites
+                if (currSnakeTile.X == 0 && 
+                   ((nextSnakeTile.X == 0 && nextSnakeTile.Y > prevSnakeTile.Y && prevSnakeTile.X == gameController.maxPosX - 1) || 
+                    (nextSnakeTile.X == gameController.maxPosX - 1 && nextSnakeTile.Y < prevSnakeTile.Y && prevSnakeTile.X == 0)))
+                {
+                    spriteLocX = 2;
+                    spriteLocY = 0;
+                }
+                else if (currSnakeTile.X == gameController.maxPosX - 1 && 
+                        ((nextSnakeTile.X == 0 && nextSnakeTile.Y < prevSnakeTile.Y && prevSnakeTile.X == gameController.maxPosX - 1) ||
+                         (nextSnakeTile.X == gameController.maxPosX - 1 && nextSnakeTile.Y > prevSnakeTile.Y && prevSnakeTile.X == 0)))
+                {
+                    spriteLocX = 0;
+                    spriteLocY = 0;
+                }
+                else if (currSnakeTile.X == 0 && 
+                        ((nextSnakeTile.X == 0 && nextSnakeTile.Y < prevSnakeTile.Y && prevSnakeTile.X == gameController.maxPosX - 1) || 
+                         (nextSnakeTile.X == gameController.maxPosX - 1 && nextSnakeTile.Y > prevSnakeTile.Y && prevSnakeTile.X == 0)))
+                {
+                    spriteLocX = 2;
+                    spriteLocY = 2;
+                }
+                else if (currSnakeTile.X == gameController.maxPosX - 1 &&
+                        ((nextSnakeTile.X == gameController.maxPosX - 1 && nextSnakeTile.Y < prevSnakeTile.Y && prevSnakeTile.X == 0) ||
+                         (nextSnakeTile.X == 0 && nextSnakeTile.Y > prevSnakeTile.Y && prevSnakeTile.X == gameController.maxPosX - 1)))
+                {
+                    spriteLocX = 0;
+                    spriteLocY = 1;
+                }
+                else if (((prevSnakeTile.X == 0 || nextSnakeTile.X == 0) && currSnakeTile.X == gameController.maxPosX - 1) ||
+                    ((prevSnakeTile.X == gameController.maxPosX - 1 || nextSnakeTile.X == gameController.maxPosX - 1) && currSnakeTile.X == 0) ||
+                    ((prevSnakeTile.Y == 0 || nextSnakeTile.Y == 0) && currSnakeTile.Y == gameController.maxPosY - 1) ||
+                    ((prevSnakeTile.Y == gameController.maxPosY - 1 || nextSnakeTile.Y == gameController.maxPosY - 1) && currSnakeTile.Y == 0))
+                {
+                    spriteLocX = 1;
+                    spriteLocY = 1;
+                }
+                else if (prevSnakeTile.Y < currSnakeTile.Y && nextSnakeTile.Y > currSnakeTile.Y || nextSnakeTile.Y < currSnakeTile.Y && prevSnakeTile.Y > currSnakeTile.Y) // Up-Down
                 {
                     spriteLocX = 2;
                     spriteLocY = 1;
@@ -577,70 +613,6 @@ namespace Snake_Game
             }
         }
 
-        // Combines gamePowerups for 'Synergy'
-        private gamePowerup CombineGamePowerup()
-        {
-            gamePowerup _gamePowerup = gameSettings.SavedPowerup;
-
-            switch (_gamePowerup)
-            {
-                case gamePowerup.X2:
-                    switch (gameSettings.GamePowerup)
-                    {
-                        case gamePowerup.PointOnTick:
-                            _gamePowerup = gamePowerup.X2PointOnTick;
-                            break;
-                    }
-                    break;
-                case gamePowerup.PointOnTick:
-                    switch (gameSettings.GamePowerup)
-                    {
-                        case gamePowerup.X2:
-                            _gamePowerup = gamePowerup.X2PointOnTick;
-                            break;
-                        case gamePowerup.Slowmotion:
-                            _gamePowerup = gamePowerup.PointOnTickSlowmotion;
-                            break;
-                        case gamePowerup.Noclip:
-                            _gamePowerup = gamePowerup.PointOnTickNoclip;
-                            break;
-                    }
-                    break;
-                case gamePowerup.Slowmotion:
-                    switch (gameSettings.GamePowerup)
-                    {
-                        case gamePowerup.X2:
-                            _gamePowerup = gamePowerup.X2Slowmotion;
-                            break;
-                        case gamePowerup.PointOnTick:
-                            _gamePowerup = gamePowerup.PointOnTickSlowmotion;
-                            break;
-                        case gamePowerup.Noclip:
-                            _gamePowerup = gamePowerup.SlowmotionNoclip;
-                            break;
-                    }
-                    break;
-                case gamePowerup.Noclip:
-                    switch (gameSettings.GamePowerup)
-                    {
-                        case gamePowerup.X2:
-                            _gamePowerup = gamePowerup.X2Noclip;
-                            break;
-                        case gamePowerup.PointOnTick:
-                            _gamePowerup = gamePowerup.PointOnTickNoclip;
-                            break;
-                        case gamePowerup.Slowmotion:
-                            _gamePowerup = gamePowerup.SlowmotionNoclip;
-                            break;
-                    }
-                    break;
-                default:
-                    _gamePowerup = gameSettings.GamePowerup;
-                    break;
-            }
-            return _gamePowerup;
-        }
-
         private void gameInterface_KeyDown(object sender, KeyEventArgs e)
         {
             if (!gameSettings.GameOver)
@@ -697,7 +669,7 @@ namespace Snake_Game
                 {
                     if (gameSettings.SavedPowerup != gamePowerup.None)
                     {
-                        gameSettings.GamePowerup = CombineGamePowerup();
+                        gameSettings.GamePowerup = gameSettings.SavedPowerup;
                         gameSettings.SavedPowerup = gamePowerup.None;
 
                         switch (gameSettings.GamePowerup)

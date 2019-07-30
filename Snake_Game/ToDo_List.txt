@@ -1,16 +1,7 @@
 ﻿Idea: Set a screenshot as the background of the labelGameStatus in order for the background to be pseudo transparent.
 
 
-TIP: there is another method using XMLs in this project (Project -> Properties -> Settings).
-
-
 Add 'Multi Language Support'. // IDEA: Save the MLS texts and the selected language in a .xml
-
-
-BUG: Exception handling for save files
-
-
-Code Review: program function for saveFileDialog & openFileDialog 
 
 
 Add a replay functionality // Overthink this point since there is no real use compared to the complexity. Maybe write a .dll for this function so it can be used in other projects too.
@@ -19,4 +10,10 @@ Add a replay functionality // Overthink this point since there is no real use co
 Make it possible to restore the last settings
 
 
-Let the user save his settings to different 'profiles'
+BUG: Exception handling for save files
+
+
+BUG: When leaving the screen and entering it from the other side the snake doesn't get drawn correctly
+
+
+Add reload gameSprite file key to 'DevMode'
