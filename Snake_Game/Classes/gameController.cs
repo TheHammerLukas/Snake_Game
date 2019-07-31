@@ -282,17 +282,17 @@ namespace Snake_Game
 
                 if (gameObject.Snake[0].X < 0)
                 {
-                    gameObject.Snake[0].X = gameController.maxPosX - 1;
+                    gameObject.Snake[0].X = maxPosX - 1;
                 }
-                else if (gameObject.Snake[0].X >= gameController.maxPosX)
+                else if (gameObject.Snake[0].X >= maxPosX)
                 {
                     gameObject.Snake[0].X = 0;
                 }
                 else if (gameObject.Snake[0].Y < 0)
                 {
-                    gameObject.Snake[0].Y = gameController.maxPosY - 1;
+                    gameObject.Snake[0].Y = maxPosY - 1;
                 }
-                else if (gameObject.Snake[0].Y >= gameController.maxPosY)
+                else if (gameObject.Snake[0].Y >= maxPosY)
                 {
                     gameObject.Snake[0].Y = 0;
                 }
