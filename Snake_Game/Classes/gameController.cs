@@ -101,7 +101,7 @@ namespace Snake_Game
                 cntFoodSpawned++;
             }
 
-            PlayGameSound(gameSound.FoodSpawn);
+            PlayGameSound(gameConstants.gameSound.FoodSpawn);
         }
 
         // Move the player
@@ -173,11 +173,11 @@ namespace Snake_Game
                 gameSettings.SavedPowerup = gameSettings.FoodPowerup;
                 gameSettings.FoodPowerup = gamePowerup.None;
 
-                PlayGameSound(gameSound.PowerupEat);
+                PlayGameSound(gameConstants.gameSound.PowerupEat);
             }
             else
             {
-                PlayGameSound(gameSound.SnakeEat);
+                PlayGameSound(gameConstants.gameSound.SnakeEat);
             }
 
             // Set growCnt to 0 so the snake will grow
@@ -278,7 +278,7 @@ namespace Snake_Game
             if (gameSettings.GamePowerup == gamePowerup.Noclip && gameSettings.GamePowerupActive || gameSettings.NoClipEnabled)
             {
                 // Don't die because of noclip but play noclip sound
-                PlayGameSound(gameSound.SnakeNoClip);
+                PlayGameSound(gameConstants.gameSound.SnakeNoClip);
 
                 if (gameObject.Snake[0].X < 0)
                 {
@@ -301,7 +301,7 @@ namespace Snake_Game
             {
                 gameSettings.GameOver = true;
                 gameSettings.GamePowerup = gamePowerup.None;
-                PlayGameSound(gameSound.SnakeDie);
+                PlayGameSound(gameConstants.gameSound.SnakeDie);
 
                 if (gameSettings.Score > gameSettings.HighScore && !gameSettings.IsModifierRound)
                 {
@@ -310,16 +310,16 @@ namespace Snake_Game
             }
         }
 
-        // Gets passed in the gameSound that should be played and plays the corresponding sound resource
-        public void PlayGameSound(gameSound sound)
+        // Gets passed in the gameConstants.gameSound that should be played and plays the corresponding sound resource
+        public void PlayGameSound(gameConstants.gameSound sound)
         {
             SoundPlayer audio = new SoundPlayer();
-            gameSound _sound = sound;
+            gameConstants.gameSound _sound = sound;
 
             int _PUpDeactivateSound = 0;
 
-            if (_sound == gameSound.PUpX2Deactivate || _sound == gameSound.PUpPointTickDeactivate ||
-                _sound == gameSound.PUpSlowmoDeactivate || _sound == gameSound.PUpNoclipDeactivate)
+            if (_sound == gameConstants.gameSound.PUpX2Deactivate || _sound == gameConstants.gameSound.PUpPointTickDeactivate ||
+                _sound == gameConstants.gameSound.PUpSlowmoDeactivate || _sound == gameConstants.gameSound.PUpNoclipDeactivate)
             {
                 Random random = new Random();
                 _PUpDeactivateSound = random.Next(0, 2);
@@ -327,56 +327,56 @@ namespace Snake_Game
 
             switch (_sound)
             {
-                case gameSound.SnakeEat:
+                case gameConstants.gameSound.SnakeEat:
                     audio = new SoundPlayer(Properties.Resources.gameSoundSnakeEat);
                     break;
-                case gameSound.PowerupEat:
+                case gameConstants.gameSound.PowerupEat:
                     audio = new SoundPlayer(Properties.Resources.gameSoundPowerupEat);
                     break;
-                case gameSound.SnakeDie:
+                case gameConstants.gameSound.SnakeDie:
                     audio = new SoundPlayer(Properties.Resources.gameSoundSnakeDie);
                     break;
-                case gameSound.SnakeNoClip:
+                case gameConstants.gameSound.SnakeNoClip:
                     audio = new SoundPlayer(Properties.Resources.gameSoundSnakeNoClip);
                     break;
-                case gameSound.SnakeChangeDir:
+                case gameConstants.gameSound.SnakeChangeDir:
                     audio = new SoundPlayer(Properties.Resources.gameSoundSnakeChangeDir);
                     break;
-                case gameSound.FoodSpawn:
+                case gameConstants.gameSound.FoodSpawn:
                     audio = new SoundPlayer(Properties.Resources.gameSoundFoodSpawn);
                     break;
-                case gameSound.PUpX2Activate:
+                case gameConstants.gameSound.PUpX2Activate:
                     audio = new SoundPlayer(Properties.Resources.gameSoundPUpX2);
                     break;
-                case gameSound.PUpX2Deactivate:
+                case gameConstants.gameSound.PUpX2Deactivate:
                     audio = new SoundPlayer(_PUpDeactivateSound == 0 ? Properties.Resources.gameSoundPUpDeactivate01 
                                                                      : Properties.Resources.gameSoundPUpDeactivate02);
                     break;
-                case gameSound.PUpPointTickActivate:
+                case gameConstants.gameSound.PUpPointTickActivate:
                     audio = new SoundPlayer(Properties.Resources.gameSoundPUpPointTick);
                     break;
-                case gameSound.PUpPointTickDeactivate:
+                case gameConstants.gameSound.PUpPointTickDeactivate:
                     audio = new SoundPlayer(_PUpDeactivateSound == 0 ? Properties.Resources.gameSoundPUpDeactivate01
                                                                      : Properties.Resources.gameSoundPUpDeactivate02);
                     break;
-                case gameSound.PUpSlowmoActivate:
+                case gameConstants.gameSound.PUpSlowmoActivate:
                     audio = new SoundPlayer(Properties.Resources.gameSoundPUpSlowmotion);
                     break;
-                case gameSound.PUpSlowmoDeactivate:
+                case gameConstants.gameSound.PUpSlowmoDeactivate:
                     audio = new SoundPlayer(_PUpDeactivateSound == 0 ? Properties.Resources.gameSoundPUpDeactivate01
                                                                      : Properties.Resources.gameSoundPUpDeactivate02);
                     break;
-                case gameSound.PUpNoclipActivate:
+                case gameConstants.gameSound.PUpNoclipActivate:
                     audio = new SoundPlayer(Properties.Resources.gameSoundPUpNoclip);
                     break;
-                case gameSound.PUpNoclipDeactivate:
+                case gameConstants.gameSound.PUpNoclipDeactivate:
                     audio = new SoundPlayer(_PUpDeactivateSound == 0 ? Properties.Resources.gameSoundPUpDeactivate01
                                                                      : Properties.Resources.gameSoundPUpDeactivate02);
                     break;
-                case gameSound.ApplicationStartup:
+                case gameConstants.gameSound.ApplicationStartup:
                     audio = new SoundPlayer(Properties.Resources.gameSoundHelloMan);
                     break;
-                case gameSound.None:
+                case gameConstants.gameSound.None:
                     audio = new SoundPlayer();
                     break;
                 default:
@@ -389,9 +389,9 @@ namespace Snake_Game
                     break;
             }
             // Outer if is used to disable sounds that should not be played
-            if (_sound != gameSound.SnakeChangeDir && _sound != gameSound.FoodSpawn)
+            if (_sound != gameConstants.gameSound.SnakeChangeDir && _sound != gameConstants.gameSound.FoodSpawn)
             {
-                if (_sound != gameSound.SnakeNoClip || (soundCheckTime > lastSoundPlayTime && (_sound == gameSound.SnakeNoClip)))
+                if (_sound != gameConstants.gameSound.SnakeNoClip || (soundCheckTime > lastSoundPlayTime && (_sound == gameConstants.gameSound.SnakeNoClip)))
                 {
                     audio.Play();
                     lastSoundPlayTime = soundCheckTime;
@@ -460,11 +460,11 @@ namespace Snake_Game
                     }
                     if (_xmlAttrib.Name == "DrawingMode")
                     {
-                        gameSettings.DrawingMode = (gameDrawingMode)Convert.ToInt32(_xmlAttrib.Value);
+                        gameSettings.DrawingMode = (gameConstants.gameDrawingMode)Convert.ToInt32(_xmlAttrib.Value);
                     }
                     if (_xmlAttrib.Name == "RainbowMode")
                     {
-                        gameSettings.RainbowMode = (rainbowMode)Convert.ToInt32(_xmlAttrib.Value);
+                        gameSettings.RainbowMode = (gameConstants.rainbowMode)Convert.ToInt32(_xmlAttrib.Value);
                     }
                     if (_xmlAttrib.Name == "PowerupSpawnGap")
                     {
@@ -759,7 +759,7 @@ namespace Snake_Game
             }
             catch(Exception) // If no .XML found or no Keys found then use standard keys
             {
-                foreach (gameAction action in Enum.GetValues(typeof(gameAction)))
+                foreach (gameConstants.gameAction action in Enum.GetValues(typeof(gameConstants.gameAction)))
                 {
                     gameControls.initControls(action);
                 }

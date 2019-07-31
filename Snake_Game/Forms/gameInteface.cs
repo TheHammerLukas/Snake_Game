@@ -102,7 +102,7 @@ namespace Snake_Game
                 {
                     gameSettings.GamePowerup = gamePowerup.None;
                     gameSettings.GamePowerupActive = false;
-                    gamecontroller.PlayGameSound(gameSound.PUpX2Deactivate);
+                    gamecontroller.PlayGameSound(gameConstants.gameSound.PUpX2Deactivate);
                 }
             }
             if (Powerup == gamePowerup.PointOnTick)
@@ -116,7 +116,7 @@ namespace Snake_Game
                 {
                     gameSettings.GamePowerup = gamePowerup.None;
                     gameSettings.GamePowerupActive = false;
-                    gamecontroller.PlayGameSound(gameSound.PUpPointTickDeactivate);
+                    gamecontroller.PlayGameSound(gameConstants.gameSound.PUpPointTickDeactivate);
                 }
             }
             if (Powerup == gamePowerup.Slowmotion)
@@ -137,7 +137,7 @@ namespace Snake_Game
                     new gameController().SetTimerInterval(gameTimer, gameSettings.Speed, true);
                     gameSettings.GamePowerup = gamePowerup.None;
                     gameSettings.GamePowerupActive = false;
-                    gamecontroller.PlayGameSound(gameSound.PUpSlowmoDeactivate);
+                    gamecontroller.PlayGameSound(gameConstants.gameSound.PUpSlowmoDeactivate);
                 }
             }
             if (Powerup == gamePowerup.Noclip)
@@ -150,7 +150,7 @@ namespace Snake_Game
                 {
                     gameSettings.GamePowerup = gamePowerup.None;
                     gameSettings.GamePowerupActive = false;
-                    gamecontroller.PlayGameSound(gameSound.PUpNoclipDeactivate);
+                    gamecontroller.PlayGameSound(gameConstants.gameSound.PUpNoclipDeactivate);
                 }
             }
             new gameController().SetPowerup(labelCurrentPowerupValue, labelSavedPowerupValue, labelPowerupTimerValue, currentTime, _lastChangeTime);
@@ -161,7 +161,7 @@ namespace Snake_Game
             gamePowerup _gamePowerup;
 
             // Decide the color of the snake
-            if (gameSettings.DrawingMode == gameDrawingMode.drawingModeRainbow)
+            if (gameSettings.DrawingMode == gameConstants.gameDrawingMode.drawingModeRainbow)
             {
                 if (i == 0)
                 {
@@ -176,42 +176,42 @@ namespace Snake_Game
                     switch (rainbowColorIndex)
                     {
                         case 0:
-                            if (cnt > (Convert.ToDouble(gameObject.Snake.Count) - 1) / 6 || gameSettings.RainbowMode == rainbowMode.rainbowModeTiles)
+                            if (cnt > (Convert.ToDouble(gameObject.Snake.Count) - 1) / 6 || gameSettings.RainbowMode == gameConstants.rainbowMode.rainbowModeTiles)
                             {
                                 rainbowColorIndex = 1;
                                 cnt = 0;
                             }
                             break;
                         case 1:
-                            if (cnt >= (Convert.ToDouble(gameObject.Snake.Count) - 1) / 6 || gameSettings.RainbowMode == rainbowMode.rainbowModeTiles)
+                            if (cnt >= (Convert.ToDouble(gameObject.Snake.Count) - 1) / 6 || gameSettings.RainbowMode == gameConstants.rainbowMode.rainbowModeTiles)
                             {
                                 rainbowColorIndex = 2;
                                 cnt = 0;
                             }
                             break;
                         case 2:
-                            if (cnt >= (Convert.ToDouble(gameObject.Snake.Count) - 1) / 6 || gameSettings.RainbowMode == rainbowMode.rainbowModeTiles)
+                            if (cnt >= (Convert.ToDouble(gameObject.Snake.Count) - 1) / 6 || gameSettings.RainbowMode == gameConstants.rainbowMode.rainbowModeTiles)
                             {
                                 rainbowColorIndex = 3;
                                 cnt = 0;
                             }
                             break;
                         case 3:
-                            if (cnt >= (Convert.ToDouble(gameObject.Snake.Count) - 1) / 6 || gameSettings.RainbowMode == rainbowMode.rainbowModeTiles)
+                            if (cnt >= (Convert.ToDouble(gameObject.Snake.Count) - 1) / 6 || gameSettings.RainbowMode == gameConstants.rainbowMode.rainbowModeTiles)
                             {
                                 rainbowColorIndex = 4;
                                 cnt = 0;
                             }
                             break;
                         case 4:
-                            if (cnt >= (Convert.ToDouble(gameObject.Snake.Count) - 1) / 6 || gameSettings.RainbowMode == rainbowMode.rainbowModeTiles)
+                            if (cnt >= (Convert.ToDouble(gameObject.Snake.Count) - 1) / 6 || gameSettings.RainbowMode == gameConstants.rainbowMode.rainbowModeTiles)
                             {
                                 rainbowColorIndex = 5;
                                 cnt = 0;
                             }
                             break;
                         case 5:
-                            if (cnt >= (Convert.ToDouble(gameObject.Snake.Count) - 1) / 6 || gameSettings.RainbowMode == rainbowMode.rainbowModeTiles)
+                            if (cnt >= (Convert.ToDouble(gameObject.Snake.Count) - 1) / 6 || gameSettings.RainbowMode == gameConstants.rainbowMode.rainbowModeTiles)
                             {
                                 rainbowColorIndex = 0;
                                 cnt = 0;
@@ -224,7 +224,7 @@ namespace Snake_Game
                                         );
                     }
 
-                    if (gameSettings.RainbowMode == rainbowMode.rainbowModeStretched)
+                    if (gameSettings.RainbowMode == gameConstants.rainbowMode.rainbowModeStretched)
                     {
                         gameSettings.snakeBodyColor = gameSettings.snakeRainbowColor[rainbowColorIndex]; // Body color
                     }
@@ -545,14 +545,14 @@ namespace Snake_Game
                 // Draw snake head & body
                 for (int i = 0; i < gameObject.Snake.Count; i++)
                 {
-                    if (gameSettings.DrawingMode == gameDrawingMode.drawingModeNormal || gameSettings.DrawingMode == gameDrawingMode.drawingModeRainbow)
+                    if (gameSettings.DrawingMode == gameConstants.gameDrawingMode.drawingModeNormal || gameSettings.DrawingMode == gameConstants.gameDrawingMode.drawingModeRainbow)
                     {
                         DetermineSnakeColor(i, ref rainbowColorIndex, ref cnt);
                         DrawSnakeColor(i, ref Canvas);
                         DetermineFoodColor();
                         DrawFoodColor(ref Canvas);
                     }
-                    else if (gameSettings.DrawingMode == gameDrawingMode.drawingModeSprite)
+                    else if (gameSettings.DrawingMode == gameConstants.gameDrawingMode.drawingModeSprite)
                     {
                         int _spriteLocX;
                         int _spriteLocY;
@@ -635,28 +635,28 @@ namespace Snake_Game
                     && !gameSettings.GamePaused) || gameSettings.DevModeEnabled))
                 {
                     gameSettings.directionHead = gameDirection.Right;
-                    gamecontroller.PlayGameSound(gameSound.SnakeChangeDir);
+                    gamecontroller.PlayGameSound(gameConstants.gameSound.SnakeChangeDir);
                 }
                 else if ((e.KeyCode == gameControls.dirLeftKey || e.KeyCode == Keys.Left)
                           && ((currentTickDir != gameDirection.Right && currentTickDir != gameDirection.Left
                           && !gameSettings.GamePaused) || gameSettings.DevModeEnabled))
                 {
                     gameSettings.directionHead = gameDirection.Left;
-                    gamecontroller.PlayGameSound(gameSound.SnakeChangeDir);
+                    gamecontroller.PlayGameSound(gameConstants.gameSound.SnakeChangeDir);
                 }
                 else if ((e.KeyCode == gameControls.dirUpKey || e.KeyCode == Keys.Up)
                           && ((currentTickDir != gameDirection.Down && currentTickDir != gameDirection.Up
                           && !gameSettings.GamePaused) || gameSettings.DevModeEnabled))
                 {
                     gameSettings.directionHead = gameDirection.Up;
-                    gamecontroller.PlayGameSound(gameSound.SnakeChangeDir);
+                    gamecontroller.PlayGameSound(gameConstants.gameSound.SnakeChangeDir);
                 }
                 else if ((e.KeyCode == gameControls.dirDownKey || e.KeyCode == Keys.Down)
                           && ((currentTickDir != gameDirection.Up && currentTickDir != gameDirection.Down
                           && !gameSettings.GamePaused) || gameSettings.DevModeEnabled))
                 {
                     gameSettings.directionHead = gameDirection.Down;
-                    gamecontroller.PlayGameSound(gameSound.SnakeChangeDir);
+                    gamecontroller.PlayGameSound(gameConstants.gameSound.SnakeChangeDir);
                 }
                 // Check if player wants to activate / deactivate any modifiers
                 if (e.KeyCode == gameControls.modBotKey)
@@ -692,7 +692,7 @@ namespace Snake_Game
                                 lastPUpSlowmoChangeTime = 0;
                                 lastPUpNoclipChangeTime = 0;
                                 gameSettings.GamePowerupActive = true;
-                                gamecontroller.PlayGameSound(gameSound.PUpX2Activate);
+                                gamecontroller.PlayGameSound(gameConstants.gameSound.PUpX2Activate);
                                 break;
                             case gamePowerup.PointOnTick:
                                 lastPUpX2ChangeTime = 0;
@@ -700,14 +700,14 @@ namespace Snake_Game
                                 lastPUpSlowmoChangeTime = 0;
                                 lastPUpNoclipChangeTime = 0;
                                 gameSettings.GamePowerupActive = true;
-                                gamecontroller.PlayGameSound(gameSound.PUpPointTickActivate);
+                                gamecontroller.PlayGameSound(gameConstants.gameSound.PUpPointTickActivate);
                                 break;
                             case gamePowerup.Slowmotion:
                                 lastPUpX2ChangeTime = 0;
                                 lastPUpPointTickChangeTime = 0;
                                 lastPUpSlowmoChangeTime = currentTime;
                                 lastPUpNoclipChangeTime = 0;
-                                gamecontroller.PlayGameSound(gameSound.PUpSlowmoActivate);
+                                gamecontroller.PlayGameSound(gameConstants.gameSound.PUpSlowmoActivate);
                                 break;
                             case gamePowerup.Noclip:
                                 lastPUpX2ChangeTime = 0;
@@ -715,7 +715,7 @@ namespace Snake_Game
                                 lastPUpSlowmoChangeTime = 0;
                                 lastPUpNoclipChangeTime = currentTime;
                                 gameSettings.GamePowerupActive = true;
-                                gamecontroller.PlayGameSound(gameSound.PUpNoclipActivate);
+                                gamecontroller.PlayGameSound(gameConstants.gameSound.PUpNoclipActivate);
                                 break;
                             default:
                                 break;

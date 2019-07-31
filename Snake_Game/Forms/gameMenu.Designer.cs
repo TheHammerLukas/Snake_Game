@@ -102,9 +102,9 @@ namespace Snake_Game
             this.buttonSwitchRainbowMode = new System.Windows.Forms.Button();
             this.buttonResetBodyColor = new System.Windows.Forms.Button();
             this.groupBoxDrawingMode = new System.Windows.Forms.GroupBox();
-            this.radioButtonGameDrawingModeSprite = new System.Windows.Forms.RadioButton();
-            this.radioButtonGameDrawingModeRainbow = new System.Windows.Forms.RadioButton();
-            this.radioButtonGameDrawingModeNormal = new System.Windows.Forms.RadioButton();
+            this.radioButtongameDrawingModeSprite = new System.Windows.Forms.RadioButton();
+            this.radioButtongameDrawingModeRainbow = new System.Windows.Forms.RadioButton();
+            this.radioButtongameDrawingModeNormal = new System.Windows.Forms.RadioButton();
             this.tabPagePowerups = new System.Windows.Forms.TabPage();
             this.tableLayoutPanelPowerups = new System.Windows.Forms.TableLayoutPanel();
             this.buttonResetFoodNoclipColor = new System.Windows.Forms.Button();
@@ -1138,9 +1138,9 @@ namespace Snake_Game
             // groupBoxDrawingMode
             // 
             this.tableLayoutPanelColors.SetColumnSpan(this.groupBoxDrawingMode, 3);
-            this.groupBoxDrawingMode.Controls.Add(this.radioButtonGameDrawingModeSprite);
-            this.groupBoxDrawingMode.Controls.Add(this.radioButtonGameDrawingModeRainbow);
-            this.groupBoxDrawingMode.Controls.Add(this.radioButtonGameDrawingModeNormal);
+            this.groupBoxDrawingMode.Controls.Add(this.radioButtongameDrawingModeSprite);
+            this.groupBoxDrawingMode.Controls.Add(this.radioButtongameDrawingModeRainbow);
+            this.groupBoxDrawingMode.Controls.Add(this.radioButtongameDrawingModeNormal);
             this.groupBoxDrawingMode.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBoxDrawingMode.Location = new System.Drawing.Point(137, 165);
             this.groupBoxDrawingMode.Name = "groupBoxDrawingMode";
@@ -1149,44 +1149,44 @@ namespace Snake_Game
             this.groupBoxDrawingMode.TabStop = false;
             this.groupBoxDrawingMode.Text = "Drawing Mode";
             // 
-            // radioButtonGameDrawingModeSprite
+            // radioButtongameConstants.gameDrawingModeSprite
             // 
-            this.radioButtonGameDrawingModeSprite.AutoSize = true;
-            this.radioButtonGameDrawingModeSprite.Location = new System.Drawing.Point(143, 19);
-            this.radioButtonGameDrawingModeSprite.Name = "radioButtonGameDrawingModeSprite";
-            this.radioButtonGameDrawingModeSprite.Size = new System.Drawing.Size(66, 17);
-            this.radioButtonGameDrawingModeSprite.TabIndex = 15;
-            this.radioButtonGameDrawingModeSprite.TabStop = true;
-            this.radioButtonGameDrawingModeSprite.Tag = "GameDrawingMode";
-            this.radioButtonGameDrawingModeSprite.Text = "Textures";
-            this.radioButtonGameDrawingModeSprite.UseVisualStyleBackColor = true;
-            this.radioButtonGameDrawingModeSprite.CheckedChanged += new System.EventHandler(this.radioButtonGameDrawingMode_Click);
+            this.radioButtongameDrawingModeSprite.AutoSize = true;
+            this.radioButtongameDrawingModeSprite.Location = new System.Drawing.Point(143, 19);
+            this.radioButtongameDrawingModeSprite.Name = "radioButtongameConstants.gameDrawingModeSprite";
+            this.radioButtongameDrawingModeSprite.Size = new System.Drawing.Size(66, 17);
+            this.radioButtongameDrawingModeSprite.TabIndex = 15;
+            this.radioButtongameDrawingModeSprite.TabStop = true;
+            this.radioButtongameDrawingModeSprite.Tag = "gameConstants.gameDrawingMode";
+            this.radioButtongameDrawingModeSprite.Text = "Textures";
+            this.radioButtongameDrawingModeSprite.UseVisualStyleBackColor = true;
+            this.radioButtongameDrawingModeSprite.CheckedChanged += new System.EventHandler(this.radioButtongameDrawingMode_Click);
             // 
-            // radioButtonGameDrawingModeRainbow
+            // radioButtongameConstants.gameDrawingModeRainbow
             // 
-            this.radioButtonGameDrawingModeRainbow.AutoSize = true;
-            this.radioButtonGameDrawingModeRainbow.Location = new System.Drawing.Point(70, 19);
-            this.radioButtonGameDrawingModeRainbow.Name = "radioButtonGameDrawingModeRainbow";
-            this.radioButtonGameDrawingModeRainbow.Size = new System.Drawing.Size(67, 17);
-            this.radioButtonGameDrawingModeRainbow.TabIndex = 14;
-            this.radioButtonGameDrawingModeRainbow.TabStop = true;
-            this.radioButtonGameDrawingModeRainbow.Tag = "GameDrawingMode";
-            this.radioButtonGameDrawingModeRainbow.Text = "Rainbow";
-            this.radioButtonGameDrawingModeRainbow.UseVisualStyleBackColor = true;
-            this.radioButtonGameDrawingModeRainbow.CheckedChanged += new System.EventHandler(this.radioButtonGameDrawingMode_Click);
+            this.radioButtongameDrawingModeRainbow.AutoSize = true;
+            this.radioButtongameDrawingModeRainbow.Location = new System.Drawing.Point(70, 19);
+            this.radioButtongameDrawingModeRainbow.Name = "radioButtongameConstants.gameDrawingModeRainbow";
+            this.radioButtongameDrawingModeRainbow.Size = new System.Drawing.Size(67, 17);
+            this.radioButtongameDrawingModeRainbow.TabIndex = 14;
+            this.radioButtongameDrawingModeRainbow.TabStop = true;
+            this.radioButtongameDrawingModeRainbow.Tag = "gameConstants.gameDrawingMode";
+            this.radioButtongameDrawingModeRainbow.Text = "Rainbow";
+            this.radioButtongameDrawingModeRainbow.UseVisualStyleBackColor = true;
+            this.radioButtongameDrawingModeRainbow.CheckedChanged += new System.EventHandler(this.radioButtongameDrawingMode_Click);
             // 
-            // radioButtonGameDrawingModeNormal
+            // radioButtongameConstants.gameDrawingModeNormal
             // 
-            this.radioButtonGameDrawingModeNormal.AutoSize = true;
-            this.radioButtonGameDrawingModeNormal.Location = new System.Drawing.Point(6, 19);
-            this.radioButtonGameDrawingModeNormal.Name = "radioButtonGameDrawingModeNormal";
-            this.radioButtonGameDrawingModeNormal.Size = new System.Drawing.Size(58, 17);
-            this.radioButtonGameDrawingModeNormal.TabIndex = 13;
-            this.radioButtonGameDrawingModeNormal.TabStop = true;
-            this.radioButtonGameDrawingModeNormal.Tag = "GameDrawingMode";
-            this.radioButtonGameDrawingModeNormal.Text = "Normal";
-            this.radioButtonGameDrawingModeNormal.UseVisualStyleBackColor = true;
-            this.radioButtonGameDrawingModeNormal.CheckedChanged += new System.EventHandler(this.radioButtonGameDrawingMode_Click);
+            this.radioButtongameDrawingModeNormal.AutoSize = true;
+            this.radioButtongameDrawingModeNormal.Location = new System.Drawing.Point(6, 19);
+            this.radioButtongameDrawingModeNormal.Name = "radioButtongameConstants.gameDrawingModeNormal";
+            this.radioButtongameDrawingModeNormal.Size = new System.Drawing.Size(58, 17);
+            this.radioButtongameDrawingModeNormal.TabIndex = 13;
+            this.radioButtongameDrawingModeNormal.TabStop = true;
+            this.radioButtongameDrawingModeNormal.Tag = "gameConstants.gameDrawingMode";
+            this.radioButtongameDrawingModeNormal.Text = "Normal";
+            this.radioButtongameDrawingModeNormal.UseVisualStyleBackColor = true;
+            this.radioButtongameDrawingModeNormal.CheckedChanged += new System.EventHandler(this.radioButtongameDrawingMode_Click);
             // 
             // tabPagePowerups
             // 
@@ -2299,10 +2299,10 @@ namespace Snake_Game
         private Label labelFoodX2Prev;
         private Label labelSnakeBodyX2Prev;
         private Label labelSnakeHeadX2Prev;
-        private RadioButton radioButtonGameDrawingModeNormal;
+        private RadioButton radioButtongameDrawingModeNormal;
         private GroupBox groupBoxDrawingMode;
-        private RadioButton radioButtonGameDrawingModeSprite;
-        private RadioButton radioButtonGameDrawingModeRainbow;
+        private RadioButton radioButtongameDrawingModeSprite;
+        private RadioButton radioButtongameDrawingModeRainbow;
         private TabPage tabPageSavefiles;
         private TableLayoutPanel tableLayoutPanelSavefiles;
         private Button buttonSaveFileScore;

@@ -28,5 +28,75 @@
         public const int standardPowerupDurationNoclip = 15;
         public const gameDrawingMode standardDrawingMode = gameDrawingMode.drawingModeNormal;
         public const gameDirection standarddirectionHead = gameDirection.Stop;
+
+        // User Interface constants
+        public enum gameSound // Enum for different sounds
+        {
+            None = 0,
+            SnakeEat = 1,
+            PowerupEat = 2,
+            SnakeDie = 3,
+            SnakeNoClip = 4,
+            SnakeChangeDir = 5, // Not used because cutting out playing sounds too regularly
+            FoodSpawn = 6, // Not used because cutting out eating sounds too completely
+            PUpX2Activate = 7,
+            PUpX2Deactivate = 8,
+            PUpPointTickActivate = 9,
+            PUpPointTickDeactivate = 10,
+            PUpSlowmoActivate = 11,
+            PUpSlowmoDeactivate = 12,
+            PUpNoclipActivate = 13,
+            PUpNoclipDeactivate = 14,
+            ApplicationStartup = 15
+        }
+
+        public enum gameAction // Enum for key input actions
+        {
+            None = 0,
+            UpKey = 1,
+            DownKey = 2,
+            LeftKey = 3,
+            RightKey = 4,
+            ResetKey = 5,
+            PauseKey = 6,
+            SpeedKey = 7,
+            BotKey = 8,
+            DevModeKey = 9,
+            PowerupKey = 10,
+            NoClipKey = 11
+        };
+
+        public enum gameColor // Enum for colors used in game
+        {
+            none = 0,
+            snakeHeadNormalColor = 1,
+            snakeHeadPUpX2Color = 2,
+            snakeHeadPUpPointTickColor = 3,
+            snakeHeadPUpSlowmoColor = 4,
+            snakeHeadPUpNoclipColor = 5,
+            snakeBodyNormalColor = 6,
+            snakeBodyPUpX2Color = 7,
+            snakeBodyPUpPointTickColor = 8,
+            snakeBodyPUpSlowmoColor = 9,
+            snakeBodyPUpNoclipColor = 10,
+            foodNormalColor = 11,
+            foodPUpX2Color = 12,
+            foodPUpPointTickColor = 13,
+            foodPUpSlowmoColor = 14,
+            foodPUpNoclipColor = 15
+        }
+
+        public enum gameDrawingMode // Enum for different modes to draw the game
+        {
+            drawingModeNormal = 0,
+            drawingModeRainbow = 1,
+            drawingModeSprite = 2
+        }
+
+        public enum rainbowMode // Enum for different rainbow modes
+        {
+            rainbowModeTiles = 0,
+            rainbowModeStretched = 1
+        }
     }
 }
