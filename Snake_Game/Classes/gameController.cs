@@ -568,17 +568,15 @@ namespace Snake_Game
             {
                 (new FileInfo(Properties.Settings.Default.settingsXmlPath)).Directory.Create(); // Create the xml path in case it hasn't been created yet
             }
-            catch (UnauthorizedAccessException) // If xml cannot be created due to missing permissions save to the desktop
+            catch (Exception) // If xml cannot be created due to missing permissions save to the desktop
             {
-                MessageBox.Show("Insufficient permission to create the settings XML!\nCreate on desktop instead.\noriginal Path=" + Properties.Settings.Default.settingsXmlPath
-                                + ";new Path=" + Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Snake_Game\\Snake_Game_Settings.xml",
+                MessageBox.Show("Unspecified error occured while creating the settings XML!\nSelect path instead.\noriginal Path=" + Properties.Settings.Default.settingsXmlPath,
                                 "Unexpected error while creating settings XML",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error
                                 );
 
-                Properties.Settings.Default.settingsXmlPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Snake_Game\\Snake_Game_Settings.xml";
-                Properties.Settings.Default.Save(); // Save new xml path setting
+                SaveFileDialog(gameConstants.settingsXML);
 
                 (new FileInfo(Properties.Settings.Default.settingsXmlPath)).Directory.Create(); // Create the xml path in case it hasn't been created yet
             }
@@ -776,15 +774,13 @@ namespace Snake_Game
             }
             catch (UnauthorizedAccessException) // If xml cannot be created due to missing permissions save to the desktop
             {
-                MessageBox.Show("Insufficient permission to create the controls XML!\nCreate on desktop instead.\noriginal Path=" + Properties.Settings.Default.controlsXmlPath
-                                + ";new Path=" + Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Snake_Game\\Snake_Game_Controls.xml",
-                                "Unexpected error while creating controls XML",
+                MessageBox.Show("Unspecified error occured while creating the controls XML!\nSelect path instead.\noriginal Path=" + Properties.Settings.Default.controlsXmlPath,
+                                "Unexpected error while creating settings XML",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error
                                 );
 
-                Properties.Settings.Default.controlsXmlPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Snake_Game\\Snake_Game_Controls.xml";
-                Properties.Settings.Default.Save(); // Save new xml path setting
+                SaveFileDialog(gameConstants.controlsXML);
 
                 (new FileInfo(Properties.Settings.Default.controlsXmlPath)).Directory.Create(); // Create the xml path in case it hasn't been created yet
             }
@@ -877,15 +873,13 @@ namespace Snake_Game
             }
             catch (UnauthorizedAccessException) // If xml cannot be created due to missing permissions save to the desktop
             {
-                MessageBox.Show("Insufficient permission to create the score XML!\nCreate on desktop instead.\noriginal Path=" + Properties.Settings.Default.scoreXmlPath
-                                + ";new Path=" + Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Snake_Game\\Snake_Game_Score.xml",
-                                "Unexpected error while creating score XML",
+                MessageBox.Show("Unspecified error occured while creating the score XML!\nSelect path instead.\noriginal Path=" + Properties.Settings.Default.scoreXmlPath,
+                                "Unexpected error while creating settings XML",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error
                                 );
 
-                Properties.Settings.Default.scoreXmlPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Snake_Game\\Snake_Game_Score.xml";
-                Properties.Settings.Default.Save(); // Save new xml path setting
+                SaveFileDialog(gameConstants.scoreXML);
 
                 (new FileInfo(Properties.Settings.Default.scoreXmlPath)).Directory.Create(); // Create the xml path in case it hasn't been created yet
             }
@@ -943,8 +937,149 @@ namespace Snake_Game
             return _brush;
         }
 
+        public void OpenFileDialog(string xmlType)
+        {
+            string _xmlType = xmlType;
+            string _filePath = "";
+            bool _doSave = false;
+
+            switch (_xmlType)
+            {
+                case gameConstants.settingsXML:
+                    _filePath = Properties.Settings.Default.settingsXmlPath.Substring(0, Properties.Settings.Default.settingsXmlPath.LastIndexOf("\\") + 1);
+                    break;
+                case gameConstants.controlsXML:
+                    _filePath = Properties.Settings.Default.controlsXmlPath.Substring(0, Properties.Settings.Default.controlsXmlPath.LastIndexOf("\\") + 1);
+                    break;
+                case gameConstants.scoreXML:
+                    _filePath = Properties.Settings.Default.scoreXmlPath.Substring(0, Properties.Settings.Default.scoreXmlPath.LastIndexOf("\\") + 1);
+                    break;
+            }
+
+
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            openFileDialog.InitialDirectory = _filePath;
+            openFileDialog.Filter = "XML files (*.xml)|*.xml|All files(*.*)|*.*";
+            openFileDialog.FilterIndex = 1;
+            openFileDialog.RestoreDirectory = true;
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                //Get the path of specified file
+                _filePath = openFileDialog.FileName;
+
+                switch (_xmlType)
+                {
+                    case gameConstants.settingsXML:
+                        Properties.Settings.Default.settingsXmlPath = _filePath;
+                        _doSave = true;
+                        break;
+                    case gameConstants.controlsXML:
+                        Properties.Settings.Default.controlsXmlPath = _filePath;
+                        _doSave = true;
+                        break;
+                    case gameConstants.scoreXML:
+                        Properties.Settings.Default.scoreXmlPath = _filePath;
+                        _doSave = true;
+                        break;
+                }
+
+                if (_doSave)
+                {
+                    Properties.Settings.Default.Save();
+                }
+
+                new gameSettings(false, true);
+                gameSettings.GameOver = true;
+            }
+        }
+
+        public void SaveFileDialog(string xmlType)
+        {
+            string _xmlType = xmlType;
+            string _filePath = "";
+            bool _doSave = false;
+
+            switch (_xmlType)
+            {
+                case gameConstants.settingsXML:
+                    _filePath = Properties.Settings.Default.settingsXmlPath.Substring(0, Properties.Settings.Default.settingsXmlPath.LastIndexOf("\\") + 1);
+                    break;
+                case gameConstants.controlsXML:
+                    _filePath = Properties.Settings.Default.controlsXmlPath.Substring(0, Properties.Settings.Default.controlsXmlPath.LastIndexOf("\\") + 1);
+                    break;
+                case gameConstants.scoreXML:
+                    _filePath = Properties.Settings.Default.scoreXmlPath.Substring(0, Properties.Settings.Default.scoreXmlPath.LastIndexOf("\\") + 1);
+                    break;
+            }
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+            saveFileDialog.InitialDirectory = _filePath;
+            saveFileDialog.Filter = "XML files (*.xml)|*.xml|All files(*.*)|*.*";
+            saveFileDialog.FilterIndex = 1;
+            saveFileDialog.RestoreDirectory = true;
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                //Get the path of specified file
+                _filePath = saveFileDialog.FileName;
+
+                switch (_xmlType)
+                {
+                    case gameConstants.settingsXML:
+                        Properties.Settings.Default.settingsXmlPath = _filePath;
+                        _doSave = true;
+                        break;
+                    case gameConstants.controlsXML:
+                        Properties.Settings.Default.controlsXmlPath = _filePath;
+                        _doSave = true;
+                        break;
+                    case gameConstants.scoreXML:
+                        Properties.Settings.Default.scoreXmlPath = _filePath;
+                        _doSave = true;
+                        break;
+                }
+
+                if (_doSave)
+                {
+                    Properties.Settings.Default.Save();
+                }
+
+                new gameController().writeControlsXML();
+            }
+
+            switch (_xmlType)
+            {
+                case gameConstants.settingsXML:
+                    Properties.Settings.Default.settingsXmlPath = _filePath;
+                    new gameController().writeSettingsXML();
+                    _doSave = true;
+                    break;
+                case gameConstants.controlsXML:
+                    Properties.Settings.Default.controlsXmlPath = _filePath;
+                    new gameController().writeControlsXML();
+                    _doSave = true;
+                    break;
+                case gameConstants.scoreXML:
+                    Properties.Settings.Default.scoreXmlPath = _filePath;
+                    new gameController().writeScoreXML();
+                    _doSave = true;
+                    break;
+            }
+
+            if (_doSave)
+            {
+                Properties.Settings.Default.Save();
+            }
+
+            new gameSettings(false, true);
+            gameSettings.GameOver = true;
+        }
+
         #endregion
-        
+
         #region Functions called by gameInterface
 
         public void SetGameOverFalse(Label labelGameOver)

@@ -1149,11 +1149,11 @@ namespace Snake_Game
             this.groupBoxDrawingMode.TabStop = false;
             this.groupBoxDrawingMode.Text = "Drawing Mode";
             // 
-            // radioButtongameConstants.gameDrawingModeSprite
+            // radioButtongameDrawingModeSprite
             // 
             this.radioButtongameDrawingModeSprite.AutoSize = true;
             this.radioButtongameDrawingModeSprite.Location = new System.Drawing.Point(143, 19);
-            this.radioButtongameDrawingModeSprite.Name = "radioButtongameConstants.gameDrawingModeSprite";
+            this.radioButtongameDrawingModeSprite.Name = "radioButtongameDrawingModeSprite";
             this.radioButtongameDrawingModeSprite.Size = new System.Drawing.Size(66, 17);
             this.radioButtongameDrawingModeSprite.TabIndex = 15;
             this.radioButtongameDrawingModeSprite.TabStop = true;
@@ -1162,11 +1162,11 @@ namespace Snake_Game
             this.radioButtongameDrawingModeSprite.UseVisualStyleBackColor = true;
             this.radioButtongameDrawingModeSprite.CheckedChanged += new System.EventHandler(this.radioButtongameDrawingMode_Click);
             // 
-            // radioButtongameConstants.gameDrawingModeRainbow
+            // radioButtongameDrawingModeRainbow
             // 
             this.radioButtongameDrawingModeRainbow.AutoSize = true;
             this.radioButtongameDrawingModeRainbow.Location = new System.Drawing.Point(70, 19);
-            this.radioButtongameDrawingModeRainbow.Name = "radioButtongameConstants.gameDrawingModeRainbow";
+            this.radioButtongameDrawingModeRainbow.Name = "radioButtongameDrawingModeRainbow";
             this.radioButtongameDrawingModeRainbow.Size = new System.Drawing.Size(67, 17);
             this.radioButtongameDrawingModeRainbow.TabIndex = 14;
             this.radioButtongameDrawingModeRainbow.TabStop = true;
@@ -1175,11 +1175,11 @@ namespace Snake_Game
             this.radioButtongameDrawingModeRainbow.UseVisualStyleBackColor = true;
             this.radioButtongameDrawingModeRainbow.CheckedChanged += new System.EventHandler(this.radioButtongameDrawingMode_Click);
             // 
-            // radioButtongameConstants.gameDrawingModeNormal
+            // radioButtongameDrawingModeNormal
             // 
             this.radioButtongameDrawingModeNormal.AutoSize = true;
             this.radioButtongameDrawingModeNormal.Location = new System.Drawing.Point(6, 19);
-            this.radioButtongameDrawingModeNormal.Name = "radioButtongameConstants.gameDrawingModeNormal";
+            this.radioButtongameDrawingModeNormal.Name = "radioButtongameDrawingModeNormal";
             this.radioButtongameDrawingModeNormal.Size = new System.Drawing.Size(58, 17);
             this.radioButtongameDrawingModeNormal.TabIndex = 13;
             this.radioButtongameDrawingModeNormal.TabStop = true;

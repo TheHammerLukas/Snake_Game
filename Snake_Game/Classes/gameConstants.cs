@@ -29,6 +29,11 @@
         public const gameDrawingMode standardDrawingMode = gameDrawingMode.drawingModeNormal;
         public const gameDirection standarddirectionHead = gameDirection.Stop;
 
+        // Savefile constants
+        public const string settingsXML = "SETTINGS";
+        public const string controlsXML = "CONTROLS";
+        public const string scoreXML = "SCORE";
+
         // User Interface constants
         public enum gameSound // Enum for different sounds
         {
