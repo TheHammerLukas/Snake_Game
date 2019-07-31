@@ -10,10 +10,11 @@ Add a replay functionality // Overthink this point since there is no real use co
 Make it possible to restore the last settings
 
 
-BUG: Exception handling for save files
-
-
-BUG: When leaving the screen and entering it from the other side the snake doesn't get drawn correctly
+Write function for saveFileDialog and openFileDialog to be used whenever needed
+BUG: Exception handling for save files -> Call saveFileDialog on Exception
 
 
 Add reload gameSprite file key to 'DevMode'
+
+
+Add textboxes to the Menu Savefiles tab which display the current save paths

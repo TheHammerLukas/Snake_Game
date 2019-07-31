@@ -81,6 +81,7 @@
             // pictureBox
             // 
             this.pictureBox.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox.Location = new System.Drawing.Point(12, 80);
             this.pictureBox.MaximumSize = new System.Drawing.Size(600, 600);
             this.pictureBox.MinimumSize = new System.Drawing.Size(600, 600);

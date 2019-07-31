@@ -381,48 +381,56 @@ namespace Snake_Game
                 gameObject nextSnakeTile = gameObject.Snake[i + 1];
 
                 // Lukas Open: Implement Horizontal curve Sprites
-                if (currSnakeTile.X == 0 && 
+                if ((currSnakeTile.X == 0 && 
                    ((nextSnakeTile.X == 0 && nextSnakeTile.Y > prevSnakeTile.Y && prevSnakeTile.X == gameController.maxPosX - 1) || 
-                    (nextSnakeTile.X == gameController.maxPosX - 1 && nextSnakeTile.Y < prevSnakeTile.Y && prevSnakeTile.X == 0)))
+                    (nextSnakeTile.X == gameController.maxPosX - 1 && nextSnakeTile.Y < prevSnakeTile.Y && prevSnakeTile.X == 0))) ||
+                    (currSnakeTile.Y == gameController.maxPosY - 1 &&
+                   ((nextSnakeTile.Y == gameController.maxPosY - 1 && nextSnakeTile.X < prevSnakeTile.X && prevSnakeTile.Y == 0) ||
+                    (nextSnakeTile.Y == 0 && nextSnakeTile.X > prevSnakeTile.X && prevSnakeTile.Y == gameController.maxPosY - 1))))
                 {
                     spriteLocX = 2;
                     spriteLocY = 0;
                 }
-                else if (currSnakeTile.X == gameController.maxPosX - 1 && 
+                else if ((currSnakeTile.X == gameController.maxPosX - 1 && 
                         ((nextSnakeTile.X == 0 && nextSnakeTile.Y < prevSnakeTile.Y && prevSnakeTile.X == gameController.maxPosX - 1) ||
-                         (nextSnakeTile.X == gameController.maxPosX - 1 && nextSnakeTile.Y > prevSnakeTile.Y && prevSnakeTile.X == 0)))
+                         (nextSnakeTile.X == gameController.maxPosX - 1 && nextSnakeTile.Y > prevSnakeTile.Y && prevSnakeTile.X == 0))) ||
+                         (currSnakeTile.Y == gameController.maxPosY - 1 &&
+                        ((nextSnakeTile.Y == gameController.maxPosY - 1 && nextSnakeTile.X > prevSnakeTile.X && prevSnakeTile.Y == 0) ||
+                         (nextSnakeTile.Y == 0 && nextSnakeTile.X < prevSnakeTile.X && prevSnakeTile.Y == gameController.maxPosY - 1))))
                 {
                     spriteLocX = 0;
                     spriteLocY = 0;
                 }
-                else if (currSnakeTile.X == 0 && 
+                else if ((currSnakeTile.X == 0 && 
                         ((nextSnakeTile.X == 0 && nextSnakeTile.Y < prevSnakeTile.Y && prevSnakeTile.X == gameController.maxPosX - 1) || 
-                         (nextSnakeTile.X == gameController.maxPosX - 1 && nextSnakeTile.Y > prevSnakeTile.Y && prevSnakeTile.X == 0)))
+                         (nextSnakeTile.X == gameController.maxPosX - 1 && nextSnakeTile.Y > prevSnakeTile.Y && prevSnakeTile.X == 0))) ||
+                         (currSnakeTile.Y == 0 &&
+                        ((nextSnakeTile.Y == 0 && nextSnakeTile.X < prevSnakeTile.X && prevSnakeTile.Y == gameController.maxPosY - 1) ||
+                         (nextSnakeTile.Y == gameController.maxPosY - 1 && nextSnakeTile.X > prevSnakeTile.X && prevSnakeTile.Y == 0))))
                 {
                     spriteLocX = 2;
                     spriteLocY = 2;
                 }
-                else if (currSnakeTile.X == gameController.maxPosX - 1 &&
+                else if ((currSnakeTile.X == gameController.maxPosX - 1 &&
                         ((nextSnakeTile.X == gameController.maxPosX - 1 && nextSnakeTile.Y < prevSnakeTile.Y && prevSnakeTile.X == 0) ||
-                         (nextSnakeTile.X == 0 && nextSnakeTile.Y > prevSnakeTile.Y && prevSnakeTile.X == gameController.maxPosX - 1)))
+                         (nextSnakeTile.X == 0 && nextSnakeTile.Y > prevSnakeTile.Y && prevSnakeTile.X == gameController.maxPosX - 1))) ||
+                         (currSnakeTile.Y == 0 &&
+                        ((nextSnakeTile.Y == 0 && nextSnakeTile.X > prevSnakeTile.X && prevSnakeTile.Y == gameController.maxPosY - 1) ||
+                         (nextSnakeTile.Y == gameController.maxPosY - 1 && nextSnakeTile.X < prevSnakeTile.X && prevSnakeTile.Y == 0))))
                 {
                     spriteLocX = 0;
                     spriteLocY = 1;
                 }
-                else if (((prevSnakeTile.X == 0 || nextSnakeTile.X == 0) && currSnakeTile.X == gameController.maxPosX - 1) ||
-                    ((prevSnakeTile.X == gameController.maxPosX - 1 || nextSnakeTile.X == gameController.maxPosX - 1) && currSnakeTile.X == 0) ||
-                    ((prevSnakeTile.Y == 0 || nextSnakeTile.Y == 0) && currSnakeTile.Y == gameController.maxPosY - 1) ||
-                    ((prevSnakeTile.Y == gameController.maxPosY - 1 || nextSnakeTile.Y == gameController.maxPosY - 1) && currSnakeTile.Y == 0))
-                {
-                    spriteLocX = 1;
-                    spriteLocY = 1;
-                }
-                else if (prevSnakeTile.Y < currSnakeTile.Y && nextSnakeTile.Y > currSnakeTile.Y || nextSnakeTile.Y < currSnakeTile.Y && prevSnakeTile.Y > currSnakeTile.Y) // Up-Down
+                else if ((prevSnakeTile.Y < currSnakeTile.Y && nextSnakeTile.Y > currSnakeTile.Y || nextSnakeTile.Y < currSnakeTile.Y && prevSnakeTile.Y > currSnakeTile.Y) ||
+                        ((prevSnakeTile.Y == 0 || nextSnakeTile.Y == 0) && currSnakeTile.Y == gameController.maxPosY - 1) ||
+                        ((prevSnakeTile.Y == gameController.maxPosY - 1 || nextSnakeTile.Y == gameController.maxPosY - 1) && currSnakeTile.Y == 0)) // Up-Down
                 {
                     spriteLocX = 2;
                     spriteLocY = 1;
                 }
-                else if (prevSnakeTile.X < currSnakeTile.X && nextSnakeTile.X > currSnakeTile.X || nextSnakeTile.X < currSnakeTile.X && prevSnakeTile.X > currSnakeTile.X) // Left-Right
+                else if ((prevSnakeTile.X < currSnakeTile.X && nextSnakeTile.X > currSnakeTile.X || nextSnakeTile.X < currSnakeTile.X && prevSnakeTile.X > currSnakeTile.X) ||
+                        ((prevSnakeTile.X == 0 || nextSnakeTile.X == 0) && currSnakeTile.X == gameController.maxPosX - 1) ||
+                        ((prevSnakeTile.X == gameController.maxPosX - 1 || nextSnakeTile.X == gameController.maxPosX - 1) && currSnakeTile.X == 0)) // Left-Right
                 {
                     spriteLocX = 1;
                     spriteLocY = 0;
