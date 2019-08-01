@@ -390,11 +390,11 @@ namespace Snake_Game
                     break;
             }
             // Outer if is used to disable sounds that should not be played
-            if (_sound != gameConstants.gameSound.None /*&& _sound != gameConstants.gameSound.SnakeChangeDir && _sound != gameConstants.gameSound.FoodSpawn*/)
+            if (_sound != gameConstants.gameSound.SnakeChangeDir && _sound != gameConstants.gameSound.FoodSpawn)
             {
                 if (_sound != gameConstants.gameSound.SnakeNoClip || (soundCheckTime > lastSoundPlayTime && (_sound == gameConstants.gameSound.SnakeNoClip)))
                 {
-                    audio.PlaySync();
+                    audio.Play();
                     lastSoundPlayTime = soundCheckTime;
                 }
             }
