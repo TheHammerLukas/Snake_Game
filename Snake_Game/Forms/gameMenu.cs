@@ -161,6 +161,10 @@ namespace Snake_Game
             labelSnakeHeadNoclipPrev.BackColor = (gameSettings.snakeHeadPUpNoclipColor as SolidBrush).Color;
             labelSnakeBodyNoclipPrev.BackColor = (gameSettings.snakeBodyPUpNoclipColor as SolidBrush).Color;
             labelFoodNoclipPrev.BackColor = (gameSettings.foodPUpNoclipColor as SolidBrush).Color;
+            // Savefiles tab
+            labelControlsXmlPath.Text = Properties.Settings.Default.controlsXmlPath;
+            labelSettingsXmlPath.Text = Properties.Settings.Default.settingsXmlPath;
+            labelScoreXmlPath.Text = Properties.Settings.Default.scoreXmlPath;
         }
 
         // Reset the 'Settings' to their standard values
