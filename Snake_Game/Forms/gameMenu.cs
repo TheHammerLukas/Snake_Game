@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Windows.Forms;
 
 namespace Snake_Game
@@ -696,6 +697,13 @@ namespace Snake_Game
             setMenuValues();
         }
 
+        private void ButtonOpenFileSprites_Click(object sender, EventArgs e)
+        {
+            new gameController().OpenFileDialog(gameConstants.gameSprites);
+
+            setMenuValues();
+        }
+
         private void ButtonSaveFileControls_Click(object sender, EventArgs e)
         {
             new gameController().SaveFileDialog(gameConstants.controlsXML);
@@ -705,12 +713,20 @@ namespace Snake_Game
         private void ButtonSaveFileSettings_Click(object sender, EventArgs e)
         {
             new gameController().SaveFileDialog(gameConstants.settingsXML);
+
             setMenuValues();
         }
 
         private void ButtonSaveFileScore_Click(object sender, EventArgs e)
         {
             new gameController().SaveFileDialog(gameConstants.scoreXML);
+            setMenuValues();
+        }
+
+        private void ButtonSaveFileSprites_Click(object sender, EventArgs e)
+        {
+            new gameController().SaveFileDialog(gameConstants.gameSprites);
+
             setMenuValues();
         }
 
