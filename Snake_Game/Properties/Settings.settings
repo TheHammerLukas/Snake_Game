@@ -11,8 +11,5 @@
     <Setting Name="settingsXmlPath" Type="System.String" Scope="User">
       <Value Profile="(Default)">C:\Program Files\Snake_Game\Snake_Game_Settings.xml</Value>
     </Setting>
-    <Setting Name="gameSpritesPath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Program Files\Snake_Game\gameSprites.png</Value>
-    </Setting>
   </Settings>
 </SettingsFile>

@@ -33,7 +33,6 @@
         public const string settingsXML = "SETTINGS";
         public const string controlsXML = "CONTROLS";
         public const string scoreXML = "SCORE";
-        public const string gameSprites = "SPRITES";
 
         // User Interface constants
         public enum gameSound // Enum for different sounds

@@ -58,17 +58,5 @@ namespace Snake_Game.Properties {
                 this["settingsXmlPath"] = value;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files\\Snake_Game\\gameSprites.png")]
-        public string gameSpritesPath {
-            get {
-                return ((string)(this["gameSpritesPath"]));
-            }
-            set {
-                this["gameSpritesPath"] = value;
-            }
-        }
     }
 }
