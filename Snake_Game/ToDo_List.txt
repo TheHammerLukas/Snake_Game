@@ -14,6 +14,3 @@ Add textboxes to the Menu Savefiles tab which display the current save paths
 
 
 Use GDI+ to display text that is currently displayed using labelGameStatus (Probably makes it possible to just draw the text above the game -> Fixes bug of label background color hiding parts of the game)
-
-
-BUG: Noclip snake in corners; wrong Sprite gets drawn
