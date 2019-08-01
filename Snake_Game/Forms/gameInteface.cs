@@ -20,7 +20,7 @@ namespace Snake_Game
         private long lastPUpNoclipChangeTime = 0; // Powerup: To keep track of Noclip duration
         private long currentTime = 0; // Current time; 1000 = 1 second 
         private gameDirection currentTickDir; // The direction the snake is heading at in the current game tick
-        private Image gameSprite = Properties.Resources.gameSprite;
+        public static Image gameSprite = Properties.Resources.gameSprite;
 
         public gameInterface()
         {
