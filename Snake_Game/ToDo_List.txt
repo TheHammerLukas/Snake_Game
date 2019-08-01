@@ -11,12 +11,3 @@ Add reload gameSprite file key to 'DevMode' // Deprecated: Doesn't work.
 
 
 Use GDI+ to display text that is currently displayed using labelGameStatus (Probably makes it possible to just draw the text above the game -> Fixes bug of label background color hiding parts of the game)
--> Write a new function that draws the text accordingly
-
-
-Add powerup synergy
-
-
-Make gameSprite customizable // gameSprites file needs to be copied to a folder and then this copy has to be used by the game.
-
-
