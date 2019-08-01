@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Media;
 using System.Windows.Forms;
@@ -406,7 +407,7 @@ namespace Snake_Game
 
         #endregion
 
-        #region XML functions
+        #region Savefile functions
 
         // Get the settings from the .xml
         public void readSettingsXML()
@@ -901,6 +902,18 @@ namespace Snake_Game
             _xmlDoc.Close(); // Close .xml
         }
 
+        // Saves the current gameSprite
+        public void SaveGameSprites()
+        {
+            gameInterface.gameSprite.Save(Properties.Settings.Default.gameSpritePath, ImageFormat.Png);
+        }
+
+        // Loads the gameSprite from the currently configured path
+        public void LoadGameSprites()
+        {
+            gameInterface.gameSprite = Image.FromFile(Properties.Settings.Default.gameSpritePath);
+        }
+
         // Function called by readControlsXML to parse a single key from Keys enum
         public Keys getKey(string Key)
         {
@@ -937,13 +950,13 @@ namespace Snake_Game
             return _brush;
         }
 
-        public void OpenFileDialog(string xmlType)
+        public void OpenFileDialog(string fileType)
         {
-            string _xmlType = xmlType;
+            string _fileType = fileType;
             string _filePath = "";
             bool _doSave = false;
 
-            switch (_xmlType)
+            switch (_fileType)
             {
                 case gameConstants.settingsXML:
                     _filePath = Properties.Settings.Default.settingsXmlPath.Substring(0, Properties.Settings.Default.settingsXmlPath.LastIndexOf("\\") + 1);
@@ -954,13 +967,27 @@ namespace Snake_Game
                 case gameConstants.scoreXML:
                     _filePath = Properties.Settings.Default.scoreXmlPath.Substring(0, Properties.Settings.Default.scoreXmlPath.LastIndexOf("\\") + 1);
                     break;
+                case gameConstants.gameSprites:
+                    _filePath = Properties.Settings.Default.gameSpritePath.Substring(0, Properties.Settings.Default.gameSpritePath.LastIndexOf("\\") + 1);
+                    break;
             }
 
 
             OpenFileDialog openFileDialog = new OpenFileDialog();
 
             openFileDialog.InitialDirectory = _filePath;
-            openFileDialog.Filter = "XML files (*.xml)|*.xml|All files(*.*)|*.*";
+            // Determine filter
+            switch (_fileType)
+            {
+                case gameConstants.controlsXML:
+                case gameConstants.settingsXML:
+                case gameConstants.scoreXML:
+                    openFileDialog.Filter = "XML files (*.xml)|*.xml|All files(*.*)|*.*";
+                    break;
+                case gameConstants.gameSprites:
+                    openFileDialog.Filter = "PNG files (*.png)|*.png|All files(*.*)|*.*";
+                    break;
+            }
             openFileDialog.FilterIndex = 1;
             openFileDialog.RestoreDirectory = true;
 
@@ -969,7 +996,7 @@ namespace Snake_Game
                 //Get the path of specified file
                 _filePath = openFileDialog.FileName;
 
-                switch (_xmlType)
+                switch (_fileType)
                 {
                     case gameConstants.settingsXML:
                         Properties.Settings.Default.settingsXmlPath = _filePath;
@@ -983,25 +1010,51 @@ namespace Snake_Game
                         Properties.Settings.Default.scoreXmlPath = _filePath;
                         _doSave = true;
                         break;
+                    case gameConstants.gameSprites:
+                        Properties.Settings.Default.gameSpritePath = _filePath;
+                        _doSave = true;
+                        break;
+                    default:
+                        _doSave = false;
+                        break;
                 }
 
                 if (_doSave)
                 {
                     Properties.Settings.Default.Save();
+
+                    switch (_fileType)
+                    {
+                        case gameConstants.settingsXML:
+                            new gameController().readSettingsXML();
+                            new gameSettings(false, true);
+                            break;
+                        case gameConstants.controlsXML:
+                            new gameController().readControlsXML();
+                            new gameControls(false);
+                            break;
+                        case gameConstants.scoreXML:
+                            new gameController().readScoreXML();
+                            break;
+                        case gameConstants.gameSprites:
+                            LoadGameSprites();
+                            break;
+                        default:
+                            break;
+                    }
                 }
 
-                new gameSettings(false, true);
                 gameSettings.GameOver = true;
             }
         }
 
-        public void SaveFileDialog(string xmlType)
+        public void SaveFileDialog(string fileType)
         {
-            string _xmlType = xmlType;
+            string _fileType = fileType;
             string _filePath = "";
             bool _doSave = false;
 
-            switch (_xmlType)
+            switch (_fileType)
             {
                 case gameConstants.settingsXML:
                     _filePath = Properties.Settings.Default.settingsXmlPath.Substring(0, Properties.Settings.Default.settingsXmlPath.LastIndexOf("\\") + 1);
@@ -1012,12 +1065,26 @@ namespace Snake_Game
                 case gameConstants.scoreXML:
                     _filePath = Properties.Settings.Default.scoreXmlPath.Substring(0, Properties.Settings.Default.scoreXmlPath.LastIndexOf("\\") + 1);
                     break;
+                case gameConstants.gameSprites:
+                    _filePath = Properties.Settings.Default.gameSpritePath.Substring(0, Properties.Settings.Default.gameSpritePath.LastIndexOf("\\") + 1);
+                    break;
             }
 
             SaveFileDialog saveFileDialog = new SaveFileDialog();
 
             saveFileDialog.InitialDirectory = _filePath;
-            saveFileDialog.Filter = "XML files (*.xml)|*.xml|All files(*.*)|*.*";
+            // Determine filter
+            switch (_fileType)
+            {
+                case gameConstants.controlsXML:
+                case gameConstants.settingsXML:
+                case gameConstants.scoreXML:
+                    saveFileDialog.Filter = "XML files (*.xml)|*.xml|All files(*.*)|*.*";
+                    break;
+                case gameConstants.gameSprites:
+                    saveFileDialog.Filter = "PNG files (*.png)|*.png|All files(*.*)|*.*";
+                    break;
+            }
             saveFileDialog.FilterIndex = 1;
             saveFileDialog.RestoreDirectory = true;
 
@@ -1026,7 +1093,7 @@ namespace Snake_Game
                 //Get the path of specified file
                 _filePath = saveFileDialog.FileName;
 
-                switch (_xmlType)
+                switch (_fileType)
                 {
                     case gameConstants.settingsXML:
                         Properties.Settings.Default.settingsXmlPath = _filePath;
@@ -1040,42 +1107,42 @@ namespace Snake_Game
                         Properties.Settings.Default.scoreXmlPath = _filePath;
                         _doSave = true;
                         break;
+                    case gameConstants.gameSprites:
+                        Properties.Settings.Default.gameSpritePath = _filePath;
+                        _doSave = true;
+                        break;
+                    default:
+                        _doSave = false;
+                        break;
                 }
 
                 if (_doSave)
                 {
                     Properties.Settings.Default.Save();
+
+                    switch (_fileType)
+                    {
+                        case gameConstants.settingsXML:
+                            new gameController().writeSettingsXML();
+                            new gameSettings(false, true);
+                            break;
+                        case gameConstants.controlsXML:
+                            new gameController().writeControlsXML();
+                            new gameControls(false);
+                            break;
+                        case gameConstants.scoreXML:
+                            new gameController().writeScoreXML();
+                            break;
+                        case gameConstants.gameSprites:
+                            SaveGameSprites();
+                            break;
+                        default:
+                            break;
+                    }
                 }
 
-                new gameController().writeControlsXML();
+                gameSettings.GameOver = true;
             }
-
-            switch (_xmlType)
-            {
-                case gameConstants.settingsXML:
-                    Properties.Settings.Default.settingsXmlPath = _filePath;
-                    new gameController().writeSettingsXML();
-                    _doSave = true;
-                    break;
-                case gameConstants.controlsXML:
-                    Properties.Settings.Default.controlsXmlPath = _filePath;
-                    new gameController().writeControlsXML();
-                    _doSave = true;
-                    break;
-                case gameConstants.scoreXML:
-                    Properties.Settings.Default.scoreXmlPath = _filePath;
-                    new gameController().writeScoreXML();
-                    _doSave = true;
-                    break;
-            }
-
-            if (_doSave)
-            {
-                Properties.Settings.Default.Save();
-            }
-
-            new gameSettings(false, true);
-            gameSettings.GameOver = true;
         }
 
         #endregion

@@ -7,7 +7,7 @@ Add a replay functionality // Overthink this point since there is no real use co
 Make it possible to restore the last settings
 
 
-Add reload gameSprite file key to 'DevMode' // Deprecated: Doesn't work.
+Add reload gameSprite file key to 'DevMode'
 
 
 Use GDI+ to display text that is currently displayed using labelGameStatus (Probably makes it possible to just draw the text above the game -> Fixes bug of label background color hiding parts of the game)
@@ -15,10 +15,6 @@ Use GDI+ to display text that is currently displayed using labelGameStatus (Prob
 
 
 Add Powerup synergy
-
-
-Make gameSprites customizable // Extend OpenFileDialog & SaveFileDialog functions, gameMenu so the gameSprites can be retextured.
--> gameSprites Resource has to be copied to the set directory and then needs to be used as the gameInterface.gameSprite image.
 
 
 Implement reset functionality for 'Savefiles' gameMenu tab

@@ -165,6 +165,7 @@ namespace Snake_Game
             labelControlsXmlPath.Text = Properties.Settings.Default.controlsXmlPath;
             labelSettingsXmlPath.Text = Properties.Settings.Default.settingsXmlPath;
             labelScoreXmlPath.Text = Properties.Settings.Default.scoreXmlPath;
+            labelSavefilesSpritesPath.Text = Properties.Settings.Default.gameSpritePath;
         }
 
         // Reset the 'Settings' to their standard values
@@ -696,6 +697,12 @@ namespace Snake_Game
             setMenuValues();
         }
 
+        private void ButtonOpenFileSprites_Click(object sender, EventArgs e)
+        {
+            new gameController().OpenFileDialog(gameConstants.gameSprites);
+            setMenuValues();
+        }
+
         private void ButtonSaveFileControls_Click(object sender, EventArgs e)
         {
             new gameController().SaveFileDialog(gameConstants.controlsXML);
@@ -711,6 +718,12 @@ namespace Snake_Game
         private void ButtonSaveFileScore_Click(object sender, EventArgs e)
         {
             new gameController().SaveFileDialog(gameConstants.scoreXML);
+            setMenuValues();
+        }
+
+        private void ButtonSaveFileSprites_Click(object sender, EventArgs e)
+        {
+            new gameController().SaveFileDialog(gameConstants.gameSprites);
             setMenuValues();
         }
 

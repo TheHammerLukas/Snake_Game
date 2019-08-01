@@ -33,6 +33,7 @@
         public const string settingsXML = "SETTINGS";
         public const string controlsXML = "CONTROLS";
         public const string scoreXML = "SCORE";
+        public const string gameSprites = "SPRITES";
 
         // User Interface constants
         public enum gameSound // Enum for different sounds
@@ -43,7 +44,7 @@
             SnakeDie = 3,
             SnakeNoClip = 4,
             SnakeChangeDir = 5, // Not used because cutting out playing sounds too regularly
-            FoodSpawn = 6, // Not used because cutting out eating sounds too completely
+            FoodSpawn = 6, // Not used because cutting out eating sounds completely
             PUpX2Activate = 7,
             PUpX2Deactivate = 8,
             PUpPointTickActivate = 9,
