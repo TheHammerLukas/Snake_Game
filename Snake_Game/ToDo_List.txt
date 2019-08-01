@@ -22,3 +22,6 @@ Make gameSprites customizable // Extend OpenFileDialog & SaveFileDialog function
 
 
 Implement reset functionality for 'Savefiles' gameMenu tab
+
+
+Implement new Labyrinth Gamemode
