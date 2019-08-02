@@ -973,7 +973,7 @@ namespace Snake_Game
                 case gameConstants.gameSpritesPUpSlowmotion:
                     try
                     {
-                        gameInterface.gameSpritePUpX2.Save(Properties.Settings.Default.gameSpritePUpSlowmotionPath, ImageFormat.Png);
+                        gameInterface.gameSpritePUpSlowmotion.Save(Properties.Settings.Default.gameSpritePUpSlowmotionPath, ImageFormat.Png);
                     }
                     catch (Exception)
                     {

@@ -7,9 +7,6 @@ Add a replay functionality // Overthink this point since there is no real use co
 Make it possible to restore the last settings
 
 
-Add reload gameSprite file key to 'DevMode'
-
-
 Use GDI+ to display text that is currently displayed using labelGameStatus (Probably makes it possible to just draw the text above the game -> Fixes bug of label background color hiding parts of the game)
 -> write new function which draws the game status text on the picturebox
 
@@ -17,12 +14,10 @@ Use GDI+ to display text that is currently displayed using labelGameStatus (Prob
 Add Powerup synergy
 
 
-Implement reset functionality for 'Savefiles' gameMenu tab
+Implement reset functionality for gameSprites in 'Savefiles' gameMenu tab // Reset all gameSprites and then call SaveAllGameSprites() function
+
+
+Implement when hovering over the path label in gameMenu the sprite picture should be shown
 
 
 Implement new Labyrinth Gamemode // Brainstorm
-
-
-Add colored sprites for powerups
-Todo: Add functions for button press
-      Add Resources for the new sprites

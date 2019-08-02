@@ -112,6 +112,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\gameSprite_Template.xcf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -131,6 +132,11 @@
     <Content Include="Resources\gameSoundPowerupEat.wav" />
     <Content Include="Resources\gameSoundSnakeEat.wav" />
     <Content Include="Resources\gameSprite.png" />
+    <Content Include="Resources\gameSpritePUpNoclip.png" />
+    <Content Include="Resources\gameSpritePUpPointTick.png" />
+    <Content Include="Resources\gameSpritePUpSlowmotion.png" />
+    <Content Include="Resources\gameSpritePUpX2.png" />
+    <Content Include="Resources\gameSprite_Template.png" />
     <Content Include="Resources\Snake_Menu_Thumbnail.ico" />
     <Content Include="Resources\Snake_Thumbnail.ico" />
     <Content Include="Snake_Thumbnail.ico" />

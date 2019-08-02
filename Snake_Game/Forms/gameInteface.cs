@@ -38,14 +38,7 @@ namespace Snake_Game
             gamecontroller = new gameController();
             gamecontroller.writeSettingsXML(); // Rewrite the settings .xml
             gamecontroller.writeControlsXML(); // Rewrite the controls .xml
-            if (!File.Exists(Properties.Settings.Default.gameSpritePath))
-            {
-                gamecontroller.SaveAllGameSprites();
-            }
-            else
-            {
-                gamecontroller.LoadAllGameSprites();
-            }
+            InitAllSprites();
 
             // Set game speed and start timer
             gamecontroller.SetTimerInterval(gameTimer, gameSettings.Speed, true);
@@ -64,6 +57,54 @@ namespace Snake_Game
             gamecontroller.StartGame();
             gamecontroller.SetHighScore(labelHighscoreValue);
             gamecontroller.GenerateFood();
+        }
+
+        private void InitAllSprites()
+        {
+            if (!File.Exists(Properties.Settings.Default.gameSpritePath))
+            {
+                gamecontroller.SaveGameSprites(gameConstants.gameSprites);
+            }
+            else
+            {
+                gamecontroller.LoadGameSprites(gameConstants.gameSprites);
+            }
+
+            if (!File.Exists(Properties.Settings.Default.gameSpritePUpX2Path))
+            {
+                gamecontroller.SaveGameSprites(gameConstants.gameSpritesPUpX2);
+            }
+            else
+            {
+                gamecontroller.LoadGameSprites(gameConstants.gameSpritesPUpX2);
+            }
+
+            if (!File.Exists(Properties.Settings.Default.gameSpritePUpPointTickPath))
+            {
+                gamecontroller.SaveGameSprites(gameConstants.gameSpritesPUpPointTick);
+            }
+            else
+            {
+                gamecontroller.LoadGameSprites(gameConstants.gameSpritesPUpPointTick);
+            }
+
+            if (!File.Exists(Properties.Settings.Default.gameSpritePUpSlowmotionPath))
+            {
+                gamecontroller.SaveGameSprites(gameConstants.gameSpritesPUpSlowmotion);
+            }
+            else
+            {
+                gamecontroller.LoadGameSprites(gameConstants.gameSpritesPUpSlowmotion);
+            }
+
+            if (!File.Exists(Properties.Settings.Default.gameSpritePUpNoclipPath))
+            {
+                gamecontroller.SaveGameSprites(gameConstants.gameSpritesPUpNoclip);
+            }
+            else
+            {
+                gamecontroller.LoadGameSprites(gameConstants.gameSpritesPUpNoclip);
+            }
         }
 
         private void UpdateScreen(object sender, EventArgs e)
@@ -169,6 +210,32 @@ namespace Snake_Game
             new gameController().SetPowerup(labelCurrentPowerupValue, labelSavedPowerupValue, labelPowerupTimerValue, currentTime, _lastChangeTime);
         }
 
+        private void DeterminePowerupBlink(out gamePowerup gamePowerup)
+        {
+            // To make the snake blink when powerup is about to run out
+            int _blinkCheckX2 = gamecontroller.ConvTime(Convert.ToInt32(gameSettings.PowerupDurationX2 - (currentTime - lastPUpX2ChangeTime)),
+                                                        gameConstants.milliseconds, gameConstants.seconds);
+            int _blinkCheckPointTick = gamecontroller.ConvTime(Convert.ToInt32(gameSettings.PowerupDurationPointTick - (currentTime - lastPUpPointTickChangeTime)),
+                                                        gameConstants.milliseconds, gameConstants.seconds);
+            int _blinkCheckSlowmo = gamecontroller.ConvTime(Convert.ToInt32(gameSettings.PowerupDurationSlowmo - (currentTime - lastPUpSlowmoChangeTime)),
+                                                        gameConstants.milliseconds, gameConstants.seconds);
+            int _blinkCheckNoclip = gamecontroller.ConvTime(Convert.ToInt32(gameSettings.PowerupDurationNoclip - (currentTime - lastPUpNoclipChangeTime)),
+                                                        gameConstants.milliseconds, gameConstants.seconds);
+
+            // Determine snake color
+            if ((gameSettings.GamePowerup == gamePowerup.X2 && (_blinkCheckX2 == 1 || _blinkCheckX2 == 3 || _blinkCheckX2 == 5)) ||
+                (gameSettings.GamePowerup == gamePowerup.PointOnTick && (_blinkCheckPointTick == 1 || _blinkCheckPointTick == 3 || _blinkCheckPointTick == 5)) ||
+                (gameSettings.GamePowerup == gamePowerup.Slowmotion && (_blinkCheckSlowmo == 1 || _blinkCheckSlowmo == 3 || _blinkCheckSlowmo == 5)) ||
+                (gameSettings.GamePowerup == gamePowerup.Noclip && (_blinkCheckNoclip == 1 || _blinkCheckNoclip == 3 || _blinkCheckNoclip == 5)))
+            {
+                gamePowerup = gamePowerup.None;
+            }
+            else
+            {
+                gamePowerup = gameSettings.GamePowerup;
+            }
+        }
+
         private void DetermineSnakeColor(int i, ref int rainbowColorIndex, ref int cnt)
         {
             gamePowerup _gamePowerup;
@@ -245,28 +312,7 @@ namespace Snake_Game
             }
             else
             {
-                // To make the snake blink when powerup is about to run out
-                int _blinkCheckX2 = gamecontroller.ConvTime(Convert.ToInt32(gameSettings.PowerupDurationX2 - (currentTime - lastPUpX2ChangeTime)),
-                                                            gameConstants.milliseconds, gameConstants.seconds);
-                int _blinkCheckPointTick = gamecontroller.ConvTime(Convert.ToInt32(gameSettings.PowerupDurationPointTick - (currentTime - lastPUpPointTickChangeTime)),
-                                                            gameConstants.milliseconds, gameConstants.seconds);
-                int _blinkCheckSlowmo = gamecontroller.ConvTime(Convert.ToInt32(gameSettings.PowerupDurationSlowmo - (currentTime - lastPUpSlowmoChangeTime)),
-                                                            gameConstants.milliseconds, gameConstants.seconds);
-                int _blinkCheckNoclip = gamecontroller.ConvTime(Convert.ToInt32(gameSettings.PowerupDurationNoclip - (currentTime - lastPUpNoclipChangeTime)),
-                                                            gameConstants.milliseconds, gameConstants.seconds);
-
-                // Determine snake color
-                if ((gameSettings.GamePowerup == gamePowerup.X2 && (_blinkCheckX2 == 1 || _blinkCheckX2 == 3 || _blinkCheckX2 == 5)) ||
-                    (gameSettings.GamePowerup == gamePowerup.PointOnTick && (_blinkCheckPointTick == 1 || _blinkCheckPointTick == 3 || _blinkCheckPointTick == 5)) ||
-                    (gameSettings.GamePowerup == gamePowerup.Slowmotion && (_blinkCheckSlowmo == 1 || _blinkCheckSlowmo == 3 || _blinkCheckSlowmo == 5)) ||
-                    (gameSettings.GamePowerup == gamePowerup.Noclip && (_blinkCheckNoclip == 1 || _blinkCheckNoclip == 3 || _blinkCheckNoclip == 5)))
-                {
-                    _gamePowerup = gamePowerup.None;
-                }
-                else
-                {
-                    _gamePowerup = gameSettings.GamePowerup;
-                }
+                DeterminePowerupBlink(out _gamePowerup);
 
                 switch (_gamePowerup)
                 {
@@ -358,14 +404,17 @@ namespace Snake_Game
 
         private void DetermineSnakeSprite(int i, out Image spriteImage, out int spriteLocX, out int spriteLocY)
         {
+            gamePowerup _gamePowerup;
             spriteImage = gameSprite;
             spriteLocX = 1;
             spriteLocY = 3;
 
+            DeterminePowerupBlink(out _gamePowerup);
+
             // Determine which sprite file to use if any powerups are active
             if (gameSettings.GamePowerupActive)
             {
-                switch (gameSettings.GamePowerup)
+                switch (_gamePowerup)
                 {
                     case gamePowerup.X2:
                         spriteImage = gameSpritePUpX2;
@@ -792,7 +841,7 @@ namespace Snake_Game
                 }
                 else if (e.KeyCode == gameControls.modPowerupKey && !gameSettings.MenuIsOpen)
                 {
-                    if (gameSettings.SavedPowerup != gamePowerup.None)
+                    if (gameSettings.SavedPowerup != gamePowerup.None && !gameSettings.GamePowerupActive)
                     {
                         gameSettings.GamePowerup = gameSettings.SavedPowerup;
                         gameSettings.SavedPowerup = gamePowerup.None;

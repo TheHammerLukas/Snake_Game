@@ -166,6 +166,10 @@ namespace Snake_Game
             labelSettingsXmlPath.Text = Properties.Settings.Default.settingsXmlPath;
             labelScoreXmlPath.Text = Properties.Settings.Default.scoreXmlPath;
             labelSavefilesSpritesPath.Text = Properties.Settings.Default.gameSpritePath;
+            labelSavefilesSpritesX2Path.Text = Properties.Settings.Default.gameSpritePUpX2Path;
+            labelSavefilesSpritesPointTickPath.Text = Properties.Settings.Default.gameSpritePUpPointTickPath;
+            labelSavefilesSpritesSlowmotionPath.Text = Properties.Settings.Default.gameSpritePUpSlowmotionPath;
+            labelSavefilesSpritesNoclipPath.Text = Properties.Settings.Default.gameSpritePUpNoclipPath;
         }
 
         // Reset the 'Settings' to their standard values
@@ -703,6 +707,30 @@ namespace Snake_Game
             setMenuValues();
         }
 
+        private void ButtonOpenFileSpritesPUpX2_Click(object sender, EventArgs e)
+        {
+            new gameController().OpenFileDialog(gameConstants.gameSpritesPUpX2);
+            setMenuValues();
+        }
+
+        private void ButtonOpenFileSpritesPUpPointTick_Click(object sender, EventArgs e)
+        {
+            new gameController().OpenFileDialog(gameConstants.gameSpritesPUpPointTick);
+            setMenuValues();
+        }
+
+        private void ButtonOpenFileSpritesPUpSlowmotion_Click(object sender, EventArgs e)
+        {
+            new gameController().OpenFileDialog(gameConstants.gameSpritesPUpSlowmotion);
+            setMenuValues();
+        }
+
+        private void ButtonOpenFileSpritesPUpNoclip_Click(object sender, EventArgs e)
+        {
+            new gameController().OpenFileDialog(gameConstants.gameSpritesPUpNoclip);
+            setMenuValues();
+        }
+
         private void ButtonSaveFileControls_Click(object sender, EventArgs e)
         {
             new gameController().SaveFileDialog(gameConstants.controlsXML);
@@ -724,6 +752,30 @@ namespace Snake_Game
         private void ButtonSaveFileSprites_Click(object sender, EventArgs e)
         {
             new gameController().SaveFileDialog(gameConstants.gameSprites);
+            setMenuValues();
+        }
+
+        private void ButtonSaveFileSpritesPUpX2_Click(object sender, EventArgs e)
+        {
+            new gameController().SaveFileDialog(gameConstants.gameSpritesPUpX2);
+            setMenuValues();
+        }
+
+        private void ButtonSaveFileSpritesPUpPointTick_Click(object sender, EventArgs e)
+        {
+            new gameController().SaveFileDialog(gameConstants.gameSpritesPUpPointTick);
+            setMenuValues();
+        }
+
+        private void ButtonSaveFileSpritesPUpSlowmotion_Click(object sender, EventArgs e)
+        {
+            new gameController().SaveFileDialog(gameConstants.gameSpritesPUpSlowmotion);
+            setMenuValues();
+        }
+
+        private void ButtonSaveFileSpritesPUpNoclip_Click(object sender, EventArgs e)
+        {
+            new gameController().SaveFileDialog(gameConstants.gameSpritesPUpNoclip);
             setMenuValues();
         }
 
