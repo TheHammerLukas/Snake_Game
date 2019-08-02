@@ -1222,7 +1222,7 @@ namespace Snake_Game
             return pictureBox.Size.Height / gameSettings.Height;
         }
 
-        // Converts milliseconds to seconds when toSeconds = true; Converts seconds to milliseconds when toSeconds = false
+        // Converts time from a specific time format to a specific time format
         public int ConvTime(int time, string fromTime, string toTime)
         {
             int _convertedTime = 0;
@@ -1282,6 +1282,10 @@ namespace Snake_Game
                     _convertedTime = time / 60; // seconds / 60
                     _showError = false;
                 }
+            }
+            else
+            {
+                _showError = true; // If time wasn't converted set _showError => true
             }
 
             // if time wasn't converted show an error message

@@ -27,7 +27,7 @@
         public const int standardPowerupDurationSlowmotion = 10;
         public const int standardPowerupDurationNoclip = 15;
         public const gameDrawingMode standardDrawingMode = gameDrawingMode.drawingModeNormal;
-        public const gameDirection standarddirectionHead = gameDirection.Stop;
+        public const gameDirection standardDirectionHead = gameDirection.Stop;
 
         // Savefile constants
         public const string settingsXML = "SETTINGS";

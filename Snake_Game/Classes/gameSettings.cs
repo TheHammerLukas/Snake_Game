@@ -97,7 +97,7 @@ namespace Snake_Game
             SavedPowerup        = gameConstants.standardSavedPowerup;
             GamePowerup         = gameConstants.standardGamePowerup;
             GamePowerupActive   = false;
-            directionHead       = gameConstants.standarddirectionHead;
+            directionHead       = gameConstants.standardDirectionHead;
 
             // Only on first init set the DevMode
             if (firstInit)

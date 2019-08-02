@@ -42,6 +42,12 @@ namespace Snake_Game
                 }
                 catch (Exception)
                 {
+                    MessageBox.Show(
+                            "Unspecified error occurred while saving gameSprites.png!\nSelect path instead.\noriginal Path=´" + Properties.Settings.Default.gameSpritePath,
+                            "Unexpected error while creating gameSprite.png",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                            );
                     gamecontroller.SaveFileDialog(gameConstants.gameSprites);
                 }
             }
