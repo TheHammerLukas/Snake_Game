@@ -22,6 +22,10 @@ namespace Snake_Game
         private long currentTime = 0; // Current time; 1000 = 1 second 
         private gameDirection currentTickDir; // The direction the snake is heading at in the current game tick
         public static Image gameSprite = Properties.Resources.gameSprite;
+        public static Image gameSpritePUpX2 = Properties.Resources.gameSpritePUpX2;
+        public static Image gameSpritePUpPointTick = Properties.Resources.gameSpritePUpPointTick;
+        public static Image gameSpritePUpSlowmotion = Properties.Resources.gameSpritePUpSlowmotion;
+        public static Image gameSpritePUpNoclip = Properties.Resources.gameSpritePUpNoclip;
 
         public gameInterface()
         {
@@ -36,24 +40,11 @@ namespace Snake_Game
             gamecontroller.writeControlsXML(); // Rewrite the controls .xml
             if (!File.Exists(Properties.Settings.Default.gameSpritePath))
             {
-                try
-                {
-                    gamecontroller.SaveGameSprites();
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show(
-                            "Unspecified error occurred while saving gameSprites.png!\nSelect path instead.\noriginal Path=´" + Properties.Settings.Default.gameSpritePath,
-                            "Unexpected error while creating gameSprite.png",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Error
-                            );
-                    gamecontroller.SaveFileDialog(gameConstants.gameSprites);
-                }
+                gamecontroller.SaveAllGameSprites();
             }
             else
             {
-                gamecontroller.LoadGameSprites();
+                gamecontroller.LoadAllGameSprites();
             }
 
             // Set game speed and start timer

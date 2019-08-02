@@ -20,8 +20,9 @@ Add Powerup synergy
 Implement reset functionality for 'Savefiles' gameMenu tab
 
 
-Implement new Labyrinth Gamemode
+Implement new Labyrinth Gamemode // Brainstorm
 
 
 Add colored sprites for powerups
--> Also make them customizable
+Todo: Add functions for button press
+      Add Resources and Settings for the new sprites

@@ -34,6 +34,10 @@
         public const string controlsXML = "CONTROLS";
         public const string scoreXML = "SCORE";
         public const string gameSprites = "SPRITES";
+        public const string gameSpritesPUpX2 = "SPRITESX2";
+        public const string gameSpritesPUpPointTick = "SPRITESPOINTTICK";
+        public const string gameSpritesPUpSlowmotion = "SPRITESSLOWMOTION";
+        public const string gameSpritesPUpNoclip = "SPRITESNOCLIP";
 
         // User Interface constants
         public enum gameSound // Enum for different sounds
