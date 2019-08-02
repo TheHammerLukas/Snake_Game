@@ -21,11 +21,11 @@ namespace Snake_Game
         private long lastPUpNoclipChangeTime = 0; // Powerup: To keep track of Noclip duration
         private long currentTime = 0; // Current time; 1000 = 1 second 
         private gameDirection currentTickDir; // The direction the snake is heading at in the current game tick
-        public static Image gameSprite = Properties.Resources.gameSprite;
-        public static Image gameSpritePUpX2 = Properties.Resources.gameSpritePUpX2;
-        public static Image gameSpritePUpPointTick = Properties.Resources.gameSpritePUpPointTick;
-        public static Image gameSpritePUpSlowmotion = Properties.Resources.gameSpritePUpSlowmotion;
-        public static Image gameSpritePUpNoclip = Properties.Resources.gameSpritePUpNoclip;
+        public static Image gameSprite = Properties.Resources.gameSprite; // Normal gameSprite 
+        public static Image gameSpritePUpX2 = Properties.Resources.gameSpritePUpX2; // gameSprite used for 'X2' powerup
+        public static Image gameSpritePUpPointTick = Properties.Resources.gameSpritePUpPointTick; // gameSprite used for 'Point on Tick' powerup
+        public static Image gameSpritePUpSlowmotion = Properties.Resources.gameSpritePUpSlowmotion; // gameSprite used for 'Slowmotion' powerup
+        public static Image gameSpritePUpNoclip = Properties.Resources.gameSpritePUpNoclip; // gameSprite used for 'Noclip' powerup
 
         public gameInterface()
         {
