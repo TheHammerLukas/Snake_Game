@@ -73,7 +73,8 @@
             BotKey = 8,
             DevModeKey = 9,
             PowerupKey = 10,
-            NoClipKey = 11
+            NoClipKey = 11,
+            ReloadSpritesKey = 12
         };
 
         public enum gameColor // Enum for colors used in game

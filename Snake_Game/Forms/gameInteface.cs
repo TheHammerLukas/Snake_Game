@@ -837,7 +837,10 @@ namespace Snake_Game
                 }
                 if (gameSettings.DevModeEnabled)
                 {
-                    
+                    if (e.KeyCode == gameControls.modReloadSpritesKey)
+                    {
+                        gamecontroller.LoadAllGameSprites();
+                    }
                 }
                 if (e.KeyCode == gameControls.modNoClipKey && !gameSettings.MenuIsOpen)
                 {
