@@ -21,3 +21,7 @@ Implement reset functionality for 'Savefiles' gameMenu tab
 
 
 Implement new Labyrinth Gamemode
+
+
+Add colored sprites for powerups
+-> Also make them customizable

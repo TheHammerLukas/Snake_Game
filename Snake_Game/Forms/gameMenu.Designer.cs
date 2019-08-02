@@ -186,14 +186,34 @@ namespace Snake_Game
             this.buttonOpenFileControls = new System.Windows.Forms.Button();
             this.buttonSaveFileControls = new System.Windows.Forms.Button();
             this.labelControlsXmlPath = new System.Windows.Forms.Label();
-            this.buttonApply = new System.Windows.Forms.Button();
-            this.buttonClose = new System.Windows.Forms.Button();
-            this.buttonReset = new System.Windows.Forms.Button();
             this.groupBoxSavefilesSprites = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonSaveFileSprites = new System.Windows.Forms.Button();
             this.buttonOpenFileSprites = new System.Windows.Forms.Button();
             this.labelSavefilesSpritesPath = new System.Windows.Forms.Label();
+            this.buttonApply = new System.Windows.Forms.Button();
+            this.buttonClose = new System.Windows.Forms.Button();
+            this.buttonReset = new System.Windows.Forms.Button();
+            this.groupBoxSavefilesSpritesNoclip = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonSaveFileSpritesNoclip = new System.Windows.Forms.Button();
+            this.buttonOpenFileSpritesNoclip = new System.Windows.Forms.Button();
+            this.labelSavefilesSpritesNoclipPath = new System.Windows.Forms.Label();
+            this.groupBoxSavefilesSpritesSlowmotion = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonSaveFileSpritesSlowmotion = new System.Windows.Forms.Button();
+            this.buttonOpenFileSpritesSlowmotion = new System.Windows.Forms.Button();
+            this.labelSavefileSpritesSlowmotionPath = new System.Windows.Forms.Label();
+            this.groupBoxSavefilesSpritesX2 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonSaveFileSpritesX2 = new System.Windows.Forms.Button();
+            this.buttonOpenFileSpritesX2 = new System.Windows.Forms.Button();
+            this.labelSavefilesSpritesX2Path = new System.Windows.Forms.Label();
+            this.groupBoxSavefilesSpritesPointTick = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonSaveFileSpritesPointTick = new System.Windows.Forms.Button();
+            this.buttonOpenFileSpritesPointTick = new System.Windows.Forms.Button();
+            this.labelSavefilesSpritesPointTickPath = new System.Windows.Forms.Label();
             this.tabControlMenu.SuspendLayout();
             this.tabPageSettings.SuspendLayout();
             this.tableLayoutPanelSettings.SuspendLayout();
@@ -214,6 +234,14 @@ namespace Snake_Game
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBoxSavefilesSprites.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.groupBoxSavefilesSpritesNoclip.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.groupBoxSavefilesSpritesSlowmotion.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.groupBoxSavefilesSpritesX2.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            this.groupBoxSavefilesSpritesPointTick.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlMenu
@@ -2031,9 +2059,13 @@ namespace Snake_Game
             // tableLayoutPanelSavefiles
             // 
             this.tableLayoutPanelSavefiles.AutoScroll = true;
-            this.tableLayoutPanelSavefiles.AutoScrollMinSize = new System.Drawing.Size(0, 330);
+            this.tableLayoutPanelSavefiles.AutoScrollMinSize = new System.Drawing.Size(0, 650);
             this.tableLayoutPanelSavefiles.ColumnCount = 1;
             this.tableLayoutPanelSavefiles.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelSavefiles.Controls.Add(this.groupBoxSavefilesSpritesPointTick, 0, 5);
+            this.tableLayoutPanelSavefiles.Controls.Add(this.groupBoxSavefilesSpritesX2, 0, 4);
+            this.tableLayoutPanelSavefiles.Controls.Add(this.groupBoxSavefilesSpritesSlowmotion, 0, 6);
+            this.tableLayoutPanelSavefiles.Controls.Add(this.groupBoxSavefilesSpritesNoclip, 0, 7);
             this.tableLayoutPanelSavefiles.Controls.Add(this.groupBoxSavefilesScore, 0, 2);
             this.tableLayoutPanelSavefiles.Controls.Add(this.groupBoxSavefilesSettings, 0, 1);
             this.tableLayoutPanelSavefiles.Controls.Add(this.groupBoxSavefilesControls, 0, 0);
@@ -2042,11 +2074,15 @@ namespace Snake_Game
             this.tableLayoutPanelSavefiles.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanelSavefiles.Name = "tableLayoutPanelSavefiles";
             this.tableLayoutPanelSavefiles.Padding = new System.Windows.Forms.Padding(0, 0, 17, 0);
-            this.tableLayoutPanelSavefiles.RowCount = 4;
-            this.tableLayoutPanelSavefiles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanelSavefiles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanelSavefiles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanelSavefiles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanelSavefiles.RowCount = 8;
+            this.tableLayoutPanelSavefiles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanelSavefiles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanelSavefiles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanelSavefiles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanelSavefiles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanelSavefiles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanelSavefiles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanelSavefiles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanelSavefiles.Size = new System.Drawing.Size(384, 217);
             this.tableLayoutPanelSavefiles.TabIndex = 0;
             // 
@@ -2055,9 +2091,9 @@ namespace Snake_Game
             this.groupBoxSavefilesScore.Controls.Add(this.tableLayoutPanelSavefilesScore);
             this.groupBoxSavefilesScore.Cursor = System.Windows.Forms.Cursors.Default;
             this.groupBoxSavefilesScore.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxSavefilesScore.Location = new System.Drawing.Point(3, 167);
+            this.groupBoxSavefilesScore.Location = new System.Drawing.Point(3, 177);
             this.groupBoxSavefilesScore.Name = "groupBoxSavefilesScore";
-            this.groupBoxSavefilesScore.Size = new System.Drawing.Size(344, 76);
+            this.groupBoxSavefilesScore.Size = new System.Drawing.Size(344, 81);
             this.groupBoxSavefilesScore.TabIndex = 8;
             this.groupBoxSavefilesScore.TabStop = false;
             this.groupBoxSavefilesScore.Text = "Score";
@@ -2076,15 +2112,15 @@ namespace Snake_Game
             this.tableLayoutPanelSavefilesScore.RowCount = 2;
             this.tableLayoutPanelSavefilesScore.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelSavefilesScore.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelSavefilesScore.Size = new System.Drawing.Size(338, 57);
+            this.tableLayoutPanelSavefilesScore.Size = new System.Drawing.Size(338, 62);
             this.tableLayoutPanelSavefilesScore.TabIndex = 0;
             // 
             // buttonSaveFileScore
             // 
             this.buttonSaveFileScore.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSaveFileScore.Location = new System.Drawing.Point(172, 31);
+            this.buttonSaveFileScore.Location = new System.Drawing.Point(172, 34);
             this.buttonSaveFileScore.Name = "buttonSaveFileScore";
-            this.buttonSaveFileScore.Size = new System.Drawing.Size(163, 23);
+            this.buttonSaveFileScore.Size = new System.Drawing.Size(163, 25);
             this.buttonSaveFileScore.TabIndex = 5;
             this.buttonSaveFileScore.Text = "Save";
             this.buttonSaveFileScore.UseVisualStyleBackColor = true;
@@ -2093,9 +2129,9 @@ namespace Snake_Game
             // buttonOpenFileScore
             // 
             this.buttonOpenFileScore.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonOpenFileScore.Location = new System.Drawing.Point(3, 31);
+            this.buttonOpenFileScore.Location = new System.Drawing.Point(3, 34);
             this.buttonOpenFileScore.Name = "buttonOpenFileScore";
-            this.buttonOpenFileScore.Size = new System.Drawing.Size(163, 23);
+            this.buttonOpenFileScore.Size = new System.Drawing.Size(163, 25);
             this.buttonOpenFileScore.TabIndex = 4;
             this.buttonOpenFileScore.Text = "Load";
             this.buttonOpenFileScore.UseVisualStyleBackColor = true;
@@ -2109,7 +2145,7 @@ namespace Snake_Game
             this.labelScoreXmlPath.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelScoreXmlPath.Location = new System.Drawing.Point(3, 0);
             this.labelScoreXmlPath.Name = "labelScoreXmlPath";
-            this.labelScoreXmlPath.Size = new System.Drawing.Size(332, 28);
+            this.labelScoreXmlPath.Size = new System.Drawing.Size(332, 31);
             this.labelScoreXmlPath.TabIndex = 6;
             // 
             // groupBoxSavefilesSettings
@@ -2117,9 +2153,9 @@ namespace Snake_Game
             this.groupBoxSavefilesSettings.Controls.Add(this.tableLayoutPanelSavefilesSettings);
             this.groupBoxSavefilesSettings.Cursor = System.Windows.Forms.Cursors.Default;
             this.groupBoxSavefilesSettings.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxSavefilesSettings.Location = new System.Drawing.Point(3, 85);
+            this.groupBoxSavefilesSettings.Location = new System.Drawing.Point(3, 90);
             this.groupBoxSavefilesSettings.Name = "groupBoxSavefilesSettings";
-            this.groupBoxSavefilesSettings.Size = new System.Drawing.Size(344, 76);
+            this.groupBoxSavefilesSettings.Size = new System.Drawing.Size(344, 81);
             this.groupBoxSavefilesSettings.TabIndex = 7;
             this.groupBoxSavefilesSettings.TabStop = false;
             this.groupBoxSavefilesSettings.Text = "Settings";
@@ -2140,15 +2176,15 @@ namespace Snake_Game
             this.tableLayoutPanelSavefilesSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelSavefilesSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanelSavefilesSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelSavefilesSettings.Size = new System.Drawing.Size(338, 57);
+            this.tableLayoutPanelSavefilesSettings.Size = new System.Drawing.Size(338, 62);
             this.tableLayoutPanelSavefilesSettings.TabIndex = 0;
             // 
             // buttonOpenFileSettings
             // 
             this.buttonOpenFileSettings.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonOpenFileSettings.Location = new System.Drawing.Point(3, 31);
+            this.buttonOpenFileSettings.Location = new System.Drawing.Point(3, 34);
             this.buttonOpenFileSettings.Name = "buttonOpenFileSettings";
-            this.buttonOpenFileSettings.Size = new System.Drawing.Size(163, 23);
+            this.buttonOpenFileSettings.Size = new System.Drawing.Size(163, 25);
             this.buttonOpenFileSettings.TabIndex = 2;
             this.buttonOpenFileSettings.Text = "Load";
             this.buttonOpenFileSettings.UseVisualStyleBackColor = true;
@@ -2157,9 +2193,9 @@ namespace Snake_Game
             // buttonSaveFileSettings
             // 
             this.buttonSaveFileSettings.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSaveFileSettings.Location = new System.Drawing.Point(172, 31);
+            this.buttonSaveFileSettings.Location = new System.Drawing.Point(172, 34);
             this.buttonSaveFileSettings.Name = "buttonSaveFileSettings";
-            this.buttonSaveFileSettings.Size = new System.Drawing.Size(163, 23);
+            this.buttonSaveFileSettings.Size = new System.Drawing.Size(163, 25);
             this.buttonSaveFileSettings.TabIndex = 3;
             this.buttonSaveFileSettings.Text = "Save";
             this.buttonSaveFileSettings.UseVisualStyleBackColor = true;
@@ -2173,7 +2209,7 @@ namespace Snake_Game
             this.labelSettingsXmlPath.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelSettingsXmlPath.Location = new System.Drawing.Point(3, 0);
             this.labelSettingsXmlPath.Name = "labelSettingsXmlPath";
-            this.labelSettingsXmlPath.Size = new System.Drawing.Size(332, 28);
+            this.labelSettingsXmlPath.Size = new System.Drawing.Size(332, 31);
             this.labelSettingsXmlPath.TabIndex = 4;
             // 
             // groupBoxSavefilesControls
@@ -2183,7 +2219,7 @@ namespace Snake_Game
             this.groupBoxSavefilesControls.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBoxSavefilesControls.Location = new System.Drawing.Point(3, 3);
             this.groupBoxSavefilesControls.Name = "groupBoxSavefilesControls";
-            this.groupBoxSavefilesControls.Size = new System.Drawing.Size(344, 76);
+            this.groupBoxSavefilesControls.Size = new System.Drawing.Size(344, 81);
             this.groupBoxSavefilesControls.TabIndex = 6;
             this.groupBoxSavefilesControls.TabStop = false;
             this.groupBoxSavefilesControls.Text = "Controls";
@@ -2204,15 +2240,15 @@ namespace Snake_Game
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(338, 57);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(338, 62);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // buttonOpenFileControls
             // 
             this.buttonOpenFileControls.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonOpenFileControls.Location = new System.Drawing.Point(3, 31);
+            this.buttonOpenFileControls.Location = new System.Drawing.Point(3, 34);
             this.buttonOpenFileControls.Name = "buttonOpenFileControls";
-            this.buttonOpenFileControls.Size = new System.Drawing.Size(163, 23);
+            this.buttonOpenFileControls.Size = new System.Drawing.Size(163, 25);
             this.buttonOpenFileControls.TabIndex = 2;
             this.buttonOpenFileControls.Text = "Load";
             this.buttonOpenFileControls.UseVisualStyleBackColor = true;
@@ -2221,9 +2257,9 @@ namespace Snake_Game
             // buttonSaveFileControls
             // 
             this.buttonSaveFileControls.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSaveFileControls.Location = new System.Drawing.Point(172, 31);
+            this.buttonSaveFileControls.Location = new System.Drawing.Point(172, 34);
             this.buttonSaveFileControls.Name = "buttonSaveFileControls";
-            this.buttonSaveFileControls.Size = new System.Drawing.Size(163, 23);
+            this.buttonSaveFileControls.Size = new System.Drawing.Size(163, 25);
             this.buttonSaveFileControls.TabIndex = 3;
             this.buttonSaveFileControls.Text = "Save";
             this.buttonSaveFileControls.UseVisualStyleBackColor = true;
@@ -2237,8 +2273,69 @@ namespace Snake_Game
             this.labelControlsXmlPath.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelControlsXmlPath.Location = new System.Drawing.Point(3, 0);
             this.labelControlsXmlPath.Name = "labelControlsXmlPath";
-            this.labelControlsXmlPath.Size = new System.Drawing.Size(332, 28);
+            this.labelControlsXmlPath.Size = new System.Drawing.Size(332, 31);
             this.labelControlsXmlPath.TabIndex = 4;
+            // 
+            // groupBoxSavefilesSprites
+            // 
+            this.groupBoxSavefilesSprites.Controls.Add(this.tableLayoutPanel2);
+            this.groupBoxSavefilesSprites.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxSavefilesSprites.Location = new System.Drawing.Point(3, 264);
+            this.groupBoxSavefilesSprites.Name = "groupBoxSavefilesSprites";
+            this.groupBoxSavefilesSprites.Size = new System.Drawing.Size(344, 81);
+            this.groupBoxSavefilesSprites.TabIndex = 9;
+            this.groupBoxSavefilesSprites.TabStop = false;
+            this.groupBoxSavefilesSprites.Text = "Textures";
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.buttonSaveFileSprites, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.buttonOpenFileSprites, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.labelSavefilesSpritesPath, 0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(338, 62);
+            this.tableLayoutPanel2.TabIndex = 1;
+            // 
+            // buttonSaveFileSprites
+            // 
+            this.buttonSaveFileSprites.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSaveFileSprites.Location = new System.Drawing.Point(172, 34);
+            this.buttonSaveFileSprites.Name = "buttonSaveFileSprites";
+            this.buttonSaveFileSprites.Size = new System.Drawing.Size(163, 25);
+            this.buttonSaveFileSprites.TabIndex = 5;
+            this.buttonSaveFileSprites.Text = "Save";
+            this.buttonSaveFileSprites.UseVisualStyleBackColor = true;
+            this.buttonSaveFileSprites.Click += new System.EventHandler(this.ButtonSaveFileSprites_Click);
+            // 
+            // buttonOpenFileSprites
+            // 
+            this.buttonOpenFileSprites.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonOpenFileSprites.Location = new System.Drawing.Point(3, 34);
+            this.buttonOpenFileSprites.Name = "buttonOpenFileSprites";
+            this.buttonOpenFileSprites.Size = new System.Drawing.Size(163, 25);
+            this.buttonOpenFileSprites.TabIndex = 4;
+            this.buttonOpenFileSprites.Text = "Load";
+            this.buttonOpenFileSprites.UseVisualStyleBackColor = true;
+            this.buttonOpenFileSprites.Click += new System.EventHandler(this.ButtonOpenFileSprites_Click);
+            // 
+            // labelSavefilesSpritesPath
+            // 
+            this.labelSavefilesSpritesPath.AutoSize = true;
+            this.labelSavefilesSpritesPath.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tableLayoutPanel2.SetColumnSpan(this.labelSavefilesSpritesPath, 2);
+            this.labelSavefilesSpritesPath.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelSavefilesSpritesPath.Location = new System.Drawing.Point(3, 0);
+            this.labelSavefilesSpritesPath.Name = "labelSavefilesSpritesPath";
+            this.labelSavefilesSpritesPath.Size = new System.Drawing.Size(332, 31);
+            this.labelSavefilesSpritesPath.TabIndex = 6;
             // 
             // buttonApply
             // 
@@ -2270,66 +2367,241 @@ namespace Snake_Game
             this.buttonReset.UseVisualStyleBackColor = true;
             this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
             // 
-            // groupBoxSavefilesSprites
+            // groupBoxSavefilesSpritesNoclip
             // 
-            this.groupBoxSavefilesSprites.Controls.Add(this.tableLayoutPanel2);
-            this.groupBoxSavefilesSprites.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxSavefilesSprites.Location = new System.Drawing.Point(3, 249);
-            this.groupBoxSavefilesSprites.Name = "groupBoxSavefilesSprites";
-            this.groupBoxSavefilesSprites.Size = new System.Drawing.Size(344, 78);
-            this.groupBoxSavefilesSprites.TabIndex = 9;
-            this.groupBoxSavefilesSprites.TabStop = false;
-            this.groupBoxSavefilesSprites.Text = "Textures";
+            this.groupBoxSavefilesSpritesNoclip.Controls.Add(this.tableLayoutPanel3);
+            this.groupBoxSavefilesSpritesNoclip.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxSavefilesSpritesNoclip.Location = new System.Drawing.Point(3, 612);
+            this.groupBoxSavefilesSpritesNoclip.Name = "groupBoxSavefilesSpritesNoclip";
+            this.groupBoxSavefilesSpritesNoclip.Size = new System.Drawing.Size(344, 85);
+            this.groupBoxSavefilesSpritesNoclip.TabIndex = 10;
+            this.groupBoxSavefilesSpritesNoclip.TabStop = false;
+            this.groupBoxSavefilesSpritesNoclip.Text = "Textures Noclip";
             // 
-            // tableLayoutPanel2
+            // tableLayoutPanel3
             // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.buttonSaveFileSprites, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.buttonOpenFileSprites, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.labelSavefilesSpritesPath, 0, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 16);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(338, 59);
-            this.tableLayoutPanel2.TabIndex = 1;
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.buttonSaveFileSpritesNoclip, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.buttonOpenFileSpritesNoclip, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.labelSavefilesSpritesNoclipPath, 0, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(338, 66);
+            this.tableLayoutPanel3.TabIndex = 1;
             // 
-            // buttonSaveFileSprites
+            // buttonSaveFileSpritesNoclip
             // 
-            this.buttonSaveFileSprites.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSaveFileSprites.Location = new System.Drawing.Point(172, 32);
-            this.buttonSaveFileSprites.Name = "buttonSaveFileSprites";
-            this.buttonSaveFileSprites.Size = new System.Drawing.Size(163, 24);
-            this.buttonSaveFileSprites.TabIndex = 5;
-            this.buttonSaveFileSprites.Text = "Save";
-            this.buttonSaveFileSprites.UseVisualStyleBackColor = true;
-            this.buttonSaveFileSprites.Click += new System.EventHandler(this.ButtonSaveFileSprites_Click);
+            this.buttonSaveFileSpritesNoclip.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSaveFileSpritesNoclip.Location = new System.Drawing.Point(172, 36);
+            this.buttonSaveFileSpritesNoclip.Name = "buttonSaveFileSpritesNoclip";
+            this.buttonSaveFileSpritesNoclip.Size = new System.Drawing.Size(163, 27);
+            this.buttonSaveFileSpritesNoclip.TabIndex = 5;
+            this.buttonSaveFileSpritesNoclip.Text = "Save";
+            this.buttonSaveFileSpritesNoclip.UseVisualStyleBackColor = true;
             // 
-            // buttonOpenFileSprites
+            // buttonOpenFileSpritesNoclip
             // 
-            this.buttonOpenFileSprites.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonOpenFileSprites.Location = new System.Drawing.Point(3, 32);
-            this.buttonOpenFileSprites.Name = "buttonOpenFileSprites";
-            this.buttonOpenFileSprites.Size = new System.Drawing.Size(163, 24);
-            this.buttonOpenFileSprites.TabIndex = 4;
-            this.buttonOpenFileSprites.Text = "Load";
-            this.buttonOpenFileSprites.UseVisualStyleBackColor = true;
-            this.buttonOpenFileSprites.Click += new System.EventHandler(this.ButtonOpenFileSprites_Click);
+            this.buttonOpenFileSpritesNoclip.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonOpenFileSpritesNoclip.Location = new System.Drawing.Point(3, 36);
+            this.buttonOpenFileSpritesNoclip.Name = "buttonOpenFileSpritesNoclip";
+            this.buttonOpenFileSpritesNoclip.Size = new System.Drawing.Size(163, 27);
+            this.buttonOpenFileSpritesNoclip.TabIndex = 4;
+            this.buttonOpenFileSpritesNoclip.Text = "Load";
+            this.buttonOpenFileSpritesNoclip.UseVisualStyleBackColor = true;
             // 
-            // labelSavefilesSpritesPath
+            // labelSavefilesSpritesNoclipPath
             // 
-            this.labelSavefilesSpritesPath.AutoSize = true;
-            this.labelSavefilesSpritesPath.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tableLayoutPanel2.SetColumnSpan(this.labelSavefilesSpritesPath, 2);
-            this.labelSavefilesSpritesPath.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelSavefilesSpritesPath.Location = new System.Drawing.Point(3, 0);
-            this.labelSavefilesSpritesPath.Name = "labelSavefilesSpritesPath";
-            this.labelSavefilesSpritesPath.Size = new System.Drawing.Size(332, 29);
-            this.labelSavefilesSpritesPath.TabIndex = 6;
+            this.labelSavefilesSpritesNoclipPath.AutoSize = true;
+            this.labelSavefilesSpritesNoclipPath.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tableLayoutPanel3.SetColumnSpan(this.labelSavefilesSpritesNoclipPath, 2);
+            this.labelSavefilesSpritesNoclipPath.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelSavefilesSpritesNoclipPath.Location = new System.Drawing.Point(3, 0);
+            this.labelSavefilesSpritesNoclipPath.Name = "labelSavefilesSpritesNoclipPath";
+            this.labelSavefilesSpritesNoclipPath.Size = new System.Drawing.Size(332, 33);
+            this.labelSavefilesSpritesNoclipPath.TabIndex = 6;
+            // 
+            // groupBoxSavefilesSpritesSlowmotion
+            // 
+            this.groupBoxSavefilesSpritesSlowmotion.Controls.Add(this.tableLayoutPanel4);
+            this.groupBoxSavefilesSpritesSlowmotion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxSavefilesSpritesSlowmotion.Location = new System.Drawing.Point(3, 525);
+            this.groupBoxSavefilesSpritesSlowmotion.Name = "groupBoxSavefilesSpritesSlowmotion";
+            this.groupBoxSavefilesSpritesSlowmotion.Size = new System.Drawing.Size(344, 81);
+            this.groupBoxSavefilesSpritesSlowmotion.TabIndex = 11;
+            this.groupBoxSavefilesSpritesSlowmotion.TabStop = false;
+            this.groupBoxSavefilesSpritesSlowmotion.Text = "Textures Slowmotion";
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 2;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Controls.Add(this.buttonSaveFileSpritesSlowmotion, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.buttonOpenFileSpritesSlowmotion, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.labelSavefileSpritesSlowmotionPath, 0, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 2;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(338, 62);
+            this.tableLayoutPanel4.TabIndex = 1;
+            // 
+            // buttonSaveFileSpritesSlowmotion
+            // 
+            this.buttonSaveFileSpritesSlowmotion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSaveFileSpritesSlowmotion.Location = new System.Drawing.Point(172, 34);
+            this.buttonSaveFileSpritesSlowmotion.Name = "buttonSaveFileSpritesSlowmotion";
+            this.buttonSaveFileSpritesSlowmotion.Size = new System.Drawing.Size(163, 25);
+            this.buttonSaveFileSpritesSlowmotion.TabIndex = 5;
+            this.buttonSaveFileSpritesSlowmotion.Text = "Save";
+            this.buttonSaveFileSpritesSlowmotion.UseVisualStyleBackColor = true;
+            // 
+            // buttonOpenFileSpritesSlowmotion
+            // 
+            this.buttonOpenFileSpritesSlowmotion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonOpenFileSpritesSlowmotion.Location = new System.Drawing.Point(3, 34);
+            this.buttonOpenFileSpritesSlowmotion.Name = "buttonOpenFileSpritesSlowmotion";
+            this.buttonOpenFileSpritesSlowmotion.Size = new System.Drawing.Size(163, 25);
+            this.buttonOpenFileSpritesSlowmotion.TabIndex = 4;
+            this.buttonOpenFileSpritesSlowmotion.Text = "Load";
+            this.buttonOpenFileSpritesSlowmotion.UseVisualStyleBackColor = true;
+            // 
+            // labelSavefileSpritesSlowmotionPath
+            // 
+            this.labelSavefileSpritesSlowmotionPath.AutoSize = true;
+            this.labelSavefileSpritesSlowmotionPath.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tableLayoutPanel4.SetColumnSpan(this.labelSavefileSpritesSlowmotionPath, 2);
+            this.labelSavefileSpritesSlowmotionPath.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelSavefileSpritesSlowmotionPath.Location = new System.Drawing.Point(3, 0);
+            this.labelSavefileSpritesSlowmotionPath.Name = "labelSavefileSpritesSlowmotionPath";
+            this.labelSavefileSpritesSlowmotionPath.Size = new System.Drawing.Size(332, 31);
+            this.labelSavefileSpritesSlowmotionPath.TabIndex = 6;
+            // 
+            // groupBoxSavefilesSpritesX2
+            // 
+            this.groupBoxSavefilesSpritesX2.Controls.Add(this.tableLayoutPanel5);
+            this.groupBoxSavefilesSpritesX2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxSavefilesSpritesX2.Location = new System.Drawing.Point(3, 351);
+            this.groupBoxSavefilesSpritesX2.Name = "groupBoxSavefilesSpritesX2";
+            this.groupBoxSavefilesSpritesX2.Size = new System.Drawing.Size(344, 81);
+            this.groupBoxSavefilesSpritesX2.TabIndex = 12;
+            this.groupBoxSavefilesSpritesX2.TabStop = false;
+            this.groupBoxSavefilesSpritesX2.Text = "Textures X2";
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Controls.Add(this.buttonSaveFileSpritesX2, 1, 1);
+            this.tableLayoutPanel5.Controls.Add(this.buttonOpenFileSpritesX2, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.labelSavefilesSpritesX2Path, 0, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 2;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(338, 62);
+            this.tableLayoutPanel5.TabIndex = 1;
+            // 
+            // buttonSaveFileSpritesX2
+            // 
+            this.buttonSaveFileSpritesX2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSaveFileSpritesX2.Location = new System.Drawing.Point(172, 34);
+            this.buttonSaveFileSpritesX2.Name = "buttonSaveFileSpritesX2";
+            this.buttonSaveFileSpritesX2.Size = new System.Drawing.Size(163, 25);
+            this.buttonSaveFileSpritesX2.TabIndex = 5;
+            this.buttonSaveFileSpritesX2.Text = "Save";
+            this.buttonSaveFileSpritesX2.UseVisualStyleBackColor = true;
+            // 
+            // buttonOpenFileSpritesX2
+            // 
+            this.buttonOpenFileSpritesX2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonOpenFileSpritesX2.Location = new System.Drawing.Point(3, 34);
+            this.buttonOpenFileSpritesX2.Name = "buttonOpenFileSpritesX2";
+            this.buttonOpenFileSpritesX2.Size = new System.Drawing.Size(163, 25);
+            this.buttonOpenFileSpritesX2.TabIndex = 4;
+            this.buttonOpenFileSpritesX2.Text = "Load";
+            this.buttonOpenFileSpritesX2.UseVisualStyleBackColor = true;
+            // 
+            // labelSavefilesSpritesX2Path
+            // 
+            this.labelSavefilesSpritesX2Path.AutoSize = true;
+            this.labelSavefilesSpritesX2Path.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tableLayoutPanel5.SetColumnSpan(this.labelSavefilesSpritesX2Path, 2);
+            this.labelSavefilesSpritesX2Path.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelSavefilesSpritesX2Path.Location = new System.Drawing.Point(3, 0);
+            this.labelSavefilesSpritesX2Path.Name = "labelSavefilesSpritesX2Path";
+            this.labelSavefilesSpritesX2Path.Size = new System.Drawing.Size(332, 31);
+            this.labelSavefilesSpritesX2Path.TabIndex = 6;
+            // 
+            // groupBoxSavefilesSpritesPointTick
+            // 
+            this.groupBoxSavefilesSpritesPointTick.Controls.Add(this.tableLayoutPanel6);
+            this.groupBoxSavefilesSpritesPointTick.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxSavefilesSpritesPointTick.Location = new System.Drawing.Point(3, 438);
+            this.groupBoxSavefilesSpritesPointTick.Name = "groupBoxSavefilesSpritesPointTick";
+            this.groupBoxSavefilesSpritesPointTick.Size = new System.Drawing.Size(344, 81);
+            this.groupBoxSavefilesSpritesPointTick.TabIndex = 13;
+            this.groupBoxSavefilesSpritesPointTick.TabStop = false;
+            this.groupBoxSavefilesSpritesPointTick.Text = "Textures Point on Tick";
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 2;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Controls.Add(this.buttonSaveFileSpritesPointTick, 1, 1);
+            this.tableLayoutPanel6.Controls.Add(this.buttonOpenFileSpritesPointTick, 0, 1);
+            this.tableLayoutPanel6.Controls.Add(this.labelSavefilesSpritesPointTickPath, 0, 0);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 2;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(338, 62);
+            this.tableLayoutPanel6.TabIndex = 1;
+            // 
+            // buttonSaveFileSpritesPointTick
+            // 
+            this.buttonSaveFileSpritesPointTick.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSaveFileSpritesPointTick.Location = new System.Drawing.Point(172, 34);
+            this.buttonSaveFileSpritesPointTick.Name = "buttonSaveFileSpritesPointTick";
+            this.buttonSaveFileSpritesPointTick.Size = new System.Drawing.Size(163, 25);
+            this.buttonSaveFileSpritesPointTick.TabIndex = 5;
+            this.buttonSaveFileSpritesPointTick.Text = "Save";
+            this.buttonSaveFileSpritesPointTick.UseVisualStyleBackColor = true;
+            // 
+            // buttonOpenFileSpritesPointTick
+            // 
+            this.buttonOpenFileSpritesPointTick.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonOpenFileSpritesPointTick.Location = new System.Drawing.Point(3, 34);
+            this.buttonOpenFileSpritesPointTick.Name = "buttonOpenFileSpritesPointTick";
+            this.buttonOpenFileSpritesPointTick.Size = new System.Drawing.Size(163, 25);
+            this.buttonOpenFileSpritesPointTick.TabIndex = 4;
+            this.buttonOpenFileSpritesPointTick.Text = "Load";
+            this.buttonOpenFileSpritesPointTick.UseVisualStyleBackColor = true;
+            // 
+            // labelSavefilesSpritesPointTickPath
+            // 
+            this.labelSavefilesSpritesPointTickPath.AutoSize = true;
+            this.labelSavefilesSpritesPointTickPath.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tableLayoutPanel6.SetColumnSpan(this.labelSavefilesSpritesPointTickPath, 2);
+            this.labelSavefilesSpritesPointTickPath.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelSavefilesSpritesPointTickPath.Location = new System.Drawing.Point(3, 0);
+            this.labelSavefilesSpritesPointTickPath.Name = "labelSavefilesSpritesPointTickPath";
+            this.labelSavefilesSpritesPointTickPath.Size = new System.Drawing.Size(332, 31);
+            this.labelSavefilesSpritesPointTickPath.TabIndex = 6;
             // 
             // gameMenu
             // 
@@ -2377,6 +2649,18 @@ namespace Snake_Game
             this.groupBoxSavefilesSprites.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.groupBoxSavefilesSpritesNoclip.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
+            this.groupBoxSavefilesSpritesSlowmotion.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
+            this.groupBoxSavefilesSpritesX2.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
+            this.groupBoxSavefilesSpritesPointTick.ResumeLayout(false);
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2546,5 +2830,25 @@ namespace Snake_Game
         private Button buttonSaveFileSprites;
         private Button buttonOpenFileSprites;
         private Label labelSavefilesSpritesPath;
+        private GroupBox groupBoxSavefilesSpritesPointTick;
+        private TableLayoutPanel tableLayoutPanel6;
+        private Button buttonSaveFileSpritesPointTick;
+        private Button buttonOpenFileSpritesPointTick;
+        private Label labelSavefilesSpritesPointTickPath;
+        private GroupBox groupBoxSavefilesSpritesX2;
+        private TableLayoutPanel tableLayoutPanel5;
+        private Button buttonSaveFileSpritesX2;
+        private Button buttonOpenFileSpritesX2;
+        private Label labelSavefilesSpritesX2Path;
+        private GroupBox groupBoxSavefilesSpritesSlowmotion;
+        private TableLayoutPanel tableLayoutPanel4;
+        private Button buttonSaveFileSpritesSlowmotion;
+        private Button buttonOpenFileSpritesSlowmotion;
+        private Label labelSavefileSpritesSlowmotionPath;
+        private GroupBox groupBoxSavefilesSpritesNoclip;
+        private TableLayoutPanel tableLayoutPanel3;
+        private Button buttonSaveFileSpritesNoclip;
+        private Button buttonOpenFileSpritesNoclip;
+        private Label labelSavefilesSpritesNoclipPath;
     }
 }
