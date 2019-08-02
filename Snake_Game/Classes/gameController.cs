@@ -902,6 +902,55 @@ namespace Snake_Game
             _xmlDoc.Close(); // Close .xml
         }
 
+        // Loads or saves gameSprites depending on the file being already existent or not
+        public void SaveLoadAllSprites()
+        {
+            if (!File.Exists(Properties.Settings.Default.gameSpritePath))
+            {
+                SaveGameSprites(gameConstants.gameSprites);
+            }
+            else
+            {
+                LoadGameSprites(gameConstants.gameSprites);
+            }
+
+            if (!File.Exists(Properties.Settings.Default.gameSpritePUpX2Path))
+            {
+                SaveGameSprites(gameConstants.gameSpritesPUpX2);
+            }
+            else
+            {
+                LoadGameSprites(gameConstants.gameSpritesPUpX2);
+            }
+
+            if (!File.Exists(Properties.Settings.Default.gameSpritePUpPointTickPath))
+            {
+                SaveGameSprites(gameConstants.gameSpritesPUpPointTick);
+            }
+            else
+            {
+                LoadGameSprites(gameConstants.gameSpritesPUpPointTick);
+            }
+
+            if (!File.Exists(Properties.Settings.Default.gameSpritePUpSlowmotionPath))
+            {
+                SaveGameSprites(gameConstants.gameSpritesPUpSlowmotion);
+            }
+            else
+            {
+                LoadGameSprites(gameConstants.gameSpritesPUpSlowmotion);
+            }
+
+            if (!File.Exists(Properties.Settings.Default.gameSpritePUpNoclipPath))
+            {
+                SaveGameSprites(gameConstants.gameSpritesPUpNoclip);
+            }
+            else
+            {
+                LoadGameSprites(gameConstants.gameSpritesPUpNoclip);
+            }
+        }
+
         // Saves all gameSprite files
         public void SaveAllGameSprites()
         {

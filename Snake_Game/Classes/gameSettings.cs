@@ -478,6 +478,15 @@ namespace Snake_Game
             }
         }
 
+        public static void initGameSprites()
+        {
+            gameInterface.gameSprite = Properties.Resources.gameSprite;
+            gameInterface.gameSpritePUpX2 = Properties.Resources.gameSpritePUpX2;
+            gameInterface.gameSpritePUpPointTick = Properties.Resources.gameSpritePUpPointTick;
+            gameInterface.gameSpritePUpSlowmotion = Properties.Resources.gameSpritePUpSlowmotion;
+            gameInterface.gameSpritePUpNoclip = Properties.Resources.gameSpritePUpNoclip;
+        }
+
         #endregion
     }
 }

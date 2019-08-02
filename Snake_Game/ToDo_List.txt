@@ -14,7 +14,7 @@ Use GDI+ to display text that is currently displayed using labelGameStatus (Prob
 Add Powerup synergy
 
 
-Implement reset functionality for gameSprites in 'Savefiles' gameMenu tab // Reset all gameSprites and then call SaveAllGameSprites() function
+Implement reset functionality for gameSprites in 'Savefiles' gameMenu tab // BUG: Resource is usually locked except when Garbage Collector has run
 
 
 Implement when hovering over the path label in gameMenu the sprite picture should be shown

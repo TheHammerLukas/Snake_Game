@@ -21,11 +21,11 @@ namespace Snake_Game
         private long lastPUpNoclipChangeTime = 0; // Powerup: To keep track of Noclip duration
         private long currentTime = 0; // Current time; 1000 = 1 second 
         private gameDirection currentTickDir; // The direction the snake is heading at in the current game tick
-        public static Image gameSprite = Properties.Resources.gameSprite; // Normal gameSprite 
-        public static Image gameSpritePUpX2 = Properties.Resources.gameSpritePUpX2; // gameSprite used for 'X2' powerup
-        public static Image gameSpritePUpPointTick = Properties.Resources.gameSpritePUpPointTick; // gameSprite used for 'Point on Tick' powerup
-        public static Image gameSpritePUpSlowmotion = Properties.Resources.gameSpritePUpSlowmotion; // gameSprite used for 'Slowmotion' powerup
-        public static Image gameSpritePUpNoclip = Properties.Resources.gameSpritePUpNoclip; // gameSprite used for 'Noclip' powerup
+        public static Image gameSprite; // Normal gameSprite 
+        public static Image gameSpritePUpX2; // gameSprite used for 'X2' powerup
+        public static Image gameSpritePUpPointTick; // gameSprite used for 'Point on Tick' powerup
+        public static Image gameSpritePUpSlowmotion; // gameSprite used for 'Slowmotion' powerup
+        public static Image gameSpritePUpNoclip; // gameSprite used for 'Noclip' powerup
 
         public gameInterface()
         {
@@ -38,7 +38,7 @@ namespace Snake_Game
             gamecontroller = new gameController();
             gamecontroller.writeSettingsXML(); // Rewrite the settings .xml
             gamecontroller.writeControlsXML(); // Rewrite the controls .xml
-            InitAllSprites();
+            gamecontroller.SaveLoadAllSprites();
 
             // Set game speed and start timer
             gamecontroller.SetTimerInterval(gameTimer, gameSettings.Speed, true);
@@ -57,54 +57,6 @@ namespace Snake_Game
             gamecontroller.StartGame();
             gamecontroller.SetHighScore(labelHighscoreValue);
             gamecontroller.GenerateFood();
-        }
-
-        private void InitAllSprites()
-        {
-            if (!File.Exists(Properties.Settings.Default.gameSpritePath))
-            {
-                gamecontroller.SaveGameSprites(gameConstants.gameSprites);
-            }
-            else
-            {
-                gamecontroller.LoadGameSprites(gameConstants.gameSprites);
-            }
-
-            if (!File.Exists(Properties.Settings.Default.gameSpritePUpX2Path))
-            {
-                gamecontroller.SaveGameSprites(gameConstants.gameSpritesPUpX2);
-            }
-            else
-            {
-                gamecontroller.LoadGameSprites(gameConstants.gameSpritesPUpX2);
-            }
-
-            if (!File.Exists(Properties.Settings.Default.gameSpritePUpPointTickPath))
-            {
-                gamecontroller.SaveGameSprites(gameConstants.gameSpritesPUpPointTick);
-            }
-            else
-            {
-                gamecontroller.LoadGameSprites(gameConstants.gameSpritesPUpPointTick);
-            }
-
-            if (!File.Exists(Properties.Settings.Default.gameSpritePUpSlowmotionPath))
-            {
-                gamecontroller.SaveGameSprites(gameConstants.gameSpritesPUpSlowmotion);
-            }
-            else
-            {
-                gamecontroller.LoadGameSprites(gameConstants.gameSpritesPUpSlowmotion);
-            }
-
-            if (!File.Exists(Properties.Settings.Default.gameSpritePUpNoclipPath))
-            {
-                gamecontroller.SaveGameSprites(gameConstants.gameSpritesPUpNoclip);
-            }
-            else
-            {
-                gamecontroller.LoadGameSprites(gameConstants.gameSpritesPUpNoclip);
-            }
         }
 
         private void UpdateScreen(object sender, EventArgs e)

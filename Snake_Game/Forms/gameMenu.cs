@@ -196,13 +196,18 @@ namespace Snake_Game
 
                 gamecontroller.writeSettingsXML();
             }
-            else if(tabControlMenu.SelectedTab == tabPagePowerups)
+            else if (tabControlMenu.SelectedTab == tabPagePowerups)
             {
                 gameSettings.initPowerupSpawnGap(true);
                 gameSettings.initAllPowerupDuration();
                 gameSettings.GameOver = true;
 
                 gamecontroller.writeSettingsXML();
+            }
+            else if (tabControlMenu.SelectedTab == tabPageSavefiles)
+            {
+                gameSettings.initGameSprites();
+                gamecontroller.SaveAllGameSprites();
             }
 
             setMenuValues();
