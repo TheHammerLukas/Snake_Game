@@ -25,4 +25,4 @@ Implement new Labyrinth Gamemode // Brainstorm
 
 Add colored sprites for powerups
 Todo: Add functions for button press
-      Add Resources and Settings for the new sprites
+      Add Resources for the new sprites

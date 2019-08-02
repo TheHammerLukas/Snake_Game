@@ -356,10 +356,31 @@ namespace Snake_Game
             );
         }
 
-        private void DetermineSnakeSprite(int i, out int spriteLocX, out int spriteLocY)
+        private void DetermineSnakeSprite(int i, out Image spriteImage, out int spriteLocX, out int spriteLocY)
         {
+            spriteImage = gameSprite;
             spriteLocX = 1;
             spriteLocY = 3;
+
+            // Determine which sprite file to use if any powerups are active
+            if (gameSettings.GamePowerupActive)
+            {
+                switch (gameSettings.GamePowerup)
+                {
+                    case gamePowerup.X2:
+                        spriteImage = gameSpritePUpX2;
+                        break;
+                    case gamePowerup.PointOnTick:
+                        spriteImage = gameSpritePUpPointTick;
+                        break;
+                    case gamePowerup.Slowmotion:
+                        spriteImage = gameSpritePUpSlowmotion;
+                        break;
+                    case gamePowerup.Noclip:
+                        spriteImage = gameSpritePUpNoclip;
+                        break;
+                }
+            }
 
             if (i == 0) // Head
             {
@@ -558,17 +579,38 @@ namespace Snake_Game
             }
         }
 
-        private void DetermineFoodSprite(out int spriteLocX, out int spriteLocY)
+        private void DetermineFoodSprite(out Image spriteImage, out int spriteLocX, out int spriteLocY)
         {
+            spriteImage = gameSprite;
+
+            if (gameSettings.FoodPowerup != gamePowerup.None)
+            {
+                switch (gameSettings.FoodPowerup)
+                {
+                    case gamePowerup.X2:
+                        spriteImage = gameSpritePUpX2;
+                        break;
+                    case gamePowerup.PointOnTick:
+                        spriteImage = gameSpritePUpPointTick;
+                        break;
+                    case gamePowerup.Slowmotion:
+                        spriteImage = gameSpritePUpSlowmotion;
+                        break;
+                    case gamePowerup.Noclip:
+                        spriteImage = gameSpritePUpNoclip;
+                        break;
+                }
+            }
+
             spriteLocX = 0;
             spriteLocY = 3;
         }
 
-        private void DrawSnakeSprite(int i, ref Graphics Canvas, int spriteLocX, int spriteLocY)
+        private void DrawSnakeSprite(int i, ref Graphics Canvas, Image spriteImage, int spriteLocX, int spriteLocY)
         {
             Canvas.DrawImage
             (
-                gameSprite,
+                spriteImage,
                 new Rectangle
                 (
                     gameObject.Snake[i].X * gameSettings.Width,
@@ -584,11 +626,11 @@ namespace Snake_Game
             );
         }
 
-        private void DrawFoodSprite(ref Graphics Canvas, int spriteLocX, int spriteLocY)
+        private void DrawFoodSprite(ref Graphics Canvas, Image spriteImage, int spriteLocX, int spriteLocY)
         {
             Canvas.DrawImage
             (
-                gameSprite,
+                spriteImage,
                 new Rectangle
                 (
                     gameObject.Food.X * gameSettings.Width,
@@ -624,13 +666,14 @@ namespace Snake_Game
                     }
                     else if (gameSettings.DrawingMode == gameConstants.gameDrawingMode.drawingModeSprite)
                     {
+                        Image _spriteImage;
                         int _spriteLocX;
                         int _spriteLocY;
-
-                        DetermineSnakeSprite(i, out _spriteLocX, out _spriteLocY);
-                        DrawSnakeSprite(i, ref Canvas, _spriteLocX, _spriteLocY);
-                        DetermineFoodSprite(out _spriteLocX, out _spriteLocY);
-                        DrawFoodSprite(ref Canvas, _spriteLocX, _spriteLocY);
+                        
+                        DetermineSnakeSprite(i, out _spriteImage, out _spriteLocX, out _spriteLocY);
+                        DrawSnakeSprite(i, ref Canvas, _spriteImage, _spriteLocX, _spriteLocY);
+                        DetermineFoodSprite(out _spriteImage, out _spriteLocX, out _spriteLocY);
+                        DrawFoodSprite(ref Canvas, _spriteImage, _spriteLocX, _spriteLocY);
                     }
                 }
                 gamecontroller.GrowSnake();

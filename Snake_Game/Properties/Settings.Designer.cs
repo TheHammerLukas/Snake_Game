@@ -12,7 +12,7 @@ namespace Snake_Game.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.2.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "14.0.0.0")]
     public sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -68,6 +68,54 @@ namespace Snake_Game.Properties {
             }
             set {
                 this["gameSpritePath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files\\Snake_Game\\gameSpritePUpX2.png")]
+        public string gameSpritePUpX2Path {
+            get {
+                return ((string)(this["gameSpritePUpX2Path"]));
+            }
+            set {
+                this["gameSpritePUpX2Path"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files\\Snake_Game\\gameSpritePUpPointTick.png")]
+        public string gameSpritePUpPointTickPath {
+            get {
+                return ((string)(this["gameSpritePUpPointTickPath"]));
+            }
+            set {
+                this["gameSpritePUpPointTickPath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files\\Snake_Game\\gameSpritePUpSlowmotion.png")]
+        public string gameSpritePUpSlowmotionPath {
+            get {
+                return ((string)(this["gameSpritePUpSlowmotionPath"]));
+            }
+            set {
+                this["gameSpritePUpSlowmotionPath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files\\Snake_Game\\gameSpritePUpNoclip.png")]
+        public string gameSpritePUpNoclipPath {
+            get {
+                return ((string)(this["gameSpritePUpNoclipPath"]));
+            }
+            set {
+                this["gameSpritePUpNoclipPath"] = value;
             }
         }
     }
