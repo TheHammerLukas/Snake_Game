@@ -12,14 +12,6 @@ namespace Snake_Game
         {
             InitializeComponent();
 
-            CustomWinformsControls.GraphicsTooltip tooltip = new CustomWinformsControls.GraphicsTooltip(Image.FromFile(Properties.Settings.Default.gameSpritePath));
-
-            tooltip.SetToolTip(labelSavefilesSpritesPath, " ");
-            tooltip.SetToolTip(labelSavefilesSpritesX2Path, " ");
-            tooltip.SetToolTip(labelSavefilesSpritesPointTickPath, " ");
-            tooltip.SetToolTip(labelSavefilesSpritesSlowmotionPath, " ");
-            tooltip.SetToolTip(labelSavefilesSpritesNoclipPath, " ");
-
             setMenuValues();
         }
 
@@ -174,6 +166,12 @@ namespace Snake_Game
             labelControlsXmlPath.Text = Properties.Settings.Default.controlsXmlPath;
             labelSettingsXmlPath.Text = Properties.Settings.Default.settingsXmlPath;
             labelScoreXmlPath.Text = Properties.Settings.Default.scoreXmlPath;
+
+            new CustomWinformsControls.GraphicsTooltip(Image.FromFile(Properties.Settings.Default.gameSpritePath)).SetToolTip(labelSavefilesSpritesPath, " ");
+            new CustomWinformsControls.GraphicsTooltip(Image.FromFile(Properties.Settings.Default.gameSpritePUpX2Path)).SetToolTip(labelSavefilesSpritesX2Path, " ");
+            new CustomWinformsControls.GraphicsTooltip(Image.FromFile(Properties.Settings.Default.gameSpritePUpPointTickPath)).SetToolTip(labelSavefilesSpritesPointTickPath, " ");
+            new CustomWinformsControls.GraphicsTooltip(Image.FromFile(Properties.Settings.Default.gameSpritePUpSlowmotionPath)).SetToolTip(labelSavefilesSpritesSlowmotionPath, " ");
+            new CustomWinformsControls.GraphicsTooltip(Image.FromFile(Properties.Settings.Default.gameSpritePUpNoclipPath)).SetToolTip(labelSavefilesSpritesNoclipPath, " ");
             labelSavefilesSpritesPath.Text = Properties.Settings.Default.gameSpritePath;
             labelSavefilesSpritesPath.Tag = Image.FromFile(Properties.Settings.Default.gameSpritePath);
             labelSavefilesSpritesX2Path.Text = Properties.Settings.Default.gameSpritePUpX2Path;
