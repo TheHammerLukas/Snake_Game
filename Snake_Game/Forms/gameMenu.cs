@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CustomWinformsControls;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -167,11 +168,11 @@ namespace Snake_Game
             labelSettingsXmlPath.Text = Properties.Settings.Default.settingsXmlPath;
             labelScoreXmlPath.Text = Properties.Settings.Default.scoreXmlPath;
 
-            new CustomWinformsControls.GraphicsTooltip(Image.FromFile(Properties.Settings.Default.gameSpritePath)).SetToolTip(labelSavefilesSpritesPath, " ");
-            new CustomWinformsControls.GraphicsTooltip(Image.FromFile(Properties.Settings.Default.gameSpritePUpX2Path)).SetToolTip(labelSavefilesSpritesX2Path, " ");
-            new CustomWinformsControls.GraphicsTooltip(Image.FromFile(Properties.Settings.Default.gameSpritePUpPointTickPath)).SetToolTip(labelSavefilesSpritesPointTickPath, " ");
-            new CustomWinformsControls.GraphicsTooltip(Image.FromFile(Properties.Settings.Default.gameSpritePUpSlowmotionPath)).SetToolTip(labelSavefilesSpritesSlowmotionPath, " ");
-            new CustomWinformsControls.GraphicsTooltip(Image.FromFile(Properties.Settings.Default.gameSpritePUpNoclipPath)).SetToolTip(labelSavefilesSpritesNoclipPath, " ");
+            new GraphicsTooltip(Image.FromFile(Properties.Settings.Default.gameSpritePath)).SetToolTip(labelSavefilesSpritesPath, " ");
+            new GraphicsTooltip(Image.FromFile(Properties.Settings.Default.gameSpritePUpX2Path)).SetToolTip(labelSavefilesSpritesX2Path, " ");
+            new GraphicsTooltip(Image.FromFile(Properties.Settings.Default.gameSpritePUpPointTickPath)).SetToolTip(labelSavefilesSpritesPointTickPath, " ");
+            new GraphicsTooltip(Image.FromFile(Properties.Settings.Default.gameSpritePUpSlowmotionPath)).SetToolTip(labelSavefilesSpritesSlowmotionPath, " ");
+            new GraphicsTooltip(Image.FromFile(Properties.Settings.Default.gameSpritePUpNoclipPath)).SetToolTip(labelSavefilesSpritesNoclipPath, " ");
             labelSavefilesSpritesPath.Text = Properties.Settings.Default.gameSpritePath;
             labelSavefilesSpritesPath.Tag = Image.FromFile(Properties.Settings.Default.gameSpritePath);
             labelSavefilesSpritesX2Path.Text = Properties.Settings.Default.gameSpritePUpX2Path;
