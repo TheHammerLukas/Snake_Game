@@ -12,7 +12,7 @@ namespace Snake_Game
         {
             InitializeComponent();
 
-            CustomWinformsControls.GraphicsTooltip tooltip = new CustomWinformsControls.GraphicsTooltip(320, 256);
+            CustomWinformsControls.GraphicsTooltip tooltip = new CustomWinformsControls.GraphicsTooltip(Image.FromFile(Properties.Settings.Default.gameSpritePath));
 
             tooltip.SetToolTip(labelSavefilesSpritesPath, " ");
             tooltip.SetToolTip(labelSavefilesSpritesX2Path, " ");
