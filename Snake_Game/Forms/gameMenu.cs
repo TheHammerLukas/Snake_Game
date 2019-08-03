@@ -101,7 +101,7 @@ namespace Snake_Game
         private void setMenuValues()
         {
             gameController gamecontroller = new gameController();
-
+            
             // Settings tab
             textBoxWidth.Text = Convert.ToString(gameSettings.Width);
             textBoxHeight.Text = Convert.ToString(gameSettings.Height);

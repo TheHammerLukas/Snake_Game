@@ -37,6 +37,8 @@ namespace Snake_Game
             gamecontroller = new gameController();
             gamecontroller.writeSettingsXML(); // Rewrite the settings .xml
             gamecontroller.writeControlsXML(); // Rewrite the controls .xml
+
+            gameSettings.initGameSprites();
             gamecontroller.SaveLoadAllSprites();
 
             // Set game speed and start timer
