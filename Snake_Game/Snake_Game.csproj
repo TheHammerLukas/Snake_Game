@@ -121,6 +121,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Libraries\CustomWinformsControls.dll" />
     <Content Include="Resources\gameSoundPUpDeactivate02.wav" />
     <Content Include="Resources\gameSoundPUpX2.wav" />
     <Content Include="Resources\gameSoundPUpSlowmotion.wav" />
