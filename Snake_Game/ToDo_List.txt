@@ -17,7 +17,4 @@ Add Powerup synergy
 Implement reset functionality for gameSprites in 'Savefiles' gameMenu tab // BUG: Resource is usually locked except when Garbage Collector has run
 
 
-Implement when hovering over the path label in gameMenu the sprite picture should be shown
-
-
 Implement new Labyrinth Gamemode // Brainstorm

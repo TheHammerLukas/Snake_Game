@@ -11,6 +11,15 @@ namespace Snake_Game
         public gameMenu()
         {
             InitializeComponent();
+
+            CustomWinformsControls.GraphicsTooltip tooltip = new CustomWinformsControls.GraphicsTooltip(320, 256);
+
+            tooltip.SetToolTip(labelSavefilesSpritesPath, " ");
+            tooltip.SetToolTip(labelSavefilesSpritesX2Path, " ");
+            tooltip.SetToolTip(labelSavefilesSpritesPointTickPath, " ");
+            tooltip.SetToolTip(labelSavefilesSpritesSlowmotionPath, " ");
+            tooltip.SetToolTip(labelSavefilesSpritesNoclipPath, " ");
+
             setMenuValues();
         }
 
@@ -166,10 +175,15 @@ namespace Snake_Game
             labelSettingsXmlPath.Text = Properties.Settings.Default.settingsXmlPath;
             labelScoreXmlPath.Text = Properties.Settings.Default.scoreXmlPath;
             labelSavefilesSpritesPath.Text = Properties.Settings.Default.gameSpritePath;
+            labelSavefilesSpritesPath.Tag = Image.FromFile(Properties.Settings.Default.gameSpritePath);
             labelSavefilesSpritesX2Path.Text = Properties.Settings.Default.gameSpritePUpX2Path;
+            labelSavefilesSpritesX2Path.Tag = Image.FromFile(Properties.Settings.Default.gameSpritePUpX2Path);
             labelSavefilesSpritesPointTickPath.Text = Properties.Settings.Default.gameSpritePUpPointTickPath;
+            labelSavefilesSpritesPointTickPath.Tag = Image.FromFile(Properties.Settings.Default.gameSpritePUpPointTickPath);
             labelSavefilesSpritesSlowmotionPath.Text = Properties.Settings.Default.gameSpritePUpSlowmotionPath;
+            labelSavefilesSpritesSlowmotionPath.Tag = Image.FromFile(Properties.Settings.Default.gameSpritePUpSlowmotionPath);
             labelSavefilesSpritesNoclipPath.Text = Properties.Settings.Default.gameSpritePUpNoclipPath;
+            labelSavefilesSpritesNoclipPath.Tag = Image.FromFile(Properties.Settings.Default.gameSpritePUpNoclipPath);
         }
 
         // Reset the 'Settings' to their standard values
