@@ -311,7 +311,7 @@ namespace Snake_Game
             }
         }
 
-        // Gets passed in the gameConstants.gameSound that should be played and plays the corresponding sound resource
+        // Gets passed in the gameSound that should be played and plays the corresponding sound resource
         public void PlayGameSound(gameConstants.gameSound sound)
         {
             SoundPlayer audio = new SoundPlayer();
@@ -1493,7 +1493,7 @@ namespace Snake_Game
             labelHighScoreValue.Text = gameSettings.HighScore.ToString();
         }
 
-        // To set the powerup controls
+        // Sets the values for the powerup controls
         public void SetPowerup(Label labelCurrentPowerupValue, Label labelSavedPowerupValue, Label labelPowerupTimerValue, long currentTime, long lastChangeTime)
         {
             string _CurrentPowerup = "None";
