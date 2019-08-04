@@ -15,7 +15,7 @@
         // Settings constants
         public const int standardWidth = 20;
         public const int standardHeight = 20;
-        public const int standardSpeed = 8;
+        public const int standardSpeed = 7;
         public const int standardScore = 0;  
         public const int standardGrowMultiplicator = 5;
         public const int standardPoints = 100;
