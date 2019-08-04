@@ -53,8 +53,9 @@
     <StartupObject>Snake_Game.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CustomWinformsControls">
-      <HintPath>..\..\CustomWinformsControls\CustomWinformsControls\bin\Debug\CustomWinformsControls.dll</HintPath>
+    <Reference Include="CustomWinformsControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\CustomWinformsControls.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
