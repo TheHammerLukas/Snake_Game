@@ -63,6 +63,7 @@ namespace Snake_Game
         {
             currentTickDir = gameSettings.directionHead;
             FormCollection _openForms = Application.OpenForms;
+            bool _menuOpenOnLastCheck = gameSettings.MenuIsOpen; // To check if the game has to be unpause because the menu isn't open anymore
 
             // Pause the game if the menu form is open
             gameSettings.MenuIsOpen = false;
@@ -72,12 +73,17 @@ namespace Snake_Game
                 if (form.Name == "gameMenu")
                 {
                     gameSettings.MenuIsOpen = true;
+                    break;
                 }
             }
-
+            
             if (gameSettings.MenuIsOpen)
             {
                 gameSettings.GamePaused = true;
+            }
+            else if (_menuOpenOnLastCheck)
+            {
+                gameSettings.GamePaused = false;
             }
 
             // Check for game over & if the configured restart key is pressed
