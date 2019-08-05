@@ -53,7 +53,6 @@ namespace Snake_Game
             gameController.maxPosX = gamecontroller.GetMaxPosX(pictureBox);
             gameController.maxPosY = gamecontroller.GetMaxPosY(pictureBox);
             gamecontroller.SetScore(labelScoreValue);
-            gamecontroller.SetGameOverFalse(labelGameStatus);
             gamecontroller.SetPowerup(labelCurrentPowerupValue, labelSavedPowerupValue, labelPowerupTimerValue, currentTime, 0);
             gamecontroller.StartGame();
             gamecontroller.SetHighScore(labelHighscoreValue);
@@ -648,6 +647,33 @@ namespace Snake_Game
             );
         }
 
+        private void DrawGameStatus(ref Graphics Canvas)
+        {
+            string _gameStatusText = " ";
+
+            if (!gameSettings.GameOver)
+            {
+                // Show game paused message
+                if (gameSettings.GamePaused)
+                {
+                    _gameStatusText = "Game paused!\nPress '" + gameControls.modPauseKey + "' to continue";
+                }
+            }
+            else // Show game over message
+            {
+                _gameStatusText = "Game Over!\nYour score is: " + gameSettings.Score + "\nPress '" + gameControls.modRestartKey + "' to try again";
+            }
+
+            if (_gameStatusText != " " || _gameStatusText != "")
+            {
+                StringFormat _stringFormat = new StringFormat();
+                _stringFormat.Alignment = StringAlignment.Center;
+
+                // Draw the string with the specified _stringFormat
+                Canvas.DrawString(_gameStatusText, new Font("Microsoft Sans Serif", 20), Brushes.Black, 300, 200, _stringFormat);
+            }
+        }
+
         private void pictureBox_Paint(object sender, PaintEventArgs e)
         {
             int cnt = 0;
@@ -679,25 +705,10 @@ namespace Snake_Game
                     }
                 }
                 gamecontroller.GrowSnake();
-
-                // Show game paused message
-                if (gameSettings.GamePaused)
-                {
-                    string _gamePausedText = "Game paused!\nPress '" + gameControls.modPauseKey + "' to continue";
-                    labelGameStatus.Text = _gamePausedText;
-                    labelGameStatus.Visible = true;
-                }
-                else
-                {
-                    labelGameStatus.Visible = false;
-                }
             }
-            else // Show game over message
-            {
-                string _gameOverText = "Game Over!\nYour score is: " + gameSettings.Score + "\nPress '" + gameControls.modRestartKey + "' to try again";
-                labelGameStatus.Text = _gameOverText;
-                labelGameStatus.Visible = true;
-            }
+            
+            // Draw the game status over the actual game graphics
+            DrawGameStatus(ref Canvas);
         }
 
         // To toggle the bot modifier
@@ -858,7 +869,6 @@ namespace Snake_Game
                     gamecontroller.SetTimerInterval(gameTimer, gameSettings.Speed, true);
                     gameController.maxPosX = gamecontroller.GetMaxPosX(pictureBox);
                     gameController.maxPosY = gamecontroller.GetMaxPosY(pictureBox);
-                    gamecontroller.SetGameOverFalse(labelGameStatus);
                     gamecontroller.StartGame();
                     gamecontroller.SetHighScore(labelHighscoreValue);
                     gamecontroller.GenerateFood();

@@ -37,7 +37,6 @@
             this.labelScoreValue = new System.Windows.Forms.Label();
             this.labelHighscoreValue = new System.Windows.Forms.Label();
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
-            this.labelGameStatus = new System.Windows.Forms.Label();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.widthToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.widthToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
@@ -130,18 +129,6 @@
             this.labelHighscoreValue.Size = new System.Drawing.Size(192, 25);
             this.labelHighscoreValue.TabIndex = 3;
             this.labelHighscoreValue.Text = "labelHighscoreValue";
-            // 
-            // labelGameStatus
-            // 
-            this.labelGameStatus.AutoSize = true;
-            this.labelGameStatus.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.labelGameStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGameStatus.Location = new System.Drawing.Point(204, 232);
-            this.labelGameStatus.Name = "labelGameStatus";
-            this.labelGameStatus.Size = new System.Drawing.Size(222, 31);
-            this.labelGameStatus.TabIndex = 5;
-            this.labelGameStatus.Text = "labelGameStatus";
-            this.labelGameStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // settingsToolStripMenuItem
             // 
@@ -347,7 +334,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(624, 691);
             this.Controls.Add(this.groupBoxPowerup);
-            this.Controls.Add(this.labelGameStatus);
             this.Controls.Add(this.labelHighscoreValue);
             this.Controls.Add(this.labelScoreValue);
             this.Controls.Add(this.labelHighscore);
@@ -381,7 +367,6 @@
         private System.Windows.Forms.Label labelHighscoreValue;
         private System.Windows.Forms.Label labelScoreValue;
         private System.Windows.Forms.Timer gameTimer;
-        private System.Windows.Forms.Label labelGameStatus;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem widthToolStripMenuItem;
         private System.Windows.Forms.ToolStripTextBox widthToolStripTextBox;

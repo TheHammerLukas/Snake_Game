@@ -1478,11 +1478,6 @@ namespace Snake_Game
 
         #region Functions called by gameInterface
 
-        public void SetGameOverFalse(Label labelGameOver)
-        {
-            labelGameOver.Visible = false;
-        }
-
         public void SetScore( Label labelScoreValue)
         {
             labelScoreValue.Text = gameSettings.Score.ToString();
