@@ -20,6 +20,12 @@ namespace Snake_Game
         private long lastPUpPointTickChangeTime = 0; // Powerup: To keep track of Point Tick duration
         private long lastPUpSlowmoChangeTime = 0; // Powerup: To keep track of Slowmo duration
         private long lastPUpNoclipChangeTime = 0; // Powerup: To keep track of Noclip duration
+        private long lastPUpX2PointTickChangeTime = 0;
+        private long lastPUpX2SlowmoChangeTime = 0;
+        private long lastPUpX2NoclipChangeTime = 0;
+        private long lastPUpPointTickSlowmoChangeTime = 0;
+        private long lastPUpPointTickNoclipChangeTime = 0;
+        private long lastPUpSlowmoNoclipChangeTime = 0;
         private long currentTime = 0; // Current time; 1000 = 1 second 
         private gameDirection currentTickDir; // The direction the snake is heading at in the current game tick
         public static Image gameSprite; // Normal gameSprite 
@@ -165,6 +171,111 @@ namespace Snake_Game
                     gameSettings.GamePowerup = gamePowerup.None;
                     gameSettings.GamePowerupActive = false;
                     gamecontroller.PlayGameSound(gameConstants.gameSound.PUpNoclipDeactivate);
+                }
+            }
+            if (Powerup == gamePowerup.X2PointOnTick)
+            {
+                if (lastPUpX2PointTickChangeTime >= currentTime - gameSettings.PowerupDurationPointTick)
+                {
+                    gameSettings.Score = gameSettings.Score + 50;
+                    _lastChangeTime = lastPUpX2PointTickChangeTime;
+                }
+                else
+                {
+                    gameSettings.GamePowerup = gamePowerup.None;
+                    gameSettings.GamePowerupActive = false;
+                    // gamecontroller.PlayGameSound(gameConstants.gameSound.);
+                }
+            }
+            if (Powerup == gamePowerup.X2Slowmotion)
+            {
+                if (lastPUpX2SlowmoChangeTime >= currentTime - gameSettings.PowerupDurationSlowmo)
+                {
+                    if (!gameSettings.GamePowerupActive)
+                    {
+                        // Slow down the gameTimer
+                        new gameController().SetTimerInterval(gameTimer, gameSettings.Speed / 3, true);
+                        gameSettings.GamePowerupActive = true;
+                    }
+                    _lastChangeTime = lastPUpX2SlowmoChangeTime;
+                }
+                else
+                {
+                    // Reset the gameTimer interval to the originally determined speed 
+                    new gameController().SetTimerInterval(gameTimer, gameSettings.Speed, true);
+                    gameSettings.GamePowerup = gamePowerup.None;
+                    gameSettings.GamePowerupActive = false;
+                    // gamecontroller.PlayGameSound(gameConstants.gameSound.);
+                }
+            }
+            if (Powerup == gamePowerup.X2Noclip)
+            {
+                if (lastPUpX2NoclipChangeTime >= currentTime - gameSettings.PowerupDurationX2)
+                {
+                    _lastChangeTime = lastPUpX2NoclipChangeTime;
+                }
+                else
+                {
+                    gameSettings.GamePowerup = gamePowerup.None;
+                    gameSettings.GamePowerupActive = false;
+                    // gamecontroller.PlayGameSound(gameConstants.gameSound.);
+                }
+            }
+            if (Powerup == gamePowerup.PointOnTickSlowmotion)
+            {
+                if (lastPUpPointTickSlowmoChangeTime >= currentTime - gameSettings.PowerupDurationSlowmo)
+                {
+                    gameSettings.Score = gameSettings.Score + 50;
+                    if (!gameSettings.GamePowerupActive)
+                    {
+                        // Slow down the gameTimer
+                        new gameController().SetTimerInterval(gameTimer, gameSettings.Speed / 3, true);
+                        gameSettings.GamePowerupActive = true;
+                    }
+                    _lastChangeTime = lastPUpPointTickSlowmoChangeTime;
+                }
+                else
+                {
+                    // Reset the gameTimer interval to the originally determined speed 
+                    new gameController().SetTimerInterval(gameTimer, gameSettings.Speed, true);
+                    gameSettings.GamePowerup = gamePowerup.None;
+                    gameSettings.GamePowerupActive = false;
+                    // gamecontroller.PlayGameSound(gameConstants.gameSound.);
+                }
+            }
+            if (Powerup == gamePowerup.PointOnTickNoclip)
+            {
+                if (lastPUpPointTickNoclipChangeTime >= currentTime - gameSettings.PowerupDurationPointTick)
+                {
+                    gameSettings.Score = gameSettings.Score + 50;
+                    _lastChangeTime = lastPUpPointTickNoclipChangeTime;
+                }
+                else
+                {
+                    gameSettings.GamePowerup = gamePowerup.None;
+                    gameSettings.GamePowerupActive = false;
+                    // gamecontroller.PlayGameSound(gameConstants.gameSound.);
+                }
+            }
+            if (Powerup == gamePowerup.SlowmotionNoclip)
+            {
+                if (lastPUpSlowmoNoclipChangeTime >= currentTime - gameSettings.PowerupDurationSlowmo)
+                {
+                    if (!gameSettings.GamePowerupActive)
+                    {
+                        // Slow down the gameTimer
+                        new gameController().SetTimerInterval(gameTimer, gameSettings.Speed / 3, true);
+                        gameSettings.GamePowerupActive = true;
+                    }
+                    _lastChangeTime = lastPUpSlowmoNoclipChangeTime;
+                }
+                else
+                {
+                    // Reset the gameTimer interval to the originally determined speed 
+                    new gameController().SetTimerInterval(gameTimer, gameSettings.Speed, true);
+                    gameSettings.GamePowerup = gamePowerup.None;
+                    gameSettings.GamePowerupActive = false;
+                    // gamecontroller.PlayGameSound(gameConstants.gameSound.);
                 }
             }
             new gameController().SetPowerup(labelCurrentPowerupValue, labelSavedPowerupValue, labelPowerupTimerValue, currentTime, _lastChangeTime);
@@ -766,6 +877,85 @@ namespace Snake_Game
             }
         }
 
+        // To determine the activated powerup
+        private gamePowerup DetermineGamePowerup()
+        {
+            gamePowerup _gamePowerup = gameSettings.SavedPowerup;
+
+            switch (gameSettings.SavedPowerup)
+            {
+                case gamePowerup.X2:
+                    switch (gameSettings.GamePowerup)
+                    {
+                        case gamePowerup.PointOnTick:
+                            _gamePowerup = gamePowerup.X2PointOnTick;
+                            break;
+                        case gamePowerup.Slowmotion:
+                            _gamePowerup = gamePowerup.X2Slowmotion;
+                            break;
+                        case gamePowerup.Noclip:
+                            _gamePowerup = gamePowerup.X2Noclip;
+                            break;
+                        default:
+                            _gamePowerup = gameSettings.SavedPowerup;
+                            break;
+                    }
+                    break;
+                case gamePowerup.PointOnTick:
+                    switch (gameSettings.GamePowerup)
+                    {
+                        case gamePowerup.X2:
+                            _gamePowerup = gamePowerup.X2PointOnTick;
+                            break;
+                        case gamePowerup.Slowmotion:
+                            _gamePowerup = gamePowerup.PointOnTickSlowmotion;
+                            break;
+                        case gamePowerup.Noclip:
+                            _gamePowerup = gamePowerup.PointOnTickNoclip;
+                            break;
+                        default:
+                            _gamePowerup = gameSettings.SavedPowerup;
+                            break;
+                    }
+                    break;
+                case gamePowerup.Slowmotion:
+                    switch (gameSettings.GamePowerup)
+                    {
+                        case gamePowerup.X2:
+                            _gamePowerup = gamePowerup.X2Slowmotion;
+                            break;
+                        case gamePowerup.PointOnTick:
+                            _gamePowerup = gamePowerup.PointOnTickSlowmotion;
+                            break;
+                        case gamePowerup.Noclip:
+                            _gamePowerup = gamePowerup.SlowmotionNoclip;
+                            break;
+                        default:
+                            _gamePowerup = gameSettings.SavedPowerup;
+                            break;
+                    }
+                    break;
+                case gamePowerup.Noclip:
+                    switch (gameSettings.GamePowerup)
+                    {
+                        case gamePowerup.X2:
+                            _gamePowerup = gamePowerup.X2Noclip;
+                            break;
+                        case gamePowerup.PointOnTick:
+                            _gamePowerup = gamePowerup.PointOnTickNoclip;
+                            break;
+                        case gamePowerup.Slowmotion:
+                            _gamePowerup = gamePowerup.SlowmotionNoclip;
+                            break;
+                        default:
+                            _gamePowerup = gameSettings.SavedPowerup;
+                            break;
+                    }
+                    break;
+            }
+            return _gamePowerup;
+        }
+
         private void gameInterface_KeyDown(object sender, KeyEventArgs e)
         {
             if (!gameSettings.GameOver)
@@ -848,43 +1038,73 @@ namespace Snake_Game
                 }
                 else if (e.KeyCode == gameControls.modPowerupKey && !gameSettings.MenuIsOpen)
                 {
-                    if (gameSettings.SavedPowerup != gamePowerup.None && !gameSettings.GamePowerupActive)
+                    if (gameSettings.SavedPowerup != gamePowerup.None)
                     {
-                        gameSettings.GamePowerup = gameSettings.SavedPowerup;
+                        gameSettings.GamePowerup = DetermineGamePowerup();
                         gameSettings.SavedPowerup = gamePowerup.None;
+
+                        lastPUpX2ChangeTime = 0;
+                        lastPUpPointTickChangeTime = 0;
+                        lastPUpSlowmoChangeTime = 0;
+                        lastPUpNoclipChangeTime = 0;
+                        lastPUpX2PointTickChangeTime = 0;
+                        lastPUpX2SlowmoChangeTime = 0;
+                        lastPUpX2NoclipChangeTime = 0;
+                        lastPUpPointTickSlowmoChangeTime = 0;
+                        lastPUpPointTickNoclipChangeTime = 0;
+                        lastPUpSlowmoNoclipChangeTime = 0;
 
                         switch (gameSettings.GamePowerup)
                         {
                             case gamePowerup.X2:
                                 lastPUpX2ChangeTime = currentTime;
-                                lastPUpPointTickChangeTime = 0;
-                                lastPUpSlowmoChangeTime = 0;
-                                lastPUpNoclipChangeTime = 0;
                                 gameSettings.GamePowerupActive = true;
                                 gamecontroller.PlayGameSound(gameConstants.gameSound.PUpX2Activate);
                                 break;
                             case gamePowerup.PointOnTick:
-                                lastPUpX2ChangeTime = 0;
                                 lastPUpPointTickChangeTime = currentTime;
-                                lastPUpSlowmoChangeTime = 0;
-                                lastPUpNoclipChangeTime = 0;
                                 gameSettings.GamePowerupActive = true;
                                 gamecontroller.PlayGameSound(gameConstants.gameSound.PUpPointTickActivate);
                                 break;
                             case gamePowerup.Slowmotion:
-                                lastPUpX2ChangeTime = 0;
-                                lastPUpPointTickChangeTime = 0;
                                 lastPUpSlowmoChangeTime = currentTime;
-                                lastPUpNoclipChangeTime = 0;
+                                gameSettings.GamePowerupActive = true;
                                 gamecontroller.PlayGameSound(gameConstants.gameSound.PUpSlowmoActivate);
                                 break;
                             case gamePowerup.Noclip:
-                                lastPUpX2ChangeTime = 0;
-                                lastPUpPointTickChangeTime = 0;
-                                lastPUpSlowmoChangeTime = 0;
                                 lastPUpNoclipChangeTime = currentTime;
                                 gameSettings.GamePowerupActive = true;
                                 gamecontroller.PlayGameSound(gameConstants.gameSound.PUpNoclipActivate);
+                                break;
+                            case gamePowerup.X2PointOnTick:
+                                lastPUpX2PointTickChangeTime = currentTime;
+                                gameSettings.GamePowerupActive = true;
+                                // gamecontroller.PlayGameSound(gameConstants.gameSound.);
+                                break;
+                            case gamePowerup.X2Slowmotion:
+                                lastPUpX2SlowmoChangeTime = currentTime;
+                                gameSettings.GamePowerupActive = true;
+                                // gamecontroller.PlayGameSound(gameConstants.gameSound.);
+                                break;
+                            case gamePowerup.X2Noclip:
+                                lastPUpX2NoclipChangeTime = currentTime;
+                                gameSettings.GamePowerupActive = true;
+                                // gamecontroller.PlayGameSound(gameConstants.gameSound.);
+                                break;
+                            case gamePowerup.PointOnTickSlowmotion:
+                                lastPUpPointTickSlowmoChangeTime = currentTime;
+                                gameSettings.GamePowerupActive = true;
+                                // gamecontroller.PlayGameSound(gameConstants.gameSound.);
+                                break;
+                            case gamePowerup.PointOnTickNoclip:
+                                lastPUpPointTickNoclipChangeTime = currentTime;
+                                gameSettings.GamePowerupActive = true;
+                                // gamecontroller.PlayGameSound(gameConstants.gameSound.);
+                                break;
+                            case gamePowerup.SlowmotionNoclip:
+                                lastPUpSlowmoNoclipChangeTime = currentTime;
+                                gameSettings.GamePowerupActive = true;
+                                // gamecontroller.PlayGameSound(gameConstants.gameSound.);
                                 break;
                             default:
                                 break;

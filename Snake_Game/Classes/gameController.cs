@@ -185,11 +185,15 @@ namespace Snake_Game
             growCnt = 0;
 
             // Update score
-            if (gameSettings.GamePowerup == gamePowerup.X2 && !gameSettings.GamePowerupActive || gameSettings.GamePowerup != gamePowerup.X2)
+            if ((gameSettings.GamePowerup == gamePowerup.X2 || gameSettings.GamePowerup == gamePowerup.X2PointOnTick || 
+                 gameSettings.GamePowerup == gamePowerup.X2Slowmotion || gameSettings.GamePowerup == gamePowerup.X2Noclip) && 
+                 !gameSettings.GamePowerupActive || gameSettings.GamePowerup != gamePowerup.X2)
             {
                 gameSettings.Score += gameSettings.Points;
             }
-            else if (gameSettings.GamePowerup == gamePowerup.X2 && gameSettings.GamePowerupActive)
+            else if ((gameSettings.GamePowerup == gamePowerup.X2 || gameSettings.GamePowerup == gamePowerup.X2PointOnTick ||
+                      gameSettings.GamePowerup == gamePowerup.X2Slowmotion || gameSettings.GamePowerup == gamePowerup.X2Noclip) && 
+                      gameSettings.GamePowerupActive)
             {
                 gameSettings.Score += gameSettings.Points * 2;
             }
@@ -276,7 +280,9 @@ namespace Snake_Game
         // Kill the player
         private void Die()
         {
-            if (gameSettings.GamePowerup == gamePowerup.Noclip && gameSettings.GamePowerupActive || gameSettings.NoClipEnabled)
+            if ((gameSettings.GamePowerup == gamePowerup.Noclip || gameSettings.GamePowerup == gamePowerup.X2Noclip ||
+                 gameSettings.GamePowerup == gamePowerup.PointOnTickNoclip || gameSettings.GamePowerup == gamePowerup.SlowmotionNoclip) && 
+                 gameSettings.GamePowerupActive || gameSettings.NoClipEnabled)
             {
                 // Don't die because of noclip but play noclip sound
                 PlayGameSound(gameConstants.gameSound.SnakeNoClip);
