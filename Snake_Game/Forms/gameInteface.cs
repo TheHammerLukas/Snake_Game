@@ -116,6 +116,7 @@ namespace Snake_Game
             {
                 if (lastPUpX2ChangeTime >= currentTime - gameSettings.PowerupDurationX2)
                 {
+                    gameSettings.GamePowerupActive = true;
                     _lastChangeTime = lastPUpX2ChangeTime;
                 }
                 else
@@ -130,6 +131,7 @@ namespace Snake_Game
                 if (lastPUpPointTickChangeTime >= currentTime - gameSettings.PowerupDurationPointTick)
                 {
                     gameSettings.Score = gameSettings.Score + 50;
+                    gameSettings.GamePowerupActive = true;
                     _lastChangeTime = lastPUpPointTickChangeTime;
                 }
                 else
@@ -164,6 +166,7 @@ namespace Snake_Game
             {
                 if (lastPUpNoclipChangeTime >= currentTime - gameSettings.PowerupDurationNoclip)
                 {
+                    gameSettings.GamePowerupActive = true;
                     _lastChangeTime = lastPUpNoclipChangeTime;
                 }
                 else
@@ -178,6 +181,7 @@ namespace Snake_Game
                 if (lastPUpX2PointTickChangeTime >= currentTime - gameSettings.PowerupDurationPointTick)
                 {
                     gameSettings.Score = gameSettings.Score + 50;
+                    gameSettings.GamePowerupActive = true;
                     _lastChangeTime = lastPUpX2PointTickChangeTime;
                 }
                 else
@@ -212,6 +216,7 @@ namespace Snake_Game
             {
                 if (lastPUpX2NoclipChangeTime >= currentTime - gameSettings.PowerupDurationX2)
                 {
+                    gameSettings.GamePowerupActive = true;
                     _lastChangeTime = lastPUpX2NoclipChangeTime;
                 }
                 else
@@ -248,6 +253,7 @@ namespace Snake_Game
                 if (lastPUpPointTickNoclipChangeTime >= currentTime - gameSettings.PowerupDurationPointTick)
                 {
                     gameSettings.Score = gameSettings.Score + 50;
+                    gameSettings.GamePowerupActive = true;
                     _lastChangeTime = lastPUpPointTickNoclipChangeTime;
                 }
                 else
@@ -1058,52 +1064,42 @@ namespace Snake_Game
                         {
                             case gamePowerup.X2:
                                 lastPUpX2ChangeTime = currentTime;
-                                gameSettings.GamePowerupActive = true;
                                 gamecontroller.PlayGameSound(gameConstants.gameSound.PUpX2Activate);
                                 break;
                             case gamePowerup.PointOnTick:
                                 lastPUpPointTickChangeTime = currentTime;
-                                gameSettings.GamePowerupActive = true;
                                 gamecontroller.PlayGameSound(gameConstants.gameSound.PUpPointTickActivate);
                                 break;
                             case gamePowerup.Slowmotion:
                                 lastPUpSlowmoChangeTime = currentTime;
-                                gameSettings.GamePowerupActive = true;
                                 gamecontroller.PlayGameSound(gameConstants.gameSound.PUpSlowmoActivate);
                                 break;
                             case gamePowerup.Noclip:
                                 lastPUpNoclipChangeTime = currentTime;
-                                gameSettings.GamePowerupActive = true;
                                 gamecontroller.PlayGameSound(gameConstants.gameSound.PUpNoclipActivate);
                                 break;
                             case gamePowerup.X2PointOnTick:
                                 lastPUpX2PointTickChangeTime = currentTime;
-                                gameSettings.GamePowerupActive = true;
                                 // gamecontroller.PlayGameSound(gameConstants.gameSound.);
                                 break;
                             case gamePowerup.X2Slowmotion:
                                 lastPUpX2SlowmoChangeTime = currentTime;
-                                gameSettings.GamePowerupActive = true;
                                 // gamecontroller.PlayGameSound(gameConstants.gameSound.);
                                 break;
                             case gamePowerup.X2Noclip:
                                 lastPUpX2NoclipChangeTime = currentTime;
-                                gameSettings.GamePowerupActive = true;
                                 // gamecontroller.PlayGameSound(gameConstants.gameSound.);
                                 break;
                             case gamePowerup.PointOnTickSlowmotion:
                                 lastPUpPointTickSlowmoChangeTime = currentTime;
-                                gameSettings.GamePowerupActive = true;
                                 // gamecontroller.PlayGameSound(gameConstants.gameSound.);
                                 break;
                             case gamePowerup.PointOnTickNoclip:
                                 lastPUpPointTickNoclipChangeTime = currentTime;
-                                gameSettings.GamePowerupActive = true;
                                 // gamecontroller.PlayGameSound(gameConstants.gameSound.);
                                 break;
                             case gamePowerup.SlowmotionNoclip:
                                 lastPUpSlowmoNoclipChangeTime = currentTime;
-                                gameSettings.GamePowerupActive = true;
                                 // gamecontroller.PlayGameSound(gameConstants.gameSound.);
                                 break;
                             default:
