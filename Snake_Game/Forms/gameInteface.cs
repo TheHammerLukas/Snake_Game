@@ -9,8 +9,8 @@ namespace Snake_Game
         gameMenu gamemenu; // Needed here so the menu only opens once
         gameController gamecontroller;
 
-        private bool setInputForNextTick = false;
-        private gameDirection nextTickDirection = gameDirection.Stop;
+        private bool setInputForNextTick = false; // To improve the direction input
+        private gameDirection nextTickDirection = gameDirection.Stop; // To improve the direction input
         private long lastBotChangeTime = 0; // To prevent buggy behaviour when enabling or disabling the bot
         private long lastSpeedChangeTime = 0; // To prevent buggy behaviour when enabling or disabling the speed up
         private long lastPauseChangeTime = 0; // To prevent buggy behaviour when pausing or unpausing the game
@@ -705,14 +705,16 @@ namespace Snake_Game
                         Image _spriteImage;
                         int _spriteLocX;
                         int _spriteLocY;
-                        
+
                         DetermineSnakeSprite(i, out _spriteImage, out _spriteLocX, out _spriteLocY);
                         DrawSnakeSprite(i, ref Canvas, _spriteImage, _spriteLocX, _spriteLocY);
                         DetermineFoodSprite(out _spriteImage, out _spriteLocX, out _spriteLocY);
                         DrawFoodSprite(ref Canvas, _spriteImage, _spriteLocX, _spriteLocY);
                     }
                 }
+
                 gamecontroller.GrowSnake();
+
                 if (setInputForNextTick)
                 {
                     gameSettings.directionHead = nextTickDirection;
@@ -772,33 +774,33 @@ namespace Snake_Game
                 if (!setInputForNextTick)
                 {
                     // Check if key input is a direction key
-                    if ((e.KeyCode == gameControls.dirRightKey || e.KeyCode == Keys.Right)
-                        && ((currentTickDir != gameDirection.Left && currentTickDir != gameDirection.Right
-                        && !gameSettings.GamePaused) || gameSettings.DevModeEnabled))
+                    if ((e.KeyCode == gameControls.dirRightKey || e.KeyCode == Keys.Right) && 
+                       ((currentTickDir != gameDirection.Left && currentTickDir != gameDirection.Right && !gameSettings.GamePaused) || 
+                       gameSettings.DevModeEnabled))
                     {
                         gameSettings.directionHead = gameDirection.Right;
                         setInputForNextTick = true;
                         gamecontroller.PlayGameSound(gameConstants.gameSound.SnakeChangeDir);
                     }
-                    else if ((e.KeyCode == gameControls.dirLeftKey || e.KeyCode == Keys.Left)
-                              && ((currentTickDir != gameDirection.Right && currentTickDir != gameDirection.Left
-                              && !gameSettings.GamePaused) || gameSettings.DevModeEnabled))
+                    else if ((e.KeyCode == gameControls.dirLeftKey || e.KeyCode == Keys.Left) && 
+                            ((currentTickDir != gameDirection.Right && currentTickDir != gameDirection.Left && !gameSettings.GamePaused) || 
+                            gameSettings.DevModeEnabled))
                     {
                         gameSettings.directionHead = gameDirection.Left;
                         setInputForNextTick = true;
                         gamecontroller.PlayGameSound(gameConstants.gameSound.SnakeChangeDir);
                     }
-                    else if ((e.KeyCode == gameControls.dirUpKey || e.KeyCode == Keys.Up)
-                              && ((currentTickDir != gameDirection.Down && currentTickDir != gameDirection.Up
-                              && !gameSettings.GamePaused) || gameSettings.DevModeEnabled))
+                    else if ((e.KeyCode == gameControls.dirUpKey || e.KeyCode == Keys.Up) && 
+                            ((currentTickDir != gameDirection.Down && currentTickDir != gameDirection.Up && !gameSettings.GamePaused) || 
+                            gameSettings.DevModeEnabled))
                     {
                         gameSettings.directionHead = gameDirection.Up;
                         setInputForNextTick = true;
                         gamecontroller.PlayGameSound(gameConstants.gameSound.SnakeChangeDir);
                     }
-                    else if ((e.KeyCode == gameControls.dirDownKey || e.KeyCode == Keys.Down)
-                              && ((currentTickDir != gameDirection.Up && currentTickDir != gameDirection.Down
-                              && !gameSettings.GamePaused) || gameSettings.DevModeEnabled))
+                    else if ((e.KeyCode == gameControls.dirDownKey || e.KeyCode == Keys.Down) && 
+                            ((currentTickDir != gameDirection.Up && currentTickDir != gameDirection.Down && !gameSettings.GamePaused) || 
+                            gameSettings.DevModeEnabled))
                     {
                         gameSettings.directionHead = gameDirection.Down;
                         setInputForNextTick = true;
@@ -808,27 +810,19 @@ namespace Snake_Game
                 }
                 else
                 {
-                    if ((e.KeyCode == gameControls.dirRightKey || e.KeyCode == Keys.Right)
-                        && (gameSettings.directionHead != gameDirection.Left && gameSettings.directionHead != gameDirection.Right 
-                        && !gameSettings.GamePaused))
+                    if ((e.KeyCode == gameControls.dirRightKey || e.KeyCode == Keys.Right) && (gameSettings.directionHead != gameDirection.Left && !gameSettings.GamePaused))
                     {
                         nextTickDirection = gameDirection.Right;
                     }
-                    else if ((e.KeyCode == gameControls.dirLeftKey || e.KeyCode == Keys.Left)
-                        && (gameSettings.directionHead != gameDirection.Right && gameSettings.directionHead != gameDirection.Left
-                        && !gameSettings.GamePaused))
+                    else if ((e.KeyCode == gameControls.dirLeftKey || e.KeyCode == Keys.Left) && (gameSettings.directionHead != gameDirection.Right && !gameSettings.GamePaused))
                     {
                         nextTickDirection = gameDirection.Left;
                     }
-                    else if ((e.KeyCode == gameControls.dirUpKey || e.KeyCode == Keys.Up)
-                        && (gameSettings.directionHead != gameDirection.Down && gameSettings.directionHead != gameDirection.Up
-                        && !gameSettings.GamePaused))
+                    else if ((e.KeyCode == gameControls.dirUpKey || e.KeyCode == Keys.Up) && (gameSettings.directionHead != gameDirection.Down && !gameSettings.GamePaused))
                     {
                         nextTickDirection = gameDirection.Up;
                     }
-                    else if ((e.KeyCode == gameControls.dirDownKey || e.KeyCode == Keys.Down)
-                        && (gameSettings.directionHead != gameDirection.Up && gameSettings.directionHead != gameDirection.Down
-                        && !gameSettings.GamePaused))
+                    else if ((e.KeyCode == gameControls.dirDownKey || e.KeyCode == Keys.Down) && (gameSettings.directionHead != gameDirection.Up && !gameSettings.GamePaused))
                     {
                         nextTickDirection = gameDirection.Down;
                     }
