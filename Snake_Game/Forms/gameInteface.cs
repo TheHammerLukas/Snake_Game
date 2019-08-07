@@ -901,10 +901,10 @@ namespace Snake_Game
             }
         }
 
-        // To determine the activated powerup
+        // To determine the activated powerupOpen
         private gamePowerup DetermineGamePowerup()
         {
-            gamePowerup _gamePowerup = gameSettings.SavedPowerup;
+            gamePowerup _gamePowerup = gameSettings.GamePowerup;
 
             switch (gameSettings.SavedPowerup)
             {
@@ -977,6 +977,7 @@ namespace Snake_Game
                     }
                     break;
             }
+
             return _gamePowerup;
         }
 
@@ -1064,64 +1065,70 @@ namespace Snake_Game
                 {
                     if (gameSettings.SavedPowerup != gamePowerup.None)
                     {
-                        gameSettings.GamePowerup = DetermineGamePowerup();
-                        gameSettings.SavedPowerup = gamePowerup.None;
-
-                        lastPUpX2ChangeTime = 0;
-                        lastPUpPointTickChangeTime = 0;
-                        lastPUpSlowmoChangeTime = 0;
-                        lastPUpNoclipChangeTime = 0;
-                        lastPUpX2PointTickChangeTime = 0;
-                        lastPUpX2SlowmoChangeTime = 0;
-                        lastPUpX2NoclipChangeTime = 0;
-                        lastPUpPointTickSlowmoChangeTime = 0;
-                        lastPUpPointTickNoclipChangeTime = 0;
-                        lastPUpSlowmoNoclipChangeTime = 0;
-
-                        switch (gameSettings.GamePowerup)
+                        // Only enable a new powerup if there are not more than 2 powerups currently active
+                        if (gameSettings.GamePowerup != gamePowerup.X2PointOnTick && gameSettings.GamePowerup != gamePowerup.X2Slowmotion && 
+                            gameSettings.GamePowerup != gamePowerup.X2Noclip && gameSettings.GamePowerup != gamePowerup.PointOnTickSlowmotion &&
+                            gameSettings.GamePowerup != gamePowerup.PointOnTickNoclip && gameSettings.GamePowerup != gamePowerup.SlowmotionNoclip)
                         {
-                            case gamePowerup.X2:
-                                lastPUpX2ChangeTime = currentTime;
-                                gamecontroller.PlayGameSound(gameConstants.gameSound.PUpX2Activate);
-                                break;
-                            case gamePowerup.PointOnTick:
-                                lastPUpPointTickChangeTime = currentTime;
-                                gamecontroller.PlayGameSound(gameConstants.gameSound.PUpPointTickActivate);
-                                break;
-                            case gamePowerup.Slowmotion:
-                                lastPUpSlowmoChangeTime = currentTime;
-                                gamecontroller.PlayGameSound(gameConstants.gameSound.PUpSlowmoActivate);
-                                break;
-                            case gamePowerup.Noclip:
-                                lastPUpNoclipChangeTime = currentTime;
-                                gamecontroller.PlayGameSound(gameConstants.gameSound.PUpNoclipActivate);
-                                break;
-                            case gamePowerup.X2PointOnTick:
-                                lastPUpX2PointTickChangeTime = currentTime;
-                                // gamecontroller.PlayGameSound(gameConstants.gameSound.);
-                                break;
-                            case gamePowerup.X2Slowmotion:
-                                lastPUpX2SlowmoChangeTime = currentTime;
-                                // gamecontroller.PlayGameSound(gameConstants.gameSound.);
-                                break;
-                            case gamePowerup.X2Noclip:
-                                lastPUpX2NoclipChangeTime = currentTime;
-                                // gamecontroller.PlayGameSound(gameConstants.gameSound.);
-                                break;
-                            case gamePowerup.PointOnTickSlowmotion:
-                                lastPUpPointTickSlowmoChangeTime = currentTime;
-                                // gamecontroller.PlayGameSound(gameConstants.gameSound.);
-                                break;
-                            case gamePowerup.PointOnTickNoclip:
-                                lastPUpPointTickNoclipChangeTime = currentTime;
-                                // gamecontroller.PlayGameSound(gameConstants.gameSound.);
-                                break;
-                            case gamePowerup.SlowmotionNoclip:
-                                lastPUpSlowmoNoclipChangeTime = currentTime;
-                                // gamecontroller.PlayGameSound(gameConstants.gameSound.);
-                                break;
-                            default:
-                                break;
+                            gameSettings.GamePowerup = DetermineGamePowerup();
+                            gameSettings.SavedPowerup = gamePowerup.None;
+
+                            lastPUpX2ChangeTime = 0;
+                            lastPUpPointTickChangeTime = 0;
+                            lastPUpSlowmoChangeTime = 0;
+                            lastPUpNoclipChangeTime = 0;
+                            lastPUpX2PointTickChangeTime = 0;
+                            lastPUpX2SlowmoChangeTime = 0;
+                            lastPUpX2NoclipChangeTime = 0;
+                            lastPUpPointTickSlowmoChangeTime = 0;
+                            lastPUpPointTickNoclipChangeTime = 0;
+                            lastPUpSlowmoNoclipChangeTime = 0;
+
+                            switch (gameSettings.GamePowerup)
+                            {
+                                case gamePowerup.X2:
+                                    lastPUpX2ChangeTime = currentTime;
+                                    gamecontroller.PlayGameSound(gameConstants.gameSound.PUpX2Activate);
+                                    break;
+                                case gamePowerup.PointOnTick:
+                                    lastPUpPointTickChangeTime = currentTime;
+                                    gamecontroller.PlayGameSound(gameConstants.gameSound.PUpPointTickActivate);
+                                    break;
+                                case gamePowerup.Slowmotion:
+                                    lastPUpSlowmoChangeTime = currentTime;
+                                    gamecontroller.PlayGameSound(gameConstants.gameSound.PUpSlowmoActivate);
+                                    break;
+                                case gamePowerup.Noclip:
+                                    lastPUpNoclipChangeTime = currentTime;
+                                    gamecontroller.PlayGameSound(gameConstants.gameSound.PUpNoclipActivate);
+                                    break;
+                                case gamePowerup.X2PointOnTick:
+                                    lastPUpX2PointTickChangeTime = currentTime;
+                                    // gamecontroller.PlayGameSound(gameConstants.gameSound.);
+                                    break;
+                                case gamePowerup.X2Slowmotion:
+                                    lastPUpX2SlowmoChangeTime = currentTime;
+                                    // gamecontroller.PlayGameSound(gameConstants.gameSound.);
+                                    break;
+                                case gamePowerup.X2Noclip:
+                                    lastPUpX2NoclipChangeTime = currentTime;
+                                    // gamecontroller.PlayGameSound(gameConstants.gameSound.);
+                                    break;
+                                case gamePowerup.PointOnTickSlowmotion:
+                                    lastPUpPointTickSlowmoChangeTime = currentTime;
+                                    // gamecontroller.PlayGameSound(gameConstants.gameSound.);
+                                    break;
+                                case gamePowerup.PointOnTickNoclip:
+                                    lastPUpPointTickNoclipChangeTime = currentTime;
+                                    // gamecontroller.PlayGameSound(gameConstants.gameSound.);
+                                    break;
+                                case gamePowerup.SlowmotionNoclip:
+                                    lastPUpSlowmoNoclipChangeTime = currentTime;
+                                    // gamecontroller.PlayGameSound(gameConstants.gameSound.);
+                                    break;
+                                default:
+                                    break;
+                            }
                         }
                     }
                 }

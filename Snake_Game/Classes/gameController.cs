@@ -84,7 +84,7 @@ namespace Snake_Game
                 gameSettings.initPowerupSpawnGap(false);
             }
 
-            if (cntFoodSpawned >= gameSettings.PowerupSpawnGap && !gameSettings.GamePowerupActive)
+            if (cntFoodSpawned >= gameSettings.PowerupSpawnGap /*&& !gameSettings.GamePowerupActive*/)
             {
                 if (_foodPowerup != gamePowerup.None)
                 {
