@@ -53,6 +53,12 @@ namespace Snake_Game
         public static int PowerupDurationPointTick                  { get; set; } // To determine the duration of the Point on Tick powerup
         public static int PowerupDurationSlowmo                     { get; set; } // To determine the duration of the Slowmotion powerup
         public static int PowerupDurationNoclip                     { get; set; } // To determine the duration of the Noclip powerup
+        public static int PowerupDurationX2PointTick                { get; set; } // To determine the duration of the X2/Point on Tick powerup synergy
+        public static int PowerupDurationX2Slowmo                   { get; set; } // To determine the duration of the X2/Slowmotion powerup synergy
+        public static int PowerupDurationX2Noclip                   { get; set; } // To determine the duration of the X2/Noclip powerup synergy
+        public static int PowerupDurationPointTickSlowmo            { get; set; } // To determine the duration of the Point on Tick/Slowmotion powerup synergy
+        public static int PowerupDurationPointTickNoclip            { get; set; } // To determine the duration of the Point on Tick/Noclip powerup synergy
+        public static int PowerupDurationSlowmoNoclip               { get; set; } // To determine the duration of the Slowmotion/Noclip powerup synergy
         public static bool NoClipEnabled                            { get; set; } // To detemrine if the NoClip feature is enabled or disabled
         public static gameConstants.gameDrawingMode DrawingMode     { get; set; } // To determine how the game should be drawn
         public static gameConstants.rainbowMode RainbowMode         { get; set; } // To determine which rainbow mode is selected
@@ -135,15 +141,22 @@ namespace Snake_Game
 
         // Procedure to apply new settings values
         public static void ApplySettings(int newWidth, int newHeight, int newSpeed, int newGrowMultiplicator, int newPoints, 
-                                         int newPUpSpawnGap, int newPUpX2Duration, int newPUpPointTickDuration, int newPUpSlowmotionDuration, int newPUpNoclipDuration)
+                                         int newPUpSpawnGap, int newPUpX2Duration, int newPUpPointTickDuration, int newPUpSlowmotionDuration, int newPUpNoclipDuration,
+                                         int newPUpX2PointTickDuration, int newPUpX2SlowmoDuration, int newPUpX2NoclipDuration, int newPUpPointTickSlowmoDuration, 
+                                         int newPUpPointTickNoclipDuration, int newPUpSlowmoNoclipDuration)
         {
             gameController gamecontroller = new gameController();
 
-            int _newPUpX2Duration           = gamecontroller.ConvTime(newPUpX2Duration        , gameConstants.seconds, gameConstants.milliseconds);
-            int _newPUpPointTickDuration    = gamecontroller.ConvTime(newPUpPointTickDuration , gameConstants.seconds, gameConstants.milliseconds);
-            int _newPUpSlowmotionDuration   = gamecontroller.ConvTime(newPUpSlowmotionDuration, gameConstants.seconds, gameConstants.milliseconds);
-            int _newPUpNoclipDuration       = gamecontroller.ConvTime(newPUpNoclipDuration    , gameConstants.seconds, gameConstants.milliseconds);
-
+            int _newPUpX2Duration               = gamecontroller.ConvTime(newPUpX2Duration              , gameConstants.seconds, gameConstants.milliseconds);
+            int _newPUpPointTickDuration        = gamecontroller.ConvTime(newPUpPointTickDuration       , gameConstants.seconds, gameConstants.milliseconds);
+            int _newPUpSlowmotionDuration       = gamecontroller.ConvTime(newPUpSlowmotionDuration      , gameConstants.seconds, gameConstants.milliseconds);
+            int _newPUpNoclipDuration           = gamecontroller.ConvTime(newPUpNoclipDuration          , gameConstants.seconds, gameConstants.milliseconds);
+            int _newPUpX2PointTickDuration      = gamecontroller.ConvTime(newPUpX2PointTickDuration     , gameConstants.seconds, gameConstants.milliseconds);
+            int _newPUpX2SlowmoDuration         = gamecontroller.ConvTime(newPUpX2SlowmoDuration        , gameConstants.seconds, gameConstants.milliseconds);
+            int _newPUpX2NoclipDuration         = gamecontroller.ConvTime(newPUpX2NoclipDuration        , gameConstants.seconds, gameConstants.milliseconds);
+            int _newPUpPointTickSlowmoDuration  = gamecontroller.ConvTime(newPUpPointTickSlowmoDuration , gameConstants.seconds, gameConstants.milliseconds);
+            int _newPUpPointTickNoclipDuration  = gamecontroller.ConvTime(newPUpPointTickNoclipDuration , gameConstants.seconds, gameConstants.milliseconds);
+            int _newPUpSlowmoNoclipDuration     = gamecontroller.ConvTime(newPUpSlowmoNoclipDuration    , gameConstants.seconds, gameConstants.milliseconds);
 
             // Alter settings if needed
             Width                       = newWidth              != Width 
@@ -162,15 +175,27 @@ namespace Snake_Game
                                         ? newPUpSpawnGap            :  PowerupSpawnGap;
             PowerupSpawnGap             = PowerupSpawnGapConfigured;
 
-            PowerupDurationX2           = _newPUpX2Duration         != PowerupDurationX2
-                                        ? _newPUpX2Duration         :  PowerupDurationX2;
-            PowerupDurationPointTick    = _newPUpPointTickDuration  != PowerupDurationPointTick
-                                        ? _newPUpPointTickDuration  :  PowerupDurationPointTick;
-            PowerupDurationSlowmo       = _newPUpSlowmotionDuration != PowerupDurationSlowmo
-                                        ? _newPUpSlowmotionDuration :  PowerupDurationSlowmo;
-            PowerupDurationNoclip       = _newPUpNoclipDuration     != PowerupDurationNoclip
-                                        ? _newPUpNoclipDuration     :  PowerupDurationNoclip;
-            
+            PowerupDurationX2               = _newPUpX2Duration              != PowerupDurationX2
+                                            ? _newPUpX2Duration              :  PowerupDurationX2;
+            PowerupDurationPointTick        = _newPUpPointTickDuration       != PowerupDurationPointTick
+                                            ? _newPUpPointTickDuration       :  PowerupDurationPointTick;
+            PowerupDurationSlowmo           = _newPUpSlowmotionDuration      != PowerupDurationSlowmo
+                                            ? _newPUpSlowmotionDuration      :  PowerupDurationSlowmo;
+            PowerupDurationNoclip           = _newPUpNoclipDuration          != PowerupDurationNoclip
+                                            ? _newPUpNoclipDuration          :  PowerupDurationNoclip;
+            PowerupDurationX2PointTick      = _newPUpX2PointTickDuration     != PowerupDurationNoclip
+                                            ? _newPUpX2PointTickDuration     :  PowerupDurationNoclip;
+            PowerupDurationX2Slowmo         = _newPUpX2SlowmoDuration        != PowerupDurationX2Slowmo
+                                            ? _newPUpX2SlowmoDuration        :  PowerupDurationX2Slowmo;
+            PowerupDurationX2Noclip         = _newPUpX2NoclipDuration        != PowerupDurationX2Noclip
+                                            ? _newPUpX2NoclipDuration        :  PowerupDurationX2Noclip;
+            PowerupDurationPointTickSlowmo  = _newPUpPointTickSlowmoDuration != PowerupDurationPointTickSlowmo
+                                            ? _newPUpPointTickSlowmoDuration :  PowerupDurationPointTickSlowmo;
+            PowerupDurationPointTickNoclip  = _newPUpPointTickNoclipDuration != PowerupDurationPointTickNoclip
+                                            ? _newPUpPointTickNoclipDuration :  PowerupDurationPointTickNoclip;
+            PowerupDurationSlowmoNoclip     = _newPUpSlowmoNoclipDuration    != PowerupDurationSlowmoNoclip
+                                            ? _newPUpSlowmoNoclipDuration    :  PowerupDurationSlowmoNoclip;
+
             gamecontroller.writeSettingsXML();
         }
 
@@ -218,6 +243,24 @@ namespace Snake_Game
                     break;
                 case gamePowerup.Noclip:
                     PowerupDurationNoclip = gamecontroller.ConvTime(gameConstants.standardPowerupDurationNoclip, gameConstants.seconds, gameConstants.milliseconds);
+                    break;
+                case gamePowerup.X2PointOnTick:
+                    PowerupDurationX2PointTick = gamecontroller.ConvTime(gameConstants.standardPowerupDurationX2PointTick, gameConstants.seconds, gameConstants.milliseconds);
+                    break;
+                case gamePowerup.X2Slowmotion:
+                    PowerupDurationX2Slowmo = gamecontroller.ConvTime(gameConstants.standardPowerupDurationX2Slowmotion, gameConstants.seconds, gameConstants.milliseconds);
+                    break;
+                case gamePowerup.X2Noclip:
+                    PowerupDurationX2Noclip = gamecontroller.ConvTime(gameConstants.standardPowerupDurationX2Noclip, gameConstants.seconds, gameConstants.milliseconds);
+                    break;
+                case gamePowerup.PointOnTickSlowmotion:
+                    PowerupDurationPointTickSlowmo = gamecontroller.ConvTime(gameConstants.standardPowerupDurationPointTickSlowmotion, gameConstants.seconds, gameConstants.milliseconds);
+                    break;
+                case gamePowerup.PointOnTickNoclip:
+                    PowerupDurationPointTickNoclip = gamecontroller.ConvTime(gameConstants.standardPowerupDurationPointTickNoclip, gameConstants.seconds, gameConstants.milliseconds);
+                    break;
+                case gamePowerup.SlowmotionNoclip:
+                    PowerupDurationSlowmoNoclip = gamecontroller.ConvTime(gameConstants.standardPowerupDurationSlowmotionNoclip, gameConstants.seconds, gameConstants.milliseconds);
                     break;
                 case gamePowerup.None:
                     break;

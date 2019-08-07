@@ -26,6 +26,12 @@
         public const int standardPowerupDurationPointTick = 20;
         public const int standardPowerupDurationSlowmotion = 10;
         public const int standardPowerupDurationNoclip = 15;
+        public const int standardPowerupDurationX2PointTick = 20;
+        public const int standardPowerupDurationX2Slowmotion = 10;
+        public const int standardPowerupDurationX2Noclip = 20;
+        public const int standardPowerupDurationPointTickSlowmotion = 10;
+        public const int standardPowerupDurationPointTickNoclip = 20;
+        public const int standardPowerupDurationSlowmotionNoclip = 10;
         public const gameDrawingMode standardDrawingMode = gameDrawingMode.drawingModeNormal;
         public const gameDirection standardDirectionHead = gameDirection.Stop;
 

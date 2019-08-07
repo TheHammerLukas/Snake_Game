@@ -31,6 +31,12 @@ namespace Snake_Game
             int _newPUpPointTickDuration = gameSettings.PowerupDurationPointTick;
             int _newPUpSlowmotionDuration = gameSettings.PowerupDurationSlowmo;
             int _newPUpNoclipDuration = gameSettings.PowerupDurationNoclip;
+            int _newPUpX2PointTickDuration = gameSettings.PowerupDurationX2PointTick;
+            int _newPUpX2SlowmoDuration = gameSettings.PowerupDurationX2Slowmo;
+            int _newPUpX2NoclipDuration = gameSettings.PowerupDurationX2Noclip;
+            int _newPUpPointTickSlowmoDuration = gameSettings.PowerupDurationPointTickSlowmo;
+            int _newPUpPointTickNoclipDuration = gameSettings.PowerupDurationPointTickNoclip;
+            int _newPUpSlowmoNoclipDuration = gameSettings.PowerupDurationSlowmoNoclip;
 
             bool _showError = false;
 
@@ -73,9 +79,35 @@ namespace Snake_Game
                 {
                     _showError = !int.TryParse(textBoxPUpNoclipDuration.Text, out _newPUpNoclipDuration);
                 }
+                if (!_showError)
+                {
+                    _showError = !int.TryParse(textBoxPUpNoclipDuration.Text, out _newPUpX2PointTickDuration);
+                }
+                if (!_showError)
+                {
+                    _showError = !int.TryParse(textBoxPUpNoclipDuration.Text, out _newPUpX2SlowmoDuration);
+                }
+                if (!_showError)
+                {
+                    _showError = !int.TryParse(textBoxPUpNoclipDuration.Text, out _newPUpX2NoclipDuration);
+                }
+                if (!_showError)
+                {
+                    _showError = !int.TryParse(textBoxPUpNoclipDuration.Text, out _newPUpPointTickSlowmoDuration);
+                }
+                if (!_showError)
+                {
+                    _showError = !int.TryParse(textBoxPUpNoclipDuration.Text, out _newPUpPointTickNoclipDuration);
+                }
+                if (!_showError)
+                {
+                    _showError = !int.TryParse(textBoxPUpNoclipDuration.Text, out _newPUpSlowmoNoclipDuration);
+                }
 
                 gameSettings.ApplySettings(_newWidth, _newHeight, _newSpeed, _newGrowMultiplicator, _newPoints,
-                                           _newPUpSpawnGap, _newPUpX2Duration, _newPUpPointTickDuration, _newPUpSlowmotionDuration, _newPUpNoclipDuration);
+                                           _newPUpSpawnGap, _newPUpX2Duration, _newPUpPointTickDuration, _newPUpSlowmotionDuration, _newPUpNoclipDuration,
+                                           _newPUpX2PointTickDuration, _newPUpX2SlowmoDuration, _newPUpX2NoclipDuration, _newPUpPointTickSlowmoDuration, _newPUpPointTickNoclipDuration, 
+                                           _newPUpSlowmoNoclipDuration);
 
                 gameSettings.GameOver = true;
             }

@@ -20,12 +20,12 @@ namespace Snake_Game
         private long lastPUpPointTickChangeTime = 0; // Powerup: To keep track of Point Tick duration
         private long lastPUpSlowmoChangeTime = 0; // Powerup: To keep track of Slowmo duration
         private long lastPUpNoclipChangeTime = 0; // Powerup: To keep track of Noclip duration
-        private long lastPUpX2PointTickChangeTime = 0;
-        private long lastPUpX2SlowmoChangeTime = 0;
-        private long lastPUpX2NoclipChangeTime = 0;
-        private long lastPUpPointTickSlowmoChangeTime = 0;
-        private long lastPUpPointTickNoclipChangeTime = 0;
-        private long lastPUpSlowmoNoclipChangeTime = 0;
+        private long lastPUpX2PointTickChangeTime = 0; // Powerup: To keep track of X2/Point Tick duration
+        private long lastPUpX2SlowmoChangeTime = 0; // Powerup: To keep track of X2/Slowmo duration
+        private long lastPUpX2NoclipChangeTime = 0; // Powerup: To keep track of X2/Noclip duration
+        private long lastPUpPointTickSlowmoChangeTime = 0; // Powerup: To keep track of Point Tick/Slowmo duration
+        private long lastPUpPointTickNoclipChangeTime = 0; // Powerup: To keep track of Point Tick/Noclip duration
+        private long lastPUpSlowmoNoclipChangeTime = 0; // Powerup: To keep track of Slowmo/Noclip duration
         private long currentTime = 0; // Current time; 1000 = 1 second 
         private gameDirection currentTickDir; // The direction the snake is heading at in the current game tick
         public static Image gameSprite; // Normal gameSprite 
@@ -178,7 +178,7 @@ namespace Snake_Game
             }
             if (Powerup == gamePowerup.X2PointOnTick)
             {
-                if (lastPUpX2PointTickChangeTime >= currentTime - gameSettings.PowerupDurationPointTick)
+                if (lastPUpX2PointTickChangeTime >= currentTime - gameSettings.PowerupDurationX2PointTick)
                 {
                     gameSettings.Score = gameSettings.Score + 50;
                     gameSettings.GamePowerupActive = true;
@@ -193,7 +193,7 @@ namespace Snake_Game
             }
             if (Powerup == gamePowerup.X2Slowmotion)
             {
-                if (lastPUpX2SlowmoChangeTime >= currentTime - gameSettings.PowerupDurationSlowmo)
+                if (lastPUpX2SlowmoChangeTime >= currentTime - gameSettings.PowerupDurationX2Slowmo)
                 {
                     if (!gameSettings.GamePowerupActive)
                     {
@@ -214,7 +214,7 @@ namespace Snake_Game
             }
             if (Powerup == gamePowerup.X2Noclip)
             {
-                if (lastPUpX2NoclipChangeTime >= currentTime - gameSettings.PowerupDurationX2)
+                if (lastPUpX2NoclipChangeTime >= currentTime - gameSettings.PowerupDurationX2Noclip)
                 {
                     gameSettings.GamePowerupActive = true;
                     _lastChangeTime = lastPUpX2NoclipChangeTime;
@@ -228,7 +228,7 @@ namespace Snake_Game
             }
             if (Powerup == gamePowerup.PointOnTickSlowmotion)
             {
-                if (lastPUpPointTickSlowmoChangeTime >= currentTime - gameSettings.PowerupDurationSlowmo)
+                if (lastPUpPointTickSlowmoChangeTime >= currentTime - gameSettings.PowerupDurationPointTickSlowmo)
                 {
                     gameSettings.Score = gameSettings.Score + 50;
                     if (!gameSettings.GamePowerupActive)
@@ -250,7 +250,7 @@ namespace Snake_Game
             }
             if (Powerup == gamePowerup.PointOnTickNoclip)
             {
-                if (lastPUpPointTickNoclipChangeTime >= currentTime - gameSettings.PowerupDurationPointTick)
+                if (lastPUpPointTickNoclipChangeTime >= currentTime - gameSettings.PowerupDurationPointTickNoclip)
                 {
                     gameSettings.Score = gameSettings.Score + 50;
                     gameSettings.GamePowerupActive = true;
@@ -265,7 +265,7 @@ namespace Snake_Game
             }
             if (Powerup == gamePowerup.SlowmotionNoclip)
             {
-                if (lastPUpSlowmoNoclipChangeTime >= currentTime - gameSettings.PowerupDurationSlowmo)
+                if (lastPUpSlowmoNoclipChangeTime >= currentTime - gameSettings.PowerupDurationSlowmoNoclip)
                 {
                     if (!gameSettings.GamePowerupActive)
                     {
@@ -293,17 +293,35 @@ namespace Snake_Game
             int _blinkCheckX2 = gamecontroller.ConvTime(Convert.ToInt32(gameSettings.PowerupDurationX2 - (currentTime - lastPUpX2ChangeTime)),
                                                         gameConstants.milliseconds, gameConstants.seconds);
             int _blinkCheckPointTick = gamecontroller.ConvTime(Convert.ToInt32(gameSettings.PowerupDurationPointTick - (currentTime - lastPUpPointTickChangeTime)),
-                                                        gameConstants.milliseconds, gameConstants.seconds);
+                                                               gameConstants.milliseconds, gameConstants.seconds);
             int _blinkCheckSlowmo = gamecontroller.ConvTime(Convert.ToInt32(gameSettings.PowerupDurationSlowmo - (currentTime - lastPUpSlowmoChangeTime)),
-                                                        gameConstants.milliseconds, gameConstants.seconds);
+                                                            gameConstants.milliseconds, gameConstants.seconds);
             int _blinkCheckNoclip = gamecontroller.ConvTime(Convert.ToInt32(gameSettings.PowerupDurationNoclip - (currentTime - lastPUpNoclipChangeTime)),
-                                                        gameConstants.milliseconds, gameConstants.seconds);
+                                                            gameConstants.milliseconds, gameConstants.seconds);
+            int _blinkCheckX2PointTick = gamecontroller.ConvTime(Convert.ToInt32(gameSettings.PowerupDurationX2PointTick - (currentTime - lastPUpX2PointTickChangeTime)),
+                                                                 gameConstants.milliseconds, gameConstants.seconds);
+            int _blinkCheckX2Slowmo = gamecontroller.ConvTime(Convert.ToInt32(gameSettings.PowerupDurationX2Slowmo - (currentTime - lastPUpX2SlowmoChangeTime)),
+                                                              gameConstants.milliseconds, gameConstants.seconds);
+            int _blinkCheckX2Noclip = gamecontroller.ConvTime(Convert.ToInt32(gameSettings.PowerupDurationX2Noclip - (currentTime - lastPUpX2NoclipChangeTime)),
+                                                              gameConstants.milliseconds, gameConstants.seconds);
+            int _blinkCheckPointTickSlowmo = gamecontroller.ConvTime(Convert.ToInt32(gameSettings.PowerupDurationPointTickSlowmo - (currentTime - lastPUpPointTickSlowmoChangeTime)),
+                                                                 gameConstants.milliseconds, gameConstants.seconds);
+            int _blinkCheckPointTickNoclip = gamecontroller.ConvTime(Convert.ToInt32(gameSettings.PowerupDurationPointTickNoclip - (currentTime - lastPUpPointTickNoclipChangeTime)),
+                                                                 gameConstants.milliseconds, gameConstants.seconds);
+            int _blinkCheckSlowmoNoclip = gamecontroller.ConvTime(Convert.ToInt32(gameSettings.PowerupDurationSlowmoNoclip - (currentTime - lastPUpSlowmoNoclipChangeTime)),
+                                                                 gameConstants.milliseconds, gameConstants.seconds);
 
             // Determine snake color
             if ((gameSettings.GamePowerup == gamePowerup.X2 && (_blinkCheckX2 == 1 || _blinkCheckX2 == 3 || _blinkCheckX2 == 5)) ||
                 (gameSettings.GamePowerup == gamePowerup.PointOnTick && (_blinkCheckPointTick == 1 || _blinkCheckPointTick == 3 || _blinkCheckPointTick == 5)) ||
                 (gameSettings.GamePowerup == gamePowerup.Slowmotion && (_blinkCheckSlowmo == 1 || _blinkCheckSlowmo == 3 || _blinkCheckSlowmo == 5)) ||
-                (gameSettings.GamePowerup == gamePowerup.Noclip && (_blinkCheckNoclip == 1 || _blinkCheckNoclip == 3 || _blinkCheckNoclip == 5)))
+                (gameSettings.GamePowerup == gamePowerup.Noclip && (_blinkCheckNoclip == 1 || _blinkCheckNoclip == 3 || _blinkCheckNoclip == 5)) ||
+                (gameSettings.GamePowerup == gamePowerup.X2PointOnTick && (_blinkCheckX2PointTick == 1 || _blinkCheckX2PointTick == 3 || _blinkCheckX2PointTick == 5)) || 
+                (gameSettings.GamePowerup == gamePowerup.X2Slowmotion && (_blinkCheckX2Slowmo == 1 || _blinkCheckX2Slowmo == 3 || _blinkCheckX2Slowmo == 5)) ||
+                (gameSettings.GamePowerup == gamePowerup.X2Noclip && (_blinkCheckX2Noclip == 1 || _blinkCheckX2Noclip == 3 || _blinkCheckX2Noclip == 5)) ||
+                (gameSettings.GamePowerup == gamePowerup.PointOnTickSlowmotion && (_blinkCheckPointTickSlowmo == 1 || _blinkCheckPointTickSlowmo == 3 || _blinkCheckPointTickSlowmo == 5)) ||
+                (gameSettings.GamePowerup == gamePowerup.PointOnTickNoclip && (_blinkCheckPointTickNoclip == 1 || _blinkCheckPointTickNoclip == 3 || _blinkCheckPointTickNoclip == 5)) ||
+                (gameSettings.GamePowerup == gamePowerup.SlowmotionNoclip && (_blinkCheckSlowmoNoclip == 1 || _blinkCheckSlowmoNoclip == 3 || _blinkCheckSlowmoNoclip == 5)))
             {
                 gamePowerup = gamePowerup.None;
             }

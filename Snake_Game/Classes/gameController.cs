@@ -1519,6 +1519,30 @@ namespace Snake_Game
                     _CurrentPowerup = "NoClip";
                     _PowerupDuration = ConvTime(Convert.ToInt32(gameSettings.PowerupDurationNoclip - (currentTime - lastChangeTime)), gameConstants.milliseconds, gameConstants.seconds);
                     break;
+                case gamePowerup.X2PointOnTick:
+                    _CurrentPowerup = "X2 Point on Tick";
+                    _PowerupDuration = ConvTime(Convert.ToInt32(gameSettings.PowerupDurationX2PointTick - (currentTime - lastChangeTime)), gameConstants.milliseconds, gameConstants.seconds);
+                    break;
+                case gamePowerup.X2Slowmotion:
+                    _CurrentPowerup = "X2 Slowmotion";
+                    _PowerupDuration = ConvTime(Convert.ToInt32(gameSettings.PowerupDurationX2Slowmo - (currentTime - lastChangeTime)), gameConstants.milliseconds, gameConstants.seconds);
+                    break;
+                case gamePowerup.X2Noclip:
+                    _CurrentPowerup = "X2 Noclip";
+                    _PowerupDuration = ConvTime(Convert.ToInt32(gameSettings.PowerupDurationX2Noclip - (currentTime - lastChangeTime)), gameConstants.milliseconds, gameConstants.seconds);
+                    break;
+                case gamePowerup.PointOnTickSlowmotion:
+                    _CurrentPowerup = "Point on Tick Slowmotion";
+                    _PowerupDuration = ConvTime(Convert.ToInt32(gameSettings.PowerupDurationPointTickSlowmo - (currentTime - lastChangeTime)), gameConstants.milliseconds, gameConstants.seconds);
+                    break;
+                case gamePowerup.PointOnTickNoclip:
+                    _CurrentPowerup = "Point on Tick Noclip";
+                    _PowerupDuration = ConvTime(Convert.ToInt32(gameSettings.PowerupDurationPointTickNoclip - (currentTime - lastChangeTime)), gameConstants.milliseconds, gameConstants.seconds);
+                    break;
+                case gamePowerup.SlowmotionNoclip:
+                    _CurrentPowerup = "Slowmotion Noclip";
+                    _PowerupDuration = ConvTime(Convert.ToInt32(gameSettings.PowerupDurationSlowmoNoclip - (currentTime - lastChangeTime)), gameConstants.milliseconds, gameConstants.seconds);
+                    break;
             }
 
             switch (gameSettings.SavedPowerup)
