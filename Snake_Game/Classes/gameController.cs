@@ -1508,11 +1508,11 @@ namespace Snake_Game
                     _PowerupDuration = ConvTime(Convert.ToInt32(gameSettings.PowerupDurationX2 - (currentTime - lastChangeTime)), gameConstants.milliseconds, gameConstants.seconds);
                     break;
                 case gamePowerup.PointOnTick:
-                    _CurrentPowerup = "Point on Tick";
+                    _CurrentPowerup = "Point Tick";
                     _PowerupDuration = ConvTime(Convert.ToInt32(gameSettings.PowerupDurationPointTick - (currentTime - lastChangeTime)), gameConstants.milliseconds, gameConstants.seconds);
                     break;
                 case gamePowerup.Slowmotion:
-                    _CurrentPowerup = "Slowmotion";
+                    _CurrentPowerup = "Slowmo";
                     _PowerupDuration = ConvTime(Convert.ToInt32(gameSettings.PowerupDurationSlowmo - (currentTime - lastChangeTime)), gameConstants.milliseconds, gameConstants.seconds);
                     break;
                 case gamePowerup.Noclip:
@@ -1520,27 +1520,27 @@ namespace Snake_Game
                     _PowerupDuration = ConvTime(Convert.ToInt32(gameSettings.PowerupDurationNoclip - (currentTime - lastChangeTime)), gameConstants.milliseconds, gameConstants.seconds);
                     break;
                 case gamePowerup.X2PointOnTick:
-                    _CurrentPowerup = "X2 Point on Tick";
+                    _CurrentPowerup = "x2 Points + Point Tick";
                     _PowerupDuration = ConvTime(Convert.ToInt32(gameSettings.PowerupDurationX2PointTick - (currentTime - lastChangeTime)), gameConstants.milliseconds, gameConstants.seconds);
                     break;
                 case gamePowerup.X2Slowmotion:
-                    _CurrentPowerup = "X2 Slowmotion";
+                    _CurrentPowerup = "x2 Points + Slowmo";
                     _PowerupDuration = ConvTime(Convert.ToInt32(gameSettings.PowerupDurationX2Slowmo - (currentTime - lastChangeTime)), gameConstants.milliseconds, gameConstants.seconds);
                     break;
                 case gamePowerup.X2Noclip:
-                    _CurrentPowerup = "X2 Noclip";
+                    _CurrentPowerup = "x2 Points + Noclip";
                     _PowerupDuration = ConvTime(Convert.ToInt32(gameSettings.PowerupDurationX2Noclip - (currentTime - lastChangeTime)), gameConstants.milliseconds, gameConstants.seconds);
                     break;
                 case gamePowerup.PointOnTickSlowmotion:
-                    _CurrentPowerup = "Point on Tick Slowmotion";
+                    _CurrentPowerup = "Point Tick + Slowmo";
                     _PowerupDuration = ConvTime(Convert.ToInt32(gameSettings.PowerupDurationPointTickSlowmo - (currentTime - lastChangeTime)), gameConstants.milliseconds, gameConstants.seconds);
                     break;
                 case gamePowerup.PointOnTickNoclip:
-                    _CurrentPowerup = "Point on Tick Noclip";
+                    _CurrentPowerup = "Point Tick + Noclip";
                     _PowerupDuration = ConvTime(Convert.ToInt32(gameSettings.PowerupDurationPointTickNoclip - (currentTime - lastChangeTime)), gameConstants.milliseconds, gameConstants.seconds);
                     break;
                 case gamePowerup.SlowmotionNoclip:
-                    _CurrentPowerup = "Slowmotion Noclip";
+                    _CurrentPowerup = "Slowmo + Noclip";
                     _PowerupDuration = ConvTime(Convert.ToInt32(gameSettings.PowerupDurationSlowmoNoclip - (currentTime - lastChangeTime)), gameConstants.milliseconds, gameConstants.seconds);
                     break;
             }
@@ -1551,10 +1551,10 @@ namespace Snake_Game
                     _SavedPowerup = "x2 Points";
                     break;
                 case gamePowerup.PointOnTick:
-                    _SavedPowerup = "Point on Tick";
+                    _SavedPowerup = "Point Tick";
                     break;
                 case gamePowerup.Slowmotion:
-                    _SavedPowerup = "Slowmotion";
+                    _SavedPowerup = "Slowmo";
                     break;
                 case gamePowerup.Noclip:
                     _SavedPowerup = "NoClip";

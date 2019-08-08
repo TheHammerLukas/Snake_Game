@@ -80,7 +80,6 @@
             // pictureBox
             // 
             this.pictureBox.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox.Location = new System.Drawing.Point(12, 80);
             this.pictureBox.MaximumSize = new System.Drawing.Size(600, 600);
             this.pictureBox.MinimumSize = new System.Drawing.Size(600, 600);
@@ -291,7 +290,7 @@
             // labelSavedPowerupValue
             // 
             this.labelSavedPowerupValue.AutoSize = true;
-            this.labelSavedPowerupValue.Location = new System.Drawing.Point(130, 29);
+            this.labelSavedPowerupValue.Location = new System.Drawing.Point(119, 28);
             this.labelSavedPowerupValue.Name = "labelSavedPowerupValue";
             this.labelSavedPowerupValue.Size = new System.Drawing.Size(96, 13);
             this.labelSavedPowerupValue.TabIndex = 3;
@@ -301,7 +300,7 @@
             // 
             this.labelCurrentPowerupValue.AutoSize = true;
             this.labelCurrentPowerupValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCurrentPowerupValue.Location = new System.Drawing.Point(130, 12);
+            this.labelCurrentPowerupValue.Location = new System.Drawing.Point(119, 12);
             this.labelCurrentPowerupValue.Name = "labelCurrentPowerupValue";
             this.labelCurrentPowerupValue.Size = new System.Drawing.Size(123, 17);
             this.labelCurrentPowerupValue.TabIndex = 2;
