@@ -399,7 +399,7 @@ namespace Snake_Game
             if (_sound != gameConstants.gameSound.None && _sound != gameConstants.gameSound.ApplicationStartup &&
                 _sound != gameConstants.gameSound.SnakeChangeDir && _sound != gameConstants.gameSound.FoodSpawn)
             {
-                if (_sound != gameConstants.gameSound.SnakeNoClip || (soundCheckTime > lastSoundPlayTime && (_sound == gameConstants.gameSound.SnakeNoClip)))
+                if (_sound != gameConstants.gameSound.SnakeNoClip || (soundCheckTime != lastSoundPlayTime && (_sound == gameConstants.gameSound.SnakeNoClip)))
                 {
                     audio.Play();
                     lastSoundPlayTime = soundCheckTime;
@@ -493,6 +493,30 @@ namespace Snake_Game
                     if (_xmlAttrib.Name == "PowerupDurationNoclip")
                     {
                         gameSettings.PowerupDurationNoclip = ConvTime(Convert.ToInt32(_xmlAttrib.Value), gameConstants.seconds, gameConstants.milliseconds);
+                    }
+                    if (_xmlAttrib.Name == "PowerupDurationX2PointTick")
+                    {
+                        gameSettings.PowerupDurationX2PointTick = ConvTime(Convert.ToInt32(_xmlAttrib.Value), gameConstants.seconds, gameConstants.milliseconds);
+                    }
+                    if (_xmlAttrib.Name == "PowerupDurationX2Slowmo")
+                    {
+                        gameSettings.PowerupDurationX2Slowmo = ConvTime(Convert.ToInt32(_xmlAttrib.Value), gameConstants.seconds, gameConstants.milliseconds);
+                    }
+                    if (_xmlAttrib.Name == "PowerupDurationX2Noclip")
+                    {
+                        gameSettings.PowerupDurationX2Noclip = ConvTime(Convert.ToInt32(_xmlAttrib.Value), gameConstants.seconds, gameConstants.milliseconds);
+                    }
+                    if (_xmlAttrib.Name == "PowerupDurationPointTickSlowmo")
+                    {
+                        gameSettings.PowerupDurationPointTickSlowmo = ConvTime(Convert.ToInt32(_xmlAttrib.Value), gameConstants.seconds, gameConstants.milliseconds);
+                    }
+                    if (_xmlAttrib.Name == "PowerupDurationPointTickNoclip")
+                    {
+                        gameSettings.PowerupDurationPointTickNoclip = ConvTime(Convert.ToInt32(_xmlAttrib.Value), gameConstants.seconds, gameConstants.milliseconds);
+                    }
+                    if (_xmlAttrib.Name == "PowerupDurationSlowmoNoclip")
+                    {
+                        gameSettings.PowerupDurationSlowmoNoclip = ConvTime(Convert.ToInt32(_xmlAttrib.Value), gameConstants.seconds, gameConstants.milliseconds);
                     }
                     if (_xmlAttrib.Name == "snakeHeadNormalColor")
                     {
@@ -641,6 +665,30 @@ namespace Snake_Game
                 // PowerupDurationNoclip         
                 _xmlDoc.WriteStartAttribute("PowerupDurationNoclip");
                 _xmlDoc.WriteString(Convert.ToString(ConvTime(Convert.ToInt32(gameSettings.PowerupDurationNoclip), gameConstants.milliseconds, gameConstants.seconds)));
+                _xmlDoc.WriteEndAttribute();
+                // PowerupDuration
+                _xmlDoc.WriteStartAttribute("PowerupDurationX2PointTick");
+                _xmlDoc.WriteString(Convert.ToString(ConvTime(Convert.ToInt32(gameSettings.PowerupDurationX2PointTick), gameConstants.milliseconds, gameConstants.seconds)));
+                _xmlDoc.WriteEndAttribute();
+                // PowerupDuration
+                _xmlDoc.WriteStartAttribute("PowerupDurationX2Slowmo");
+                _xmlDoc.WriteString(Convert.ToString(ConvTime(Convert.ToInt32(gameSettings.PowerupDurationX2Slowmo), gameConstants.milliseconds, gameConstants.seconds)));
+                _xmlDoc.WriteEndAttribute();
+                // PowerupDuration
+                _xmlDoc.WriteStartAttribute("PowerupDurationX2Noclip");
+                _xmlDoc.WriteString(Convert.ToString(ConvTime(Convert.ToInt32(gameSettings.PowerupDurationX2Noclip), gameConstants.milliseconds, gameConstants.seconds)));
+                _xmlDoc.WriteEndAttribute();
+                // PowerupDuration
+                _xmlDoc.WriteStartAttribute("PowerupDurationPointTickSlowmo");
+                _xmlDoc.WriteString(Convert.ToString(ConvTime(Convert.ToInt32(gameSettings.PowerupDurationPointTickSlowmo), gameConstants.milliseconds, gameConstants.seconds)));
+                _xmlDoc.WriteEndAttribute();
+                // PowerupDuration
+                _xmlDoc.WriteStartAttribute("PowerupDurationPointTickNoclip");
+                _xmlDoc.WriteString(Convert.ToString(ConvTime(Convert.ToInt32(gameSettings.PowerupDurationPointTickNoclip), gameConstants.milliseconds, gameConstants.seconds)));
+                _xmlDoc.WriteEndAttribute();
+                // PowerupDuration
+                _xmlDoc.WriteStartAttribute("PowerupDurationSlowmoNoclip");
+                _xmlDoc.WriteString(Convert.ToString(ConvTime(Convert.ToInt32(gameSettings.PowerupDurationSlowmoNoclip), gameConstants.milliseconds, gameConstants.seconds)));
                 _xmlDoc.WriteEndAttribute();
                 // snakeHeadNormalColor      
                 _xmlDoc.WriteStartAttribute("snakeHeadNormalColor");
@@ -1656,10 +1704,10 @@ namespace Snake_Game
             return _convertedTime;
         }
 
-        public void SetTimerInterval(Timer timer, int speed, bool isGameTime)
+        public void SetTimerInterval(Timer timer, int interval, bool isGameTime)
         {
             // Determine whether speed has to be converted to gametime or not
-            timer.Interval = isGameTime ? ConvTime(speed, gameConstants.gameSpeed, gameConstants.gameTime) : speed;
+            timer.Interval = isGameTime ? ConvTime(interval, gameConstants.gameSpeed, gameConstants.gameTime) : interval;
         }
 
         #endregion
