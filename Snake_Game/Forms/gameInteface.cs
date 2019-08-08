@@ -195,7 +195,7 @@ namespace Snake_Game
             {
                 if (lastPUpX2SlowmoChangeTime >= currentTime - gameSettings.PowerupDurationX2Slowmo)
                 {
-                    if (!gameSettings.GamePowerupActive)
+                    if (gameTimer.Interval != gameSettings.Speed / 3)
                     {
                         // Slow down the gameTimer
                         new gameController().SetTimerInterval(gameTimer, gameSettings.Speed / 3, true);
@@ -231,7 +231,7 @@ namespace Snake_Game
                 if (lastPUpPointTickSlowmoChangeTime >= currentTime - gameSettings.PowerupDurationPointTickSlowmo)
                 {
                     gameSettings.Score = gameSettings.Score + 50;
-                    if (!gameSettings.GamePowerupActive)
+                    if (gameTimer.Interval != gameSettings.Speed / 3)
                     {
                         // Slow down the gameTimer
                         new gameController().SetTimerInterval(gameTimer, gameSettings.Speed / 3, true);
@@ -267,7 +267,7 @@ namespace Snake_Game
             {
                 if (lastPUpSlowmoNoclipChangeTime >= currentTime - gameSettings.PowerupDurationSlowmoNoclip)
                 {
-                    if (!gameSettings.GamePowerupActive)
+                    if (gameTimer.Interval != gameSettings.Speed / 3)
                     {
                         // Slow down the gameTimer
                         new gameController().SetTimerInterval(gameTimer, gameSettings.Speed / 3, true);
@@ -331,7 +331,7 @@ namespace Snake_Game
             }
         }
 
-        private void DetermineSnakeColor(int i, ref int rainbowColorIndex, ref int cnt)
+        private void DetermineSnakeColor(int i, ref int colorIndex, ref int cnt)
         {
             gamePowerup _gamePowerup;
 
@@ -344,64 +344,64 @@ namespace Snake_Game
                 }
                 else
                 {
-                    gameSettings.snakeBodyColor = gameSettings.snakeRainbowColor[rainbowColorIndex]; // Body color
+                    gameSettings.snakeBodyColor = gameSettings.snakeRainbowColor[colorIndex]; // Body color
 
                     cnt++;
                     // Cycle through different color indexes
-                    switch (rainbowColorIndex)
+                    switch (colorIndex)
                     {
                         case 0:
                             if (cnt > (Convert.ToDouble(gameObject.Snake.Count) - 1) / 6 || gameSettings.RainbowMode == gameConstants.rainbowMode.rainbowModeTiles)
                             {
-                                rainbowColorIndex = 1;
+                                colorIndex = 1;
                                 cnt = 0;
                             }
                             break;
                         case 1:
                             if (cnt >= (Convert.ToDouble(gameObject.Snake.Count) - 1) / 6 || gameSettings.RainbowMode == gameConstants.rainbowMode.rainbowModeTiles)
                             {
-                                rainbowColorIndex = 2;
+                                colorIndex = 2;
                                 cnt = 0;
                             }
                             break;
                         case 2:
                             if (cnt >= (Convert.ToDouble(gameObject.Snake.Count) - 1) / 6 || gameSettings.RainbowMode == gameConstants.rainbowMode.rainbowModeTiles)
                             {
-                                rainbowColorIndex = 3;
+                                colorIndex = 3;
                                 cnt = 0;
                             }
                             break;
                         case 3:
                             if (cnt >= (Convert.ToDouble(gameObject.Snake.Count) - 1) / 6 || gameSettings.RainbowMode == gameConstants.rainbowMode.rainbowModeTiles)
                             {
-                                rainbowColorIndex = 4;
+                                colorIndex = 4;
                                 cnt = 0;
                             }
                             break;
                         case 4:
                             if (cnt >= (Convert.ToDouble(gameObject.Snake.Count) - 1) / 6 || gameSettings.RainbowMode == gameConstants.rainbowMode.rainbowModeTiles)
                             {
-                                rainbowColorIndex = 5;
+                                colorIndex = 5;
                                 cnt = 0;
                             }
                             break;
                         case 5:
                             if (cnt >= (Convert.ToDouble(gameObject.Snake.Count) - 1) / 6 || gameSettings.RainbowMode == gameConstants.rainbowMode.rainbowModeTiles)
                             {
-                                rainbowColorIndex = 0;
+                                colorIndex = 0;
                                 cnt = 0;
                             }
                             break;
                         default:
                             throw new ArgumentException(
                                         "-E- Unspecified error in gameInterface.pictureBox_Paint procedure!",
-                                        "_rainbowColorIndex=" + rainbowColorIndex
+                                        "colorIndex=" + colorIndex
                                         );
                     }
 
                     if (gameSettings.RainbowMode == gameConstants.rainbowMode.rainbowModeStretched)
                     {
-                        gameSettings.snakeBodyColor = gameSettings.snakeRainbowColor[rainbowColorIndex]; // Body color
+                        gameSettings.snakeBodyColor = gameSettings.snakeRainbowColor[colorIndex]; // Body color
                     }
                 }
             }
@@ -426,6 +426,120 @@ namespace Snake_Game
                     case gamePowerup.Noclip:
                         gameSettings.snakeHeadColor = gameSettings.snakeHeadPUpNoclipColor;
                         gameSettings.snakeBodyColor = gameSettings.snakeBodyPUpNoclipColor;
+                        break;
+                    case gamePowerup.X2PointOnTick:
+                        gameSettings.snakeHeadColor = gameSettings.snakeHeadPUpPointTickColor;
+                        switch (colorIndex)
+                        {
+                            case 0:
+                                gameSettings.snakeBodyColor = gameSettings.snakeBodyPUpPointTickColor;
+                                colorIndex = 1;
+                                break;
+                            case 1:
+                                gameSettings.snakeBodyColor = gameSettings.snakeBodyPUpX2Color;
+                                colorIndex = 0;
+                                break;
+                            default:
+                                throw new ArgumentException(
+                                            "-E- Unspecified error in gameInterface.pictureBox_Paint procedure!",
+                                            "colorIndex=" + colorIndex
+                                            );
+                        }
+                        break;
+                    case gamePowerup.X2Slowmotion:
+                        gameSettings.snakeHeadColor = gameSettings.snakeHeadPUpSlowmoColor;
+                        switch (colorIndex)
+                        {
+                            case 0:
+                                gameSettings.snakeBodyColor = gameSettings.snakeBodyPUpSlowmoColor;
+                                colorIndex = 1;
+                                break;
+                            case 1:
+                                gameSettings.snakeBodyColor = gameSettings.snakeBodyPUpX2Color;
+                                colorIndex = 0;
+                                break;
+                            default:
+                                throw new ArgumentException(
+                                            "-E- Unspecified error in gameInterface.pictureBox_Paint procedure!",
+                                            "colorIndex=" + colorIndex
+                                            );
+                        }
+                        break;
+                    case gamePowerup.X2Noclip:
+                        gameSettings.snakeHeadColor = gameSettings.snakeHeadPUpNoclipColor;
+                        switch (colorIndex)
+                        {
+                            case 0:
+                                gameSettings.snakeBodyColor = gameSettings.snakeBodyPUpNoclipColor;
+                                colorIndex = 1;
+                                break;
+                            case 1:
+                                gameSettings.snakeBodyColor = gameSettings.snakeBodyPUpX2Color;
+                                colorIndex = 0;
+                                break;
+                            default:
+                                throw new ArgumentException(
+                                            "-E- Unspecified error in gameInterface.pictureBox_Paint procedure!",
+                                            "colorIndex=" + colorIndex
+                                            );
+                        }
+                        break;
+                    case gamePowerup.PointOnTickSlowmotion:
+                        gameSettings.snakeHeadColor = gameSettings.snakeHeadPUpSlowmoColor;
+                        switch (colorIndex)
+                        {
+                            case 0:
+                                gameSettings.snakeBodyColor = gameSettings.snakeBodyPUpSlowmoColor;
+                                colorIndex = 1;
+                                break;
+                            case 1:
+                                gameSettings.snakeBodyColor = gameSettings.snakeBodyPUpPointTickColor;
+                                colorIndex = 0;
+                                break;
+                            default:
+                                throw new ArgumentException(
+                                            "-E- Unspecified error in gameInterface.pictureBox_Paint procedure!",
+                                            "colorIndex=" + colorIndex
+                                            );
+                        }
+                        break;
+                    case gamePowerup.PointOnTickNoclip:
+                        gameSettings.snakeHeadColor = gameSettings.snakeHeadPUpNoclipColor;
+                        switch (colorIndex)
+                        {
+                            case 0:
+                                gameSettings.snakeBodyColor = gameSettings.snakeBodyPUpNoclipColor;
+                                colorIndex = 1;
+                                break;
+                            case 1:
+                                gameSettings.snakeBodyColor = gameSettings.snakeBodyPUpPointTickColor;
+                                colorIndex = 0;
+                                break;
+                            default:
+                                throw new ArgumentException(
+                                            "-E- Unspecified error in gameInterface.pictureBox_Paint procedure!",
+                                            "colorIndex=" + colorIndex
+                                            );
+                        }
+                        break;
+                    case gamePowerup.SlowmotionNoclip:
+                        gameSettings.snakeHeadColor = gameSettings.snakeHeadPUpNoclipColor;
+                        switch (colorIndex)
+                        {
+                            case 0:
+                                gameSettings.snakeBodyColor = gameSettings.snakeBodyPUpNoclipColor;
+                                colorIndex = 1;
+                                break;
+                            case 1:
+                                gameSettings.snakeBodyColor = gameSettings.snakeBodyPUpSlowmoColor;
+                                colorIndex = 0;
+                                break;
+                            default:
+                                throw new ArgumentException(
+                                            "-E- Unspecified error in gameInterface.pictureBox_Paint procedure!",
+                                            "colorIndex=" + colorIndex
+                                            );
+                        }
                         break;
                     case gamePowerup.None:
                         gameSettings.snakeHeadColor = gameSettings.snakeHeadNormalColor;
@@ -820,7 +934,7 @@ namespace Snake_Game
         private void pictureBox_Paint(object sender, PaintEventArgs e)
         {
             int cnt = 0;
-            int rainbowColorIndex = 0;
+            int colorIndex = 0; // Used for multicolored snake visuals
             Graphics Canvas = e.Graphics;
 
             if (!gameSettings.GameOver)
@@ -830,7 +944,7 @@ namespace Snake_Game
                 {
                     if (gameSettings.DrawingMode == gameConstants.gameDrawingMode.drawingModeNormal || gameSettings.DrawingMode == gameConstants.gameDrawingMode.drawingModeRainbow)
                     {
-                        DetermineSnakeColor(i, ref rainbowColorIndex, ref cnt);
+                        DetermineSnakeColor(i, ref colorIndex, ref cnt);
                         DrawSnakeColor(i, ref Canvas);
                         DetermineFoodColor();
                         DrawFoodColor(ref Canvas);
