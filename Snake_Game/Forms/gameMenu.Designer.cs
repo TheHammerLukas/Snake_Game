@@ -1828,7 +1828,7 @@ namespace Snake_Game
             this.labelSlowmoColors.Name = "labelSlowmoColors";
             this.labelSlowmoColors.Size = new System.Drawing.Size(344, 50);
             this.labelSlowmoColors.TabIndex = 18;
-            this.labelSlowmoColors.Text = "Slowmotion Colors";
+            this.labelSlowmoColors.Text = "Slowmo Colors";
             this.labelSlowmoColors.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelFoodPointTickColor
@@ -1947,7 +1947,7 @@ namespace Snake_Game
             this.labelPUpSlowmoDuration.Name = "labelPUpSlowmoDuration";
             this.labelPUpSlowmoDuration.Size = new System.Drawing.Size(168, 50);
             this.labelPUpSlowmoDuration.TabIndex = 6;
-            this.labelPUpSlowmoDuration.Text = "Slowmotion Duration";
+            this.labelPUpSlowmoDuration.Text = "Slowmo Duration";
             this.labelPUpSlowmoDuration.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // textBoxPUpPointTickDuration
@@ -1970,7 +1970,7 @@ namespace Snake_Game
             this.labelPUpPointTickDuration.Name = "labelPUpPointTickDuration";
             this.labelPUpPointTickDuration.Size = new System.Drawing.Size(168, 50);
             this.labelPUpPointTickDuration.TabIndex = 4;
-            this.labelPUpPointTickDuration.Text = "Point on Tick Duration";
+            this.labelPUpPointTickDuration.Text = "Point Tick Duration";
             this.labelPUpPointTickDuration.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // textBoxPUpX2Duration
@@ -2095,7 +2095,7 @@ namespace Snake_Game
             this.groupBoxSavefilesSpritesPointTick.Size = new System.Drawing.Size(344, 75);
             this.groupBoxSavefilesSpritesPointTick.TabIndex = 13;
             this.groupBoxSavefilesSpritesPointTick.TabStop = false;
-            this.groupBoxSavefilesSpritesPointTick.Text = "Textures Point on Tick";
+            this.groupBoxSavefilesSpritesPointTick.Text = "Textures Point Tick";
             // 
             // tableLayoutPanel6
             // 
@@ -2217,7 +2217,7 @@ namespace Snake_Game
             this.groupBoxSavefilesSpritesSlowmotion.Size = new System.Drawing.Size(344, 75);
             this.groupBoxSavefilesSpritesSlowmotion.TabIndex = 11;
             this.groupBoxSavefilesSpritesSlowmotion.TabStop = false;
-            this.groupBoxSavefilesSpritesSlowmotion.Text = "Textures Slowmotion";
+            this.groupBoxSavefilesSpritesSlowmotion.Text = "Textures Slowmo";
             // 
             // tableLayoutPanel4
             // 
