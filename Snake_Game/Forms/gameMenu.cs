@@ -1,4 +1,4 @@
-﻿using CustomWinformsControls;
+﻿using CustomWinformsControls.GraphicsTooltip;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -9,11 +9,11 @@ namespace Snake_Game
     {
         private static gameConstants.gameAction gameaction = gameConstants.gameAction.None;
 
-        static GraphicsTooltip graphicstooltipSpritesPath;
-        static GraphicsTooltip graphicstooltipSpritesX2Path;
-        static GraphicsTooltip graphicstooltipSpritesPointTickPath;
-        static GraphicsTooltip graphicstooltipSpritesSlowmoPath;
-        static GraphicsTooltip graphicstooltipSpritesNoclipPath;
+        private static GraphicsTooltip graphicstooltipSpritesPath = new GraphicsTooltip(Image.FromFile(Properties.Settings.Default.gameSpritePath));
+        private static GraphicsTooltip graphicstooltipSpritesX2Path = new GraphicsTooltip(Image.FromFile(Properties.Settings.Default.gameSpritePUpX2Path));
+        private static GraphicsTooltip graphicstooltipSpritesPointTickPath = new GraphicsTooltip(Image.FromFile(Properties.Settings.Default.gameSpritePUpPointTickPath));
+        private static GraphicsTooltip graphicstooltipSpritesSlowmoPath = new GraphicsTooltip(Image.FromFile(Properties.Settings.Default.gameSpritePUpSlowmotionPath));
+        private static GraphicsTooltip graphicstooltipSpritesNoclipPath = new GraphicsTooltip(Image.FromFile(Properties.Settings.Default.gameSpritePUpNoclipPath));
 
         public gameMenu()
         {
@@ -205,56 +205,11 @@ namespace Snake_Game
             labelControlsXmlPath.Text = Properties.Settings.Default.controlsXmlPath;
             labelSettingsXmlPath.Text = Properties.Settings.Default.settingsXmlPath;
             labelScoreXmlPath.Text = Properties.Settings.Default.scoreXmlPath;
-            try
-            {
-                graphicstooltipSpritesPath.RemoveAll();
-            }
-            catch
-            {
-                // Do nothing because tooltip wasn't assigned to a control yet
-            }
-            try
-            {
-                graphicstooltipSpritesX2Path.RemoveAll();
-            }
-            catch (Exception)
-            {
-                // Do nothing because tooltip wasn't assigned to a control yet
-            }
-            try
-            {
-                graphicstooltipSpritesPointTickPath.RemoveAll();
-            }
-            catch
-            {
-                // Do nothing because tooltip wasn't assigned to a control yet
-            }
-            try
-            {
-                graphicstooltipSpritesSlowmoPath.RemoveAll();
-            }
-            catch
-            {
-                // Do nothing because tooltip wasn't assigned to a control yet
-            }
-            try
-            {
-                graphicstooltipSpritesNoclipPath.RemoveAll();
-            }
-            catch
-            {
-                // Do nothing because tooltip wasn't assigned to a control yet
-            }
-            graphicstooltipSpritesPath = new GraphicsTooltip(Image.FromFile(Properties.Settings.Default.gameSpritePath));
-            graphicstooltipSpritesX2Path = new GraphicsTooltip(Image.FromFile(Properties.Settings.Default.gameSpritePUpX2Path));
-            graphicstooltipSpritesPointTickPath = new GraphicsTooltip(Image.FromFile(Properties.Settings.Default.gameSpritePUpPointTickPath));
-            graphicstooltipSpritesSlowmoPath = new GraphicsTooltip(Image.FromFile(Properties.Settings.Default.gameSpritePUpSlowmotionPath));
-            graphicstooltipSpritesNoclipPath = new GraphicsTooltip(Image.FromFile(Properties.Settings.Default.gameSpritePUpNoclipPath));
-            graphicstooltipSpritesPath.SetToolTip(labelSavefilesSpritesPath, " ");
-            graphicstooltipSpritesX2Path.SetToolTip(labelSavefilesSpritesX2Path, " ");
-            graphicstooltipSpritesPointTickPath.SetToolTip(labelSavefilesSpritesPointTickPath, " ");
-            graphicstooltipSpritesSlowmoPath.SetToolTip(labelSavefilesSpritesSlowmotionPath, " ");
-            graphicstooltipSpritesNoclipPath.SetToolTip(labelSavefilesSpritesNoclipPath, " ");
+            graphicstooltipSpritesPath.ReloadToolTip(labelSavefilesSpritesPath, Image.FromFile(Properties.Settings.Default.gameSpritePath));
+            graphicstooltipSpritesX2Path.ReloadToolTip(labelSavefilesSpritesX2Path, Image.FromFile(Properties.Settings.Default.gameSpritePUpX2Path));
+            graphicstooltipSpritesPointTickPath.ReloadToolTip(labelSavefilesSpritesPointTickPath, Image.FromFile(Properties.Settings.Default.gameSpritePUpPointTickPath));
+            graphicstooltipSpritesSlowmoPath.ReloadToolTip(labelSavefilesSpritesSlowmotionPath, Image.FromFile(Properties.Settings.Default.gameSpritePUpSlowmotionPath));
+            graphicstooltipSpritesNoclipPath.ReloadToolTip(labelSavefilesSpritesNoclipPath, Image.FromFile(Properties.Settings.Default.gameSpritePUpNoclipPath));
             labelSavefilesSpritesPath.Text = Properties.Settings.Default.gameSpritePath;
             labelSavefilesSpritesPath.Tag = Image.FromFile(Properties.Settings.Default.gameSpritePath);
             labelSavefilesSpritesX2Path.Text = Properties.Settings.Default.gameSpritePUpX2Path;
