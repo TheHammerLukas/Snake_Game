@@ -33,6 +33,12 @@ namespace Snake_Game
         public static Image gameSpritePUpPointTick; // gameSprite used for 'Point on Tick' powerup
         public static Image gameSpritePUpSlowmotion; // gameSprite used for 'Slowmotion' powerup
         public static Image gameSpritePUpNoclip; // gameSprite used for 'Noclip' powerup
+        public static Image gameSpritePUpX2PointTick; // gameSprite used for 'X2 Point on Tick' powerup synergy
+        public static Image gameSpritePUpX2Slowmotion; // gameSprite used for 'X2 Slowmotion' powerup synergy
+        public static Image gameSpritePUpX2Noclip; // gameSprite used for 'X2 Noclip' powerup synergy
+        public static Image gameSpritePUpPointTickSlowmotion; // gameSprite used for 'Point on Tick Slowmotion' powerup synergy
+        public static Image gameSpritePUpPointTickNoclip; // gameSprite used for 'Point on Tick Noclip' powerup synergy
+        public static Image gameSpritePUpSlowmotionNoclip; // gameSprite used for 'Slowmotion Noclip' powerup synergy
 
         public gameInterface()
         {
@@ -636,6 +642,24 @@ namespace Snake_Game
                         break;
                     case gamePowerup.Noclip:
                         spriteImage = gameSpritePUpNoclip;
+                        break;
+                    case gamePowerup.X2PointOnTick:
+                        spriteImage = gameSpritePUpX2PointTick;
+                        break;
+                    case gamePowerup.X2Slowmotion:
+                        spriteImage = gameSpritePUpX2Slowmotion;
+                        break;
+                    case gamePowerup.X2Noclip:
+                        spriteImage = gameSpritePUpX2Noclip;
+                        break;
+                    case gamePowerup.PointOnTickSlowmotion:
+                        spriteImage = gameSpritePUpPointTickSlowmotion;
+                        break;
+                    case gamePowerup.PointOnTickNoclip:
+                        spriteImage = gameSpritePUpPointTickNoclip;
+                        break;
+                    case gamePowerup.SlowmotionNoclip:
+                        spriteImage = gameSpritePUpSlowmotionNoclip;
                         break;
                 }
             }

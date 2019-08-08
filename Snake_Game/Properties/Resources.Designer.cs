@@ -210,6 +210,26 @@ namespace Snake_Game.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gameSpritePUpPointTickNoclip {
+            get {
+                object obj = ResourceManager.GetObject("gameSpritePUpPointTickNoclip", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gameSpritePUpPointTickSlowmotion {
+            get {
+                object obj = ResourceManager.GetObject("gameSpritePUpPointTickSlowmotion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap gameSpritePUpSlowmotion {
             get {
                 object obj = ResourceManager.GetObject("gameSpritePUpSlowmotion", resourceCulture);
@@ -220,9 +240,49 @@ namespace Snake_Game.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gameSpritePUpSlowmotionNoclip {
+            get {
+                object obj = ResourceManager.GetObject("gameSpritePUpSlowmotionNoclip", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap gameSpritePUpX2 {
             get {
                 object obj = ResourceManager.GetObject("gameSpritePUpX2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gameSpritePUpX2Noclip {
+            get {
+                object obj = ResourceManager.GetObject("gameSpritePUpX2Noclip", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gameSpritePUpX2PointTick {
+            get {
+                object obj = ResourceManager.GetObject("gameSpritePUpX2PointTick", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gameSpritePUpX2Slowmotion {
+            get {
+                object obj = ResourceManager.GetObject("gameSpritePUpX2Slowmotion", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

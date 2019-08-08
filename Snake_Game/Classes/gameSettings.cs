@@ -532,6 +532,12 @@ namespace Snake_Game
             gameInterface.gameSpritePUpPointTick = Properties.Resources.gameSpritePUpPointTick;
             gameInterface.gameSpritePUpSlowmotion = Properties.Resources.gameSpritePUpSlowmotion;
             gameInterface.gameSpritePUpNoclip = Properties.Resources.gameSpritePUpNoclip;
+            gameInterface.gameSpritePUpX2PointTick = Properties.Resources.gameSpritePUpX2PointTick;
+            gameInterface.gameSpritePUpX2Slowmotion = Properties.Resources.gameSpritePUpX2Slowmotion;
+            gameInterface.gameSpritePUpX2Noclip = Properties.Resources.gameSpritePUpX2Noclip;
+            gameInterface.gameSpritePUpPointTickSlowmotion = Properties.Resources.gameSpritePUpPointTickSlowmotion;
+            gameInterface.gameSpritePUpPointTickNoclip = Properties.Resources.gameSpritePUpPointTickNoclip;
+            gameInterface.gameSpritePUpSlowmotionNoclip = Properties.Resources.gameSpritePUpSlowmotionNoclip;
         }
 
         #endregion

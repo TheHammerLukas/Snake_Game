@@ -117,6 +117,8 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="Resources\gameSprite_Template.xcf" />
+    <None Include="Resources\Snake_Menu_Thumbnail.xcf" />
+    <None Include="Resources\Snake_Thumbnail.xcf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -139,8 +141,14 @@
     <Content Include="Resources\gameSprite.png" />
     <Content Include="Resources\gameSpritePUpNoclip.png" />
     <Content Include="Resources\gameSpritePUpPointTick.png" />
+    <Content Include="Resources\gameSpritePUpPointTickNoclip.png" />
+    <Content Include="Resources\gameSpritePUpPointTickSlowmotion.png" />
     <Content Include="Resources\gameSpritePUpSlowmotion.png" />
+    <Content Include="Resources\gameSpritePUpSlowmotionNoclip.png" />
     <Content Include="Resources\gameSpritePUpX2.png" />
+    <Content Include="Resources\gameSpritePUpX2Noclip.png" />
+    <Content Include="Resources\gameSpritePUpX2PointTick.png" />
+    <Content Include="Resources\gameSpritePUpX2Slowmotion.png" />
     <Content Include="Resources\gameSprite_Template.png" />
     <Content Include="Resources\Snake_Menu_Thumbnail.ico" />
     <Content Include="Resources\Snake_Thumbnail.ico" />
