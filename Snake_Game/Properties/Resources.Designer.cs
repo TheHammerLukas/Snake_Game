@@ -135,6 +135,24 @@ namespace Snake_Game.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
+        internal static System.IO.UnmanagedMemoryStream gameSoundPUpSynergy01 {
+            get {
+                return ResourceManager.GetStream("gameSoundPUpSynergy01", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream gameSoundPUpSynergy02 {
+            get {
+                return ResourceManager.GetStream("gameSoundPUpSynergy02", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
         internal static System.IO.UnmanagedMemoryStream gameSoundPUpX2 {
             get {
                 return ResourceManager.GetStream("gameSoundPUpX2", resourceCulture);

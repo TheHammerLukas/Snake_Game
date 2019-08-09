@@ -63,7 +63,19 @@
             PUpSlowmoDeactivate = 12,
             PUpNoclipActivate = 13,
             PUpNoclipDeactivate = 14,
-            ApplicationStartup = 15
+            PUpX2PointTickSynergy = 15,
+            PUpX2PointTickDeactivate = 16,
+            PUpX2SlowmoSynergy = 17,
+            PUpX2SlowmoDeactivate = 18,
+            PUpX2NoclipSynergy = 19,
+            PUpX2NoclipDeactivate = 20,
+            PUpPointTickSlowmoSynergy = 21,
+            PUpPointTickSlowmoDeactivate = 22,
+            PUpPointTickNoclipSynergy = 23,
+            PUpPointTickNoclipDeactivate = 24,
+            PUpSlowmoNoclipSynergy = 25,
+            PUpSlowmoNoclipDeactivate = 26,
+            ApplicationStartup = 27
         }
 
         public enum gameAction // Enum for key input actions

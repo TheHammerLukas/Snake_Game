@@ -323,13 +323,19 @@ namespace Snake_Game
             SoundPlayer audio = new SoundPlayer();
             gameConstants.gameSound _sound = sound;
 
-            int _PUpDeactivateSound = 0;
+            Random random = new Random();
+            int _randomSound = 0;
 
             if (_sound == gameConstants.gameSound.PUpX2Deactivate || _sound == gameConstants.gameSound.PUpPointTickDeactivate ||
-                _sound == gameConstants.gameSound.PUpSlowmoDeactivate || _sound == gameConstants.gameSound.PUpNoclipDeactivate)
+                _sound == gameConstants.gameSound.PUpSlowmoDeactivate || _sound == gameConstants.gameSound.PUpNoclipDeactivate ||
+                _sound == gameConstants.gameSound.PUpX2PointTickDeactivate || _sound == gameConstants.gameSound.PUpX2SlowmoDeactivate ||
+                _sound == gameConstants.gameSound.PUpX2NoclipDeactivate || _sound == gameConstants.gameSound.PUpPointTickSlowmoDeactivate ||
+                _sound == gameConstants.gameSound.PUpPointTickNoclipDeactivate || _sound == gameConstants.gameSound.PUpSlowmoNoclipDeactivate  ||
+                _sound == gameConstants.gameSound.PUpX2PointTickSynergy || _sound == gameConstants.gameSound.PUpX2SlowmoSynergy ||
+                _sound == gameConstants.gameSound.PUpX2NoclipSynergy || _sound == gameConstants.gameSound.PUpPointTickSlowmoSynergy ||
+                _sound == gameConstants.gameSound.PUpPointTickNoclipSynergy || _sound == gameConstants.gameSound.PUpSlowmoNoclipSynergy)
             {
-                Random random = new Random();
-                _PUpDeactivateSound = random.Next(0, 2);
+                _randomSound = random.Next(0, 2);
             }
 
             switch (_sound)
@@ -356,29 +362,77 @@ namespace Snake_Game
                     audio = new SoundPlayer(Properties.Resources.gameSoundPUpX2);
                     break;
                 case gameConstants.gameSound.PUpX2Deactivate:
-                    audio = new SoundPlayer(_PUpDeactivateSound == 0 ? Properties.Resources.gameSoundPUpDeactivate01 
-                                                                     : Properties.Resources.gameSoundPUpDeactivate02);
+                    audio = new SoundPlayer(_randomSound == 0 ? Properties.Resources.gameSoundPUpDeactivate01 
+                                                              : Properties.Resources.gameSoundPUpDeactivate02);
                     break;
                 case gameConstants.gameSound.PUpPointTickActivate:
                     audio = new SoundPlayer(Properties.Resources.gameSoundPUpPointTick);
                     break;
                 case gameConstants.gameSound.PUpPointTickDeactivate:
-                    audio = new SoundPlayer(_PUpDeactivateSound == 0 ? Properties.Resources.gameSoundPUpDeactivate01
-                                                                     : Properties.Resources.gameSoundPUpDeactivate02);
+                    audio = new SoundPlayer(_randomSound == 0 ? Properties.Resources.gameSoundPUpDeactivate01
+                                                              : Properties.Resources.gameSoundPUpDeactivate02);
                     break;
                 case gameConstants.gameSound.PUpSlowmoActivate:
                     audio = new SoundPlayer(Properties.Resources.gameSoundPUpSlowmotion);
                     break;
                 case gameConstants.gameSound.PUpSlowmoDeactivate:
-                    audio = new SoundPlayer(_PUpDeactivateSound == 0 ? Properties.Resources.gameSoundPUpDeactivate01
-                                                                     : Properties.Resources.gameSoundPUpDeactivate02);
+                    audio = new SoundPlayer(_randomSound == 0 ? Properties.Resources.gameSoundPUpDeactivate01
+                                                              : Properties.Resources.gameSoundPUpDeactivate02);
                     break;
                 case gameConstants.gameSound.PUpNoclipActivate:
                     audio = new SoundPlayer(Properties.Resources.gameSoundPUpNoclip);
                     break;
                 case gameConstants.gameSound.PUpNoclipDeactivate:
-                    audio = new SoundPlayer(_PUpDeactivateSound == 0 ? Properties.Resources.gameSoundPUpDeactivate01
-                                                                     : Properties.Resources.gameSoundPUpDeactivate02);
+                    audio = new SoundPlayer(_randomSound == 0 ? Properties.Resources.gameSoundPUpDeactivate01
+                                                              : Properties.Resources.gameSoundPUpDeactivate02);
+                    break;
+                case gameConstants.gameSound.PUpX2PointTickSynergy:
+                    audio = new SoundPlayer(_randomSound == 0 ? Properties.Resources.gameSoundPUpSynergy01
+                                                              : Properties.Resources.gameSoundPUpSynergy02);
+                    break;
+                case gameConstants.gameSound.PUpX2PointTickDeactivate:
+                    audio = new SoundPlayer(_randomSound == 0 ? Properties.Resources.gameSoundPUpDeactivate01
+                                                              : Properties.Resources.gameSoundPUpDeactivate02);
+                    break;
+                case gameConstants.gameSound.PUpX2SlowmoSynergy:
+                    audio = new SoundPlayer(_randomSound == 0 ? Properties.Resources.gameSoundPUpSynergy01
+                                                              : Properties.Resources.gameSoundPUpSynergy02);
+                    break;
+                case gameConstants.gameSound.PUpX2SlowmoDeactivate:
+                    audio = new SoundPlayer(_randomSound == 0 ? Properties.Resources.gameSoundPUpDeactivate01
+                                                              : Properties.Resources.gameSoundPUpDeactivate02);
+                    break;
+                case gameConstants.gameSound.PUpX2NoclipSynergy:
+                    audio = new SoundPlayer(_randomSound == 0 ? Properties.Resources.gameSoundPUpSynergy01
+                                                              : Properties.Resources.gameSoundPUpSynergy02);
+                    break;
+                case gameConstants.gameSound.PUpX2NoclipDeactivate:
+                    audio = new SoundPlayer(_randomSound == 0 ? Properties.Resources.gameSoundPUpDeactivate01
+                                                              : Properties.Resources.gameSoundPUpDeactivate02);
+                    break;
+                case gameConstants.gameSound.PUpPointTickSlowmoSynergy:
+                    audio = new SoundPlayer(_randomSound == 0 ? Properties.Resources.gameSoundPUpSynergy01
+                                                              : Properties.Resources.gameSoundPUpSynergy02);
+                    break;
+                case gameConstants.gameSound.PUpPointTickSlowmoDeactivate:
+                    audio = new SoundPlayer(_randomSound == 0 ? Properties.Resources.gameSoundPUpDeactivate01
+                                                              : Properties.Resources.gameSoundPUpDeactivate02);
+                    break;
+                case gameConstants.gameSound.PUpPointTickNoclipSynergy:
+                    audio = new SoundPlayer(_randomSound == 0 ? Properties.Resources.gameSoundPUpSynergy01
+                                                              : Properties.Resources.gameSoundPUpSynergy02);
+                    break;
+                case gameConstants.gameSound.PUpPointTickNoclipDeactivate:
+                    audio = new SoundPlayer(_randomSound == 0 ? Properties.Resources.gameSoundPUpDeactivate01
+                                                              : Properties.Resources.gameSoundPUpDeactivate02);
+                    break;
+                case gameConstants.gameSound.PUpSlowmoNoclipSynergy:
+                    audio = new SoundPlayer(_randomSound == 0 ? Properties.Resources.gameSoundPUpSynergy01
+                                                              : Properties.Resources.gameSoundPUpSynergy02);
+                    break;
+                case gameConstants.gameSound.PUpSlowmoNoclipDeactivate:
+                    audio = new SoundPlayer(_randomSound == 0 ? Properties.Resources.gameSoundPUpDeactivate01
+                                                              : Properties.Resources.gameSoundPUpDeactivate02);
                     break;
                 case gameConstants.gameSound.ApplicationStartup:
                     audio = new SoundPlayer(Properties.Resources.gameSoundHelloMan);

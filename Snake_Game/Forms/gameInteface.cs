@@ -194,7 +194,7 @@ namespace Snake_Game
                 {
                     gameSettings.GamePowerup = gamePowerup.None;
                     gameSettings.GamePowerupActive = false;
-                    // gamecontroller.PlayGameSound(gameConstants.gameSound.);
+                    gamecontroller.PlayGameSound(gameConstants.gameSound.PUpX2PointTickDeactivate);
                 }
             }
             if (Powerup == gamePowerup.X2Slowmotion)
@@ -215,7 +215,7 @@ namespace Snake_Game
                     new gameController().SetTimerInterval(gameTimer, gameSettings.Speed, true);
                     gameSettings.GamePowerup = gamePowerup.None;
                     gameSettings.GamePowerupActive = false;
-                    // gamecontroller.PlayGameSound(gameConstants.gameSound.);
+                    gamecontroller.PlayGameSound(gameConstants.gameSound.PUpX2SlowmoDeactivate);
                 }
             }
             if (Powerup == gamePowerup.X2Noclip)
@@ -229,7 +229,7 @@ namespace Snake_Game
                 {
                     gameSettings.GamePowerup = gamePowerup.None;
                     gameSettings.GamePowerupActive = false;
-                    // gamecontroller.PlayGameSound(gameConstants.gameSound.);
+                    gamecontroller.PlayGameSound(gameConstants.gameSound.PUpX2NoclipDeactivate);
                 }
             }
             if (Powerup == gamePowerup.PointOnTickSlowmotion)
@@ -251,7 +251,7 @@ namespace Snake_Game
                     new gameController().SetTimerInterval(gameTimer, gameSettings.Speed, true);
                     gameSettings.GamePowerup = gamePowerup.None;
                     gameSettings.GamePowerupActive = false;
-                    // gamecontroller.PlayGameSound(gameConstants.gameSound.);
+                    gamecontroller.PlayGameSound(gameConstants.gameSound.PUpPointTickSlowmoDeactivate);
                 }
             }
             if (Powerup == gamePowerup.PointOnTickNoclip)
@@ -266,7 +266,7 @@ namespace Snake_Game
                 {
                     gameSettings.GamePowerup = gamePowerup.None;
                     gameSettings.GamePowerupActive = false;
-                    // gamecontroller.PlayGameSound(gameConstants.gameSound.);
+                    gamecontroller.PlayGameSound(gameConstants.gameSound.PUpPointTickNoclipDeactivate);
                 }
             }
             if (Powerup == gamePowerup.SlowmotionNoclip)
@@ -287,7 +287,7 @@ namespace Snake_Game
                     new gameController().SetTimerInterval(gameTimer, gameSettings.Speed, true);
                     gameSettings.GamePowerup = gamePowerup.None;
                     gameSettings.GamePowerupActive = false;
-                    // gamecontroller.PlayGameSound(gameConstants.gameSound.);
+                    gamecontroller.PlayGameSound(gameConstants.gameSound.PUpSlowmoNoclipDeactivate);
                 }
             }
             new gameController().SetPowerup(labelCurrentPowerupValue, labelSavedPowerupValue, labelPowerupTimerValue, currentTime, _lastChangeTime);
@@ -1242,27 +1242,27 @@ namespace Snake_Game
                                     break;
                                 case gamePowerup.X2PointOnTick:
                                     lastPUpX2PointTickChangeTime = currentTime;
-                                    // gamecontroller.PlayGameSound(gameConstants.gameSound.);
+                                     gamecontroller.PlayGameSound(gameConstants.gameSound.PUpX2PointTickSynergy);
                                     break;
                                 case gamePowerup.X2Slowmotion:
                                     lastPUpX2SlowmoChangeTime = currentTime;
-                                    // gamecontroller.PlayGameSound(gameConstants.gameSound.);
+                                     gamecontroller.PlayGameSound(gameConstants.gameSound.PUpX2SlowmoSynergy);
                                     break;
                                 case gamePowerup.X2Noclip:
                                     lastPUpX2NoclipChangeTime = currentTime;
-                                    // gamecontroller.PlayGameSound(gameConstants.gameSound.);
+                                     gamecontroller.PlayGameSound(gameConstants.gameSound.PUpX2NoclipSynergy);
                                     break;
                                 case gamePowerup.PointOnTickSlowmotion:
                                     lastPUpPointTickSlowmoChangeTime = currentTime;
-                                    // gamecontroller.PlayGameSound(gameConstants.gameSound.);
+                                     gamecontroller.PlayGameSound(gameConstants.gameSound.PUpPointTickSlowmoSynergy);
                                     break;
                                 case gamePowerup.PointOnTickNoclip:
                                     lastPUpPointTickNoclipChangeTime = currentTime;
-                                    // gamecontroller.PlayGameSound(gameConstants.gameSound.);
+                                     gamecontroller.PlayGameSound(gameConstants.gameSound.PUpPointTickNoclipSynergy);
                                     break;
                                 case gamePowerup.SlowmotionNoclip:
                                     lastPUpSlowmoNoclipChangeTime = currentTime;
-                                    // gamecontroller.PlayGameSound(gameConstants.gameSound.);
+                                     gamecontroller.PlayGameSound(gameConstants.gameSound.PUpSlowmoNoclipSynergy);
                                     break;
                                 default:
                                     break;
