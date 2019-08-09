@@ -98,7 +98,9 @@
             DevModeKey = 9,
             PowerupKey = 10,
             NoClipKey = 11,
-            ReloadSpritesKey = 12
+            ReloadSpritesKey = 12,
+            GrowSnakeKey = 13,
+            ShrinkSnakeKey = 14
         };
 
         public enum gameColor // Enum for colors used in game

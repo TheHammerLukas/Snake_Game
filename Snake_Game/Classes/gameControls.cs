@@ -5,18 +5,20 @@ namespace Snake_Game
 {
     class gameControls
     {
-        public static Keys dirUpKey         { get; set; } // User configured Up key 
-        public static Keys dirDownKey       { get; set; } // User configured Down key
-        public static Keys dirLeftKey       { get; set; } // User configured Left key
-        public static Keys dirRightKey      { get; set; } // User configured Right key
-        public static Keys modRestartKey    { get; set; } // User configured Restart key
-        public static Keys modBotKey        { get; set; } // User configured Bot key
-        public static Keys modSpeedKey      { get; set; } // User configured Speed key
-        public static Keys modPauseKey      { get; set; } // User configured Pause key
-        public static Keys modPowerupKey    { get; set; } // User configured Powerup key
-        public static Keys modNoClipKey     { get; set; } // User configured NoClip key
-        public static Keys modDevModeKey    { get; private set; } // Hardcoded DevMode key; Keycode 'Oem5' => '^'
-        public static Keys modReloadSpritesKey { get; private set; } // Hardcoded Reload Sprites key; Only enabled when DevMode is active
+        public static Keys dirUpKey             { get; set; } // User configured Up key 
+        public static Keys dirDownKey           { get; set; } // User configured Down key
+        public static Keys dirLeftKey           { get; set; } // User configured Left key
+        public static Keys dirRightKey          { get; set; } // User configured Right key
+        public static Keys modRestartKey        { get; set; } // User configured Restart key
+        public static Keys modBotKey            { get; set; } // User configured Bot key
+        public static Keys modSpeedKey          { get; set; } // User configured Speed key
+        public static Keys modPauseKey          { get; set; } // User configured Pause key
+        public static Keys modPowerupKey        { get; set; } // User configured Powerup key
+        public static Keys modNoClipKey         { get; set; } // User configured NoClip key
+        public static Keys modDevModeKey        { get; private set; } // Hardcoded DevMode key; Keycode 'Oem5' => '^'
+        public static Keys modReloadSpritesKey  { get; private set; } // Hardcoded Reload Sprites key; Only enabled when DevMode is active
+        public static Keys modGrowSnakeKey      { get; private set; } // Hardcoded Grow Snake key; Only enabled when DevMode is active
+        public static Keys modShrinkSnakeKey    { get; private set; } // Hardcoded Shrink Snake key; Only enabled when DevMode is active
 
         public gameControls(bool useStandard)
         {
@@ -150,6 +152,12 @@ namespace Snake_Game
                         break;
                     case gameConstants.gameAction.ReloadSpritesKey:
                         modReloadSpritesKey = gamecontroller.getKey("L");
+                        break;
+                    case gameConstants.gameAction.GrowSnakeKey:
+                        modGrowSnakeKey = gamecontroller.getKey("X");
+                        break;
+                    case gameConstants.gameAction.ShrinkSnakeKey:
+                        modShrinkSnakeKey = gamecontroller.getKey("Y");
                         break;
                     default:
                         break;

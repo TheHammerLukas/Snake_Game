@@ -1276,6 +1276,14 @@ namespace Snake_Game
                     {
                         gamecontroller.LoadAllGameSprites();
                     }
+                    if (e.KeyCode == gameControls.modGrowSnakeKey)
+                    {
+                        gameController.growCnt = gameSettings.GrowMultiplicator - 1;
+                    }
+                    if (e.KeyCode == gameControls.modShrinkSnakeKey)
+                    {
+                        gamecontroller.ShrinkSnake();
+                    }
                 }
                 if (e.KeyCode == gameControls.modNoClipKey && !gameSettings.MenuIsOpen)
                 {

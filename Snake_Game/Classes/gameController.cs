@@ -277,6 +277,15 @@ namespace Snake_Game
             }
         }
 
+        // Shrink the snake
+        public void ShrinkSnake()
+        {
+            if (gameObject.Snake.Count > 1)
+            {
+                gameObject.Snake.RemoveAt(gameObject.Snake.Count - 1);
+            }
+        }
+
         // Kill the player
         private void Die()
         {
