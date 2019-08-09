@@ -214,6 +214,48 @@ namespace Snake_Game
             this.buttonApply = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
             this.buttonReset = new System.Windows.Forms.Button();
+            this.labelPUpX2PointTickDuration = new System.Windows.Forms.Label();
+            this.labelPUpX2SlowmoDuration = new System.Windows.Forms.Label();
+            this.labelPUpX2NoclipDuration = new System.Windows.Forms.Label();
+            this.labelPUpPointTickSlowmoDuration = new System.Windows.Forms.Label();
+            this.labelPUpPointTickNoclipDuration = new System.Windows.Forms.Label();
+            this.labelPUpSlowmoNoclipDuration = new System.Windows.Forms.Label();
+            this.textBoxPUpPointTickNoclipDuration = new System.Windows.Forms.TextBox();
+            this.textBoxPUpPointTickSlowmoDuration = new System.Windows.Forms.TextBox();
+            this.textBoxPUpX2NoclipDuration = new System.Windows.Forms.TextBox();
+            this.textBoxPUpX2SlowmoDuration = new System.Windows.Forms.TextBox();
+            this.textBoxPUpX2PointTickDuration = new System.Windows.Forms.TextBox();
+            this.textBoxPUpSlowmoNoclipDuration = new System.Windows.Forms.TextBox();
+            this.groupBoxSavefilesSpritesPointTickNoclip = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonSaveFileSpritesPointTickNoclip = new System.Windows.Forms.Button();
+            this.buttonOpenFileSpritesPointTickNoclip = new System.Windows.Forms.Button();
+            this.labelSavefilesSpritesPointTickNoclipPath = new System.Windows.Forms.Label();
+            this.groupBoxSavefilesSpritesPointTickSlowmotion = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonSaveFileSpritesPointTickSlowmotion = new System.Windows.Forms.Button();
+            this.buttonOpenFileSpritesPointTickSlowmotion = new System.Windows.Forms.Button();
+            this.labelSavefilesSpritesPointTickSlowmotionPath = new System.Windows.Forms.Label();
+            this.groupBoxSavefilesSpritesSlowmotionNoclip = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonSaveFileSpritesSlowmotionNoclip = new System.Windows.Forms.Button();
+            this.buttonOpenFileSpritesSlowmotionNoclip = new System.Windows.Forms.Button();
+            this.labelSavefilesSpritesSlowmotionNoclipPath = new System.Windows.Forms.Label();
+            this.groupBoxSavefilesSpritesX2Noclip = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonSaveFileSpritesX2Noclip = new System.Windows.Forms.Button();
+            this.buttonOpenFileSpritesX2Noclip = new System.Windows.Forms.Button();
+            this.labelSavefilesSpritesX2NoclipPath = new System.Windows.Forms.Label();
+            this.groupBoxSavefilesSpritesX2Slowmotion = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonSaveFileSpritesX2Slowmotion = new System.Windows.Forms.Button();
+            this.buttonOpenFileSpritesX2Slowmotion = new System.Windows.Forms.Button();
+            this.labelSavefilesSpritesX2SlowmotionPath = new System.Windows.Forms.Label();
+            this.groupBoxSavefilesSpritesX2PointTick = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonSaveFileSpritesX2PointTick = new System.Windows.Forms.Button();
+            this.buttonOpenFileSpritesX2PointTick = new System.Windows.Forms.Button();
+            this.labelSavefilesSpritesX2PointTickPath = new System.Windows.Forms.Label();
             this.tabControlMenu.SuspendLayout();
             this.tabPageSettings.SuspendLayout();
             this.tableLayoutPanelSettings.SuspendLayout();
@@ -242,6 +284,18 @@ namespace Snake_Game
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBoxSavefilesSprites.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.groupBoxSavefilesSpritesPointTickNoclip.SuspendLayout();
+            this.tableLayoutPanel7.SuspendLayout();
+            this.groupBoxSavefilesSpritesPointTickSlowmotion.SuspendLayout();
+            this.tableLayoutPanel8.SuspendLayout();
+            this.groupBoxSavefilesSpritesSlowmotionNoclip.SuspendLayout();
+            this.tableLayoutPanel9.SuspendLayout();
+            this.groupBoxSavefilesSpritesX2Noclip.SuspendLayout();
+            this.tableLayoutPanel10.SuspendLayout();
+            this.groupBoxSavefilesSpritesX2Slowmotion.SuspendLayout();
+            this.tableLayoutPanel11.SuspendLayout();
+            this.groupBoxSavefilesSpritesX2PointTick.SuspendLayout();
+            this.tableLayoutPanel12.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlMenu
@@ -1252,62 +1306,62 @@ namespace Snake_Game
             // tableLayoutPanelPowerups
             // 
             this.tableLayoutPanelPowerups.AutoScroll = true;
-            this.tableLayoutPanelPowerups.AutoScrollMinSize = new System.Drawing.Size(0, 1050);
+            this.tableLayoutPanelPowerups.AutoScrollMinSize = new System.Drawing.Size(0, 1350);
             this.tableLayoutPanelPowerups.ColumnCount = 4;
             this.tableLayoutPanelPowerups.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.tableLayoutPanelPowerups.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanelPowerups.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanelPowerups.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanelPowerups.Controls.Add(this.buttonResetFoodNoclipColor, 3, 20);
-            this.tableLayoutPanelPowerups.Controls.Add(this.buttonSetFoodNoclipColor, 2, 20);
-            this.tableLayoutPanelPowerups.Controls.Add(this.labelFoodNoclipPrev, 1, 20);
-            this.tableLayoutPanelPowerups.Controls.Add(this.buttonResetBodyNoclipColor, 3, 19);
-            this.tableLayoutPanelPowerups.Controls.Add(this.buttonSetBodyNoclipColor, 2, 19);
-            this.tableLayoutPanelPowerups.Controls.Add(this.labelSnakeBodyNoclipPrev, 1, 19);
-            this.tableLayoutPanelPowerups.Controls.Add(this.buttonResetHeadNoclipColor, 3, 18);
-            this.tableLayoutPanelPowerups.Controls.Add(this.buttonSetHeadNoclipColor, 2, 18);
-            this.tableLayoutPanelPowerups.Controls.Add(this.labelSnakeHeadNoclipPrev, 1, 18);
-            this.tableLayoutPanelPowerups.Controls.Add(this.buttonResetFoodSlowmoColor, 3, 16);
-            this.tableLayoutPanelPowerups.Controls.Add(this.buttonSetFoodSlowmoColor, 2, 16);
-            this.tableLayoutPanelPowerups.Controls.Add(this.labelFoodSlowmoPrev, 1, 16);
-            this.tableLayoutPanelPowerups.Controls.Add(this.buttonResetBodySlowmoColor, 3, 15);
-            this.tableLayoutPanelPowerups.Controls.Add(this.buttonSetBodySlowmoColor, 2, 15);
-            this.tableLayoutPanelPowerups.Controls.Add(this.labelSnakeBodySlowmoPrev, 1, 15);
-            this.tableLayoutPanelPowerups.Controls.Add(this.buttonResetHeadSlowmoColor, 3, 14);
-            this.tableLayoutPanelPowerups.Controls.Add(this.buttonSetHeadSlowmoColor, 2, 14);
-            this.tableLayoutPanelPowerups.Controls.Add(this.labelSnakeHeadSlowmoPrev, 1, 14);
-            this.tableLayoutPanelPowerups.Controls.Add(this.buttonResetFoodPointTickColor, 3, 12);
-            this.tableLayoutPanelPowerups.Controls.Add(this.buttonSetFoodPointTickColor, 2, 12);
-            this.tableLayoutPanelPowerups.Controls.Add(this.labelFoodPointTickPrev, 1, 12);
-            this.tableLayoutPanelPowerups.Controls.Add(this.buttonResetBodyPointTickColor, 3, 11);
-            this.tableLayoutPanelPowerups.Controls.Add(this.buttonSetBodyPointTickColor, 2, 11);
-            this.tableLayoutPanelPowerups.Controls.Add(this.labelSnakeBodyPointTickPrev, 1, 11);
-            this.tableLayoutPanelPowerups.Controls.Add(this.buttonResetHeadPointTickColor, 3, 10);
-            this.tableLayoutPanelPowerups.Controls.Add(this.buttonSetHeadPointTickColor, 2, 10);
-            this.tableLayoutPanelPowerups.Controls.Add(this.labelSnakeHeadPointTickPrev, 1, 10);
-            this.tableLayoutPanelPowerups.Controls.Add(this.buttonResetFoodX2Color, 3, 8);
-            this.tableLayoutPanelPowerups.Controls.Add(this.buttonSetFoodX2Color, 2, 8);
-            this.tableLayoutPanelPowerups.Controls.Add(this.buttonResetBodyX2Color, 3, 7);
-            this.tableLayoutPanelPowerups.Controls.Add(this.buttonSetBodyX2Color, 2, 7);
-            this.tableLayoutPanelPowerups.Controls.Add(this.buttonResetHeadX2Color, 3, 6);
-            this.tableLayoutPanelPowerups.Controls.Add(this.buttonSetHeadX2Color, 2, 6);
-            this.tableLayoutPanelPowerups.Controls.Add(this.labelFoodX2Prev, 1, 8);
-            this.tableLayoutPanelPowerups.Controls.Add(this.labelSnakeBodyX2Prev, 1, 7);
-            this.tableLayoutPanelPowerups.Controls.Add(this.labelSnakeHeadX2Prev, 1, 6);
-            this.tableLayoutPanelPowerups.Controls.Add(this.labelFoodNoclipColor, 0, 20);
-            this.tableLayoutPanelPowerups.Controls.Add(this.labelSnakeBodyNoclipColor, 0, 19);
-            this.tableLayoutPanelPowerups.Controls.Add(this.labelSnakeHeadNoclipColor, 0, 18);
-            this.tableLayoutPanelPowerups.Controls.Add(this.labelNoclipColors, 0, 17);
-            this.tableLayoutPanelPowerups.Controls.Add(this.labelFoodSlowmoColor, 0, 16);
-            this.tableLayoutPanelPowerups.Controls.Add(this.labelSnakeBodySlowmoColor, 0, 15);
-            this.tableLayoutPanelPowerups.Controls.Add(this.labelSnakeHeadSlowmoColor, 0, 14);
-            this.tableLayoutPanelPowerups.Controls.Add(this.labelSlowmoColors, 0, 13);
-            this.tableLayoutPanelPowerups.Controls.Add(this.labelFoodPointTickColor, 0, 12);
-            this.tableLayoutPanelPowerups.Controls.Add(this.labelSnakeBodyPointTickColor, 0, 11);
-            this.tableLayoutPanelPowerups.Controls.Add(this.labelSnakeHeadPointTickColor, 0, 10);
-            this.tableLayoutPanelPowerups.Controls.Add(this.labelPointTickColors, 0, 9);
-            this.tableLayoutPanelPowerups.Controls.Add(this.labelFoodX2Color, 0, 8);
-            this.tableLayoutPanelPowerups.Controls.Add(this.labelSnakeBodyX2Color, 0, 7);
+            this.tableLayoutPanelPowerups.Controls.Add(this.buttonResetFoodNoclipColor, 3, 26);
+            this.tableLayoutPanelPowerups.Controls.Add(this.buttonSetFoodNoclipColor, 2, 26);
+            this.tableLayoutPanelPowerups.Controls.Add(this.labelFoodNoclipPrev, 1, 26);
+            this.tableLayoutPanelPowerups.Controls.Add(this.buttonResetBodyNoclipColor, 3, 25);
+            this.tableLayoutPanelPowerups.Controls.Add(this.buttonSetBodyNoclipColor, 2, 25);
+            this.tableLayoutPanelPowerups.Controls.Add(this.labelSnakeBodyNoclipPrev, 1, 25);
+            this.tableLayoutPanelPowerups.Controls.Add(this.buttonResetHeadNoclipColor, 3, 24);
+            this.tableLayoutPanelPowerups.Controls.Add(this.buttonSetHeadNoclipColor, 2, 24);
+            this.tableLayoutPanelPowerups.Controls.Add(this.labelSnakeHeadNoclipPrev, 1, 24);
+            this.tableLayoutPanelPowerups.Controls.Add(this.buttonResetFoodSlowmoColor, 3, 22);
+            this.tableLayoutPanelPowerups.Controls.Add(this.buttonSetFoodSlowmoColor, 2, 22);
+            this.tableLayoutPanelPowerups.Controls.Add(this.labelFoodSlowmoPrev, 1, 22);
+            this.tableLayoutPanelPowerups.Controls.Add(this.buttonResetBodySlowmoColor, 3, 21);
+            this.tableLayoutPanelPowerups.Controls.Add(this.buttonSetBodySlowmoColor, 2, 21);
+            this.tableLayoutPanelPowerups.Controls.Add(this.labelSnakeBodySlowmoPrev, 1, 21);
+            this.tableLayoutPanelPowerups.Controls.Add(this.buttonResetHeadSlowmoColor, 3, 20);
+            this.tableLayoutPanelPowerups.Controls.Add(this.buttonSetHeadSlowmoColor, 2, 20);
+            this.tableLayoutPanelPowerups.Controls.Add(this.labelSnakeHeadSlowmoPrev, 1, 20);
+            this.tableLayoutPanelPowerups.Controls.Add(this.buttonResetFoodPointTickColor, 3, 18);
+            this.tableLayoutPanelPowerups.Controls.Add(this.buttonSetFoodPointTickColor, 2, 18);
+            this.tableLayoutPanelPowerups.Controls.Add(this.labelFoodPointTickPrev, 1, 18);
+            this.tableLayoutPanelPowerups.Controls.Add(this.buttonResetBodyPointTickColor, 3, 17);
+            this.tableLayoutPanelPowerups.Controls.Add(this.buttonSetBodyPointTickColor, 2, 17);
+            this.tableLayoutPanelPowerups.Controls.Add(this.labelSnakeBodyPointTickPrev, 1, 17);
+            this.tableLayoutPanelPowerups.Controls.Add(this.buttonResetHeadPointTickColor, 3, 16);
+            this.tableLayoutPanelPowerups.Controls.Add(this.buttonSetHeadPointTickColor, 2, 16);
+            this.tableLayoutPanelPowerups.Controls.Add(this.labelSnakeHeadPointTickPrev, 1, 16);
+            this.tableLayoutPanelPowerups.Controls.Add(this.buttonResetFoodX2Color, 3, 14);
+            this.tableLayoutPanelPowerups.Controls.Add(this.buttonSetFoodX2Color, 2, 14);
+            this.tableLayoutPanelPowerups.Controls.Add(this.buttonResetBodyX2Color, 3, 13);
+            this.tableLayoutPanelPowerups.Controls.Add(this.buttonSetBodyX2Color, 2, 13);
+            this.tableLayoutPanelPowerups.Controls.Add(this.buttonResetHeadX2Color, 3, 12);
+            this.tableLayoutPanelPowerups.Controls.Add(this.buttonSetHeadX2Color, 2, 12);
+            this.tableLayoutPanelPowerups.Controls.Add(this.labelFoodX2Prev, 1, 14);
+            this.tableLayoutPanelPowerups.Controls.Add(this.labelSnakeBodyX2Prev, 1, 13);
+            this.tableLayoutPanelPowerups.Controls.Add(this.labelSnakeHeadX2Prev, 1, 12);
+            this.tableLayoutPanelPowerups.Controls.Add(this.labelFoodNoclipColor, 0, 26);
+            this.tableLayoutPanelPowerups.Controls.Add(this.labelSnakeBodyNoclipColor, 0, 25);
+            this.tableLayoutPanelPowerups.Controls.Add(this.labelSnakeHeadNoclipColor, 0, 24);
+            this.tableLayoutPanelPowerups.Controls.Add(this.labelNoclipColors, 0, 23);
+            this.tableLayoutPanelPowerups.Controls.Add(this.labelFoodSlowmoColor, 0, 22);
+            this.tableLayoutPanelPowerups.Controls.Add(this.labelSnakeBodySlowmoColor, 0, 21);
+            this.tableLayoutPanelPowerups.Controls.Add(this.labelSnakeHeadSlowmoColor, 0, 20);
+            this.tableLayoutPanelPowerups.Controls.Add(this.labelSlowmoColors, 0, 19);
+            this.tableLayoutPanelPowerups.Controls.Add(this.labelFoodPointTickColor, 0, 18);
+            this.tableLayoutPanelPowerups.Controls.Add(this.labelSnakeBodyPointTickColor, 0, 17);
+            this.tableLayoutPanelPowerups.Controls.Add(this.labelSnakeHeadPointTickColor, 0, 16);
+            this.tableLayoutPanelPowerups.Controls.Add(this.labelPointTickColors, 0, 15);
+            this.tableLayoutPanelPowerups.Controls.Add(this.labelFoodX2Color, 0, 14);
+            this.tableLayoutPanelPowerups.Controls.Add(this.labelSnakeBodyX2Color, 0, 13);
             this.tableLayoutPanelPowerups.Controls.Add(this.textBoxPUpNoclipDuration, 2, 4);
             this.tableLayoutPanelPowerups.Controls.Add(this.labelPUpNoclipDuration, 0, 4);
             this.tableLayoutPanelPowerups.Controls.Add(this.textBoxPUpSlowmoDuration, 2, 3);
@@ -1318,13 +1372,31 @@ namespace Snake_Game
             this.tableLayoutPanelPowerups.Controls.Add(this.labelPUpX2Duration, 0, 1);
             this.tableLayoutPanelPowerups.Controls.Add(this.labelPUpSpawnGap, 0, 0);
             this.tableLayoutPanelPowerups.Controls.Add(this.textBoxPUpSpawnGap, 2, 0);
-            this.tableLayoutPanelPowerups.Controls.Add(this.labelX2Colors, 0, 5);
-            this.tableLayoutPanelPowerups.Controls.Add(this.labelSnakeHeadX2Color, 0, 6);
+            this.tableLayoutPanelPowerups.Controls.Add(this.labelX2Colors, 0, 11);
+            this.tableLayoutPanelPowerups.Controls.Add(this.labelSnakeHeadX2Color, 0, 12);
+            this.tableLayoutPanelPowerups.Controls.Add(this.labelPUpX2PointTickDuration, 0, 5);
+            this.tableLayoutPanelPowerups.Controls.Add(this.labelPUpX2SlowmoDuration, 0, 6);
+            this.tableLayoutPanelPowerups.Controls.Add(this.labelPUpX2NoclipDuration, 0, 7);
+            this.tableLayoutPanelPowerups.Controls.Add(this.labelPUpPointTickSlowmoDuration, 0, 8);
+            this.tableLayoutPanelPowerups.Controls.Add(this.labelPUpPointTickNoclipDuration, 0, 9);
+            this.tableLayoutPanelPowerups.Controls.Add(this.labelPUpSlowmoNoclipDuration, 0, 10);
+            this.tableLayoutPanelPowerups.Controls.Add(this.textBoxPUpPointTickNoclipDuration, 2, 9);
+            this.tableLayoutPanelPowerups.Controls.Add(this.textBoxPUpPointTickSlowmoDuration, 2, 8);
+            this.tableLayoutPanelPowerups.Controls.Add(this.textBoxPUpX2NoclipDuration, 2, 7);
+            this.tableLayoutPanelPowerups.Controls.Add(this.textBoxPUpX2SlowmoDuration, 2, 6);
+            this.tableLayoutPanelPowerups.Controls.Add(this.textBoxPUpX2PointTickDuration, 2, 5);
+            this.tableLayoutPanelPowerups.Controls.Add(this.textBoxPUpSlowmoNoclipDuration, 2, 10);
             this.tableLayoutPanelPowerups.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelPowerups.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanelPowerups.Name = "tableLayoutPanelPowerups";
             this.tableLayoutPanelPowerups.Padding = new System.Windows.Forms.Padding(0, 0, 17, 0);
-            this.tableLayoutPanelPowerups.RowCount = 21;
+            this.tableLayoutPanelPowerups.RowCount = 27;
+            this.tableLayoutPanelPowerups.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanelPowerups.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanelPowerups.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanelPowerups.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanelPowerups.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanelPowerups.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanelPowerups.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanelPowerups.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanelPowerups.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
@@ -1352,9 +1424,9 @@ namespace Snake_Game
             // buttonResetFoodNoclipColor
             // 
             this.buttonResetFoodNoclipColor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonResetFoodNoclipColor.Location = new System.Drawing.Point(264, 1003);
+            this.buttonResetFoodNoclipColor.Location = new System.Drawing.Point(264, 1303);
             this.buttonResetFoodNoclipColor.Name = "buttonResetFoodNoclipColor";
-            this.buttonResetFoodNoclipColor.Size = new System.Drawing.Size(83, 44);
+            this.buttonResetFoodNoclipColor.Size = new System.Drawing.Size(83, 94);
             this.buttonResetFoodNoclipColor.TabIndex = 61;
             this.buttonResetFoodNoclipColor.Text = "Reset";
             this.buttonResetFoodNoclipColor.UseVisualStyleBackColor = true;
@@ -1363,9 +1435,9 @@ namespace Snake_Game
             // buttonSetFoodNoclipColor
             // 
             this.buttonSetFoodNoclipColor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSetFoodNoclipColor.Location = new System.Drawing.Point(177, 1003);
+            this.buttonSetFoodNoclipColor.Location = new System.Drawing.Point(177, 1303);
             this.buttonSetFoodNoclipColor.Name = "buttonSetFoodNoclipColor";
-            this.buttonSetFoodNoclipColor.Size = new System.Drawing.Size(81, 44);
+            this.buttonSetFoodNoclipColor.Size = new System.Drawing.Size(81, 94);
             this.buttonSetFoodNoclipColor.TabIndex = 60;
             this.buttonSetFoodNoclipColor.Text = "Set";
             this.buttonSetFoodNoclipColor.UseVisualStyleBackColor = true;
@@ -1376,15 +1448,15 @@ namespace Snake_Game
             this.labelFoodNoclipPrev.AutoSize = true;
             this.labelFoodNoclipPrev.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.labelFoodNoclipPrev.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelFoodNoclipPrev.Location = new System.Drawing.Point(125, 1000);
+            this.labelFoodNoclipPrev.Location = new System.Drawing.Point(125, 1300);
             this.labelFoodNoclipPrev.Name = "labelFoodNoclipPrev";
-            this.labelFoodNoclipPrev.Size = new System.Drawing.Size(46, 50);
+            this.labelFoodNoclipPrev.Size = new System.Drawing.Size(46, 100);
             this.labelFoodNoclipPrev.TabIndex = 59;
             // 
             // buttonResetBodyNoclipColor
             // 
             this.buttonResetBodyNoclipColor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonResetBodyNoclipColor.Location = new System.Drawing.Point(264, 953);
+            this.buttonResetBodyNoclipColor.Location = new System.Drawing.Point(264, 1253);
             this.buttonResetBodyNoclipColor.Name = "buttonResetBodyNoclipColor";
             this.buttonResetBodyNoclipColor.Size = new System.Drawing.Size(83, 44);
             this.buttonResetBodyNoclipColor.TabIndex = 58;
@@ -1395,7 +1467,7 @@ namespace Snake_Game
             // buttonSetBodyNoclipColor
             // 
             this.buttonSetBodyNoclipColor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSetBodyNoclipColor.Location = new System.Drawing.Point(177, 953);
+            this.buttonSetBodyNoclipColor.Location = new System.Drawing.Point(177, 1253);
             this.buttonSetBodyNoclipColor.Name = "buttonSetBodyNoclipColor";
             this.buttonSetBodyNoclipColor.Size = new System.Drawing.Size(81, 44);
             this.buttonSetBodyNoclipColor.TabIndex = 57;
@@ -1408,7 +1480,7 @@ namespace Snake_Game
             this.labelSnakeBodyNoclipPrev.AutoSize = true;
             this.labelSnakeBodyNoclipPrev.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.labelSnakeBodyNoclipPrev.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelSnakeBodyNoclipPrev.Location = new System.Drawing.Point(125, 950);
+            this.labelSnakeBodyNoclipPrev.Location = new System.Drawing.Point(125, 1250);
             this.labelSnakeBodyNoclipPrev.Name = "labelSnakeBodyNoclipPrev";
             this.labelSnakeBodyNoclipPrev.Size = new System.Drawing.Size(46, 50);
             this.labelSnakeBodyNoclipPrev.TabIndex = 56;
@@ -1416,7 +1488,7 @@ namespace Snake_Game
             // buttonResetHeadNoclipColor
             // 
             this.buttonResetHeadNoclipColor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonResetHeadNoclipColor.Location = new System.Drawing.Point(264, 903);
+            this.buttonResetHeadNoclipColor.Location = new System.Drawing.Point(264, 1203);
             this.buttonResetHeadNoclipColor.Name = "buttonResetHeadNoclipColor";
             this.buttonResetHeadNoclipColor.Size = new System.Drawing.Size(83, 44);
             this.buttonResetHeadNoclipColor.TabIndex = 55;
@@ -1427,7 +1499,7 @@ namespace Snake_Game
             // buttonSetHeadNoclipColor
             // 
             this.buttonSetHeadNoclipColor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSetHeadNoclipColor.Location = new System.Drawing.Point(177, 903);
+            this.buttonSetHeadNoclipColor.Location = new System.Drawing.Point(177, 1203);
             this.buttonSetHeadNoclipColor.Name = "buttonSetHeadNoclipColor";
             this.buttonSetHeadNoclipColor.Size = new System.Drawing.Size(81, 44);
             this.buttonSetHeadNoclipColor.TabIndex = 54;
@@ -1440,7 +1512,7 @@ namespace Snake_Game
             this.labelSnakeHeadNoclipPrev.AutoSize = true;
             this.labelSnakeHeadNoclipPrev.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.labelSnakeHeadNoclipPrev.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelSnakeHeadNoclipPrev.Location = new System.Drawing.Point(125, 900);
+            this.labelSnakeHeadNoclipPrev.Location = new System.Drawing.Point(125, 1200);
             this.labelSnakeHeadNoclipPrev.Name = "labelSnakeHeadNoclipPrev";
             this.labelSnakeHeadNoclipPrev.Size = new System.Drawing.Size(46, 50);
             this.labelSnakeHeadNoclipPrev.TabIndex = 53;
@@ -1448,7 +1520,7 @@ namespace Snake_Game
             // buttonResetFoodSlowmoColor
             // 
             this.buttonResetFoodSlowmoColor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonResetFoodSlowmoColor.Location = new System.Drawing.Point(264, 803);
+            this.buttonResetFoodSlowmoColor.Location = new System.Drawing.Point(264, 1103);
             this.buttonResetFoodSlowmoColor.Name = "buttonResetFoodSlowmoColor";
             this.buttonResetFoodSlowmoColor.Size = new System.Drawing.Size(83, 44);
             this.buttonResetFoodSlowmoColor.TabIndex = 52;
@@ -1459,7 +1531,7 @@ namespace Snake_Game
             // buttonSetFoodSlowmoColor
             // 
             this.buttonSetFoodSlowmoColor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSetFoodSlowmoColor.Location = new System.Drawing.Point(177, 803);
+            this.buttonSetFoodSlowmoColor.Location = new System.Drawing.Point(177, 1103);
             this.buttonSetFoodSlowmoColor.Name = "buttonSetFoodSlowmoColor";
             this.buttonSetFoodSlowmoColor.Size = new System.Drawing.Size(81, 44);
             this.buttonSetFoodSlowmoColor.TabIndex = 51;
@@ -1472,7 +1544,7 @@ namespace Snake_Game
             this.labelFoodSlowmoPrev.AutoSize = true;
             this.labelFoodSlowmoPrev.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.labelFoodSlowmoPrev.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelFoodSlowmoPrev.Location = new System.Drawing.Point(125, 800);
+            this.labelFoodSlowmoPrev.Location = new System.Drawing.Point(125, 1100);
             this.labelFoodSlowmoPrev.Name = "labelFoodSlowmoPrev";
             this.labelFoodSlowmoPrev.Size = new System.Drawing.Size(46, 50);
             this.labelFoodSlowmoPrev.TabIndex = 50;
@@ -1480,7 +1552,7 @@ namespace Snake_Game
             // buttonResetBodySlowmoColor
             // 
             this.buttonResetBodySlowmoColor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonResetBodySlowmoColor.Location = new System.Drawing.Point(264, 753);
+            this.buttonResetBodySlowmoColor.Location = new System.Drawing.Point(264, 1053);
             this.buttonResetBodySlowmoColor.Name = "buttonResetBodySlowmoColor";
             this.buttonResetBodySlowmoColor.Size = new System.Drawing.Size(83, 44);
             this.buttonResetBodySlowmoColor.TabIndex = 49;
@@ -1491,7 +1563,7 @@ namespace Snake_Game
             // buttonSetBodySlowmoColor
             // 
             this.buttonSetBodySlowmoColor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSetBodySlowmoColor.Location = new System.Drawing.Point(177, 753);
+            this.buttonSetBodySlowmoColor.Location = new System.Drawing.Point(177, 1053);
             this.buttonSetBodySlowmoColor.Name = "buttonSetBodySlowmoColor";
             this.buttonSetBodySlowmoColor.Size = new System.Drawing.Size(81, 44);
             this.buttonSetBodySlowmoColor.TabIndex = 48;
@@ -1504,7 +1576,7 @@ namespace Snake_Game
             this.labelSnakeBodySlowmoPrev.AutoSize = true;
             this.labelSnakeBodySlowmoPrev.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.labelSnakeBodySlowmoPrev.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelSnakeBodySlowmoPrev.Location = new System.Drawing.Point(125, 750);
+            this.labelSnakeBodySlowmoPrev.Location = new System.Drawing.Point(125, 1050);
             this.labelSnakeBodySlowmoPrev.Name = "labelSnakeBodySlowmoPrev";
             this.labelSnakeBodySlowmoPrev.Size = new System.Drawing.Size(46, 50);
             this.labelSnakeBodySlowmoPrev.TabIndex = 47;
@@ -1512,7 +1584,7 @@ namespace Snake_Game
             // buttonResetHeadSlowmoColor
             // 
             this.buttonResetHeadSlowmoColor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonResetHeadSlowmoColor.Location = new System.Drawing.Point(264, 703);
+            this.buttonResetHeadSlowmoColor.Location = new System.Drawing.Point(264, 1003);
             this.buttonResetHeadSlowmoColor.Name = "buttonResetHeadSlowmoColor";
             this.buttonResetHeadSlowmoColor.Size = new System.Drawing.Size(83, 44);
             this.buttonResetHeadSlowmoColor.TabIndex = 46;
@@ -1523,7 +1595,7 @@ namespace Snake_Game
             // buttonSetHeadSlowmoColor
             // 
             this.buttonSetHeadSlowmoColor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSetHeadSlowmoColor.Location = new System.Drawing.Point(177, 703);
+            this.buttonSetHeadSlowmoColor.Location = new System.Drawing.Point(177, 1003);
             this.buttonSetHeadSlowmoColor.Name = "buttonSetHeadSlowmoColor";
             this.buttonSetHeadSlowmoColor.Size = new System.Drawing.Size(81, 44);
             this.buttonSetHeadSlowmoColor.TabIndex = 45;
@@ -1536,7 +1608,7 @@ namespace Snake_Game
             this.labelSnakeHeadSlowmoPrev.AutoSize = true;
             this.labelSnakeHeadSlowmoPrev.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.labelSnakeHeadSlowmoPrev.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelSnakeHeadSlowmoPrev.Location = new System.Drawing.Point(125, 700);
+            this.labelSnakeHeadSlowmoPrev.Location = new System.Drawing.Point(125, 1000);
             this.labelSnakeHeadSlowmoPrev.Name = "labelSnakeHeadSlowmoPrev";
             this.labelSnakeHeadSlowmoPrev.Size = new System.Drawing.Size(46, 50);
             this.labelSnakeHeadSlowmoPrev.TabIndex = 44;
@@ -1544,7 +1616,7 @@ namespace Snake_Game
             // buttonResetFoodPointTickColor
             // 
             this.buttonResetFoodPointTickColor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonResetFoodPointTickColor.Location = new System.Drawing.Point(264, 603);
+            this.buttonResetFoodPointTickColor.Location = new System.Drawing.Point(264, 903);
             this.buttonResetFoodPointTickColor.Name = "buttonResetFoodPointTickColor";
             this.buttonResetFoodPointTickColor.Size = new System.Drawing.Size(83, 44);
             this.buttonResetFoodPointTickColor.TabIndex = 43;
@@ -1555,7 +1627,7 @@ namespace Snake_Game
             // buttonSetFoodPointTickColor
             // 
             this.buttonSetFoodPointTickColor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSetFoodPointTickColor.Location = new System.Drawing.Point(177, 603);
+            this.buttonSetFoodPointTickColor.Location = new System.Drawing.Point(177, 903);
             this.buttonSetFoodPointTickColor.Name = "buttonSetFoodPointTickColor";
             this.buttonSetFoodPointTickColor.Size = new System.Drawing.Size(81, 44);
             this.buttonSetFoodPointTickColor.TabIndex = 42;
@@ -1568,7 +1640,7 @@ namespace Snake_Game
             this.labelFoodPointTickPrev.AutoSize = true;
             this.labelFoodPointTickPrev.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.labelFoodPointTickPrev.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelFoodPointTickPrev.Location = new System.Drawing.Point(125, 600);
+            this.labelFoodPointTickPrev.Location = new System.Drawing.Point(125, 900);
             this.labelFoodPointTickPrev.Name = "labelFoodPointTickPrev";
             this.labelFoodPointTickPrev.Size = new System.Drawing.Size(46, 50);
             this.labelFoodPointTickPrev.TabIndex = 41;
@@ -1576,7 +1648,7 @@ namespace Snake_Game
             // buttonResetBodyPointTickColor
             // 
             this.buttonResetBodyPointTickColor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonResetBodyPointTickColor.Location = new System.Drawing.Point(264, 553);
+            this.buttonResetBodyPointTickColor.Location = new System.Drawing.Point(264, 853);
             this.buttonResetBodyPointTickColor.Name = "buttonResetBodyPointTickColor";
             this.buttonResetBodyPointTickColor.Size = new System.Drawing.Size(83, 44);
             this.buttonResetBodyPointTickColor.TabIndex = 40;
@@ -1587,7 +1659,7 @@ namespace Snake_Game
             // buttonSetBodyPointTickColor
             // 
             this.buttonSetBodyPointTickColor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSetBodyPointTickColor.Location = new System.Drawing.Point(177, 553);
+            this.buttonSetBodyPointTickColor.Location = new System.Drawing.Point(177, 853);
             this.buttonSetBodyPointTickColor.Name = "buttonSetBodyPointTickColor";
             this.buttonSetBodyPointTickColor.Size = new System.Drawing.Size(81, 44);
             this.buttonSetBodyPointTickColor.TabIndex = 39;
@@ -1600,7 +1672,7 @@ namespace Snake_Game
             this.labelSnakeBodyPointTickPrev.AutoSize = true;
             this.labelSnakeBodyPointTickPrev.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.labelSnakeBodyPointTickPrev.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelSnakeBodyPointTickPrev.Location = new System.Drawing.Point(125, 550);
+            this.labelSnakeBodyPointTickPrev.Location = new System.Drawing.Point(125, 850);
             this.labelSnakeBodyPointTickPrev.Name = "labelSnakeBodyPointTickPrev";
             this.labelSnakeBodyPointTickPrev.Size = new System.Drawing.Size(46, 50);
             this.labelSnakeBodyPointTickPrev.TabIndex = 38;
@@ -1608,7 +1680,7 @@ namespace Snake_Game
             // buttonResetHeadPointTickColor
             // 
             this.buttonResetHeadPointTickColor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonResetHeadPointTickColor.Location = new System.Drawing.Point(264, 503);
+            this.buttonResetHeadPointTickColor.Location = new System.Drawing.Point(264, 803);
             this.buttonResetHeadPointTickColor.Name = "buttonResetHeadPointTickColor";
             this.buttonResetHeadPointTickColor.Size = new System.Drawing.Size(83, 44);
             this.buttonResetHeadPointTickColor.TabIndex = 37;
@@ -1619,7 +1691,7 @@ namespace Snake_Game
             // buttonSetHeadPointTickColor
             // 
             this.buttonSetHeadPointTickColor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSetHeadPointTickColor.Location = new System.Drawing.Point(177, 503);
+            this.buttonSetHeadPointTickColor.Location = new System.Drawing.Point(177, 803);
             this.buttonSetHeadPointTickColor.Name = "buttonSetHeadPointTickColor";
             this.buttonSetHeadPointTickColor.Size = new System.Drawing.Size(81, 44);
             this.buttonSetHeadPointTickColor.TabIndex = 36;
@@ -1632,7 +1704,7 @@ namespace Snake_Game
             this.labelSnakeHeadPointTickPrev.AutoSize = true;
             this.labelSnakeHeadPointTickPrev.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.labelSnakeHeadPointTickPrev.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelSnakeHeadPointTickPrev.Location = new System.Drawing.Point(125, 500);
+            this.labelSnakeHeadPointTickPrev.Location = new System.Drawing.Point(125, 800);
             this.labelSnakeHeadPointTickPrev.Name = "labelSnakeHeadPointTickPrev";
             this.labelSnakeHeadPointTickPrev.Size = new System.Drawing.Size(46, 50);
             this.labelSnakeHeadPointTickPrev.TabIndex = 35;
@@ -1640,7 +1712,7 @@ namespace Snake_Game
             // buttonResetFoodX2Color
             // 
             this.buttonResetFoodX2Color.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonResetFoodX2Color.Location = new System.Drawing.Point(264, 403);
+            this.buttonResetFoodX2Color.Location = new System.Drawing.Point(264, 703);
             this.buttonResetFoodX2Color.Name = "buttonResetFoodX2Color";
             this.buttonResetFoodX2Color.Size = new System.Drawing.Size(83, 44);
             this.buttonResetFoodX2Color.TabIndex = 34;
@@ -1651,7 +1723,7 @@ namespace Snake_Game
             // buttonSetFoodX2Color
             // 
             this.buttonSetFoodX2Color.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSetFoodX2Color.Location = new System.Drawing.Point(177, 403);
+            this.buttonSetFoodX2Color.Location = new System.Drawing.Point(177, 703);
             this.buttonSetFoodX2Color.Name = "buttonSetFoodX2Color";
             this.buttonSetFoodX2Color.Size = new System.Drawing.Size(81, 44);
             this.buttonSetFoodX2Color.TabIndex = 33;
@@ -1662,7 +1734,7 @@ namespace Snake_Game
             // buttonResetBodyX2Color
             // 
             this.buttonResetBodyX2Color.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonResetBodyX2Color.Location = new System.Drawing.Point(264, 353);
+            this.buttonResetBodyX2Color.Location = new System.Drawing.Point(264, 653);
             this.buttonResetBodyX2Color.Name = "buttonResetBodyX2Color";
             this.buttonResetBodyX2Color.Size = new System.Drawing.Size(83, 44);
             this.buttonResetBodyX2Color.TabIndex = 32;
@@ -1673,7 +1745,7 @@ namespace Snake_Game
             // buttonSetBodyX2Color
             // 
             this.buttonSetBodyX2Color.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSetBodyX2Color.Location = new System.Drawing.Point(177, 353);
+            this.buttonSetBodyX2Color.Location = new System.Drawing.Point(177, 653);
             this.buttonSetBodyX2Color.Name = "buttonSetBodyX2Color";
             this.buttonSetBodyX2Color.Size = new System.Drawing.Size(81, 44);
             this.buttonSetBodyX2Color.TabIndex = 31;
@@ -1684,7 +1756,7 @@ namespace Snake_Game
             // buttonResetHeadX2Color
             // 
             this.buttonResetHeadX2Color.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonResetHeadX2Color.Location = new System.Drawing.Point(264, 303);
+            this.buttonResetHeadX2Color.Location = new System.Drawing.Point(264, 603);
             this.buttonResetHeadX2Color.Name = "buttonResetHeadX2Color";
             this.buttonResetHeadX2Color.Size = new System.Drawing.Size(83, 44);
             this.buttonResetHeadX2Color.TabIndex = 30;
@@ -1695,7 +1767,7 @@ namespace Snake_Game
             // buttonSetHeadX2Color
             // 
             this.buttonSetHeadX2Color.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSetHeadX2Color.Location = new System.Drawing.Point(177, 303);
+            this.buttonSetHeadX2Color.Location = new System.Drawing.Point(177, 603);
             this.buttonSetHeadX2Color.Name = "buttonSetHeadX2Color";
             this.buttonSetHeadX2Color.Size = new System.Drawing.Size(81, 44);
             this.buttonSetHeadX2Color.TabIndex = 29;
@@ -1708,7 +1780,7 @@ namespace Snake_Game
             this.labelFoodX2Prev.AutoSize = true;
             this.labelFoodX2Prev.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.labelFoodX2Prev.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelFoodX2Prev.Location = new System.Drawing.Point(125, 400);
+            this.labelFoodX2Prev.Location = new System.Drawing.Point(125, 700);
             this.labelFoodX2Prev.Name = "labelFoodX2Prev";
             this.labelFoodX2Prev.Size = new System.Drawing.Size(46, 50);
             this.labelFoodX2Prev.TabIndex = 28;
@@ -1718,7 +1790,7 @@ namespace Snake_Game
             this.labelSnakeBodyX2Prev.AutoSize = true;
             this.labelSnakeBodyX2Prev.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.labelSnakeBodyX2Prev.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelSnakeBodyX2Prev.Location = new System.Drawing.Point(125, 350);
+            this.labelSnakeBodyX2Prev.Location = new System.Drawing.Point(125, 650);
             this.labelSnakeBodyX2Prev.Name = "labelSnakeBodyX2Prev";
             this.labelSnakeBodyX2Prev.Size = new System.Drawing.Size(46, 50);
             this.labelSnakeBodyX2Prev.TabIndex = 27;
@@ -1728,7 +1800,7 @@ namespace Snake_Game
             this.labelSnakeHeadX2Prev.AutoSize = true;
             this.labelSnakeHeadX2Prev.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.labelSnakeHeadX2Prev.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelSnakeHeadX2Prev.Location = new System.Drawing.Point(125, 300);
+            this.labelSnakeHeadX2Prev.Location = new System.Drawing.Point(125, 600);
             this.labelSnakeHeadX2Prev.Name = "labelSnakeHeadX2Prev";
             this.labelSnakeHeadX2Prev.Size = new System.Drawing.Size(46, 50);
             this.labelSnakeHeadX2Prev.TabIndex = 26;
@@ -1738,9 +1810,9 @@ namespace Snake_Game
             this.labelFoodNoclipColor.AutoSize = true;
             this.labelFoodNoclipColor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelFoodNoclipColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFoodNoclipColor.Location = new System.Drawing.Point(3, 1000);
+            this.labelFoodNoclipColor.Location = new System.Drawing.Point(3, 1300);
             this.labelFoodNoclipColor.Name = "labelFoodNoclipColor";
-            this.labelFoodNoclipColor.Size = new System.Drawing.Size(116, 50);
+            this.labelFoodNoclipColor.Size = new System.Drawing.Size(116, 100);
             this.labelFoodNoclipColor.TabIndex = 25;
             this.labelFoodNoclipColor.Text = "Food";
             this.labelFoodNoclipColor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1750,7 +1822,7 @@ namespace Snake_Game
             this.labelSnakeBodyNoclipColor.AutoSize = true;
             this.labelSnakeBodyNoclipColor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelSnakeBodyNoclipColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSnakeBodyNoclipColor.Location = new System.Drawing.Point(3, 950);
+            this.labelSnakeBodyNoclipColor.Location = new System.Drawing.Point(3, 1250);
             this.labelSnakeBodyNoclipColor.Name = "labelSnakeBodyNoclipColor";
             this.labelSnakeBodyNoclipColor.Size = new System.Drawing.Size(116, 50);
             this.labelSnakeBodyNoclipColor.TabIndex = 24;
@@ -1762,7 +1834,7 @@ namespace Snake_Game
             this.labelSnakeHeadNoclipColor.AutoSize = true;
             this.labelSnakeHeadNoclipColor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelSnakeHeadNoclipColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSnakeHeadNoclipColor.Location = new System.Drawing.Point(3, 900);
+            this.labelSnakeHeadNoclipColor.Location = new System.Drawing.Point(3, 1200);
             this.labelSnakeHeadNoclipColor.Name = "labelSnakeHeadNoclipColor";
             this.labelSnakeHeadNoclipColor.Size = new System.Drawing.Size(116, 50);
             this.labelSnakeHeadNoclipColor.TabIndex = 23;
@@ -1775,7 +1847,7 @@ namespace Snake_Game
             this.tableLayoutPanelPowerups.SetColumnSpan(this.labelNoclipColors, 4);
             this.labelNoclipColors.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelNoclipColors.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNoclipColors.Location = new System.Drawing.Point(3, 850);
+            this.labelNoclipColors.Location = new System.Drawing.Point(3, 1150);
             this.labelNoclipColors.Name = "labelNoclipColors";
             this.labelNoclipColors.Size = new System.Drawing.Size(344, 50);
             this.labelNoclipColors.TabIndex = 22;
@@ -1787,7 +1859,7 @@ namespace Snake_Game
             this.labelFoodSlowmoColor.AutoSize = true;
             this.labelFoodSlowmoColor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelFoodSlowmoColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFoodSlowmoColor.Location = new System.Drawing.Point(3, 800);
+            this.labelFoodSlowmoColor.Location = new System.Drawing.Point(3, 1100);
             this.labelFoodSlowmoColor.Name = "labelFoodSlowmoColor";
             this.labelFoodSlowmoColor.Size = new System.Drawing.Size(116, 50);
             this.labelFoodSlowmoColor.TabIndex = 21;
@@ -1799,7 +1871,7 @@ namespace Snake_Game
             this.labelSnakeBodySlowmoColor.AutoSize = true;
             this.labelSnakeBodySlowmoColor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelSnakeBodySlowmoColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSnakeBodySlowmoColor.Location = new System.Drawing.Point(3, 750);
+            this.labelSnakeBodySlowmoColor.Location = new System.Drawing.Point(3, 1050);
             this.labelSnakeBodySlowmoColor.Name = "labelSnakeBodySlowmoColor";
             this.labelSnakeBodySlowmoColor.Size = new System.Drawing.Size(116, 50);
             this.labelSnakeBodySlowmoColor.TabIndex = 20;
@@ -1811,7 +1883,7 @@ namespace Snake_Game
             this.labelSnakeHeadSlowmoColor.AutoSize = true;
             this.labelSnakeHeadSlowmoColor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelSnakeHeadSlowmoColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSnakeHeadSlowmoColor.Location = new System.Drawing.Point(3, 700);
+            this.labelSnakeHeadSlowmoColor.Location = new System.Drawing.Point(3, 1000);
             this.labelSnakeHeadSlowmoColor.Name = "labelSnakeHeadSlowmoColor";
             this.labelSnakeHeadSlowmoColor.Size = new System.Drawing.Size(116, 50);
             this.labelSnakeHeadSlowmoColor.TabIndex = 19;
@@ -1824,7 +1896,7 @@ namespace Snake_Game
             this.tableLayoutPanelPowerups.SetColumnSpan(this.labelSlowmoColors, 4);
             this.labelSlowmoColors.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelSlowmoColors.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSlowmoColors.Location = new System.Drawing.Point(3, 650);
+            this.labelSlowmoColors.Location = new System.Drawing.Point(3, 950);
             this.labelSlowmoColors.Name = "labelSlowmoColors";
             this.labelSlowmoColors.Size = new System.Drawing.Size(344, 50);
             this.labelSlowmoColors.TabIndex = 18;
@@ -1836,7 +1908,7 @@ namespace Snake_Game
             this.labelFoodPointTickColor.AutoSize = true;
             this.labelFoodPointTickColor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelFoodPointTickColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFoodPointTickColor.Location = new System.Drawing.Point(3, 600);
+            this.labelFoodPointTickColor.Location = new System.Drawing.Point(3, 900);
             this.labelFoodPointTickColor.Name = "labelFoodPointTickColor";
             this.labelFoodPointTickColor.Size = new System.Drawing.Size(116, 50);
             this.labelFoodPointTickColor.TabIndex = 17;
@@ -1848,7 +1920,7 @@ namespace Snake_Game
             this.labelSnakeBodyPointTickColor.AutoSize = true;
             this.labelSnakeBodyPointTickColor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelSnakeBodyPointTickColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSnakeBodyPointTickColor.Location = new System.Drawing.Point(3, 550);
+            this.labelSnakeBodyPointTickColor.Location = new System.Drawing.Point(3, 850);
             this.labelSnakeBodyPointTickColor.Name = "labelSnakeBodyPointTickColor";
             this.labelSnakeBodyPointTickColor.Size = new System.Drawing.Size(116, 50);
             this.labelSnakeBodyPointTickColor.TabIndex = 16;
@@ -1860,7 +1932,7 @@ namespace Snake_Game
             this.labelSnakeHeadPointTickColor.AutoSize = true;
             this.labelSnakeHeadPointTickColor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelSnakeHeadPointTickColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSnakeHeadPointTickColor.Location = new System.Drawing.Point(3, 500);
+            this.labelSnakeHeadPointTickColor.Location = new System.Drawing.Point(3, 800);
             this.labelSnakeHeadPointTickColor.Name = "labelSnakeHeadPointTickColor";
             this.labelSnakeHeadPointTickColor.Size = new System.Drawing.Size(116, 50);
             this.labelSnakeHeadPointTickColor.TabIndex = 15;
@@ -1873,7 +1945,7 @@ namespace Snake_Game
             this.tableLayoutPanelPowerups.SetColumnSpan(this.labelPointTickColors, 4);
             this.labelPointTickColors.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelPointTickColors.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPointTickColors.Location = new System.Drawing.Point(3, 450);
+            this.labelPointTickColors.Location = new System.Drawing.Point(3, 750);
             this.labelPointTickColors.Name = "labelPointTickColors";
             this.labelPointTickColors.Size = new System.Drawing.Size(344, 50);
             this.labelPointTickColors.TabIndex = 14;
@@ -1885,7 +1957,7 @@ namespace Snake_Game
             this.labelFoodX2Color.AutoSize = true;
             this.labelFoodX2Color.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelFoodX2Color.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFoodX2Color.Location = new System.Drawing.Point(3, 400);
+            this.labelFoodX2Color.Location = new System.Drawing.Point(3, 700);
             this.labelFoodX2Color.Name = "labelFoodX2Color";
             this.labelFoodX2Color.Size = new System.Drawing.Size(116, 50);
             this.labelFoodX2Color.TabIndex = 13;
@@ -1897,7 +1969,7 @@ namespace Snake_Game
             this.labelSnakeBodyX2Color.AutoSize = true;
             this.labelSnakeBodyX2Color.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelSnakeBodyX2Color.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSnakeBodyX2Color.Location = new System.Drawing.Point(3, 350);
+            this.labelSnakeBodyX2Color.Location = new System.Drawing.Point(3, 650);
             this.labelSnakeBodyX2Color.Name = "labelSnakeBodyX2Color";
             this.labelSnakeBodyX2Color.Size = new System.Drawing.Size(116, 50);
             this.labelSnakeBodyX2Color.TabIndex = 12;
@@ -1910,6 +1982,7 @@ namespace Snake_Game
             this.textBoxPUpNoclipDuration.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxPUpNoclipDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPUpNoclipDuration.Location = new System.Drawing.Point(177, 203);
+            this.textBoxPUpNoclipDuration.MaxLength = 2;
             this.textBoxPUpNoclipDuration.Name = "textBoxPUpNoclipDuration";
             this.textBoxPUpNoclipDuration.Size = new System.Drawing.Size(170, 45);
             this.textBoxPUpNoclipDuration.TabIndex = 9;
@@ -1933,6 +2006,7 @@ namespace Snake_Game
             this.textBoxPUpSlowmoDuration.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxPUpSlowmoDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPUpSlowmoDuration.Location = new System.Drawing.Point(177, 153);
+            this.textBoxPUpSlowmoDuration.MaxLength = 2;
             this.textBoxPUpSlowmoDuration.Name = "textBoxPUpSlowmoDuration";
             this.textBoxPUpSlowmoDuration.Size = new System.Drawing.Size(170, 45);
             this.textBoxPUpSlowmoDuration.TabIndex = 7;
@@ -1956,6 +2030,7 @@ namespace Snake_Game
             this.textBoxPUpPointTickDuration.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxPUpPointTickDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPUpPointTickDuration.Location = new System.Drawing.Point(177, 103);
+            this.textBoxPUpPointTickDuration.MaxLength = 2;
             this.textBoxPUpPointTickDuration.Name = "textBoxPUpPointTickDuration";
             this.textBoxPUpPointTickDuration.Size = new System.Drawing.Size(170, 45);
             this.textBoxPUpPointTickDuration.TabIndex = 5;
@@ -1979,6 +2054,7 @@ namespace Snake_Game
             this.textBoxPUpX2Duration.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxPUpX2Duration.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPUpX2Duration.Location = new System.Drawing.Point(177, 53);
+            this.textBoxPUpX2Duration.MaxLength = 2;
             this.textBoxPUpX2Duration.Name = "textBoxPUpX2Duration";
             this.textBoxPUpX2Duration.Size = new System.Drawing.Size(170, 45);
             this.textBoxPUpX2Duration.TabIndex = 3;
@@ -2025,7 +2101,7 @@ namespace Snake_Game
             this.tableLayoutPanelPowerups.SetColumnSpan(this.labelX2Colors, 4);
             this.labelX2Colors.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelX2Colors.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX2Colors.Location = new System.Drawing.Point(3, 250);
+            this.labelX2Colors.Location = new System.Drawing.Point(3, 550);
             this.labelX2Colors.Name = "labelX2Colors";
             this.labelX2Colors.Size = new System.Drawing.Size(344, 50);
             this.labelX2Colors.TabIndex = 10;
@@ -2037,7 +2113,7 @@ namespace Snake_Game
             this.labelSnakeHeadX2Color.AutoSize = true;
             this.labelSnakeHeadX2Color.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelSnakeHeadX2Color.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSnakeHeadX2Color.Location = new System.Drawing.Point(3, 300);
+            this.labelSnakeHeadX2Color.Location = new System.Drawing.Point(3, 600);
             this.labelSnakeHeadX2Color.Name = "labelSnakeHeadX2Color";
             this.labelSnakeHeadX2Color.Size = new System.Drawing.Size(116, 50);
             this.labelSnakeHeadX2Color.TabIndex = 11;
@@ -2059,9 +2135,16 @@ namespace Snake_Game
             // tableLayoutPanelSavefiles
             // 
             this.tableLayoutPanelSavefiles.AutoScroll = true;
-            this.tableLayoutPanelSavefiles.AutoScrollMinSize = new System.Drawing.Size(0, 650);
+            this.tableLayoutPanelSavefiles.AutoScrollMinSize = new System.Drawing.Size(0, 1140);
+            this.tableLayoutPanelSavefiles.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelSavefiles.ColumnCount = 1;
             this.tableLayoutPanelSavefiles.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelSavefiles.Controls.Add(this.groupBoxSavefilesSpritesX2PointTick, 0, 8);
+            this.tableLayoutPanelSavefiles.Controls.Add(this.groupBoxSavefilesSpritesX2Slowmotion, 0, 9);
+            this.tableLayoutPanelSavefiles.Controls.Add(this.groupBoxSavefilesSpritesX2Noclip, 0, 10);
+            this.tableLayoutPanelSavefiles.Controls.Add(this.groupBoxSavefilesSpritesSlowmotionNoclip, 0, 13);
+            this.tableLayoutPanelSavefiles.Controls.Add(this.groupBoxSavefilesSpritesPointTickSlowmotion, 0, 11);
+            this.tableLayoutPanelSavefiles.Controls.Add(this.groupBoxSavefilesSpritesPointTickNoclip, 0, 12);
             this.tableLayoutPanelSavefiles.Controls.Add(this.groupBoxSavefilesSpritesPointTick, 0, 5);
             this.tableLayoutPanelSavefiles.Controls.Add(this.groupBoxSavefilesSpritesX2, 0, 4);
             this.tableLayoutPanelSavefiles.Controls.Add(this.groupBoxSavefilesSpritesSlowmotion, 0, 6);
@@ -2074,15 +2157,22 @@ namespace Snake_Game
             this.tableLayoutPanelSavefiles.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanelSavefiles.Name = "tableLayoutPanelSavefiles";
             this.tableLayoutPanelSavefiles.Padding = new System.Windows.Forms.Padding(0, 0, 17, 0);
-            this.tableLayoutPanelSavefiles.RowCount = 8;
-            this.tableLayoutPanelSavefiles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanelSavefiles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanelSavefiles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanelSavefiles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanelSavefiles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanelSavefiles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanelSavefiles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanelSavefiles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanelSavefiles.RowCount = 14;
+            this.tableLayoutPanelSavefiles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.tableLayoutPanelSavefiles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.tableLayoutPanelSavefiles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.tableLayoutPanelSavefiles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.tableLayoutPanelSavefiles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.tableLayoutPanelSavefiles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.tableLayoutPanelSavefiles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.tableLayoutPanelSavefiles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.tableLayoutPanelSavefiles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.tableLayoutPanelSavefiles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.tableLayoutPanelSavefiles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.tableLayoutPanelSavefiles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.tableLayoutPanelSavefiles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.tableLayoutPanelSavefiles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.tableLayoutPanelSavefiles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanelSavefiles.Size = new System.Drawing.Size(384, 217);
             this.tableLayoutPanelSavefiles.TabIndex = 0;
             // 
@@ -2275,7 +2365,7 @@ namespace Snake_Game
             this.groupBoxSavefilesSpritesNoclip.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBoxSavefilesSpritesNoclip.Location = new System.Drawing.Point(3, 570);
             this.groupBoxSavefilesSpritesNoclip.Name = "groupBoxSavefilesSpritesNoclip";
-            this.groupBoxSavefilesSpritesNoclip.Size = new System.Drawing.Size(344, 77);
+            this.groupBoxSavefilesSpritesNoclip.Size = new System.Drawing.Size(344, 75);
             this.groupBoxSavefilesSpritesNoclip.TabIndex = 10;
             this.groupBoxSavefilesSpritesNoclip.TabStop = false;
             this.groupBoxSavefilesSpritesNoclip.Text = "Textures Noclip";
@@ -2294,15 +2384,15 @@ namespace Snake_Game
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(338, 58);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(338, 56);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // buttonSaveFileSpritesNoclip
             // 
             this.buttonSaveFileSpritesNoclip.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSaveFileSpritesNoclip.Location = new System.Drawing.Point(172, 32);
+            this.buttonSaveFileSpritesNoclip.Location = new System.Drawing.Point(172, 31);
             this.buttonSaveFileSpritesNoclip.Name = "buttonSaveFileSpritesNoclip";
-            this.buttonSaveFileSpritesNoclip.Size = new System.Drawing.Size(163, 23);
+            this.buttonSaveFileSpritesNoclip.Size = new System.Drawing.Size(163, 22);
             this.buttonSaveFileSpritesNoclip.TabIndex = 5;
             this.buttonSaveFileSpritesNoclip.Text = "Save";
             this.buttonSaveFileSpritesNoclip.UseVisualStyleBackColor = true;
@@ -2311,9 +2401,9 @@ namespace Snake_Game
             // buttonOpenFileSpritesNoclip
             // 
             this.buttonOpenFileSpritesNoclip.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonOpenFileSpritesNoclip.Location = new System.Drawing.Point(3, 32);
+            this.buttonOpenFileSpritesNoclip.Location = new System.Drawing.Point(3, 31);
             this.buttonOpenFileSpritesNoclip.Name = "buttonOpenFileSpritesNoclip";
-            this.buttonOpenFileSpritesNoclip.Size = new System.Drawing.Size(163, 23);
+            this.buttonOpenFileSpritesNoclip.Size = new System.Drawing.Size(163, 22);
             this.buttonOpenFileSpritesNoclip.TabIndex = 4;
             this.buttonOpenFileSpritesNoclip.Text = "Load";
             this.buttonOpenFileSpritesNoclip.UseVisualStyleBackColor = true;
@@ -2327,7 +2417,7 @@ namespace Snake_Game
             this.labelSavefilesSpritesNoclipPath.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelSavefilesSpritesNoclipPath.Location = new System.Drawing.Point(3, 0);
             this.labelSavefilesSpritesNoclipPath.Name = "labelSavefilesSpritesNoclipPath";
-            this.labelSavefilesSpritesNoclipPath.Size = new System.Drawing.Size(332, 29);
+            this.labelSavefilesSpritesNoclipPath.Size = new System.Drawing.Size(332, 28);
             this.labelSavefilesSpritesNoclipPath.TabIndex = 6;
             // 
             // groupBoxSavefilesScore
@@ -2611,6 +2701,516 @@ namespace Snake_Game
             this.buttonReset.UseVisualStyleBackColor = true;
             this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
             // 
+            // labelPUpX2PointTickDuration
+            // 
+            this.labelPUpX2PointTickDuration.AutoSize = true;
+            this.tableLayoutPanelPowerups.SetColumnSpan(this.labelPUpX2PointTickDuration, 2);
+            this.labelPUpX2PointTickDuration.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelPUpX2PointTickDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPUpX2PointTickDuration.Location = new System.Drawing.Point(3, 250);
+            this.labelPUpX2PointTickDuration.Name = "labelPUpX2PointTickDuration";
+            this.labelPUpX2PointTickDuration.Size = new System.Drawing.Size(168, 50);
+            this.labelPUpX2PointTickDuration.TabIndex = 62;
+            this.labelPUpX2PointTickDuration.Text = "X2 + Point Tick Duration";
+            this.labelPUpX2PointTickDuration.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // labelPUpX2SlowmoDuration
+            // 
+            this.labelPUpX2SlowmoDuration.AutoSize = true;
+            this.tableLayoutPanelPowerups.SetColumnSpan(this.labelPUpX2SlowmoDuration, 2);
+            this.labelPUpX2SlowmoDuration.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelPUpX2SlowmoDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPUpX2SlowmoDuration.Location = new System.Drawing.Point(3, 300);
+            this.labelPUpX2SlowmoDuration.Name = "labelPUpX2SlowmoDuration";
+            this.labelPUpX2SlowmoDuration.Size = new System.Drawing.Size(168, 50);
+            this.labelPUpX2SlowmoDuration.TabIndex = 63;
+            this.labelPUpX2SlowmoDuration.Text = "X2 + Slowmo Duration";
+            this.labelPUpX2SlowmoDuration.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // labelPUpX2NoclipDuration
+            // 
+            this.labelPUpX2NoclipDuration.AutoSize = true;
+            this.tableLayoutPanelPowerups.SetColumnSpan(this.labelPUpX2NoclipDuration, 2);
+            this.labelPUpX2NoclipDuration.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelPUpX2NoclipDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPUpX2NoclipDuration.Location = new System.Drawing.Point(3, 350);
+            this.labelPUpX2NoclipDuration.Name = "labelPUpX2NoclipDuration";
+            this.labelPUpX2NoclipDuration.Size = new System.Drawing.Size(168, 50);
+            this.labelPUpX2NoclipDuration.TabIndex = 64;
+            this.labelPUpX2NoclipDuration.Text = "X2 + Noclip Duration";
+            this.labelPUpX2NoclipDuration.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // labelPUpPointTickSlowmoDuration
+            // 
+            this.labelPUpPointTickSlowmoDuration.AutoSize = true;
+            this.tableLayoutPanelPowerups.SetColumnSpan(this.labelPUpPointTickSlowmoDuration, 2);
+            this.labelPUpPointTickSlowmoDuration.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelPUpPointTickSlowmoDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPUpPointTickSlowmoDuration.Location = new System.Drawing.Point(3, 400);
+            this.labelPUpPointTickSlowmoDuration.Name = "labelPUpPointTickSlowmoDuration";
+            this.labelPUpPointTickSlowmoDuration.Size = new System.Drawing.Size(168, 50);
+            this.labelPUpPointTickSlowmoDuration.TabIndex = 65;
+            this.labelPUpPointTickSlowmoDuration.Text = "Point Tick + Slowmo Duration";
+            this.labelPUpPointTickSlowmoDuration.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // labelPUpPointTickNoclipDuration
+            // 
+            this.labelPUpPointTickNoclipDuration.AutoSize = true;
+            this.tableLayoutPanelPowerups.SetColumnSpan(this.labelPUpPointTickNoclipDuration, 2);
+            this.labelPUpPointTickNoclipDuration.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelPUpPointTickNoclipDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPUpPointTickNoclipDuration.Location = new System.Drawing.Point(3, 450);
+            this.labelPUpPointTickNoclipDuration.Name = "labelPUpPointTickNoclipDuration";
+            this.labelPUpPointTickNoclipDuration.Size = new System.Drawing.Size(168, 50);
+            this.labelPUpPointTickNoclipDuration.TabIndex = 66;
+            this.labelPUpPointTickNoclipDuration.Text = "Point Tick + Noclip Duration";
+            this.labelPUpPointTickNoclipDuration.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // labelPUpSlowmoNoclipDuration
+            // 
+            this.labelPUpSlowmoNoclipDuration.AutoSize = true;
+            this.tableLayoutPanelPowerups.SetColumnSpan(this.labelPUpSlowmoNoclipDuration, 2);
+            this.labelPUpSlowmoNoclipDuration.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelPUpSlowmoNoclipDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPUpSlowmoNoclipDuration.Location = new System.Drawing.Point(3, 500);
+            this.labelPUpSlowmoNoclipDuration.Name = "labelPUpSlowmoNoclipDuration";
+            this.labelPUpSlowmoNoclipDuration.Size = new System.Drawing.Size(168, 50);
+            this.labelPUpSlowmoNoclipDuration.TabIndex = 67;
+            this.labelPUpSlowmoNoclipDuration.Text = "Slowmo + Noclip Duration";
+            this.labelPUpSlowmoNoclipDuration.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // textBoxPUpPointTickNoclipDuration
+            // 
+            this.tableLayoutPanelPowerups.SetColumnSpan(this.textBoxPUpPointTickNoclipDuration, 2);
+            this.textBoxPUpPointTickNoclipDuration.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxPUpPointTickNoclipDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPUpPointTickNoclipDuration.Location = new System.Drawing.Point(177, 453);
+            this.textBoxPUpPointTickNoclipDuration.MaxLength = 2;
+            this.textBoxPUpPointTickNoclipDuration.Name = "textBoxPUpPointTickNoclipDuration";
+            this.textBoxPUpPointTickNoclipDuration.Size = new System.Drawing.Size(170, 45);
+            this.textBoxPUpPointTickNoclipDuration.TabIndex = 68;
+            // 
+            // textBoxPUpPointTickSlowmoDuration
+            // 
+            this.tableLayoutPanelPowerups.SetColumnSpan(this.textBoxPUpPointTickSlowmoDuration, 2);
+            this.textBoxPUpPointTickSlowmoDuration.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxPUpPointTickSlowmoDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPUpPointTickSlowmoDuration.Location = new System.Drawing.Point(177, 403);
+            this.textBoxPUpPointTickSlowmoDuration.MaxLength = 2;
+            this.textBoxPUpPointTickSlowmoDuration.Name = "textBoxPUpPointTickSlowmoDuration";
+            this.textBoxPUpPointTickSlowmoDuration.Size = new System.Drawing.Size(170, 45);
+            this.textBoxPUpPointTickSlowmoDuration.TabIndex = 69;
+            // 
+            // textBoxPUpX2NoclipDuration
+            // 
+            this.tableLayoutPanelPowerups.SetColumnSpan(this.textBoxPUpX2NoclipDuration, 2);
+            this.textBoxPUpX2NoclipDuration.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxPUpX2NoclipDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPUpX2NoclipDuration.Location = new System.Drawing.Point(177, 353);
+            this.textBoxPUpX2NoclipDuration.MaxLength = 2;
+            this.textBoxPUpX2NoclipDuration.Name = "textBoxPUpX2NoclipDuration";
+            this.textBoxPUpX2NoclipDuration.Size = new System.Drawing.Size(170, 45);
+            this.textBoxPUpX2NoclipDuration.TabIndex = 70;
+            // 
+            // textBoxPUpX2SlowmoDuration
+            // 
+            this.tableLayoutPanelPowerups.SetColumnSpan(this.textBoxPUpX2SlowmoDuration, 2);
+            this.textBoxPUpX2SlowmoDuration.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxPUpX2SlowmoDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPUpX2SlowmoDuration.Location = new System.Drawing.Point(177, 303);
+            this.textBoxPUpX2SlowmoDuration.MaxLength = 2;
+            this.textBoxPUpX2SlowmoDuration.Name = "textBoxPUpX2SlowmoDuration";
+            this.textBoxPUpX2SlowmoDuration.Size = new System.Drawing.Size(170, 45);
+            this.textBoxPUpX2SlowmoDuration.TabIndex = 71;
+            // 
+            // textBoxPUpX2PointTickDuration
+            // 
+            this.tableLayoutPanelPowerups.SetColumnSpan(this.textBoxPUpX2PointTickDuration, 2);
+            this.textBoxPUpX2PointTickDuration.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxPUpX2PointTickDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPUpX2PointTickDuration.Location = new System.Drawing.Point(177, 253);
+            this.textBoxPUpX2PointTickDuration.MaxLength = 2;
+            this.textBoxPUpX2PointTickDuration.Name = "textBoxPUpX2PointTickDuration";
+            this.textBoxPUpX2PointTickDuration.Size = new System.Drawing.Size(170, 45);
+            this.textBoxPUpX2PointTickDuration.TabIndex = 72;
+            // 
+            // textBoxPUpSlowmoNoclipDuration
+            // 
+            this.tableLayoutPanelPowerups.SetColumnSpan(this.textBoxPUpSlowmoNoclipDuration, 2);
+            this.textBoxPUpSlowmoNoclipDuration.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxPUpSlowmoNoclipDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPUpSlowmoNoclipDuration.Location = new System.Drawing.Point(177, 503);
+            this.textBoxPUpSlowmoNoclipDuration.MaxLength = 2;
+            this.textBoxPUpSlowmoNoclipDuration.Name = "textBoxPUpSlowmoNoclipDuration";
+            this.textBoxPUpSlowmoNoclipDuration.Size = new System.Drawing.Size(170, 45);
+            this.textBoxPUpSlowmoNoclipDuration.TabIndex = 73;
+            // 
+            // groupBoxSavefilesSpritesPointTickNoclip
+            // 
+            this.groupBoxSavefilesSpritesPointTickNoclip.Controls.Add(this.tableLayoutPanel7);
+            this.groupBoxSavefilesSpritesPointTickNoclip.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxSavefilesSpritesPointTickNoclip.Location = new System.Drawing.Point(3, 975);
+            this.groupBoxSavefilesSpritesPointTickNoclip.Name = "groupBoxSavefilesSpritesPointTickNoclip";
+            this.groupBoxSavefilesSpritesPointTickNoclip.Size = new System.Drawing.Size(344, 75);
+            this.groupBoxSavefilesSpritesPointTickNoclip.TabIndex = 14;
+            this.groupBoxSavefilesSpritesPointTickNoclip.TabStop = false;
+            this.groupBoxSavefilesSpritesPointTickNoclip.Text = "Textures Point Tick + Noclip";
+            // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.ColumnCount = 2;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.Controls.Add(this.buttonSaveFileSpritesPointTickNoclip, 1, 1);
+            this.tableLayoutPanel7.Controls.Add(this.buttonOpenFileSpritesPointTickNoclip, 0, 1);
+            this.tableLayoutPanel7.Controls.Add(this.labelSavefilesSpritesPointTickNoclipPath, 0, 0);
+            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 2;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(338, 56);
+            this.tableLayoutPanel7.TabIndex = 1;
+            // 
+            // buttonSaveFileSpritesPointTickNoclip
+            // 
+            this.buttonSaveFileSpritesPointTickNoclip.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSaveFileSpritesPointTickNoclip.Location = new System.Drawing.Point(172, 31);
+            this.buttonSaveFileSpritesPointTickNoclip.Name = "buttonSaveFileSpritesPointTickNoclip";
+            this.buttonSaveFileSpritesPointTickNoclip.Size = new System.Drawing.Size(163, 22);
+            this.buttonSaveFileSpritesPointTickNoclip.TabIndex = 5;
+            this.buttonSaveFileSpritesPointTickNoclip.Text = "Save";
+            this.buttonSaveFileSpritesPointTickNoclip.UseVisualStyleBackColor = true;
+            this.buttonSaveFileSpritesPointTickNoclip.Click += new System.EventHandler(this.ButtonSaveFileSpritesPUpPointTickNoclip_Click);
+            // 
+            // buttonOpenFileSpritesPointTickNoclip
+            // 
+            this.buttonOpenFileSpritesPointTickNoclip.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonOpenFileSpritesPointTickNoclip.Location = new System.Drawing.Point(3, 31);
+            this.buttonOpenFileSpritesPointTickNoclip.Name = "buttonOpenFileSpritesPointTickNoclip";
+            this.buttonOpenFileSpritesPointTickNoclip.Size = new System.Drawing.Size(163, 22);
+            this.buttonOpenFileSpritesPointTickNoclip.TabIndex = 4;
+            this.buttonOpenFileSpritesPointTickNoclip.Text = "Load";
+            this.buttonOpenFileSpritesPointTickNoclip.UseVisualStyleBackColor = true;
+            this.buttonOpenFileSpritesPointTickNoclip.Click += new System.EventHandler(this.ButtonOpenFileSpritesPUpPointTickNoclip_Click);
+            // 
+            // labelSavefilesSpritesPointTickNoclipPath
+            // 
+            this.labelSavefilesSpritesPointTickNoclipPath.AutoSize = true;
+            this.labelSavefilesSpritesPointTickNoclipPath.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tableLayoutPanel7.SetColumnSpan(this.labelSavefilesSpritesPointTickNoclipPath, 2);
+            this.labelSavefilesSpritesPointTickNoclipPath.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelSavefilesSpritesPointTickNoclipPath.Location = new System.Drawing.Point(3, 0);
+            this.labelSavefilesSpritesPointTickNoclipPath.Name = "labelSavefilesSpritesPointTickNoclipPath";
+            this.labelSavefilesSpritesPointTickNoclipPath.Size = new System.Drawing.Size(332, 28);
+            this.labelSavefilesSpritesPointTickNoclipPath.TabIndex = 6;
+            // 
+            // groupBoxSavefilesSpritesPointTickSlowmotion
+            // 
+            this.groupBoxSavefilesSpritesPointTickSlowmotion.Controls.Add(this.tableLayoutPanel8);
+            this.groupBoxSavefilesSpritesPointTickSlowmotion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxSavefilesSpritesPointTickSlowmotion.Location = new System.Drawing.Point(3, 894);
+            this.groupBoxSavefilesSpritesPointTickSlowmotion.Name = "groupBoxSavefilesSpritesPointTickSlowmotion";
+            this.groupBoxSavefilesSpritesPointTickSlowmotion.Size = new System.Drawing.Size(344, 75);
+            this.groupBoxSavefilesSpritesPointTickSlowmotion.TabIndex = 15;
+            this.groupBoxSavefilesSpritesPointTickSlowmotion.TabStop = false;
+            this.groupBoxSavefilesSpritesPointTickSlowmotion.Text = "Textures Point Tick + Slowmo";
+            // 
+            // tableLayoutPanel8
+            // 
+            this.tableLayoutPanel8.ColumnCount = 2;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.Controls.Add(this.buttonSaveFileSpritesPointTickSlowmotion, 1, 1);
+            this.tableLayoutPanel8.Controls.Add(this.buttonOpenFileSpritesPointTickSlowmotion, 0, 1);
+            this.tableLayoutPanel8.Controls.Add(this.labelSavefilesSpritesPointTickSlowmotionPath, 0, 0);
+            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 2;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(338, 56);
+            this.tableLayoutPanel8.TabIndex = 1;
+            // 
+            // buttonSaveFileSpritesPointTickSlowmotion
+            // 
+            this.buttonSaveFileSpritesPointTickSlowmotion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSaveFileSpritesPointTickSlowmotion.Location = new System.Drawing.Point(172, 31);
+            this.buttonSaveFileSpritesPointTickSlowmotion.Name = "buttonSaveFileSpritesPointTickSlowmotion";
+            this.buttonSaveFileSpritesPointTickSlowmotion.Size = new System.Drawing.Size(163, 22);
+            this.buttonSaveFileSpritesPointTickSlowmotion.TabIndex = 5;
+            this.buttonSaveFileSpritesPointTickSlowmotion.Text = "Save";
+            this.buttonSaveFileSpritesPointTickSlowmotion.UseVisualStyleBackColor = true;
+            this.buttonSaveFileSpritesPointTickSlowmotion.Click += new System.EventHandler(this.ButtonSaveFileSpritesPUpPointTickSlowmotion_Click);
+            // 
+            // buttonOpenFileSpritesPointTickSlowmotion
+            // 
+            this.buttonOpenFileSpritesPointTickSlowmotion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonOpenFileSpritesPointTickSlowmotion.Location = new System.Drawing.Point(3, 31);
+            this.buttonOpenFileSpritesPointTickSlowmotion.Name = "buttonOpenFileSpritesPointTickSlowmotion";
+            this.buttonOpenFileSpritesPointTickSlowmotion.Size = new System.Drawing.Size(163, 22);
+            this.buttonOpenFileSpritesPointTickSlowmotion.TabIndex = 4;
+            this.buttonOpenFileSpritesPointTickSlowmotion.Text = "Load";
+            this.buttonOpenFileSpritesPointTickSlowmotion.UseVisualStyleBackColor = true;
+            this.buttonOpenFileSpritesPointTickSlowmotion.Click += new System.EventHandler(this.ButtonOpenFileSpritesPUpPointTickSlowmotion_Click);
+            // 
+            // labelSavefilesSpritesPointTickSlowmotionPath
+            // 
+            this.labelSavefilesSpritesPointTickSlowmotionPath.AutoSize = true;
+            this.labelSavefilesSpritesPointTickSlowmotionPath.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tableLayoutPanel8.SetColumnSpan(this.labelSavefilesSpritesPointTickSlowmotionPath, 2);
+            this.labelSavefilesSpritesPointTickSlowmotionPath.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelSavefilesSpritesPointTickSlowmotionPath.Location = new System.Drawing.Point(3, 0);
+            this.labelSavefilesSpritesPointTickSlowmotionPath.Name = "labelSavefilesSpritesPointTickSlowmotionPath";
+            this.labelSavefilesSpritesPointTickSlowmotionPath.Size = new System.Drawing.Size(332, 28);
+            this.labelSavefilesSpritesPointTickSlowmotionPath.TabIndex = 6;
+            // 
+            // groupBoxSavefilesSpritesSlowmotionNoclip
+            // 
+            this.groupBoxSavefilesSpritesSlowmotionNoclip.Controls.Add(this.tableLayoutPanel9);
+            this.groupBoxSavefilesSpritesSlowmotionNoclip.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxSavefilesSpritesSlowmotionNoclip.Location = new System.Drawing.Point(3, 1056);
+            this.groupBoxSavefilesSpritesSlowmotionNoclip.Name = "groupBoxSavefilesSpritesSlowmotionNoclip";
+            this.groupBoxSavefilesSpritesSlowmotionNoclip.Size = new System.Drawing.Size(344, 81);
+            this.groupBoxSavefilesSpritesSlowmotionNoclip.TabIndex = 16;
+            this.groupBoxSavefilesSpritesSlowmotionNoclip.TabStop = false;
+            this.groupBoxSavefilesSpritesSlowmotionNoclip.Text = "Textures Slowmo + Noclip";
+            // 
+            // tableLayoutPanel9
+            // 
+            this.tableLayoutPanel9.ColumnCount = 2;
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel9.Controls.Add(this.buttonSaveFileSpritesSlowmotionNoclip, 1, 1);
+            this.tableLayoutPanel9.Controls.Add(this.buttonOpenFileSpritesSlowmotionNoclip, 0, 1);
+            this.tableLayoutPanel9.Controls.Add(this.labelSavefilesSpritesSlowmotionNoclipPath, 0, 0);
+            this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
+            this.tableLayoutPanel9.RowCount = 2;
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(338, 62);
+            this.tableLayoutPanel9.TabIndex = 1;
+            // 
+            // buttonSaveFileSpritesSlowmotionNoclip
+            // 
+            this.buttonSaveFileSpritesSlowmotionNoclip.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSaveFileSpritesSlowmotionNoclip.Location = new System.Drawing.Point(172, 34);
+            this.buttonSaveFileSpritesSlowmotionNoclip.Name = "buttonSaveFileSpritesSlowmotionNoclip";
+            this.buttonSaveFileSpritesSlowmotionNoclip.Size = new System.Drawing.Size(163, 25);
+            this.buttonSaveFileSpritesSlowmotionNoclip.TabIndex = 5;
+            this.buttonSaveFileSpritesSlowmotionNoclip.Text = "Save";
+            this.buttonSaveFileSpritesSlowmotionNoclip.UseVisualStyleBackColor = true;
+            this.buttonSaveFileSpritesSlowmotionNoclip.Click += new System.EventHandler(this.ButtonSaveFileSpritesPUpSlowmotionNoclip_Click);
+            // 
+            // buttonOpenFileSpritesSlowmotionNoclip
+            // 
+            this.buttonOpenFileSpritesSlowmotionNoclip.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonOpenFileSpritesSlowmotionNoclip.Location = new System.Drawing.Point(3, 34);
+            this.buttonOpenFileSpritesSlowmotionNoclip.Name = "buttonOpenFileSpritesSlowmotionNoclip";
+            this.buttonOpenFileSpritesSlowmotionNoclip.Size = new System.Drawing.Size(163, 25);
+            this.buttonOpenFileSpritesSlowmotionNoclip.TabIndex = 4;
+            this.buttonOpenFileSpritesSlowmotionNoclip.Text = "Load";
+            this.buttonOpenFileSpritesSlowmotionNoclip.UseVisualStyleBackColor = true;
+            this.buttonOpenFileSpritesSlowmotionNoclip.Click += new System.EventHandler(this.ButtonOpenFileSpritesPUpSlowmotionNoclip_Click);
+            // 
+            // labelSavefilesSpritesSlowmotionNoclipPath
+            // 
+            this.labelSavefilesSpritesSlowmotionNoclipPath.AutoSize = true;
+            this.labelSavefilesSpritesSlowmotionNoclipPath.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tableLayoutPanel9.SetColumnSpan(this.labelSavefilesSpritesSlowmotionNoclipPath, 2);
+            this.labelSavefilesSpritesSlowmotionNoclipPath.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelSavefilesSpritesSlowmotionNoclipPath.Location = new System.Drawing.Point(3, 0);
+            this.labelSavefilesSpritesSlowmotionNoclipPath.Name = "labelSavefilesSpritesSlowmotionNoclipPath";
+            this.labelSavefilesSpritesSlowmotionNoclipPath.Size = new System.Drawing.Size(332, 31);
+            this.labelSavefilesSpritesSlowmotionNoclipPath.TabIndex = 6;
+            // 
+            // groupBoxSavefilesSpritesX2Noclip
+            // 
+            this.groupBoxSavefilesSpritesX2Noclip.Controls.Add(this.tableLayoutPanel10);
+            this.groupBoxSavefilesSpritesX2Noclip.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxSavefilesSpritesX2Noclip.Location = new System.Drawing.Point(3, 813);
+            this.groupBoxSavefilesSpritesX2Noclip.Name = "groupBoxSavefilesSpritesX2Noclip";
+            this.groupBoxSavefilesSpritesX2Noclip.Size = new System.Drawing.Size(344, 75);
+            this.groupBoxSavefilesSpritesX2Noclip.TabIndex = 17;
+            this.groupBoxSavefilesSpritesX2Noclip.TabStop = false;
+            this.groupBoxSavefilesSpritesX2Noclip.Text = "Textures X2 + Noclip";
+            // 
+            // tableLayoutPanel10
+            // 
+            this.tableLayoutPanel10.ColumnCount = 2;
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel10.Controls.Add(this.buttonSaveFileSpritesX2Noclip, 1, 1);
+            this.tableLayoutPanel10.Controls.Add(this.buttonOpenFileSpritesX2Noclip, 0, 1);
+            this.tableLayoutPanel10.Controls.Add(this.labelSavefilesSpritesX2NoclipPath, 0, 0);
+            this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
+            this.tableLayoutPanel10.RowCount = 2;
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(338, 56);
+            this.tableLayoutPanel10.TabIndex = 1;
+            // 
+            // buttonSaveFileSpritesX2Noclip
+            // 
+            this.buttonSaveFileSpritesX2Noclip.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSaveFileSpritesX2Noclip.Location = new System.Drawing.Point(172, 31);
+            this.buttonSaveFileSpritesX2Noclip.Name = "buttonSaveFileSpritesX2Noclip";
+            this.buttonSaveFileSpritesX2Noclip.Size = new System.Drawing.Size(163, 22);
+            this.buttonSaveFileSpritesX2Noclip.TabIndex = 5;
+            this.buttonSaveFileSpritesX2Noclip.Text = "Save";
+            this.buttonSaveFileSpritesX2Noclip.UseVisualStyleBackColor = true;
+            this.buttonSaveFileSpritesX2Noclip.Click += new System.EventHandler(this.ButtonSaveFileSpritesPUpX2Noclip_Click);
+            // 
+            // buttonOpenFileSpritesX2Noclip
+            // 
+            this.buttonOpenFileSpritesX2Noclip.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonOpenFileSpritesX2Noclip.Location = new System.Drawing.Point(3, 31);
+            this.buttonOpenFileSpritesX2Noclip.Name = "buttonOpenFileSpritesX2Noclip";
+            this.buttonOpenFileSpritesX2Noclip.Size = new System.Drawing.Size(163, 22);
+            this.buttonOpenFileSpritesX2Noclip.TabIndex = 4;
+            this.buttonOpenFileSpritesX2Noclip.Text = "Load";
+            this.buttonOpenFileSpritesX2Noclip.UseVisualStyleBackColor = true;
+            this.buttonOpenFileSpritesX2Noclip.Click += new System.EventHandler(this.ButtonOpenFileSpritesPUpX2Noclip_Click);
+            // 
+            // labelSavefilesSpritesX2NoclipPath
+            // 
+            this.labelSavefilesSpritesX2NoclipPath.AutoSize = true;
+            this.labelSavefilesSpritesX2NoclipPath.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tableLayoutPanel10.SetColumnSpan(this.labelSavefilesSpritesX2NoclipPath, 2);
+            this.labelSavefilesSpritesX2NoclipPath.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelSavefilesSpritesX2NoclipPath.Location = new System.Drawing.Point(3, 0);
+            this.labelSavefilesSpritesX2NoclipPath.Name = "labelSavefilesSpritesX2NoclipPath";
+            this.labelSavefilesSpritesX2NoclipPath.Size = new System.Drawing.Size(332, 28);
+            this.labelSavefilesSpritesX2NoclipPath.TabIndex = 6;
+            // 
+            // groupBoxSavefilesSpritesX2Slowmotion
+            // 
+            this.groupBoxSavefilesSpritesX2Slowmotion.Controls.Add(this.tableLayoutPanel11);
+            this.groupBoxSavefilesSpritesX2Slowmotion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxSavefilesSpritesX2Slowmotion.Location = new System.Drawing.Point(3, 732);
+            this.groupBoxSavefilesSpritesX2Slowmotion.Name = "groupBoxSavefilesSpritesX2Slowmotion";
+            this.groupBoxSavefilesSpritesX2Slowmotion.Size = new System.Drawing.Size(344, 75);
+            this.groupBoxSavefilesSpritesX2Slowmotion.TabIndex = 18;
+            this.groupBoxSavefilesSpritesX2Slowmotion.TabStop = false;
+            this.groupBoxSavefilesSpritesX2Slowmotion.Text = "Textures X2 + Slowmo";
+            // 
+            // tableLayoutPanel11
+            // 
+            this.tableLayoutPanel11.ColumnCount = 2;
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel11.Controls.Add(this.buttonSaveFileSpritesX2Slowmotion, 1, 1);
+            this.tableLayoutPanel11.Controls.Add(this.buttonOpenFileSpritesX2Slowmotion, 0, 1);
+            this.tableLayoutPanel11.Controls.Add(this.labelSavefilesSpritesX2SlowmotionPath, 0, 0);
+            this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
+            this.tableLayoutPanel11.RowCount = 2;
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(338, 56);
+            this.tableLayoutPanel11.TabIndex = 1;
+            // 
+            // buttonSaveFileSpritesX2Slowmotion
+            // 
+            this.buttonSaveFileSpritesX2Slowmotion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSaveFileSpritesX2Slowmotion.Location = new System.Drawing.Point(172, 31);
+            this.buttonSaveFileSpritesX2Slowmotion.Name = "buttonSaveFileSpritesX2Slowmotion";
+            this.buttonSaveFileSpritesX2Slowmotion.Size = new System.Drawing.Size(163, 22);
+            this.buttonSaveFileSpritesX2Slowmotion.TabIndex = 5;
+            this.buttonSaveFileSpritesX2Slowmotion.Text = "Save";
+            this.buttonSaveFileSpritesX2Slowmotion.UseVisualStyleBackColor = true;
+            this.buttonSaveFileSpritesX2Slowmotion.Click += new System.EventHandler(this.ButtonSaveFileSpritesPUpX2Slowmotion_Click);
+            // 
+            // buttonOpenFileSpritesX2Slowmotion
+            // 
+            this.buttonOpenFileSpritesX2Slowmotion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonOpenFileSpritesX2Slowmotion.Location = new System.Drawing.Point(3, 31);
+            this.buttonOpenFileSpritesX2Slowmotion.Name = "buttonOpenFileSpritesX2Slowmotion";
+            this.buttonOpenFileSpritesX2Slowmotion.Size = new System.Drawing.Size(163, 22);
+            this.buttonOpenFileSpritesX2Slowmotion.TabIndex = 4;
+            this.buttonOpenFileSpritesX2Slowmotion.Text = "Load";
+            this.buttonOpenFileSpritesX2Slowmotion.UseVisualStyleBackColor = true;
+            this.buttonOpenFileSpritesX2Slowmotion.Click += new System.EventHandler(this.ButtonOpenFileSpritesPUpX2Slowmotion_Click);
+            // 
+            // labelSavefilesSpritesX2SlowmotionPath
+            // 
+            this.labelSavefilesSpritesX2SlowmotionPath.AutoSize = true;
+            this.labelSavefilesSpritesX2SlowmotionPath.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tableLayoutPanel11.SetColumnSpan(this.labelSavefilesSpritesX2SlowmotionPath, 2);
+            this.labelSavefilesSpritesX2SlowmotionPath.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelSavefilesSpritesX2SlowmotionPath.Location = new System.Drawing.Point(3, 0);
+            this.labelSavefilesSpritesX2SlowmotionPath.Name = "labelSavefilesSpritesX2SlowmotionPath";
+            this.labelSavefilesSpritesX2SlowmotionPath.Size = new System.Drawing.Size(332, 28);
+            this.labelSavefilesSpritesX2SlowmotionPath.TabIndex = 6;
+            // 
+            // groupBoxSavefilesSpritesX2PointTick
+            // 
+            this.groupBoxSavefilesSpritesX2PointTick.Controls.Add(this.tableLayoutPanel12);
+            this.groupBoxSavefilesSpritesX2PointTick.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxSavefilesSpritesX2PointTick.Location = new System.Drawing.Point(3, 651);
+            this.groupBoxSavefilesSpritesX2PointTick.Name = "groupBoxSavefilesSpritesX2PointTick";
+            this.groupBoxSavefilesSpritesX2PointTick.Size = new System.Drawing.Size(344, 75);
+            this.groupBoxSavefilesSpritesX2PointTick.TabIndex = 19;
+            this.groupBoxSavefilesSpritesX2PointTick.TabStop = false;
+            this.groupBoxSavefilesSpritesX2PointTick.Text = "Textures X2 + Point Tick";
+            // 
+            // tableLayoutPanel12
+            // 
+            this.tableLayoutPanel12.ColumnCount = 2;
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel12.Controls.Add(this.buttonSaveFileSpritesX2PointTick, 1, 1);
+            this.tableLayoutPanel12.Controls.Add(this.buttonOpenFileSpritesX2PointTick, 0, 1);
+            this.tableLayoutPanel12.Controls.Add(this.labelSavefilesSpritesX2PointTickPath, 0, 0);
+            this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
+            this.tableLayoutPanel12.RowCount = 2;
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(338, 56);
+            this.tableLayoutPanel12.TabIndex = 1;
+            // 
+            // buttonSaveFileSpritesX2PointTick
+            // 
+            this.buttonSaveFileSpritesX2PointTick.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSaveFileSpritesX2PointTick.Location = new System.Drawing.Point(172, 31);
+            this.buttonSaveFileSpritesX2PointTick.Name = "buttonSaveFileSpritesX2PointTick";
+            this.buttonSaveFileSpritesX2PointTick.Size = new System.Drawing.Size(163, 22);
+            this.buttonSaveFileSpritesX2PointTick.TabIndex = 5;
+            this.buttonSaveFileSpritesX2PointTick.Text = "Save";
+            this.buttonSaveFileSpritesX2PointTick.UseVisualStyleBackColor = true;
+            this.buttonSaveFileSpritesX2PointTick.Click += new System.EventHandler(this.ButtonSaveFileSpritesPUpX2PointTick_Click);
+            // 
+            // buttonOpenFileSpritesX2PointTick
+            // 
+            this.buttonOpenFileSpritesX2PointTick.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonOpenFileSpritesX2PointTick.Location = new System.Drawing.Point(3, 31);
+            this.buttonOpenFileSpritesX2PointTick.Name = "buttonOpenFileSpritesX2PointTick";
+            this.buttonOpenFileSpritesX2PointTick.Size = new System.Drawing.Size(163, 22);
+            this.buttonOpenFileSpritesX2PointTick.TabIndex = 4;
+            this.buttonOpenFileSpritesX2PointTick.Text = "Load";
+            this.buttonOpenFileSpritesX2PointTick.UseVisualStyleBackColor = true;
+            this.buttonOpenFileSpritesX2PointTick.Click += new System.EventHandler(this.ButtonOpenFileSpritesPUpX2PointTick_Click);
+            // 
+            // labelSavefilesSpritesX2PointTickPath
+            // 
+            this.labelSavefilesSpritesX2PointTickPath.AutoSize = true;
+            this.labelSavefilesSpritesX2PointTickPath.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tableLayoutPanel12.SetColumnSpan(this.labelSavefilesSpritesX2PointTickPath, 2);
+            this.labelSavefilesSpritesX2PointTickPath.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelSavefilesSpritesX2PointTickPath.Location = new System.Drawing.Point(3, 0);
+            this.labelSavefilesSpritesX2PointTickPath.Name = "labelSavefilesSpritesX2PointTickPath";
+            this.labelSavefilesSpritesX2PointTickPath.Size = new System.Drawing.Size(332, 28);
+            this.labelSavefilesSpritesX2PointTickPath.TabIndex = 6;
+            // 
             // gameMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2669,6 +3269,24 @@ namespace Snake_Game
             this.groupBoxSavefilesSprites.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.groupBoxSavefilesSpritesPointTickNoclip.ResumeLayout(false);
+            this.tableLayoutPanel7.ResumeLayout(false);
+            this.tableLayoutPanel7.PerformLayout();
+            this.groupBoxSavefilesSpritesPointTickSlowmotion.ResumeLayout(false);
+            this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel8.PerformLayout();
+            this.groupBoxSavefilesSpritesSlowmotionNoclip.ResumeLayout(false);
+            this.tableLayoutPanel9.ResumeLayout(false);
+            this.tableLayoutPanel9.PerformLayout();
+            this.groupBoxSavefilesSpritesX2Noclip.ResumeLayout(false);
+            this.tableLayoutPanel10.ResumeLayout(false);
+            this.tableLayoutPanel10.PerformLayout();
+            this.groupBoxSavefilesSpritesX2Slowmotion.ResumeLayout(false);
+            this.tableLayoutPanel11.ResumeLayout(false);
+            this.tableLayoutPanel11.PerformLayout();
+            this.groupBoxSavefilesSpritesX2PointTick.ResumeLayout(false);
+            this.tableLayoutPanel12.ResumeLayout(false);
+            this.tableLayoutPanel12.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2858,5 +3476,47 @@ namespace Snake_Game
         private Button buttonSaveFileSpritesNoclip;
         private Button buttonOpenFileSpritesNoclip;
         private Label labelSavefilesSpritesNoclipPath;
+        private Label labelPUpX2PointTickDuration;
+        private Label labelPUpX2SlowmoDuration;
+        private Label labelPUpX2NoclipDuration;
+        private Label labelPUpPointTickSlowmoDuration;
+        private Label labelPUpPointTickNoclipDuration;
+        private Label labelPUpSlowmoNoclipDuration;
+        private TextBox textBoxPUpPointTickNoclipDuration;
+        private TextBox textBoxPUpPointTickSlowmoDuration;
+        private TextBox textBoxPUpX2NoclipDuration;
+        private TextBox textBoxPUpX2SlowmoDuration;
+        private TextBox textBoxPUpX2PointTickDuration;
+        private TextBox textBoxPUpSlowmoNoclipDuration;
+        private GroupBox groupBoxSavefilesSpritesX2PointTick;
+        private TableLayoutPanel tableLayoutPanel12;
+        private Button buttonSaveFileSpritesX2PointTick;
+        private Button buttonOpenFileSpritesX2PointTick;
+        private Label labelSavefilesSpritesX2PointTickPath;
+        private GroupBox groupBoxSavefilesSpritesX2Slowmotion;
+        private TableLayoutPanel tableLayoutPanel11;
+        private Button buttonSaveFileSpritesX2Slowmotion;
+        private Button buttonOpenFileSpritesX2Slowmotion;
+        private Label labelSavefilesSpritesX2SlowmotionPath;
+        private GroupBox groupBoxSavefilesSpritesX2Noclip;
+        private TableLayoutPanel tableLayoutPanel10;
+        private Button buttonSaveFileSpritesX2Noclip;
+        private Button buttonOpenFileSpritesX2Noclip;
+        private Label labelSavefilesSpritesX2NoclipPath;
+        private GroupBox groupBoxSavefilesSpritesSlowmotionNoclip;
+        private TableLayoutPanel tableLayoutPanel9;
+        private Button buttonSaveFileSpritesSlowmotionNoclip;
+        private Button buttonOpenFileSpritesSlowmotionNoclip;
+        private Label labelSavefilesSpritesSlowmotionNoclipPath;
+        private GroupBox groupBoxSavefilesSpritesPointTickSlowmotion;
+        private TableLayoutPanel tableLayoutPanel8;
+        private Button buttonSaveFileSpritesPointTickSlowmotion;
+        private Button buttonOpenFileSpritesPointTickSlowmotion;
+        private Label labelSavefilesSpritesPointTickSlowmotionPath;
+        private GroupBox groupBoxSavefilesSpritesPointTickNoclip;
+        private TableLayoutPanel tableLayoutPanel7;
+        private Button buttonSaveFileSpritesPointTickNoclip;
+        private Button buttonOpenFileSpritesPointTickNoclip;
+        private Label labelSavefilesSpritesPointTickNoclipPath;
     }
 }

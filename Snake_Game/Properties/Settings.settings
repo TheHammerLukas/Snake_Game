@@ -26,5 +26,23 @@
     <Setting Name="gameSpritePUpNoclipPath" Type="System.String" Scope="User">
       <Value Profile="(Default)">C:\Program Files\Snake_Game\gameSpritePUpNoclip.png</Value>
     </Setting>
+    <Setting Name="gameSpritePUpX2PointTickPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Program Files\Snake_Game\gameSpritePUpX2PointTick.png</Value>
+    </Setting>
+    <Setting Name="gameSpritePUpX2SlowmotionPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Program Files\Snake_Game\gameSpritePUpX2Slowmotion.png</Value>
+    </Setting>
+    <Setting Name="gameSpritePUpX2NoclipPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Program Files\Snake_Game\gameSpritePUpX2Noclip.png</Value>
+    </Setting>
+    <Setting Name="gameSpritePUpPointTickSlowmotionPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Program Files\Snake_Game\gameSpritePUpPointTickSlowmotion.png</Value>
+    </Setting>
+    <Setting Name="gameSpritePUpPointTickNoclipPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Program Files\Snake_Game\gameSpritePUpPointTickNoclip.png</Value>
+    </Setting>
+    <Setting Name="gameSpritePUpSlowmotionNoclipPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Program Files\Snake_Game\gameSpritePUpSlowmotionNoclip.png</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

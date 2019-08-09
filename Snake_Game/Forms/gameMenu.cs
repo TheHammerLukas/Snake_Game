@@ -14,6 +14,12 @@ namespace Snake_Game
         private static GraphicsTooltip graphicstooltipSpritesPointTickPath = new GraphicsTooltip(Image.FromFile(Properties.Settings.Default.gameSpritePUpPointTickPath));
         private static GraphicsTooltip graphicstooltipSpritesSlowmoPath = new GraphicsTooltip(Image.FromFile(Properties.Settings.Default.gameSpritePUpSlowmotionPath));
         private static GraphicsTooltip graphicstooltipSpritesNoclipPath = new GraphicsTooltip(Image.FromFile(Properties.Settings.Default.gameSpritePUpNoclipPath));
+        private static GraphicsTooltip graphicstooltipSpritesX2PointTickPath = new GraphicsTooltip(Image.FromFile(Properties.Settings.Default.gameSpritePUpX2PointTickPath));
+        private static GraphicsTooltip graphicstooltipSpritesX2SlowmoPath = new GraphicsTooltip(Image.FromFile(Properties.Settings.Default.gameSpritePUpX2SlowmotionPath));
+        private static GraphicsTooltip graphicstooltipSpritesX2NoclipPath = new GraphicsTooltip(Image.FromFile(Properties.Settings.Default.gameSpritePUpX2NoclipPath));
+        private static GraphicsTooltip graphicstooltipSpritesPointTickSlowmoPath = new GraphicsTooltip(Image.FromFile(Properties.Settings.Default.gameSpritePUpPointTickSlowmotionPath));
+        private static GraphicsTooltip graphicstooltipSpritesPointTickNoclipPath = new GraphicsTooltip(Image.FromFile(Properties.Settings.Default.gameSpritePUpPointTickNoclipPath));
+        private static GraphicsTooltip graphicstooltipSpritesSlowmoNoclipPath = new GraphicsTooltip(Image.FromFile(Properties.Settings.Default.gameSpritePUpSlowmotionNoclipPath));
 
         public gameMenu()
         {
@@ -87,27 +93,27 @@ namespace Snake_Game
                 }
                 if (!_showError)
                 {
-                    _showError = !int.TryParse(textBoxPUpNoclipDuration.Text, out _newPUpX2PointTickDuration);
+                    _showError = !int.TryParse(textBoxPUpX2PointTickDuration.Text, out _newPUpX2PointTickDuration);
                 }
                 if (!_showError)
                 {
-                    _showError = !int.TryParse(textBoxPUpNoclipDuration.Text, out _newPUpX2SlowmoDuration);
+                    _showError = !int.TryParse(textBoxPUpX2SlowmoDuration.Text, out _newPUpX2SlowmoDuration);
                 }
                 if (!_showError)
                 {
-                    _showError = !int.TryParse(textBoxPUpNoclipDuration.Text, out _newPUpX2NoclipDuration);
+                    _showError = !int.TryParse(textBoxPUpX2NoclipDuration.Text, out _newPUpX2NoclipDuration);
                 }
                 if (!_showError)
                 {
-                    _showError = !int.TryParse(textBoxPUpNoclipDuration.Text, out _newPUpPointTickSlowmoDuration);
+                    _showError = !int.TryParse(textBoxPUpPointTickSlowmoDuration.Text, out _newPUpPointTickSlowmoDuration);
                 }
                 if (!_showError)
                 {
-                    _showError = !int.TryParse(textBoxPUpNoclipDuration.Text, out _newPUpPointTickNoclipDuration);
+                    _showError = !int.TryParse(textBoxPUpPointTickNoclipDuration.Text, out _newPUpPointTickNoclipDuration);
                 }
                 if (!_showError)
                 {
-                    _showError = !int.TryParse(textBoxPUpNoclipDuration.Text, out _newPUpSlowmoNoclipDuration);
+                    _showError = !int.TryParse(textBoxPUpSlowmoNoclipDuration.Text, out _newPUpSlowmoNoclipDuration);
                 }
 
                 gameSettings.ApplySettings(_newWidth, _newHeight, _newSpeed, _newGrowMultiplicator, _newPoints,
@@ -189,6 +195,12 @@ namespace Snake_Game
             textBoxPUpPointTickDuration.Text = Convert.ToString(gamecontroller.ConvTime(gameSettings.PowerupDurationPointTick, gameConstants.milliseconds, gameConstants.seconds));
             textBoxPUpSlowmoDuration.Text = Convert.ToString(gamecontroller.ConvTime(gameSettings.PowerupDurationSlowmo, gameConstants.milliseconds, gameConstants.seconds));
             textBoxPUpNoclipDuration.Text = Convert.ToString(gamecontroller.ConvTime(gameSettings.PowerupDurationNoclip, gameConstants.milliseconds, gameConstants.seconds));
+            textBoxPUpX2PointTickDuration.Text = Convert.ToString(gamecontroller.ConvTime(gameSettings.PowerupDurationX2PointTick, gameConstants.milliseconds, gameConstants.seconds));
+            textBoxPUpX2SlowmoDuration.Text = Convert.ToString(gamecontroller.ConvTime(gameSettings.PowerupDurationX2Slowmo, gameConstants.milliseconds, gameConstants.seconds));
+            textBoxPUpX2NoclipDuration.Text = Convert.ToString(gamecontroller.ConvTime(gameSettings.PowerupDurationX2Noclip, gameConstants.milliseconds, gameConstants.seconds));
+            textBoxPUpPointTickSlowmoDuration.Text = Convert.ToString(gamecontroller.ConvTime(gameSettings.PowerupDurationPointTickSlowmo, gameConstants.milliseconds, gameConstants.seconds));
+            textBoxPUpPointTickNoclipDuration.Text = Convert.ToString(gamecontroller.ConvTime(gameSettings.PowerupDurationPointTickNoclip, gameConstants.milliseconds, gameConstants.seconds));
+            textBoxPUpSlowmoNoclipDuration.Text = Convert.ToString(gamecontroller.ConvTime(gameSettings.PowerupDurationSlowmoNoclip, gameConstants.milliseconds, gameConstants.seconds));
             labelSnakeHeadX2Prev.BackColor = (gameSettings.snakeHeadPUpX2Color as SolidBrush).Color;
             labelSnakeBodyX2Prev.BackColor = (gameSettings.snakeBodyPUpX2Color as SolidBrush).Color;
             labelFoodX2Prev.BackColor = (gameSettings.foodPUpX2Color as SolidBrush).Color;
@@ -210,6 +222,12 @@ namespace Snake_Game
             graphicstooltipSpritesPointTickPath.ReloadToolTip(labelSavefilesSpritesPointTickPath, Image.FromFile(Properties.Settings.Default.gameSpritePUpPointTickPath));
             graphicstooltipSpritesSlowmoPath.ReloadToolTip(labelSavefilesSpritesSlowmotionPath, Image.FromFile(Properties.Settings.Default.gameSpritePUpSlowmotionPath));
             graphicstooltipSpritesNoclipPath.ReloadToolTip(labelSavefilesSpritesNoclipPath, Image.FromFile(Properties.Settings.Default.gameSpritePUpNoclipPath));
+            graphicstooltipSpritesX2PointTickPath.ReloadToolTip(labelSavefilesSpritesX2PointTickPath, Image.FromFile(Properties.Settings.Default.gameSpritePUpX2PointTickPath));
+            graphicstooltipSpritesX2SlowmoPath.ReloadToolTip(labelSavefilesSpritesX2SlowmotionPath, Image.FromFile(Properties.Settings.Default.gameSpritePUpX2SlowmotionPath));
+            graphicstooltipSpritesX2NoclipPath.ReloadToolTip(labelSavefilesSpritesX2NoclipPath, Image.FromFile(Properties.Settings.Default.gameSpritePUpX2NoclipPath));
+            graphicstooltipSpritesPointTickSlowmoPath.ReloadToolTip(labelSavefilesSpritesPointTickSlowmotionPath, Image.FromFile(Properties.Settings.Default.gameSpritePUpPointTickSlowmotionPath));
+            graphicstooltipSpritesPointTickNoclipPath.ReloadToolTip(labelSavefilesSpritesPointTickNoclipPath, Image.FromFile(Properties.Settings.Default.gameSpritePUpPointTickNoclipPath));
+            graphicstooltipSpritesSlowmoNoclipPath.ReloadToolTip(labelSavefilesSpritesSlowmotionNoclipPath, Image.FromFile(Properties.Settings.Default.gameSpritePUpSlowmotionNoclipPath));
             labelSavefilesSpritesPath.Text = Properties.Settings.Default.gameSpritePath;
             labelSavefilesSpritesPath.Tag = Image.FromFile(Properties.Settings.Default.gameSpritePath);
             labelSavefilesSpritesX2Path.Text = Properties.Settings.Default.gameSpritePUpX2Path;
@@ -220,6 +238,18 @@ namespace Snake_Game
             labelSavefilesSpritesSlowmotionPath.Tag = Image.FromFile(Properties.Settings.Default.gameSpritePUpSlowmotionPath);
             labelSavefilesSpritesNoclipPath.Text = Properties.Settings.Default.gameSpritePUpNoclipPath;
             labelSavefilesSpritesNoclipPath.Tag = Image.FromFile(Properties.Settings.Default.gameSpritePUpNoclipPath);
+            labelSavefilesSpritesX2PointTickPath.Text = Properties.Settings.Default.gameSpritePUpX2PointTickPath;
+            labelSavefilesSpritesX2PointTickPath.Tag = Image.FromFile(Properties.Settings.Default.gameSpritePUpX2PointTickPath);
+            labelSavefilesSpritesX2SlowmotionPath.Text = Properties.Settings.Default.gameSpritePUpX2SlowmotionPath;
+            labelSavefilesSpritesX2SlowmotionPath.Tag = Image.FromFile(Properties.Settings.Default.gameSpritePUpX2SlowmotionPath);
+            labelSavefilesSpritesX2NoclipPath.Text = Properties.Settings.Default.gameSpritePUpX2NoclipPath;
+            labelSavefilesSpritesX2NoclipPath.Tag = Image.FromFile(Properties.Settings.Default.gameSpritePUpX2NoclipPath);
+            labelSavefilesSpritesPointTickSlowmotionPath.Text = Properties.Settings.Default.gameSpritePUpPointTickSlowmotionPath;
+            labelSavefilesSpritesPointTickSlowmotionPath.Tag = Image.FromFile(Properties.Settings.Default.gameSpritePUpPointTickSlowmotionPath);
+            labelSavefilesSpritesPointTickNoclipPath.Text = Properties.Settings.Default.gameSpritePUpPointTickNoclipPath;
+            labelSavefilesSpritesPointTickNoclipPath.Tag = Image.FromFile(Properties.Settings.Default.gameSpritePUpPointTickNoclipPath);
+            labelSavefilesSpritesSlowmotionNoclipPath.Text = Properties.Settings.Default.gameSpritePUpSlowmotionNoclipPath;
+            labelSavefilesSpritesSlowmotionNoclipPath.Tag = Image.FromFile(Properties.Settings.Default.gameSpritePUpSlowmotionNoclipPath);
         }
 
         // Reset the 'Settings' to their standard values
@@ -786,6 +816,42 @@ namespace Snake_Game
             setMenuValues();
         }
 
+        private void ButtonOpenFileSpritesPUpX2PointTick_Click(object sender, EventArgs e)
+        {
+            new gameController().OpenFileDialog(gameConstants.gameSpritesPUpX2PointTick);
+            setMenuValues();
+        }
+
+        private void ButtonOpenFileSpritesPUpX2Slowmotion_Click(object sender, EventArgs e)
+        {
+            new gameController().OpenFileDialog(gameConstants.gameSpritesPUpX2Slowmotion);
+            setMenuValues();
+        }
+
+        private void ButtonOpenFileSpritesPUpX2Noclip_Click(object sender, EventArgs e)
+        {
+            new gameController().OpenFileDialog(gameConstants.gameSpritesPUpX2Noclip);
+            setMenuValues();
+        }
+
+        private void ButtonOpenFileSpritesPUpPointTickSlowmotion_Click(object sender, EventArgs e)
+        {
+            new gameController().OpenFileDialog(gameConstants.gameSpritesPUpPointTickSlowmotion);
+            setMenuValues();
+        }
+
+        private void ButtonOpenFileSpritesPUpPointTickNoclip_Click(object sender, EventArgs e)
+        {
+            new gameController().OpenFileDialog(gameConstants.gameSpritesPUpPointTickNoclip);
+            setMenuValues();
+        }
+
+        private void ButtonOpenFileSpritesPUpSlowmotionNoclip_Click(object sender, EventArgs e)
+        {
+            new gameController().OpenFileDialog(gameConstants.gameSpritesPUpSlowmotionNoclip);
+            setMenuValues();
+        }
+
         private void ButtonSaveFileControls_Click(object sender, EventArgs e)
         {
             new gameController().SaveFileDialog(gameConstants.controlsXML);
@@ -831,6 +897,42 @@ namespace Snake_Game
         private void ButtonSaveFileSpritesPUpNoclip_Click(object sender, EventArgs e)
         {
             new gameController().SaveFileDialog(gameConstants.gameSpritesPUpNoclip);
+            setMenuValues();
+        }
+
+        private void ButtonSaveFileSpritesPUpX2PointTick_Click(object sender, EventArgs e)
+        {
+            new gameController().SaveFileDialog(gameConstants.gameSpritesPUpX2PointTick);
+            setMenuValues();
+        }
+
+        private void ButtonSaveFileSpritesPUpX2Slowmotion_Click(object sender, EventArgs e)
+        {
+            new gameController().SaveFileDialog(gameConstants.gameSpritesPUpX2Slowmotion);
+            setMenuValues();
+        }
+
+        private void ButtonSaveFileSpritesPUpX2Noclip_Click(object sender, EventArgs e)
+        {
+            new gameController().SaveFileDialog(gameConstants.gameSpritesPUpX2Noclip);
+            setMenuValues();
+        }
+
+        private void ButtonSaveFileSpritesPUpPointTickSlowmotion_Click(object sender, EventArgs e)
+        {
+            new gameController().SaveFileDialog(gameConstants.gameSpritesPUpPointTickSlowmotion);
+            setMenuValues();
+        }
+
+        private void ButtonSaveFileSpritesPUpPointTickNoclip_Click(object sender, EventArgs e)
+        {
+            new gameController().SaveFileDialog(gameConstants.gameSpritesPUpPointTickNoclip);
+            setMenuValues();
+        }
+
+        private void ButtonSaveFileSpritesPUpSlowmotionNoclip_Click(object sender, EventArgs e)
+        {
+            new gameController().SaveFileDialog(gameConstants.gameSpritesPUpSlowmotionNoclip);
             setMenuValues();
         }
 

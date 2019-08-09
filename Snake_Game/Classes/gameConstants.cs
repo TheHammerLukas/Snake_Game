@@ -44,6 +44,12 @@
         public const string gameSpritesPUpPointTick = "SPRITESPOINTTICK";
         public const string gameSpritesPUpSlowmotion = "SPRITESSLOWMOTION";
         public const string gameSpritesPUpNoclip = "SPRITESNOCLIP";
+        public const string gameSpritesPUpX2PointTick = "SPRITESX2POINTTICK";
+        public const string gameSpritesPUpX2Slowmotion = "SPRITESX2SLOWMOTION";
+        public const string gameSpritesPUpX2Noclip = "SPRITESX2NOCLIP";
+        public const string gameSpritesPUpPointTickSlowmotion = "SPRITESPOINTTICKSLOWMOTION";
+        public const string gameSpritesPUpPointTickNoclip = "SPRITESPOINTTICKNOCLIP";
+        public const string gameSpritesPUpSlowmotionNoclip = "SPRITESSLOWMOTIONNOCLIP";
 
         // User Interface constants
         public enum gameSound // Enum for different sounds

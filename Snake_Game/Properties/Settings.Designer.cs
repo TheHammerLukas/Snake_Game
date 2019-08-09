@@ -12,7 +12,7 @@ namespace Snake_Game.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "14.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.2.0.0")]
     public sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -116,6 +116,78 @@ namespace Snake_Game.Properties {
             }
             set {
                 this["gameSpritePUpNoclipPath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files\\Snake_Game\\gameSpritePUpX2PointTick.png")]
+        public string gameSpritePUpX2PointTickPath {
+            get {
+                return ((string)(this["gameSpritePUpX2PointTickPath"]));
+            }
+            set {
+                this["gameSpritePUpX2PointTickPath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files\\Snake_Game\\gameSpritePUpX2Slowmotion.png")]
+        public string gameSpritePUpX2SlowmotionPath {
+            get {
+                return ((string)(this["gameSpritePUpX2SlowmotionPath"]));
+            }
+            set {
+                this["gameSpritePUpX2SlowmotionPath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files\\Snake_Game\\gameSpritePUpX2Noclip.png")]
+        public string gameSpritePUpX2NoclipPath {
+            get {
+                return ((string)(this["gameSpritePUpX2NoclipPath"]));
+            }
+            set {
+                this["gameSpritePUpX2NoclipPath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files\\Snake_Game\\gameSpritePUpPointTickSlowmotion.png")]
+        public string gameSpritePUpPointTickSlowmotionPath {
+            get {
+                return ((string)(this["gameSpritePUpPointTickSlowmotionPath"]));
+            }
+            set {
+                this["gameSpritePUpPointTickSlowmotionPath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files\\Snake_Game\\gameSpritePUpPointTickNoclip.png")]
+        public string gameSpritePUpPointTickNoclipPath {
+            get {
+                return ((string)(this["gameSpritePUpPointTickNoclipPath"]));
+            }
+            set {
+                this["gameSpritePUpPointTickNoclipPath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files\\Snake_Game\\gameSpritePUpSlowmotionNoclip.png")]
+        public string gameSpritePUpSlowmotionNoclipPath {
+            get {
+                return ((string)(this["gameSpritePUpSlowmotionNoclipPath"]));
+            }
+            set {
+                this["gameSpritePUpSlowmotionNoclipPath"] = value;
             }
         }
     }

@@ -1058,6 +1058,61 @@ namespace Snake_Game
             {
                 LoadGameSprites(gameConstants.gameSpritesPUpNoclip);
             }
+
+            if (!File.Exists(Properties.Settings.Default.gameSpritePUpX2PointTickPath))
+            {
+                SaveGameSprites(gameConstants.gameSpritesPUpX2PointTick);
+            }
+            else
+            {
+                LoadGameSprites(gameConstants.gameSpritesPUpX2PointTick);
+            }
+
+            if (!File.Exists(Properties.Settings.Default.gameSpritePUpX2SlowmotionPath))
+            {
+                SaveGameSprites(gameConstants.gameSpritesPUpX2Slowmotion);
+            }
+            else
+            {
+                LoadGameSprites(gameConstants.gameSpritesPUpX2Slowmotion);
+            }
+
+            if (!File.Exists(Properties.Settings.Default.gameSpritePUpX2NoclipPath))
+            {
+                SaveGameSprites(gameConstants.gameSpritesPUpX2Noclip);
+            }
+            else
+            {
+                LoadGameSprites(gameConstants.gameSpritesPUpX2Noclip);
+            }
+
+            if (!File.Exists(Properties.Settings.Default.gameSpritePUpPointTickSlowmotionPath))
+            {
+                SaveGameSprites(gameConstants.gameSpritesPUpPointTickSlowmotion);
+            }
+            else
+            {
+                LoadGameSprites(gameConstants.gameSpritesPUpPointTickSlowmotion);
+            }
+
+            if (!File.Exists(Properties.Settings.Default.gameSpritePUpPointTickNoclipPath))
+            {
+                SaveGameSprites(gameConstants.gameSpritesPUpPointTickNoclip);
+            }
+            else
+            {
+                LoadGameSprites(gameConstants.gameSpritesPUpPointTickNoclip);
+            }
+
+            if (!File.Exists(Properties.Settings.Default.gameSpritePUpSlowmotionNoclipPath))
+            {
+                SaveGameSprites(gameConstants.gameSpritesPUpSlowmotionNoclip);
+            }
+            else
+            {
+                LoadGameSprites(gameConstants.gameSpritesPUpSlowmotionNoclip);
+            }
+
         }
 
         // Saves all gameSprite files
@@ -1068,6 +1123,12 @@ namespace Snake_Game
             SaveGameSprites(gameConstants.gameSpritesPUpPointTick);
             SaveGameSprites(gameConstants.gameSpritesPUpSlowmotion);
             SaveGameSprites(gameConstants.gameSpritesPUpNoclip);
+            SaveGameSprites(gameConstants.gameSpritesPUpX2PointTick);
+            SaveGameSprites(gameConstants.gameSpritesPUpX2Slowmotion);
+            SaveGameSprites(gameConstants.gameSpritesPUpX2Noclip);
+            SaveGameSprites(gameConstants.gameSpritesPUpPointTickSlowmotion);
+            SaveGameSprites(gameConstants.gameSpritesPUpPointTickNoclip);
+            SaveGameSprites(gameConstants.gameSpritesPUpSlowmotionNoclip);
         }
 
         // Saves the current gameSprite according to passed in spriteId 
@@ -1085,7 +1146,8 @@ namespace Snake_Game
                     catch (Exception)
                     {
                         MessageBox.Show(
-                            "Unspecified error occurred while saving gameSprite.png!\nSelect path instead.\noriginal Path=" + Properties.Settings.Default.gameSpritePath,
+                            "Unspecified error occurred while saving gameSprite.png!\nSelect path instead.\noriginal Path=" + 
+                            Properties.Settings.Default.gameSpritePath,
                             "Unexpected error while creating gameSprite.png",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error
@@ -1102,7 +1164,8 @@ namespace Snake_Game
                     catch (Exception)
                     {
                         MessageBox.Show(
-                            "Unspecified error occurred while saving gameSpritePUpX2.png!\nSelect path instead.\noriginal Path=" + Properties.Settings.Default.gameSpritePUpX2Path,
+                            "Unspecified error occurred while saving gameSpritePUpX2.png!\nSelect path instead.\noriginal Path=" + 
+                            Properties.Settings.Default.gameSpritePUpX2Path,
                             "Unexpected error while creating gameSpritePUpX2.png",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error
@@ -1119,7 +1182,8 @@ namespace Snake_Game
                     catch (Exception)
                     {
                         MessageBox.Show(
-                            "Unspecified error occurred while saving gameSpritePUpPointTick.png!\nSelect path instead.\noriginal Path=" + Properties.Settings.Default.gameSpritePUpPointTickPath,
+                            "Unspecified error occurred while saving gameSpritePUpPointTick.png!\nSelect path instead.\noriginal Path=" + 
+                            Properties.Settings.Default.gameSpritePUpPointTickPath,
                             "Unexpected error while creating gameSpritePUpPointTick.png",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error
@@ -1136,7 +1200,8 @@ namespace Snake_Game
                     catch (Exception)
                     {
                         MessageBox.Show(
-                            "Unspecified error occurred while saving gameSpritePUpSlowmotion.png!\nSelect path instead.\noriginal Path=" + Properties.Settings.Default.gameSpritePUpSlowmotionPath,
+                            "Unspecified error occurred while saving gameSpritePUpSlowmotion.png!\nSelect path instead.\noriginal Path=" + 
+                            Properties.Settings.Default.gameSpritePUpSlowmotionPath,
                             "Unexpected error while creating gameSpritePUpSlowmotion.png",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error
@@ -1153,13 +1218,122 @@ namespace Snake_Game
                     catch (Exception)
                     {
                         MessageBox.Show(
-                            "Unspecified error occurred while saving gameSpritePUpNoclip.png!\nSelect path instead.\noriginal Path=" + Properties.Settings.Default.gameSpritePUpNoclipPath,
+                            "Unspecified error occurred while saving gameSpritePUpNoclip.png!\nSelect path instead.\noriginal Path=" + 
+                            Properties.Settings.Default.gameSpritePUpNoclipPath,
                             "Unexpected error while creating gameSpritePUpNoclip.png",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error
                             );
 
                         SaveFileDialog(gameConstants.gameSpritesPUpNoclip);
+                    }
+                    break;
+                case gameConstants.gameSpritesPUpX2PointTick:
+                    try
+                    {
+                        gameInterface.gameSpritePUpX2PointTick.Save(Properties.Settings.Default.gameSpritePUpX2PointTickPath, ImageFormat.Png);
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show(
+                            "Unspecified error occurred while saving gameSpritePUpX2PointTick.png!\nSelect path instead.\noriginal Path=" + 
+                            Properties.Settings.Default.gameSpritePUpX2PointTickPath,
+                            "Unexpected error while creating gameSpritePUpX2PointTick.png",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                            );
+
+                        SaveFileDialog(gameConstants.gameSpritesPUpX2PointTick);
+                    }
+                    break;
+                case gameConstants.gameSpritesPUpX2Slowmotion:
+                    try
+                    {
+                        gameInterface.gameSpritePUpX2Slowmotion.Save(Properties.Settings.Default.gameSpritePUpX2SlowmotionPath, ImageFormat.Png);
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show(
+                            "Unspecified error occurred while saving gameSpritePUpX2Slowmotion.png!\nSelect path instead.\noriginal Path=" + 
+                            Properties.Settings.Default.gameSpritePUpX2SlowmotionPath,
+                            "Unexpected error while creating gameSpritePUpX2Slowmotion.png",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                            );
+
+                        SaveFileDialog(gameConstants.gameSpritesPUpX2Slowmotion);
+                    }
+                    break;
+                case gameConstants.gameSpritesPUpX2Noclip:
+                    try
+                    {
+                        gameInterface.gameSpritePUpX2Noclip.Save(Properties.Settings.Default.gameSpritePUpX2NoclipPath, ImageFormat.Png);
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show(
+                            "Unspecified error occurred while saving gameSpritePUpX2Noclip.png!\nSelect path instead.\noriginal Path=" + 
+                            Properties.Settings.Default.gameSpritePUpX2NoclipPath,
+                            "Unexpected error while creating gameSpritePUpX2Noclip.png",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                            );
+
+                        SaveFileDialog(gameConstants.gameSpritesPUpX2Noclip);
+                    }
+                    break;
+                case gameConstants.gameSpritesPUpPointTickSlowmotion:
+                    try
+                    {
+                        gameInterface.gameSpritePUpPointTickSlowmotion.Save(Properties.Settings.Default.gameSpritePUpPointTickSlowmotionPath, ImageFormat.Png);
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show(
+                            "Unspecified error occurred while saving gameSpritePUpPointTickSlowmotion.png!\nSelect path instead.\noriginal Path=" + 
+                            Properties.Settings.Default.gameSpritePUpPointTickSlowmotionPath,
+                            "Unexpected error while creating gameSpritePUpPointTickSlowmotion.png",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                            );
+
+                        SaveFileDialog(gameConstants.gameSpritesPUpPointTickSlowmotion);
+                    }
+                    break;
+                case gameConstants.gameSpritesPUpPointTickNoclip:
+                    try
+                    {
+                        gameInterface.gameSpritePUpPointTickNoclip.Save(Properties.Settings.Default.gameSpritePUpPointTickNoclipPath, ImageFormat.Png);
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show(
+                            "Unspecified error occurred while saving gameSpritePointTickNoclip.png!\nSelect path instead.\noriginal Path=" + 
+                            Properties.Settings.Default.gameSpritePUpPointTickNoclipPath,
+                            "Unexpected error while creating gameSpritePointTickNoclip.png",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                            );
+
+                        SaveFileDialog(gameConstants.gameSpritesPUpPointTickNoclip);
+                    }
+                    break;
+                case gameConstants.gameSpritesPUpSlowmotionNoclip:
+                    try
+                    {
+                        gameInterface.gameSpritePUpSlowmotionNoclip.Save(Properties.Settings.Default.gameSpritePUpSlowmotionNoclipPath, ImageFormat.Png);
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show(
+                            "Unspecified error occurred while saving gameSpritePUpSlowmotionNoclip.png!\nSelect path instead.\noriginal Path=" + 
+                            Properties.Settings.Default.gameSpritePUpSlowmotionNoclipPath,
+                            "Unexpected error while creating gameSpritePUpSlowmotionNoclip.png",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                            );
+
+                        SaveFileDialog(gameConstants.gameSpritesPUpSlowmotionNoclip);
                     }
                     break;
                 default:
@@ -1181,6 +1355,12 @@ namespace Snake_Game
             LoadGameSprites(gameConstants.gameSpritesPUpPointTick);
             LoadGameSprites(gameConstants.gameSpritesPUpSlowmotion);
             LoadGameSprites(gameConstants.gameSpritesPUpNoclip);
+            LoadGameSprites(gameConstants.gameSpritesPUpX2PointTick);
+            LoadGameSprites(gameConstants.gameSpritesPUpX2Slowmotion);
+            LoadGameSprites(gameConstants.gameSpritesPUpX2Noclip);
+            LoadGameSprites(gameConstants.gameSpritesPUpPointTickSlowmotion);
+            LoadGameSprites(gameConstants.gameSpritesPUpPointTickNoclip);
+            LoadGameSprites(gameConstants.gameSpritesPUpSlowmotionNoclip);
         }
 
         // Loads the gameSprite from the currently configured path according to passed in spriteId
@@ -1197,7 +1377,15 @@ namespace Snake_Game
                     }
                     catch (Exception)
                     {
+                        MessageBox.Show(
+                            "Unspecified error occurred while loading gameSprite.png!\nSelect path instead.\noriginal Path=" +
+                            Properties.Settings.Default.gameSpritePath,
+                            "Unexpected error while loading gameSprite.png",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                            );
 
+                        OpenFileDialog(gameConstants.gameSprites);
                     }
                     break;
                 case gameConstants.gameSpritesPUpX2:
@@ -1208,7 +1396,8 @@ namespace Snake_Game
                     catch (Exception)
                     {
                         MessageBox.Show(
-                            "Unspecified error occurred while loading gameSpritePUpX2.png!\nSelect path instead.\noriginal Path=" + Properties.Settings.Default.gameSpritePUpX2Path,
+                            "Unspecified error occurred while loading gameSpritePUpX2.png!\nSelect path instead.\noriginal Path=" + 
+                            Properties.Settings.Default.gameSpritePUpX2Path,
                             "Unexpected error while loading gameSpritePUpX2.png",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error
@@ -1225,7 +1414,8 @@ namespace Snake_Game
                     catch (Exception)
                     {
                         MessageBox.Show(
-                            "Unspecified error occurred while loading gameSpritePUpPointTick.png!\nSelect path instead.\noriginal Path=" + Properties.Settings.Default.gameSpritePUpPointTickPath,
+                            "Unspecified error occurred while loading gameSpritePUpPointTick.png!\nSelect path instead.\noriginal Path=" + 
+                            Properties.Settings.Default.gameSpritePUpPointTickPath,
                             "Unexpected error while loading gameSpritePUpPointTick.png",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error
@@ -1242,7 +1432,8 @@ namespace Snake_Game
                     catch (Exception)
                     {
                         MessageBox.Show(
-                            "Unspecified error occurred while loading gameSpritePUpSlowmotion.png!\nSelect path instead.\noriginal Path=" + Properties.Settings.Default.gameSpritePUpSlowmotionPath,
+                            "Unspecified error occurred while loading gameSpritePUpSlowmotion.png!\nSelect path instead.\noriginal Path=" + 
+                            Properties.Settings.Default.gameSpritePUpSlowmotionPath,
                             "Unexpected error while loading gameSpritePUpSlowmotion.png",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error
@@ -1259,13 +1450,122 @@ namespace Snake_Game
                     catch (Exception)
                     {
                         MessageBox.Show(
-                            "Unspecified error occurred while loading gameSpritePUpNoclip.png!\nSelect path instead.\noriginal Path=" + Properties.Settings.Default.gameSpritePUpNoclipPath,
+                            "Unspecified error occurred while loading gameSpritePUpNoclip.png!\nSelect path instead.\noriginal Path=" + 
+                            Properties.Settings.Default.gameSpritePUpNoclipPath,
                             "Unexpected error while loading gameSpritePUpNoclip.png",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error
                             );
 
                         OpenFileDialog(gameConstants.gameSpritesPUpNoclip);
+                    }
+                    break;
+                case gameConstants.gameSpritesPUpX2PointTick:
+                    try
+                    {
+                        gameInterface.gameSpritePUpX2PointTick = Image.FromFile(Properties.Settings.Default.gameSpritePUpX2PointTickPath);
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show(
+                            "Unspecified error occurred while loading gameSpritePUpX2PointTick.png!\nSelect path instead.\noriginal Path=" +
+                            Properties.Settings.Default.gameSpritePUpX2PointTickPath,
+                            "Unexpected error while loading gameSpritePUpX2PointTick.png",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                            );
+
+                        OpenFileDialog(gameConstants.gameSpritesPUpX2PointTick);
+                    }
+                    break;
+                case gameConstants.gameSpritesPUpX2Slowmotion:
+                    try
+                    {
+                        gameInterface.gameSpritePUpX2Slowmotion = Image.FromFile(Properties.Settings.Default.gameSpritePUpX2SlowmotionPath);
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show(
+                            "Unspecified error occurred while loading gameSpritePUpX2Slowmotion.png!\nSelect path instead.\noriginal Path=" +
+                            Properties.Settings.Default.gameSpritePUpX2SlowmotionPath,
+                            "Unexpected error while loading gameSpritePUpX2Slowmotion.png",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                            );
+
+                        OpenFileDialog(gameConstants.gameSpritesPUpX2Slowmotion);
+                    }
+                    break;
+                case gameConstants.gameSpritesPUpX2Noclip:
+                    try
+                    {
+                        gameInterface.gameSpritePUpX2Noclip = Image.FromFile(Properties.Settings.Default.gameSpritePUpX2NoclipPath);
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show(
+                            "Unspecified error occurred while loading gameSpritePUpX2Noclip.png!\nSelect path instead.\noriginal Path=" +
+                            Properties.Settings.Default.gameSpritePUpX2NoclipPath,
+                            "Unexpected error while loading gameSpritePUpX2Noclip.png",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                            );
+
+                        OpenFileDialog(gameConstants.gameSpritesPUpX2Noclip);
+                    }
+                    break;
+                case gameConstants.gameSpritesPUpPointTickSlowmotion:
+                    try
+                    {
+                        gameInterface.gameSpritePUpPointTickSlowmotion = Image.FromFile(Properties.Settings.Default.gameSpritePUpPointTickSlowmotionPath);
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show(
+                            "Unspecified error occurred while loading gameSpritePUpPointTickSlowmotion.png!\nSelect path instead.\noriginal Path=" +
+                            Properties.Settings.Default.gameSpritePUpPointTickSlowmotionPath,
+                            "Unexpected error while loading gameSpritePUpPointTickSlowmotion.png",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                            );
+
+                        OpenFileDialog(gameConstants.gameSpritesPUpPointTickSlowmotion);
+                    }
+                    break;
+                case gameConstants.gameSpritesPUpPointTickNoclip:
+                    try
+                    {
+                        gameInterface.gameSpritePUpPointTickNoclip = Image.FromFile(Properties.Settings.Default.gameSpritePUpPointTickNoclipPath);
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show(
+                            "Unspecified error occurred while loading gameSpritePointTickNoclip.png!\nSelect path instead.\noriginal Path=" +
+                            Properties.Settings.Default.gameSpritePUpPointTickNoclipPath,
+                            "Unexpected error while loading gameSpritePointTickNoclip.png",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                            );
+
+                        OpenFileDialog(gameConstants.gameSpritesPUpPointTickNoclip);
+                    }
+                    break;
+                case gameConstants.gameSpritesPUpSlowmotionNoclip:
+                    try
+                    {
+                        gameInterface.gameSpritePUpSlowmotionNoclip = Image.FromFile(Properties.Settings.Default.gameSpritePUpSlowmotionNoclipPath);
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show(
+                            "Unspecified error occurred while loading gameSpritePUpSlowmotionNoclip.png!\nSelect path instead.\noriginal Path=" +
+                            Properties.Settings.Default.gameSpritePUpSlowmotionNoclipPath,
+                            "Unexpected error while loading gameSpritePUpSlowmotionNoclip.png",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                            );
+
+                        OpenFileDialog(gameConstants.gameSpritesPUpSlowmotionNoclip);
                     }
                     break;
                 default:
@@ -1347,6 +1647,24 @@ namespace Snake_Game
                 case gameConstants.gameSpritesPUpNoclip:
                     _filePath = Properties.Settings.Default.gameSpritePUpNoclipPath.Substring(0, Properties.Settings.Default.gameSpritePUpNoclipPath.LastIndexOf("\\") + 1);
                     break;
+                case gameConstants.gameSpritesPUpX2PointTick:
+                    _filePath = Properties.Settings.Default.gameSpritePUpX2PointTickPath.Substring(0, Properties.Settings.Default.gameSpritePUpX2PointTickPath.LastIndexOf("\\") + 1);
+                    break;
+                case gameConstants.gameSpritesPUpX2Slowmotion:
+                    _filePath = Properties.Settings.Default.gameSpritePUpX2SlowmotionPath.Substring(0, Properties.Settings.Default.gameSpritePUpX2SlowmotionPath.LastIndexOf("\\") + 1);
+                    break;
+                case gameConstants.gameSpritesPUpX2Noclip:
+                    _filePath = Properties.Settings.Default.gameSpritePUpX2NoclipPath.Substring(0, Properties.Settings.Default.gameSpritePUpX2NoclipPath.LastIndexOf("\\") + 1);
+                    break;
+                case gameConstants.gameSpritesPUpPointTickSlowmotion:
+                    _filePath = Properties.Settings.Default.gameSpritePUpPointTickSlowmotionPath.Substring(0, Properties.Settings.Default.gameSpritePUpPointTickSlowmotionPath.LastIndexOf("\\") + 1);
+                    break;
+                case gameConstants.gameSpritesPUpPointTickNoclip:
+                    _filePath = Properties.Settings.Default.gameSpritePUpPointTickNoclipPath.Substring(0, Properties.Settings.Default.gameSpritePUpPointTickNoclipPath.LastIndexOf("\\") + 1);
+                    break;
+                case gameConstants.gameSpritesPUpSlowmotionNoclip:
+                    _filePath = Properties.Settings.Default.gameSpritePUpSlowmotionNoclipPath.Substring(0, Properties.Settings.Default.gameSpritePUpSlowmotionNoclipPath.LastIndexOf("\\") + 1);
+                    break;
             }
 
 
@@ -1366,6 +1684,12 @@ namespace Snake_Game
                 case gameConstants.gameSpritesPUpPointTick:
                 case gameConstants.gameSpritesPUpSlowmotion:
                 case gameConstants.gameSpritesPUpNoclip:
+                case gameConstants.gameSpritesPUpX2PointTick:
+                case gameConstants.gameSpritesPUpX2Slowmotion:
+                case gameConstants.gameSpritesPUpX2Noclip:
+                case gameConstants.gameSpritesPUpPointTickSlowmotion:
+                case gameConstants.gameSpritesPUpPointTickNoclip:
+                case gameConstants.gameSpritesPUpSlowmotionNoclip:
                     openFileDialog.Filter = "PNG files (*.png)|*.png|All files(*.*)|*.*";
                     break;
             }
@@ -1411,6 +1735,30 @@ namespace Snake_Game
                         Properties.Settings.Default.gameSpritePUpNoclipPath = _filePath;
                         _doSave = true;
                         break;
+                    case gameConstants.gameSpritesPUpX2PointTick:
+                        Properties.Settings.Default.gameSpritePUpX2PointTickPath = _filePath;
+                        _doSave = true;
+                        break;
+                    case gameConstants.gameSpritesPUpX2Slowmotion:
+                        Properties.Settings.Default.gameSpritePUpX2SlowmotionPath = _filePath;
+                        _doSave = true;
+                        break;
+                    case gameConstants.gameSpritesPUpX2Noclip:
+                        Properties.Settings.Default.gameSpritePUpX2NoclipPath = _filePath;
+                        _doSave = true;
+                        break;
+                    case gameConstants.gameSpritesPUpPointTickSlowmotion:
+                        Properties.Settings.Default.gameSpritePUpPointTickSlowmotionPath = _filePath;
+                        _doSave = true;
+                        break;
+                    case gameConstants.gameSpritesPUpPointTickNoclip:
+                        Properties.Settings.Default.gameSpritePUpPointTickNoclipPath = _filePath;
+                        _doSave = true;
+                        break;
+                    case gameConstants.gameSpritesPUpSlowmotionNoclip:
+                        Properties.Settings.Default.gameSpritePUpSlowmotionNoclipPath = _filePath;
+                        _doSave = true;
+                        break;
                     default:
                         _doSave = false;
                         break;
@@ -1438,6 +1786,12 @@ namespace Snake_Game
                         case gameConstants.gameSpritesPUpPointTick:
                         case gameConstants.gameSpritesPUpSlowmotion:
                         case gameConstants.gameSpritesPUpNoclip:
+                        case gameConstants.gameSpritesPUpX2PointTick:
+                        case gameConstants.gameSpritesPUpX2Slowmotion:
+                        case gameConstants.gameSpritesPUpX2Noclip:
+                        case gameConstants.gameSpritesPUpPointTickSlowmotion:
+                        case gameConstants.gameSpritesPUpPointTickNoclip:
+                        case gameConstants.gameSpritesPUpSlowmotionNoclip:
                             LoadGameSprites(_fileType);
                             break;
                         default:
@@ -1481,6 +1835,24 @@ namespace Snake_Game
                 case gameConstants.gameSpritesPUpNoclip:
                     _filePath = Properties.Settings.Default.gameSpritePUpNoclipPath.Substring(0, Properties.Settings.Default.gameSpritePUpNoclipPath.LastIndexOf("\\") + 1);
                     break;
+                case gameConstants.gameSpritesPUpX2PointTick:
+                    _filePath = Properties.Settings.Default.gameSpritePUpX2PointTickPath.Substring(0, Properties.Settings.Default.gameSpritePUpX2PointTickPath.LastIndexOf("\\") + 1);
+                    break;
+                case gameConstants.gameSpritesPUpX2Slowmotion:
+                    _filePath = Properties.Settings.Default.gameSpritePUpX2SlowmotionPath.Substring(0, Properties.Settings.Default.gameSpritePUpX2SlowmotionPath.LastIndexOf("\\") + 1);
+                    break;
+                case gameConstants.gameSpritesPUpX2Noclip:
+                    _filePath = Properties.Settings.Default.gameSpritePUpX2NoclipPath.Substring(0, Properties.Settings.Default.gameSpritePUpX2NoclipPath.LastIndexOf("\\") + 1);
+                    break;
+                case gameConstants.gameSpritesPUpPointTickSlowmotion:
+                    _filePath = Properties.Settings.Default.gameSpritePUpPointTickSlowmotionPath.Substring(0, Properties.Settings.Default.gameSpritePUpPointTickSlowmotionPath.LastIndexOf("\\") + 1);
+                    break;
+                case gameConstants.gameSpritesPUpPointTickNoclip:
+                    _filePath = Properties.Settings.Default.gameSpritePUpPointTickNoclipPath.Substring(0, Properties.Settings.Default.gameSpritePUpPointTickNoclipPath.LastIndexOf("\\") + 1);
+                    break;
+                case gameConstants.gameSpritesPUpSlowmotionNoclip:
+                    _filePath = Properties.Settings.Default.gameSpritePUpSlowmotionNoclipPath.Substring(0, Properties.Settings.Default.gameSpritePUpSlowmotionNoclipPath.LastIndexOf("\\") + 1);
+                    break;
             }
 
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -1499,6 +1871,12 @@ namespace Snake_Game
                 case gameConstants.gameSpritesPUpPointTick:
                 case gameConstants.gameSpritesPUpSlowmotion:
                 case gameConstants.gameSpritesPUpNoclip:
+                case gameConstants.gameSpritesPUpX2PointTick:
+                case gameConstants.gameSpritesPUpX2Slowmotion:
+                case gameConstants.gameSpritesPUpX2Noclip:
+                case gameConstants.gameSpritesPUpPointTickSlowmotion:
+                case gameConstants.gameSpritesPUpPointTickNoclip:
+                case gameConstants.gameSpritesPUpSlowmotionNoclip:
                     saveFileDialog.Filter = "PNG files (*.png)|*.png|All files(*.*)|*.*";
                     break;
             }
@@ -1544,6 +1922,30 @@ namespace Snake_Game
                         Properties.Settings.Default.gameSpritePUpNoclipPath = _filePath;
                         _doSave = true;
                         break;
+                    case gameConstants.gameSpritesPUpX2PointTick:
+                        Properties.Settings.Default.gameSpritePUpX2PointTickPath = _filePath;
+                        _doSave = true;
+                        break;
+                    case gameConstants.gameSpritesPUpX2Slowmotion:
+                        Properties.Settings.Default.gameSpritePUpX2SlowmotionPath = _filePath;
+                        _doSave = true;
+                        break;
+                    case gameConstants.gameSpritesPUpX2Noclip:
+                        Properties.Settings.Default.gameSpritePUpX2NoclipPath = _filePath;
+                        _doSave = true;
+                        break;
+                    case gameConstants.gameSpritesPUpPointTickSlowmotion:
+                        Properties.Settings.Default.gameSpritePUpPointTickSlowmotionPath = _filePath;
+                        _doSave = true;
+                        break;
+                    case gameConstants.gameSpritesPUpPointTickNoclip:
+                        Properties.Settings.Default.gameSpritePUpPointTickNoclipPath = _filePath;
+                        _doSave = true;
+                        break;
+                    case gameConstants.gameSpritesPUpSlowmotionNoclip:
+                        Properties.Settings.Default.gameSpritePUpSlowmotionNoclipPath = _filePath;
+                        _doSave = true;
+                        break;
                     default:
                         _doSave = false;
                         break;
@@ -1571,6 +1973,12 @@ namespace Snake_Game
                         case gameConstants.gameSpritesPUpPointTick:
                         case gameConstants.gameSpritesPUpSlowmotion:
                         case gameConstants.gameSpritesPUpNoclip:
+                        case gameConstants.gameSpritesPUpX2PointTick:
+                        case gameConstants.gameSpritesPUpX2Slowmotion:
+                        case gameConstants.gameSpritesPUpX2Noclip:
+                        case gameConstants.gameSpritesPUpPointTickSlowmotion:
+                        case gameConstants.gameSpritesPUpPointTickNoclip:
+                        case gameConstants.gameSpritesPUpSlowmotionNoclip:
                             SaveGameSprites(_fileType);
                             break;
                         default:
