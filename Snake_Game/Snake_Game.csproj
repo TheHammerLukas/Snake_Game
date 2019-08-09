@@ -152,6 +152,7 @@
     <Content Include="Resources\gameSpritePUpX2PointTick.png" />
     <Content Include="Resources\gameSpritePUpX2Slowmotion.png" />
     <Content Include="Resources\gameSprite_Template.png" />
+    <Content Include="Resources\Old\gameSoundSnakeEat.wav" />
     <Content Include="Resources\Snake_Menu_Thumbnail.ico" />
     <Content Include="Resources\Snake_Thumbnail.ico" />
     <Content Include="Snake_Thumbnail.ico" />
