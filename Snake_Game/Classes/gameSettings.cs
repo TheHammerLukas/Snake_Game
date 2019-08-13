@@ -15,17 +15,17 @@ namespace Snake_Game
 
     public enum gamePowerup // Enum for different powerups
     {
-        None = 0,
-        X2 = 1,
-        PointOnTick = 2,
-        Slowmotion = 3,
-        Noclip = 4,
-        X2PointOnTick = 5,
-        X2Slowmotion = 6,
-        X2Noclip = 7,
-        PointOnTickSlowmotion = 8,
-        PointOnTickNoclip = 9,
-        SlowmotionNoclip = 10
+        None,
+        X2,
+        PointOnTick,
+        Slowmotion,
+        Noclip,
+        X2PointOnTick,
+        X2Slowmotion,
+        X2Noclip,
+        PointOnTickSlowmotion,
+        PointOnTickNoclip,
+        SlowmotionNoclip
     }
 
     class gameSettings

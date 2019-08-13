@@ -322,6 +322,7 @@ namespace Snake_Game
                 if (gameSettings.Score > gameSettings.HighScore && !gameSettings.IsModifierRound)
                 {
                     writeScoreXML();
+                    PlayGameSound(gameConstants.gameSound.NewHighscore);
                 }
             }
         }
@@ -357,6 +358,9 @@ namespace Snake_Game
                     break;
                 case gameConstants.gameSound.SnakeDie:
                     audio = new SoundPlayer(Properties.Resources.gameSoundSnakeDie);
+                    break;
+                case gameConstants.gameSound.NewHighscore:
+                    audio = new SoundPlayer(Properties.Resources.gameSoundNewHighscore);
                     break;
                 case gameConstants.gameSound.SnakeNoClip:
                     audio = new SoundPlayer(Properties.Resources.gameSoundSnakeNoClip);

@@ -54,86 +54,87 @@
         // User Interface constants
         public enum gameSound // Enum for different sounds
         {
-            None = 0,
-            SnakeEat = 1,
-            PowerupEat = 2,
-            SnakeDie = 3,
-            SnakeNoClip = 4,
-            SnakeChangeDir = 5, // Not used because cutting out playing sounds too regularly
-            FoodSpawn = 6, // Not used because cutting out eating sounds completely
-            PUpX2Activate = 7,
-            PUpX2Deactivate = 8,
-            PUpPointTickActivate = 9,
-            PUpPointTickDeactivate = 10,
-            PUpSlowmoActivate = 11,
-            PUpSlowmoDeactivate = 12,
-            PUpNoclipActivate = 13,
-            PUpNoclipDeactivate = 14,
-            PUpX2PointTickSynergy = 15,
-            PUpX2PointTickDeactivate = 16,
-            PUpX2SlowmoSynergy = 17,
-            PUpX2SlowmoDeactivate = 18,
-            PUpX2NoclipSynergy = 19,
-            PUpX2NoclipDeactivate = 20,
-            PUpPointTickSlowmoSynergy = 21,
-            PUpPointTickSlowmoDeactivate = 22,
-            PUpPointTickNoclipSynergy = 23,
-            PUpPointTickNoclipDeactivate = 24,
-            PUpSlowmoNoclipSynergy = 25,
-            PUpSlowmoNoclipDeactivate = 26,
-            ApplicationStartup = 27
+            None,
+            SnakeEat,
+            PowerupEat,
+            SnakeDie,
+            NewHighscore,
+            SnakeNoClip,
+            SnakeChangeDir, // Not used because cutting out playing sounds too regularly
+            FoodSpawn, // Not used because cutting out eating sounds completely
+            PUpX2Activate,
+            PUpX2Deactivate,
+            PUpPointTickActivate,
+            PUpPointTickDeactivate,
+            PUpSlowmoActivate,
+            PUpSlowmoDeactivate,
+            PUpNoclipActivate,
+            PUpNoclipDeactivate,
+            PUpX2PointTickSynergy,
+            PUpX2PointTickDeactivate,
+            PUpX2SlowmoSynergy,
+            PUpX2SlowmoDeactivate,
+            PUpX2NoclipSynergy,
+            PUpX2NoclipDeactivate,
+            PUpPointTickSlowmoSynergy,
+            PUpPointTickSlowmoDeactivate,
+            PUpPointTickNoclipSynergy,
+            PUpPointTickNoclipDeactivate,
+            PUpSlowmoNoclipSynergy,
+            PUpSlowmoNoclipDeactivate,
+            ApplicationStartup
         }
 
         public enum gameAction // Enum for key input actions
         {
-            None = 0,
-            UpKey = 1,
-            DownKey = 2,
-            LeftKey = 3,
-            RightKey = 4,
-            ResetKey = 5,
-            PauseKey = 6,
-            SpeedKey = 7,
-            BotKey = 8,
-            DevModeKey = 9,
-            PowerupKey = 10,
-            NoClipKey = 11,
-            ReloadSpritesKey = 12,
-            GrowSnakeKey = 13,
-            ShrinkSnakeKey = 14
+            None,
+            UpKey,
+            DownKey,
+            LeftKey,
+            RightKey,
+            ResetKey,
+            PauseKey,
+            SpeedKey,
+            BotKey,
+            DevModeKey,
+            PowerupKey,
+            NoClipKey,
+            ReloadSpritesKey,
+            GrowSnakeKey,
+            ShrinkSnakeKey
         };
 
         public enum gameColor // Enum for colors used in game
         {
-            none = 0,
-            snakeHeadNormalColor = 1,
-            snakeHeadPUpX2Color = 2,
-            snakeHeadPUpPointTickColor = 3,
-            snakeHeadPUpSlowmoColor = 4,
-            snakeHeadPUpNoclipColor = 5,
-            snakeBodyNormalColor = 6,
-            snakeBodyPUpX2Color = 7,
-            snakeBodyPUpPointTickColor = 8,
-            snakeBodyPUpSlowmoColor = 9,
-            snakeBodyPUpNoclipColor = 10,
-            foodNormalColor = 11,
-            foodPUpX2Color = 12,
-            foodPUpPointTickColor = 13,
-            foodPUpSlowmoColor = 14,
-            foodPUpNoclipColor = 15
+            none,
+            snakeHeadNormalColor,
+            snakeHeadPUpX2Color,
+            snakeHeadPUpPointTickColor,
+            snakeHeadPUpSlowmoColor,
+            snakeHeadPUpNoclipColor,
+            snakeBodyNormalColor,
+            snakeBodyPUpX2Color,
+            snakeBodyPUpPointTickColor,
+            snakeBodyPUpSlowmoColor,
+            snakeBodyPUpNoclipColor,
+            foodNormalColor,
+            foodPUpX2Color,
+            foodPUpPointTickColor,
+            foodPUpSlowmoColor,
+            foodPUpNoclipColor
         }
 
         public enum gameDrawingMode // Enum for different modes to draw the game
         {
-            drawingModeNormal = 0,
-            drawingModeRainbow = 1,
-            drawingModeSprite = 2
+            drawingModeNormal,
+            drawingModeRainbow,
+            drawingModeSprite
         }
 
         public enum rainbowMode // Enum for different rainbow modes
         {
-            rainbowModeTiles = 0,
-            rainbowModeStretched = 1
+            rainbowModeTiles,
+            rainbowModeStretched
         }
     }
 }
