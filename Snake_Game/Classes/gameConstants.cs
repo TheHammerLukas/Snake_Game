@@ -101,7 +101,8 @@
             NoClipKey,
             ReloadSpritesKey,
             GrowSnakeKey,
-            ShrinkSnakeKey
+            ShrinkSnakeKey,
+            LoadDevSettingsKey
         };
 
         public enum gameColor // Enum for colors used in game

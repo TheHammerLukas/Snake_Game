@@ -1189,6 +1189,10 @@ namespace Snake_Game
                 {
                     ToggleSpeedModifier();
                 }
+                else if (e.KeyCode == gameControls.modNoClipKey && !gameSettings.MenuIsOpen)
+                {
+                    ToggleNoClipModifier();
+                }
                 else if (e.KeyCode == gameControls.modPauseKey && !gameSettings.MenuIsOpen && lastPauseChangeTime <= currentTime - gameConstants.keyInputDelay)
                 {
                     gameSettings.GamePaused = gameSettings.GamePaused ? false : true;
@@ -1276,18 +1280,18 @@ namespace Snake_Game
                     {
                         gamecontroller.LoadAllGameSprites();
                     }
-                    if (e.KeyCode == gameControls.modGrowSnakeKey)
+                    else if (e.KeyCode == gameControls.modGrowSnakeKey)
                     {
                         gameController.growCnt = gameSettings.GrowMultiplicator - 1;
                     }
-                    if (e.KeyCode == gameControls.modShrinkSnakeKey)
+                    else if (e.KeyCode == gameControls.modShrinkSnakeKey)
                     {
                         gamecontroller.ShrinkSnake();
                     }
-                }
-                if (e.KeyCode == gameControls.modNoClipKey && !gameSettings.MenuIsOpen)
-                {
-                    ToggleNoClipModifier();
+                    else if (e.KeyCode == gameControls.modLoadDevSettingsKey)
+                    {
+                        // LKO open: Add function to load dev settings
+                    }
                 }
             }
             if (gameSettings.GameOver || gameSettings.DevModeEnabled)
