@@ -47,7 +47,7 @@ namespace Snake_Game
         public static gamePowerup SavedPowerup                      { get; set; } // To save the Powerup after the foodPowerup has been eaten
         public static gamePowerup FoodPowerup                       { get; set; } // Only used for generating powerup food
         public static bool GamePowerupActive                        { get; set; } // Used to determine if the GamePowerup has been activated or is already active
-        public static int PowerupSpawnGapConfigured                 { get; private set; } // Used to reinitialize the user configured spawn gap; this value is read from the settings .xml
+        public static int PowerupSpawnGapConfigured                 { get; set; } // Used to reinitialize the user configured spawn gap; this value is read from the settings .xml
         public static int PowerupSpawnGap                           { get; set; } // To set the amount of food that has to be eaten in order for a powerup to spawn
         public static int PowerupDurationX2                         { get; set; } // To determine the duration of the X2 powerup
         public static int PowerupDurationPointTick                  { get; set; } // To determine the duration of the Point on Tick powerup
@@ -206,7 +206,6 @@ namespace Snake_Game
         {
             PowerupSpawnGap = gameConstants.standardPowerupSpawnGap;
 
-            // Only call readSettingsXML if the values of it should be used
             if (!useStandard)
             {
                 PowerupSpawnGap = PowerupSpawnGapConfigured;

@@ -76,15 +76,14 @@ namespace Snake_Game
             if (gameSettings.DevModeEnabled)
             {
                 _foodPowerup = (gamePowerup)random.Next(1, 5);
-                gameSettings.PowerupSpawnGap = 0;
             }
             else
             {
                 _foodPowerup = (gamePowerup)random.Next(0, 5);
-                gameSettings.initPowerupSpawnGap(false);
             }
+            gameSettings.initPowerupSpawnGap(false);
 
-            if (cntFoodSpawned >= gameSettings.PowerupSpawnGap /*&& !gameSettings.GamePowerupActive*/)
+            if (cntFoodSpawned >= gameSettings.PowerupSpawnGap)
             {
                 if (_foodPowerup != gamePowerup.None)
                 {
@@ -484,13 +483,13 @@ namespace Snake_Game
         #region Savefile functions
 
         // Get the settings from the .xml
-        public void readSettingsXML()
+        public void readSettingsXML(string xmlPath)
         {
             try // Try to get the .xml data
             {
                 // Open .xml
                 XmlDocument _xmlDoc = new XmlDocument();
-                _xmlDoc.Load(Properties.Settings.Default.settingsXmlPath);
+                _xmlDoc.Load(xmlPath);
 
                 XmlElement _xmlRoot = _xmlDoc.DocumentElement;
                 
@@ -659,28 +658,34 @@ namespace Snake_Game
             }
         }
 
+        // Overload of readSettingsXML that always saves the standard settings .xml file
+        public void readSettingsXML()
+        {
+            readSettingsXML(Properties.Settings.Default.settingsXmlPath);
+        }
+
         // Write the settings to the .xml
-        public void writeSettingsXML()
+        public void writeSettingsXML(string xmlPath, string xmlType)
         {
             // Create .xml
             try
             {
-                (new FileInfo(Properties.Settings.Default.settingsXmlPath)).Directory.Create(); // Create the xml path in case it hasn't been created yet
+                (new FileInfo(xmlPath)).Directory.Create(); // Create the xml path in case it hasn't been created yet
             }
             catch (Exception) // If xml cannot be created due to missing permissions save to the desktop
             {
-                MessageBox.Show("Unspecified error occured while creating the settings XML!\nSelect path instead.\noriginal Path=" + Properties.Settings.Default.settingsXmlPath,
+                MessageBox.Show("Unspecified error occured while creating the settings XML!\nSelect path instead.\noriginal Path=" + xmlPath,
                                 "Unexpected error while creating settings XML",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error
                                 );
 
-                SaveFileDialog(gameConstants.settingsXML);
+                SaveFileDialog(xmlType);
 
-                (new FileInfo(Properties.Settings.Default.settingsXmlPath)).Directory.Create(); // Create the xml path in case it hasn't been created yet
+                (new FileInfo(xmlPath)).Directory.Create(); // Create the xml path in case it hasn't been created yet
             }
 
-            XmlWriter _xmlDoc = XmlWriter.Create(Properties.Settings.Default.settingsXmlPath);
+            XmlWriter _xmlDoc = XmlWriter.Create(xmlPath);
             _xmlDoc.WriteStartDocument();
 
             // Settings
@@ -821,6 +826,12 @@ namespace Snake_Game
             _xmlDoc.WriteEndDocument();
             _xmlDoc.Flush();
             _xmlDoc.Close(); // Close .xml
+        }
+
+        // Overload of writeSettingsXML that always saves the standard settings .xml file
+        public void writeSettingsXML()
+        {
+            writeSettingsXML(Properties.Settings.Default.settingsXmlPath, gameConstants.settingsXML);
         }
 
         // Get the key config from the .xml
@@ -1628,6 +1639,29 @@ namespace Snake_Game
             return _brush;
         }
 
+        // To save or load 'Devmode' settings
+        public void SaveLoadDevmodeSettings()
+        {
+            gameSettings.Width = gameConstants.devmodeWidth;
+            gameSettings.Height = gameConstants.devmodeHeight;
+            gameSettings.Speed = gameConstants.devmodeSpeed;
+            gameSettings.Score = gameConstants.devmodeScore;
+            gameSettings.GrowMultiplicator = gameConstants.devmodeGrowMultiplicator;
+            gameSettings.Points = gameConstants.devmodePoints;
+            gameSettings.PowerupSpawnGapConfigured = gameConstants.devmodePowerupSpawnGap;
+            gameSettings.GameOver = true;
+
+            if (!File.Exists(Properties.Settings.Default.settingsDeveloperXmlPath))
+            {
+                SaveFileDialog(gameConstants.settingsDeveloperXML);
+            }
+            else
+            {
+                readSettingsXML(Properties.Settings.Default.settingsDeveloperXmlPath);
+                Properties.Settings.Default.settingsXmlPath = Properties.Settings.Default.settingsDeveloperXmlPath;
+            }
+        }
+
         public void OpenFileDialog(string fileType)
         {
             string _fileType = fileType;
@@ -1866,6 +1900,9 @@ namespace Snake_Game
                 case gameConstants.gameSpritesPUpSlowmotionNoclip:
                     _filePath = Properties.Settings.Default.gameSpritePUpSlowmotionNoclipPath.Substring(0, Properties.Settings.Default.gameSpritePUpSlowmotionNoclipPath.LastIndexOf("\\") + 1);
                     break;
+                case gameConstants.settingsDeveloperXML:
+                    _filePath = Properties.Settings.Default.settingsDeveloperXmlPath.Substring(0, Properties.Settings.Default.settingsDeveloperXmlPath.LastIndexOf("\\") + 1);
+                    break;
             }
 
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -1877,6 +1914,7 @@ namespace Snake_Game
                 case gameConstants.controlsXML:
                 case gameConstants.settingsXML:
                 case gameConstants.scoreXML:
+                case gameConstants.settingsDeveloperXML:
                     saveFileDialog.Filter = "XML files (*.xml)|*.xml|All files(*.*)|*.*";
                     break;
                 case gameConstants.gameSprites:
@@ -1959,6 +1997,11 @@ namespace Snake_Game
                         Properties.Settings.Default.gameSpritePUpSlowmotionNoclipPath = _filePath;
                         _doSave = true;
                         break;
+                    case gameConstants.settingsDeveloperXML:
+                        Properties.Settings.Default.settingsDeveloperXmlPath = _filePath;
+                        Properties.Settings.Default.settingsXmlPath = Properties.Settings.Default.settingsDeveloperXmlPath;
+                        _doSave = true;
+                        break;
                     default:
                         _doSave = false;
                         break;
@@ -1993,6 +2036,10 @@ namespace Snake_Game
                         case gameConstants.gameSpritesPUpPointTickNoclip:
                         case gameConstants.gameSpritesPUpSlowmotionNoclip:
                             SaveGameSprites(_fileType);
+                            break;
+
+                        case gameConstants.settingsDeveloperXML:
+                            writeSettingsXML(_filePath, gameConstants.settingsDeveloperXML);
                             break;
                         default:
                             break;

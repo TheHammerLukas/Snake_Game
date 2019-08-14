@@ -1290,7 +1290,7 @@ namespace Snake_Game
                     }
                     else if (e.KeyCode == gameControls.modLoadDevSettingsKey)
                     {
-                        // LKO open: Add function to load dev settings
+                        gamecontroller.SaveLoadDevmodeSettings();
                     }
                 }
             }
@@ -1298,7 +1298,15 @@ namespace Snake_Game
             {
                 if (e.KeyCode == gameControls.modRestartKey)
                 {
-                    new gameSettings(false);
+                    if (!gameSettings.DevModeEnabled)
+                    {
+                        new gameSettings(false);
+                    }
+                    else
+                    {
+                        gameSettings.GameOver = false;
+                        gameSettings.directionHead = gameDirection.Stop;
+                    }
                     new gameControls(false);
                     gamecontroller.SetTimerInterval(gameTimer, gameSettings.Speed, true);
                     gameController.maxPosX = gamecontroller.GetMaxPosX(pictureBox);

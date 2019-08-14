@@ -13,6 +13,7 @@
         public const int keyInputDelay = 1000; // 1000 = 1 second
 
         // Settings constants
+        // Standard Settings constants
         public const int standardWidth = 20;
         public const int standardHeight = 20;
         public const int standardSpeed = 7;
@@ -34,9 +35,18 @@
         public const int standardPowerupDurationSlowmotionNoclip = 10; // seconds
         public const gameDrawingMode standardDrawingMode = gameDrawingMode.drawingModeNormal;
         public const gameDirection standardDirectionHead = gameDirection.Stop;
+        // Devmode Settings constants
+        public const int devmodeWidth = 60;
+        public const int devmodeHeight = 60;
+        public const int devmodeSpeed = 4;
+        public const int devmodeScore = 0;
+        public const int devmodeGrowMultiplicator = 5;
+        public const int devmodePoints = 100;
+        public const int devmodePowerupSpawnGap = 2;
 
         // Savefile constants
         public const string settingsXML = "SETTINGS";
+        public const string settingsDeveloperXML = "DEVSETTINGS";
         public const string controlsXML = "CONTROLS";
         public const string scoreXML = "SCORE";
         public const string gameSprites = "SPRITES";
