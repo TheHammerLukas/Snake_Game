@@ -1311,6 +1311,7 @@ namespace Snake_Game
                     gamecontroller.SetTimerInterval(gameTimer, gameSettings.Speed, true);
                     gameController.maxPosX = gamecontroller.GetMaxPosX(pictureBox);
                     gameController.maxPosY = gamecontroller.GetMaxPosY(pictureBox);
+                    nextTickDirection = gameDirection.Stop;
                     gamecontroller.StartGame();
                     gamecontroller.SetHighScore(labelHighscoreValue);
                     gamecontroller.GenerateFood();
