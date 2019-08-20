@@ -126,6 +126,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Libraries\CustomWinformsControls.dll" />
+    <Content Include="Resources\gameSoundNewHighscore.wav" />
     <Content Include="Resources\gameSoundPUpDeactivate02.wav" />
     <Content Include="Resources\gameSoundPUpSynergy01.wav" />
     <Content Include="Resources\gameSoundPUpSynergy02.wav" />

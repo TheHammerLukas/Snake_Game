@@ -1190,6 +1190,10 @@ namespace Snake_Game
                 {
                     ToggleSpeedModifier();
                 }
+                else if (e.KeyCode == gameControls.modNoClipKey && !gameSettings.MenuIsOpen)
+                {
+                    ToggleNoClipModifier();
+                }
                 else if (e.KeyCode == gameControls.modPauseKey && !gameSettings.MenuIsOpen && lastPauseChangeTime <= currentTime - gameConstants.keyInputDelay)
                 {
                     gameSettings.GamePaused = gameSettings.GamePaused ? false : true;
@@ -1277,29 +1281,38 @@ namespace Snake_Game
                     {
                         gamecontroller.LoadAllGameSprites();
                     }
-                    if (e.KeyCode == gameControls.modGrowSnakeKey)
+                    else if (e.KeyCode == gameControls.modGrowSnakeKey)
                     {
                         gameController.growCnt = gameSettings.GrowMultiplicator - 1;
                     }
-                    if (e.KeyCode == gameControls.modShrinkSnakeKey)
+                    else if (e.KeyCode == gameControls.modShrinkSnakeKey)
                     {
                         gamecontroller.ShrinkSnake();
                     }
-                }
-                if (e.KeyCode == gameControls.modNoClipKey && !gameSettings.MenuIsOpen)
-                {
-                    ToggleNoClipModifier();
+                    else if (e.KeyCode == gameControls.modLoadDevSettingsKey)
+                    {
+                        gamecontroller.SaveLoadDevmodeSettings();
+                    }
                 }
             }
             if (gameSettings.GameOver || gameSettings.DevModeEnabled)
             {
                 if (e.KeyCode == gameControls.modRestartKey)
                 {
-                    new gameSettings(false);
+                    if (!gameSettings.DevModeEnabled)
+                    {
+                        new gameSettings(false);
+                    }
+                    else
+                    {
+                        gameSettings.GameOver = false;
+                        gameSettings.directionHead = gameDirection.Stop;
+                    }
                     new gameControls(false);
                     gamecontroller.SetTimerInterval(gameTimer, gameSettings.Speed, true);
                     gameController.maxPosX = gamecontroller.GetMaxPosX(pictureBox);
                     gameController.maxPosY = gamecontroller.GetMaxPosY(pictureBox);
+                    nextTickDirection = gameDirection.Stop;
                     gamecontroller.StartGame();
                     gamecontroller.SetHighScore(labelHighscoreValue);
                     gamecontroller.GenerateFood();
