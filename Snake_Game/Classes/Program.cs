@@ -49,7 +49,7 @@ namespace Snake_Game
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Error occurred while renaming .tmp files\ncommand line arguments=" + args,
+                    MessageBox.Show("Error occurred while renaming .tmp files!\ncommand line arguments=" + listCmdArgs(args),
                                     "Error occurred while resetting sprites!",
                                     MessageBoxButtons.OK,
                                     MessageBoxIcon.Error
@@ -70,6 +70,26 @@ namespace Snake_Game
             startInfo.Arguments = newArgs;
             exit.Invoke(null, null);
             Process.Start(startInfo);
+        }
+
+        // returns a semicolon seperated list of all command line args
+        private static string listCmdArgs(string[] args)
+        {
+            string cmdArgs = "";
+            int argCnt = 0;
+
+            foreach (string argsValue in args)
+            {
+                // Do not list the first argument
+                if (argCnt != 0)
+                {
+                    cmdArgs = cmdArgs + argsValue + ";";
+                }
+
+                argCnt++;
+            }
+
+            return cmdArgs;
         }
     }
 }
