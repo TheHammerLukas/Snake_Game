@@ -2,6 +2,9 @@
 {
     static class gameConstants
     {
+        // Restart argument constants
+        public const string resetSpriteArgs = "-resetSprites";
+
         // Time constants
         public const string gameTime = "GT";
         public const string gameSpeed = "GS";

@@ -286,8 +286,7 @@ namespace Snake_Game
             }
             else if (tabControlMenu.SelectedTab == tabPageSavefiles)
             {
-                gameSettings.initGameSprites();
-                gamecontroller.SaveAllGameSprites();
+                gamecontroller.ResetAllGameSprites();
             }
 
             setMenuValues();

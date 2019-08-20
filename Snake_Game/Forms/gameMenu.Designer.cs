@@ -169,8 +169,50 @@ namespace Snake_Game
             this.textBoxPUpSpawnGap = new System.Windows.Forms.TextBox();
             this.labelX2Colors = new System.Windows.Forms.Label();
             this.labelSnakeHeadX2Color = new System.Windows.Forms.Label();
+            this.labelPUpX2PointTickDuration = new System.Windows.Forms.Label();
+            this.labelPUpX2SlowmoDuration = new System.Windows.Forms.Label();
+            this.labelPUpX2NoclipDuration = new System.Windows.Forms.Label();
+            this.labelPUpPointTickSlowmoDuration = new System.Windows.Forms.Label();
+            this.labelPUpPointTickNoclipDuration = new System.Windows.Forms.Label();
+            this.labelPUpSlowmoNoclipDuration = new System.Windows.Forms.Label();
+            this.textBoxPUpPointTickNoclipDuration = new System.Windows.Forms.TextBox();
+            this.textBoxPUpPointTickSlowmoDuration = new System.Windows.Forms.TextBox();
+            this.textBoxPUpX2NoclipDuration = new System.Windows.Forms.TextBox();
+            this.textBoxPUpX2SlowmoDuration = new System.Windows.Forms.TextBox();
+            this.textBoxPUpX2PointTickDuration = new System.Windows.Forms.TextBox();
+            this.textBoxPUpSlowmoNoclipDuration = new System.Windows.Forms.TextBox();
             this.tabPageSavefiles = new System.Windows.Forms.TabPage();
             this.tableLayoutPanelSavefiles = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBoxSavefilesSpritesX2PointTick = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonSaveFileSpritesX2PointTick = new System.Windows.Forms.Button();
+            this.buttonOpenFileSpritesX2PointTick = new System.Windows.Forms.Button();
+            this.labelSavefilesSpritesX2PointTickPath = new System.Windows.Forms.Label();
+            this.groupBoxSavefilesSpritesX2Slowmotion = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonSaveFileSpritesX2Slowmotion = new System.Windows.Forms.Button();
+            this.buttonOpenFileSpritesX2Slowmotion = new System.Windows.Forms.Button();
+            this.labelSavefilesSpritesX2SlowmotionPath = new System.Windows.Forms.Label();
+            this.groupBoxSavefilesSpritesX2Noclip = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonSaveFileSpritesX2Noclip = new System.Windows.Forms.Button();
+            this.buttonOpenFileSpritesX2Noclip = new System.Windows.Forms.Button();
+            this.labelSavefilesSpritesX2NoclipPath = new System.Windows.Forms.Label();
+            this.groupBoxSavefilesSpritesSlowmotionNoclip = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonSaveFileSpritesSlowmotionNoclip = new System.Windows.Forms.Button();
+            this.buttonOpenFileSpritesSlowmotionNoclip = new System.Windows.Forms.Button();
+            this.labelSavefilesSpritesSlowmotionNoclipPath = new System.Windows.Forms.Label();
+            this.groupBoxSavefilesSpritesPointTickSlowmotion = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonSaveFileSpritesPointTickSlowmotion = new System.Windows.Forms.Button();
+            this.buttonOpenFileSpritesPointTickSlowmotion = new System.Windows.Forms.Button();
+            this.labelSavefilesSpritesPointTickSlowmotionPath = new System.Windows.Forms.Label();
+            this.groupBoxSavefilesSpritesPointTickNoclip = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonSaveFileSpritesPointTickNoclip = new System.Windows.Forms.Button();
+            this.buttonOpenFileSpritesPointTickNoclip = new System.Windows.Forms.Button();
+            this.labelSavefilesSpritesPointTickNoclipPath = new System.Windows.Forms.Label();
             this.groupBoxSavefilesSpritesPointTick = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonSaveFileSpritesPointTick = new System.Windows.Forms.Button();
@@ -214,48 +256,6 @@ namespace Snake_Game
             this.buttonApply = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
             this.buttonReset = new System.Windows.Forms.Button();
-            this.labelPUpX2PointTickDuration = new System.Windows.Forms.Label();
-            this.labelPUpX2SlowmoDuration = new System.Windows.Forms.Label();
-            this.labelPUpX2NoclipDuration = new System.Windows.Forms.Label();
-            this.labelPUpPointTickSlowmoDuration = new System.Windows.Forms.Label();
-            this.labelPUpPointTickNoclipDuration = new System.Windows.Forms.Label();
-            this.labelPUpSlowmoNoclipDuration = new System.Windows.Forms.Label();
-            this.textBoxPUpPointTickNoclipDuration = new System.Windows.Forms.TextBox();
-            this.textBoxPUpPointTickSlowmoDuration = new System.Windows.Forms.TextBox();
-            this.textBoxPUpX2NoclipDuration = new System.Windows.Forms.TextBox();
-            this.textBoxPUpX2SlowmoDuration = new System.Windows.Forms.TextBox();
-            this.textBoxPUpX2PointTickDuration = new System.Windows.Forms.TextBox();
-            this.textBoxPUpSlowmoNoclipDuration = new System.Windows.Forms.TextBox();
-            this.groupBoxSavefilesSpritesPointTickNoclip = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonSaveFileSpritesPointTickNoclip = new System.Windows.Forms.Button();
-            this.buttonOpenFileSpritesPointTickNoclip = new System.Windows.Forms.Button();
-            this.labelSavefilesSpritesPointTickNoclipPath = new System.Windows.Forms.Label();
-            this.groupBoxSavefilesSpritesPointTickSlowmotion = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonSaveFileSpritesPointTickSlowmotion = new System.Windows.Forms.Button();
-            this.buttonOpenFileSpritesPointTickSlowmotion = new System.Windows.Forms.Button();
-            this.labelSavefilesSpritesPointTickSlowmotionPath = new System.Windows.Forms.Label();
-            this.groupBoxSavefilesSpritesSlowmotionNoclip = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonSaveFileSpritesSlowmotionNoclip = new System.Windows.Forms.Button();
-            this.buttonOpenFileSpritesSlowmotionNoclip = new System.Windows.Forms.Button();
-            this.labelSavefilesSpritesSlowmotionNoclipPath = new System.Windows.Forms.Label();
-            this.groupBoxSavefilesSpritesX2Noclip = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonSaveFileSpritesX2Noclip = new System.Windows.Forms.Button();
-            this.buttonOpenFileSpritesX2Noclip = new System.Windows.Forms.Button();
-            this.labelSavefilesSpritesX2NoclipPath = new System.Windows.Forms.Label();
-            this.groupBoxSavefilesSpritesX2Slowmotion = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonSaveFileSpritesX2Slowmotion = new System.Windows.Forms.Button();
-            this.buttonOpenFileSpritesX2Slowmotion = new System.Windows.Forms.Button();
-            this.labelSavefilesSpritesX2SlowmotionPath = new System.Windows.Forms.Label();
-            this.groupBoxSavefilesSpritesX2PointTick = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonSaveFileSpritesX2PointTick = new System.Windows.Forms.Button();
-            this.buttonOpenFileSpritesX2PointTick = new System.Windows.Forms.Button();
-            this.labelSavefilesSpritesX2PointTickPath = new System.Windows.Forms.Label();
             this.tabControlMenu.SuspendLayout();
             this.tabPageSettings.SuspendLayout();
             this.tableLayoutPanelSettings.SuspendLayout();
@@ -268,6 +268,18 @@ namespace Snake_Game
             this.tableLayoutPanelPowerups.SuspendLayout();
             this.tabPageSavefiles.SuspendLayout();
             this.tableLayoutPanelSavefiles.SuspendLayout();
+            this.groupBoxSavefilesSpritesX2PointTick.SuspendLayout();
+            this.tableLayoutPanel12.SuspendLayout();
+            this.groupBoxSavefilesSpritesX2Slowmotion.SuspendLayout();
+            this.tableLayoutPanel11.SuspendLayout();
+            this.groupBoxSavefilesSpritesX2Noclip.SuspendLayout();
+            this.tableLayoutPanel10.SuspendLayout();
+            this.groupBoxSavefilesSpritesSlowmotionNoclip.SuspendLayout();
+            this.tableLayoutPanel9.SuspendLayout();
+            this.groupBoxSavefilesSpritesPointTickSlowmotion.SuspendLayout();
+            this.tableLayoutPanel8.SuspendLayout();
+            this.groupBoxSavefilesSpritesPointTickNoclip.SuspendLayout();
+            this.tableLayoutPanel7.SuspendLayout();
             this.groupBoxSavefilesSpritesPointTick.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.groupBoxSavefilesSpritesX2.SuspendLayout();
@@ -284,18 +296,6 @@ namespace Snake_Game
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBoxSavefilesSprites.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.groupBoxSavefilesSpritesPointTickNoclip.SuspendLayout();
-            this.tableLayoutPanel7.SuspendLayout();
-            this.groupBoxSavefilesSpritesPointTickSlowmotion.SuspendLayout();
-            this.tableLayoutPanel8.SuspendLayout();
-            this.groupBoxSavefilesSpritesSlowmotionNoclip.SuspendLayout();
-            this.tableLayoutPanel9.SuspendLayout();
-            this.groupBoxSavefilesSpritesX2Noclip.SuspendLayout();
-            this.tableLayoutPanel10.SuspendLayout();
-            this.groupBoxSavefilesSpritesX2Slowmotion.SuspendLayout();
-            this.tableLayoutPanel11.SuspendLayout();
-            this.groupBoxSavefilesSpritesX2PointTick.SuspendLayout();
-            this.tableLayoutPanel12.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlMenu
@@ -1426,7 +1426,7 @@ namespace Snake_Game
             this.buttonResetFoodNoclipColor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonResetFoodNoclipColor.Location = new System.Drawing.Point(264, 1303);
             this.buttonResetFoodNoclipColor.Name = "buttonResetFoodNoclipColor";
-            this.buttonResetFoodNoclipColor.Size = new System.Drawing.Size(83, 94);
+            this.buttonResetFoodNoclipColor.Size = new System.Drawing.Size(83, 44);
             this.buttonResetFoodNoclipColor.TabIndex = 61;
             this.buttonResetFoodNoclipColor.Text = "Reset";
             this.buttonResetFoodNoclipColor.UseVisualStyleBackColor = true;
@@ -1437,7 +1437,7 @@ namespace Snake_Game
             this.buttonSetFoodNoclipColor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonSetFoodNoclipColor.Location = new System.Drawing.Point(177, 1303);
             this.buttonSetFoodNoclipColor.Name = "buttonSetFoodNoclipColor";
-            this.buttonSetFoodNoclipColor.Size = new System.Drawing.Size(81, 94);
+            this.buttonSetFoodNoclipColor.Size = new System.Drawing.Size(81, 44);
             this.buttonSetFoodNoclipColor.TabIndex = 60;
             this.buttonSetFoodNoclipColor.Text = "Set";
             this.buttonSetFoodNoclipColor.UseVisualStyleBackColor = true;
@@ -1450,7 +1450,7 @@ namespace Snake_Game
             this.labelFoodNoclipPrev.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelFoodNoclipPrev.Location = new System.Drawing.Point(125, 1300);
             this.labelFoodNoclipPrev.Name = "labelFoodNoclipPrev";
-            this.labelFoodNoclipPrev.Size = new System.Drawing.Size(46, 100);
+            this.labelFoodNoclipPrev.Size = new System.Drawing.Size(46, 50);
             this.labelFoodNoclipPrev.TabIndex = 59;
             // 
             // buttonResetBodyNoclipColor
@@ -1812,7 +1812,7 @@ namespace Snake_Game
             this.labelFoodNoclipColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFoodNoclipColor.Location = new System.Drawing.Point(3, 1300);
             this.labelFoodNoclipColor.Name = "labelFoodNoclipColor";
-            this.labelFoodNoclipColor.Size = new System.Drawing.Size(116, 100);
+            this.labelFoodNoclipColor.Size = new System.Drawing.Size(116, 50);
             this.labelFoodNoclipColor.TabIndex = 25;
             this.labelFoodNoclipColor.Text = "Food";
             this.labelFoodNoclipColor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2120,6 +2120,150 @@ namespace Snake_Game
             this.labelSnakeHeadX2Color.Text = "Snake Head";
             this.labelSnakeHeadX2Color.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // labelPUpX2PointTickDuration
+            // 
+            this.labelPUpX2PointTickDuration.AutoSize = true;
+            this.tableLayoutPanelPowerups.SetColumnSpan(this.labelPUpX2PointTickDuration, 2);
+            this.labelPUpX2PointTickDuration.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelPUpX2PointTickDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPUpX2PointTickDuration.Location = new System.Drawing.Point(3, 250);
+            this.labelPUpX2PointTickDuration.Name = "labelPUpX2PointTickDuration";
+            this.labelPUpX2PointTickDuration.Size = new System.Drawing.Size(168, 50);
+            this.labelPUpX2PointTickDuration.TabIndex = 62;
+            this.labelPUpX2PointTickDuration.Text = "X2 + Point Tick Duration";
+            this.labelPUpX2PointTickDuration.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // labelPUpX2SlowmoDuration
+            // 
+            this.labelPUpX2SlowmoDuration.AutoSize = true;
+            this.tableLayoutPanelPowerups.SetColumnSpan(this.labelPUpX2SlowmoDuration, 2);
+            this.labelPUpX2SlowmoDuration.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelPUpX2SlowmoDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPUpX2SlowmoDuration.Location = new System.Drawing.Point(3, 300);
+            this.labelPUpX2SlowmoDuration.Name = "labelPUpX2SlowmoDuration";
+            this.labelPUpX2SlowmoDuration.Size = new System.Drawing.Size(168, 50);
+            this.labelPUpX2SlowmoDuration.TabIndex = 63;
+            this.labelPUpX2SlowmoDuration.Text = "X2 + Slowmo Duration";
+            this.labelPUpX2SlowmoDuration.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // labelPUpX2NoclipDuration
+            // 
+            this.labelPUpX2NoclipDuration.AutoSize = true;
+            this.tableLayoutPanelPowerups.SetColumnSpan(this.labelPUpX2NoclipDuration, 2);
+            this.labelPUpX2NoclipDuration.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelPUpX2NoclipDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPUpX2NoclipDuration.Location = new System.Drawing.Point(3, 350);
+            this.labelPUpX2NoclipDuration.Name = "labelPUpX2NoclipDuration";
+            this.labelPUpX2NoclipDuration.Size = new System.Drawing.Size(168, 50);
+            this.labelPUpX2NoclipDuration.TabIndex = 64;
+            this.labelPUpX2NoclipDuration.Text = "X2 + Noclip Duration";
+            this.labelPUpX2NoclipDuration.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // labelPUpPointTickSlowmoDuration
+            // 
+            this.labelPUpPointTickSlowmoDuration.AutoSize = true;
+            this.tableLayoutPanelPowerups.SetColumnSpan(this.labelPUpPointTickSlowmoDuration, 2);
+            this.labelPUpPointTickSlowmoDuration.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelPUpPointTickSlowmoDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPUpPointTickSlowmoDuration.Location = new System.Drawing.Point(3, 400);
+            this.labelPUpPointTickSlowmoDuration.Name = "labelPUpPointTickSlowmoDuration";
+            this.labelPUpPointTickSlowmoDuration.Size = new System.Drawing.Size(168, 50);
+            this.labelPUpPointTickSlowmoDuration.TabIndex = 65;
+            this.labelPUpPointTickSlowmoDuration.Text = "Point Tick + Slowmo Duration";
+            this.labelPUpPointTickSlowmoDuration.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // labelPUpPointTickNoclipDuration
+            // 
+            this.labelPUpPointTickNoclipDuration.AutoSize = true;
+            this.tableLayoutPanelPowerups.SetColumnSpan(this.labelPUpPointTickNoclipDuration, 2);
+            this.labelPUpPointTickNoclipDuration.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelPUpPointTickNoclipDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPUpPointTickNoclipDuration.Location = new System.Drawing.Point(3, 450);
+            this.labelPUpPointTickNoclipDuration.Name = "labelPUpPointTickNoclipDuration";
+            this.labelPUpPointTickNoclipDuration.Size = new System.Drawing.Size(168, 50);
+            this.labelPUpPointTickNoclipDuration.TabIndex = 66;
+            this.labelPUpPointTickNoclipDuration.Text = "Point Tick + Noclip Duration";
+            this.labelPUpPointTickNoclipDuration.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // labelPUpSlowmoNoclipDuration
+            // 
+            this.labelPUpSlowmoNoclipDuration.AutoSize = true;
+            this.tableLayoutPanelPowerups.SetColumnSpan(this.labelPUpSlowmoNoclipDuration, 2);
+            this.labelPUpSlowmoNoclipDuration.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelPUpSlowmoNoclipDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPUpSlowmoNoclipDuration.Location = new System.Drawing.Point(3, 500);
+            this.labelPUpSlowmoNoclipDuration.Name = "labelPUpSlowmoNoclipDuration";
+            this.labelPUpSlowmoNoclipDuration.Size = new System.Drawing.Size(168, 50);
+            this.labelPUpSlowmoNoclipDuration.TabIndex = 67;
+            this.labelPUpSlowmoNoclipDuration.Text = "Slowmo + Noclip Duration";
+            this.labelPUpSlowmoNoclipDuration.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // textBoxPUpPointTickNoclipDuration
+            // 
+            this.tableLayoutPanelPowerups.SetColumnSpan(this.textBoxPUpPointTickNoclipDuration, 2);
+            this.textBoxPUpPointTickNoclipDuration.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxPUpPointTickNoclipDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPUpPointTickNoclipDuration.Location = new System.Drawing.Point(177, 453);
+            this.textBoxPUpPointTickNoclipDuration.MaxLength = 2;
+            this.textBoxPUpPointTickNoclipDuration.Name = "textBoxPUpPointTickNoclipDuration";
+            this.textBoxPUpPointTickNoclipDuration.Size = new System.Drawing.Size(170, 45);
+            this.textBoxPUpPointTickNoclipDuration.TabIndex = 68;
+            // 
+            // textBoxPUpPointTickSlowmoDuration
+            // 
+            this.tableLayoutPanelPowerups.SetColumnSpan(this.textBoxPUpPointTickSlowmoDuration, 2);
+            this.textBoxPUpPointTickSlowmoDuration.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxPUpPointTickSlowmoDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPUpPointTickSlowmoDuration.Location = new System.Drawing.Point(177, 403);
+            this.textBoxPUpPointTickSlowmoDuration.MaxLength = 2;
+            this.textBoxPUpPointTickSlowmoDuration.Name = "textBoxPUpPointTickSlowmoDuration";
+            this.textBoxPUpPointTickSlowmoDuration.Size = new System.Drawing.Size(170, 45);
+            this.textBoxPUpPointTickSlowmoDuration.TabIndex = 69;
+            // 
+            // textBoxPUpX2NoclipDuration
+            // 
+            this.tableLayoutPanelPowerups.SetColumnSpan(this.textBoxPUpX2NoclipDuration, 2);
+            this.textBoxPUpX2NoclipDuration.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxPUpX2NoclipDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPUpX2NoclipDuration.Location = new System.Drawing.Point(177, 353);
+            this.textBoxPUpX2NoclipDuration.MaxLength = 2;
+            this.textBoxPUpX2NoclipDuration.Name = "textBoxPUpX2NoclipDuration";
+            this.textBoxPUpX2NoclipDuration.Size = new System.Drawing.Size(170, 45);
+            this.textBoxPUpX2NoclipDuration.TabIndex = 70;
+            // 
+            // textBoxPUpX2SlowmoDuration
+            // 
+            this.tableLayoutPanelPowerups.SetColumnSpan(this.textBoxPUpX2SlowmoDuration, 2);
+            this.textBoxPUpX2SlowmoDuration.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxPUpX2SlowmoDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPUpX2SlowmoDuration.Location = new System.Drawing.Point(177, 303);
+            this.textBoxPUpX2SlowmoDuration.MaxLength = 2;
+            this.textBoxPUpX2SlowmoDuration.Name = "textBoxPUpX2SlowmoDuration";
+            this.textBoxPUpX2SlowmoDuration.Size = new System.Drawing.Size(170, 45);
+            this.textBoxPUpX2SlowmoDuration.TabIndex = 71;
+            // 
+            // textBoxPUpX2PointTickDuration
+            // 
+            this.tableLayoutPanelPowerups.SetColumnSpan(this.textBoxPUpX2PointTickDuration, 2);
+            this.textBoxPUpX2PointTickDuration.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxPUpX2PointTickDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPUpX2PointTickDuration.Location = new System.Drawing.Point(177, 253);
+            this.textBoxPUpX2PointTickDuration.MaxLength = 2;
+            this.textBoxPUpX2PointTickDuration.Name = "textBoxPUpX2PointTickDuration";
+            this.textBoxPUpX2PointTickDuration.Size = new System.Drawing.Size(170, 45);
+            this.textBoxPUpX2PointTickDuration.TabIndex = 72;
+            // 
+            // textBoxPUpSlowmoNoclipDuration
+            // 
+            this.tableLayoutPanelPowerups.SetColumnSpan(this.textBoxPUpSlowmoNoclipDuration, 2);
+            this.textBoxPUpSlowmoNoclipDuration.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxPUpSlowmoNoclipDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPUpSlowmoNoclipDuration.Location = new System.Drawing.Point(177, 503);
+            this.textBoxPUpSlowmoNoclipDuration.MaxLength = 2;
+            this.textBoxPUpSlowmoNoclipDuration.Name = "textBoxPUpSlowmoNoclipDuration";
+            this.textBoxPUpSlowmoNoclipDuration.Size = new System.Drawing.Size(170, 45);
+            this.textBoxPUpSlowmoNoclipDuration.TabIndex = 73;
+            // 
             // tabPageSavefiles
             // 
             this.tabPageSavefiles.AutoScroll = true;
@@ -2175,6 +2319,372 @@ namespace Snake_Game
             this.tableLayoutPanelSavefiles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanelSavefiles.Size = new System.Drawing.Size(384, 217);
             this.tableLayoutPanelSavefiles.TabIndex = 0;
+            // 
+            // groupBoxSavefilesSpritesX2PointTick
+            // 
+            this.groupBoxSavefilesSpritesX2PointTick.Controls.Add(this.tableLayoutPanel12);
+            this.groupBoxSavefilesSpritesX2PointTick.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxSavefilesSpritesX2PointTick.Location = new System.Drawing.Point(3, 651);
+            this.groupBoxSavefilesSpritesX2PointTick.Name = "groupBoxSavefilesSpritesX2PointTick";
+            this.groupBoxSavefilesSpritesX2PointTick.Size = new System.Drawing.Size(344, 75);
+            this.groupBoxSavefilesSpritesX2PointTick.TabIndex = 19;
+            this.groupBoxSavefilesSpritesX2PointTick.TabStop = false;
+            this.groupBoxSavefilesSpritesX2PointTick.Text = "Textures X2 + Point Tick";
+            // 
+            // tableLayoutPanel12
+            // 
+            this.tableLayoutPanel12.ColumnCount = 2;
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel12.Controls.Add(this.buttonSaveFileSpritesX2PointTick, 1, 1);
+            this.tableLayoutPanel12.Controls.Add(this.buttonOpenFileSpritesX2PointTick, 0, 1);
+            this.tableLayoutPanel12.Controls.Add(this.labelSavefilesSpritesX2PointTickPath, 0, 0);
+            this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
+            this.tableLayoutPanel12.RowCount = 2;
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(338, 56);
+            this.tableLayoutPanel12.TabIndex = 1;
+            // 
+            // buttonSaveFileSpritesX2PointTick
+            // 
+            this.buttonSaveFileSpritesX2PointTick.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSaveFileSpritesX2PointTick.Location = new System.Drawing.Point(172, 31);
+            this.buttonSaveFileSpritesX2PointTick.Name = "buttonSaveFileSpritesX2PointTick";
+            this.buttonSaveFileSpritesX2PointTick.Size = new System.Drawing.Size(163, 22);
+            this.buttonSaveFileSpritesX2PointTick.TabIndex = 5;
+            this.buttonSaveFileSpritesX2PointTick.Text = "Save";
+            this.buttonSaveFileSpritesX2PointTick.UseVisualStyleBackColor = true;
+            this.buttonSaveFileSpritesX2PointTick.Click += new System.EventHandler(this.ButtonSaveFileSpritesPUpX2PointTick_Click);
+            // 
+            // buttonOpenFileSpritesX2PointTick
+            // 
+            this.buttonOpenFileSpritesX2PointTick.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonOpenFileSpritesX2PointTick.Location = new System.Drawing.Point(3, 31);
+            this.buttonOpenFileSpritesX2PointTick.Name = "buttonOpenFileSpritesX2PointTick";
+            this.buttonOpenFileSpritesX2PointTick.Size = new System.Drawing.Size(163, 22);
+            this.buttonOpenFileSpritesX2PointTick.TabIndex = 4;
+            this.buttonOpenFileSpritesX2PointTick.Text = "Load";
+            this.buttonOpenFileSpritesX2PointTick.UseVisualStyleBackColor = true;
+            this.buttonOpenFileSpritesX2PointTick.Click += new System.EventHandler(this.ButtonOpenFileSpritesPUpX2PointTick_Click);
+            // 
+            // labelSavefilesSpritesX2PointTickPath
+            // 
+            this.labelSavefilesSpritesX2PointTickPath.AutoSize = true;
+            this.labelSavefilesSpritesX2PointTickPath.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tableLayoutPanel12.SetColumnSpan(this.labelSavefilesSpritesX2PointTickPath, 2);
+            this.labelSavefilesSpritesX2PointTickPath.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelSavefilesSpritesX2PointTickPath.Location = new System.Drawing.Point(3, 0);
+            this.labelSavefilesSpritesX2PointTickPath.Name = "labelSavefilesSpritesX2PointTickPath";
+            this.labelSavefilesSpritesX2PointTickPath.Size = new System.Drawing.Size(332, 28);
+            this.labelSavefilesSpritesX2PointTickPath.TabIndex = 6;
+            // 
+            // groupBoxSavefilesSpritesX2Slowmotion
+            // 
+            this.groupBoxSavefilesSpritesX2Slowmotion.Controls.Add(this.tableLayoutPanel11);
+            this.groupBoxSavefilesSpritesX2Slowmotion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxSavefilesSpritesX2Slowmotion.Location = new System.Drawing.Point(3, 732);
+            this.groupBoxSavefilesSpritesX2Slowmotion.Name = "groupBoxSavefilesSpritesX2Slowmotion";
+            this.groupBoxSavefilesSpritesX2Slowmotion.Size = new System.Drawing.Size(344, 75);
+            this.groupBoxSavefilesSpritesX2Slowmotion.TabIndex = 18;
+            this.groupBoxSavefilesSpritesX2Slowmotion.TabStop = false;
+            this.groupBoxSavefilesSpritesX2Slowmotion.Text = "Textures X2 + Slowmo";
+            // 
+            // tableLayoutPanel11
+            // 
+            this.tableLayoutPanel11.ColumnCount = 2;
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel11.Controls.Add(this.buttonSaveFileSpritesX2Slowmotion, 1, 1);
+            this.tableLayoutPanel11.Controls.Add(this.buttonOpenFileSpritesX2Slowmotion, 0, 1);
+            this.tableLayoutPanel11.Controls.Add(this.labelSavefilesSpritesX2SlowmotionPath, 0, 0);
+            this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
+            this.tableLayoutPanel11.RowCount = 2;
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(338, 56);
+            this.tableLayoutPanel11.TabIndex = 1;
+            // 
+            // buttonSaveFileSpritesX2Slowmotion
+            // 
+            this.buttonSaveFileSpritesX2Slowmotion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSaveFileSpritesX2Slowmotion.Location = new System.Drawing.Point(172, 31);
+            this.buttonSaveFileSpritesX2Slowmotion.Name = "buttonSaveFileSpritesX2Slowmotion";
+            this.buttonSaveFileSpritesX2Slowmotion.Size = new System.Drawing.Size(163, 22);
+            this.buttonSaveFileSpritesX2Slowmotion.TabIndex = 5;
+            this.buttonSaveFileSpritesX2Slowmotion.Text = "Save";
+            this.buttonSaveFileSpritesX2Slowmotion.UseVisualStyleBackColor = true;
+            this.buttonSaveFileSpritesX2Slowmotion.Click += new System.EventHandler(this.ButtonSaveFileSpritesPUpX2Slowmotion_Click);
+            // 
+            // buttonOpenFileSpritesX2Slowmotion
+            // 
+            this.buttonOpenFileSpritesX2Slowmotion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonOpenFileSpritesX2Slowmotion.Location = new System.Drawing.Point(3, 31);
+            this.buttonOpenFileSpritesX2Slowmotion.Name = "buttonOpenFileSpritesX2Slowmotion";
+            this.buttonOpenFileSpritesX2Slowmotion.Size = new System.Drawing.Size(163, 22);
+            this.buttonOpenFileSpritesX2Slowmotion.TabIndex = 4;
+            this.buttonOpenFileSpritesX2Slowmotion.Text = "Load";
+            this.buttonOpenFileSpritesX2Slowmotion.UseVisualStyleBackColor = true;
+            this.buttonOpenFileSpritesX2Slowmotion.Click += new System.EventHandler(this.ButtonOpenFileSpritesPUpX2Slowmotion_Click);
+            // 
+            // labelSavefilesSpritesX2SlowmotionPath
+            // 
+            this.labelSavefilesSpritesX2SlowmotionPath.AutoSize = true;
+            this.labelSavefilesSpritesX2SlowmotionPath.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tableLayoutPanel11.SetColumnSpan(this.labelSavefilesSpritesX2SlowmotionPath, 2);
+            this.labelSavefilesSpritesX2SlowmotionPath.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelSavefilesSpritesX2SlowmotionPath.Location = new System.Drawing.Point(3, 0);
+            this.labelSavefilesSpritesX2SlowmotionPath.Name = "labelSavefilesSpritesX2SlowmotionPath";
+            this.labelSavefilesSpritesX2SlowmotionPath.Size = new System.Drawing.Size(332, 28);
+            this.labelSavefilesSpritesX2SlowmotionPath.TabIndex = 6;
+            // 
+            // groupBoxSavefilesSpritesX2Noclip
+            // 
+            this.groupBoxSavefilesSpritesX2Noclip.Controls.Add(this.tableLayoutPanel10);
+            this.groupBoxSavefilesSpritesX2Noclip.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxSavefilesSpritesX2Noclip.Location = new System.Drawing.Point(3, 813);
+            this.groupBoxSavefilesSpritesX2Noclip.Name = "groupBoxSavefilesSpritesX2Noclip";
+            this.groupBoxSavefilesSpritesX2Noclip.Size = new System.Drawing.Size(344, 75);
+            this.groupBoxSavefilesSpritesX2Noclip.TabIndex = 17;
+            this.groupBoxSavefilesSpritesX2Noclip.TabStop = false;
+            this.groupBoxSavefilesSpritesX2Noclip.Text = "Textures X2 + Noclip";
+            // 
+            // tableLayoutPanel10
+            // 
+            this.tableLayoutPanel10.ColumnCount = 2;
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel10.Controls.Add(this.buttonSaveFileSpritesX2Noclip, 1, 1);
+            this.tableLayoutPanel10.Controls.Add(this.buttonOpenFileSpritesX2Noclip, 0, 1);
+            this.tableLayoutPanel10.Controls.Add(this.labelSavefilesSpritesX2NoclipPath, 0, 0);
+            this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
+            this.tableLayoutPanel10.RowCount = 2;
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(338, 56);
+            this.tableLayoutPanel10.TabIndex = 1;
+            // 
+            // buttonSaveFileSpritesX2Noclip
+            // 
+            this.buttonSaveFileSpritesX2Noclip.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSaveFileSpritesX2Noclip.Location = new System.Drawing.Point(172, 31);
+            this.buttonSaveFileSpritesX2Noclip.Name = "buttonSaveFileSpritesX2Noclip";
+            this.buttonSaveFileSpritesX2Noclip.Size = new System.Drawing.Size(163, 22);
+            this.buttonSaveFileSpritesX2Noclip.TabIndex = 5;
+            this.buttonSaveFileSpritesX2Noclip.Text = "Save";
+            this.buttonSaveFileSpritesX2Noclip.UseVisualStyleBackColor = true;
+            this.buttonSaveFileSpritesX2Noclip.Click += new System.EventHandler(this.ButtonSaveFileSpritesPUpX2Noclip_Click);
+            // 
+            // buttonOpenFileSpritesX2Noclip
+            // 
+            this.buttonOpenFileSpritesX2Noclip.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonOpenFileSpritesX2Noclip.Location = new System.Drawing.Point(3, 31);
+            this.buttonOpenFileSpritesX2Noclip.Name = "buttonOpenFileSpritesX2Noclip";
+            this.buttonOpenFileSpritesX2Noclip.Size = new System.Drawing.Size(163, 22);
+            this.buttonOpenFileSpritesX2Noclip.TabIndex = 4;
+            this.buttonOpenFileSpritesX2Noclip.Text = "Load";
+            this.buttonOpenFileSpritesX2Noclip.UseVisualStyleBackColor = true;
+            this.buttonOpenFileSpritesX2Noclip.Click += new System.EventHandler(this.ButtonOpenFileSpritesPUpX2Noclip_Click);
+            // 
+            // labelSavefilesSpritesX2NoclipPath
+            // 
+            this.labelSavefilesSpritesX2NoclipPath.AutoSize = true;
+            this.labelSavefilesSpritesX2NoclipPath.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tableLayoutPanel10.SetColumnSpan(this.labelSavefilesSpritesX2NoclipPath, 2);
+            this.labelSavefilesSpritesX2NoclipPath.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelSavefilesSpritesX2NoclipPath.Location = new System.Drawing.Point(3, 0);
+            this.labelSavefilesSpritesX2NoclipPath.Name = "labelSavefilesSpritesX2NoclipPath";
+            this.labelSavefilesSpritesX2NoclipPath.Size = new System.Drawing.Size(332, 28);
+            this.labelSavefilesSpritesX2NoclipPath.TabIndex = 6;
+            // 
+            // groupBoxSavefilesSpritesSlowmotionNoclip
+            // 
+            this.groupBoxSavefilesSpritesSlowmotionNoclip.Controls.Add(this.tableLayoutPanel9);
+            this.groupBoxSavefilesSpritesSlowmotionNoclip.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxSavefilesSpritesSlowmotionNoclip.Location = new System.Drawing.Point(3, 1056);
+            this.groupBoxSavefilesSpritesSlowmotionNoclip.Name = "groupBoxSavefilesSpritesSlowmotionNoclip";
+            this.groupBoxSavefilesSpritesSlowmotionNoclip.Size = new System.Drawing.Size(344, 81);
+            this.groupBoxSavefilesSpritesSlowmotionNoclip.TabIndex = 16;
+            this.groupBoxSavefilesSpritesSlowmotionNoclip.TabStop = false;
+            this.groupBoxSavefilesSpritesSlowmotionNoclip.Text = "Textures Slowmo + Noclip";
+            // 
+            // tableLayoutPanel9
+            // 
+            this.tableLayoutPanel9.ColumnCount = 2;
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel9.Controls.Add(this.buttonSaveFileSpritesSlowmotionNoclip, 1, 1);
+            this.tableLayoutPanel9.Controls.Add(this.buttonOpenFileSpritesSlowmotionNoclip, 0, 1);
+            this.tableLayoutPanel9.Controls.Add(this.labelSavefilesSpritesSlowmotionNoclipPath, 0, 0);
+            this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
+            this.tableLayoutPanel9.RowCount = 2;
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(338, 62);
+            this.tableLayoutPanel9.TabIndex = 1;
+            // 
+            // buttonSaveFileSpritesSlowmotionNoclip
+            // 
+            this.buttonSaveFileSpritesSlowmotionNoclip.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSaveFileSpritesSlowmotionNoclip.Location = new System.Drawing.Point(172, 34);
+            this.buttonSaveFileSpritesSlowmotionNoclip.Name = "buttonSaveFileSpritesSlowmotionNoclip";
+            this.buttonSaveFileSpritesSlowmotionNoclip.Size = new System.Drawing.Size(163, 25);
+            this.buttonSaveFileSpritesSlowmotionNoclip.TabIndex = 5;
+            this.buttonSaveFileSpritesSlowmotionNoclip.Text = "Save";
+            this.buttonSaveFileSpritesSlowmotionNoclip.UseVisualStyleBackColor = true;
+            this.buttonSaveFileSpritesSlowmotionNoclip.Click += new System.EventHandler(this.ButtonSaveFileSpritesPUpSlowmotionNoclip_Click);
+            // 
+            // buttonOpenFileSpritesSlowmotionNoclip
+            // 
+            this.buttonOpenFileSpritesSlowmotionNoclip.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonOpenFileSpritesSlowmotionNoclip.Location = new System.Drawing.Point(3, 34);
+            this.buttonOpenFileSpritesSlowmotionNoclip.Name = "buttonOpenFileSpritesSlowmotionNoclip";
+            this.buttonOpenFileSpritesSlowmotionNoclip.Size = new System.Drawing.Size(163, 25);
+            this.buttonOpenFileSpritesSlowmotionNoclip.TabIndex = 4;
+            this.buttonOpenFileSpritesSlowmotionNoclip.Text = "Load";
+            this.buttonOpenFileSpritesSlowmotionNoclip.UseVisualStyleBackColor = true;
+            this.buttonOpenFileSpritesSlowmotionNoclip.Click += new System.EventHandler(this.ButtonOpenFileSpritesPUpSlowmotionNoclip_Click);
+            // 
+            // labelSavefilesSpritesSlowmotionNoclipPath
+            // 
+            this.labelSavefilesSpritesSlowmotionNoclipPath.AutoSize = true;
+            this.labelSavefilesSpritesSlowmotionNoclipPath.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tableLayoutPanel9.SetColumnSpan(this.labelSavefilesSpritesSlowmotionNoclipPath, 2);
+            this.labelSavefilesSpritesSlowmotionNoclipPath.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelSavefilesSpritesSlowmotionNoclipPath.Location = new System.Drawing.Point(3, 0);
+            this.labelSavefilesSpritesSlowmotionNoclipPath.Name = "labelSavefilesSpritesSlowmotionNoclipPath";
+            this.labelSavefilesSpritesSlowmotionNoclipPath.Size = new System.Drawing.Size(332, 31);
+            this.labelSavefilesSpritesSlowmotionNoclipPath.TabIndex = 6;
+            // 
+            // groupBoxSavefilesSpritesPointTickSlowmotion
+            // 
+            this.groupBoxSavefilesSpritesPointTickSlowmotion.Controls.Add(this.tableLayoutPanel8);
+            this.groupBoxSavefilesSpritesPointTickSlowmotion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxSavefilesSpritesPointTickSlowmotion.Location = new System.Drawing.Point(3, 894);
+            this.groupBoxSavefilesSpritesPointTickSlowmotion.Name = "groupBoxSavefilesSpritesPointTickSlowmotion";
+            this.groupBoxSavefilesSpritesPointTickSlowmotion.Size = new System.Drawing.Size(344, 75);
+            this.groupBoxSavefilesSpritesPointTickSlowmotion.TabIndex = 15;
+            this.groupBoxSavefilesSpritesPointTickSlowmotion.TabStop = false;
+            this.groupBoxSavefilesSpritesPointTickSlowmotion.Text = "Textures Point Tick + Slowmo";
+            // 
+            // tableLayoutPanel8
+            // 
+            this.tableLayoutPanel8.ColumnCount = 2;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.Controls.Add(this.buttonSaveFileSpritesPointTickSlowmotion, 1, 1);
+            this.tableLayoutPanel8.Controls.Add(this.buttonOpenFileSpritesPointTickSlowmotion, 0, 1);
+            this.tableLayoutPanel8.Controls.Add(this.labelSavefilesSpritesPointTickSlowmotionPath, 0, 0);
+            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 2;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(338, 56);
+            this.tableLayoutPanel8.TabIndex = 1;
+            // 
+            // buttonSaveFileSpritesPointTickSlowmotion
+            // 
+            this.buttonSaveFileSpritesPointTickSlowmotion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSaveFileSpritesPointTickSlowmotion.Location = new System.Drawing.Point(172, 31);
+            this.buttonSaveFileSpritesPointTickSlowmotion.Name = "buttonSaveFileSpritesPointTickSlowmotion";
+            this.buttonSaveFileSpritesPointTickSlowmotion.Size = new System.Drawing.Size(163, 22);
+            this.buttonSaveFileSpritesPointTickSlowmotion.TabIndex = 5;
+            this.buttonSaveFileSpritesPointTickSlowmotion.Text = "Save";
+            this.buttonSaveFileSpritesPointTickSlowmotion.UseVisualStyleBackColor = true;
+            this.buttonSaveFileSpritesPointTickSlowmotion.Click += new System.EventHandler(this.ButtonSaveFileSpritesPUpPointTickSlowmotion_Click);
+            // 
+            // buttonOpenFileSpritesPointTickSlowmotion
+            // 
+            this.buttonOpenFileSpritesPointTickSlowmotion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonOpenFileSpritesPointTickSlowmotion.Location = new System.Drawing.Point(3, 31);
+            this.buttonOpenFileSpritesPointTickSlowmotion.Name = "buttonOpenFileSpritesPointTickSlowmotion";
+            this.buttonOpenFileSpritesPointTickSlowmotion.Size = new System.Drawing.Size(163, 22);
+            this.buttonOpenFileSpritesPointTickSlowmotion.TabIndex = 4;
+            this.buttonOpenFileSpritesPointTickSlowmotion.Text = "Load";
+            this.buttonOpenFileSpritesPointTickSlowmotion.UseVisualStyleBackColor = true;
+            this.buttonOpenFileSpritesPointTickSlowmotion.Click += new System.EventHandler(this.ButtonOpenFileSpritesPUpPointTickSlowmotion_Click);
+            // 
+            // labelSavefilesSpritesPointTickSlowmotionPath
+            // 
+            this.labelSavefilesSpritesPointTickSlowmotionPath.AutoSize = true;
+            this.labelSavefilesSpritesPointTickSlowmotionPath.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tableLayoutPanel8.SetColumnSpan(this.labelSavefilesSpritesPointTickSlowmotionPath, 2);
+            this.labelSavefilesSpritesPointTickSlowmotionPath.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelSavefilesSpritesPointTickSlowmotionPath.Location = new System.Drawing.Point(3, 0);
+            this.labelSavefilesSpritesPointTickSlowmotionPath.Name = "labelSavefilesSpritesPointTickSlowmotionPath";
+            this.labelSavefilesSpritesPointTickSlowmotionPath.Size = new System.Drawing.Size(332, 28);
+            this.labelSavefilesSpritesPointTickSlowmotionPath.TabIndex = 6;
+            // 
+            // groupBoxSavefilesSpritesPointTickNoclip
+            // 
+            this.groupBoxSavefilesSpritesPointTickNoclip.Controls.Add(this.tableLayoutPanel7);
+            this.groupBoxSavefilesSpritesPointTickNoclip.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxSavefilesSpritesPointTickNoclip.Location = new System.Drawing.Point(3, 975);
+            this.groupBoxSavefilesSpritesPointTickNoclip.Name = "groupBoxSavefilesSpritesPointTickNoclip";
+            this.groupBoxSavefilesSpritesPointTickNoclip.Size = new System.Drawing.Size(344, 75);
+            this.groupBoxSavefilesSpritesPointTickNoclip.TabIndex = 14;
+            this.groupBoxSavefilesSpritesPointTickNoclip.TabStop = false;
+            this.groupBoxSavefilesSpritesPointTickNoclip.Text = "Textures Point Tick + Noclip";
+            // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.ColumnCount = 2;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.Controls.Add(this.buttonSaveFileSpritesPointTickNoclip, 1, 1);
+            this.tableLayoutPanel7.Controls.Add(this.buttonOpenFileSpritesPointTickNoclip, 0, 1);
+            this.tableLayoutPanel7.Controls.Add(this.labelSavefilesSpritesPointTickNoclipPath, 0, 0);
+            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 2;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(338, 56);
+            this.tableLayoutPanel7.TabIndex = 1;
+            // 
+            // buttonSaveFileSpritesPointTickNoclip
+            // 
+            this.buttonSaveFileSpritesPointTickNoclip.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSaveFileSpritesPointTickNoclip.Location = new System.Drawing.Point(172, 31);
+            this.buttonSaveFileSpritesPointTickNoclip.Name = "buttonSaveFileSpritesPointTickNoclip";
+            this.buttonSaveFileSpritesPointTickNoclip.Size = new System.Drawing.Size(163, 22);
+            this.buttonSaveFileSpritesPointTickNoclip.TabIndex = 5;
+            this.buttonSaveFileSpritesPointTickNoclip.Text = "Save";
+            this.buttonSaveFileSpritesPointTickNoclip.UseVisualStyleBackColor = true;
+            this.buttonSaveFileSpritesPointTickNoclip.Click += new System.EventHandler(this.ButtonSaveFileSpritesPUpPointTickNoclip_Click);
+            // 
+            // buttonOpenFileSpritesPointTickNoclip
+            // 
+            this.buttonOpenFileSpritesPointTickNoclip.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonOpenFileSpritesPointTickNoclip.Location = new System.Drawing.Point(3, 31);
+            this.buttonOpenFileSpritesPointTickNoclip.Name = "buttonOpenFileSpritesPointTickNoclip";
+            this.buttonOpenFileSpritesPointTickNoclip.Size = new System.Drawing.Size(163, 22);
+            this.buttonOpenFileSpritesPointTickNoclip.TabIndex = 4;
+            this.buttonOpenFileSpritesPointTickNoclip.Text = "Load";
+            this.buttonOpenFileSpritesPointTickNoclip.UseVisualStyleBackColor = true;
+            this.buttonOpenFileSpritesPointTickNoclip.Click += new System.EventHandler(this.ButtonOpenFileSpritesPUpPointTickNoclip_Click);
+            // 
+            // labelSavefilesSpritesPointTickNoclipPath
+            // 
+            this.labelSavefilesSpritesPointTickNoclipPath.AutoSize = true;
+            this.labelSavefilesSpritesPointTickNoclipPath.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tableLayoutPanel7.SetColumnSpan(this.labelSavefilesSpritesPointTickNoclipPath, 2);
+            this.labelSavefilesSpritesPointTickNoclipPath.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelSavefilesSpritesPointTickNoclipPath.Location = new System.Drawing.Point(3, 0);
+            this.labelSavefilesSpritesPointTickNoclipPath.Name = "labelSavefilesSpritesPointTickNoclipPath";
+            this.labelSavefilesSpritesPointTickNoclipPath.Size = new System.Drawing.Size(332, 28);
+            this.labelSavefilesSpritesPointTickNoclipPath.TabIndex = 6;
             // 
             // groupBoxSavefilesSpritesPointTick
             // 
@@ -2701,516 +3211,6 @@ namespace Snake_Game
             this.buttonReset.UseVisualStyleBackColor = true;
             this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
             // 
-            // labelPUpX2PointTickDuration
-            // 
-            this.labelPUpX2PointTickDuration.AutoSize = true;
-            this.tableLayoutPanelPowerups.SetColumnSpan(this.labelPUpX2PointTickDuration, 2);
-            this.labelPUpX2PointTickDuration.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelPUpX2PointTickDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPUpX2PointTickDuration.Location = new System.Drawing.Point(3, 250);
-            this.labelPUpX2PointTickDuration.Name = "labelPUpX2PointTickDuration";
-            this.labelPUpX2PointTickDuration.Size = new System.Drawing.Size(168, 50);
-            this.labelPUpX2PointTickDuration.TabIndex = 62;
-            this.labelPUpX2PointTickDuration.Text = "X2 + Point Tick Duration";
-            this.labelPUpX2PointTickDuration.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // labelPUpX2SlowmoDuration
-            // 
-            this.labelPUpX2SlowmoDuration.AutoSize = true;
-            this.tableLayoutPanelPowerups.SetColumnSpan(this.labelPUpX2SlowmoDuration, 2);
-            this.labelPUpX2SlowmoDuration.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelPUpX2SlowmoDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPUpX2SlowmoDuration.Location = new System.Drawing.Point(3, 300);
-            this.labelPUpX2SlowmoDuration.Name = "labelPUpX2SlowmoDuration";
-            this.labelPUpX2SlowmoDuration.Size = new System.Drawing.Size(168, 50);
-            this.labelPUpX2SlowmoDuration.TabIndex = 63;
-            this.labelPUpX2SlowmoDuration.Text = "X2 + Slowmo Duration";
-            this.labelPUpX2SlowmoDuration.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // labelPUpX2NoclipDuration
-            // 
-            this.labelPUpX2NoclipDuration.AutoSize = true;
-            this.tableLayoutPanelPowerups.SetColumnSpan(this.labelPUpX2NoclipDuration, 2);
-            this.labelPUpX2NoclipDuration.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelPUpX2NoclipDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPUpX2NoclipDuration.Location = new System.Drawing.Point(3, 350);
-            this.labelPUpX2NoclipDuration.Name = "labelPUpX2NoclipDuration";
-            this.labelPUpX2NoclipDuration.Size = new System.Drawing.Size(168, 50);
-            this.labelPUpX2NoclipDuration.TabIndex = 64;
-            this.labelPUpX2NoclipDuration.Text = "X2 + Noclip Duration";
-            this.labelPUpX2NoclipDuration.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // labelPUpPointTickSlowmoDuration
-            // 
-            this.labelPUpPointTickSlowmoDuration.AutoSize = true;
-            this.tableLayoutPanelPowerups.SetColumnSpan(this.labelPUpPointTickSlowmoDuration, 2);
-            this.labelPUpPointTickSlowmoDuration.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelPUpPointTickSlowmoDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPUpPointTickSlowmoDuration.Location = new System.Drawing.Point(3, 400);
-            this.labelPUpPointTickSlowmoDuration.Name = "labelPUpPointTickSlowmoDuration";
-            this.labelPUpPointTickSlowmoDuration.Size = new System.Drawing.Size(168, 50);
-            this.labelPUpPointTickSlowmoDuration.TabIndex = 65;
-            this.labelPUpPointTickSlowmoDuration.Text = "Point Tick + Slowmo Duration";
-            this.labelPUpPointTickSlowmoDuration.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // labelPUpPointTickNoclipDuration
-            // 
-            this.labelPUpPointTickNoclipDuration.AutoSize = true;
-            this.tableLayoutPanelPowerups.SetColumnSpan(this.labelPUpPointTickNoclipDuration, 2);
-            this.labelPUpPointTickNoclipDuration.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelPUpPointTickNoclipDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPUpPointTickNoclipDuration.Location = new System.Drawing.Point(3, 450);
-            this.labelPUpPointTickNoclipDuration.Name = "labelPUpPointTickNoclipDuration";
-            this.labelPUpPointTickNoclipDuration.Size = new System.Drawing.Size(168, 50);
-            this.labelPUpPointTickNoclipDuration.TabIndex = 66;
-            this.labelPUpPointTickNoclipDuration.Text = "Point Tick + Noclip Duration";
-            this.labelPUpPointTickNoclipDuration.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // labelPUpSlowmoNoclipDuration
-            // 
-            this.labelPUpSlowmoNoclipDuration.AutoSize = true;
-            this.tableLayoutPanelPowerups.SetColumnSpan(this.labelPUpSlowmoNoclipDuration, 2);
-            this.labelPUpSlowmoNoclipDuration.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelPUpSlowmoNoclipDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPUpSlowmoNoclipDuration.Location = new System.Drawing.Point(3, 500);
-            this.labelPUpSlowmoNoclipDuration.Name = "labelPUpSlowmoNoclipDuration";
-            this.labelPUpSlowmoNoclipDuration.Size = new System.Drawing.Size(168, 50);
-            this.labelPUpSlowmoNoclipDuration.TabIndex = 67;
-            this.labelPUpSlowmoNoclipDuration.Text = "Slowmo + Noclip Duration";
-            this.labelPUpSlowmoNoclipDuration.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // textBoxPUpPointTickNoclipDuration
-            // 
-            this.tableLayoutPanelPowerups.SetColumnSpan(this.textBoxPUpPointTickNoclipDuration, 2);
-            this.textBoxPUpPointTickNoclipDuration.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxPUpPointTickNoclipDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPUpPointTickNoclipDuration.Location = new System.Drawing.Point(177, 453);
-            this.textBoxPUpPointTickNoclipDuration.MaxLength = 2;
-            this.textBoxPUpPointTickNoclipDuration.Name = "textBoxPUpPointTickNoclipDuration";
-            this.textBoxPUpPointTickNoclipDuration.Size = new System.Drawing.Size(170, 45);
-            this.textBoxPUpPointTickNoclipDuration.TabIndex = 68;
-            // 
-            // textBoxPUpPointTickSlowmoDuration
-            // 
-            this.tableLayoutPanelPowerups.SetColumnSpan(this.textBoxPUpPointTickSlowmoDuration, 2);
-            this.textBoxPUpPointTickSlowmoDuration.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxPUpPointTickSlowmoDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPUpPointTickSlowmoDuration.Location = new System.Drawing.Point(177, 403);
-            this.textBoxPUpPointTickSlowmoDuration.MaxLength = 2;
-            this.textBoxPUpPointTickSlowmoDuration.Name = "textBoxPUpPointTickSlowmoDuration";
-            this.textBoxPUpPointTickSlowmoDuration.Size = new System.Drawing.Size(170, 45);
-            this.textBoxPUpPointTickSlowmoDuration.TabIndex = 69;
-            // 
-            // textBoxPUpX2NoclipDuration
-            // 
-            this.tableLayoutPanelPowerups.SetColumnSpan(this.textBoxPUpX2NoclipDuration, 2);
-            this.textBoxPUpX2NoclipDuration.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxPUpX2NoclipDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPUpX2NoclipDuration.Location = new System.Drawing.Point(177, 353);
-            this.textBoxPUpX2NoclipDuration.MaxLength = 2;
-            this.textBoxPUpX2NoclipDuration.Name = "textBoxPUpX2NoclipDuration";
-            this.textBoxPUpX2NoclipDuration.Size = new System.Drawing.Size(170, 45);
-            this.textBoxPUpX2NoclipDuration.TabIndex = 70;
-            // 
-            // textBoxPUpX2SlowmoDuration
-            // 
-            this.tableLayoutPanelPowerups.SetColumnSpan(this.textBoxPUpX2SlowmoDuration, 2);
-            this.textBoxPUpX2SlowmoDuration.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxPUpX2SlowmoDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPUpX2SlowmoDuration.Location = new System.Drawing.Point(177, 303);
-            this.textBoxPUpX2SlowmoDuration.MaxLength = 2;
-            this.textBoxPUpX2SlowmoDuration.Name = "textBoxPUpX2SlowmoDuration";
-            this.textBoxPUpX2SlowmoDuration.Size = new System.Drawing.Size(170, 45);
-            this.textBoxPUpX2SlowmoDuration.TabIndex = 71;
-            // 
-            // textBoxPUpX2PointTickDuration
-            // 
-            this.tableLayoutPanelPowerups.SetColumnSpan(this.textBoxPUpX2PointTickDuration, 2);
-            this.textBoxPUpX2PointTickDuration.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxPUpX2PointTickDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPUpX2PointTickDuration.Location = new System.Drawing.Point(177, 253);
-            this.textBoxPUpX2PointTickDuration.MaxLength = 2;
-            this.textBoxPUpX2PointTickDuration.Name = "textBoxPUpX2PointTickDuration";
-            this.textBoxPUpX2PointTickDuration.Size = new System.Drawing.Size(170, 45);
-            this.textBoxPUpX2PointTickDuration.TabIndex = 72;
-            // 
-            // textBoxPUpSlowmoNoclipDuration
-            // 
-            this.tableLayoutPanelPowerups.SetColumnSpan(this.textBoxPUpSlowmoNoclipDuration, 2);
-            this.textBoxPUpSlowmoNoclipDuration.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxPUpSlowmoNoclipDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPUpSlowmoNoclipDuration.Location = new System.Drawing.Point(177, 503);
-            this.textBoxPUpSlowmoNoclipDuration.MaxLength = 2;
-            this.textBoxPUpSlowmoNoclipDuration.Name = "textBoxPUpSlowmoNoclipDuration";
-            this.textBoxPUpSlowmoNoclipDuration.Size = new System.Drawing.Size(170, 45);
-            this.textBoxPUpSlowmoNoclipDuration.TabIndex = 73;
-            // 
-            // groupBoxSavefilesSpritesPointTickNoclip
-            // 
-            this.groupBoxSavefilesSpritesPointTickNoclip.Controls.Add(this.tableLayoutPanel7);
-            this.groupBoxSavefilesSpritesPointTickNoclip.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxSavefilesSpritesPointTickNoclip.Location = new System.Drawing.Point(3, 975);
-            this.groupBoxSavefilesSpritesPointTickNoclip.Name = "groupBoxSavefilesSpritesPointTickNoclip";
-            this.groupBoxSavefilesSpritesPointTickNoclip.Size = new System.Drawing.Size(344, 75);
-            this.groupBoxSavefilesSpritesPointTickNoclip.TabIndex = 14;
-            this.groupBoxSavefilesSpritesPointTickNoclip.TabStop = false;
-            this.groupBoxSavefilesSpritesPointTickNoclip.Text = "Textures Point Tick + Noclip";
-            // 
-            // tableLayoutPanel7
-            // 
-            this.tableLayoutPanel7.ColumnCount = 2;
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.Controls.Add(this.buttonSaveFileSpritesPointTickNoclip, 1, 1);
-            this.tableLayoutPanel7.Controls.Add(this.buttonOpenFileSpritesPointTickNoclip, 0, 1);
-            this.tableLayoutPanel7.Controls.Add(this.labelSavefilesSpritesPointTickNoclipPath, 0, 0);
-            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 16);
-            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
-            this.tableLayoutPanel7.RowCount = 2;
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(338, 56);
-            this.tableLayoutPanel7.TabIndex = 1;
-            // 
-            // buttonSaveFileSpritesPointTickNoclip
-            // 
-            this.buttonSaveFileSpritesPointTickNoclip.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSaveFileSpritesPointTickNoclip.Location = new System.Drawing.Point(172, 31);
-            this.buttonSaveFileSpritesPointTickNoclip.Name = "buttonSaveFileSpritesPointTickNoclip";
-            this.buttonSaveFileSpritesPointTickNoclip.Size = new System.Drawing.Size(163, 22);
-            this.buttonSaveFileSpritesPointTickNoclip.TabIndex = 5;
-            this.buttonSaveFileSpritesPointTickNoclip.Text = "Save";
-            this.buttonSaveFileSpritesPointTickNoclip.UseVisualStyleBackColor = true;
-            this.buttonSaveFileSpritesPointTickNoclip.Click += new System.EventHandler(this.ButtonSaveFileSpritesPUpPointTickNoclip_Click);
-            // 
-            // buttonOpenFileSpritesPointTickNoclip
-            // 
-            this.buttonOpenFileSpritesPointTickNoclip.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonOpenFileSpritesPointTickNoclip.Location = new System.Drawing.Point(3, 31);
-            this.buttonOpenFileSpritesPointTickNoclip.Name = "buttonOpenFileSpritesPointTickNoclip";
-            this.buttonOpenFileSpritesPointTickNoclip.Size = new System.Drawing.Size(163, 22);
-            this.buttonOpenFileSpritesPointTickNoclip.TabIndex = 4;
-            this.buttonOpenFileSpritesPointTickNoclip.Text = "Load";
-            this.buttonOpenFileSpritesPointTickNoclip.UseVisualStyleBackColor = true;
-            this.buttonOpenFileSpritesPointTickNoclip.Click += new System.EventHandler(this.ButtonOpenFileSpritesPUpPointTickNoclip_Click);
-            // 
-            // labelSavefilesSpritesPointTickNoclipPath
-            // 
-            this.labelSavefilesSpritesPointTickNoclipPath.AutoSize = true;
-            this.labelSavefilesSpritesPointTickNoclipPath.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tableLayoutPanel7.SetColumnSpan(this.labelSavefilesSpritesPointTickNoclipPath, 2);
-            this.labelSavefilesSpritesPointTickNoclipPath.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelSavefilesSpritesPointTickNoclipPath.Location = new System.Drawing.Point(3, 0);
-            this.labelSavefilesSpritesPointTickNoclipPath.Name = "labelSavefilesSpritesPointTickNoclipPath";
-            this.labelSavefilesSpritesPointTickNoclipPath.Size = new System.Drawing.Size(332, 28);
-            this.labelSavefilesSpritesPointTickNoclipPath.TabIndex = 6;
-            // 
-            // groupBoxSavefilesSpritesPointTickSlowmotion
-            // 
-            this.groupBoxSavefilesSpritesPointTickSlowmotion.Controls.Add(this.tableLayoutPanel8);
-            this.groupBoxSavefilesSpritesPointTickSlowmotion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxSavefilesSpritesPointTickSlowmotion.Location = new System.Drawing.Point(3, 894);
-            this.groupBoxSavefilesSpritesPointTickSlowmotion.Name = "groupBoxSavefilesSpritesPointTickSlowmotion";
-            this.groupBoxSavefilesSpritesPointTickSlowmotion.Size = new System.Drawing.Size(344, 75);
-            this.groupBoxSavefilesSpritesPointTickSlowmotion.TabIndex = 15;
-            this.groupBoxSavefilesSpritesPointTickSlowmotion.TabStop = false;
-            this.groupBoxSavefilesSpritesPointTickSlowmotion.Text = "Textures Point Tick + Slowmo";
-            // 
-            // tableLayoutPanel8
-            // 
-            this.tableLayoutPanel8.ColumnCount = 2;
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.Controls.Add(this.buttonSaveFileSpritesPointTickSlowmotion, 1, 1);
-            this.tableLayoutPanel8.Controls.Add(this.buttonOpenFileSpritesPointTickSlowmotion, 0, 1);
-            this.tableLayoutPanel8.Controls.Add(this.labelSavefilesSpritesPointTickSlowmotionPath, 0, 0);
-            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 16);
-            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            this.tableLayoutPanel8.RowCount = 2;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(338, 56);
-            this.tableLayoutPanel8.TabIndex = 1;
-            // 
-            // buttonSaveFileSpritesPointTickSlowmotion
-            // 
-            this.buttonSaveFileSpritesPointTickSlowmotion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSaveFileSpritesPointTickSlowmotion.Location = new System.Drawing.Point(172, 31);
-            this.buttonSaveFileSpritesPointTickSlowmotion.Name = "buttonSaveFileSpritesPointTickSlowmotion";
-            this.buttonSaveFileSpritesPointTickSlowmotion.Size = new System.Drawing.Size(163, 22);
-            this.buttonSaveFileSpritesPointTickSlowmotion.TabIndex = 5;
-            this.buttonSaveFileSpritesPointTickSlowmotion.Text = "Save";
-            this.buttonSaveFileSpritesPointTickSlowmotion.UseVisualStyleBackColor = true;
-            this.buttonSaveFileSpritesPointTickSlowmotion.Click += new System.EventHandler(this.ButtonSaveFileSpritesPUpPointTickSlowmotion_Click);
-            // 
-            // buttonOpenFileSpritesPointTickSlowmotion
-            // 
-            this.buttonOpenFileSpritesPointTickSlowmotion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonOpenFileSpritesPointTickSlowmotion.Location = new System.Drawing.Point(3, 31);
-            this.buttonOpenFileSpritesPointTickSlowmotion.Name = "buttonOpenFileSpritesPointTickSlowmotion";
-            this.buttonOpenFileSpritesPointTickSlowmotion.Size = new System.Drawing.Size(163, 22);
-            this.buttonOpenFileSpritesPointTickSlowmotion.TabIndex = 4;
-            this.buttonOpenFileSpritesPointTickSlowmotion.Text = "Load";
-            this.buttonOpenFileSpritesPointTickSlowmotion.UseVisualStyleBackColor = true;
-            this.buttonOpenFileSpritesPointTickSlowmotion.Click += new System.EventHandler(this.ButtonOpenFileSpritesPUpPointTickSlowmotion_Click);
-            // 
-            // labelSavefilesSpritesPointTickSlowmotionPath
-            // 
-            this.labelSavefilesSpritesPointTickSlowmotionPath.AutoSize = true;
-            this.labelSavefilesSpritesPointTickSlowmotionPath.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tableLayoutPanel8.SetColumnSpan(this.labelSavefilesSpritesPointTickSlowmotionPath, 2);
-            this.labelSavefilesSpritesPointTickSlowmotionPath.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelSavefilesSpritesPointTickSlowmotionPath.Location = new System.Drawing.Point(3, 0);
-            this.labelSavefilesSpritesPointTickSlowmotionPath.Name = "labelSavefilesSpritesPointTickSlowmotionPath";
-            this.labelSavefilesSpritesPointTickSlowmotionPath.Size = new System.Drawing.Size(332, 28);
-            this.labelSavefilesSpritesPointTickSlowmotionPath.TabIndex = 6;
-            // 
-            // groupBoxSavefilesSpritesSlowmotionNoclip
-            // 
-            this.groupBoxSavefilesSpritesSlowmotionNoclip.Controls.Add(this.tableLayoutPanel9);
-            this.groupBoxSavefilesSpritesSlowmotionNoclip.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxSavefilesSpritesSlowmotionNoclip.Location = new System.Drawing.Point(3, 1056);
-            this.groupBoxSavefilesSpritesSlowmotionNoclip.Name = "groupBoxSavefilesSpritesSlowmotionNoclip";
-            this.groupBoxSavefilesSpritesSlowmotionNoclip.Size = new System.Drawing.Size(344, 81);
-            this.groupBoxSavefilesSpritesSlowmotionNoclip.TabIndex = 16;
-            this.groupBoxSavefilesSpritesSlowmotionNoclip.TabStop = false;
-            this.groupBoxSavefilesSpritesSlowmotionNoclip.Text = "Textures Slowmo + Noclip";
-            // 
-            // tableLayoutPanel9
-            // 
-            this.tableLayoutPanel9.ColumnCount = 2;
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel9.Controls.Add(this.buttonSaveFileSpritesSlowmotionNoclip, 1, 1);
-            this.tableLayoutPanel9.Controls.Add(this.buttonOpenFileSpritesSlowmotionNoclip, 0, 1);
-            this.tableLayoutPanel9.Controls.Add(this.labelSavefilesSpritesSlowmotionNoclipPath, 0, 0);
-            this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 16);
-            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
-            this.tableLayoutPanel9.RowCount = 2;
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(338, 62);
-            this.tableLayoutPanel9.TabIndex = 1;
-            // 
-            // buttonSaveFileSpritesSlowmotionNoclip
-            // 
-            this.buttonSaveFileSpritesSlowmotionNoclip.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSaveFileSpritesSlowmotionNoclip.Location = new System.Drawing.Point(172, 34);
-            this.buttonSaveFileSpritesSlowmotionNoclip.Name = "buttonSaveFileSpritesSlowmotionNoclip";
-            this.buttonSaveFileSpritesSlowmotionNoclip.Size = new System.Drawing.Size(163, 25);
-            this.buttonSaveFileSpritesSlowmotionNoclip.TabIndex = 5;
-            this.buttonSaveFileSpritesSlowmotionNoclip.Text = "Save";
-            this.buttonSaveFileSpritesSlowmotionNoclip.UseVisualStyleBackColor = true;
-            this.buttonSaveFileSpritesSlowmotionNoclip.Click += new System.EventHandler(this.ButtonSaveFileSpritesPUpSlowmotionNoclip_Click);
-            // 
-            // buttonOpenFileSpritesSlowmotionNoclip
-            // 
-            this.buttonOpenFileSpritesSlowmotionNoclip.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonOpenFileSpritesSlowmotionNoclip.Location = new System.Drawing.Point(3, 34);
-            this.buttonOpenFileSpritesSlowmotionNoclip.Name = "buttonOpenFileSpritesSlowmotionNoclip";
-            this.buttonOpenFileSpritesSlowmotionNoclip.Size = new System.Drawing.Size(163, 25);
-            this.buttonOpenFileSpritesSlowmotionNoclip.TabIndex = 4;
-            this.buttonOpenFileSpritesSlowmotionNoclip.Text = "Load";
-            this.buttonOpenFileSpritesSlowmotionNoclip.UseVisualStyleBackColor = true;
-            this.buttonOpenFileSpritesSlowmotionNoclip.Click += new System.EventHandler(this.ButtonOpenFileSpritesPUpSlowmotionNoclip_Click);
-            // 
-            // labelSavefilesSpritesSlowmotionNoclipPath
-            // 
-            this.labelSavefilesSpritesSlowmotionNoclipPath.AutoSize = true;
-            this.labelSavefilesSpritesSlowmotionNoclipPath.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tableLayoutPanel9.SetColumnSpan(this.labelSavefilesSpritesSlowmotionNoclipPath, 2);
-            this.labelSavefilesSpritesSlowmotionNoclipPath.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelSavefilesSpritesSlowmotionNoclipPath.Location = new System.Drawing.Point(3, 0);
-            this.labelSavefilesSpritesSlowmotionNoclipPath.Name = "labelSavefilesSpritesSlowmotionNoclipPath";
-            this.labelSavefilesSpritesSlowmotionNoclipPath.Size = new System.Drawing.Size(332, 31);
-            this.labelSavefilesSpritesSlowmotionNoclipPath.TabIndex = 6;
-            // 
-            // groupBoxSavefilesSpritesX2Noclip
-            // 
-            this.groupBoxSavefilesSpritesX2Noclip.Controls.Add(this.tableLayoutPanel10);
-            this.groupBoxSavefilesSpritesX2Noclip.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxSavefilesSpritesX2Noclip.Location = new System.Drawing.Point(3, 813);
-            this.groupBoxSavefilesSpritesX2Noclip.Name = "groupBoxSavefilesSpritesX2Noclip";
-            this.groupBoxSavefilesSpritesX2Noclip.Size = new System.Drawing.Size(344, 75);
-            this.groupBoxSavefilesSpritesX2Noclip.TabIndex = 17;
-            this.groupBoxSavefilesSpritesX2Noclip.TabStop = false;
-            this.groupBoxSavefilesSpritesX2Noclip.Text = "Textures X2 + Noclip";
-            // 
-            // tableLayoutPanel10
-            // 
-            this.tableLayoutPanel10.ColumnCount = 2;
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.Controls.Add(this.buttonSaveFileSpritesX2Noclip, 1, 1);
-            this.tableLayoutPanel10.Controls.Add(this.buttonOpenFileSpritesX2Noclip, 0, 1);
-            this.tableLayoutPanel10.Controls.Add(this.labelSavefilesSpritesX2NoclipPath, 0, 0);
-            this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(3, 16);
-            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
-            this.tableLayoutPanel10.RowCount = 2;
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(338, 56);
-            this.tableLayoutPanel10.TabIndex = 1;
-            // 
-            // buttonSaveFileSpritesX2Noclip
-            // 
-            this.buttonSaveFileSpritesX2Noclip.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSaveFileSpritesX2Noclip.Location = new System.Drawing.Point(172, 31);
-            this.buttonSaveFileSpritesX2Noclip.Name = "buttonSaveFileSpritesX2Noclip";
-            this.buttonSaveFileSpritesX2Noclip.Size = new System.Drawing.Size(163, 22);
-            this.buttonSaveFileSpritesX2Noclip.TabIndex = 5;
-            this.buttonSaveFileSpritesX2Noclip.Text = "Save";
-            this.buttonSaveFileSpritesX2Noclip.UseVisualStyleBackColor = true;
-            this.buttonSaveFileSpritesX2Noclip.Click += new System.EventHandler(this.ButtonSaveFileSpritesPUpX2Noclip_Click);
-            // 
-            // buttonOpenFileSpritesX2Noclip
-            // 
-            this.buttonOpenFileSpritesX2Noclip.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonOpenFileSpritesX2Noclip.Location = new System.Drawing.Point(3, 31);
-            this.buttonOpenFileSpritesX2Noclip.Name = "buttonOpenFileSpritesX2Noclip";
-            this.buttonOpenFileSpritesX2Noclip.Size = new System.Drawing.Size(163, 22);
-            this.buttonOpenFileSpritesX2Noclip.TabIndex = 4;
-            this.buttonOpenFileSpritesX2Noclip.Text = "Load";
-            this.buttonOpenFileSpritesX2Noclip.UseVisualStyleBackColor = true;
-            this.buttonOpenFileSpritesX2Noclip.Click += new System.EventHandler(this.ButtonOpenFileSpritesPUpX2Noclip_Click);
-            // 
-            // labelSavefilesSpritesX2NoclipPath
-            // 
-            this.labelSavefilesSpritesX2NoclipPath.AutoSize = true;
-            this.labelSavefilesSpritesX2NoclipPath.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tableLayoutPanel10.SetColumnSpan(this.labelSavefilesSpritesX2NoclipPath, 2);
-            this.labelSavefilesSpritesX2NoclipPath.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelSavefilesSpritesX2NoclipPath.Location = new System.Drawing.Point(3, 0);
-            this.labelSavefilesSpritesX2NoclipPath.Name = "labelSavefilesSpritesX2NoclipPath";
-            this.labelSavefilesSpritesX2NoclipPath.Size = new System.Drawing.Size(332, 28);
-            this.labelSavefilesSpritesX2NoclipPath.TabIndex = 6;
-            // 
-            // groupBoxSavefilesSpritesX2Slowmotion
-            // 
-            this.groupBoxSavefilesSpritesX2Slowmotion.Controls.Add(this.tableLayoutPanel11);
-            this.groupBoxSavefilesSpritesX2Slowmotion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxSavefilesSpritesX2Slowmotion.Location = new System.Drawing.Point(3, 732);
-            this.groupBoxSavefilesSpritesX2Slowmotion.Name = "groupBoxSavefilesSpritesX2Slowmotion";
-            this.groupBoxSavefilesSpritesX2Slowmotion.Size = new System.Drawing.Size(344, 75);
-            this.groupBoxSavefilesSpritesX2Slowmotion.TabIndex = 18;
-            this.groupBoxSavefilesSpritesX2Slowmotion.TabStop = false;
-            this.groupBoxSavefilesSpritesX2Slowmotion.Text = "Textures X2 + Slowmo";
-            // 
-            // tableLayoutPanel11
-            // 
-            this.tableLayoutPanel11.ColumnCount = 2;
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel11.Controls.Add(this.buttonSaveFileSpritesX2Slowmotion, 1, 1);
-            this.tableLayoutPanel11.Controls.Add(this.buttonOpenFileSpritesX2Slowmotion, 0, 1);
-            this.tableLayoutPanel11.Controls.Add(this.labelSavefilesSpritesX2SlowmotionPath, 0, 0);
-            this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(3, 16);
-            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
-            this.tableLayoutPanel11.RowCount = 2;
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(338, 56);
-            this.tableLayoutPanel11.TabIndex = 1;
-            // 
-            // buttonSaveFileSpritesX2Slowmotion
-            // 
-            this.buttonSaveFileSpritesX2Slowmotion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSaveFileSpritesX2Slowmotion.Location = new System.Drawing.Point(172, 31);
-            this.buttonSaveFileSpritesX2Slowmotion.Name = "buttonSaveFileSpritesX2Slowmotion";
-            this.buttonSaveFileSpritesX2Slowmotion.Size = new System.Drawing.Size(163, 22);
-            this.buttonSaveFileSpritesX2Slowmotion.TabIndex = 5;
-            this.buttonSaveFileSpritesX2Slowmotion.Text = "Save";
-            this.buttonSaveFileSpritesX2Slowmotion.UseVisualStyleBackColor = true;
-            this.buttonSaveFileSpritesX2Slowmotion.Click += new System.EventHandler(this.ButtonSaveFileSpritesPUpX2Slowmotion_Click);
-            // 
-            // buttonOpenFileSpritesX2Slowmotion
-            // 
-            this.buttonOpenFileSpritesX2Slowmotion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonOpenFileSpritesX2Slowmotion.Location = new System.Drawing.Point(3, 31);
-            this.buttonOpenFileSpritesX2Slowmotion.Name = "buttonOpenFileSpritesX2Slowmotion";
-            this.buttonOpenFileSpritesX2Slowmotion.Size = new System.Drawing.Size(163, 22);
-            this.buttonOpenFileSpritesX2Slowmotion.TabIndex = 4;
-            this.buttonOpenFileSpritesX2Slowmotion.Text = "Load";
-            this.buttonOpenFileSpritesX2Slowmotion.UseVisualStyleBackColor = true;
-            this.buttonOpenFileSpritesX2Slowmotion.Click += new System.EventHandler(this.ButtonOpenFileSpritesPUpX2Slowmotion_Click);
-            // 
-            // labelSavefilesSpritesX2SlowmotionPath
-            // 
-            this.labelSavefilesSpritesX2SlowmotionPath.AutoSize = true;
-            this.labelSavefilesSpritesX2SlowmotionPath.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tableLayoutPanel11.SetColumnSpan(this.labelSavefilesSpritesX2SlowmotionPath, 2);
-            this.labelSavefilesSpritesX2SlowmotionPath.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelSavefilesSpritesX2SlowmotionPath.Location = new System.Drawing.Point(3, 0);
-            this.labelSavefilesSpritesX2SlowmotionPath.Name = "labelSavefilesSpritesX2SlowmotionPath";
-            this.labelSavefilesSpritesX2SlowmotionPath.Size = new System.Drawing.Size(332, 28);
-            this.labelSavefilesSpritesX2SlowmotionPath.TabIndex = 6;
-            // 
-            // groupBoxSavefilesSpritesX2PointTick
-            // 
-            this.groupBoxSavefilesSpritesX2PointTick.Controls.Add(this.tableLayoutPanel12);
-            this.groupBoxSavefilesSpritesX2PointTick.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxSavefilesSpritesX2PointTick.Location = new System.Drawing.Point(3, 651);
-            this.groupBoxSavefilesSpritesX2PointTick.Name = "groupBoxSavefilesSpritesX2PointTick";
-            this.groupBoxSavefilesSpritesX2PointTick.Size = new System.Drawing.Size(344, 75);
-            this.groupBoxSavefilesSpritesX2PointTick.TabIndex = 19;
-            this.groupBoxSavefilesSpritesX2PointTick.TabStop = false;
-            this.groupBoxSavefilesSpritesX2PointTick.Text = "Textures X2 + Point Tick";
-            // 
-            // tableLayoutPanel12
-            // 
-            this.tableLayoutPanel12.ColumnCount = 2;
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel12.Controls.Add(this.buttonSaveFileSpritesX2PointTick, 1, 1);
-            this.tableLayoutPanel12.Controls.Add(this.buttonOpenFileSpritesX2PointTick, 0, 1);
-            this.tableLayoutPanel12.Controls.Add(this.labelSavefilesSpritesX2PointTickPath, 0, 0);
-            this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 16);
-            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
-            this.tableLayoutPanel12.RowCount = 2;
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(338, 56);
-            this.tableLayoutPanel12.TabIndex = 1;
-            // 
-            // buttonSaveFileSpritesX2PointTick
-            // 
-            this.buttonSaveFileSpritesX2PointTick.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSaveFileSpritesX2PointTick.Location = new System.Drawing.Point(172, 31);
-            this.buttonSaveFileSpritesX2PointTick.Name = "buttonSaveFileSpritesX2PointTick";
-            this.buttonSaveFileSpritesX2PointTick.Size = new System.Drawing.Size(163, 22);
-            this.buttonSaveFileSpritesX2PointTick.TabIndex = 5;
-            this.buttonSaveFileSpritesX2PointTick.Text = "Save";
-            this.buttonSaveFileSpritesX2PointTick.UseVisualStyleBackColor = true;
-            this.buttonSaveFileSpritesX2PointTick.Click += new System.EventHandler(this.ButtonSaveFileSpritesPUpX2PointTick_Click);
-            // 
-            // buttonOpenFileSpritesX2PointTick
-            // 
-            this.buttonOpenFileSpritesX2PointTick.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonOpenFileSpritesX2PointTick.Location = new System.Drawing.Point(3, 31);
-            this.buttonOpenFileSpritesX2PointTick.Name = "buttonOpenFileSpritesX2PointTick";
-            this.buttonOpenFileSpritesX2PointTick.Size = new System.Drawing.Size(163, 22);
-            this.buttonOpenFileSpritesX2PointTick.TabIndex = 4;
-            this.buttonOpenFileSpritesX2PointTick.Text = "Load";
-            this.buttonOpenFileSpritesX2PointTick.UseVisualStyleBackColor = true;
-            this.buttonOpenFileSpritesX2PointTick.Click += new System.EventHandler(this.ButtonOpenFileSpritesPUpX2PointTick_Click);
-            // 
-            // labelSavefilesSpritesX2PointTickPath
-            // 
-            this.labelSavefilesSpritesX2PointTickPath.AutoSize = true;
-            this.labelSavefilesSpritesX2PointTickPath.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tableLayoutPanel12.SetColumnSpan(this.labelSavefilesSpritesX2PointTickPath, 2);
-            this.labelSavefilesSpritesX2PointTickPath.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelSavefilesSpritesX2PointTickPath.Location = new System.Drawing.Point(3, 0);
-            this.labelSavefilesSpritesX2PointTickPath.Name = "labelSavefilesSpritesX2PointTickPath";
-            this.labelSavefilesSpritesX2PointTickPath.Size = new System.Drawing.Size(332, 28);
-            this.labelSavefilesSpritesX2PointTickPath.TabIndex = 6;
-            // 
             // gameMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3245,6 +3245,24 @@ namespace Snake_Game
             this.tableLayoutPanelPowerups.PerformLayout();
             this.tabPageSavefiles.ResumeLayout(false);
             this.tableLayoutPanelSavefiles.ResumeLayout(false);
+            this.groupBoxSavefilesSpritesX2PointTick.ResumeLayout(false);
+            this.tableLayoutPanel12.ResumeLayout(false);
+            this.tableLayoutPanel12.PerformLayout();
+            this.groupBoxSavefilesSpritesX2Slowmotion.ResumeLayout(false);
+            this.tableLayoutPanel11.ResumeLayout(false);
+            this.tableLayoutPanel11.PerformLayout();
+            this.groupBoxSavefilesSpritesX2Noclip.ResumeLayout(false);
+            this.tableLayoutPanel10.ResumeLayout(false);
+            this.tableLayoutPanel10.PerformLayout();
+            this.groupBoxSavefilesSpritesSlowmotionNoclip.ResumeLayout(false);
+            this.tableLayoutPanel9.ResumeLayout(false);
+            this.tableLayoutPanel9.PerformLayout();
+            this.groupBoxSavefilesSpritesPointTickSlowmotion.ResumeLayout(false);
+            this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel8.PerformLayout();
+            this.groupBoxSavefilesSpritesPointTickNoclip.ResumeLayout(false);
+            this.tableLayoutPanel7.ResumeLayout(false);
+            this.tableLayoutPanel7.PerformLayout();
             this.groupBoxSavefilesSpritesPointTick.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
@@ -3269,24 +3287,6 @@ namespace Snake_Game
             this.groupBoxSavefilesSprites.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            this.groupBoxSavefilesSpritesPointTickNoclip.ResumeLayout(false);
-            this.tableLayoutPanel7.ResumeLayout(false);
-            this.tableLayoutPanel7.PerformLayout();
-            this.groupBoxSavefilesSpritesPointTickSlowmotion.ResumeLayout(false);
-            this.tableLayoutPanel8.ResumeLayout(false);
-            this.tableLayoutPanel8.PerformLayout();
-            this.groupBoxSavefilesSpritesSlowmotionNoclip.ResumeLayout(false);
-            this.tableLayoutPanel9.ResumeLayout(false);
-            this.tableLayoutPanel9.PerformLayout();
-            this.groupBoxSavefilesSpritesX2Noclip.ResumeLayout(false);
-            this.tableLayoutPanel10.ResumeLayout(false);
-            this.tableLayoutPanel10.PerformLayout();
-            this.groupBoxSavefilesSpritesX2Slowmotion.ResumeLayout(false);
-            this.tableLayoutPanel11.ResumeLayout(false);
-            this.tableLayoutPanel11.PerformLayout();
-            this.groupBoxSavefilesSpritesX2PointTick.ResumeLayout(false);
-            this.tableLayoutPanel12.ResumeLayout(false);
-            this.tableLayoutPanel12.PerformLayout();
             this.ResumeLayout(false);
 
         }

@@ -1124,20 +1124,32 @@ namespace Snake_Game
 
         }
 
-        // Saves all gameSprite files
-        public void SaveAllGameSprites()
+        // Resets all gameSprite files
+        public void ResetAllGameSprites()
         {
-            SaveGameSprites(gameConstants.gameSprites);
-            SaveGameSprites(gameConstants.gameSpritesPUpX2);
-            SaveGameSprites(gameConstants.gameSpritesPUpPointTick);
-            SaveGameSprites(gameConstants.gameSpritesPUpSlowmotion);
-            SaveGameSprites(gameConstants.gameSpritesPUpNoclip);
-            SaveGameSprites(gameConstants.gameSpritesPUpX2PointTick);
-            SaveGameSprites(gameConstants.gameSpritesPUpX2Slowmotion);
-            SaveGameSprites(gameConstants.gameSpritesPUpX2Noclip);
-            SaveGameSprites(gameConstants.gameSpritesPUpPointTickSlowmotion);
-            SaveGameSprites(gameConstants.gameSpritesPUpPointTickNoclip);
-            SaveGameSprites(gameConstants.gameSpritesPUpSlowmotionNoclip);
+            DialogResult result = MessageBox.Show("Do you want to reset all game sprites now?\nThe program will restart to complete the operation.",
+                                                  "Reset game sprites?",
+                                                  MessageBoxButtons.YesNo,
+                                                  MessageBoxIcon.Warning
+                                                 );
+            if (result == DialogResult.Yes)
+            {
+                gameSettings.initGameSprites();
+
+                gameInterface.gameSprite.Save(Properties.Settings.Default.gameSpritePath + ".tmp", ImageFormat.Png);
+                gameInterface.gameSpritePUpX2.Save(Properties.Settings.Default.gameSpritePUpX2Path + ".tmp", ImageFormat.Png);
+                gameInterface.gameSpritePUpPointTick.Save(Properties.Settings.Default.gameSpritePUpPointTickPath + ".tmp", ImageFormat.Png);
+                gameInterface.gameSpritePUpSlowmotion.Save(Properties.Settings.Default.gameSpritePUpSlowmotionPath + ".tmp", ImageFormat.Png);
+                gameInterface.gameSpritePUpNoclip.Save(Properties.Settings.Default.gameSpritePUpNoclipPath + ".tmp", ImageFormat.Png);
+                gameInterface.gameSpritePUpX2PointTick.Save(Properties.Settings.Default.gameSpritePUpX2PointTickPath + ".tmp", ImageFormat.Png);
+                gameInterface.gameSpritePUpX2Slowmotion.Save(Properties.Settings.Default.gameSpritePUpX2SlowmotionPath + ".tmp", ImageFormat.Png);
+                gameInterface.gameSpritePUpX2Noclip.Save(Properties.Settings.Default.gameSpritePUpX2NoclipPath + ".tmp", ImageFormat.Png);
+                gameInterface.gameSpritePUpPointTickSlowmotion.Save(Properties.Settings.Default.gameSpritePUpPointTickSlowmotionPath + ".tmp", ImageFormat.Png);
+                gameInterface.gameSpritePUpPointTickNoclip.Save(Properties.Settings.Default.gameSpritePUpPointTickNoclipPath + ".tmp", ImageFormat.Png);
+                gameInterface.gameSpritePUpSlowmotionNoclip.Save(Properties.Settings.Default.gameSpritePUpSlowmotionNoclipPath + ".tmp", ImageFormat.Png);
+
+                Program.RestartApplication(gameConstants.resetSpriteArgs);
+            }
         }
 
         // Saves the current gameSprite according to passed in spriteId 
