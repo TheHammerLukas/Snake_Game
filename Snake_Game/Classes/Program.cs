@@ -22,29 +22,43 @@ namespace Snake_Game
             string[] args = Environment.GetCommandLineArgs();
             if (args.Contains(gameConstants.resetSpriteArgs))
             {
+                // Delete files to be reset
                 try
                 {
                     System.IO.File.Delete(Properties.Settings.Default.gameSpritePath);
-                    System.IO.File.Move(Properties.Settings.Default.gameSpritePath + ".tmp", Properties.Settings.Default.gameSpritePath);
                     System.IO.File.Delete(Properties.Settings.Default.gameSpritePUpX2Path);
-                    System.IO.File.Move(Properties.Settings.Default.gameSpritePUpX2Path + ".tmp", Properties.Settings.Default.gameSpritePUpX2Path);
                     System.IO.File.Delete(Properties.Settings.Default.gameSpritePUpPointTickPath);
-                    System.IO.File.Move(Properties.Settings.Default.gameSpritePUpPointTickPath + ".tmp", Properties.Settings.Default.gameSpritePUpPointTickPath);
                     System.IO.File.Delete(Properties.Settings.Default.gameSpritePUpSlowmotionPath);
-                    System.IO.File.Move(Properties.Settings.Default.gameSpritePUpSlowmotionPath + ".tmp", Properties.Settings.Default.gameSpritePUpSlowmotionPath);
                     System.IO.File.Delete(Properties.Settings.Default.gameSpritePUpNoclipPath);
-                    System.IO.File.Move(Properties.Settings.Default.gameSpritePUpNoclipPath + ".tmp", Properties.Settings.Default.gameSpritePUpNoclipPath);
                     System.IO.File.Delete(Properties.Settings.Default.gameSpritePUpX2PointTickPath);
-                    System.IO.File.Move(Properties.Settings.Default.gameSpritePUpX2PointTickPath + ".tmp", Properties.Settings.Default.gameSpritePUpX2PointTickPath);
                     System.IO.File.Delete(Properties.Settings.Default.gameSpritePUpX2SlowmotionPath);
-                    System.IO.File.Move(Properties.Settings.Default.gameSpritePUpX2SlowmotionPath + ".tmp", Properties.Settings.Default.gameSpritePUpX2SlowmotionPath);
                     System.IO.File.Delete(Properties.Settings.Default.gameSpritePUpX2NoclipPath);
-                    System.IO.File.Move(Properties.Settings.Default.gameSpritePUpX2NoclipPath + ".tmp", Properties.Settings.Default.gameSpritePUpX2NoclipPath);
                     System.IO.File.Delete(Properties.Settings.Default.gameSpritePUpPointTickSlowmotionPath);
-                    System.IO.File.Move(Properties.Settings.Default.gameSpritePUpPointTickSlowmotionPath + ".tmp", Properties.Settings.Default.gameSpritePUpPointTickSlowmotionPath);
                     System.IO.File.Delete(Properties.Settings.Default.gameSpritePUpPointTickNoclipPath);
-                    System.IO.File.Move(Properties.Settings.Default.gameSpritePUpPointTickNoclipPath + ".tmp", Properties.Settings.Default.gameSpritePUpPointTickNoclipPath);
                     System.IO.File.Delete(Properties.Settings.Default.gameSpritePUpSlowmotionNoclipPath);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Error occurred while deleting .png files!\ncommand line arguments=" + listCmdArgs(args),
+                                    "Error occurred while resetting sprites!",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error
+                                   );
+                }
+
+                // Rename .tmp files to actually "reset" the previously deleted files
+                try
+                {
+                    System.IO.File.Move(Properties.Settings.Default.gameSpritePath + ".tmp", Properties.Settings.Default.gameSpritePath);
+                    System.IO.File.Move(Properties.Settings.Default.gameSpritePUpX2Path + ".tmp", Properties.Settings.Default.gameSpritePUpX2Path);
+                    System.IO.File.Move(Properties.Settings.Default.gameSpritePUpPointTickPath + ".tmp", Properties.Settings.Default.gameSpritePUpPointTickPath);
+                    System.IO.File.Move(Properties.Settings.Default.gameSpritePUpSlowmotionPath + ".tmp", Properties.Settings.Default.gameSpritePUpSlowmotionPath);
+                    System.IO.File.Move(Properties.Settings.Default.gameSpritePUpNoclipPath + ".tmp", Properties.Settings.Default.gameSpritePUpNoclipPath);
+                    System.IO.File.Move(Properties.Settings.Default.gameSpritePUpX2PointTickPath + ".tmp", Properties.Settings.Default.gameSpritePUpX2PointTickPath);
+                    System.IO.File.Move(Properties.Settings.Default.gameSpritePUpX2SlowmotionPath + ".tmp", Properties.Settings.Default.gameSpritePUpX2SlowmotionPath);
+                    System.IO.File.Move(Properties.Settings.Default.gameSpritePUpX2NoclipPath + ".tmp", Properties.Settings.Default.gameSpritePUpX2NoclipPath);
+                    System.IO.File.Move(Properties.Settings.Default.gameSpritePUpPointTickSlowmotionPath + ".tmp", Properties.Settings.Default.gameSpritePUpPointTickSlowmotionPath);
+                    System.IO.File.Move(Properties.Settings.Default.gameSpritePUpPointTickNoclipPath + ".tmp", Properties.Settings.Default.gameSpritePUpPointTickNoclipPath);
                     System.IO.File.Move(Properties.Settings.Default.gameSpritePUpSlowmotionNoclipPath + ".tmp", Properties.Settings.Default.gameSpritePUpSlowmotionNoclipPath);
                 }
                 catch (Exception)
