@@ -335,6 +335,7 @@ namespace Snake_Game
             Random random = new Random();
             int _randomSound = 0;
 
+            // Get a random number to determine a random sound
             if (_sound == gameConstants.gameSound.PUpX2Deactivate || _sound == gameConstants.gameSound.PUpPointTickDeactivate ||
                 _sound == gameConstants.gameSound.PUpSlowmoDeactivate || _sound == gameConstants.gameSound.PUpNoclipDeactivate ||
                 _sound == gameConstants.gameSound.PUpX2PointTickDeactivate || _sound == gameConstants.gameSound.PUpX2SlowmoDeactivate ||
@@ -461,6 +462,7 @@ namespace Snake_Game
                                 );
                     break;
             }
+
             // Outer if is used to disable sounds that should not be played
             if (_sound != gameConstants.gameSound.None && _sound != gameConstants.gameSound.ApplicationStartup &&
                 _sound != gameConstants.gameSound.SnakeChangeDir && _sound != gameConstants.gameSound.FoodSpawn)
@@ -672,7 +674,7 @@ namespace Snake_Game
             {
                 (new FileInfo(xmlPath)).Directory.Create(); // Create the xml path in case it hasn't been created yet
             }
-            catch (Exception) // If xml cannot be created due to missing permissions save to the desktop
+            catch (Exception) // If xml cannot be created due to missing permissions save to the specified path
             {
                 MessageBox.Show("Unspecified error occured while creating the settings XML!\nSelect path instead.\noriginal Path=" + xmlPath,
                                 "Unexpected error while creating settings XML",
@@ -906,7 +908,7 @@ namespace Snake_Game
             {
                 (new FileInfo(Properties.Settings.Default.controlsXmlPath)).Directory.Create(); // Create the xml path in case it hasn't been created yet
             }
-            catch (UnauthorizedAccessException) // If xml cannot be created due to missing permissions save to the desktop
+            catch (UnauthorizedAccessException) // If xml cannot be created due to missing permissions save to the specified path
             {
                 MessageBox.Show("Unspecified error occured while creating the controls XML!\nSelect path instead.\noriginal Path=" + Properties.Settings.Default.controlsXmlPath,
                                 "Unexpected error while creating settings XML",
@@ -1005,7 +1007,7 @@ namespace Snake_Game
             {
                 (new FileInfo(Properties.Settings.Default.scoreXmlPath)).Directory.Create(); // Create the xml path in case it hasn't been created yet
             }
-            catch (UnauthorizedAccessException) // If xml cannot be created due to missing permissions save to the desktop
+            catch (UnauthorizedAccessException) // If xml cannot be created due to missing permissions save to the specified path
             {
                 MessageBox.Show("Unspecified error occured while creating the score XML!\nSelect path instead.\noriginal Path=" + Properties.Settings.Default.scoreXmlPath,
                                 "Unexpected error while creating settings XML",
@@ -1147,6 +1149,7 @@ namespace Snake_Game
                                                   MessageBoxButtons.YesNo,
                                                   MessageBoxIcon.Warning
                                                  );
+
             if (result == DialogResult.Yes)
             {
                 gameSettings.initGameSprites();
@@ -1163,6 +1166,7 @@ namespace Snake_Game
                 gameInterface.gameSpritePUpPointTickNoclip.Save(Properties.Settings.Default.gameSpritePUpPointTickNoclipPath + ".tmp", ImageFormat.Png);
                 gameInterface.gameSpritePUpSlowmotionNoclip.Save(Properties.Settings.Default.gameSpritePUpSlowmotionNoclipPath + ".tmp", ImageFormat.Png);
 
+                // Restart the program using specific command args
                 Program.RestartApplication(gameConstants.resetSpriteArgs);
             }
         }
