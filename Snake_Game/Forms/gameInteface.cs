@@ -996,7 +996,7 @@ namespace Snake_Game
                     setInputForNextTick = false;
                 }
             }
-            
+
             // Draw the game status over the actual game graphics
             DrawGameStatus(ref Canvas);
         }

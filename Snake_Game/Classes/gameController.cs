@@ -236,18 +236,18 @@ namespace Snake_Game
                         {
                             gameSettings.directionTail = gameDirection.Up;
                         }
-                        else if (gameObject.Snake[gameObject.Snake.Count - (gameObject.Snake.Count == 2 ? 1 : 2)].Y > 
-                                 gameObject.Snake[gameObject.Snake.Count - (gameObject.Snake.Count == 2 ? 2 : 3)].Y)
+                        else if (gameObject.Snake[gameObject.Snake.Count - (gameObject.Snake.Count == 2 ? 1 : 2)].Y >
+                                    gameObject.Snake[gameObject.Snake.Count - (gameObject.Snake.Count == 2 ? 2 : 3)].Y)
                         {
                             gameSettings.directionTail = gameDirection.Down;
                         }
                         else if (gameObject.Snake[gameObject.Snake.Count - (gameObject.Snake.Count == 2 ? 1 : 2)].X <
-                                 gameObject.Snake[gameObject.Snake.Count - (gameObject.Snake.Count == 2 ? 2 : 3)].X)
+                                    gameObject.Snake[gameObject.Snake.Count - (gameObject.Snake.Count == 2 ? 2 : 3)].X)
                         {
                             gameSettings.directionTail = gameDirection.Left;
                         }
                         else if (gameObject.Snake[gameObject.Snake.Count - (gameObject.Snake.Count == 2 ? 1 : 2)].X >
-                                 gameObject.Snake[gameObject.Snake.Count - (gameObject.Snake.Count == 2 ? 2 : 3)].X)
+                                    gameObject.Snake[gameObject.Snake.Count - (gameObject.Snake.Count == 2 ? 2 : 3)].X)
                         {
                             gameSettings.directionTail = gameDirection.Right;
                         }
@@ -316,6 +316,7 @@ namespace Snake_Game
             {
                 gameSettings.GameOver = true;
                 gameSettings.GamePowerup = gamePowerup.None;
+                growCnt = gameSettings.GrowMultiplicator;
                 PlayGameSound(gameConstants.gameSound.SnakeDie);
 
                 if (gameSettings.Score > gameSettings.HighScore && !gameSettings.IsModifierRound)
