@@ -1350,7 +1350,7 @@ namespace Snake_Game
             {
                 currentPUpTime = currentPUpTime + 500 <= long.MaxValue ? currentPUpTime + 500 : 0; ;
 
-                if (currentTime % 1000 == 0)
+                if (currentPUpTime % 1000 == 0)
                 {
                     CheckActivePowerup(gameSettings.GamePowerup);
                 }
