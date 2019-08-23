@@ -1231,43 +1231,43 @@ namespace Snake_Game
                             switch (gameSettings.GamePowerup)
                             {
                                 case gamePowerup.X2:
-                                    lastPUpX2ChangeTime = currentTime;
+                                    lastPUpX2ChangeTime = currentPUpTime;
                                     gamecontroller.PlayGameSound(gameConstants.gameSound.PUpX2Activate);
                                     break;
                                 case gamePowerup.PointOnTick:
-                                    lastPUpPointTickChangeTime = currentTime;
+                                    lastPUpPointTickChangeTime = currentPUpTime;
                                     gamecontroller.PlayGameSound(gameConstants.gameSound.PUpPointTickActivate);
                                     break;
                                 case gamePowerup.Slowmotion:
-                                    lastPUpSlowmoChangeTime = currentTime;
+                                    lastPUpSlowmoChangeTime = currentPUpTime;
                                     gamecontroller.PlayGameSound(gameConstants.gameSound.PUpSlowmoActivate);
                                     break;
                                 case gamePowerup.Noclip:
-                                    lastPUpNoclipChangeTime = currentTime;
+                                    lastPUpNoclipChangeTime = currentPUpTime;
                                     gamecontroller.PlayGameSound(gameConstants.gameSound.PUpNoclipActivate);
                                     break;
                                 case gamePowerup.X2PointOnTick:
-                                    lastPUpX2PointTickChangeTime = currentTime;
+                                    lastPUpX2PointTickChangeTime = currentPUpTime;
                                      gamecontroller.PlayGameSound(gameConstants.gameSound.PUpX2PointTickSynergy);
                                     break;
                                 case gamePowerup.X2Slowmotion:
-                                    lastPUpX2SlowmoChangeTime = currentTime;
+                                    lastPUpX2SlowmoChangeTime = currentPUpTime;
                                      gamecontroller.PlayGameSound(gameConstants.gameSound.PUpX2SlowmoSynergy);
                                     break;
                                 case gamePowerup.X2Noclip:
-                                    lastPUpX2NoclipChangeTime = currentTime;
+                                    lastPUpX2NoclipChangeTime = currentPUpTime;
                                      gamecontroller.PlayGameSound(gameConstants.gameSound.PUpX2NoclipSynergy);
                                     break;
                                 case gamePowerup.PointOnTickSlowmotion:
-                                    lastPUpPointTickSlowmoChangeTime = currentTime;
+                                    lastPUpPointTickSlowmoChangeTime = currentPUpTime;
                                      gamecontroller.PlayGameSound(gameConstants.gameSound.PUpPointTickSlowmoSynergy);
                                     break;
                                 case gamePowerup.PointOnTickNoclip:
-                                    lastPUpPointTickNoclipChangeTime = currentTime;
+                                    lastPUpPointTickNoclipChangeTime = currentPUpTime;
                                      gamecontroller.PlayGameSound(gameConstants.gameSound.PUpPointTickNoclipSynergy);
                                     break;
                                 case gamePowerup.SlowmotionNoclip:
-                                    lastPUpSlowmoNoclipChangeTime = currentTime;
+                                    lastPUpSlowmoNoclipChangeTime = currentPUpTime;
                                      gamecontroller.PlayGameSound(gameConstants.gameSound.PUpSlowmoNoclipSynergy);
                                     break;
                                 default:
