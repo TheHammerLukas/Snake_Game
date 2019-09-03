@@ -1309,6 +1309,7 @@ namespace Snake_Game
                         gameSettings.GameOver = false;
                         gameSettings.directionHead = gameDirection.Stop;
                     }
+                    gameSettings.Score = 0; // Score has to be reset to 0 here because otherwise a buggy behaviour occurrs here when devmode = enabled; Score isn't reset on restart of game
                     new gameControls(false);
                     gamecontroller.SetTimerInterval(gameTimer, gameSettings.Speed, true);
                     gameController.maxPosX = gamecontroller.GetMaxPosX(pictureBox);
