@@ -1041,7 +1041,7 @@ namespace Snake_Game
             }
         }
 
-        // To determine the activated powerupOpen
+        // To determine the activated powerup
         private gamePowerup DetermineGamePowerup()
         {
             gamePowerup _gamePowerup = gameSettings.GamePowerup;
