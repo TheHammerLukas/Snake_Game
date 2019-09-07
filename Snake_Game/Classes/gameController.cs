@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
@@ -333,10 +334,16 @@ namespace Snake_Game
             SoundPlayer audio = new SoundPlayer();
             gameConstants.gameSound _sound = sound;
 
+            // Handle specific sounds differently if needed 
+            if (_sound == gameConstants.gameSound.ApplicationStartup && Debugger.IsAttached)
+            {
+                _sound = gameConstants.gameSound.None;
+            }
+
+            // Get a random number to determine a random sound
             Random random = new Random();
             int _randomSound = 0;
 
-            // Get a random number to determine a random sound
             if (_sound == gameConstants.gameSound.PUpX2Deactivate || _sound == gameConstants.gameSound.PUpPointTickDeactivate ||
                 _sound == gameConstants.gameSound.PUpSlowmoDeactivate || _sound == gameConstants.gameSound.PUpNoclipDeactivate ||
                 _sound == gameConstants.gameSound.PUpX2PointTickDeactivate || _sound == gameConstants.gameSound.PUpX2SlowmoDeactivate ||
@@ -465,8 +472,8 @@ namespace Snake_Game
             }
 
             // Outer if is used to disable sounds that should not be played
-            if (_sound != gameConstants.gameSound.None && _sound != gameConstants.gameSound.ApplicationStartup &&
-                _sound != gameConstants.gameSound.SnakeChangeDir && _sound != gameConstants.gameSound.FoodSpawn)
+            if (_sound != gameConstants.gameSound.None && _sound != gameConstants.gameSound.SnakeChangeDir && 
+                _sound != gameConstants.gameSound.FoodSpawn)
             {
                 if (_sound != gameConstants.gameSound.SnakeNoClip || (soundCheckTime != lastSoundPlayTime && (_sound == gameConstants.gameSound.SnakeNoClip)))
                 {

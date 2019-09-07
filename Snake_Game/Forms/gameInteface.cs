@@ -361,42 +361,42 @@ namespace Snake_Game
                         case 0:
                             if (cnt > (Convert.ToDouble(gameObject.Snake.Count) - 1) / 6 || gameSettings.RainbowMode == gameConstants.rainbowMode.rainbowModeTiles)
                             {
-                                colorIndex = 1;
+                                colorIndex = 5;
                                 cnt = 0;
                             }
                             break;
                         case 1:
                             if (cnt >= (Convert.ToDouble(gameObject.Snake.Count) - 1) / 6 || gameSettings.RainbowMode == gameConstants.rainbowMode.rainbowModeTiles)
                             {
-                                colorIndex = 2;
+                                colorIndex = 0;
                                 cnt = 0;
                             }
                             break;
                         case 2:
                             if (cnt >= (Convert.ToDouble(gameObject.Snake.Count) - 1) / 6 || gameSettings.RainbowMode == gameConstants.rainbowMode.rainbowModeTiles)
                             {
-                                colorIndex = 3;
+                                colorIndex = 1;
                                 cnt = 0;
                             }
                             break;
                         case 3:
                             if (cnt >= (Convert.ToDouble(gameObject.Snake.Count) - 1) / 6 || gameSettings.RainbowMode == gameConstants.rainbowMode.rainbowModeTiles)
                             {
-                                colorIndex = 4;
+                                colorIndex = 2;
                                 cnt = 0;
                             }
                             break;
                         case 4:
                             if (cnt >= (Convert.ToDouble(gameObject.Snake.Count) - 1) / 6 || gameSettings.RainbowMode == gameConstants.rainbowMode.rainbowModeTiles)
                             {
-                                colorIndex = 5;
+                                colorIndex = 3;
                                 cnt = 0;
                             }
                             break;
                         case 5:
                             if (cnt >= (Convert.ToDouble(gameObject.Snake.Count) - 1) / 6 || gameSettings.RainbowMode == gameConstants.rainbowMode.rainbowModeTiles)
                             {
-                                colorIndex = 0;
+                                colorIndex = 4;
                                 cnt = 0;
                             }
                             break;
@@ -960,13 +960,13 @@ namespace Snake_Game
         private void pictureBox_Paint(object sender, PaintEventArgs e)
         {
             int cnt = 0;
-            int colorIndex = 0; // Used for multicolored snake visuals
+            int colorIndex = 5; // Used for multicolored snake visuals
             Graphics Canvas = e.Graphics;
 
             if (!gameSettings.GameOver)
             {
                 // Draw snake head & body
-                for (int i = 0; i < gameObject.Snake.Count; i++)
+                for (int i = gameObject.Snake.Count - 1; i >= 0; i--)
                 {
                     if (gameSettings.DrawingMode == gameConstants.gameDrawingMode.drawingModeNormal || gameSettings.DrawingMode == gameConstants.gameDrawingMode.drawingModeRainbow)
                     {
