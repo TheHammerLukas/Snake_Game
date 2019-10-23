@@ -991,11 +991,9 @@ namespace Snake_Game
                 XmlDocument _xmlDoc = new XmlDocument();
                 _xmlDoc.Load(Properties.Settings.Default.scoreXmlPath);
 
-                XmlElement _xmlRoot = _xmlDoc.DocumentElement;
-
-                foreach (XmlNode _xmlNode in _xmlRoot.ChildNodes)
+                foreach (XmlNode _xmlNode in _xmlDoc.ChildNodes)
                 {
-                    if (_xmlNode.Name == "HighScore")
+                    if (_xmlNode.Name == "HighScore" && _xmlNode.ParentNode.Name == "Scores")
                     {
                         gameSettings.HighScore = Convert.ToInt32(_xmlNode.InnerText);
                     }
@@ -1028,7 +1026,12 @@ namespace Snake_Game
                 (new FileInfo(Properties.Settings.Default.scoreXmlPath)).Directory.Create(); // Create the xml path in case it hasn't been created yet
             }
 
-            XmlWriter _xmlDoc = XmlWriter.Create(Properties.Settings.Default.scoreXmlPath);
+            XmlWriterSettings xmlWriterSettings = new XmlWriterSettings();
+            xmlWriterSettings.Indent = true;
+            xmlWriterSettings.NewLineOnAttributes = true;
+
+            XmlWriter _xmlDoc = XmlWriter.Create(Properties.Settings.Default.scoreXmlPath, xmlWriterSettings);
+
             _xmlDoc.WriteStartDocument();
 
             // Scores
