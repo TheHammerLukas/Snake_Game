@@ -501,158 +501,156 @@ namespace Snake_Game
                 XmlDocument _xmlDoc = new XmlDocument();
                 _xmlDoc.Load(xmlPath);
 
-                XmlElement _xmlRoot = _xmlDoc.DocumentElement;
-                
-                foreach (XmlAttribute _xmlAttrib in _xmlRoot.Attributes)
+                foreach (XmlNode _xmlNode in _xmlDoc.ChildNodes)
                 {
-                    if (_xmlAttrib.Name == "Width")
+                    if (_xmlNode.Name == "Width" && _xmlNode.ParentNode.Name == "Settings")
                     {
-                        if ((Convert.ToInt32(_xmlAttrib.Value) > 200 && Convert.ToInt32(_xmlAttrib.Value) % 100 == 0 ||
-                             Convert.ToInt32(_xmlAttrib.Value) < 200 && Convert.ToInt32(_xmlAttrib.Value) % 2 == 0 && Convert.ToInt32(_xmlAttrib.Value) % 5 == 0) &&
-                             Convert.ToInt32(_xmlAttrib.Value) > 0 && Convert.ToInt32(_xmlAttrib.Value) <= 300)
+                        if ((Convert.ToInt32(_xmlNode.Value) > 200 && Convert.ToInt32(_xmlNode.Value) % 100 == 0 ||
+                             Convert.ToInt32(_xmlNode.Value) < 200 && Convert.ToInt32(_xmlNode.Value) % 2 == 0 && Convert.ToInt32(_xmlNode.Value) % 5 == 0) &&
+                             Convert.ToInt32(_xmlNode.Value) > 0 && Convert.ToInt32(_xmlNode.Value) <= 300)
                         {
-                            gameSettings.Width = Convert.ToInt32(_xmlAttrib.Value);
+                            gameSettings.Width = Convert.ToInt32(_xmlNode.Value);
                         }
                     }
-                    if (_xmlAttrib.Name == "Height")
+                    if (_xmlNode.Name == "Height" && _xmlNode.ParentNode.Name == "Settings")
                     {
-                        if ((Convert.ToInt32(_xmlAttrib.Value) > 200 && Convert.ToInt32(_xmlAttrib.Value) % 100 == 0 || 
-                             Convert.ToInt32(_xmlAttrib.Value) < 200 && Convert.ToInt32(_xmlAttrib.Value) % 2 == 0 && Convert.ToInt32(_xmlAttrib.Value) % 5 == 0) && 
-                             Convert.ToInt32(_xmlAttrib.Value) > 0 && Convert.ToInt32(_xmlAttrib.Value) <= 300)
+                        if ((Convert.ToInt32(_xmlNode.Value) > 200 && Convert.ToInt32(_xmlNode.Value) % 100 == 0 || 
+                             Convert.ToInt32(_xmlNode.Value) < 200 && Convert.ToInt32(_xmlNode.Value) % 2 == 0 && Convert.ToInt32(_xmlNode.Value) % 5 == 0) && 
+                             Convert.ToInt32(_xmlNode.Value) > 0 && Convert.ToInt32(_xmlNode.Value) <= 300)
                         {
-                            gameSettings.Height = Convert.ToInt32(_xmlAttrib.Value);
+                            gameSettings.Height = Convert.ToInt32(_xmlNode.Value);
                         }
                     }
-                    if (_xmlAttrib.Name == "Speed")
+                    if (_xmlNode.Name == "Speed" && _xmlNode.ParentNode.Name == "Settings")
                     {
-                        if (Convert.ToInt32(_xmlAttrib.Value) > 0 && Convert.ToInt32(_xmlAttrib.Value) <= 1000)
+                        if (Convert.ToInt32(_xmlNode.Value) > 0 && Convert.ToInt32(_xmlNode.Value) <= 1000)
                         {
-                            gameSettings.Speed = Convert.ToInt32(_xmlAttrib.Value);
+                            gameSettings.Speed = Convert.ToInt32(_xmlNode.Value);
                         }
                     }
-                    if (_xmlAttrib.Name == "GrowMultiplicator")
+                    if (_xmlNode.Name == "GrowMultiplicator" && _xmlNode.ParentNode.Name == "Settings")
                     {
-                        if (Convert.ToInt32(_xmlAttrib.Value) >= 0)
+                        if (Convert.ToInt32(_xmlNode.Value) >= 0)
                         {
-                            gameSettings.GrowMultiplicator = Convert.ToInt32(_xmlAttrib.Value);
+                            gameSettings.GrowMultiplicator = Convert.ToInt32(_xmlNode.Value);
                             growCnt = gameSettings.GrowMultiplicator;
                         }
                     }
-                    if (_xmlAttrib.Name == "Points")
+                    if (_xmlNode.Name == "Points" && _xmlNode.ParentNode.Name == "Settings")
                     {
-                        gameSettings.Points = Convert.ToInt32(_xmlAttrib.Value);
+                        gameSettings.Points = Convert.ToInt32(_xmlNode.Value);
                     }
-                    if (_xmlAttrib.Name == "DrawingMode")
+                    if (_xmlNode.Name == "DrawingMode" && _xmlNode.ParentNode.Name == "Settings")
                     {
-                        gameSettings.DrawingMode = (gameConstants.gameDrawingMode)Convert.ToInt32(_xmlAttrib.Value);
+                        gameSettings.DrawingMode = (gameConstants.gameDrawingMode)Convert.ToInt32(_xmlNode.Value);
                     }
-                    if (_xmlAttrib.Name == "RainbowMode")
+                    if (_xmlNode.Name == "RainbowMode" && _xmlNode.ParentNode.Name == "Settings")
                     {
-                        gameSettings.RainbowMode = (gameConstants.rainbowMode)Convert.ToInt32(_xmlAttrib.Value);
+                        gameSettings.RainbowMode = (gameConstants.rainbowMode)Convert.ToInt32(_xmlNode.Value);
                     }
-                    if (_xmlAttrib.Name == "PowerupSpawnGap")
+                    if (_xmlNode.Name == "PowerupSpawnGap" && _xmlNode.ParentNode.Name == "Settings")
                     {
-                        gameSettings.PowerupSpawnGap = Convert.ToInt32(_xmlAttrib.Value);
+                        gameSettings.PowerupSpawnGap = Convert.ToInt32(_xmlNode.Value);
                     }
-                    if (_xmlAttrib.Name == "PowerupDurationX2")
+                    if (_xmlNode.Name == "PowerupDurationX2" && _xmlNode.ParentNode.Name == "Settings")
                     {
-                        gameSettings.PowerupDurationX2 = ConvTime(Convert.ToInt32(_xmlAttrib.Value), gameConstants.seconds, gameConstants.milliseconds);
+                        gameSettings.PowerupDurationX2 = ConvTime(Convert.ToInt32(_xmlNode.Value), gameConstants.seconds, gameConstants.milliseconds);
                     }
-                    if (_xmlAttrib.Name == "PowerupDurationPointTick")
+                    if (_xmlNode.Name == "PowerupDurationPointTick" && _xmlNode.ParentNode.Name == "Settings")
                     {
-                        gameSettings.PowerupDurationPointTick = ConvTime(Convert.ToInt32(_xmlAttrib.Value), gameConstants.seconds, gameConstants.milliseconds);
+                        gameSettings.PowerupDurationPointTick = ConvTime(Convert.ToInt32(_xmlNode.Value), gameConstants.seconds, gameConstants.milliseconds);
                     }
-                    if (_xmlAttrib.Name == "PowerupDurationSlowmo")
+                    if (_xmlNode.Name == "PowerupDurationSlowmo" && _xmlNode.ParentNode.Name == "Settings")
                     {
-                        gameSettings.PowerupDurationSlowmo = ConvTime(Convert.ToInt32(_xmlAttrib.Value), gameConstants.seconds, gameConstants.milliseconds);
+                        gameSettings.PowerupDurationSlowmo = ConvTime(Convert.ToInt32(_xmlNode.Value), gameConstants.seconds, gameConstants.milliseconds);
                     }
-                    if (_xmlAttrib.Name == "PowerupDurationNoclip")
+                    if (_xmlNode.Name == "PowerupDurationNoclip" && _xmlNode.ParentNode.Name == "Settings")
                     {
-                        gameSettings.PowerupDurationNoclip = ConvTime(Convert.ToInt32(_xmlAttrib.Value), gameConstants.seconds, gameConstants.milliseconds);
+                        gameSettings.PowerupDurationNoclip = ConvTime(Convert.ToInt32(_xmlNode.Value), gameConstants.seconds, gameConstants.milliseconds);
                     }
-                    if (_xmlAttrib.Name == "PowerupDurationX2PointTick")
+                    if (_xmlNode.Name == "PowerupDurationX2PointTick" && _xmlNode.ParentNode.Name == "Settings")
                     {
-                        gameSettings.PowerupDurationX2PointTick = ConvTime(Convert.ToInt32(_xmlAttrib.Value), gameConstants.seconds, gameConstants.milliseconds);
+                        gameSettings.PowerupDurationX2PointTick = ConvTime(Convert.ToInt32(_xmlNode.Value), gameConstants.seconds, gameConstants.milliseconds);
                     }
-                    if (_xmlAttrib.Name == "PowerupDurationX2Slowmo")
+                    if (_xmlNode.Name == "PowerupDurationX2Slowmo" && _xmlNode.ParentNode.Name == "Settings")
                     {
-                        gameSettings.PowerupDurationX2Slowmo = ConvTime(Convert.ToInt32(_xmlAttrib.Value), gameConstants.seconds, gameConstants.milliseconds);
+                        gameSettings.PowerupDurationX2Slowmo = ConvTime(Convert.ToInt32(_xmlNode.Value), gameConstants.seconds, gameConstants.milliseconds);
                     }
-                    if (_xmlAttrib.Name == "PowerupDurationX2Noclip")
+                    if (_xmlNode.Name == "PowerupDurationX2Noclip" && _xmlNode.ParentNode.Name == "Settings")
                     {
-                        gameSettings.PowerupDurationX2Noclip = ConvTime(Convert.ToInt32(_xmlAttrib.Value), gameConstants.seconds, gameConstants.milliseconds);
+                        gameSettings.PowerupDurationX2Noclip = ConvTime(Convert.ToInt32(_xmlNode.Value), gameConstants.seconds, gameConstants.milliseconds);
                     }
-                    if (_xmlAttrib.Name == "PowerupDurationPointTickSlowmo")
+                    if (_xmlNode.Name == "PowerupDurationPointTickSlowmo" && _xmlNode.ParentNode.Name == "Settings")
                     {
-                        gameSettings.PowerupDurationPointTickSlowmo = ConvTime(Convert.ToInt32(_xmlAttrib.Value), gameConstants.seconds, gameConstants.milliseconds);
+                        gameSettings.PowerupDurationPointTickSlowmo = ConvTime(Convert.ToInt32(_xmlNode.Value), gameConstants.seconds, gameConstants.milliseconds);
                     }
-                    if (_xmlAttrib.Name == "PowerupDurationPointTickNoclip")
+                    if (_xmlNode.Name == "PowerupDurationPointTickNoclip" && _xmlNode.ParentNode.Name == "Settings")
                     {
-                        gameSettings.PowerupDurationPointTickNoclip = ConvTime(Convert.ToInt32(_xmlAttrib.Value), gameConstants.seconds, gameConstants.milliseconds);
+                        gameSettings.PowerupDurationPointTickNoclip = ConvTime(Convert.ToInt32(_xmlNode.Value), gameConstants.seconds, gameConstants.milliseconds);
                     }
-                    if (_xmlAttrib.Name == "PowerupDurationSlowmoNoclip")
+                    if (_xmlNode.Name == "PowerupDurationSlowmoNoclip" && _xmlNode.ParentNode.Name == "Settings")
                     {
-                        gameSettings.PowerupDurationSlowmoNoclip = ConvTime(Convert.ToInt32(_xmlAttrib.Value), gameConstants.seconds, gameConstants.milliseconds);
+                        gameSettings.PowerupDurationSlowmoNoclip = ConvTime(Convert.ToInt32(_xmlNode.Value), gameConstants.seconds, gameConstants.milliseconds);
                     }
-                    if (_xmlAttrib.Name == "snakeHeadNormalColor")
+                    if (_xmlNode.Name == "snakeHeadNormalColor" && _xmlNode.ParentNode.Name == "Settings")
                     {
-                        gameSettings.snakeHeadNormalColor = getBrush(_xmlAttrib.Value);
+                        gameSettings.snakeHeadNormalColor = getBrush(_xmlNode.Value);
                     }
-                    if (_xmlAttrib.Name == "snakeHeadPUpX2Color")
+                    if (_xmlNode.Name == "snakeHeadPUpX2Color" && _xmlNode.ParentNode.Name == "Settings")
                     {
-                        gameSettings.snakeHeadPUpX2Color = getBrush(_xmlAttrib.Value);
+                        gameSettings.snakeHeadPUpX2Color = getBrush(_xmlNode.Value);
                     }
-                    if (_xmlAttrib.Name == "snakeHeadPUpPointTickColor")
+                    if (_xmlNode.Name == "snakeHeadPUpPointTickColor" && _xmlNode.ParentNode.Name == "Settings")
                     {
-                        gameSettings.snakeHeadPUpPointTickColor = getBrush(_xmlAttrib.Value);
+                        gameSettings.snakeHeadPUpPointTickColor = getBrush(_xmlNode.Value);
                     }
-                    if (_xmlAttrib.Name == "snakeHeadPUpSlowmoColor")
+                    if (_xmlNode.Name == "snakeHeadPUpSlowmoColor" && _xmlNode.ParentNode.Name == "Settings")
                     {
-                        gameSettings.snakeHeadPUpSlowmoColor = getBrush(_xmlAttrib.Value);
+                        gameSettings.snakeHeadPUpSlowmoColor = getBrush(_xmlNode.Value);
                     }
-                    if (_xmlAttrib.Name == "snakeHeadPUpNoclipColor")
+                    if (_xmlNode.Name == "snakeHeadPUpNoclipColor" && _xmlNode.ParentNode.Name == "Settings")
                     {
-                        gameSettings.snakeHeadPUpNoclipColor = getBrush(_xmlAttrib.Value);
+                        gameSettings.snakeHeadPUpNoclipColor = getBrush(_xmlNode.Value);
                     }
-                    if (_xmlAttrib.Name == "snakeBodyNormalColor")
+                    if (_xmlNode.Name == "snakeBodyNormalColor" && _xmlNode.ParentNode.Name == "Settings")
                     {
-                        gameSettings.snakeBodyNormalColor = getBrush(_xmlAttrib.Value);
+                        gameSettings.snakeBodyNormalColor = getBrush(_xmlNode.Value);
                     }
-                    if (_xmlAttrib.Name == "snakeBodyPUpX2Color")
+                    if (_xmlNode.Name == "snakeBodyPUpX2Color" && _xmlNode.ParentNode.Name == "Settings")
                     {
-                        gameSettings.snakeBodyPUpX2Color = getBrush(_xmlAttrib.Value);
+                        gameSettings.snakeBodyPUpX2Color = getBrush(_xmlNode.Value);
                     }
-                    if (_xmlAttrib.Name == "snakeBodyPUpPointTickColor")
+                    if (_xmlNode.Name == "snakeBodyPUpPointTickColor" && _xmlNode.ParentNode.Name == "Settings")
                     {
-                        gameSettings.snakeBodyPUpPointTickColor = getBrush(_xmlAttrib.Value);
+                        gameSettings.snakeBodyPUpPointTickColor = getBrush(_xmlNode.Value);
                     }
-                    if (_xmlAttrib.Name == "snakeBodyPUpSlowmoColor")
+                    if (_xmlNode.Name == "snakeBodyPUpSlowmoColor" && _xmlNode.ParentNode.Name == "Settings")
                     {
-                        gameSettings.snakeBodyPUpSlowmoColor = getBrush(_xmlAttrib.Value);
+                        gameSettings.snakeBodyPUpSlowmoColor = getBrush(_xmlNode.Value);
                     }
-                    if (_xmlAttrib.Name == "snakeBodyPUpNoclipColor")
+                    if (_xmlNode.Name == "snakeBodyPUpNoclipColor" && _xmlNode.ParentNode.Name == "Settings")
                     {
-                        gameSettings.snakeBodyPUpNoclipColor = getBrush(_xmlAttrib.Value);
+                        gameSettings.snakeBodyPUpNoclipColor = getBrush(_xmlNode.Value);
                     }
-                    if (_xmlAttrib.Name == "foodNormalColor")
+                    if (_xmlNode.Name == "foodNormalColor" && _xmlNode.ParentNode.Name == "Settings")
                     {
-                        gameSettings.foodNormalColor = getBrush(_xmlAttrib.Value);
+                        gameSettings.foodNormalColor = getBrush(_xmlNode.Value);
                     }
-                    if (_xmlAttrib.Name == "foodPUpX2Color")
+                    if (_xmlNode.Name == "foodPUpX2Color" && _xmlNode.ParentNode.Name == "Settings")
                     {
-                        gameSettings.foodPUpX2Color = getBrush(_xmlAttrib.Value);
+                        gameSettings.foodPUpX2Color = getBrush(_xmlNode.Value);
                     }
-                    if (_xmlAttrib.Name == "foodPUpPointTickColor")
+                    if (_xmlNode.Name == "foodPUpPointTickColor" && _xmlNode.ParentNode.Name == "Settings")
                     {
-                        gameSettings.foodPUpPointTickColor = getBrush(_xmlAttrib.Value);
+                        gameSettings.foodPUpPointTickColor = getBrush(_xmlNode.Value);
                     }
-                    if (_xmlAttrib.Name == "foodPUpSlowmoColor")
+                    if (_xmlNode.Name == "foodPUpSlowmoColor" && _xmlNode.ParentNode.Name == "Settings")
                     {
-                        gameSettings.foodPUpSlowmoColor = getBrush(_xmlAttrib.Value);
+                        gameSettings.foodPUpSlowmoColor = getBrush(_xmlNode.Value);
                     }
-                    if (_xmlAttrib.Name == "foodPUpNoclipColor")
+                    if (_xmlNode.Name == "foodPUpNoclipColor" && _xmlNode.ParentNode.Name == "Settings")
                     {
-                        gameSettings.foodPUpNoclipColor = getBrush(_xmlAttrib.Value);
+                        gameSettings.foodPUpNoclipColor = getBrush(_xmlNode.Value);
                     }
                 }
             }
@@ -695,143 +693,146 @@ namespace Snake_Game
                 (new FileInfo(xmlPath)).Directory.Create(); // Create the xml path in case it hasn't been created yet
             }
 
-            XmlWriter _xmlDoc = XmlWriter.Create(xmlPath);
+            XmlWriterSettings xmlWriterSettings = new XmlWriterSettings();
+            xmlWriterSettings.Indent = true;
+            xmlWriterSettings.NewLineOnAttributes = true;
+            XmlWriter _xmlDoc = XmlWriter.Create(xmlPath, xmlWriterSettings);
             _xmlDoc.WriteStartDocument();
 
             // Settings
             _xmlDoc.WriteStartElement("Settings");
                 // Width
-                _xmlDoc.WriteStartAttribute("Width"); 
+                _xmlDoc.WriteStartElement("Width"); 
                 _xmlDoc.WriteString(gameSettings.Width.ToString());
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
                 // Height
-                _xmlDoc.WriteStartAttribute("Height"); 
+                _xmlDoc.WriteStartElement("Height"); 
                 _xmlDoc.WriteString(gameSettings.Height.ToString());
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
                 // Speed
-                _xmlDoc.WriteStartAttribute("Speed"); 
+                _xmlDoc.WriteStartElement("Speed"); 
                 _xmlDoc.WriteString(gameSettings.Speed.ToString());
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
                 // GrowMultiplicator
-                _xmlDoc.WriteStartAttribute("GrowMultiplicator"); 
+                _xmlDoc.WriteStartElement("GrowMultiplicator"); 
                 _xmlDoc.WriteString(gameSettings.GrowMultiplicator.ToString());
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
                 // Points
-                _xmlDoc.WriteStartAttribute("Points"); 
+                _xmlDoc.WriteStartElement("Points"); 
                 _xmlDoc.WriteString(gameSettings.Points.ToString());
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
                 // DrawingMode
-                _xmlDoc.WriteStartAttribute("DrawingMode");
+                _xmlDoc.WriteStartElement("DrawingMode");
                 _xmlDoc.WriteString(Convert.ToString(Convert.ToInt32(gameSettings.DrawingMode)));
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
                 // RainbowMode
-                _xmlDoc.WriteStartAttribute("RainbowMode");
+                _xmlDoc.WriteStartElement("RainbowMode");
                 _xmlDoc.WriteString(Convert.ToString(Convert.ToInt32(gameSettings.RainbowMode)));
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
                 // PowerupSpawnGap         
-                _xmlDoc.WriteStartAttribute("PowerupSpawnGap");
+                _xmlDoc.WriteStartElement("PowerupSpawnGap");
                 _xmlDoc.WriteString(Convert.ToString(Convert.ToInt32(gameSettings.PowerupSpawnGapConfigured)));
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
                 // PowerupDurationX2       
-                _xmlDoc.WriteStartAttribute("PowerupDurationX2");
+                _xmlDoc.WriteStartElement("PowerupDurationX2");
                 _xmlDoc.WriteString(Convert.ToString(ConvTime(Convert.ToInt32(gameSettings.PowerupDurationX2), gameConstants.milliseconds, gameConstants.seconds)));
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
                 // PowerupDurationPointTick
-                _xmlDoc.WriteStartAttribute("PowerupDurationPointTick");
+                _xmlDoc.WriteStartElement("PowerupDurationPointTick");
                 _xmlDoc.WriteString(Convert.ToString(ConvTime(Convert.ToInt32(gameSettings.PowerupDurationPointTick), gameConstants.milliseconds, gameConstants.seconds)));
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
                 // PowerupDurationSlowmo   
-                _xmlDoc.WriteStartAttribute("PowerupDurationSlowmo");
+                _xmlDoc.WriteStartElement("PowerupDurationSlowmo");
                 _xmlDoc.WriteString(Convert.ToString(ConvTime(Convert.ToInt32(gameSettings.PowerupDurationSlowmo), gameConstants.milliseconds, gameConstants.seconds)));
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
                 // PowerupDurationNoclip         
-                _xmlDoc.WriteStartAttribute("PowerupDurationNoclip");
+                _xmlDoc.WriteStartElement("PowerupDurationNoclip");
                 _xmlDoc.WriteString(Convert.ToString(ConvTime(Convert.ToInt32(gameSettings.PowerupDurationNoclip), gameConstants.milliseconds, gameConstants.seconds)));
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
                 // PowerupDuration
-                _xmlDoc.WriteStartAttribute("PowerupDurationX2PointTick");
+                _xmlDoc.WriteStartElement("PowerupDurationX2PointTick");
                 _xmlDoc.WriteString(Convert.ToString(ConvTime(Convert.ToInt32(gameSettings.PowerupDurationX2PointTick), gameConstants.milliseconds, gameConstants.seconds)));
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
                 // PowerupDuration
-                _xmlDoc.WriteStartAttribute("PowerupDurationX2Slowmo");
+                _xmlDoc.WriteStartElement("PowerupDurationX2Slowmo");
                 _xmlDoc.WriteString(Convert.ToString(ConvTime(Convert.ToInt32(gameSettings.PowerupDurationX2Slowmo), gameConstants.milliseconds, gameConstants.seconds)));
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
                 // PowerupDuration
-                _xmlDoc.WriteStartAttribute("PowerupDurationX2Noclip");
+                _xmlDoc.WriteStartElement("PowerupDurationX2Noclip");
                 _xmlDoc.WriteString(Convert.ToString(ConvTime(Convert.ToInt32(gameSettings.PowerupDurationX2Noclip), gameConstants.milliseconds, gameConstants.seconds)));
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
                 // PowerupDuration
-                _xmlDoc.WriteStartAttribute("PowerupDurationPointTickSlowmo");
+                _xmlDoc.WriteStartElement("PowerupDurationPointTickSlowmo");
                 _xmlDoc.WriteString(Convert.ToString(ConvTime(Convert.ToInt32(gameSettings.PowerupDurationPointTickSlowmo), gameConstants.milliseconds, gameConstants.seconds)));
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
                 // PowerupDuration
-                _xmlDoc.WriteStartAttribute("PowerupDurationPointTickNoclip");
+                _xmlDoc.WriteStartElement("PowerupDurationPointTickNoclip");
                 _xmlDoc.WriteString(Convert.ToString(ConvTime(Convert.ToInt32(gameSettings.PowerupDurationPointTickNoclip), gameConstants.milliseconds, gameConstants.seconds)));
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
                 // PowerupDuration
-                _xmlDoc.WriteStartAttribute("PowerupDurationSlowmoNoclip");
+                _xmlDoc.WriteStartElement("PowerupDurationSlowmoNoclip");
                 _xmlDoc.WriteString(Convert.ToString(ConvTime(Convert.ToInt32(gameSettings.PowerupDurationSlowmoNoclip), gameConstants.milliseconds, gameConstants.seconds)));
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
                 // snakeHeadNormalColor      
-                _xmlDoc.WriteStartAttribute("snakeHeadNormalColor");
+                _xmlDoc.WriteStartElement("snakeHeadNormalColor");
                 _xmlDoc.WriteString(((gameSettings.snakeHeadNormalColor as SolidBrush).Color).ToString());
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
                 // snakeHeadPUpX2Color       
-                _xmlDoc.WriteStartAttribute("snakeHeadPUpX2Color");
+                _xmlDoc.WriteStartElement("snakeHeadPUpX2Color");
                 _xmlDoc.WriteString(((gameSettings.snakeHeadPUpX2Color as SolidBrush).Color).ToString());
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
                 // snakeHeadPUpPointTickColor
-                _xmlDoc.WriteStartAttribute("snakeHeadPUpPointTickColor");
+                _xmlDoc.WriteStartElement("snakeHeadPUpPointTickColor");
                 _xmlDoc.WriteString(((gameSettings.snakeHeadPUpPointTickColor as SolidBrush).Color).ToString());
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
                 // snakeHeadPUpSlowmoColor   
-                _xmlDoc.WriteStartAttribute("snakeHeadPUpSlowmoColor");
+                _xmlDoc.WriteStartElement("snakeHeadPUpSlowmoColor");
                 _xmlDoc.WriteString(((gameSettings.snakeHeadPUpSlowmoColor as SolidBrush).Color).ToString());
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
                 // snakeHeadPUpNoclipColor   
-                _xmlDoc.WriteStartAttribute("snakeHeadPUpNoclipColor");
+                _xmlDoc.WriteStartElement("snakeHeadPUpNoclipColor");
                 _xmlDoc.WriteString(((gameSettings.snakeHeadPUpNoclipColor as SolidBrush).Color).ToString());
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
                 // snakeBodyNormalColor      
-                _xmlDoc.WriteStartAttribute("snakeBodyNormalColor");
+                _xmlDoc.WriteStartElement("snakeBodyNormalColor");
                 _xmlDoc.WriteString(((gameSettings.snakeBodyNormalColor as SolidBrush).Color).ToString());
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
                 // snakeBodyPUpX2Color       
-                _xmlDoc.WriteStartAttribute("snakeBodyPUpX2Color");
+                _xmlDoc.WriteStartElement("snakeBodyPUpX2Color");
                 _xmlDoc.WriteString(((gameSettings.snakeBodyPUpX2Color as SolidBrush).Color).ToString());
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
                 // snakeBodyPUpPointTickColor
-                _xmlDoc.WriteStartAttribute("snakeBodyPUpPointTickColor");
+                _xmlDoc.WriteStartElement("snakeBodyPUpPointTickColor");
                 _xmlDoc.WriteString(((gameSettings.snakeBodyPUpPointTickColor as SolidBrush).Color).ToString());
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
                 // snakeBodyPUpSlowmoColor   
-                _xmlDoc.WriteStartAttribute("snakeBodyPUpSlowmoColor");
+                _xmlDoc.WriteStartElement("snakeBodyPUpSlowmoColor");
                 _xmlDoc.WriteString(((gameSettings.snakeBodyPUpSlowmoColor as SolidBrush).Color).ToString());
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
                 // snakeBodyPUpNoclipColor   
-                _xmlDoc.WriteStartAttribute("snakeBodyPUpNoclipColor");
+                _xmlDoc.WriteStartElement("snakeBodyPUpNoclipColor");
                 _xmlDoc.WriteString(((gameSettings.snakeBodyPUpNoclipColor as SolidBrush).Color).ToString());
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
                 // foodNormalColor           
-                _xmlDoc.WriteStartAttribute("foodNormalColor");
+                _xmlDoc.WriteStartElement("foodNormalColor");
                 _xmlDoc.WriteString(((gameSettings.foodNormalColor as SolidBrush).Color).ToString());
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
                 // foodPUpX2Color            
-                _xmlDoc.WriteStartAttribute("foodPUpX2Color");
+                _xmlDoc.WriteStartElement("foodPUpX2Color");
                 _xmlDoc.WriteString(((gameSettings.foodPUpX2Color as SolidBrush).Color).ToString());
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
                 // foodPUpPointTickColor     
-                _xmlDoc.WriteStartAttribute("foodPUpPointTickColor");
+                _xmlDoc.WriteStartElement("foodPUpPointTickColor");
                 _xmlDoc.WriteString(((gameSettings.foodPUpPointTickColor as SolidBrush).Color).ToString());
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
                 // foodPUpSlowmoColor        
-                _xmlDoc.WriteStartAttribute("foodPUpSlowmoColor");
+                _xmlDoc.WriteStartElement("foodPUpSlowmoColor");
                 _xmlDoc.WriteString(((gameSettings.foodPUpSlowmoColor as SolidBrush).Color).ToString());
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
                 // foodPUpNoclipColor        
-                _xmlDoc.WriteStartAttribute("foodPUpNoclipColor");
+                _xmlDoc.WriteStartElement("foodPUpNoclipColor");
                 _xmlDoc.WriteString(((gameSettings.foodPUpNoclipColor as SolidBrush).Color).ToString());
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
             // End .xml
             _xmlDoc.WriteEndDocument();
             _xmlDoc.Flush();
@@ -853,49 +854,47 @@ namespace Snake_Game
                 XmlDocument _xmlDoc = new XmlDocument();
                 _xmlDoc.Load(Properties.Settings.Default.controlsXmlPath);
 
-                XmlElement _xmlRoot = _xmlDoc.DocumentElement;
-
-                foreach (XmlAttribute _xmlAttrib in _xmlRoot.Attributes)
+                foreach (XmlNode _xmlNode in _xmlDoc.ChildNodes)
                 {
-                    if (_xmlAttrib.Name == "UpKey")
+                    if (_xmlNode.Name == "UpKey" && _xmlNode.ParentNode.Name == "Controls")
                     {
-                        gameControls.dirUpKey = getKey(_xmlAttrib.Value);
+                        gameControls.dirUpKey = getKey(_xmlNode.Value);
                     }
-                    if (_xmlAttrib.Name == "DownKey")
+                    if (_xmlNode.Name == "DownKey" && _xmlNode.ParentNode.Name == "Controls")
                     {
-                        gameControls.dirDownKey = getKey(_xmlAttrib.Value);
+                        gameControls.dirDownKey = getKey(_xmlNode.Value);
                     }
-                    if (_xmlAttrib.Name == "LeftKey")
+                    if (_xmlNode.Name == "LeftKey" && _xmlNode.ParentNode.Name == "Controls")
                     {
-                        gameControls.dirLeftKey = getKey(_xmlAttrib.Value);
+                        gameControls.dirLeftKey = getKey(_xmlNode.Value);
                     }
-                    if (_xmlAttrib.Name == "RightKey")
+                    if (_xmlNode.Name == "RightKey" && _xmlNode.ParentNode.Name == "Controls")
                     {
-                        gameControls.dirRightKey = getKey(_xmlAttrib.Value);
+                        gameControls.dirRightKey = getKey(_xmlNode.Value);
                     }
-                    if (_xmlAttrib.Name == "RestartKey")
+                    if (_xmlNode.Name == "RestartKey" && _xmlNode.ParentNode.Name == "Controls")
                     {
-                        gameControls.modRestartKey = getKey(_xmlAttrib.Value);
+                        gameControls.modRestartKey = getKey(_xmlNode.Value);
                     }
-                    if (_xmlAttrib.Name == "BotKey")
+                    if (_xmlNode.Name == "BotKey" && _xmlNode.ParentNode.Name == "Controls")
                     {
-                        gameControls.modBotKey = getKey(_xmlAttrib.Value);
+                        gameControls.modBotKey = getKey(_xmlNode.Value);
                     }
-                    if (_xmlAttrib.Name == "SpeedKey")
+                    if (_xmlNode.Name == "SpeedKey" && _xmlNode.ParentNode.Name == "Controls")
                     {
-                        gameControls.modSpeedKey = getKey(_xmlAttrib.Value);
+                        gameControls.modSpeedKey = getKey(_xmlNode.Value);
                     }
-                    if (_xmlAttrib.Name == "PauseKey")
+                    if (_xmlNode.Name == "PauseKey" && _xmlNode.ParentNode.Name == "Controls")
                     {
-                        gameControls.modPauseKey = getKey(_xmlAttrib.Value);
+                        gameControls.modPauseKey = getKey(_xmlNode.Value);
                     }
-                    if (_xmlAttrib.Name == "NoClipKey")
+                    if (_xmlNode.Name == "NoClipKey" && _xmlNode.ParentNode.Name == "Controls")
                     {
-                        gameControls.modNoClipKey = getKey(_xmlAttrib.Value);
+                        gameControls.modNoClipKey = getKey(_xmlNode.Value);
                     }
-                    if (_xmlAttrib.Name == "PowerupKey")
+                    if (_xmlNode.Name == "PowerupKey" && _xmlNode.ParentNode.Name == "Controls")
                     {
-                        gameControls.modPowerupKey = getKey(_xmlAttrib.Value);
+                        gameControls.modPowerupKey = getKey(_xmlNode.Value);
                     }
                 }
             }
@@ -929,51 +928,54 @@ namespace Snake_Game
                 (new FileInfo(Properties.Settings.Default.controlsXmlPath)).Directory.Create(); // Create the xml path in case it hasn't been created yet
             }
 
-            XmlWriter _xmlDoc = XmlWriter.Create(Properties.Settings.Default.controlsXmlPath);
+            XmlWriterSettings xmlWriterSettings = new XmlWriterSettings();
+            xmlWriterSettings.Indent = true;
+            xmlWriterSettings.NewLineOnAttributes = true;
+            XmlWriter _xmlDoc = XmlWriter.Create(Properties.Settings.Default.controlsXmlPath, xmlWriterSettings);
             _xmlDoc.WriteStartDocument();
 
             // Controls
             _xmlDoc.WriteStartElement("Controls");
                 // Up Key
-                _xmlDoc.WriteStartAttribute("UpKey");
+                _xmlDoc.WriteStartElement("UpKey");
                 _xmlDoc.WriteString(Convert.ToString(gameControls.dirUpKey));
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
                 // Down Key
-                _xmlDoc.WriteStartAttribute("DownKey");
+                _xmlDoc.WriteStartElement("DownKey");
                 _xmlDoc.WriteString(Convert.ToString(gameControls.dirDownKey));
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
                 // Left Key
-                _xmlDoc.WriteStartAttribute("LeftKey");
+                _xmlDoc.WriteStartElement("LeftKey");
                 _xmlDoc.WriteString(Convert.ToString(gameControls.dirLeftKey));
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
                 // Right Key
-                _xmlDoc.WriteStartAttribute("RightKey");
+                _xmlDoc.WriteStartElement("RightKey");
                 _xmlDoc.WriteString(Convert.ToString(gameControls.dirRightKey));
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
                 // Restart Key
-                _xmlDoc.WriteStartAttribute("RestartKey");
+                _xmlDoc.WriteStartElement("RestartKey");
                 _xmlDoc.WriteString(Convert.ToString(gameControls.modRestartKey));
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
                 // Bot Key
-                _xmlDoc.WriteStartAttribute("BotKey");
+                _xmlDoc.WriteStartElement("BotKey");
                 _xmlDoc.WriteString(Convert.ToString(gameControls.modBotKey));
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
                 // Speed Key
-                _xmlDoc.WriteStartAttribute("SpeedKey");
+                _xmlDoc.WriteStartElement("SpeedKey");
                 _xmlDoc.WriteString(Convert.ToString(gameControls.modSpeedKey));
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
                 // Pause Key
-                _xmlDoc.WriteStartAttribute("PauseKey");
+                _xmlDoc.WriteStartElement("PauseKey");
                 _xmlDoc.WriteString(Convert.ToString(gameControls.modPauseKey));
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
                 // NoClip Key
-                _xmlDoc.WriteStartAttribute("NoClipKey");
+                _xmlDoc.WriteStartElement("NoClipKey");
                 _xmlDoc.WriteString(Convert.ToString(gameControls.modNoClipKey));
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
                 // Powerup Key
-                _xmlDoc.WriteStartAttribute("PowerupKey");
+                _xmlDoc.WriteStartElement("PowerupKey");
                 _xmlDoc.WriteString(Convert.ToString(gameControls.modPowerupKey));
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
             _xmlDoc.WriteEndElement();
 
             // End .xml
@@ -1029,7 +1031,6 @@ namespace Snake_Game
             XmlWriterSettings xmlWriterSettings = new XmlWriterSettings();
             xmlWriterSettings.Indent = true;
             xmlWriterSettings.NewLineOnAttributes = true;
-
             XmlWriter _xmlDoc = XmlWriter.Create(Properties.Settings.Default.scoreXmlPath, xmlWriterSettings);
 
             _xmlDoc.WriteStartDocument();
