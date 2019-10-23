@@ -993,11 +993,11 @@ namespace Snake_Game
 
                 XmlElement _xmlRoot = _xmlDoc.DocumentElement;
 
-                foreach (XmlAttribute _xmlAttrib in _xmlRoot.Attributes)
+                foreach (XmlNode _xmlNode in _xmlRoot.ChildNodes)
                 {
-                    if (_xmlAttrib.Name == "HighScore")
+                    if (_xmlNode.Name == "HighScore")
                     {
-                        gameSettings.HighScore = Convert.ToInt32(_xmlAttrib.Value);
+                        gameSettings.HighScore = Convert.ToInt32(_xmlNode.InnerText);
                     }
                 }
             }
@@ -1034,9 +1034,9 @@ namespace Snake_Game
             // Scores
             _xmlDoc.WriteStartElement("Scores");
                 // HighScore
-                _xmlDoc.WriteStartAttribute("HighScore");
+                _xmlDoc.WriteStartElement("HighScore");
                 _xmlDoc.WriteString(gameSettings.Score.ToString());
-                _xmlDoc.WriteEndAttribute();
+                _xmlDoc.WriteEndElement();
             _xmlDoc.WriteEndElement();
 
             // End .xml
