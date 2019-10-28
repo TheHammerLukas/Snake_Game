@@ -114,6 +114,7 @@ namespace Snake_Game
             {
                 DevModeEnabled = false;
                 NoClipEnabled  = false;
+                PowerupSpawnGap = gameConstants.standardPowerupSpawnGap;
 
                 initPowerupSpawnGap(useStandard);
                 initAllPowerupDuration();
@@ -204,8 +205,6 @@ namespace Snake_Game
         // Initializes the PowerupSpawnGap
         public static void initPowerupSpawnGap(bool useStandard)
         {
-            PowerupSpawnGap = gameConstants.standardPowerupSpawnGap;
-
             if (!useStandard)
             {
                 PowerupSpawnGap = PowerupSpawnGapConfigured;
